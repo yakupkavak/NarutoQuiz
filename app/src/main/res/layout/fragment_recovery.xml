@@ -4,6 +4,6 @@
     style="@style/SignStyle"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.userLogIn.login.LoginFragment">
+    tools:context=".ui.userLogIn.recovery.RecoveryFragment">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,4 +26,11 @@
     <string name="pokemon">pokemon</string>
     <string name="error">There is an error</string>
 
+    <string name="sign_in">Sign in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="slash">/</string>
+
 </resources>

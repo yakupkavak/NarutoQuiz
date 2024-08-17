@@ -14,9 +14,17 @@
     <dimen name="margin_large">32dp</dimen>
     <dimen name="margin_xlarge">64dp</dimen>
 
+    <!-- Stroke Size -->
+    <dimen name="stroke_xsmall">2dp</dimen>
+
+    <!-- Padding Size -->
+    <dimen name="padding_standart">12dp</dimen>
+
     <!-- Object Size -->
+    <dimen name="corner_radius_xlarge">64dp</dimen>
     <dimen name="corner_radius_medium">32dp</dimen>
     <dimen name="corner_radius_default">20dp</dimen>
+    <dimen name="corner_radius_small">8dp</dimen>
     <dimen name="width_small">4dp</dimen>
     <dimen name="width_large">48dp</dimen>
     <dimen name="height_large">48dp</dimen>

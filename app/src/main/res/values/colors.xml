@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -8,10 +9,19 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="system_background">#D3D3D3</color>
+    <color name="system_background">#D9D4D2</color>
     <color name="textColor">#1F1F1F</color>
     <color name="corner_color">#595959</color>
     <color name="design_color">#898989</color>
+
+    <!--Sign In General -->
+    <color name="orange_300">#F29D35</color>
+    <color name="orange_500">#FDCE93</color>
+    <color name="stroke">#FFC278</color>
+    <color name="color_three">#BF533B</color>
+    <color name="edit_text_background">#FF</color>
+    <color name="hint_color">#EBE0DB</color>
+
     <color name="row_color">#EFEFEF</color>
     <color name="detail_color">#0A2941</color>
 </resources>
