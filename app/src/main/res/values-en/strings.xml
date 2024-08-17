@@ -1,11 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">PokeMobil</string>
-    <string name="day">Yükleniyor…</string>
-    <string name="zero">0</string>
-    <string name="use_viewmodel">ViewModel Kullan</string>
-    <string name="increase_counter">Sayacı Arttır</string>
+    <string name="app_name">InternTasks-2A</string>
+    <string name="day">Loading…</string>
     <string name="counter_menu">Counter</string>
+    <string name="zero">0</string>
+    <string name="use_viewmodel">Use ViewModel</string>
+    <string name="increase_counter">Increase Counter</string>
     <string name="guess_menu">Guess</string>
     <string name="refresh_describtion">refresh</string>
     <string name="one">1</string>
@@ -17,12 +18,12 @@
     <string name="seven">7</string>
     <string name="eight">8</string>
     <string name="nine">9</string>
-    <string name="reset">Sıfırla</string>
-    <string name="guess">Tahmin</string>
-    <string name="success">Başarılı</string>
-    <string name="failure">Tekrar Dene</string>
+    <string name="reset">Reset</string>
+    <string name="guess">Guess</string>
+    <string name="success">Success</string>
+    <string name="failure">Try Again</string>
     <string name="change_image">Change Image</string>
     <string name="pokemon">pokemon</string>
-    <string name="error">Hata Oluştu</string>
+    <string name="error">There is an error</string>
 
 </resources>

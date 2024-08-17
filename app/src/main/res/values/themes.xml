@@ -1,9 +1,79 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
-    <style name="Base.Theme.NarutoQuiz" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Theme.General" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="android:windowBackground">@color/system_background</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/design_color</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/design_color</item>
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/textColor</item>
     </style>
 
-    <style name="Theme.NarutoQuiz" parent="Base.Theme.NarutoQuiz" />
+    <style name="NormalSizeRegular">//14sp Regular
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="NormalSizeMedium">//14sp Medium
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="BigSizeBold">//64sp Bold
+        <item name="android:textSize">@dimen/text_size_xlarge</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="MediumSizeMedium">//16sp Medium
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="LargeSizeMedium">
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="DetailScreenStyle">
+        <item name="android:textSize">@dimen/text_size_xlarge</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/detail_color</item>
+    </style>
+
+    <style name="ButtonStyle">
+        <item name="android:background">@drawable/button_design</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="ButtonSupportStyle">
+        <item name="android:background">@drawable/support_button_design</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColor">@color/textColor</item>
+        <item name="fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="RowStyle">
+        <item name="android:background">@drawable/feed_row_design</item>
+    </style>
+
+    <style name="Theme.CustomSplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/system_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/naruto</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.General</item>
+    </style>
+
 </resources>
