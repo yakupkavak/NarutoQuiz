@@ -14,6 +14,12 @@
     <dimen name="margin_large">32dp</dimen>
     <dimen name="margin_xlarge">64dp</dimen>
 
+    <!-- Negatife Size -->
+    <dimen name="negative_default">-16dp</dimen>
+    <dimen name="negative_medium">-24dp</dimen>
+    <dimen name="negative_large">-32dp</dimen>
+    <dimen name="negative_xlarge">-64dp</dimen>
+
     <!-- Stroke Size -->
     <dimen name="stroke_xsmall">2dp</dimen>
 
