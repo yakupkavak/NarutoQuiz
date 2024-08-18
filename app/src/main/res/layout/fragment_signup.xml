@@ -11,19 +11,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
-        android:text="@string/sign_in"
+        android:text="@string/sign_up"
         app:layout_constraintStart_toStartOf="@id/guidelineStart"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        style="@style/NormalSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/user_name"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/tvSignIn" />
+
+    <EditText
+        android:id="@+id/editUserName"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:autofillHints="emailAddress"
+        android:hint="@string/user_name"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName" />
 
     <TextView
         android:id="@+id/tvSignEmail"
         style="@style/NormalSizeMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_medium"
         android:text="@string/email"
         app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/tvSignIn" />
+        app:layout_constraintTop_toBottomOf="@id/editUserName" />
 
     <EditText
         android:id="@+id/editEmail"
@@ -73,16 +96,16 @@
         app:layout_constraintTop_toBottomOf="@id/editPassword" />
 
     <TextView
-        android:id="@+id/tvSignUp"
+        android:id="@+id/tvSignInClick"
         style="@style/NormalSizeMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_default"
-        android:text="@string/sign_up"
+        android:text="@string/sign_in"
         android:textColor="@color/color_three"
-        app:layout_constraintBottom_toBottomOf="@id/btnForgotPassword"
+        app:layout_constraintBottom_toBottomOf="@id/btnSignUp"
         app:layout_constraintEnd_toStartOf="@id/tvSlash"
-        app:layout_constraintTop_toTopOf="@id/btnForgotPassword" />
+        app:layout_constraintTop_toTopOf="@id/btnSignUp" />
 
     <TextView
         android:id="@+id/tvSlash"
@@ -92,17 +115,17 @@
         android:layout_marginEnd="@dimen/margin_default"
         android:text="@string/slash"
         android:textColor="@color/color_three"
-        app:layout_constraintBottom_toBottomOf="@id/btnForgotPassword"
-        app:layout_constraintEnd_toStartOf="@id/btnForgotPassword"
-        app:layout_constraintTop_toTopOf="@id/btnForgotPassword" />
+        app:layout_constraintBottom_toBottomOf="@id/btnSignUp"
+        app:layout_constraintEnd_toStartOf="@id/btnSignUp"
+        app:layout_constraintTop_toTopOf="@id/btnSignUp" />
 
     <Button
-        android:id="@+id/btnForgotPassword"
+        android:id="@+id/btnSignUp"
         style="@style/ButtonStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
-        android:text="@string/sign_in"
+        android:text="@string/sign_up"
         android:textAlignment="center"
         android:textColor="@color/orange_500"
         app:layout_constraintEnd_toStartOf="@id/guidelineEnd"

@@ -7,7 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".ui.userLogIn.SignActivity">
 
+    <ImageView
+        android:id="@+id/ivNarutoIcon"
+        android:layout_marginBottom="@dimen/negative_large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="@id/guidelineImage"
+        app:srcCompat="@drawable/narutoicon" />
+
+    <TextView
+        android:id="@+id/tvSignIn"
+        style="@style/LargeSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/welcome_shinobi"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@id/ivNarutoIcon" />
+
     <androidx.fragment.app.FragmentContainerView
+        android:layout_marginTop="@dimen/margin_large"
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
@@ -16,15 +37,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSignIn"
         app:navGraph="@navigation/sign_navigation" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="176dp"
-        android:layout_height="135dp"
-        app:srcCompat="@drawable/narutoclip"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineImage"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
