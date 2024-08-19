@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     kapt(libs.hilt.android.compiler)
     implementation(libs.firebase.ui.auth)
+    implementation(libs.gms.play.services.auth)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

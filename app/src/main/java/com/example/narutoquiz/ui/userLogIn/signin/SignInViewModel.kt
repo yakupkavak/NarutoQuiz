@@ -1,4 +1,7 @@
 package com.example.narutoquiz.ui.userLogIn.signin
 
-class SignInViewModel {
+import androidx.lifecycle.ViewModel
+
+class SignInViewModel : ViewModel(){
+
 }

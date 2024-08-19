@@ -27,6 +27,8 @@
     <string name="error">There is an error</string>
 
     <string name="sign_in">Sign in</string>
+    <string name="null_space">Do not leave blank</string>
+    <string name="sign_success">Register success</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="forgot_password">Forgot Password ?</string>
@@ -37,5 +39,6 @@
     <string name="welcome_shinobi">Welcome Shinobi</string>
     <string name="recovery">Recovery</string>
     <string name="naruto_image">Naruto Image</string>
+    <string name="google_icon">Google Icon</string>
 
 </resources>

@@ -3,16 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/sign_navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/signinFragment">
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.narutoquiz.ui.userLogIn.login.LoginFragment"
+        android:name="com.example.narutoquiz.ui.userLogIn.login.SignUpFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_signup" >
         <action
             android:id="@+id/action_loginFragment_to_signinFragment"
             app:destination="@id/signinFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_recoveryFragment"
+            app:destination="@id/recoveryFragment" />
     </fragment>
     <fragment
         android:id="@+id/signinFragment"

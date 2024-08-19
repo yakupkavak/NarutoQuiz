@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.example.narutoquiz.ui.mainScreen.feedlist.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_tierFragment"
+            app:destination="@id/tierFragment" />
+        <action
+            android:id="@+id/action_feedFragment_to_userInfo"
+            app:destination="@id/userInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.narutoquiz.ui.mainScreen.game.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tierFragment"
+        android:name="com.example.narutoquiz.ui.mainScreen.tierList.TierFragment"
+        android:label="fragment_tier"
+        tools:layout="@layout/fragment_tier" >
+        <action
+            android:id="@+id/action_tierFragment_to_userInfo"
+            app:destination="@id/userInfo" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfo"
+        android:name="com.example.narutoquiz.ui.mainScreen.userinfo.UserInfo"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_user_info" >
+        <action
+            android:id="@+id/action_userInfo_to_feedFragment"
+            app:destination="@id/feedFragment" />
+        <action
+            android:id="@+id/action_userInfo_to_tierFragment"
+            app:destination="@id/tierFragment" />
+    </fragment>
+</navigation>

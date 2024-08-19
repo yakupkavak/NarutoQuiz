@@ -26,6 +26,8 @@
     <string name="error">Hata Oluştu</string>
 
     <string name="sign_in">Sign in</string>
+    <string name="null_space">Boş bırakmayınız</string>
+    <string name="sign_success">Kayıt olundu</string>
     <string name="email">Email</string>
     <string name="hint_email">example@gmail.com</string>
     <string name="password">Password</string>
@@ -36,5 +38,8 @@
     <string name="welcome_shinobi">Welcome Shinobi</string>
     <string name="recovery">Recovery</string>
     <string name="naruto_image">Naruto Image</string>
+    <string name="google_icon">Google Icon</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
