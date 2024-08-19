@@ -1,11 +1,17 @@
 package com.example.narutoquiz.ui.userLogIn.signin
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.narutoquiz.R
 import com.example.narutoquiz.databinding.FragmentSigninBinding
+import com.example.narutoquiz.ui.extension.navigate
+import com.example.narutoquiz.ui.mainScreen.MainScreen
+import com.example.narutoquiz.ui.userLogIn.login.SignUpFragmentDirections
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -32,18 +38,52 @@ class SigninFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setOnClick()
 
     }
 
-    fun setOnClick(){
-        with(binding){
+    private fun setOnClick() {
+        with(binding) {
             tvSignUp.setOnClickListener {
-
+                navigate(SigninFragmentDirections.actionSigninFragmentToLoginFragment())
             }
             tvForgotPassword.setOnClickListener {
+                navigate(SigninFragmentDirections.actionSigninFragmentToRecoveryFragment())
+            }
+            btnSignIn.setOnClickListener {
+                if (editEmail.text.toString().isNotEmpty() && editPassword.text.toString()
+                        .isNotEmpty()
+                ) {
+                    auth.signInWithEmailAndPassword(
+                        editEmail.text.toString(),
+                        editPassword.text.toString()
+                    ).addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(
+                                requireContext(),
+                                getString(R.string.sign_success),
+                                Toast.LENGTH_LONG
+                            ).show()
+                            Intent(requireContext(), MainScreen::class.java).also {
+                                startActivity(it)
+                            }
+                            requireActivity().finish()
+                        } else {
+                            //There is an error
+                        }
+                    }
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.null_space),
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+            ivGoogle.setOnClickListener {
 
             }
+
         }
     }
 

@@ -88,7 +88,7 @@
 
     <style name="Theme.CustomSplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/system_background</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/naruto</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/narutoicon</item>
         <item name="windowSplashScreenAnimationDuration">1000</item>
         <item name="postSplashScreenTheme">@style/Theme.General</item>
     </style>
