@@ -22,6 +22,7 @@
     <color name="edit_text_background">#00FFFFFF</color>
     <color name="hint_color">#EBE0DB</color>
 
-    <color name="row_color">#EFEFEF</color>
+    <color name="row_color">#F29C6B</color>
     <color name="detail_color">#0A2941</color>
+
 </resources>

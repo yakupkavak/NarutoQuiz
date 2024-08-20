@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.narutoquiz.R
 
-class UserInfo : Fragment() {
+class UserInfoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

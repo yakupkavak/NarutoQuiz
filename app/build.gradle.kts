@@ -58,6 +58,7 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     implementation(libs.firebase.ui.auth)
     implementation(libs.gms.play.services.auth)
+    implementation(libs.material)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
