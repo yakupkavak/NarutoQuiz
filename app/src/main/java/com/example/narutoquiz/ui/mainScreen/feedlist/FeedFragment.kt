@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.narutoquiz.R
 import com.example.narutoquiz.databinding.FragmentFeedBinding
 import com.example.narutoquiz.databinding.FragmentSignupBinding
+import com.example.narutoquiz.ui.extension.navigate
 
 class FeedFragment : Fragment() {
 
@@ -19,7 +20,7 @@ class FeedFragment : Fragment() {
         super.onCreate(savedInstanceState)
         adapter = FeedAdapter().also { adapter ->
             adapter.onItemClick = {
-                println("yakup")
+                navigate(FeedFragmentDirections.actionFeedFragmentToGameFragment(it))
             }
         }
     }
