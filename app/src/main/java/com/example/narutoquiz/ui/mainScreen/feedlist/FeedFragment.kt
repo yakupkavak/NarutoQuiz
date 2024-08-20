@@ -5,9 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.narutoquiz.R
 import com.example.narutoquiz.databinding.FragmentFeedBinding
-import com.example.narutoquiz.databinding.FragmentSignupBinding
 import com.example.narutoquiz.ui.extension.navigate
 
 class FeedFragment : Fragment() {
@@ -36,7 +34,7 @@ class FeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter.submit(GenerateRowList())
+        adapter.submit(generateRowList())
         binding.rvFeed.adapter = adapter
     }
 

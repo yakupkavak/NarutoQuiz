@@ -38,6 +38,4 @@ class GameViewModel : BaseViewModel() {
         //4 farklı karakter aldım
         //bunların bir tanesinin voice aktörünü aldım
     }
-
-
 }
