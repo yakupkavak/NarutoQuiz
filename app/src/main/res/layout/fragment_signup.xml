@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
         android:text="@string/sign_up"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_large"
         android:text="@string/user_name"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/tvSignIn" />
 
     <EditText
@@ -35,7 +35,7 @@
         android:hint="@string/user_name"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/tvUserName" />
 
     <TextView
@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_medium"
         android:text="@string/email"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/editUserName" />
 
     <EditText
@@ -58,7 +58,7 @@
         android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/tvSignEmail" />
 
     <TextView
@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_medium"
         android:text="@string/password"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/editEmail" />
 
     <EditText
@@ -81,7 +81,7 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/tvSignPassword" />
 
     <TextView
@@ -133,7 +133,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStart"
+        android:id="@+id/gdlFirstStartHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="vertical"

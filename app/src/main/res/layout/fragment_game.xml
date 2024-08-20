@@ -1,11 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.mainScreen.game.GameFragment">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_large"
+        android:contentDescription="@string/close_game"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tvTopic"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/increase_counter"
+        app:layout_constraintBottom_toBottomOf="@id/fabClose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fabClose" />
 
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/linearProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTopic" />
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        style="@style/LargeSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/increase_counter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearProgress" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvOne"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/gdlFirstEndHorizontal"
+        app:layout_constraintEnd_toStartOf="@id/gdlFirstFinishVertical"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/gdlFirstStartHorizontal">
+
+        <ImageView
+            android:id="@+id/ivOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/first_option" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvOne"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/increase_counter"
+        app:layout_constraintEnd_toEndOf="@id/cvOne"
+        app:layout_constraintStart_toStartOf="@id/cvOne"
+        app:layout_constraintTop_toBottomOf="@id/cvOne" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvTwo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/gdlFirstEndHorizontal"
+        app:layout_constraintEnd_toStartOf="@id/gdlEndFinishVertical"
+        app:layout_constraintStart_toStartOf="@id/gdlEndStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/gdlFirstStartHorizontal">
+
+        <ImageView
+            android:id="@+id/ivTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/second_option" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvTwo"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/increase_counter"
+        app:layout_constraintEnd_toEndOf="@id/cvTwo"
+        app:layout_constraintStart_toStartOf="@id/cvTwo"
+        app:layout_constraintTop_toBottomOf="@id/cvTwo" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvThree"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/gdlLastEndHorizontal"
+        app:layout_constraintEnd_toStartOf="@id/gdlFirstFinishVertical"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/gdlLastStartHorizontal">
+
+        <ImageView
+            android:id="@+id/ivThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/first_option" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvThree"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/increase_counter"
+        app:layout_constraintEnd_toEndOf="@id/cvThree"
+        app:layout_constraintStart_toStartOf="@id/cvThree"
+        app:layout_constraintTop_toBottomOf="@id/cvThree" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFour"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/gdlLastEndHorizontal"
+        app:layout_constraintEnd_toStartOf="@id/gdlEndFinishVertical"
+        app:layout_constraintStart_toStartOf="@id/gdlEndStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/gdlLastStartHorizontal">
+
+        <ImageView
+            android:id="@+id/ivFour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/second_option" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvFour"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/increase_counter"
+        app:layout_constraintEnd_toEndOf="@id/cvFour"
+        app:layout_constraintStart_toStartOf="@id/cvFour"
+        app:layout_constraintTop_toBottomOf="@id/cvFour" />
+
+    <Button
+        style="@style/ButtonStyleQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:text="@string/check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gdlEndFinishVertical"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlFirstStartVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlFirstFinishVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.40" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlEndStartVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlEndFinishVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlFirstStartHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlFirstEndHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlLastStartHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlLastEndHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

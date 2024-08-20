@@ -40,5 +40,13 @@
     <string name="recovery">Recovery</string>
     <string name="naruto_image">Naruto Image</string>
     <string name="google_icon">Google Icon</string>
+    <string name="game_content">game content</string>
+    <string name="quizes">Quizes</string>
+    <string name="tier_list">Tier List</string>
+    <string name="user_info">User Info</string>
+    <string name="close_game">Close game</string>
+    <string name="first_option">First option</string>
+    <string name="second_option">Second Option</string>
+    <string name="check">Check</string>
 
 </resources>
