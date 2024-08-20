@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
@@ -26,7 +27,15 @@ class MainScreen : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val navController = binding.fragmentContainerView2.getFragment<NavHostFragment>().navController
+        val navController =
+            binding.fragmentContainerView2.getFragment<NavHostFragment>().navController
         binding.bottomNavigation.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.gameFragment -> binding.bottomNavigation.isVisible = false
+                else -> binding.bottomNavigation.isVisible = true
+            }
+        }
     }
 }

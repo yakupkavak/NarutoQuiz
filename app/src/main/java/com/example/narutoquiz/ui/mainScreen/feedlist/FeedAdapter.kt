@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.narutoquiz.data.model.FeedRowModel
 import com.example.narutoquiz.databinding.FeedRowBinding
 
-class FeedAdapter() : Adapter<FeedAdapter.FeedViewHolder>() {
+class FeedAdapter : Adapter<FeedAdapter.FeedViewHolder>() {
 
     var onItemClick: ((Int) -> Unit)? = null
 
@@ -29,11 +29,14 @@ class FeedAdapter() : Adapter<FeedAdapter.FeedViewHolder>() {
         asyncListDiffer.submitList(items)
     }
 
-    inner class FeedViewHolder(val binding: FeedRowBinding) : ViewHolder(binding.root) {
+    inner class FeedViewHolder(private val binding: FeedRowBinding) : ViewHolder(binding.root) {
         fun bind(data: FeedRowModel) {
-            with(binding){
+            with(binding) {
                 tvRow.text = data.description
                 ivRow.setImageResource(data.imageResId)
+                root.setOnClickListener {
+                    onItemClick?.invoke(data.gameId)
+                }
             }
         }
     }

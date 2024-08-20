@@ -12,10 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_default"
         android:layout_marginTop="@dimen/margin_large"
+        android:backgroundTint="@color/system_background"
         android:contentDescription="@string/close_game"
         android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:pressedTranslationZ="0dp" />
 
     <TextView
         android:id="@+id/tvTopic"
@@ -52,6 +56,9 @@
         android:id="@+id/cvOne"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        app:cardBackgroundColor="@color/system_background"
+        app:cardCornerRadius="@dimen/margin_xlarge"
         app:layout_constraintBottom_toBottomOf="@id/gdlFirstEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlFirstFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical"
@@ -59,9 +66,12 @@
 
         <ImageView
             android:id="@+id/ivOne"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/first_option" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_default"
+            android:background="@drawable/round_corner"
+            android:contentDescription="@string/first_option"
+            android:scaleType="fitCenter" />
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -79,6 +89,8 @@
         android:id="@+id/cvTwo"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardBackgroundColor="@color/system_background"
+        app:cardCornerRadius="@dimen/margin_xlarge"
         app:layout_constraintBottom_toBottomOf="@id/gdlFirstEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlEndFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlEndStartVertical"
@@ -86,9 +98,11 @@
 
         <ImageView
             android:id="@+id/ivTwo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/second_option" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_default"
+            android:contentDescription="@string/second_option"
+            android:scaleType="fitCenter" />
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -106,6 +120,8 @@
         android:id="@+id/cvThree"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardBackgroundColor="@color/system_background"
+        app:cardCornerRadius="@dimen/margin_xlarge"
         app:layout_constraintBottom_toBottomOf="@id/gdlLastEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlFirstFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical"
@@ -113,9 +129,11 @@
 
         <ImageView
             android:id="@+id/ivThree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/first_option" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_default"
+            android:contentDescription="@string/first_option"
+            android:scaleType="fitCenter" />
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -133,6 +151,8 @@
         android:id="@+id/cvFour"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:cardBackgroundColor="@color/system_background"
+        app:cardCornerRadius="@dimen/margin_xlarge"
         app:layout_constraintBottom_toBottomOf="@id/gdlLastEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlEndFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlEndStartVertical"
@@ -140,9 +160,11 @@
 
         <ImageView
             android:id="@+id/ivFour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/second_option" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_default"
+            android:contentDescription="@string/second_option"
+            android:scaleType="fitCenter" />
     </androidx.cardview.widget.CardView>
 
     <TextView
