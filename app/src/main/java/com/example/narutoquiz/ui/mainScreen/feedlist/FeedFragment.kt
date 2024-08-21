@@ -17,15 +17,15 @@ class FeedFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         adapter = FeedAdapter().also { adapter ->
-            adapter.onItemClick = {
-                navigate(FeedFragmentDirections.actionFeedFragmentToGameFragment(it))
+            adapter.onItemClick = { gameId, gameTopic ->
+                navigate(FeedFragmentDirections.actionFeedFragmentToGameFragment(gameId, gameTopic))
             }
         }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentFeedBinding.inflate(inflater, container, false)
         val view = binding.root

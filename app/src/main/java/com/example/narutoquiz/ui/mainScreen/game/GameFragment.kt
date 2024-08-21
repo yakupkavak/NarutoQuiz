@@ -9,6 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.narutoquiz.databinding.FragmentGameBinding
+import com.example.narutoquiz.domain.extension.getUrl
+import com.example.narutoquiz.ui.extension.observe
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,10 +21,12 @@ class GameFragment : Fragment() {
     private val args: GameFragmentArgs by navArgs()
     private val viewModel : GameViewModel by viewModels()
     private var gameId: Int = 0
+    private var gameTopic: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         gameId = args.gameId
+        gameTopic = args.gameTopic
     }
 
     override fun onCreateView(
@@ -36,8 +40,41 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tvTopic.text = gameTopic
         setOnClick()
+        setObserve()
+    }
+
+    private fun setObserve(){
         viewModel.startGame(gameId)
+        observe(viewModel.questionText){
+            binding.tvQuestion.text = it
+        }
+        observe(viewModel.firstOption){
+            with(binding){
+                ivOne.getUrl(it.imageUrl ?: "")
+                println(it.imageUrl)
+                tvOne.text = it.characterName ?: "Null"
+            }
+        }
+        observe(viewModel.secondOption){
+            with(binding){
+                ivTwo.getUrl(it.imageUrl ?: "")
+                tvTwo.text = it.characterName ?: "Null"
+            }
+        }
+        observe(viewModel.thirdOption){
+            with(binding){
+                ivThree.getUrl(it.imageUrl ?: "")
+                tvThree.text = it.characterName ?: "Null"
+            }
+        }
+        observe(viewModel.lastOption){
+            with(binding){
+                ivFour.getUrl(it.imageUrl ?: "")
+                tvFour.text = it.characterName ?: "Null"
+            }
+        }
     }
 
     private fun setOnClick(){

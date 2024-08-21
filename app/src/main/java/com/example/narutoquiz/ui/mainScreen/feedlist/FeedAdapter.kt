@@ -11,7 +11,7 @@ import com.example.narutoquiz.databinding.FeedRowBinding
 
 class FeedAdapter : Adapter<FeedAdapter.FeedViewHolder>() {
 
-    var onItemClick: ((Int) -> Unit)? = null
+    var onItemClick: ((Int,String) -> Unit)? = null
 
     private val diffUtil = object : DiffUtil.ItemCallback<FeedRowModel>() {
         override fun areItemsTheSame(oldItem: FeedRowModel, newItem: FeedRowModel): Boolean {
@@ -35,7 +35,7 @@ class FeedAdapter : Adapter<FeedAdapter.FeedViewHolder>() {
                 tvRow.text = data.description
                 ivRow.setImageResource(data.imageResId)
                 root.setOnClickListener {
-                    onItemClick?.invoke(data.gameId)
+                    onItemClick?.invoke(data.gameId,data.description)
                 }
             }
         }
