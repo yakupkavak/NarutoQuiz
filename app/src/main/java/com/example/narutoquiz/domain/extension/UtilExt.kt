@@ -1,23 +1,33 @@
 package com.example.narutoquiz.domain.extension
 
-
-/*
-import com.example.pokemobil.R
-import com.example.pokemobil.data.model.StatData
+import android.widget.ImageView
+import com.bumptech.glide.Glide
+import com.example.narutoquiz.R
+import com.example.narutoquiz.data.model.Family
+import kotlin.reflect.KProperty1
 
 fun ImageView.getUrl(url: String) {
-    Glide.with(this).asGif().load(url).thumbnail(
-        Glide.with(this).asGif()
-            .load(R.drawable.spinnerblack)
-    ).into(this)
+    Glide.with(this)
+        .load(url)
+        .thumbnail(
+            Glide.with(this)
+                .load(R.drawable.spinnerblack)
+        )
+        .into(this)
+}
+fun Family.getFirstNonNullField(): Pair<String, String>? {
+    this::class.members
+        .filterIsInstance<KProperty1<Family, String?>>()
+        .forEach { property ->
+            val value = property.get(this)
+            if (value != null) {
+                return property.name to value
+            }
+        }
+    return null
 }
 
-fun getStat(search: String,statList: List<StatData>) : String{
-    return statList.find { it.statName == search }?.baseStat.toString()
-}
 
-
- */
 fun getPokemonId(url: String): Int{
     val matchResult = """.*/(\d+)/?$""".toRegex().find(url)
     return matchResult?.groupValues?.get(1)?.toIntOrNull() ?: 0

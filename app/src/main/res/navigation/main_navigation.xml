@@ -31,6 +31,9 @@
         <argument
             android:name="gameId"
             app:argType="integer" />
+        <argument
+            android:name="gameTopic"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/tierFragment"

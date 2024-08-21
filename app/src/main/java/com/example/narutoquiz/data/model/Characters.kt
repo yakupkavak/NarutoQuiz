@@ -6,9 +6,9 @@ data class Characters(
     @JsonProperty("characters")
     val characters: List<Character>?,
     @JsonProperty("currentPage")
-    val currentPage: Int?,
+    val currentPage: Int,
     @JsonProperty("pageSize")
-    val pageSize: Int?,
+    val pageSize: Int,
     @JsonProperty("total")
-    val total: Int?
+    val total: Int
 )
