@@ -1,11 +1,10 @@
 package com.example.narutoquiz.data.model
 
-
-import com.google.gson.annotations.SerializedName
+import com.fasterxml.jackson.annotation.JsonProperty
 
 data class Weight(
-    @SerializedName("Part I")
-    val partI: String,
-    @SerializedName("Part II")
-    val partII: String
+    @JsonProperty("Part I")
+    val partI: String?,
+    @JsonProperty("Part II")
+    val partII: String?
 )

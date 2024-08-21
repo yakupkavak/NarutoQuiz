@@ -1,14 +1,14 @@
 package com.example.narutoquiz.data.model
 
-import com.google.gson.annotations.SerializedName
+import com.fasterxml.jackson.annotation.JsonProperty
 
 data class Teams(
-    @SerializedName("teams")
+    @JsonProperty("teams")
     val clans: List<GroupModel>,
-    @SerializedName("currentPage")
+    @JsonProperty("currentPage")
     val currentPage: Int,
-    @SerializedName("pageSize")
+    @JsonProperty("pageSize")
     val pageSize: Int,
-    @SerializedName("total")
+    @JsonProperty("total")
     val total: Int
 )

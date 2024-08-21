@@ -1,15 +1,14 @@
 package com.example.narutoquiz.data.model
 
-
-import com.google.gson.annotations.SerializedName
+import com.fasterxml.jackson.annotation.JsonProperty
 
 data class NinjaRank(
-    @SerializedName("Blank Period")
-    val blankPeriod: String,
-    @SerializedName("Gaiden")
-    val gaiden: String,
-    @SerializedName("Part I")
-    val partI: String,
-    @SerializedName("Part II")
-    val partII: String
+    @JsonProperty("Blank Period")
+    val blankPeriod: String?,
+    @JsonProperty("Gaiden")
+    val gaiden: String?,
+    @JsonProperty("Part I")
+    val partI: String?,
+    @JsonProperty("Part II")
+    val partII: String?
 )

@@ -1,11 +1,12 @@
 package com.example.narutoquiz.data.model
 
+import com.fasterxml.jackson.annotation.JsonInclude
+import com.fasterxml.jackson.annotation.JsonProperty
 
-import com.google.gson.annotations.SerializedName
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 data class VoiceActors(
-    @SerializedName("english")
-    val english: List<String>,
-    @SerializedName("japanese")
-    val japanese: List<String>
+    @JsonProperty("english")
+    val english: List<String>?,
+    @JsonProperty("japanese")
+    val japanese: List<String>?
 )

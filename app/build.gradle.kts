@@ -63,6 +63,9 @@ dependencies {
     implementation(libs.firebase.ui.auth)
     implementation(libs.gms.play.services.auth)
     implementation(libs.material)
+    implementation(libs.jackson.module.kotlin)
+    implementation(libs.jackson.databind)
+    implementation(libs.retrofit2.converter.jackson)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
