@@ -13,6 +13,8 @@
     <color name="textColor">#1F1F1F</color>
     <color name="corner_color">#595959</color>
     <color name="design_color">#898989</color>
+    <color name="trach_color">#4DFFFFFF</color>
+    <color name="indicator_color">#FFFFFF</color>
 
     <!--Sign In General -->
     <color name="orange_300">#F29D35</color>
