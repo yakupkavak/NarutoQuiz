@@ -1,21 +1,20 @@
 package com.example.narutoquiz.data.model
 
-
-import com.google.gson.annotations.SerializedName
+import com.fasterxml.jackson.annotation.JsonProperty
 
 data class Debut(
-    @SerializedName("anime")
-    val anime: String,
-    @SerializedName("appearsIn")
-    val appearsIn: String,
-    @SerializedName("game")
-    val game: String,
-    @SerializedName("manga")
-    val manga: String,
-    @SerializedName("movie")
-    val movie: String,
-    @SerializedName("novel")
-    val novel: String,
-    @SerializedName("ova")
-    val ova: String
+    @JsonProperty("anime")
+    val anime: String?,
+    @JsonProperty("appearsIn")
+    val appearsIn: String?,
+    @JsonProperty("game")
+    val game: String?,
+    @JsonProperty("manga")
+    val manga: String?,
+    @JsonProperty("movie")
+    val movie: String?,
+    @JsonProperty("novel")
+    val novel: String?,
+    @JsonProperty("ova")
+    val ova: String?
 )

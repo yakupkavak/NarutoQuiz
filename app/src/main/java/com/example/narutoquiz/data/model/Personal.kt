@@ -1,43 +1,42 @@
 package com.example.narutoquiz.data.model
 
-
-import com.google.gson.annotations.SerializedName
+import com.fasterxml.jackson.annotation.JsonProperty
 
 data class Personal(
-    @SerializedName("affiliation")
-    val affiliation: List<String>,
-    @SerializedName("age")
-    val age: Age,
-    @SerializedName("birthdate")
-    val birthdate: String,
-    @SerializedName("bloodType")
-    val bloodType: String,
-    @SerializedName("clan")
-    val clan: String,
-    @SerializedName("classification")
-    val classification: List<String>,
-    @SerializedName("height")
-    val height: Height,
-    @SerializedName("kekkeiGenkai")
-    val kekkeiGenkai: List<String>,
-    @SerializedName("kekkeiMōra")
-    val kekkeiMōra: String,
-    @SerializedName("occupation")
-    val occupation: List<String>,
-    @SerializedName("partner")
-    val partner: List<String>,
-    @SerializedName("sex")
-    val sex: String,
-    @SerializedName("species")
-    val species: String,
-    @SerializedName("status")
-    val status: String,
-    @SerializedName("tailedBeast")
-    val tailedBeast: String,
-    @SerializedName("team")
-    val team: List<String>,
-    @SerializedName("titles")
-    val titles: List<String>,
-    @SerializedName("weight")
-    val weight: Weight
+    @JsonProperty("affiliation")
+    val affiliation: List<String>?,
+    @JsonProperty("age")
+    val age: Age?,
+    @JsonProperty("birthdate")
+    val birthdate: String?,
+    @JsonProperty("bloodType")
+    val bloodType: String?,
+    @JsonProperty("clan")
+    val clan: List<String>?,
+    @JsonProperty("classification")
+    val classification: List<String>?,
+    @JsonProperty("height")
+    val height: Height?,
+    @JsonProperty("kekkeiGenkai")
+    val kekkeiGenkai: List<String>?,
+    @JsonProperty("kekkeiMōra")
+    val kekkeiMōra: String?,
+    @JsonProperty("occupation")
+    val occupation: List<String>?,
+    @JsonProperty("partner")
+    val partner: List<String>?,
+    @JsonProperty("sex")
+    val sex: String?,
+    @JsonProperty("species")
+    val species: String?,
+    @JsonProperty("status")
+    val status: String?,
+    @JsonProperty("tailedBeast")
+    val tailedBeast: String?,
+    @JsonProperty("team")
+    val team: List<String>?,
+    @JsonProperty("titles")
+    val titles: List<String>?,
+    @JsonProperty("weight")
+    val weight: Weight?
 )

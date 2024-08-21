@@ -1,5 +1,6 @@
 [versions]
 agp = "8.5.0"
+converterJacksonVersion = "2.9.0"
 coreSplashscreen = "1.0.1"
 firebaseBom = "33.1.2"
 firebaseUiAuth = "7.2.0"
@@ -7,6 +8,8 @@ glide = "4.16.0"
 hiltAndroid = "2.52"
 hiltAndroidGradlePlugin = "2.52"
 hiltCompiler = "2.52"
+jacksonDatabind = "2.15.2"
+jacksonModuleKotlin = "2.15.2"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -18,6 +21,7 @@ material = "1.12.0"
 activity = "1.9.1"
 constraintlayout = "2.1.4"
 navigationFragmentKtx = "2.7.7"
+netJsonKotlinVersion = "4.10"
 playServicesAuthVersion = "21.2.0"
 retrofit = "2.11.0"
 
@@ -39,6 +43,8 @@ hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltA
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
 hilt-android-gradle-plugin = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "hiltAndroidGradlePlugin" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltCompiler" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jacksonDatabind" }
+jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jacksonModuleKotlin" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -46,7 +52,9 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+net-pwall-json-json-kotlin = { module = "net.pwall.json:json-kotlin", version.ref = "netJsonKotlinVersion" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit2-converter-jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "converterJacksonVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

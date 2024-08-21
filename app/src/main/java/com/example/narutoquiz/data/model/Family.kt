@@ -1,75 +1,74 @@
 package com.example.narutoquiz.data.model
 
-
-import com.google.gson.annotations.SerializedName
+import com.fasterxml.jackson.annotation.JsonProperty
 
 data class Family(
-    @SerializedName("adoptive brother")
-    val adoptiveBrother: String,
-    @SerializedName("adoptive mother")
-    val adoptiveMother: String,
-    @SerializedName("adoptive son")
-    val adoptiveSon: String,
-    @SerializedName("adoptive sons")
-    val adoptiveSons: String,
-    @SerializedName("aunt")
-    val aunt: String,
-    @SerializedName("brother")
-    val brother: String,
-    @SerializedName("clone")
-    val clone: String,
-    @SerializedName("clone/brother")
-    val clonebrother: String,
-    @SerializedName("clone/son")
-    val cloneson: String,
-    @SerializedName("cousin")
-    val cousin: String,
-    @SerializedName("creator")
-    val creator: String,
-    @SerializedName("daughter")
-    val daughter: String,
-    @SerializedName("father")
-    val father: String,
-    @SerializedName("first cousin once removed")
-    val firstCousinOnceRemoved: String,
-    @SerializedName("genetic template")
-    val geneticTemplate: String,
-    @SerializedName("genetic template/parent")
-    val geneticTemplateparent: String,
-    @SerializedName("godfather")
-    val godfather: String,
-    @SerializedName("godson")
-    val godson: String,
-    @SerializedName("granddaughter")
-    val granddaughter: String,
-    @SerializedName("grandfather")
-    val grandfather: String,
-    @SerializedName("grandmother")
-    val grandmother: String,
-    @SerializedName("grandson")
-    val grandson: String,
-    @SerializedName("granduncle")
-    val granduncle: String,
-    @SerializedName("great-grandfather")
-    val greatGrandfather: String,
-    @SerializedName("host")
-    val host: String,
-    @SerializedName("lover")
-    val lover: String,
-    @SerializedName("mother")
-    val mother: String,
-    @SerializedName("nephew")
-    val nephew: String,
-    @SerializedName("niece")
-    val niece: String,
-    @SerializedName("pet ")
-    val pet: String,
-    @SerializedName("sister")
-    val sister: String,
-    @SerializedName("son")
-    val son: String,
-    @SerializedName("uncle")
-    val uncle: String,
-    @SerializedName("wife")
-    val wife: String
+    @JsonProperty("adoptive brother")
+    val adoptiveBrother: String?,
+    @JsonProperty("adoptive mother")
+    val adoptiveMother: String?,
+    @JsonProperty("adoptive son")
+    val adoptiveSon: String?,
+    @JsonProperty("adoptive sons")
+    val adoptiveSons: String?,
+    @JsonProperty("aunt")
+    val aunt: String?,
+    @JsonProperty("brother")
+    val brother: String?,
+    @JsonProperty("clone")
+    val clone: String?,
+    @JsonProperty("clone/brother")
+    val clonebrother: String?,
+    @JsonProperty("clone/son")
+    val cloneson: String?,
+    @JsonProperty("cousin")
+    val cousin: String?,
+    @JsonProperty("creator")
+    val creator: String?,
+    @JsonProperty("daughter")
+    val daughter: String?,
+    @JsonProperty("father")
+    val father: String?,
+    @JsonProperty("first cousin once removed")
+    val firstCousinOnceRemoved: String?,
+    @JsonProperty("genetic template")
+    val geneticTemplate: String?,
+    @JsonProperty("genetic template/parent")
+    val geneticTemplateparent: String?,
+    @JsonProperty("godfather")
+    val godfather: String?,
+    @JsonProperty("godson")
+    val godson: String?,
+    @JsonProperty("granddaughter")
+    val granddaughter: String?,
+    @JsonProperty("grandfather")
+    val grandfather: String?,
+    @JsonProperty("grandmother")
+    val grandmother: String?,
+    @JsonProperty("grandson")
+    val grandson: String?,
+    @JsonProperty("granduncle")
+    val granduncle: String?,
+    @JsonProperty("great-grandfather")
+    val greatGrandfather: String?,
+    @JsonProperty("host")
+    val host: String?,
+    @JsonProperty("lover")
+    val lover: String?,
+    @JsonProperty("mother")
+    val mother: String?,
+    @JsonProperty("nephew")
+    val nephew: String?,
+    @JsonProperty("niece")
+    val niece: String?,
+    @JsonProperty("pet ")
+    val pet: String?,
+    @JsonProperty("sister")
+    val sister: String?,
+    @JsonProperty("son")
+    val son: String?,
+    @JsonProperty("uncle")
+    val uncle: String?,
+    @JsonProperty("wife")
+    val wife: String?
 )

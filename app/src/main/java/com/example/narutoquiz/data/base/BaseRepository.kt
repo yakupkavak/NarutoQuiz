@@ -13,9 +13,13 @@ abstract class BaseRepository {
                     return@let Resource.success(it)
                 } ?: Resource.error(null)
             } else {
+                val errorMessage = response.errorBody()?.string() ?: "unknown error"
+                val errorCode = response.code()
+                println("error ->$errorMessage$errorCode")
                 return Resource.error(null)
             }
         } catch (e: Exception) {
+            println(e.message)
             return Resource.error(null)
         }
     }
