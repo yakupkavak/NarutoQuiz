@@ -9,7 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.narutoquiz.databinding.FragmentGameBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GameFragment : Fragment() {
 
     private var _binding: FragmentGameBinding? = null
@@ -35,12 +37,16 @@ class GameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setOnClick()
+        viewModel.startGame(gameId)
     }
 
     private fun setOnClick(){
         with(binding){
             fabClose.setOnClickListener {
                 findNavController().popBackStack()
+            }
+            btnCheck.setOnClickListener {
+                linearProgress.progress += 1
             }
         }
     }

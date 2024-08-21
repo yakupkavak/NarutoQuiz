@@ -8,7 +8,9 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.narutoquiz.R
 import com.example.narutoquiz.databinding.ActivityMainScreenBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainScreenBinding

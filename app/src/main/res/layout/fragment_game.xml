@@ -37,10 +37,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
+        android:max="9"
+        android:progress="0"
+        app:trackCornerRadius="@dimen/margin_xsmall"
+        app:indicatorColor="@color/indicator_color"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/Widget.MaterialComponents.LinearProgressIndicator"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTopic" />
+        app:layout_constraintTop_toBottomOf="@id/tvTopic"
+        app:trackColor="@color/trach_color"
+        app:trackThickness="@dimen/margin_small" />
 
     <TextView
         android:id="@+id/tvQuestion"
@@ -180,6 +185,7 @@
         app:layout_constraintTop_toBottomOf="@id/cvFour" />
 
     <Button
+        android:id="@+id/btnCheck"
         style="@style/ButtonStyleQuestion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
