@@ -25,6 +25,7 @@
     <string name="change_image">Change Image</string>
     <string name="pokemon">pokemon</string>
     <string name="error">There is an error</string>
+    <string name="emptyImageUrl">https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png</string>
 
     <string name="sign_in">Sign in</string>
     <string name="null_space">Do not leave blank</string>

@@ -75,6 +75,9 @@ class GameFragment : Fragment() {
                 tvFour.text = it.characterName ?: "Null"
             }
         }
+        observe(viewModel.questionNumber){
+            binding.linearProgress.progress = it
+        }
     }
 
     private fun setOnClick(){
@@ -83,7 +86,7 @@ class GameFragment : Fragment() {
                 findNavController().popBackStack()
             }
             btnCheck.setOnClickListener {
-                linearProgress.progress += 1
+                viewModel.nextQuestion()
             }
         }
     }
