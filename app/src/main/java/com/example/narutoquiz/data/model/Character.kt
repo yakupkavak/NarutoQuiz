@@ -14,7 +14,7 @@ data class Character(
     @JsonProperty("jutsu")
     val jutsu: List<String>?,
     @JsonProperty("name")
-    val name: String?,
+    val name: String,
     @JsonProperty("natureType")
     val natureType: List<String>?,
     @JsonProperty("personal")

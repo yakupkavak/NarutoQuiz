@@ -4,6 +4,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.narutoquiz.R
 import com.example.narutoquiz.data.model.Family
+import com.example.narutoquiz.data.model.VoiceActors
 import kotlin.reflect.KProperty1
 
 fun ImageView.getUrl(url: String) {
@@ -16,12 +17,33 @@ fun ImageView.getUrl(url: String) {
         .into(this)
 }
 fun Family.getFirstNonNullField(): Pair<String, String>? {
+    this::class.members //koleksiyonu döndürdüm
+        .filterIsInstance<KProperty1<Family, String?>>() //sadece içerisinde string? olanları aldım
+        .forEach { property ->    //her birinin içerisinde gezinme işlemi yapıyorum ve bu father gibi
+            val value = property.get(this) //father'in değerini aldım
+            if (value != null) {
+                return property.name to value //pair olarak döndürdüm
+            }
+        }
+    return null
+}
+fun VoiceActors.getFirstNonNullField(): Pair<String, String>? {
     this::class.members
-        .filterIsInstance<KProperty1<Family, String?>>()
+        .filterIsInstance<KProperty1<VoiceActors, Any?>>()
         .forEach { property ->
             val value = property.get(this)
-            if (value != null) {
-                return property.name to value
+            when (value) {
+                is String -> {
+                    if (value.isNotBlank()) {
+                        return property.name to value
+                    }
+                }
+                is List<*> -> {
+                    val nonNullValue = value.filterIsInstance<String>().firstOrNull { it.isNotBlank() }
+                    if (nonNullValue != null) {
+                        return property.name to nonNullValue
+                    }
+                }
             }
         }
     return null

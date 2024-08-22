@@ -1,13 +1,12 @@
 package com.example.narutoquiz.data.model
 
-
-import com.google.gson.annotations.SerializedName
+import com.fasterxml.jackson.annotation.JsonProperty
 
 data class GroupModel(
-    @SerializedName("characters")
+    @JsonProperty("characters")
     val characters: List<Int>,
-    @SerializedName("id")
+    @JsonProperty("id")
     val id: Int,
-    @SerializedName("name")
+    @JsonProperty("name")
     val name: String
 )
