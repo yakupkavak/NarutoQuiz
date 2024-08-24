@@ -20,8 +20,8 @@ class NarutoRepository @Inject constructor(
     suspend fun getClan(clanId: Int) =
         fetchData { narutoService.clanSearch(clanId) }
 
-    suspend fun getAkatsukiList(pageNum: Int) =
-        fetchData { narutoService.akatsukiList(pageNum) }
+    suspend fun getAkatsukiList(pageSize: Int) =
+        fetchData { narutoService.akatsukiList(pageSize) }
 
     suspend fun getTailedBeastList(pageNum: Int) =
         fetchData { narutoService.tailedList(pageNum) }

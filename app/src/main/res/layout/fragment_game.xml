@@ -60,24 +60,28 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvOne"
+        style="@style/CardStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/round_corner"
-        app:cardBackgroundColor="@color/system_background"
-        app:cardCornerRadius="@dimen/margin_xlarge"
         app:layout_constraintBottom_toBottomOf="@id/gdlFirstEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlFirstFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical"
         app:layout_constraintTop_toBottomOf="@id/gdlFirstStartHorizontal">
 
-        <ImageView
-            android:id="@+id/ivOne"
+        <androidx.cardview.widget.CardView
+            style="@style/CardStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/margin_default"
-            android:background="@drawable/round_corner"
-            android:contentDescription="@string/first_option"
-            android:scaleType="fitXY" />
+            android:layout_margin="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/ivOne"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/first_option"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
+
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -95,20 +99,26 @@
         android:id="@+id/cvTwo"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:cardBackgroundColor="@color/system_background"
-        app:cardCornerRadius="@dimen/margin_xlarge"
+        style="@style/CardStyle"
         app:layout_constraintBottom_toBottomOf="@id/gdlFirstEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlEndFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlEndStartVertical"
         app:layout_constraintTop_toBottomOf="@id/gdlFirstStartHorizontal">
 
-        <ImageView
-            android:id="@+id/ivTwo"
+        <androidx.cardview.widget.CardView
+            style="@style/CardStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/margin_default"
-            android:contentDescription="@string/second_option"
-            android:scaleType="fitXY" />
+            android:layout_margin="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/ivTwo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/first_option"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
+
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -127,20 +137,25 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_small"
-        app:cardBackgroundColor="@color/system_background"
-        app:cardCornerRadius="@dimen/margin_xlarge"
+        style="@style/CardStyle"
         app:layout_constraintBottom_toBottomOf="@id/gdlLastEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlFirstFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical"
         app:layout_constraintTop_toBottomOf="@id/gdlLastStartHorizontal">
 
-        <ImageView
-            android:id="@+id/ivThree"
+        <androidx.cardview.widget.CardView
+            style="@style/CardStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/margin_default"
-            android:contentDescription="@string/first_option"
-            android:scaleType="fitXY" />
+            android:layout_margin="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/ivThree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/first_option"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -159,20 +174,25 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_small"
-        app:cardBackgroundColor="@color/system_background"
-        app:cardCornerRadius="@dimen/margin_xlarge"
+        style="@style/CardStyle"
         app:layout_constraintBottom_toBottomOf="@id/gdlLastEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlEndFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlEndStartVertical"
         app:layout_constraintTop_toBottomOf="@id/gdlLastStartHorizontal">
 
-        <ImageView
-            android:id="@+id/ivFour"
+        <androidx.cardview.widget.CardView
+            style="@style/CardStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/margin_default"
-            android:contentDescription="@string/second_option"
-            android:scaleType="fitXY" />
+            android:layout_margin="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/ivFour"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/first_option"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
 
     <TextView
