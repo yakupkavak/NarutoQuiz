@@ -37,7 +37,7 @@ interface NarutoService {
 
     @GET("/akatsuki")
     suspend fun akatsukiList(
-        @Query("page") pageNumber: Int,
+        @Query("limit") searchSize: Int,
     ): Response<Akatsuki>
 
     @GET("/tailed-beasts")

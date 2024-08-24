@@ -95,6 +95,12 @@
         <item name="android:textColorHint">@color/hint_color</item>
     </style>
 
+    <style name="CardStyle">
+        <item name="cardElevation">0dp</item>
+        <item name="cardBackgroundColor">@color/system_background</item>
+        <item name="cardCornerRadius">@dimen/margin_xlarge</item>
+    </style>
+
     <style name="Theme.CustomSplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/system_background</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/narutoicon</item>
