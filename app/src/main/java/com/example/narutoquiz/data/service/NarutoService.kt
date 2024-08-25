@@ -27,7 +27,7 @@ interface NarutoService {
 
     @GET("/clans")
     suspend fun clanList(
-        @Query("page") pageNumber: Int,
+        @Query("limit") searchSize: Int,
     ): Response<Clans>
 
     @GET("/clans/{id}/")

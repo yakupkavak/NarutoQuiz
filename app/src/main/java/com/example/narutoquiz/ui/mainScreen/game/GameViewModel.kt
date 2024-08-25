@@ -6,6 +6,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.narutoquiz.R
 import com.example.narutoquiz.data.model.Akatsuki
 import com.example.narutoquiz.data.model.Character
+import com.example.narutoquiz.data.model.Characters
+import com.example.narutoquiz.data.model.Clans
 import com.example.narutoquiz.data.model.GroupModel
 import com.example.narutoquiz.data.model.SelectionModel
 import com.example.narutoquiz.data.repository.NarutoRepository
@@ -15,6 +17,7 @@ import com.example.narutoquiz.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlin.math.abs
 import kotlin.random.Random
 
 @HiltViewModel
@@ -63,7 +66,7 @@ class GameViewModel @Inject constructor(
                 }
 
                 1 -> {
-//                    characterGame()
+                    characterGame()
                 }
 
                 2 -> {
@@ -110,17 +113,15 @@ class GameViewModel @Inject constructor(
             _questionNumber.postValue(_questionNumber.value?.plus(1))
         }
     }
-    /*
-    suspend fun classicGame() {
-        characterGame()
+
+    fun characterGame() {
+        getCharacterCall(
+            { getFourRandomCharacter() },
+            { characterList -> askFamily(characterList) },
+            { println("error geldi") },
+            null
+        )
     }
-
-
-    suspend fun characterGame() {
-        askFamily(callCharacter = { getRandomCharacter() })
-    }
-
-     */
 
     private fun askFamily(characterList: List<Character>) {
         val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
@@ -163,7 +164,7 @@ class GameViewModel @Inject constructor(
     private fun akatsukiGame() {
         getCharacterCall(
             { getFourAkatsukiCharacter() },
-            { characterList ->  askFamily(characterList)  },
+            { characterList -> askVoiceActor(characterList) },
             null,
             null
         )
@@ -178,7 +179,7 @@ class GameViewModel @Inject constructor(
         while (true) {
             val charList = repository.getAkatsukiList(43)
             firstCharacter = getAkatsuki(charList)
-            if (firstCharacter.family?.getFirstNonNullField() != null){
+            if (firstCharacter.family?.getFirstNonNullField() != null) {
                 secondCharacter = getAkatsuki(charList)
                 thirdCharacter = getAkatsuki(charList)
                 lastCharacter = getAkatsuki(charList)
@@ -195,77 +196,111 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    private fun getAkatsuki(charList: Resource<Akatsuki>) : Character{
-        while (true){
+    private fun getAkatsuki(charList: Resource<Akatsuki>): Character {
+        while (true) {
             val character = charList.data?.akatsuki?.get(Random.nextInt(0, 43))
-            if (character?.images?.isEmpty() == false ) {
+            if (character?.images?.isEmpty() == false) {
                 return character
             }
         }
     }
 
-    private suspend fun askVoiceActor(callCharacter: suspend () -> Character) {
+    private fun askVoiceActor(characterList: List<Character>) {
         val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
-        var nonNullPair: Pair<String, String>? = null
-        var firstCharacter: Character? = null
-        var secondCharacter: Character?
-        var thirdCharacter: Character?
-        var lastCharacter: Character?
+        val nonNullPair: Pair<String, String>?
+        var firstCharacter = characterList[0]
+        var secondCharacter = characterList[1]
+        var thirdCharacter = characterList[2]
+        var lastCharacter = characterList[3]
 
-        while (nonNullPair == null) {
-            firstCharacter = callCharacter.invoke()
-            nonNullPair = firstCharacter.family?.getFirstNonNullField()
-        }
-
-        while (true) {
-            secondCharacter = callCharacter.invoke()
-            if (firstCharacter != null && secondCharacter.name != firstCharacter.name) {
-                thirdCharacter = callCharacter.invoke()
-                if (thirdCharacter.name != secondCharacter.name && thirdCharacter.name != firstCharacter.name) {
-                    lastCharacter = callCharacter.invoke()
-                    if (lastCharacter.name != thirdCharacter.name && lastCharacter.name != secondCharacter.name && lastCharacter.name != firstCharacter.name) {
-                        break
-                    }
+        for (i in 0..3) {
+            if (i == 0 || i == 3) {
+                if (characterList[i].voiceActors != null) {
+                    firstCharacter = characterList[i]
+                    secondCharacter = characterList[abs(i - 1)]
+                    thirdCharacter = characterList[abs(i - 2)]
+                    lastCharacter = characterList[abs(i - 3)]
+                }
+            }
+            if (i == 1) {
+                if (characterList[i].voiceActors != null) {
+                    firstCharacter = characterList[i]
+                    secondCharacter = characterList[0]
+                    thirdCharacter = characterList[2]
+                    lastCharacter = characterList[3]
+                }
+            }
+            if (i == 2) {
+                if (characterList[i].voiceActors != null) {
+                    firstCharacter = characterList[i]
+                    secondCharacter = characterList[0]
+                    thirdCharacter = characterList[1]
+                    lastCharacter = characterList[3]
                 }
             }
         }
-        _questionText.postValue(
-            "Which one's ${nonNullPair.first} voice actor" + " is ${nonNullPair.second}"
+
+        nonNullPair = firstCharacter.voiceActors?.getFirstNonNullField()
+
+        if (nonNullPair != null) {
+            _questionText.postValue(
+                "Which one's ${nonNullPair.first} voice actor" + " is ${nonNullPair.second}"
+            )
+        }
+
+        options[0].postValue(
+            SelectionModel(
+                firstCharacter.images?.get(0), firstCharacter.name, true
+            )
         )
-        firstCharacter?.let {
-            options[0].postValue(SelectionModel(it.images?.get(0), it.name, true))
-            if (secondCharacter != null) {
-                options[1].postValue(
-                    SelectionModel(
-                        secondCharacter.images?.get(0), secondCharacter.name, false
+        options[1].postValue(
+            SelectionModel(
+                secondCharacter.images?.get(0), secondCharacter.name, false
+            )
+        )
+        options[2].postValue(
+            SelectionModel(
+                thirdCharacter.images?.get(0), thirdCharacter.name, false
+            )
+        )
+        options[3].postValue(
+            SelectionModel(
+                lastCharacter.images?.get(0), lastCharacter.name, false
+            )
+        )
+    }
+
+    private suspend fun getFourRandomCharacter(): Resource<List<Character>> {
+        _loading.postValue(true)
+        var firstCharacter: Character
+        val selectedCharacters = mutableSetOf<Character>()
+        while (selectedCharacters.size < 5) {
+            firstCharacter = getRandomCharacter()
+            if (firstCharacter.family?.getFirstNonNullField() != null) {
+                selectedCharacters.add(firstCharacter)
+                selectedCharacters.add(getRandomCharacter())
+                selectedCharacters.add(getRandomCharacter())
+                selectedCharacters.add(getRandomCharacter())
+                if (selectedCharacters.size == 4
+                ) {
+                    _loading.postValue(false)
+                    return Resource.success(
+                        selectedCharacters.toList()
                     )
-                )
-            }
-            if (thirdCharacter != null) {
-                options[2].postValue(
-                    SelectionModel(
-                        thirdCharacter.images?.get(0), thirdCharacter.name, false
-                    )
-                )
-            }
-            if (lastCharacter != null) {
-                options[3].postValue(
-                    SelectionModel(
-                        lastCharacter.images?.get(0), lastCharacter.name, false
-                    )
-                )
+                }
             }
         }
+        return Resource.error(null)
     }
 
     private suspend fun getRandomCharacter(): Character {
-        val charList = repository.getCharacterList(Random.nextInt(0, 10))
-        val pageSize = charList.data?.pageSize
-        var nonNullCharacter: Character?
         while (true) {
-            nonNullCharacter = charList.data?.characters?.get(Random.nextInt(0, pageSize ?: 19))
-            if (nonNullCharacter?.images?.isEmpty() == false && nonNullCharacter.family != null) {
-                return nonNullCharacter
+            val charList = repository.getCharacterList(Random.nextInt(0, 10))
+            val pageSize = charList.data?.pageSize
+            val character = charList.data?.characters?.get(Random.nextInt(0, pageSize ?: 19))
+            println(character)
+            if (character?.images?.isEmpty() == false) {
+                return character
             }
         }
     }
@@ -274,31 +309,12 @@ class GameViewModel @Inject constructor(
         askClan { getRandomClan() }
     }
 
-    suspend fun askClan(callClan: suspend () -> GroupModel?) {
+    suspend fun askClan(characterList: List<Character>) {
         val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
         val firstClan = callClan.invoke()
         var secondClan: GroupModel?
         var thirdClan: GroupModel?
         var lastClan: GroupModel?
-
-        while (true) {
-            secondClan = callClan.invoke()
-            if (secondClan != null) {
-                if (firstClan != null && secondClan.name != firstClan.name) {
-                    thirdClan = callClan.invoke()
-                    if (thirdClan != null) {
-                        if (thirdClan.name != secondClan.name && thirdClan.name != firstClan.name) {
-                            lastClan = callClan.invoke()
-                            if (lastClan != null) {
-                                if (lastClan.name != thirdClan.name && lastClan.name != secondClan.name && lastClan.name != firstClan.name) {
-                                    break
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
 
         val firstCharacter = firstClan?.let { getClanCharacter(it.id) }
         val secondCharacter = secondClan?.let { getClanCharacter(it.id) }
@@ -349,20 +365,23 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    suspend fun getRandomClan(): GroupModel? {
-        val charList = repository.getClanList(Random.nextInt(0, 3))
+    suspend fun getFourClanList(): List<GroupModel> {
+        _loading.postValue(true)
+        var firstClan: Character
+        var secondClan: Character
+        var thirdClan: Character
+        var lastClan: Character
+
+        val charList = repository.getClanList(57)
         return charList.data?.clans?.get(Random.nextInt(0, charList.data.pageSize ?: 2))
     }
 
-    suspend fun getClanCharacter(clanId: Int): Character? {
-        val charList = repository.getClan(clanId)
+    suspend fun getClanCharacter(clanList: Resource<Clans>): Character? {
+
+
         val randomCharId =
             charList.data?.characters?.get(Random.nextInt(0, charList.data.characters.size)) ?: 1293
         return repository.getCharacter(randomCharId).data
-    }
-
-    suspend fun familyQuestion() {
-
     }
 
     suspend fun kekkeiGame() {
