@@ -14,6 +14,7 @@ import com.example.narutoquiz.data.repository.NarutoRepository
 import com.example.narutoquiz.data.util.Resource
 import com.example.narutoquiz.domain.extension.getFirstNonNullField
 import com.example.narutoquiz.ui.base.BaseViewModel
+import com.example.narutoquiz.ui.extension.getFourRandomNumber
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -117,7 +118,11 @@ class GameViewModel @Inject constructor(
     fun characterGame() {
         getCharacterCall(
             { getFourRandomCharacter() },
-            { characterList -> askFamily(characterList) },
+            { characterList ->
+                if (characterList != null) {
+                    askFamily(characterList)
+                }
+            },
             { println("error geldi") },
             null
         )
@@ -164,7 +169,11 @@ class GameViewModel @Inject constructor(
     private fun akatsukiGame() {
         getCharacterCall(
             { getFourAkatsukiCharacter() },
-            { characterList -> askVoiceActor(characterList) },
+            { characterList ->
+                if (characterList != null) {
+                    askVoiceActor(characterList)
+                }
+            },
             null,
             null
         )
@@ -305,59 +314,83 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    suspend fun clanGame() {
-        askClan { getRandomClan() }
+    private fun clanGame() {
+        getCharacterCall(
+            { getFourClanCharacter() },
+            { characterList ->
+                if (characterList != null) {
+                    askClan(characterList)
+                }
+            },
+            null,
+            null
+        )
     }
 
-    suspend fun askClan(characterList: List<Character>) {
+    private fun askClan(characterList: List<Character?>) {
         val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
-        val firstClan = callClan.invoke()
-        var secondClan: GroupModel?
-        var thirdClan: GroupModel?
-        var lastClan: GroupModel?
+        val firstCharacter = characterList[0]
+        val secondCharacter = characterList[1]
+        val thirdCharacter = characterList[2]
+        val lastCharacter = characterList[3]
 
-        val firstCharacter = firstClan?.let { getClanCharacter(it.id) }
-        val secondCharacter = secondClan?.let { getClanCharacter(it.id) }
-        val thirdCharacter = thirdClan?.let { getClanCharacter(it.id) }
-        val lastCharacter = lastClan?.let { getClanCharacter(it.id) }
-
-        if (firstClan != null) {
+        if (firstCharacter != null) {
             _questionText.postValue(
-                "Which one's clan" + " is ${firstClan.name}"
+                "Which one's clan name" + " is ${firstCharacter.personal?.clan?.get(0)}"
             )
         }
 
         if (firstCharacter != null) {
+            val imageUrl = if (!firstCharacter.images.isNullOrEmpty()) {
+                firstCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
             options[0].postValue(
                 SelectionModel(
-                    firstCharacter.images?.get(0) ?: R.string.emptyImageUrl.toString(),
+                    imageUrl,
                     firstCharacter.name,
                     true
                 )
             )
         }
         if (secondCharacter != null) {
+            val imageUrl = if (!secondCharacter.images.isNullOrEmpty()) {
+                secondCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
             options[1].postValue(
                 SelectionModel(
-                    secondCharacter.images?.get(0) ?: R.string.emptyImageUrl.toString(),
+                    imageUrl,
                     secondCharacter.name,
                     false
                 )
             )
         }
         if (thirdCharacter != null) {
+            val imageUrl = if (!thirdCharacter.images.isNullOrEmpty()) {
+                thirdCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
             options[2].postValue(
                 SelectionModel(
-                    thirdCharacter.images?.get(0) ?: R.string.emptyImageUrl.toString(),
+                    imageUrl,
                     thirdCharacter.name,
                     false
                 )
             )
         }
         if (lastCharacter != null) {
+            val imageUrl = if (!lastCharacter.images.isNullOrEmpty()) {
+                lastCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
             options[3].postValue(
                 SelectionModel(
-                    lastCharacter.images?.get(0) ?: R.string.emptyImageUrl.toString(),
+                    imageUrl,
                     lastCharacter.name,
                     false
                 )
@@ -365,23 +398,33 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    suspend fun getFourClanList(): List<GroupModel> {
-        _loading.postValue(true)
-        var firstClan: Character
-        var secondClan: Character
-        var thirdClan: Character
-        var lastClan: Character
-
-        val charList = repository.getClanList(57)
-        return charList.data?.clans?.get(Random.nextInt(0, charList.data.pageSize ?: 2))
-    }
-
-    suspend fun getClanCharacter(clanList: Resource<Clans>): Character? {
-
-
-        val randomCharId =
-            charList.data?.characters?.get(Random.nextInt(0, charList.data.characters.size)) ?: 1293
-        return repository.getCharacter(randomCharId).data
+    suspend fun getFourClanCharacter(): Resource<List<Character?>> { //4 tane klan arasından bana karakter döndürücek
+        val clanList = repository.getClanList(57)
+        val clanIdList = getFourRandomNumber(56)
+        val firstClan = clanList.data?.clans?.get(clanIdList[0])
+        val secondClan = clanList.data?.clans?.get(clanIdList[1])
+        val thirdClan = clanList.data?.clans?.get(clanIdList[2])
+        val lastClan = clanList.data?.clans?.get(clanIdList[3])
+        val firstCharacter =
+            firstClan?.characters?.get(Random.nextInt(0, firstClan.characters.size))
+                ?.let { repository.getCharacter(it) }?.data
+        val secondCharacter =
+            secondClan?.characters?.get(Random.nextInt(0, secondClan.characters.size))
+                ?.let { repository.getCharacter(it) }?.data
+        val thirdCharacter =
+            thirdClan?.characters?.get(Random.nextInt(0, thirdClan.characters.size))
+                ?.let { repository.getCharacter(it) }?.data
+        val lastCharacter =
+            lastClan?.characters?.get(Random.nextInt(0, lastClan.characters.size))
+                ?.let { repository.getCharacter(it) }?.data
+        return Resource.success(
+            listOf(
+                firstCharacter,
+                secondCharacter,
+                thirdCharacter,
+                lastCharacter
+            )
+        )
     }
 
     suspend fun kekkeiGame() {
