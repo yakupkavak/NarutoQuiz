@@ -3,7 +3,9 @@ package com.example.narutoquiz.domain.extension
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.narutoquiz.R
+import com.example.narutoquiz.data.model.Clans
 import com.example.narutoquiz.data.model.Family
+import com.example.narutoquiz.data.model.Personal
 import com.example.narutoquiz.data.model.VoiceActors
 import kotlin.reflect.KProperty1
 
@@ -48,12 +50,5 @@ fun VoiceActors.getFirstNonNullField(): Pair<String, String>? {
         }
     return null
 }
-
-
-fun getPokemonId(url: String): Int{
-    val matchResult = """.*/(\d+)/?$""".toRegex().find(url)
-    return matchResult?.groupValues?.get(1)?.toIntOrNull() ?: 0
-}
-
 
 
