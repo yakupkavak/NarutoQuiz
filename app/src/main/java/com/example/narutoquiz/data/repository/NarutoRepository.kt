@@ -38,8 +38,8 @@ class NarutoRepository @Inject constructor(
     suspend fun getVillage(villageId: Int) =
         fetchData { narutoService.villageSearch(villageId) }
 
-    suspend fun getTeamList(pageNum: Int) =
-        fetchData { narutoService.teamList(pageNum) }
+    suspend fun getTeamList(pageSize: Int) =
+        fetchData { narutoService.teamList(pageSize) }
 
     suspend fun getTeam(teamId: Int) =
         fetchData { narutoService.teamSearch(teamId) }
