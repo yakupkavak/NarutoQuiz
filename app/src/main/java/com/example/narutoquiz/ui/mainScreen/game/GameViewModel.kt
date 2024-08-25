@@ -6,9 +6,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.narutoquiz.R
 import com.example.narutoquiz.data.model.Akatsuki
 import com.example.narutoquiz.data.model.Character
-import com.example.narutoquiz.data.model.Characters
-import com.example.narutoquiz.data.model.Clans
-import com.example.narutoquiz.data.model.GroupModel
 import com.example.narutoquiz.data.model.SelectionModel
 import com.example.narutoquiz.data.repository.NarutoRepository
 import com.example.narutoquiz.data.util.Resource
@@ -116,7 +113,7 @@ class GameViewModel @Inject constructor(
     }
 
     fun characterGame() {
-        getCharacterCall(
+        getDataCall(
             { getFourRandomCharacter() },
             { characterList ->
                 if (characterList != null) {
@@ -167,7 +164,7 @@ class GameViewModel @Inject constructor(
     }
 
     private fun akatsukiGame() {
-        getCharacterCall(
+        getDataCall(
             { getFourAkatsukiCharacter() },
             { characterList ->
                 if (characterList != null) {
@@ -315,7 +312,7 @@ class GameViewModel @Inject constructor(
     }
 
     private fun clanGame() {
-        getCharacterCall(
+        getDataCall(
             { getFourClanCharacter() },
             { characterList ->
                 if (characterList != null) {
@@ -398,7 +395,7 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    suspend fun getFourClanCharacter(): Resource<List<Character?>> { //4 tane klan arasından bana karakter döndürücek
+    suspend fun getFourClanCharacter(): Resource<List<Character?>> {
         val clanList = repository.getClanList(57)
         val clanIdList = getFourRandomNumber(56)
         val firstClan = clanList.data?.clans?.get(clanIdList[0])
@@ -427,11 +424,121 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    suspend fun kekkeiGame() {
-
+    fun teamGame() {
+        getDataCall(
+            { getFourTeamCharacter() },
+            { characterList ->
+                if (characterList != null) {
+                    askTeam(characterList)
+                }
+            },
+            null,
+            null
+        )
     }
 
-    suspend fun teamGame() {
+    private fun askTeam(characterList: List<Character?>) {
+        val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
+        val firstCharacter = characterList[0]
+        val secondCharacter = characterList[1]
+        val thirdCharacter = characterList[2]
+        val lastCharacter = characterList[3]
+
+        if (firstCharacter != null) {
+            _questionText.postValue(
+                "Which one's team name" + " is ${firstCharacter.personal?.team?.get(0)}"
+            )
+        }
+
+        if (firstCharacter != null) {
+            val imageUrl = if (!firstCharacter.images.isNullOrEmpty()) {
+                firstCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
+            options[0].postValue(
+                SelectionModel(
+                    imageUrl,
+                    firstCharacter.name,
+                    true
+                )
+            )
+        }
+        if (secondCharacter != null) {
+            val imageUrl = if (!secondCharacter.images.isNullOrEmpty()) {
+                secondCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
+            options[1].postValue(
+                SelectionModel(
+                    imageUrl,
+                    secondCharacter.name,
+                    false
+                )
+            )
+        }
+        if (thirdCharacter != null) {
+            val imageUrl = if (!thirdCharacter.images.isNullOrEmpty()) {
+                thirdCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
+            options[2].postValue(
+                SelectionModel(
+                    imageUrl,
+                    thirdCharacter.name,
+                    false
+                )
+            )
+        }
+        if (lastCharacter != null) {
+            val imageUrl = if (!lastCharacter.images.isNullOrEmpty()) {
+                lastCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
+            options[3].postValue(
+                SelectionModel(
+                    imageUrl,
+                    lastCharacter.name,
+                    false
+                )
+            )
+        }
+    }
+
+    suspend fun getFourTeamCharacter(): Resource<List<Character?>> {
+        val teamList = repository.getTeamList(150)
+        val teamIdList = getFourRandomNumber(149)
+        teamList.data
+        val firstTeam = teamList.data?.teams?.get(teamIdList[0])
+        val secondTeam = teamList.data?.teams?.get(teamIdList[1])
+        val thirdTeam = teamList.data?.teams?.get(teamIdList[2])
+        val lastTeam = teamList.data?.teams?.get(teamIdList[3])
+        val firstCharacter =
+            firstTeam?.characters?.get(Random.nextInt(0, firstTeam.characters.size))
+                ?.let { repository.getCharacter(it) }?.data
+        val secondCharacter =
+            secondTeam?.characters?.get(Random.nextInt(0, secondTeam.characters.size))
+                ?.let { repository.getCharacter(it) }?.data
+        val thirdCharacter =
+            thirdTeam?.characters?.get(Random.nextInt(0, thirdTeam.characters.size))
+                ?.let { repository.getCharacter(it) }?.data
+        val lastCharacter =
+            lastTeam?.characters?.get(Random.nextInt(0, lastTeam.characters.size))
+                ?.let { repository.getCharacter(it) }?.data
+        return Resource.success(
+            listOf(
+                firstCharacter,
+                secondCharacter,
+                thirdCharacter,
+                lastCharacter
+            )
+        )
+    }
+
+    fun kekkeiGame() {
 
     }
 

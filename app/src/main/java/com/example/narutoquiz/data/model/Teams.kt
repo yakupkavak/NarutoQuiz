@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 data class Teams(
     @JsonProperty("teams")
-    val clans: List<GroupModel>,
+    val teams: List<GroupModel>,
     @JsonProperty("currentPage")
     val currentPage: Int,
     @JsonProperty("pageSize")

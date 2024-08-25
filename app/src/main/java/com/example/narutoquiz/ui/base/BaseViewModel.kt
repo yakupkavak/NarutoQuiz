@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 
 open class BaseViewModel : ViewModel() {
 
-    fun <T> getCharacterCall(
+    fun <T> getDataCall(
         dataCall: suspend () -> Resource<T>,
         onSuccess: (suspend (T?) -> Unit)?,
         onError: (suspend () -> Unit)?,
