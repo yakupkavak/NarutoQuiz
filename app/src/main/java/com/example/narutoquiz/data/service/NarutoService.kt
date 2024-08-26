@@ -42,7 +42,6 @@ interface NarutoService {
 
     @GET("/tailed-beasts")
     suspend fun tailedList(
-        @Query("page") pageNumber: Int,
     ): Response<TailedBeast>
 
     @GET("/kekkei-genkai")
