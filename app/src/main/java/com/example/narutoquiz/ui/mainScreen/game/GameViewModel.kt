@@ -75,10 +75,6 @@ class GameViewModel @Inject constructor(
                     clanGame()
                 }
 
-                4 -> {
-                    kekkeiGame()
-                }
-
                 5 -> {
                     tailedGame()
                 }
@@ -112,7 +108,7 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    fun characterGame() {
+    private fun characterGame() {
         getDataCall(
             { getFourRandomCharacter() },
             { characterList ->
@@ -395,7 +391,7 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    suspend fun getFourClanCharacter(): Resource<List<Character?>> {
+    private suspend fun getFourClanCharacter(): Resource<List<Character?>> {
         val clanList = repository.getClanList(57)
         val clanIdList = getFourRandomNumber(56)
         val firstClan = clanList.data?.clans?.get(clanIdList[0])
@@ -424,7 +420,7 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    fun teamGame() {
+    private fun teamGame() {
         getDataCall(
             { getFourTeamCharacter() },
             { characterList ->
@@ -508,10 +504,9 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    suspend fun getFourTeamCharacter(): Resource<List<Character?>> {
+    private suspend fun getFourTeamCharacter(): Resource<List<Character?>> {
         val teamList = repository.getTeamList(150)
         val teamIdList = getFourRandomNumber(149)
-        teamList.data
         val firstTeam = teamList.data?.teams?.get(teamIdList[0])
         val secondTeam = teamList.data?.teams?.get(teamIdList[1])
         val thirdTeam = teamList.data?.teams?.get(teamIdList[2])
@@ -538,16 +533,105 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    fun kekkeiGame() {
-
+    private fun tailedGame() {
+        getDataCall(
+            { getFourTailCharacter() },
+            { characterList ->
+                if (characterList != null) {
+                    askJinckuri(characterList)
+                }
+            },
+            null,
+            null
+        )
     }
 
-    suspend fun tailedGame() {
+    private fun askJinckuri(characterList: List<Character?>) {
+        val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
+        val firstCharacter = characterList[0]
+        val secondCharacter = characterList[1]
+        val thirdCharacter = characterList[2]
+        val lastCharacter = characterList[3]
 
+        if (firstCharacter != null) {
+            _questionText.postValue(
+                "Which one's jinchuriki name" + " is ${firstCharacter.personal?.jinchuriki?.get(0)}"
+            )
+        }
+
+        if (firstCharacter != null) {
+            val imageUrl = if (!firstCharacter.images.isNullOrEmpty()) {
+                firstCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
+            options[0].postValue(
+                SelectionModel(
+                    imageUrl,
+                    firstCharacter.name,
+                    true
+                )
+            )
+        }
+        if (secondCharacter != null) {
+            val imageUrl = if (!secondCharacter.images.isNullOrEmpty()) {
+                secondCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
+            options[1].postValue(
+                SelectionModel(
+                    imageUrl,
+                    secondCharacter.name,
+                    false
+                )
+            )
+        }
+        if (thirdCharacter != null) {
+            val imageUrl = if (!thirdCharacter.images.isNullOrEmpty()) {
+                thirdCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
+            options[2].postValue(
+                SelectionModel(
+                    imageUrl,
+                    thirdCharacter.name,
+                    false
+                )
+            )
+        }
+        if (lastCharacter != null) {
+            val imageUrl = if (!lastCharacter.images.isNullOrEmpty()) {
+                lastCharacter.images[0]
+            } else {
+                R.string.emptyImageUrl.toString()
+            }
+            options[3].postValue(
+                SelectionModel(
+                    imageUrl,
+                    lastCharacter.name,
+                    false
+                )
+            )
+        }
     }
 
-    suspend fun villageGame() {
-
+    private suspend fun getFourTailCharacter(): Resource<List<Character?>> {
+        val tailList = repository.getTailedBeastList()
+        val tailIdList = getFourRandomNumber(9)
+        val firstTail = tailList.data?.tailedBeasts?.get(tailIdList[0])
+        val secondTail = tailList.data?.tailedBeasts?.get(tailIdList[1])
+        val thirdTail = tailList.data?.tailedBeasts?.get(tailIdList[2])
+        val lastTail = tailList.data?.tailedBeasts?.get(tailIdList[3])
+        return Resource.success(
+            listOf(
+                firstTail,
+                secondTail,
+                thirdTail,
+                lastTail
+            )
+        )
     }
 
 }

@@ -38,5 +38,7 @@ data class Personal(
     @JsonProperty("titles")
     val titles: List<String>?,
     @JsonProperty("weight")
-    val weight: Weight?
+    val weight: Weight?,
+    @JsonProperty("jinchūriki")
+    val jinchuriki: List<String>?,
 )
