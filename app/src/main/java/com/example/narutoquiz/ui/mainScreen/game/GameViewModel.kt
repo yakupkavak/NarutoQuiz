@@ -5,7 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.narutoquiz.R
 import com.example.narutoquiz.data.model.Akatsuki
+import com.example.narutoquiz.data.model.AnswerModel
 import com.example.narutoquiz.data.model.Character
+import com.example.narutoquiz.data.model.OptionModel
 import com.example.narutoquiz.data.model.SelectionModel
 import com.example.narutoquiz.data.repository.NarutoRepository
 import com.example.narutoquiz.data.util.Resource
@@ -63,20 +65,41 @@ class GameViewModel @Inject constructor(
     private val _currentGameTopic = MutableLiveData<String>()
     val currentGameTopic: LiveData<String> get() = _currentGameTopic
 
+    private val _answerSelection = MutableLiveData<AnswerModel>()
+    val answerSelection: LiveData<AnswerModel> get() = _answerSelection
+
+    private var trueAnswerId: Int? = null
+
     fun initializeGame(gameId: Int, gameTopic: String) {
         _currentGameId.value = gameId
         _currentGameTopic.value = gameTopic
     }
 
-    fun checkQuestion(){
-        if (firstOption.value?.trueAnswer == true){
-
-        }else if (secondOption.value?.trueAnswer == true){
-
-        }else if (thirdOption.value?.trueAnswer == true){
-
-        }else if (lastOption.value?.trueAnswer == true){
-
+    fun checkQuestion(selectedOptionId: Int) {
+        if (firstOption.value?.trueAnswer == true) {
+            if (selectedOptionId == 0) {
+                _answerSelection.postValue(AnswerModel(0, null))
+            } else {
+                _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
+            }
+        } else if (secondOption.value?.trueAnswer == true) {
+            if (selectedOptionId == 1) {
+                _answerSelection.postValue(AnswerModel(1, null))
+            } else {
+                _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
+            }
+        } else if (thirdOption.value?.trueAnswer == true) {
+            if (selectedOptionId == 2) {
+                _answerSelection.postValue(AnswerModel(2, null))
+            } else {
+                _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
+            }
+        } else if (lastOption.value?.trueAnswer == true) {
+            if (selectedOptionId == 3) {
+                _answerSelection.postValue(AnswerModel(3, null))
+            } else {
+                _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
+            }
         }
     }
 
@@ -147,7 +170,12 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askFamily(characterList: List<Character>) {
-        val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
+        val options = listOf(
+            OptionModel(0, _firstOption),
+            OptionModel(1, _secondOption),
+            OptionModel(2, _thirdOption),
+            OptionModel(3, _lastOption)
+        ).shuffled()
         val nonNullPair: Pair<String, String>?
         val firstCharacter = characterList[0]
         val secondCharacter = characterList[1]
@@ -162,22 +190,24 @@ class GameViewModel @Inject constructor(
             )
         }
 
-        options[0].postValue(
+        trueAnswerId = options[0].optionId
+
+        options[0].option.postValue(
             SelectionModel(
                 firstCharacter.images?.get(0), firstCharacter.name, true
             )
         )
-        options[1].postValue(
+        options[1].option.postValue(
             SelectionModel(
                 secondCharacter.images?.get(0), secondCharacter.name, false
             )
         )
-        options[2].postValue(
+        options[2].option.postValue(
             SelectionModel(
                 thirdCharacter.images?.get(0), thirdCharacter.name, false
             )
         )
-        options[3].postValue(
+        options[3].option.postValue(
             SelectionModel(
                 lastCharacter.images?.get(0), lastCharacter.name, false
             )
@@ -461,7 +491,6 @@ class GameViewModel @Inject constructor(
             )
         )
     }
-
 
     private fun teamGame() {
         getDataCall(

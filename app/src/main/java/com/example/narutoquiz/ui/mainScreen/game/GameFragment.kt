@@ -22,6 +22,7 @@ class GameFragment : Fragment() {
     private val binding get() = _binding!!
     private val args: GameFragmentArgs by navArgs()
     private val viewModel: GameViewModel by viewModels()
+    private var selectedOptionId = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +59,7 @@ class GameFragment : Fragment() {
                 cvOne.setOnClickListener {
                     clearSelection()
                     cvOne.setBackground(requireContext(), R.color.selected_answer)
+                    selectedOptionId = 0
                 }
             }
         }
@@ -68,6 +70,7 @@ class GameFragment : Fragment() {
                 cvTwo.setOnClickListener {
                     clearSelection()
                     cvTwo.setBackground(requireContext(), R.color.selected_answer)
+                    selectedOptionId = 1
                 }
             }
         }
@@ -78,6 +81,7 @@ class GameFragment : Fragment() {
                 cvThree.setOnClickListener {
                     clearSelection()
                     cvThree.setBackground(requireContext(), R.color.selected_answer)
+                    selectedOptionId = 2
                 }
             }
         }
@@ -88,11 +92,47 @@ class GameFragment : Fragment() {
                 cvFour.setOnClickListener {
                     clearSelection()
                     cvFour.setBackground(requireContext(), R.color.selected_answer)
+                    selectedOptionId = 3
                 }
             }
         }
         observe(viewModel.questionNumber) {
             binding.linearProgress.progress = it
+        }
+        observe(viewModel.answerSelection){
+            it.trueAnswer?.let { trueAnswerId -> // doğru seçtiğin zaman true_answer rengi oldu
+                when(trueAnswerId){
+                    0->{
+                        binding.cvOne.setBackground(requireContext(),R.color.true_answer)
+                    }
+                    1->{
+                        binding.cvTwo.setBackground(requireContext(),R.color.true_answer)
+                    }
+                    2->{
+                        binding.cvThree.setBackground(requireContext(),R.color.true_answer)
+                    }
+                    3->{
+                        binding.cvFour.setBackground(requireContext(),R.color.true_answer)
+                    }
+                }
+            }
+            it.falseAnswer?.let { falseAnswerId ->
+                println("yanlış seçilen"+falseAnswerId)
+                when(falseAnswerId){
+                    0->{
+                        binding.cvOne.setBackground(requireContext(),R.color.false_answer)
+                    }
+                    1->{
+                        binding.cvTwo.setBackground(requireContext(),R.color.false_answer)
+                    }
+                    2->{
+                        binding.cvThree.setBackground(requireContext(),R.color.false_answer)
+                    }
+                    3->{
+                        binding.cvFour.setBackground(requireContext(),R.color.false_answer)
+                    }
+                }
+            }
         }
     }
 
@@ -111,7 +151,11 @@ class GameFragment : Fragment() {
                 popBackStack()
             }
             btnCheck.setOnClickListener {
-                viewModel.nextQuestion()
+                if (selectedOptionId == -1){
+                    println("Allert dialog")
+                }else{
+                    viewModel.checkQuestion(selectedOptionId)
+                }
             }
         }
     }
