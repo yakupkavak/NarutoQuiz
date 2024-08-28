@@ -15,6 +15,9 @@
     <color name="design_color">#898989</color>
     <color name="trach_color">#4DFFFFFF</color>
     <color name="indicator_color">#FFFFFF</color>
+    <color name="true_answer">#FFFFFF</color>
+    <color name="false_answer">#000000</color>
+    <color name="selected_answer">#52893A</color>
 
     <!--Sign In General -->
     <color name="orange_300">#F29D35</color>

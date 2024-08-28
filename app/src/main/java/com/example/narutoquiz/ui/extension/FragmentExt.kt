@@ -14,3 +14,6 @@ fun <T> Fragment.observe(liveData: LiveData<T>, onChange: (T) -> Unit) {
         data?.let(onChange)
     }
 }
+fun Fragment.popBackStack(){
+    findNavController().popBackStack()
+}
