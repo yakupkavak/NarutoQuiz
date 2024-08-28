@@ -10,8 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.narutoquiz.R
 import com.example.narutoquiz.databinding.FragmentSigninBinding
 import com.example.narutoquiz.ui.extension.navigate
-import com.example.narutoquiz.ui.mainScreen.MainScreen
-import com.example.narutoquiz.ui.userLogIn.login.SignUpFragmentDirections
+import com.example.narutoquiz.ui.mainScreen.MainActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -64,7 +63,7 @@ class SigninFragment : Fragment() {
                                 getString(R.string.sign_success),
                                 Toast.LENGTH_LONG
                             ).show()
-                            Intent(requireContext(), MainScreen::class.java).also {
+                            Intent(requireContext(), MainActivity::class.java).also {
                                 startActivity(it)
                             }
                             requireActivity().finish()

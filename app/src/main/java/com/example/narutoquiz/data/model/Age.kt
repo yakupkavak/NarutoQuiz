@@ -14,7 +14,7 @@ data class Age(
     @JsonProperty("Chunin Promotion")
     val chuninPromotion: String?,
     @JsonProperty("Part I")
-    val partI: String?,
+    val partOne: String?,
     @JsonProperty("Part II")
-    val partII: String?
+    val partTwo: String?
 )

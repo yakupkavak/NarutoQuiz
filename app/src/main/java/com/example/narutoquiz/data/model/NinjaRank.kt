@@ -8,7 +8,7 @@ data class NinjaRank(
     @JsonProperty("Gaiden")
     val gaiden: String?,
     @JsonProperty("Part I")
-    val partI: String?,
+    val partOne: String?,
     @JsonProperty("Part II")
-    val partII: String?
+    val partTwo: String?
 )

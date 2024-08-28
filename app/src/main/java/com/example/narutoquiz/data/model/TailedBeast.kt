@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 data class TailedBeast(
     @JsonProperty("tailed-beasts")
-    val tailedBeasts: List<Character>,
+    val tailedBeasts: List<Character>?,
     @JsonProperty("currentPage")
-    val currentPage: Int,
+    val currentPage: Int?,
     @JsonProperty("pageSize")
-    val pageSize: Int,
+    val pageSize: Int?,
     @JsonProperty("total")
-    val total: Int
+    val total: Int?,
 )

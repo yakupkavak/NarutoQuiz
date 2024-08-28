@@ -5,7 +5,6 @@ import com.example.narutoquiz.data.model.Character
 import com.example.narutoquiz.data.model.Characters
 import com.example.narutoquiz.data.model.Clans
 import com.example.narutoquiz.data.model.GroupModel
-import com.example.narutoquiz.data.model.KekkeiGenkai
 import com.example.narutoquiz.data.model.TailedBeast
 import com.example.narutoquiz.data.model.Teams
 import retrofit2.Response
@@ -43,26 +42,6 @@ interface NarutoService {
     @GET("/tailed-beasts")
     suspend fun tailedList(
     ): Response<TailedBeast>
-
-    @GET("/kekkei-genkai")
-    suspend fun kekkeiList(
-        @Query("page") pageNumber: Int,
-    ): Response<KekkeiGenkai>
-
-    @GET("/kekkei-genkai/{id}/")
-    suspend fun kekkeiSearch(
-        @Path("id") searchQuery: Int,
-    ): Response<GroupModel>
-
-    @GET("/villages")
-    suspend fun villageList(
-        @Query("page") pageNumber: Int,
-    ): Response<KekkeiGenkai>
-
-    @GET("/villages/{id}/")
-    suspend fun villageSearch(
-        @Path("id") searchQuery: Int,
-    ): Response<GroupModel>
 
     @GET("/teams")
     suspend fun teamList(

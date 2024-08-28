@@ -3,7 +3,7 @@ package com.example.narutoquiz.data.util
 data class Resource<out T>(val status: Status, val data: T?) {
 
     companion object {
-        fun <T> success(data: T): Resource<T> {
+        fun <T> success(data: T?): Resource<T> {
             return Resource(Status.SUCCESS, data)
         }
 

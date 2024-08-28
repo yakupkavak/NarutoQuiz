@@ -1,6 +1,10 @@
 package com.example.narutoquiz.ui.extension
 
-fun getFourRandomNumber(range: Int): List<Int>{
-    val numbers = (1..range).toList()
-    return numbers.shuffled().take(4)
+fun getRandomNumList(limit: Int, range: Int): List<Int> {
+    return if (limit > 0) {
+        val numbers = (1..range).toList()
+        numbers.shuffled().take(limit)
+    } else {
+        listOf()
+    }
 }
