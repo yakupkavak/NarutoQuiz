@@ -10,16 +10,20 @@
         android:name="com.example.narutoquiz.ui.mainScreen.feedlist.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
+
         <action
             android:id="@+id/action_feedFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
+
         <action
             android:id="@+id/action_feedFragment_to_tierFragment"
             app:destination="@id/tierFragment" />
+
         <action
             android:id="@+id/action_feedFragment_to_userInfo"
             app:destination="@id/userInfo" />
     </fragment>
+
     <fragment
         android:id="@+id/gameFragment"
         android:name="com.example.narutoquiz.ui.mainScreen.game.GameFragment"
@@ -28,13 +32,16 @@
         <action
             android:id="@+id/action_gameFragment_to_feedFragment"
             app:destination="@id/feedFragment" />
+
         <argument
             android:name="gameId"
             app:argType="integer" />
+
         <argument
             android:name="gameTopic"
             app:argType="string" />
     </fragment>
+
     <fragment
         android:id="@+id/tierFragment"
         android:name="com.example.narutoquiz.ui.mainScreen.tierList.TierFragment"
@@ -44,14 +51,17 @@
             android:id="@+id/action_tierFragment_to_userInfo"
             app:destination="@id/userInfo" />
     </fragment>
+
     <fragment
         android:id="@+id/userInfo"
         android:name="com.example.narutoquiz.ui.mainScreen.userinfo.UserInfoFragment"
         android:label="fragment_user_info"
         tools:layout="@layout/fragment_user_info" >
+
         <action
             android:id="@+id/action_userInfo_to_feedFragment"
             app:destination="@id/feedFragment" />
+
         <action
             android:id="@+id/action_userInfo_to_tierFragment"
             app:destination="@id/tierFragment" />

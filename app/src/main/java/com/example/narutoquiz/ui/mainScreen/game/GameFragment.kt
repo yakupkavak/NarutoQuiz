@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.narutoquiz.R
 import com.example.narutoquiz.databinding.FragmentGameBinding
 import com.example.narutoquiz.domain.extension.getUrl
 import com.example.narutoquiz.ui.extension.observe
+import com.example.narutoquiz.ui.extension.popBackStack
+import com.example.narutoquiz.ui.extension.setBackground
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,14 +21,10 @@ class GameFragment : Fragment() {
     private var _binding: FragmentGameBinding? = null
     private val binding get() = _binding!!
     private val args: GameFragmentArgs by navArgs()
-    private val viewModel : GameViewModel by viewModels()
-    private var gameId: Int = 0
-    private var gameTopic: String = ""
+    private val viewModel: GameViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        gameId = args.gameId
-        gameTopic = args.gameTopic
     }
 
     override fun onCreateView(
@@ -40,50 +38,77 @@ class GameFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.tvTopic.text = gameTopic
+        viewModel.initializeGame(args.gameId, args.gameTopic)
         setOnClick()
         setObserve()
     }
 
-    private fun setObserve(){
-        viewModel.startGame(gameId)
-        observe(viewModel.questionText){
+    private fun setObserve() {
+        viewModel.startGame()
+        observe(viewModel.currentGameTopic) {
+            binding.tvTopic.text = it
+        }
+        observe(viewModel.questionText) {
             binding.tvQuestion.text = it
         }
-        observe(viewModel.firstOption){
-            with(binding){
+        observe(viewModel.firstOption) {
+            with(binding) {
                 ivOne.getUrl(it.imageUrl ?: "")
-                println(it.imageUrl)
-                tvOne.text = it.characterName ?: "Null"
+                tvOne.text = it.characterName ?: ""
+                cvOne.setOnClickListener {
+                    clearSelection()
+                    cvOne.setBackground(requireContext(), R.color.selected_answer)
+                }
             }
         }
-        observe(viewModel.secondOption){
-            with(binding){
+        observe(viewModel.secondOption) {
+            with(binding) {
                 ivTwo.getUrl(it.imageUrl ?: "")
-                tvTwo.text = it.characterName ?: "Null"
+                tvTwo.text = it.characterName ?: ""
+                cvTwo.setOnClickListener {
+                    clearSelection()
+                    cvTwo.setBackground(requireContext(), R.color.selected_answer)
+                }
             }
         }
-        observe(viewModel.thirdOption){
-            with(binding){
+        observe(viewModel.thirdOption) {
+            with(binding) {
                 ivThree.getUrl(it.imageUrl ?: "")
-                tvThree.text = it.characterName ?: "Null"
+                tvThree.text = it.characterName ?: ""
+                cvThree.setOnClickListener {
+                    clearSelection()
+                    cvThree.setBackground(requireContext(), R.color.selected_answer)
+                }
             }
         }
-        observe(viewModel.lastOption){
-            with(binding){
+        observe(viewModel.lastOption) {
+            with(binding) {
                 ivFour.getUrl(it.imageUrl ?: "")
-                tvFour.text = it.characterName ?: "Null"
+                tvFour.text = it.characterName ?: ""
+                cvFour.setOnClickListener {
+                    clearSelection()
+                    cvFour.setBackground(requireContext(), R.color.selected_answer)
+                }
             }
         }
-        observe(viewModel.questionNumber){
+        observe(viewModel.questionNumber) {
             binding.linearProgress.progress = it
         }
     }
 
-    private fun setOnClick(){
-        with(binding){
+    private fun clearSelection() {
+        with(binding) {
+            cvOne.setBackground(requireContext(), R.color.system_background)
+            cvTwo.setBackground(requireContext(), R.color.system_background)
+            cvThree.setBackground(requireContext(), R.color.system_background)
+            cvFour.setBackground(requireContext(), R.color.system_background)
+        }
+    }
+
+    private fun setOnClick() {
+        with(binding) {
             fabClose.setOnClickListener {
-                findNavController().popBackStack()
+                popBackStack()
             }
             btnCheck.setOnClickListener {
                 viewModel.nextQuestion()
