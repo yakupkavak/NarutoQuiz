@@ -20,7 +20,7 @@ data class Personal(
     @JsonProperty("kekkeiGenkai")
     val kekkeiGenkai: List<String>?,
     @JsonProperty("kekkeiMōra")
-    val kekkeiMōra: List<String>?,
+    val kekkeiMora: List<String>?,
     @JsonProperty("occupation")
     val occupation: List<String>?,
     @JsonProperty("partner")

@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName
 
 data class KekkeiGenkai(
     @SerializedName("kekkei-genkai")
-    val clans: List<GroupModel>,
+    val clans: List<GroupModel>?,
     @SerializedName("currentPage")
-    val currentPage: Int,
+    val currentPage: Int?,
     @SerializedName("pageSize")
-    val pageSize: Int,
+    val pageSize: Int?,
     @SerializedName("total")
-    val total: Int
+    val total: Int?,
 )

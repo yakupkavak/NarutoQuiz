@@ -17,26 +17,11 @@ class NarutoRepository @Inject constructor(
     suspend fun getClanList(pageSize: Int) =
         fetchData { narutoService.clanList(pageSize) }
 
-    suspend fun getClan(clanId: Int) =
-        fetchData { narutoService.clanSearch(clanId) }
-
     suspend fun getAkatsukiList(pageSize: Int) =
         fetchData { narutoService.akatsukiList(pageSize) }
 
     suspend fun getTailedBeastList() =
         fetchData { narutoService.tailedList() }
-
-    suspend fun getKekkeiGenkaiList(pageNum: Int) =
-        fetchData { narutoService.kekkeiList(pageNum) }
-
-    suspend fun getKekkeiGenkai(kekkeiId: Int) =
-        fetchData { narutoService.kekkeiSearch(kekkeiId) }
-
-    suspend fun getVillageList(pageNum: Int) =
-        fetchData { narutoService.villageList(pageNum) }
-
-    suspend fun getVillage(villageId: Int) =
-        fetchData { narutoService.villageSearch(villageId) }
 
     suspend fun getTeamList(pageSize: Int) =
         fetchData { narutoService.teamList(pageSize) }

@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty
 
 data class Akatsuki(
     @JsonProperty("akatsuki")
-    val akatsuki: List<Character>,
+    val akatsuki: List<Character>?,
     @JsonProperty("currentPage")
-    val currentPage: Int,
+    val currentPage: Int?,
     @JsonProperty("pageSize")
-    val pageSize: Int,
+    val pageSize: Int?,
     @JsonProperty("total")
-    val total: Int
+    val total: Int?,
 )

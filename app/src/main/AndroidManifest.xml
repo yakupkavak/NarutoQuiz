@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
-        android:name=".ui.main.HiltActivityClass"
+        android:name=".ui.main.NarutoQuizApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,7 +16,7 @@
         android:theme="@style/Theme.General"
         tools:targetApi="31">
         <activity
-            android:name=".ui.mainScreen.MainScreen"
+            android:name=".ui.mainScreen.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.userLogIn.SignActivity"
