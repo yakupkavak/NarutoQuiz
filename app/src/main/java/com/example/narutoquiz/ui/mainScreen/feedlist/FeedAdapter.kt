@@ -58,5 +58,4 @@ class FeedAdapter : Adapter<FeedAdapter.FeedViewHolder>() {
     override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
         holder.bind(asyncListDiffer.currentList[position])
     }
-
 }

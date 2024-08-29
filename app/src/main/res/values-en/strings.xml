@@ -49,5 +49,10 @@
     <string name="first_option">First option</string>
     <string name="second_option">Second Option</string>
     <string name="check">Check</string>
+    <string name="leaders">Leaders</string>
+    <string name="classic_game">Classic Game</string>
+    <string name="rank">Rank</string>
+    <string name="player">Player</string>
+    <string name="score">Score</string>
 
 </resources>

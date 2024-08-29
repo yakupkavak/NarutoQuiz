@@ -9,22 +9,22 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="system_background">#D96E30</color>
+    <color name="system_background">#011F26</color>
     <color name="textColor">#1F1F1F</color>
     <color name="corner_color">#595959</color>
     <color name="design_color">#898989</color>
     <color name="trach_color">#4DFFFFFF</color>
     <color name="indicator_color">#FFFFFF</color>
-    <color name="true_answer">#369D40</color>
-    <color name="false_answer">#FF0000</color>
-    <color name="selected_answer">#3E759B</color>
+    <color name="true_answer">#1D6B24</color>
+    <color name="false_answer">#6F1010</color>
+    <color name="selected_answer">#064452</color>
 
     <!--Sign In General -->
-    <color name="orange_300">#F29D35</color>
-    <color name="orange_500">#FDCE93</color>
-    <color name="stroke">#FFC278</color>
-    <color name="color_three">#BF533B</color>
-    <color name="edit_text_background">#00FFFFFF</color>
+    <color name="orange_300">#89D1D9</color>
+    <color name="orange_500">#3A848C</color>
+    <color name="stroke">#89D1D9</color>
+    <color name="color_three">#033A40</color>
+    <color name="transparent">#00FFFFFF</color>
     <color name="hint_color">#EBE0DB</color>
 
     <color name="row_color">#F29C6B</color>

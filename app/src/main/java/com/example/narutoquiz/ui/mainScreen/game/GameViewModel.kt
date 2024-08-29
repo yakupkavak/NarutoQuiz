@@ -60,7 +60,7 @@ class GameViewModel @Inject constructor(
     val error: LiveData<Boolean> get() = _error
 
     private val _currentGameId = MutableLiveData<Int>()
-    val currentGameId: LiveData<Int> get() = _currentGameId
+    private val currentGameId: LiveData<Int> get() = _currentGameId
 
     private val _currentGameTopic = MutableLiveData<String>()
     val currentGameTopic: LiveData<String> get() = _currentGameTopic
@@ -76,6 +76,7 @@ class GameViewModel @Inject constructor(
     }
 
     fun checkQuestion(selectedOptionId: Int) {
+        println("selected option ->" + selectedOptionId)
         if (firstOption.value?.trueAnswer == true) {
             if (selectedOptionId == 0) {
                 _answerSelection.postValue(AnswerModel(0, null))
@@ -263,7 +264,13 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askVoiceActor(characterList: List<Character>) {
-        val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
+        val options = listOf(
+            OptionModel(0, _firstOption),
+            OptionModel(1, _secondOption),
+            OptionModel(2, _thirdOption),
+            OptionModel(3, _lastOption)
+        ).shuffled()
+
         val nonNullPair: Pair<String, String>?
         var firstCharacter = characterList[0]
         var secondCharacter = characterList[1]
@@ -305,22 +312,24 @@ class GameViewModel @Inject constructor(
             )
         }
 
-        options[0].postValue(
+        trueAnswerId = options[0].optionId
+
+        options[0].option.postValue(
             SelectionModel(
                 firstCharacter.images?.get(0), firstCharacter.name, true
             )
         )
-        options[1].postValue(
+        options[1].option.postValue(
             SelectionModel(
                 secondCharacter.images?.get(0), secondCharacter.name, false
             )
         )
-        options[2].postValue(
+        options[2].option.postValue(
             SelectionModel(
                 thirdCharacter.images?.get(0), thirdCharacter.name, false
             )
         )
-        options[3].postValue(
+        options[3].option.postValue(
             SelectionModel(
                 lastCharacter.images?.get(0), lastCharacter.name, false
             )
@@ -361,21 +370,14 @@ class GameViewModel @Inject constructor(
         return charList?.get(Random.nextInt(0, pageSize ?: 19)) ?: getNullCharacter()
     }
 
-    private fun clanGame() {
-        getDataCall(
-            { getFourClanCharacter() },
-            { characterList ->
-                if (characterList != null) {
-                    askClan(characterList)
-                }
-            },
-            null,
-            null
-        )
-    }
-
     private fun askClan(characterList: List<Character?>) {
-        val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
+        val options = listOf(
+            OptionModel(0, _firstOption),
+            OptionModel(1, _secondOption),
+            OptionModel(2, _thirdOption),
+            OptionModel(3, _lastOption)
+        ).shuffled()
+
         val firstCharacter = characterList[0]
         val secondCharacter = characterList[1]
         val thirdCharacter = characterList[2]
@@ -387,13 +389,15 @@ class GameViewModel @Inject constructor(
             )
         }
 
+        trueAnswerId = options[0].optionId
+
         if (firstCharacter != null) {
             val imageUrl = if (!firstCharacter.images.isNullOrEmpty()) {
                 firstCharacter.images[0]
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[0].postValue(
+            options[0].option.postValue(
                 SelectionModel(
                     imageUrl,
                     firstCharacter.name,
@@ -407,7 +411,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[1].postValue(
+            options[1].option.postValue(
                 SelectionModel(
                     imageUrl,
                     secondCharacter.name,
@@ -421,7 +425,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[2].postValue(
+            options[2].option.postValue(
                 SelectionModel(
                     imageUrl,
                     thirdCharacter.name,
@@ -435,7 +439,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[3].postValue(
+            options[3].option.postValue(
                 SelectionModel(
                     imageUrl,
                     lastCharacter.name,
@@ -443,6 +447,22 @@ class GameViewModel @Inject constructor(
                 )
             )
         }
+    }
+
+    private fun clanGame() {
+        getDataCall(dataCall = { getFourClanCharacter() },
+            onSuccess = { characterList ->
+                if (characterList != null) {
+                    askClan(characterList)
+                }
+            },
+            onError = {
+                println("error allert")
+            },
+            onLoading = {
+
+            }
+        )
     }
 
     private suspend fun getFourClanCharacter(): Resource<List<Character?>> {
@@ -481,7 +501,6 @@ class GameViewModel @Inject constructor(
             }
             lastCharacter = getLastCharacter.await()
         }
-
         return Resource.success(
             listOf(
                 firstCharacter,
@@ -506,7 +525,12 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askTeam(characterList: List<Character?>) {
-        val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
+        val options = listOf(
+            OptionModel(0, _firstOption),
+            OptionModel(1, _secondOption),
+            OptionModel(2, _thirdOption),
+            OptionModel(3, _lastOption)
+        ).shuffled()
         val firstCharacter = characterList[0]
         val secondCharacter = characterList[1]
         val thirdCharacter = characterList[2]
@@ -517,6 +541,7 @@ class GameViewModel @Inject constructor(
                 "Which one's team name" + " is ${firstCharacter.personal?.team?.get(0)}"
             )
         }
+        trueAnswerId = options[0].optionId
 
         if (firstCharacter != null) {
             val imageUrl = if (!firstCharacter.images.isNullOrEmpty()) {
@@ -524,7 +549,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[0].postValue(
+            options[0].option.postValue(
                 SelectionModel(
                     imageUrl,
                     firstCharacter.name,
@@ -538,7 +563,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[1].postValue(
+            options[1].option.postValue(
                 SelectionModel(
                     imageUrl,
                     secondCharacter.name,
@@ -552,7 +577,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[2].postValue(
+            options[2].option.postValue(
                 SelectionModel(
                     imageUrl,
                     thirdCharacter.name,
@@ -566,7 +591,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[3].postValue(
+            options[3].option.postValue(
                 SelectionModel(
                     imageUrl,
                     lastCharacter.name,
@@ -619,7 +644,13 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askJinckuri(characterList: List<Character?>) {
-        val options = listOf(_firstOption, _secondOption, _thirdOption, _lastOption).shuffled()
+        val options = listOf(
+            OptionModel(0, _firstOption),
+            OptionModel(1, _secondOption),
+            OptionModel(2, _thirdOption),
+            OptionModel(3, _lastOption)
+        ).shuffled()
+
         val firstCharacter = characterList[0]
         val secondCharacter = characterList[1]
         val thirdCharacter = characterList[2]
@@ -630,6 +661,7 @@ class GameViewModel @Inject constructor(
                 "Which one's jinchuriki name" + " is ${firstCharacter.personal?.jinchuriki?.get(0)}"
             )
         }
+        trueAnswerId = options[0].optionId
 
         if (firstCharacter != null) {
             val imageUrl = if (!firstCharacter.images.isNullOrEmpty()) {
@@ -637,7 +669,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[0].postValue(
+            options[0].option.postValue(
                 SelectionModel(
                     imageUrl,
                     firstCharacter.name,
@@ -651,7 +683,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[1].postValue(
+            options[1].option.postValue(
                 SelectionModel(
                     imageUrl,
                     secondCharacter.name,
@@ -665,7 +697,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[2].postValue(
+            options[2].option.postValue(
                 SelectionModel(
                     imageUrl,
                     thirdCharacter.name,
@@ -679,7 +711,7 @@ class GameViewModel @Inject constructor(
             } else {
                 R.string.emptyImageUrl.toString()
             }
-            options[3].postValue(
+            options[3].option.postValue(
                 SelectionModel(
                     imageUrl,
                     lastCharacter.name,

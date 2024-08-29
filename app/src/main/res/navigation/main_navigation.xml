@@ -44,9 +44,9 @@
 
     <fragment
         android:id="@+id/tierFragment"
-        android:name="com.example.narutoquiz.ui.mainScreen.tierList.TierFragment"
+        android:name="com.example.narutoquiz.ui.mainScreen.rankList.RankFragment"
         android:label="fragment_tier"
-        tools:layout="@layout/fragment_tier" >
+        tools:layout="@layout/fragment_rank" >
         <action
             android:id="@+id/action_tierFragment_to_userInfo"
             app:destination="@id/userInfo" />

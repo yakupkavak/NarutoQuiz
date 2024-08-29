@@ -24,10 +24,6 @@ class GameFragment : Fragment() {
     private val viewModel: GameViewModel by viewModels()
     private var selectedOptionId = -1
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -100,7 +96,7 @@ class GameFragment : Fragment() {
             binding.linearProgress.progress = it
         }
         observe(viewModel.answerSelection){
-            it.trueAnswer?.let { trueAnswerId -> // doğru seçtiğin zaman true_answer rengi oldu
+            it.trueAnswer?.let { trueAnswerId ->
                 when(trueAnswerId){
                     0->{
                         binding.cvOne.setBackground(requireContext(),R.color.true_answer)
@@ -117,7 +113,6 @@ class GameFragment : Fragment() {
                 }
             }
             it.falseAnswer?.let { falseAnswerId ->
-                println("yanlış seçilen"+falseAnswerId)
                 when(falseAnswerId){
                     0->{
                         binding.cvOne.setBackground(requireContext(),R.color.false_answer)
@@ -138,10 +133,10 @@ class GameFragment : Fragment() {
 
     private fun clearSelection() {
         with(binding) {
-            cvOne.setBackground(requireContext(), R.color.system_background)
-            cvTwo.setBackground(requireContext(), R.color.system_background)
-            cvThree.setBackground(requireContext(), R.color.system_background)
-            cvFour.setBackground(requireContext(), R.color.system_background)
+            cvOne.setBackground(requireContext(), R.color.transparent)
+            cvTwo.setBackground(requireContext(), R.color.transparent)
+            cvThree.setBackground(requireContext(), R.color.transparent)
+            cvFour.setBackground(requireContext(), R.color.transparent)
         }
     }
 
