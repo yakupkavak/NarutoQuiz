@@ -14,18 +14,23 @@ open class BaseViewModel : ViewModel() {
         onError: (suspend () -> Unit)?,
         onLoading: (suspend () -> Unit)?
     ) = viewModelScope.launch {
-        when (dataCall().status) {
-            Status.SUCCESS -> {
+        try {
+            when (dataCall().status) {
+                Status.SUCCESS -> {
                     onSuccess?.invoke(dataCall().data)
-            }
+                }
 
-            Status.ERROR -> {
-                onError?.invoke()
-            }
+                Status.ERROR -> {
+                    onError?.invoke()
+                }
 
-            Status.LOADING -> {
-                onLoading?.invoke()
+                Status.LOADING -> {
+                    onLoading?.invoke()
+                }
             }
+        }catch (e:Exception){
+            e.printStackTrace()
+            onError?.invoke()
         }
     }
 }

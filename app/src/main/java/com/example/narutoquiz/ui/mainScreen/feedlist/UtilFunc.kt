@@ -10,9 +10,8 @@ fun getRowModelList(): List<FeedRowModel> {
         FeedRowModel(description = "Characters", imageResId = R.drawable.akatsuki, gameId = 1),
         FeedRowModel(description = "Akatsuki", imageResId = R.drawable.akatsuki, gameId = 2),
         FeedRowModel(description = "Village", imageResId = R.drawable.akatsuki, gameId = 3),
-        FeedRowModel(description = "Kekkei Genkai", imageResId = R.drawable.akatsuki, gameId = 4),
-        FeedRowModel(description = "Tailed Beast", imageResId = R.drawable.akatsuki, gameId = 5),
-        FeedRowModel(description = "Teams", imageResId = R.drawable.akatsuki, gameId = 6),
+        FeedRowModel(description = "Tailed Beast", imageResId = R.drawable.akatsuki, gameId = 4),
+        FeedRowModel(description = "Teams", imageResId = R.drawable.akatsuki, gameId = 5),
     )
 }
 
