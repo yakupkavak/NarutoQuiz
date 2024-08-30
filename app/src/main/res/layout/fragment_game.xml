@@ -7,6 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".ui.mainScreen.game.GameFragment">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_animation"
+        android:layout_width="@dimen/margin_xlarge"
+        android:layout_height="@dimen/margin_xlarge"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabClose"
         android:layout_width="wrap_content"

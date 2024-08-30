@@ -11,7 +11,6 @@ import com.example.narutoquiz.databinding.RankRowBinding
 
 class RankAdapter : Adapter<RankAdapter.RankViewHolder>() {
 
-    var onItemClick: (() -> Unit)? = null
 
     private val diffUtil = object : DiffUtil.ItemCallback<RankRowModel>() {
         override fun areItemsTheSame(oldItem: RankRowModel, newItem: RankRowModel): Boolean {
@@ -32,9 +31,9 @@ class RankAdapter : Adapter<RankAdapter.RankViewHolder>() {
     inner class RankViewHolder(private val binding: RankRowBinding) : ViewHolder(binding.root) {
         fun bind(data: RankRowModel) {
             with(binding) {
-                root.setOnClickListener {
-                    onItemClick?.invoke()
-                }
+                tvUserRank.text = data.userRank.toString()
+                tvUserName.text = data.userName
+                tvUserScore.text = data.userScore.toString()
             }
         }
     }
