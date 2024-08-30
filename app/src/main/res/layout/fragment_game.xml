@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/gradient_background_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_color"
     tools:context=".ui.mainScreen.game.GameFragment">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottie_animation"
+        android:id="@+id/lottie_animation_loading"
         android:layout_width="@dimen/margin_xlarge"
         android:layout_height="@dimen/margin_xlarge"
         android:visibility="gone"
@@ -19,6 +19,19 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/loading" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_animation_naruto"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_margin="@dimen/margin_xlarge"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gdlLastStartHorizontal"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/naruto" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabClose"
@@ -111,9 +124,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvTwo"
+        style="@style/CardStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        style="@style/CardStyle"
         app:layout_constraintBottom_toBottomOf="@id/gdlFirstEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlEndFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlEndStartVertical"
@@ -148,10 +161,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvThree"
+        style="@style/CardStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_small"
-        style="@style/CardStyle"
         app:layout_constraintBottom_toBottomOf="@id/gdlLastEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlFirstFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical"
@@ -185,10 +198,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvFour"
+        style="@style/CardStyle"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_small"
-        style="@style/CardStyle"
         app:layout_constraintBottom_toBottomOf="@id/gdlLastEndHorizontal"
         app:layout_constraintEnd_toStartOf="@id/gdlEndFinishVertical"
         app:layout_constraintStart_toStartOf="@id/gdlEndStartVertical"

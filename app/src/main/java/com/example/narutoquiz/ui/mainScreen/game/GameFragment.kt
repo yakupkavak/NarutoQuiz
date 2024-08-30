@@ -144,12 +144,20 @@ class GameFragment : Fragment() {
         observe(viewModel.loading) {
             if (it) {
                 setInvisible()
-                binding.lottieAnimation.isVisible = true
-                binding.lottieAnimation.playAnimation()
+                with(binding){
+                    lottieAnimationLoading.isVisible = true
+                    lottieAnimationNaruto.isVisible = true
+                    lottieAnimationLoading.playAnimation()
+                    lottieAnimationNaruto.playAnimation()
+                }
             } else {
                 setVisible()
-                binding.lottieAnimation.isVisible= false
-                binding.lottieAnimation.cancelAnimation()
+                with(binding){
+                    lottieAnimationLoading.isVisible = false
+                    lottieAnimationNaruto.isVisible = false
+                    lottieAnimationLoading.cancelAnimation()
+                    lottieAnimationNaruto.cancelAnimation()
+                }
             }
         }
     }
