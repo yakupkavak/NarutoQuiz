@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.narutoquiz.R
@@ -23,6 +24,7 @@ class GameFragment : Fragment() {
     private val args: GameFragmentArgs by navArgs()
     private val viewModel: GameViewModel by viewModels()
     private var selectedOptionId = -1
+    private var gameState = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -95,38 +97,59 @@ class GameFragment : Fragment() {
         observe(viewModel.questionNumber) {
             binding.linearProgress.progress = it
         }
-        observe(viewModel.answerSelection){
+        observe(viewModel.answerSelection) {
             it.trueAnswer?.let { trueAnswerId ->
-                when(trueAnswerId){
-                    0->{
-                        binding.cvOne.setBackground(requireContext(),R.color.true_answer)
+                when (trueAnswerId) {
+                    0 -> {
+                        binding.cvOne.setBackground(requireContext(), R.color.true_answer)
                     }
-                    1->{
-                        binding.cvTwo.setBackground(requireContext(),R.color.true_answer)
+
+                    1 -> {
+                        binding.cvTwo.setBackground(requireContext(), R.color.true_answer)
                     }
-                    2->{
-                        binding.cvThree.setBackground(requireContext(),R.color.true_answer)
+
+                    2 -> {
+                        binding.cvThree.setBackground(requireContext(), R.color.true_answer)
                     }
-                    3->{
-                        binding.cvFour.setBackground(requireContext(),R.color.true_answer)
+
+                    3 -> {
+                        binding.cvFour.setBackground(requireContext(), R.color.true_answer)
                     }
                 }
             }
             it.falseAnswer?.let { falseAnswerId ->
-                when(falseAnswerId){
-                    0->{
-                        binding.cvOne.setBackground(requireContext(),R.color.false_answer)
+                when (falseAnswerId) {
+                    0 -> {
+                        binding.cvOne.setBackground(requireContext(), R.color.false_answer)
                     }
-                    1->{
-                        binding.cvTwo.setBackground(requireContext(),R.color.false_answer)
+
+                    1 -> {
+                        binding.cvTwo.setBackground(requireContext(), R.color.false_answer)
                     }
-                    2->{
-                        binding.cvThree.setBackground(requireContext(),R.color.false_answer)
+
+                    2 -> {
+                        binding.cvThree.setBackground(requireContext(), R.color.false_answer)
                     }
-                    3->{
-                        binding.cvFour.setBackground(requireContext(),R.color.false_answer)
+
+                    3 -> {
+                        binding.cvFour.setBackground(requireContext(), R.color.false_answer)
                     }
                 }
+            }
+        }
+        observe(viewModel.trueAnswer) {
+        }
+        observe(viewModel.falseAnswer) {
+        }
+        observe(viewModel.loading) {
+            if (it) {
+                setInvisible()
+                binding.lottieAnimation.isVisible = true
+                binding.lottieAnimation.playAnimation()
+            } else {
+                setVisible()
+                binding.lottieAnimation.isVisible= false
+                binding.lottieAnimation.cancelAnimation()
             }
         }
     }
@@ -140,16 +163,75 @@ class GameFragment : Fragment() {
         }
     }
 
+    private fun falseFocusable() {
+        with(binding) {
+            cvOne.isClickable = false
+            cvTwo.isClickable = false
+            cvThree.isClickable = false
+            cvFour.isClickable = false
+        }
+    }
+
+    private fun trueFocusable() {
+        with(binding) {
+            cvOne.isClickable = true
+            cvTwo.isClickable = true
+            cvThree.isClickable = true
+            cvFour.isClickable = true
+        }
+    }
+
+    private fun setInvisible(){
+        with(binding){
+            tvQuestion.isVisible = false
+            cvOne.isVisible= false
+            cvTwo.isVisible = false
+            cvThree.isVisible =false
+            cvFour.isVisible = false
+            tvOne.isVisible = false
+            tvTwo.isVisible = false
+            tvThree.isVisible = false
+            tvFour.isVisible = false
+            btnCheck.isVisible = false
+        }
+    }
+
+    private fun setVisible(){
+        with(binding){
+            tvQuestion.isVisible = true
+            cvOne.isVisible= true
+            cvTwo.isVisible = true
+            cvThree.isVisible =true
+            cvFour.isVisible = true
+            tvOne.isVisible = true
+            tvTwo.isVisible = true
+            tvThree.isVisible = true
+            tvFour.isVisible = true
+            btnCheck.isVisible = true
+        }
+    }
+
     private fun setOnClick() {
         with(binding) {
             fabClose.setOnClickListener {
                 popBackStack()
             }
             btnCheck.setOnClickListener {
-                if (selectedOptionId == -1){
-                    println("Allert dialog")
-                }else{
-                    viewModel.checkQuestion(selectedOptionId)
+                if (gameState == 0) {
+                    if (selectedOptionId == -1) {
+                        println("Allert dialog")
+                    } else {
+                        viewModel.checkQuestion(selectedOptionId)
+                        gameState = 1
+                        btnCheck.text = getString(R.string.next)
+                        falseFocusable()
+                    }
+                } else {
+                    clearSelection()
+                    gameState = 0
+                    btnCheck.text = getString(R.string.check)
+                    trueFocusable()
+                    viewModel.nextQuestion()
                 }
             }
         }

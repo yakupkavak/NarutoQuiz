@@ -15,6 +15,7 @@ open class BaseViewModel : ViewModel() {
         onLoading: (suspend () -> Unit)?
     ) = viewModelScope.launch {
         try {
+            onLoading?.invoke()
             when (dataCall().status) {
                 Status.SUCCESS -> {
                     onSuccess?.invoke(dataCall().data)

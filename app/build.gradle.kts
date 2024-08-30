@@ -66,6 +66,7 @@ dependencies {
     implementation(libs.jackson.module.kotlin)
     implementation(libs.jackson.databind)
     implementation(libs.retrofit2.converter.jackson)
+    implementation(libs.lottie)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

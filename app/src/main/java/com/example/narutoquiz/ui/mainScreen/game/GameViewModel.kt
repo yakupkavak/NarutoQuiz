@@ -76,29 +76,36 @@ class GameViewModel @Inject constructor(
     }
 
     fun checkQuestion(selectedOptionId: Int) {
-        println("selected option ->" + selectedOptionId)
         if (firstOption.value?.trueAnswer == true) {
             if (selectedOptionId == 0) {
+                _trueAnswer.postValue(_trueAnswer.value?.plus(1))
                 _answerSelection.postValue(AnswerModel(0, null))
             } else {
+                _falseAnswer.postValue(_falseAnswer.value?.plus(1))
                 _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
             }
         } else if (secondOption.value?.trueAnswer == true) {
             if (selectedOptionId == 1) {
+                _trueAnswer.postValue(_trueAnswer.value?.plus(1))
                 _answerSelection.postValue(AnswerModel(1, null))
             } else {
+                _falseAnswer.postValue(_falseAnswer.value?.plus(1))
                 _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
             }
         } else if (thirdOption.value?.trueAnswer == true) {
             if (selectedOptionId == 2) {
+                _trueAnswer.postValue(_trueAnswer.value?.plus(1))
                 _answerSelection.postValue(AnswerModel(2, null))
             } else {
+                _falseAnswer.postValue(_falseAnswer.value?.plus(1))
                 _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
             }
         } else if (lastOption.value?.trueAnswer == true) {
             if (selectedOptionId == 3) {
+                _trueAnswer.postValue(_trueAnswer.value?.plus(1))
                 _answerSelection.postValue(AnswerModel(3, null))
             } else {
+                _falseAnswer.postValue(_falseAnswer.value?.plus(1))
                 _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
             }
         }
@@ -106,7 +113,6 @@ class GameViewModel @Inject constructor(
 
     fun startGame() {
         viewModelScope.launch {
-            println(currentGameId.value)
             when (currentGameId.value) {
                 0 -> {
 //                    classicGame()
@@ -124,11 +130,11 @@ class GameViewModel @Inject constructor(
                     clanGame()
                 }
 
-                5 -> {
+                4 -> {
                     tailedGame()
                 }
 
-                6 -> {
+                5 -> {
                     teamGame()
                 }
             }
@@ -142,31 +148,40 @@ class GameViewModel @Inject constructor(
                 }
 
                 1 -> {
-
+                    characterGame()
                 }
 
                 2 -> {
-
+                    akatsukiGame()
                 }
 
                 3 -> {
+                    clanGame()
+                }
 
+                4 -> {
+                    tailedGame()
+                }
+
+                5 -> {
+                    teamGame()
                 }
             }
-            _questionNumber.postValue(_questionNumber.value?.plus(1))
         }
     }
 
     private fun characterGame() {
         getDataCall(
-            { getFourRandomCharacter() },
-            { characterList ->
+            dataCall = { getFourRandomCharacter() },
+            onSuccess = { characterList ->
                 if (characterList != null) {
-                    askFamily(characterList)
+                    askFamily(characterList).also { _loading.postValue(false) }.also {
+                        _questionNumber.postValue(_questionNumber.value?.plus(1))
+                    }
                 }
             },
-            { println("error geldi") },
-            null
+            onError = { println("error geldi") },
+            onLoading = { _loading.postValue(true) }
         )
     }
 
@@ -217,19 +232,20 @@ class GameViewModel @Inject constructor(
 
     private fun akatsukiGame() {
         getDataCall(
-            { getFourAkatsukiCharacter() },
-            { characterList ->
+            dataCall = { getFourAkatsukiCharacter() },
+            onSuccess = { characterList ->
                 if (characterList != null) {
-                    askVoiceActor(characterList)
+                    askVoiceActor(characterList).also { _loading.postValue(false) }.also {
+                        _questionNumber.postValue(_questionNumber.value?.plus(1))
+                    }
                 }
             },
-            null,
-            null
+            onError = null,
+            onLoading = { _loading.postValue(true) }
         )
     }
 
     private suspend fun getFourAkatsukiCharacter(): Resource<List<Character>> {
-        _loading.postValue(true)
         var firstCharacter: Character
         var secondCharacter: Character
         var thirdCharacter: Character
@@ -243,7 +259,6 @@ class GameViewModel @Inject constructor(
                 lastCharacter = getAkatsuki(charList)
                 if (setOf(firstCharacter, secondCharacter, thirdCharacter, lastCharacter).size == 4
                 ) {
-                    _loading.postValue(false)
                     return Resource.success(
                         listOf(
                             firstCharacter, secondCharacter, thirdCharacter, lastCharacter
@@ -337,7 +352,6 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun getFourRandomCharacter(): Resource<List<Character>> {
-        _loading.postValue(true)
         var firstCharacter: Character
         val selectedCharacters = mutableSetOf<Character>()
         while (selectedCharacters.size < 5) {
@@ -349,7 +363,6 @@ class GameViewModel @Inject constructor(
                 selectedCharacters.add(getRandomCharacter())
                 if (selectedCharacters.size == 4
                 ) {
-                    _loading.postValue(false)
                     return Resource.success(
                         selectedCharacters.toList()
                     )
@@ -453,14 +466,16 @@ class GameViewModel @Inject constructor(
         getDataCall(dataCall = { getFourClanCharacter() },
             onSuccess = { characterList ->
                 if (characterList != null) {
-                    askClan(characterList)
+                    askClan(characterList).also { _loading.postValue(false) }.also {
+                        _questionNumber.postValue(_questionNumber.value?.plus(1))
+                    }
                 }
             },
             onError = {
                 println("error allert")
             },
             onLoading = {
-
+                _loading.postValue(true)
             }
         )
     }
@@ -513,14 +528,16 @@ class GameViewModel @Inject constructor(
 
     private fun teamGame() {
         getDataCall(
-            { getFourTeamCharacter() },
-            { characterList ->
+            dataCall = { getFourTeamCharacter() },
+            onSuccess = { characterList ->
                 if (characterList != null) {
-                    askTeam(characterList)
+                    askTeam(characterList).also { _loading.postValue(false) }.also {
+                        _questionNumber.postValue(_questionNumber.value?.plus(1))
+                    }
                 }
             },
-            null,
-            null
+            onError = null,
+            onLoading = { _loading.postValue(true) }
         )
     }
 
@@ -632,14 +649,16 @@ class GameViewModel @Inject constructor(
 
     private fun tailedGame() {
         getDataCall(
-            { getFourTailCharacter() },
-            { characterList ->
+            dataCall = { getFourTailCharacter() },
+            onSuccess = { characterList ->
                 if (characterList != null) {
-                    askJinckuri(characterList)
+                    askJinckuri(characterList).also { _loading.postValue(false) }.also {
+                        _questionNumber.postValue(_questionNumber.value?.plus(1))
+                    }
                 }
             },
-            null,
-            null
+            onError = null,
+            onLoading = { _loading.postValue(true) }
         )
     }
 
