@@ -12,6 +12,11 @@
         android:title="@string/tier_list" />
 
     <item
+        android:id="@+id/historyFragment"
+        android:icon="@drawable/googleicon"
+        android:title="History" />
+
+    <item
         android:id="@+id/userInfo"
         android:icon="@drawable/googleicon"
         android:title="@string/user_info" />
