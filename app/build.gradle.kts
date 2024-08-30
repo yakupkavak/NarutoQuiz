@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     kapt(libs.hilt.android.compiler)
+    kapt(libs.glide)
     implementation(libs.firebase.ui.auth)
     implementation(libs.gms.play.services.auth)
     implementation(libs.material)
@@ -67,6 +68,7 @@ dependencies {
     implementation(libs.jackson.databind)
     implementation(libs.retrofit2.converter.jackson)
     implementation(libs.lottie)
+    kapt(libs.compiler)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
