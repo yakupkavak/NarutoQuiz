@@ -88,6 +88,11 @@
         <item name="android:background">@drawable/feed_row_design</item>
     </style>
 
+    <style name="CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:paddingStart">@dimen/margin_small</item>
+        <item name="android:paddingEnd">@dimen/margin_small</item>
+    </style>
+
     <style name="EditTextStyle">
         <item name="android:background">@drawable/edit_text_design</item>
         <item name="android:padding">@dimen/padding_standart</item>

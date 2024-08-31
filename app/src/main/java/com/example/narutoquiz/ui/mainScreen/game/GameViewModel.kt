@@ -68,6 +68,9 @@ class GameViewModel @Inject constructor(
     private val _answerSelection = MutableLiveData<AnswerModel>()
     val answerSelection: LiveData<AnswerModel> get() = _answerSelection
 
+    private val _finishGame = MutableLiveData<List<Int>>()
+    val finishGame: LiveData<List<Int>> get() = _finishGame
+
     private var trueAnswerId: Int? = null
 
     fun initializeGame(gameId: Int, gameTopic: String) {
@@ -113,6 +116,7 @@ class GameViewModel @Inject constructor(
 
     fun startGame() {
         viewModelScope.launch {
+            _questionNumber.postValue(0)
             when (currentGameId.value) {
                 0 -> {
 //                    classicGame()
@@ -183,6 +187,7 @@ class GameViewModel @Inject constructor(
             onError = { println("error geldi") },
             onLoading = { _loading.postValue(true) }
         )
+        _finishGame.postValue(listOf(_trueAnswer.value,_falseAnswer.value) as List<Int>?)
     }
 
     private fun askFamily(characterList: List<Character>) {

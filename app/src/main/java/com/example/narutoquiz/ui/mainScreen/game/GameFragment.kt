@@ -5,12 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.narutoquiz.R
+import com.example.narutoquiz.data.model.DialogModel
 import com.example.narutoquiz.databinding.FragmentGameBinding
 import com.example.narutoquiz.domain.extension.getUrl
+import com.example.narutoquiz.ui.extension.navigate
 import com.example.narutoquiz.ui.extension.observe
 import com.example.narutoquiz.ui.extension.popBackStack
 import com.example.narutoquiz.ui.extension.setBackground
@@ -27,8 +30,7 @@ class GameFragment : Fragment() {
     private var gameState = 0
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentGameBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -42,8 +44,16 @@ class GameFragment : Fragment() {
         setObserve()
     }
 
+    private fun setDialog(trueCount: Int, wrongCount: Int) {
+        val newFragment = GameDialogFragment(DialogModel(trueCount, wrongCount),
+            playAgain = { viewModel.startGame() },
+            mainScreen = { navigate(GameFragmentDirections.actionGameFragmentToFeedFragment()) })
+        newFragment.show(parentFragmentManager, "game")
+    }
+
     private fun setObserve() {
         viewModel.startGame()
+
         observe(viewModel.currentGameTopic) {
             binding.tvTopic.text = it
         }
@@ -137,14 +147,12 @@ class GameFragment : Fragment() {
                 }
             }
         }
-        observe(viewModel.trueAnswer) {
-        }
-        observe(viewModel.falseAnswer) {
-        }
+        observe(viewModel.trueAnswer) {}
+        observe(viewModel.falseAnswer) {}
         observe(viewModel.loading) {
             if (it) {
                 setInvisible()
-                with(binding){
+                with(binding) {
                     lottieAnimationLoading.isVisible = true
                     lottieAnimationNaruto.isVisible = true
                     lottieAnimationLoading.playAnimation()
@@ -152,13 +160,16 @@ class GameFragment : Fragment() {
                 }
             } else {
                 setVisible()
-                with(binding){
+                with(binding) {
                     lottieAnimationLoading.isVisible = false
                     lottieAnimationNaruto.isVisible = false
                     lottieAnimationLoading.cancelAnimation()
                     lottieAnimationNaruto.cancelAnimation()
                 }
             }
+        }
+        observe(viewModel.finishGame) {
+            setDialog(it[0], it[1])
         }
     }
 
@@ -189,12 +200,12 @@ class GameFragment : Fragment() {
         }
     }
 
-    private fun setInvisible(){
-        with(binding){
+    private fun setInvisible() {
+        with(binding) {
             tvQuestion.isVisible = false
-            cvOne.isVisible= false
+            cvOne.isVisible = false
             cvTwo.isVisible = false
-            cvThree.isVisible =false
+            cvThree.isVisible = false
             cvFour.isVisible = false
             tvOne.isVisible = false
             tvTwo.isVisible = false
@@ -204,12 +215,12 @@ class GameFragment : Fragment() {
         }
     }
 
-    private fun setVisible(){
-        with(binding){
+    private fun setVisible() {
+        with(binding) {
             tvQuestion.isVisible = true
-            cvOne.isVisible= true
+            cvOne.isVisible = true
             cvTwo.isVisible = true
-            cvThree.isVisible =true
+            cvThree.isVisible = true
             cvFour.isVisible = true
             tvOne.isVisible = true
             tvTwo.isVisible = true
