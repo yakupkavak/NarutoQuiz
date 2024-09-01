@@ -23,6 +23,7 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import kotlin.math.abs
 import kotlin.random.Random
+import kotlin.random.nextInt
 
 @HiltViewModel
 class GameViewModel @Inject constructor(
@@ -119,11 +120,11 @@ class GameViewModel @Inject constructor(
             _questionNumber.postValue(0)
             when (currentGameId.value) {
                 0 -> {
-//                    classicGame()
+                    challangeGame()
                 }
 
                 1 -> {
-                    characterGame()
+                    classicGame()
                 }
 
                 2 -> {
@@ -147,47 +148,94 @@ class GameViewModel @Inject constructor(
 
     fun nextQuestion() {
         viewModelScope.launch {
-            when (currentGameId.value) {
-                0 -> {
-                }
+            if (checkGameSituation()){
+                when (currentGameId.value) {
+                    0 -> {
+                        challangeGame()
+                    }
 
-                1 -> {
-                    characterGame()
-                }
+                    1 -> {
+                        classicGame()
+                    }
 
-                2 -> {
-                    akatsukiGame()
-                }
+                    2 -> {
+                        akatsukiGame()
+                    }
 
-                3 -> {
-                    clanGame()
-                }
+                    3 -> {
+                        clanGame()
+                    }
 
-                4 -> {
-                    tailedGame()
-                }
+                    4 -> {
+                        tailedGame()
+                    }
 
-                5 -> {
-                    teamGame()
+                    5 -> {
+                        teamGame()
+                    }
                 }
+            }
+            else{
+                gameOver()
             }
         }
     }
 
-    private fun characterGame() {
+    private fun checkGameSituation() : Boolean{
+        return if (_currentGameId.value != 0){
+            _questionNumber.value != 9
+        }else{
+            _falseAnswer.value == 0
+        }
+    }
+
+    private fun gameOver(){
+        _finishGame.postValue(listOf(_trueAnswer.value, _falseAnswer.value) as List<Int>?)
+    }
+
+    private fun challangeGame() {
+        when(Random.nextInt(0..4)){
+            0 ->{
+                classicGame()
+            }
+            1 ->{
+                akatsukiGame()
+            }
+            2 ->{
+                clanGame()
+            }
+            3 ->{
+                teamGame()
+            }
+            4 ->{
+                tailedGame()
+            }
+        }
+    }
+
+    private fun classicGame() {
         getDataCall(
             dataCall = { getFourRandomCharacter() },
             onSuccess = { characterList ->
                 if (characterList != null) {
-                    askFamily(characterList).also { _loading.postValue(false) }.also {
-                        _questionNumber.postValue(_questionNumber.value?.plus(1))
+                    when (Random.nextInt(0..1)) {
+                        0 -> {
+                            askFamily(characterList).also { _loading.postValue(false) }.also {
+                                _questionNumber.postValue(_questionNumber.value?.plus(1))
+                            }
+                        }
+
+                        1 -> {
+                            askVoiceActor(characterList).also { _loading.postValue(false) }.also {
+                                _questionNumber.postValue(_questionNumber.value?.plus(1))
+                            }
+                        }
                     }
                 }
             },
             onError = { println("error geldi") },
             onLoading = { _loading.postValue(true) }
         )
-        _finishGame.postValue(listOf(_trueAnswer.value,_falseAnswer.value) as List<Int>?)
     }
 
     private fun askFamily(characterList: List<Character>) {
@@ -240,8 +288,18 @@ class GameViewModel @Inject constructor(
             dataCall = { getFourAkatsukiCharacter() },
             onSuccess = { characterList ->
                 if (characterList != null) {
-                    askVoiceActor(characterList).also { _loading.postValue(false) }.also {
-                        _questionNumber.postValue(_questionNumber.value?.plus(1))
+                    when (Random.nextInt(0..1)) {
+                        0 -> {
+                            askFamily(characterList).also { _loading.postValue(false) }.also {
+                                _questionNumber.postValue(_questionNumber.value?.plus(1))
+                            }
+                        }
+
+                        1 -> {
+                            askVoiceActor(characterList).also { _loading.postValue(false) }.also {
+                                _questionNumber.postValue(_questionNumber.value?.plus(1))
+                            }
+                        }
                     }
                 }
             },
