@@ -13,8 +13,14 @@ import com.example.narutoquiz.data.repository.NarutoRepository
 import com.example.narutoquiz.data.util.Resource
 import com.example.narutoquiz.domain.extension.getFirstNonNullField
 import com.example.narutoquiz.ui.base.BaseViewModel
+import com.example.narutoquiz.ui.extension.getRandom
 import com.example.narutoquiz.ui.extension.getRandomNumList
 import com.example.narutoquiz.ui.mainScreen.feedlist.getNullCharacter
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.akatsukiSize
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.characterPageRange
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.clanPageSize
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.tailPageRange
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.teamPageSize
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -22,8 +28,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import kotlin.math.abs
-import kotlin.random.Random
-import kotlin.random.nextInt
 
 @HiltViewModel
 class GameViewModel @Inject constructor(
@@ -148,7 +152,7 @@ class GameViewModel @Inject constructor(
 
     fun nextQuestion() {
         viewModelScope.launch {
-            if (checkGameSituation()){
+            if (checkGameSituation()) {
                 when (currentGameId.value) {
                     0 -> {
                         challangeGame()
@@ -174,40 +178,43 @@ class GameViewModel @Inject constructor(
                         teamGame()
                     }
                 }
-            }
-            else{
+            } else {
                 gameOver()
             }
         }
     }
 
-    private fun checkGameSituation() : Boolean{
-        return if (_currentGameId.value != 0){
+    private fun checkGameSituation(): Boolean {
+        return if (_currentGameId.value != 0) {
             _questionNumber.value != 9
-        }else{
+        } else {
             _falseAnswer.value == 0
         }
     }
 
-    private fun gameOver(){
+    private fun gameOver() {
         _finishGame.postValue(listOf(_trueAnswer.value, _falseAnswer.value) as List<Int>?)
     }
 
     private fun challangeGame() {
-        when(Random.nextInt(0..4)){
-            0 ->{
+        when (getRandom(from = 0, until = 4)) {
+            0 -> {
                 classicGame()
             }
-            1 ->{
+
+            1 -> {
                 akatsukiGame()
             }
-            2 ->{
+
+            2 -> {
                 clanGame()
             }
-            3 ->{
+
+            3 -> {
                 teamGame()
             }
-            4 ->{
+
+            4 -> {
                 tailedGame()
             }
         }
@@ -218,7 +225,7 @@ class GameViewModel @Inject constructor(
             dataCall = { getFourRandomCharacter() },
             onSuccess = { characterList ->
                 if (characterList != null) {
-                    when (Random.nextInt(0..1)) {
+                    when (getRandom(from = 0, until = 1)) {
                         0 -> {
                             askFamily(characterList).also { _loading.postValue(false) }.also {
                                 _questionNumber.postValue(_questionNumber.value?.plus(1))
@@ -288,7 +295,7 @@ class GameViewModel @Inject constructor(
             dataCall = { getFourAkatsukiCharacter() },
             onSuccess = { characterList ->
                 if (characterList != null) {
-                    when (Random.nextInt(0..1)) {
+                    when (getRandom(from = 0, until = 1)) {
                         0 -> {
                             askFamily(characterList).also { _loading.postValue(false) }.also {
                                 _questionNumber.postValue(_questionNumber.value?.plus(1))
@@ -303,7 +310,7 @@ class GameViewModel @Inject constructor(
                     }
                 }
             },
-            onError = null,
+            onError = { println("error geldi") },
             onLoading = { _loading.postValue(true) }
         )
     }
@@ -314,7 +321,7 @@ class GameViewModel @Inject constructor(
         var thirdCharacter: Character
         var lastCharacter: Character
         while (true) {
-            val charList = repository.getAkatsukiList(43)
+            val charList = repository.getAkatsukiList(akatsukiSize)
             firstCharacter = getAkatsuki(charList)
             if (firstCharacter.family?.getFirstNonNullField() != null) {
                 secondCharacter = getAkatsuki(charList)
@@ -334,7 +341,7 @@ class GameViewModel @Inject constructor(
 
     private fun getAkatsuki(charList: Resource<Akatsuki>): Character {
         while (true) {
-            val character = charList.data?.akatsuki?.get(Random.nextInt(0, 43))
+            val character = charList.data?.akatsuki?.get(getRandom(from = 0, until = akatsukiSize))
             if (character?.images?.isEmpty() == false) {
                 return character
             }
@@ -437,13 +444,13 @@ class GameViewModel @Inject constructor(
 
     private suspend fun getRandomCharacter(): Character {
         val charList = repository.getCharacterList(
-            Random.nextInt(
-                0,
-                10
+            getRandom(
+                from = 0,
+                until = characterPageRange
             )
         ).data?.characters?.filter { character -> character.images?.isEmpty() == false }
         val pageSize = charList?.size
-        return charList?.get(Random.nextInt(0, pageSize ?: 19)) ?: getNullCharacter()
+        return charList?.get(getRandom(from = 0, until = pageSize ?: 19)) ?: getNullCharacter()
     }
 
     private fun askClan(characterList: List<Character?>) {
@@ -544,8 +551,8 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun getFourClanCharacter(): Resource<List<Character?>> {
-        val clanList = repository.getClanList(57)
-        val clanIdList = getRandomNumList(4, 56)
+        val clanList = repository.getClanList(clanPageSize)
+        val clanIdList = getRandomNumList(4, clanPageSize-1)
         val firstClan = clanList.data?.clans?.get(clanIdList[0])
         val secondClan = clanList.data?.clans?.get(clanIdList[1])
         val thirdClan = clanList.data?.clans?.get(clanIdList[2])
@@ -557,24 +564,24 @@ class GameViewModel @Inject constructor(
 
         withContext(Dispatchers.IO) {
             val getFirstCharacter = async {
-                firstClan?.characters?.get(Random.nextInt(0, firstClan.characters.size))
+                firstClan?.characters?.get(getRandom(from = 0, until = firstClan.characters.size))
                     ?.let { repository.getCharacter(it) }?.data
             }
             firstCharacter = getFirstCharacter.await()
             val getSecondCharacter = async {
-                secondClan?.characters?.get(Random.nextInt(0, secondClan.characters.size))
+                secondClan?.characters?.get(getRandom(from = 0, until = secondClan.characters.size))
                     ?.let { repository.getCharacter(it) }?.data
             }
             secondCharacter = getSecondCharacter.await()
 
             val getThirdCharacter = async {
-                thirdClan?.characters?.get(Random.nextInt(0, thirdClan.characters.size))
+                thirdClan?.characters?.get(getRandom(from = 0, until = thirdClan.characters.size))
                     ?.let { repository.getCharacter(it) }?.data
             }
             thirdCharacter = getThirdCharacter.await()
 
             val getLastCharacter = async {
-                lastClan?.characters?.get(Random.nextInt(0, lastClan.characters.size))
+                lastClan?.characters?.get(getRandom(from = 0, until = lastClan.characters.size))
                     ?.let { repository.getCharacter(it) }?.data
             }
             lastCharacter = getLastCharacter.await()
@@ -599,7 +606,7 @@ class GameViewModel @Inject constructor(
                     }
                 }
             },
-            onError = null,
+            onError = {println("allert error")},
             onLoading = { _loading.postValue(true) }
         )
     }
@@ -682,23 +689,23 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun getFourTeamCharacter(): Resource<List<Character?>> {
-        val teamList = repository.getTeamList(150)
-        val teamIdList = getRandomNumList(4, 149)
+        val teamList = repository.getTeamList(teamPageSize)
+        val teamIdList = getRandomNumList(4, teamPageSize-1)
         val firstTeam = teamList.data?.teams?.get(teamIdList[0])
         val secondTeam = teamList.data?.teams?.get(teamIdList[1])
         val thirdTeam = teamList.data?.teams?.get(teamIdList[2])
         val lastTeam = teamList.data?.teams?.get(teamIdList[3])
         val firstCharacter =
-            firstTeam?.characters?.get(Random.nextInt(0, firstTeam.characters.size))
+            firstTeam?.characters?.get(getRandom(from = 0, until = firstTeam.characters.size))
                 ?.let { repository.getCharacter(it) }?.data
         val secondCharacter =
-            secondTeam?.characters?.get(Random.nextInt(0, secondTeam.characters.size))
+            secondTeam?.characters?.get(getRandom(from = 0, until = secondTeam.characters.size))
                 ?.let { repository.getCharacter(it) }?.data
         val thirdCharacter =
-            thirdTeam?.characters?.get(Random.nextInt(0, thirdTeam.characters.size))
+            thirdTeam?.characters?.get(getRandom(from = 0, until = thirdTeam.characters.size))
                 ?.let { repository.getCharacter(it) }?.data
         val lastCharacter =
-            lastTeam?.characters?.get(Random.nextInt(0, lastTeam.characters.size))
+            lastTeam?.characters?.get(getRandom(from = 0, until = lastTeam.characters.size))
                 ?.let { repository.getCharacter(it) }?.data
         return Resource.success(
             listOf(
@@ -720,7 +727,7 @@ class GameViewModel @Inject constructor(
                     }
                 }
             },
-            onError = null,
+            onError = { println("error geldi") },
             onLoading = { _loading.postValue(true) }
         )
     }
@@ -805,7 +812,7 @@ class GameViewModel @Inject constructor(
 
     private suspend fun getFourTailCharacter(): Resource<List<Character?>> {
         val tailList = repository.getTailedBeastList()
-        val tailIdList = getRandomNumList(4, 9)
+        val tailIdList = getRandomNumList(4, tailPageRange)
         val firstTail = tailList.data?.tailedBeasts?.get(tailIdList[0])
         val secondTail = tailList.data?.tailedBeasts?.get(tailIdList[1])
         val thirdTail = tailList.data?.tailedBeasts?.get(tailIdList[2])
