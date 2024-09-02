@@ -60,5 +60,7 @@
     <string name="play_again">Play Again</string>
     <string name="trueText">True</string>
     <string name="wrong">Wrong</string>
+    <string name="clan_question">Which one\'s clan name is</string>
+    <string name="team_question">Which one\'s team name is</string>
 
 </resources>

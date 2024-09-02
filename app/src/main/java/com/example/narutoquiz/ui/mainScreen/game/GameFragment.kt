@@ -29,7 +29,7 @@ class GameFragment : Fragment() {
     private var gameState = 0
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
         _binding = FragmentGameBinding.inflate(inflater, container, false)
         val view = binding.root
@@ -167,8 +167,12 @@ class GameFragment : Fragment() {
                 }
             }
         }
-        observe(viewModel.finishGame) {
-            setDialog(it[0], it[1])
+        observe(viewModel.finishGame) { gameState ->
+            gameState[0]?.let { trueCount ->
+                gameState[1]?.let { wrongCount ->
+                    setDialog(trueCount, wrongCount)
+                }
+            }
         }
     }
 
