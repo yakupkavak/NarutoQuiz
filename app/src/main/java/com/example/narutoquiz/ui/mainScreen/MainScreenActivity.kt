@@ -10,13 +10,11 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.narutoquiz.R
-import com.example.narutoquiz.data.model.DialogModel
 import com.example.narutoquiz.databinding.ActivityMainScreenBinding
-import com.example.narutoquiz.ui.mainScreen.game.GameDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class MainScreenActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainScreenBinding
 
@@ -26,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainScreenBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        setupNavigation()
+    }
+
+    private fun setupNavigation(){
         val windowInsetsController =
             WindowCompat.getInsetsController(window, window.decorView)
         windowInsetsController.systemBarsBehavior =

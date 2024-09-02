@@ -10,9 +10,9 @@ open class BaseViewModel : ViewModel() {
 
     fun <T> getDataCall(
         dataCall: suspend () -> Resource<T>,
-        onSuccess: (suspend (T?) -> Unit)?,
-        onError: (suspend () -> Unit)?,
-        onLoading: (suspend () -> Unit)?
+        onSuccess: (suspend (T?) -> Unit)? = null,
+        onError: (suspend () -> Unit)? = null,
+        onLoading: (suspend () -> Unit)? = null
     ) = viewModelScope.launch {
         try {
             onLoading?.invoke()
