@@ -282,7 +282,7 @@ class GameViewModel @Inject constructor(
             }
         }
 
-        implementOptions(
+        setOptions(
             listOf(
                 firstCharacter,
                 characterList[SecondCharactedId],
@@ -292,7 +292,7 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private fun implementOptions(characterList: List<Character?>) {
+    private fun setOptions(characterList: List<Character?>) {
         val options = listOf(
             OptionModel(FirstOptionId, _firstOption),
             OptionModel(SecondOptionId, _secondOption),
@@ -443,7 +443,7 @@ class GameViewModel @Inject constructor(
             }
         }
 
-        implementOptions(
+        setOptions(
             listOf(
                 firstCharacter,
                 secondCharacter,
@@ -499,7 +499,7 @@ class GameViewModel @Inject constructor(
             )
         }
 
-        implementOptions(
+        setOptions(
             listOf(
                 firstCharacter,
                 characterList[SecondCharactedId],
@@ -534,31 +534,46 @@ class GameViewModel @Inject constructor(
         val secondClan = clanList.data?.clans?.get(clanIdList[1])
         val thirdClan = clanList.data?.clans?.get(clanIdList[2])
         val lastClan = clanList.data?.clans?.get(clanIdList[3])
+        return setGroupModel(listOf(firstClan, secondClan, thirdClan, lastClan), clanIdList)
+    }
+
+    private suspend fun setGroupModel(
+        groupModelList: List<GroupModel?>,
+        groupIdList: List<Int>,
+    ): Resource<List<Character?>> {
+        val firstModel = groupModelList[groupIdList[FirstCharacterId]]
+        val secondModel = groupModelList[groupIdList[SecondCharactedId]]
+        val thirdModel = groupModelList[groupIdList[ThirdCharacterId]]
+        val lastModel = groupModelList[groupIdList[LastCharacterId]]
         var firstCharacter: Character?
         var secondCharacter: Character?
         var thirdCharacter: Character?
         var lastCharacter: Character?
-
         withContext(Dispatchers.IO) {
             val getFirstCharacter = async {
-                firstClan?.characters?.get(getRandom(from = 0, until = firstClan.characters.size))
+                firstModel?.characters?.get(getRandom(from = 0, until = firstModel.characters.size))
                     ?.let { repository.getCharacter(it) }?.data
             }
             firstCharacter = getFirstCharacter.await()
             val getSecondCharacter = async {
-                secondClan?.characters?.get(getRandom(from = 0, until = secondClan.characters.size))
+                secondModel?.characters?.get(
+                    getRandom(
+                        from = 0,
+                        until = secondModel.characters.size
+                    )
+                )
                     ?.let { repository.getCharacter(it) }?.data
             }
             secondCharacter = getSecondCharacter.await()
 
             val getThirdCharacter = async {
-                thirdClan?.characters?.get(getRandom(from = 0, until = thirdClan.characters.size))
+                thirdModel?.characters?.get(getRandom(from = 0, until = thirdModel.characters.size))
                     ?.let { repository.getCharacter(it) }?.data
             }
             thirdCharacter = getThirdCharacter.await()
 
             val getLastCharacter = async {
-                lastClan?.characters?.get(getRandom(from = 0, until = lastClan.characters.size))
+                lastModel?.characters?.get(getRandom(from = 0, until = lastModel.characters.size))
                     ?.let { repository.getCharacter(it) }?.data
             }
             lastCharacter = getLastCharacter.await()
@@ -598,7 +613,7 @@ class GameViewModel @Inject constructor(
                 firstCharacter.personal?.team?.get(0)
             )
         }
-        implementOptions(
+        setOptions(
             listOf(
                 firstCharacter,
                 characterList[SecondCharactedId],
@@ -615,46 +630,7 @@ class GameViewModel @Inject constructor(
         val secondTeam = teamList.data?.teams?.get(teamIdList[1])
         val thirdTeam = teamList.data?.teams?.get(teamIdList[2])
         val lastTeam = teamList.data?.teams?.get(teamIdList[3])
-        val firstCharacter =
-            firstTeam?.characters?.get(getRandom(from = 0, until = firstTeam.characters.size))
-                ?.let { repository.getCharacter(it) }?.data
-        val secondCharacter =
-            secondTeam?.characters?.get(getRandom(from = 0, until = secondTeam.characters.size))
-                ?.let { repository.getCharacter(it) }?.data
-        val thirdCharacter =
-            thirdTeam?.characters?.get(getRandom(from = 0, until = thirdTeam.characters.size))
-                ?.let { repository.getCharacter(it) }?.data
-        val lastCharacter =
-            lastTeam?.characters?.get(getRandom(from = 0, until = lastTeam.characters.size))
-                ?.let { repository.getCharacter(it) }?.data
-        return Resource.success(
-            listOf(
-                firstCharacter,
-                secondCharacter,
-                thirdCharacter,
-                lastCharacter
-            )
-        )
-    }
-
-    private suspend fun implementGroupModel(groupList: List<GroupModel?>) {
-        return Resource.success(
-            listOf(
-                groupList[FirstCharacterId]?.characters?.let {
-                    getRandom(
-                        from = 0,
-                        until = it.size
-                    )
-                }?.let { it ->
-                    groupList[FirstCharacterId]?.characters?.get(
-                        it
-                    )
-                        ?.let { repository.getCharacter(it) }?.data
-                },
-                secondCharacter,
-                thirdCharacter,
-                lastCharacter
-            )
+        return setGroupModel(listOf(firstTeam, secondTeam, thirdTeam, lastTeam), teamIdList)
     }
 
     private fun tailedGame() {
@@ -682,7 +658,7 @@ class GameViewModel @Inject constructor(
                 firstCharacter.personal?.jinchuriki?.get(0)
             )
         }
-        implementOptions(
+        setOptions(
             listOf(
                 firstCharacter,
                 characterList[SecondCharactedId],
