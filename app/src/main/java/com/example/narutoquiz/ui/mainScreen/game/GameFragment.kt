@@ -21,6 +21,8 @@ import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskFamilyId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskJinckuriId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskTeamId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskVoiceActorId
+import com.example.narutoquiz.ui.mainScreen.main.ErrorDialogFragment
+import com.example.narutoquiz.ui.mainScreen.main.GameDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -99,6 +101,13 @@ class GameFragment : Fragment() {
                     cvOne.setBackground(R.color.selected_answer)
                     selectedOptionId = 0
                 }
+            }
+        }
+        observe(viewModel.error){
+            if (it){
+                val newFragment = ErrorDialogFragment(
+                    mainScreen = { navigate(GameFragmentDirections.actionGameFragmentToFeedFragment()) })
+                newFragment.show(parentFragmentManager, "game")
             }
         }
         observe(viewModel.secondOption) {

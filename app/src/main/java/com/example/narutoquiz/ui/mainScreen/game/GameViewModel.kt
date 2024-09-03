@@ -219,7 +219,7 @@ class GameViewModel @Inject constructor(
     }
 
     private fun challangeGame() {
-        when (getRandom(from = 0, until = 4)) {
+        when (getRandom(from = 0, includeUntil = 4)) {
             0 -> {
                 classicGame()
             }
@@ -247,7 +247,7 @@ class GameViewModel @Inject constructor(
             dataCall = { getFourRandomCharacter() },
             onSuccess = { characterList ->
                 if (characterList != null) {
-                    when (getRandom(from = 0, until = 1)) {
+                    when (getRandom(from = 0, includeUntil = 1)) {
                         0 -> {
                             askFamily(characterList).also { _loading.postValue(false) }.also {
                                 _questionNumber.postValue(_questionNumber.value?.plus(1))
@@ -262,7 +262,7 @@ class GameViewModel @Inject constructor(
                     }
                 }
             },
-            onError = { println("error geldi") },
+            onError = { _error.postValue(true) },
             onLoading = { _loading.postValue(true) }
         )
     }
@@ -345,7 +345,7 @@ class GameViewModel @Inject constructor(
             dataCall = { getFourAkatsukiCharacter() },
             onSuccess = { characterList ->
                 if (characterList != null) {
-                    when (getRandom(from = 0, until = 1)) {
+                    when (getRandom(from = 0, includeUntil = 1)) {
                         0 -> {
                             askFamily(characterList).also { _loading.postValue(false) }.also {
                                 _questionNumber.postValue(_questionNumber.value?.plus(1))
@@ -360,7 +360,7 @@ class GameViewModel @Inject constructor(
                     }
                 }
             },
-            onError = { println("error geldi") },
+            onError = { _error.postValue(true) },
             onLoading = { _loading.postValue(true) }
         )
     }
@@ -391,7 +391,8 @@ class GameViewModel @Inject constructor(
 
     private fun getAkatsuki(charList: Resource<Akatsuki>): Character {
         while (true) {
-            val character = charList.data?.akatsuki?.get(getRandom(from = 0, until = AkatsukiSize))
+            val character =
+                charList.data?.akatsuki?.get(getRandom(from = 0, includeUntil = AkatsukiSize))
             if (character?.images?.isEmpty() == false) {
                 return character
             }
@@ -476,14 +477,14 @@ class GameViewModel @Inject constructor(
 
     private suspend fun getRandomCharacter(): Character? {
         val charList = getRandomCharList()
-        return charList?.get(getRandom(from = 0, until = charList.size))
+        return charList?.get(getRandom(from = 0, includeUntil = charList.size - 1))
     }
 
     private suspend fun getRandomCharList(): List<Character>? {
         return repository.getCharacterList(
             getRandom(
                 from = 0,
-                until = CharacterPageRange
+                includeUntil = CharacterPageRange
             )
         ).data?.characters?.filter { character -> character.images?.isEmpty() == false }
     }
@@ -519,7 +520,7 @@ class GameViewModel @Inject constructor(
                 }
             },
             onError = {
-                println("error allert")
+                _error.postValue(true)
             },
             onLoading = {
                 _loading.postValue(true)
@@ -553,7 +554,7 @@ class GameViewModel @Inject constructor(
                 firstModel?.characters?.get(
                     getRandom(
                         from = 0,
-                        until = firstModel.characters.size - 1
+                        includeUntil = firstModel.characters.size - 1
                     )
                 )
                     ?.let { repository.getCharacter(it) }?.data
@@ -563,7 +564,7 @@ class GameViewModel @Inject constructor(
                 secondModel?.characters?.get(
                     getRandom(
                         from = 0,
-                        until = secondModel.characters.size - 1
+                        includeUntil = secondModel.characters.size - 1
                     )
                 )
                     ?.let { repository.getCharacter(it) }?.data
@@ -574,7 +575,7 @@ class GameViewModel @Inject constructor(
                 thirdModel?.characters?.get(
                     getRandom(
                         from = 0,
-                        until = thirdModel.characters.size - 1
+                        includeUntil = thirdModel.characters.size - 1
                     )
                 )
                     ?.let { repository.getCharacter(it) }?.data
@@ -585,7 +586,7 @@ class GameViewModel @Inject constructor(
                 lastModel?.characters?.get(
                     getRandom(
                         from = 0,
-                        until = lastModel.characters.size - 1
+                        includeUntil = lastModel.characters.size - 1
                     )
                 )
                     ?.let { repository.getCharacter(it) }?.data
@@ -612,7 +613,7 @@ class GameViewModel @Inject constructor(
                     }
                 }
             },
-            onError = { println("allert error") },
+            onError = { _error.postValue(true) },
             onLoading = { _loading.postValue(true) }
         )
     }
@@ -657,7 +658,7 @@ class GameViewModel @Inject constructor(
                     }
                 }
             },
-            onError = { println("error geldi") },
+            onError = { _error.postValue(true) },
             onLoading = { _loading.postValue(true) }
         )
     }
@@ -698,5 +699,4 @@ class GameViewModel @Inject constructor(
             )
         )
     }
-
 }

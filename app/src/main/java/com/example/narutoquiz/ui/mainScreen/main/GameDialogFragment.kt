@@ -1,4 +1,4 @@
-package com.example.narutoquiz.ui.mainScreen.game
+package com.example.narutoquiz.ui.mainScreen.main
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -27,7 +27,9 @@ class GameDialogFragment(
             dismiss()
         }
         binding.dialogModel = dialogModel
-        val dialog = AlertDialog.Builder(requireContext(),R.style.CustomDialogTheme).setView(binding.root).create()
+        val dialog =
+            AlertDialog.Builder(requireContext(), R.style.CustomDialogTheme).setView(binding.root)
+                .create()
         dialog.window?.setBackgroundDrawableResource(R.color.transparent)
         dialog.setCancelable(false)
         dialog.setCanceledOnTouchOutside(false)

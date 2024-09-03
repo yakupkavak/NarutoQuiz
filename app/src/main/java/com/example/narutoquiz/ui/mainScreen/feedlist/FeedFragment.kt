@@ -5,10 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.narutoquiz.data.model.DialogModel
 import com.example.narutoquiz.databinding.FragmentFeedBinding
 import com.example.narutoquiz.ui.extension.navigate
-import com.example.narutoquiz.ui.mainScreen.game.GameDialogFragment
 
 class FeedFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.example.narutoquiz.ui.mainScreen
+package com.example.narutoquiz.ui.mainScreen.main
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

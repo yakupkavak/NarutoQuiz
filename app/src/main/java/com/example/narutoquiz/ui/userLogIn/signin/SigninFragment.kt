@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.narutoquiz.R
 import com.example.narutoquiz.databinding.FragmentSigninBinding
 import com.example.narutoquiz.ui.extension.navigate
-import com.example.narutoquiz.ui.mainScreen.MainScreenActivity
+import com.example.narutoquiz.ui.mainScreen.main.MainScreenActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
