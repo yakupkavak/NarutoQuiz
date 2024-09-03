@@ -12,7 +12,7 @@
         style="@style/MediumSizeMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/rank"
+        android:text="@string/game_mode"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/gdlFirstVertical"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +22,7 @@
         style="@style/MediumSizeMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/player"
+        android:text="@string/trueText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/gdlMediumVertical"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@
         style="@style/MediumSizeMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/score"
+        android:text="@string/wrong"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/gdlFinishVertical"
         app:layout_constraintTop_toTopOf="parent" />

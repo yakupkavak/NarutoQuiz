@@ -57,11 +57,6 @@ class SigninFragment : Fragment() {
                         editPassword.text.toString()
                     ).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
-                            Toast.makeText(
-                                requireContext(),
-                                getString(R.string.sign_success),
-                                Toast.LENGTH_LONG
-                            ).show()
                             Intent(requireContext(), MainScreenActivity::class.java).also {
                                 startActivity(it)
                             }

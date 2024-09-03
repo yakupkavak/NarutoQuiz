@@ -1,10 +1,13 @@
 package com.example.narutoquiz.data.di
 
 import com.example.narutoquiz.BuildConfig
+import com.example.narutoquiz.data.repository.FirebaseRepository
 import com.example.narutoquiz.data.repository.NarutoRepository
 import com.example.narutoquiz.data.service.NarutoService
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,7 +39,25 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRepository(narutoService: NarutoService): NarutoRepository {
+    fun provideNarutoRepository(narutoService: NarutoService): NarutoRepository {
         return NarutoRepository(narutoService)
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirestore(): FirebaseFirestore {
+        return FirebaseFirestore.getInstance()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFireauth(): FirebaseAuth {
+        return FirebaseAuth.getInstance()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseRepository(db: FirebaseFirestore, auth: FirebaseAuth): FirebaseRepository {
+        return FirebaseRepository(db, auth)
     }
 }
