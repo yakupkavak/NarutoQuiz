@@ -10,6 +10,6 @@ fun getRandomNumList(limit: Int, range: Int): List<Int> {
         listOf()
     }
 }
-fun getRandom(from: Int,until: Int): Int{
-    return Random.nextInt(from,until+1)
+fun getRandom(from: Int, includeUntil: Int): Int{
+    return Random.nextInt(from,includeUntil+1)
 }

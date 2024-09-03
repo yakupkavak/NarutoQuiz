@@ -1,10 +1,10 @@
 package com.example.narutoquiz.ui.mainScreen.game
 
 object GameConst {
-    const val AkatsukiSize = 43
-    const val CharacterPageRange = 10
-    const val ClanPageSize = 57
-    const val TeamPageSize = 150
+    const val AkatsukiSize = 42
+    const val CharacterPageRange = 9
+    const val ClanPageSize = 58
+    const val TeamPageSize = 149
     const val TailPageRange = 9
     const val FirstOptionId = 0
     const val SecondOptionId = 1

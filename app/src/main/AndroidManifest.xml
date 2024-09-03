@@ -16,7 +16,7 @@
         android:theme="@style/Theme.General"
         tools:targetApi="31">
         <activity
-            android:name=".ui.mainScreen.MainScreenActivity"
+            android:name=".ui.mainScreen.main.MainScreenActivity"
             android:exported="false" />
         <activity
             android:name=".ui.userLogIn.SignActivity"
