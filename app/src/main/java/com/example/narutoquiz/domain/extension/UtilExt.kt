@@ -1,21 +1,8 @@
 package com.example.narutoquiz.domain.extension
 
-import android.widget.ImageView
-import com.bumptech.glide.Glide
-import com.example.narutoquiz.R
 import com.example.narutoquiz.data.model.Family
 import com.example.narutoquiz.data.model.VoiceActors
 import kotlin.reflect.KProperty1
-
-fun ImageView.getUrl(url: String) {
-    Glide.with(this)
-        .load(url)
-        .thumbnail(
-            Glide.with(this)
-                .load(R.drawable.spinnerblack)
-        ).error(Glide.with(this).load(R.drawable.holderitachi))
-        .into(this)
-}
 
 fun Family.getFirstNonNullField(): Pair<String, String>? {
     this::class.members //koleksiyona eriştim

@@ -29,7 +29,7 @@ open class BaseViewModel : ViewModel() {
                     onLoading?.invoke()
                 }
             }
-        }catch (e:Exception){
+        } catch (e: Exception) {
             e.printStackTrace()
             onError?.invoke()
         }

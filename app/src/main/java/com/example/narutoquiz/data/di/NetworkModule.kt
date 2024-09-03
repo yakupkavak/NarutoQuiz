@@ -36,7 +36,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRepository(pokeService: NarutoService): NarutoRepository {
-        return NarutoRepository(pokeService)
+    fun provideRepository(narutoService: NarutoService): NarutoRepository {
+        return NarutoRepository(narutoService)
     }
 }

@@ -16,6 +16,11 @@ import com.example.narutoquiz.ui.extension.navigate
 import com.example.narutoquiz.ui.extension.observe
 import com.example.narutoquiz.ui.extension.popBackStack
 import com.example.narutoquiz.ui.extension.setBackground
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskClanId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskFamilyId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskJinckuriId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskTeamId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskVoiceActorId
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,6 +32,7 @@ class GameFragment : Fragment() {
     private val viewModel: GameViewModel by viewModels()
     private var selectedOptionId = -1
     private var gameState = 0
+    private var questionId = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
@@ -56,8 +62,33 @@ class GameFragment : Fragment() {
         observe(viewModel.currentGameTopic) {
             binding.tvTopic.text = it
         }
+        observe(viewModel.questionId) { getQuestionId ->
+            questionId = getQuestionId
+        }
         observe(viewModel.questionText) {
-            binding.tvQuestion.text = it
+            with(binding) {
+                when (questionId) {
+                    AskFamilyId -> {
+                        tvQuestion.text = getString(R.string.family_question, it)
+                    }
+
+                    AskVoiceActorId -> {
+                        tvQuestion.text = getString(R.string.voice_question, it)
+                    }
+
+                    AskClanId -> {
+                        tvQuestion.text = getString(R.string.clan_question, it)
+                    }
+
+                    AskTeamId -> {
+                        tvQuestion.text = getString(R.string.team_question, it)
+                    }
+
+                    AskJinckuriId -> {
+                        tvQuestion.text = getString(R.string.jinckuri_question, it)
+                    }
+                }
+            }
         }
         observe(viewModel.firstOption) {
             with(binding) {

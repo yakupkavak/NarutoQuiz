@@ -1,7 +1,6 @@
 package com.example.narutoquiz.ui.mainScreen.feedlist
 
 import com.example.narutoquiz.R
-import com.example.narutoquiz.data.model.Character
 import com.example.narutoquiz.data.model.FeedRowModel
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AkatsukiGameId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.ChallangeGameId
@@ -18,23 +17,5 @@ fun getRowModelList(): List<FeedRowModel> {
         FeedRowModel(description = "Clan", imageResId = R.drawable.akatsuki, gameId = ClanGameId),
         FeedRowModel(description = "Tailed Beast", imageResId = R.drawable.akatsuki, gameId = TailedGameId),
         FeedRowModel(description = "Teams", imageResId = R.drawable.akatsuki, gameId = TeamGameId),
-    )
-}
-
-fun getNullCharacter(): Character {
-    println("Null character generated")
-    return Character(
-        null,
-        null,
-        null,
-        null,
-        null,
-        "",
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
     )
 }

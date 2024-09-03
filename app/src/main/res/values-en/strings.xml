@@ -60,7 +60,12 @@
     <string name="play_again">Play Again</string>
     <string name="trueText">True</string>
     <string name="wrong">Wrong</string>
-    <string name="clan_question">Which one\'s clan name is</string>
-    <string name="team_question">Which one\'s team name is</string>
+
+    <string name="family_question">Which one\'s %1$s</string>
+    <string name="voice_question">Which one\'s %1$s</string>
+    <string name="clan_question">Which one\'s clan name is %1$s</string>
+    <string name="team_question">Which one\'s team name is %1$s</string>
+    <string name="jinckuri_question">Which one\'s jinckuri name is %1$s</string>
+    <string name="naruto_icon">Naruto Icon</string>
 
 </resources>
