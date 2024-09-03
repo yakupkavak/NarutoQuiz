@@ -96,7 +96,7 @@ class GameFragment : Fragment() {
                 tvOne.text = it.characterName ?: ""
                 cvOne.setOnClickListener {
                     clearSelection()
-                    cvOne.setBackground(requireContext(), R.color.selected_answer)
+                    cvOne.setBackground(R.color.selected_answer)
                     selectedOptionId = 0
                 }
             }
@@ -107,7 +107,7 @@ class GameFragment : Fragment() {
                 tvTwo.text = it.characterName ?: ""
                 cvTwo.setOnClickListener {
                     clearSelection()
-                    cvTwo.setBackground(requireContext(), R.color.selected_answer)
+                    cvTwo.setBackground(R.color.selected_answer)
                     selectedOptionId = 1
                 }
             }
@@ -118,7 +118,7 @@ class GameFragment : Fragment() {
                 tvThree.text = it.characterName ?: ""
                 cvThree.setOnClickListener {
                     clearSelection()
-                    cvThree.setBackground(requireContext(), R.color.selected_answer)
+                    cvThree.setBackground(R.color.selected_answer)
                     selectedOptionId = 2
                 }
             }
@@ -129,7 +129,7 @@ class GameFragment : Fragment() {
                 tvFour.text = it.characterName ?: ""
                 cvFour.setOnClickListener {
                     clearSelection()
-                    cvFour.setBackground(requireContext(), R.color.selected_answer)
+                    cvFour.setBackground(R.color.selected_answer)
                     selectedOptionId = 3
                 }
             }
@@ -141,38 +141,38 @@ class GameFragment : Fragment() {
             it.trueAnswer?.let { trueAnswerId ->
                 when (trueAnswerId) {
                     0 -> {
-                        binding.cvOne.setBackground(requireContext(), R.color.true_answer)
+                        binding.cvOne.setBackground(R.color.true_answer)
                     }
 
                     1 -> {
-                        binding.cvTwo.setBackground(requireContext(), R.color.true_answer)
+                        binding.cvTwo.setBackground(R.color.true_answer)
                     }
 
                     2 -> {
-                        binding.cvThree.setBackground(requireContext(), R.color.true_answer)
+                        binding.cvThree.setBackground(R.color.true_answer)
                     }
 
                     3 -> {
-                        binding.cvFour.setBackground(requireContext(), R.color.true_answer)
+                        binding.cvFour.setBackground(R.color.true_answer)
                     }
                 }
             }
             it.falseAnswer?.let { falseAnswerId ->
                 when (falseAnswerId) {
                     0 -> {
-                        binding.cvOne.setBackground(requireContext(), R.color.false_answer)
+                        binding.cvOne.setBackground(R.color.false_answer)
                     }
 
                     1 -> {
-                        binding.cvTwo.setBackground(requireContext(), R.color.false_answer)
+                        binding.cvTwo.setBackground(R.color.false_answer)
                     }
 
                     2 -> {
-                        binding.cvThree.setBackground(requireContext(), R.color.false_answer)
+                        binding.cvThree.setBackground(R.color.false_answer)
                     }
 
                     3 -> {
-                        binding.cvFour.setBackground(requireContext(), R.color.false_answer)
+                        binding.cvFour.setBackground(R.color.false_answer)
                     }
                 }
             }
@@ -209,10 +209,10 @@ class GameFragment : Fragment() {
 
     private fun clearSelection() {
         with(binding) {
-            cvOne.setBackground(requireContext(), R.color.transparent)
-            cvTwo.setBackground(requireContext(), R.color.transparent)
-            cvThree.setBackground(requireContext(), R.color.transparent)
-            cvFour.setBackground(requireContext(), R.color.transparent)
+            cvOne.setBackground(R.color.transparent)
+            cvTwo.setBackground(R.color.transparent)
+            cvThree.setBackground(R.color.transparent)
+            cvFour.setBackground(R.color.transparent)
         }
     }
 
