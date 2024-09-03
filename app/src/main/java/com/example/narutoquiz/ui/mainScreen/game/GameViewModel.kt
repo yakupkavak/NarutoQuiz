@@ -534,17 +534,16 @@ class GameViewModel @Inject constructor(
         val secondClan = clanList.data?.clans?.get(clanIdList[1])
         val thirdClan = clanList.data?.clans?.get(clanIdList[2])
         val lastClan = clanList.data?.clans?.get(clanIdList[3])
-        return setGroupModel(listOf(firstClan, secondClan, thirdClan, lastClan), clanIdList)
+        return setGroupModel(listOf(firstClan, secondClan, thirdClan, lastClan))
     }
 
     private suspend fun setGroupModel(
-        groupModelList: List<GroupModel?>,
-        groupIdList: List<Int>,
+        groupModelList: List<GroupModel?>
     ): Resource<List<Character?>> {
-        val firstModel = groupModelList[groupIdList[FirstCharacterId]]
-        val secondModel = groupModelList[groupIdList[SecondCharactedId]]
-        val thirdModel = groupModelList[groupIdList[ThirdCharacterId]]
-        val lastModel = groupModelList[groupIdList[LastCharacterId]]
+        val firstModel = groupModelList[FirstCharacterId]
+        val secondModel = groupModelList[SecondCharactedId]
+        val thirdModel = groupModelList[ThirdCharacterId]
+        val lastModel = groupModelList[LastCharacterId]
         var firstCharacter: Character?
         var secondCharacter: Character?
         var thirdCharacter: Character?
@@ -630,7 +629,7 @@ class GameViewModel @Inject constructor(
         val secondTeam = teamList.data?.teams?.get(teamIdList[1])
         val thirdTeam = teamList.data?.teams?.get(teamIdList[2])
         val lastTeam = teamList.data?.teams?.get(teamIdList[3])
-        return setGroupModel(listOf(firstTeam, secondTeam, thirdTeam, lastTeam), teamIdList)
+        return setGroupModel(listOf(firstTeam, secondTeam, thirdTeam, lastTeam))
     }
 
     private fun tailedGame() {
