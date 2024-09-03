@@ -9,6 +9,7 @@ import com.example.narutoquiz.data.model.Character
 import com.example.narutoquiz.data.model.GroupModel
 import com.example.narutoquiz.data.model.OptionModel
 import com.example.narutoquiz.data.model.SelectionModel
+import com.example.narutoquiz.data.repository.FirebaseRepository
 import com.example.narutoquiz.data.repository.NarutoRepository
 import com.example.narutoquiz.data.util.Resource
 import com.example.narutoquiz.domain.extension.getFirstNonNullField
@@ -50,7 +51,8 @@ import kotlin.math.abs
 
 @HiltViewModel
 class GameViewModel @Inject constructor(
-    private val repository: NarutoRepository,
+    private val narutoRepository: NarutoRepository,
+    private val firebaseRepository: FirebaseRepository
 ) : BaseViewModel() {
 
     private val _questionText = MutableLiveData<String>()
@@ -214,8 +216,13 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    private fun gameOver() {
+    private suspend fun gameOver() {
         _finishGame.postValue(listOf(_trueAnswer.value, _falseAnswer.value))
+        firebaseRepository.postGameScore(
+            gameId = _currentGameId.value,
+            trueAnswer = _trueAnswer.value,
+            falseAnswer = _falseAnswer.value
+        )
     }
 
     private fun challangeGame() {
@@ -281,6 +288,8 @@ class GameViewModel @Inject constructor(
                 )
             }
         }
+        //TODO(SET OPTIONS İÇERİSİNE FONKSİON)
+        // FIXME: fonkiyonlar yazılacak
 
         setOptions(
             listOf(
@@ -302,38 +311,18 @@ class GameViewModel @Inject constructor(
 
         trueAnswerId = options[FirstOptionId].optionId
 
-        characterList[FirstCharacterId]?.let { firstCharacter ->
-            options[FirstOptionId].option.postValue(
+        setOption(characterList[FirstCharacterId], options[FirstOptionId])
+        setOption(characterList[SecondCharactedId], options[SecondOptionId])
+        setOption(characterList[ThirdCharacterId], options[ThirdOptionId])
+        setOption(characterList[LastCharacterId], options[LastOptionId])
+    }
+
+    private fun setOption(character: Character?, option: OptionModel) {
+        character?.let { getCharacter ->
+            option.option.postValue(
                 SelectionModel(
-                    imageUrl = firstCharacter.images?.get(0),
-                    characterName = firstCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
-        characterList[SecondCharactedId]?.let { secondCharacter ->
-            options[SecondOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = secondCharacter.images?.get(0),
-                    characterName = secondCharacter.name,
-                    trueAnswer = false
-                )
-            )
-        }
-        characterList[ThirdCharacterId]?.let { thirdCharacter ->
-            options[ThirdOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = thirdCharacter.images?.get(0),
-                    characterName = thirdCharacter.name,
-                    trueAnswer = false
-                )
-            )
-        }
-        characterList[LastCharacterId]?.let { lastCharacter ->
-            options[LastOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = lastCharacter.images?.get(0),
-                    characterName = lastCharacter.name,
+                    imageUrl = getCharacter.images?.get(0),
+                    characterName = getCharacter.name,
                     trueAnswer = false
                 )
             )
@@ -371,7 +360,7 @@ class GameViewModel @Inject constructor(
         var thirdCharacter: Character
         var lastCharacter: Character
         while (true) {
-            val charList = repository.getAkatsukiList(AkatsukiSize)
+            val charList = narutoRepository.getAkatsukiList(AkatsukiSize)
             firstCharacter = getAkatsuki(charList)
             if (firstCharacter.family?.getFirstNonNullField() != null) {
                 secondCharacter = getAkatsuki(charList)
@@ -392,7 +381,7 @@ class GameViewModel @Inject constructor(
     private fun getAkatsuki(charList: Resource<Akatsuki>): Character {
         while (true) {
             val character =
-                charList.data?.akatsuki?.get(getRandom(from = 0, includeUntil = AkatsukiSize))
+                charList.data?.akatsuki?.get(getRandom(from = 0, includeUntil = AkatsukiSize - 1))
             if (character?.images?.isEmpty() == false) {
                 return character
             }
@@ -455,6 +444,7 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun getFourRandomCharacter(): Resource<List<Character?>> {
+        //TODO("BURASI İKİ DEFA DÖNÜYOR")
         var firstCharacter: Character?
         val selectedCharacters = mutableSetOf<Character?>()
         for (i in 1..5) {
@@ -481,7 +471,7 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun getRandomCharList(): List<Character>? {
-        return repository.getCharacterList(
+        return narutoRepository.getCharacterList(
             getRandom(
                 from = 0,
                 includeUntil = CharacterPageRange
@@ -529,7 +519,7 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun getFourClanCharacter(): Resource<List<Character?>> {
-        val clanList = repository.getClanList(ClanPageSize)
+        val clanList = narutoRepository.getClanList(ClanPageSize)
         val clanIdList = getRandomNumList(4, ClanPageSize)
         val firstClan = clanList.data?.clans?.get(clanIdList[0])
         val secondClan = clanList.data?.clans?.get(clanIdList[1])
@@ -549,47 +539,26 @@ class GameViewModel @Inject constructor(
         var secondCharacter: Character?
         var thirdCharacter: Character?
         var lastCharacter: Character?
+
         withContext(Dispatchers.IO) {
             val getFirstCharacter = async {
-                firstModel?.characters?.get(
-                    getRandom(
-                        from = 0,
-                        includeUntil = firstModel.characters.size - 1
-                    )
-                )
-                    ?.let { repository.getCharacter(it) }?.data
+                getCharacter(firstModel)
             }
             firstCharacter = getFirstCharacter.await()
+
             val getSecondCharacter = async {
-                secondModel?.characters?.get(
-                    getRandom(
-                        from = 0,
-                        includeUntil = secondModel.characters.size - 1
-                    )
-                )
-                    ?.let { repository.getCharacter(it) }?.data
+                getCharacter(secondModel)
             }
+
             secondCharacter = getSecondCharacter.await()
 
             val getThirdCharacter = async {
-                thirdModel?.characters?.get(
-                    getRandom(
-                        from = 0,
-                        includeUntil = thirdModel.characters.size - 1
-                    )
-                )
-                    ?.let { repository.getCharacter(it) }?.data
+                getCharacter(thirdModel)
             }
             thirdCharacter = getThirdCharacter.await()
 
             val getLastCharacter = async {
-                lastModel?.characters?.get(
-                    getRandom(
-                        from = 0,
-                        includeUntil = lastModel.characters.size - 1
-                    )
-                )
-                    ?.let { repository.getCharacter(it) }?.data
+                getCharacter(lastModel)
             }
             lastCharacter = getLastCharacter.await()
         }
@@ -601,6 +570,14 @@ class GameViewModel @Inject constructor(
                 lastCharacter
             )
         )
+    }
+
+    private suspend fun getCharacter(groupModel: GroupModel?): Character? {
+        return groupModel?.characters?.get(
+            getRandom(
+                includeUntil = groupModel.characters.size - 1
+            )
+        )?.let { narutoRepository.getCharacter(it) }?.data
     }
 
     private fun teamGame() {
@@ -639,8 +616,8 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun getFourTeamCharacter(): Resource<List<Character?>> {
-        val teamList = repository.getTeamList(TeamPageSize)
-        val teamIdList = getRandomNumList(4, TeamPageSize)
+        val teamList = narutoRepository.getTeamList(TeamPageSize)
+        val teamIdList = getRandomNumList(4, TeamPageSize - 1)
         val firstTeam = teamList.data?.teams?.get(teamIdList[0])
         val secondTeam = teamList.data?.teams?.get(teamIdList[1])
         val thirdTeam = teamList.data?.teams?.get(teamIdList[2])
@@ -684,7 +661,7 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun getFourTailCharacter(): Resource<List<Character?>> {
-        val tailList = repository.getTailedBeastList()
+        val tailList = narutoRepository.getTailedBeastList()
         val tailIdList = getRandomNumList(4, TailPageRange)
         val firstTail = tailList.data?.tailedBeasts?.get(tailIdList[0])
         val secondTail = tailList.data?.tailedBeasts?.get(tailIdList[1])

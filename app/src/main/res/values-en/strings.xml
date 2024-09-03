@@ -68,5 +68,6 @@
     <string name="jinckuri_question">Which one\'s jinckuri name is %1$s</string>
     <string name="naruto_icon">Naruto Icon</string>
     <string name="unexpected_error">Unexpected Error</string>
+    <string name="game_mode">Game Mode</string>
 
 </resources>
