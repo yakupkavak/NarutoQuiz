@@ -529,7 +529,7 @@ class GameViewModel @Inject constructor(
 
     private suspend fun getFourClanCharacter(): Resource<List<Character?>> {
         val clanList = repository.getClanList(ClanPageSize)
-        val clanIdList = getRandomNumList(4, ClanPageSize - 1)
+        val clanIdList = getRandomNumList(4, ClanPageSize)
         val firstClan = clanList.data?.clans?.get(clanIdList[0])
         val secondClan = clanList.data?.clans?.get(clanIdList[1])
         val thirdClan = clanList.data?.clans?.get(clanIdList[2])
@@ -538,7 +538,7 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun setGroupModel(
-        groupModelList: List<GroupModel?>
+        groupModelList: List<GroupModel?>,
     ): Resource<List<Character?>> {
         val firstModel = groupModelList[FirstCharacterId]
         val secondModel = groupModelList[SecondCharactedId]
@@ -550,7 +550,12 @@ class GameViewModel @Inject constructor(
         var lastCharacter: Character?
         withContext(Dispatchers.IO) {
             val getFirstCharacter = async {
-                firstModel?.characters?.get(getRandom(from = 0, until = firstModel.characters.size))
+                firstModel?.characters?.get(
+                    getRandom(
+                        from = 0,
+                        until = firstModel.characters.size - 1
+                    )
+                )
                     ?.let { repository.getCharacter(it) }?.data
             }
             firstCharacter = getFirstCharacter.await()
@@ -558,7 +563,7 @@ class GameViewModel @Inject constructor(
                 secondModel?.characters?.get(
                     getRandom(
                         from = 0,
-                        until = secondModel.characters.size
+                        until = secondModel.characters.size - 1
                     )
                 )
                     ?.let { repository.getCharacter(it) }?.data
@@ -566,13 +571,23 @@ class GameViewModel @Inject constructor(
             secondCharacter = getSecondCharacter.await()
 
             val getThirdCharacter = async {
-                thirdModel?.characters?.get(getRandom(from = 0, until = thirdModel.characters.size))
+                thirdModel?.characters?.get(
+                    getRandom(
+                        from = 0,
+                        until = thirdModel.characters.size - 1
+                    )
+                )
                     ?.let { repository.getCharacter(it) }?.data
             }
             thirdCharacter = getThirdCharacter.await()
 
             val getLastCharacter = async {
-                lastModel?.characters?.get(getRandom(from = 0, until = lastModel.characters.size))
+                lastModel?.characters?.get(
+                    getRandom(
+                        from = 0,
+                        until = lastModel.characters.size - 1
+                    )
+                )
                     ?.let { repository.getCharacter(it) }?.data
             }
             lastCharacter = getLastCharacter.await()
@@ -624,7 +639,7 @@ class GameViewModel @Inject constructor(
 
     private suspend fun getFourTeamCharacter(): Resource<List<Character?>> {
         val teamList = repository.getTeamList(TeamPageSize)
-        val teamIdList = getRandomNumList(4, TeamPageSize - 1)
+        val teamIdList = getRandomNumList(4, TeamPageSize)
         val firstTeam = teamList.data?.teams?.get(teamIdList[0])
         val secondTeam = teamList.data?.teams?.get(teamIdList[1])
         val thirdTeam = teamList.data?.teams?.get(teamIdList[2])
