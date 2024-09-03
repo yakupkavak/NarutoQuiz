@@ -35,7 +35,7 @@ class MainScreenActivity : AppCompatActivity() {
         windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
 
         val navController =
-            binding.fragmentContainerView2.getFragment<NavHostFragment>().navController
+            binding.fragmentContainer.getFragment<NavHostFragment>().navController
         binding.bottomNavigation.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->

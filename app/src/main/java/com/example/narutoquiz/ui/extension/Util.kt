@@ -17,5 +17,5 @@ fun CardView.setBackground(context: Context,resource: Int){
     this.setCardBackgroundColor(ContextCompat.getColor(context,resource))
 }
 fun getRandom(from: Int,until: Int): Int{
-    return Random.nextInt(from,until)
+    return Random.nextInt(from,until+1)
 }

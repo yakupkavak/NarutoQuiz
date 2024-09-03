@@ -88,6 +88,10 @@
         <item name="android:background">@drawable/feed_row_design</item>
     </style>
 
+    <style name="CardRowStyle">
+        <item name="cardBackgroundColor">@color/orange_300</item>
+        <item name="cardCornerRadius">@dimen/margin_large</item>    </style>
+
     <style name="CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:paddingStart">@dimen/margin_small</item>
         <item name="android:paddingEnd">@dimen/margin_small</item>

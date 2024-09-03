@@ -3,10 +3,10 @@ package com.example.narutoquiz.ui.mainScreen.game
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.narutoquiz.R
 import com.example.narutoquiz.data.model.Akatsuki
 import com.example.narutoquiz.data.model.AnswerModel
 import com.example.narutoquiz.data.model.Character
+import com.example.narutoquiz.data.model.GroupModel
 import com.example.narutoquiz.data.model.OptionModel
 import com.example.narutoquiz.data.model.SelectionModel
 import com.example.narutoquiz.data.repository.NarutoRepository
@@ -15,22 +15,30 @@ import com.example.narutoquiz.domain.extension.getFirstNonNullField
 import com.example.narutoquiz.ui.base.BaseViewModel
 import com.example.narutoquiz.ui.extension.getRandom
 import com.example.narutoquiz.ui.extension.getRandomNumList
-import com.example.narutoquiz.ui.mainScreen.feedlist.getNullCharacter
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AkatsukiGameId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AkatsukiSize
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskClanId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskFamilyId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskJinckuriId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskTeamId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskVoiceActorId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.ChallangeGameId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.CharacterPageRange
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.ClanGameId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.ClanPageSize
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.ClassicGameId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.FirstCharacterId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.FirstOptionId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.GameRepeatCount
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.LastCharacterId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.LastOptionId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.SecondCharactedId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.SecondOptionId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.TailPageRange
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.TailedGameId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.TeamGameId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.TeamPageSize
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.ThirdCharacterId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.ThirdOptionId
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -86,6 +94,9 @@ class GameViewModel @Inject constructor(
 
     private val _finishGame = MutableLiveData<List<Int?>>()
     val finishGame: LiveData<List<Int?>> get() = _finishGame
+
+    private val _questionId = MutableLiveData<Int>()
+    val questionId: LiveData<Int> get() = _questionId
 
     private var trueAnswerId: Int? = null
 
@@ -256,57 +267,77 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private fun askFamily(characterList: List<Character>) {
+    private fun askFamily(characterList: List<Character?>) {
+        _questionId.postValue(AskFamilyId)
+
+        val nonNullPair: Pair<String, String>?
+        val firstCharacter = characterList[FirstCharacterId]
+
+        if (firstCharacter != null) {
+            nonNullPair = firstCharacter.family?.getFirstNonNullField()
+            if (nonNullPair != null) {
+                _questionText.postValue(
+                    "${nonNullPair.first} is ${nonNullPair.second}"
+                )
+            }
+        }
+
+        implementOptions(
+            listOf(
+                firstCharacter,
+                characterList[SecondCharactedId],
+                characterList[ThirdCharacterId],
+                characterList[LastCharacterId]
+            )
+        )
+    }
+
+    private fun implementOptions(characterList: List<Character?>) {
         val options = listOf(
             OptionModel(FirstOptionId, _firstOption),
             OptionModel(SecondOptionId, _secondOption),
             OptionModel(ThirdOptionId, _thirdOption),
             OptionModel(LastOptionId, _lastOption)
         ).shuffled()
-        val nonNullPair: Pair<String, String>?
-        val firstCharacter = characterList[0]
-        val secondCharacter = characterList[1]
-        val thirdCharacter = characterList[2]
-        val lastCharacter = characterList[3]
-
-        nonNullPair = firstCharacter.family?.getFirstNonNullField()
-
-        if (nonNullPair != null) {
-            _questionText.postValue(
-                "Which one's ${nonNullPair.first} is ${nonNullPair.second}"
-            )
-        }
 
         trueAnswerId = options[FirstOptionId].optionId
 
-        options[FirstOptionId].option.postValue(
-            SelectionModel(
-                imageUrl = firstCharacter.images?.get(0),
-                characterName = firstCharacter.name,
-                trueAnswer = true
+        characterList[FirstCharacterId]?.let { firstCharacter ->
+            options[FirstOptionId].option.postValue(
+                SelectionModel(
+                    imageUrl = firstCharacter.images?.get(0),
+                    characterName = firstCharacter.name,
+                    trueAnswer = true
+                )
             )
-        )
-        options[SecondOptionId].option.postValue(
-            SelectionModel(
-                imageUrl = secondCharacter.images?.get(0),
-                characterName = secondCharacter.name,
-                trueAnswer = true
+        }
+        characterList[SecondCharactedId]?.let { secondCharacter ->
+            options[SecondOptionId].option.postValue(
+                SelectionModel(
+                    imageUrl = secondCharacter.images?.get(0),
+                    characterName = secondCharacter.name,
+                    trueAnswer = false
+                )
             )
-        )
-        options[ThirdOptionId].option.postValue(
-            SelectionModel(
-                imageUrl = thirdCharacter.images?.get(0),
-                characterName = thirdCharacter.name,
-                trueAnswer = true
+        }
+        characterList[ThirdCharacterId]?.let { thirdCharacter ->
+            options[ThirdOptionId].option.postValue(
+                SelectionModel(
+                    imageUrl = thirdCharacter.images?.get(0),
+                    characterName = thirdCharacter.name,
+                    trueAnswer = false
+                )
             )
-        )
-        options[LastOptionId].option.postValue(
-            SelectionModel(
-                imageUrl = lastCharacter.images?.get(0),
-                characterName = lastCharacter.name,
-                trueAnswer = true
+        }
+        characterList[LastCharacterId]?.let { lastCharacter ->
+            options[LastOptionId].option.postValue(
+                SelectionModel(
+                    imageUrl = lastCharacter.images?.get(0),
+                    characterName = lastCharacter.name,
+                    trueAnswer = false
+                )
             )
-        )
+        }
     }
 
     private fun akatsukiGame() {
@@ -367,23 +398,18 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    private fun askVoiceActor(characterList: List<Character>) {
-        val options = listOf(
-            OptionModel(FirstOptionId, _firstOption),
-            OptionModel(SecondOptionId, _secondOption),
-            OptionModel(ThirdOptionId, _thirdOption),
-            OptionModel(LastOptionId, _lastOption)
-        ).shuffled()
+    private fun askVoiceActor(characterList: List<Character?>) {
+        _questionId.postValue(AskVoiceActorId)
 
         val nonNullPair: Pair<String, String>?
-        var firstCharacter = characterList[FirstOptionId]
-        var secondCharacter = characterList[SecondOptionId]
-        var thirdCharacter = characterList[ThirdOptionId]
-        var lastCharacter = characterList[LastOptionId]
+        var firstCharacter = characterList[FirstCharacterId]
+        var secondCharacter = characterList[SecondCharactedId]
+        var thirdCharacter = characterList[ThirdCharacterId]
+        var lastCharacter = characterList[LastCharacterId]
 
         for (i in FirstOptionId..LastOptionId) {
             if (i == FirstOptionId || i == LastOptionId) {
-                if (characterList[i].voiceActors != null) {
+                if (characterList[i]?.voiceActors != null) {
                     firstCharacter = characterList[i]
                     secondCharacter = characterList[abs(i - 1)]
                     thirdCharacter = characterList[abs(i - 2)]
@@ -391,7 +417,7 @@ class GameViewModel @Inject constructor(
                 }
             }
             if (i == SecondOptionId) {
-                if (characterList[i].voiceActors != null) {
+                if (characterList[i]?.voiceActors != null) {
                     firstCharacter = characterList[i]
                     secondCharacter = characterList[0]
                     thirdCharacter = characterList[2]
@@ -399,7 +425,7 @@ class GameViewModel @Inject constructor(
                 }
             }
             if (i == ThirdOptionId) {
-                if (characterList[i].voiceActors != null) {
+                if (characterList[i]?.voiceActors != null) {
                     firstCharacter = characterList[i]
                     secondCharacter = characterList[0]
                     thirdCharacter = characterList[1]
@@ -408,52 +434,31 @@ class GameViewModel @Inject constructor(
             }
         }
 
-        nonNullPair = firstCharacter.voiceActors?.getFirstNonNullField()
-
-        if (nonNullPair != null) {
-            _questionText.postValue(
-                "Which one's voice actor ${nonNullPair.first} is ${nonNullPair.second}"
-            )
+        if (firstCharacter != null) {
+            nonNullPair = firstCharacter.voiceActors?.getFirstNonNullField()
+            if (nonNullPair != null) {
+                _questionText.postValue(
+                    "${nonNullPair.first} voice actor is ${nonNullPair.second}"
+                )
+            }
         }
 
-        trueAnswerId = options[FirstOptionId].optionId
-
-        options[FirstOptionId].option.postValue(
-            SelectionModel(
-                imageUrl = firstCharacter.images?.get(0),
-                characterName = firstCharacter.name,
-                trueAnswer = true
-            )
-        )
-        options[SecondOptionId].option.postValue(
-            SelectionModel(
-                imageUrl = secondCharacter.images?.get(0),
-                characterName = secondCharacter.name,
-                trueAnswer = true
-            )
-        )
-        options[ThirdOptionId].option.postValue(
-            SelectionModel(
-                imageUrl = thirdCharacter.images?.get(0),
-                characterName = thirdCharacter.name,
-                trueAnswer = true
-            )
-        )
-        options[LastOptionId].option.postValue(
-            SelectionModel(
-                imageUrl = lastCharacter.images?.get(0),
-                characterName = lastCharacter.name,
-                trueAnswer = true
+        implementOptions(
+            listOf(
+                firstCharacter,
+                secondCharacter,
+                thirdCharacter,
+                lastCharacter
             )
         )
     }
 
-    private suspend fun getFourRandomCharacter(): Resource<List<Character>> {
-        var firstCharacter: Character
-        val selectedCharacters = mutableSetOf<Character>()
-        while (selectedCharacters.size < 5) {
+    private suspend fun getFourRandomCharacter(): Resource<List<Character?>> {
+        var firstCharacter: Character?
+        val selectedCharacters = mutableSetOf<Character?>()
+        for (i in 1..5) {
             firstCharacter = getRandomCharacter()
-            if (firstCharacter.family?.getFirstNonNullField() != null) {
+            if (firstCharacter?.family?.getFirstNonNullField() != null) {
                 selectedCharacters.add(firstCharacter)
                 selectedCharacters.add(getRandomCharacter())
                 selectedCharacters.add(getRandomCharacter())
@@ -469,9 +474,9 @@ class GameViewModel @Inject constructor(
         return Resource.error(null)
     }
 
-    private suspend fun getRandomCharacter(): Character {
+    private suspend fun getRandomCharacter(): Character? {
         val charList = getRandomCharList()
-        return charList?.get(getRandom(from = 0, until = charList.size)) ?: getNullCharacter()
+        return charList?.get(getRandom(from = 0, until = charList.size))
     }
 
     private suspend fun getRandomCharList(): List<Character>? {
@@ -484,82 +489,24 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askClan(characterList: List<Character?>) {
-        val options = listOf(
-            OptionModel(FirstOptionId, _firstOption),
-            OptionModel(SecondOptionId, _secondOption),
-            OptionModel(ThirdOptionId, _thirdOption),
-            OptionModel(LastOptionId, _lastOption)
-        ).shuffled()
+        _questionId.postValue(AskClanId)
 
-        val firstCharacter = characterList[0]
-        val secondCharacter = characterList[1]
-        val thirdCharacter = characterList[2]
-        val lastCharacter = characterList[3]
+        val firstCharacter = characterList[FirstCharacterId]
 
         if (firstCharacter != null) {
             _questionText.postValue(
-                "Which one's clan name is ${firstCharacter.personal?.clan?.get(0)}"
+                firstCharacter.personal?.clan?.get(0)
             )
         }
 
-        trueAnswerId = options[FirstOptionId].optionId
-
-        if (firstCharacter != null) {
-            val imageUrl = if (!firstCharacter.images.isNullOrEmpty()) {
-                firstCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[FirstOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = firstCharacter.name,
-                    trueAnswer = true
-                )
+        implementOptions(
+            listOf(
+                firstCharacter,
+                characterList[SecondCharactedId],
+                characterList[ThirdCharacterId],
+                characterList[LastCharacterId]
             )
-        }
-        if (secondCharacter != null) {
-            val imageUrl = if (!secondCharacter.images.isNullOrEmpty()) {
-                secondCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[SecondOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = secondCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
-        if (thirdCharacter != null) {
-            val imageUrl = if (!thirdCharacter.images.isNullOrEmpty()) {
-                thirdCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[ThirdOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = thirdCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
-        if (lastCharacter != null) {
-            val imageUrl = if (!lastCharacter.images.isNullOrEmpty()) {
-                lastCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[LastOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = lastCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
+        )
     }
 
     private fun clanGame() {
@@ -642,80 +589,23 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askTeam(characterList: List<Character?>) {
-        val options = listOf(
-            OptionModel(FirstOptionId, _firstOption),
-            OptionModel(SecondOptionId, _secondOption),
-            OptionModel(ThirdOptionId, _thirdOption),
-            OptionModel(LastOptionId, _lastOption)
-        ).shuffled()
-        val firstCharacter = characterList[0]
-        val secondCharacter = characterList[1]
-        val thirdCharacter = characterList[2]
-        val lastCharacter = characterList[3]
+        _questionId.postValue(AskTeamId)
+
+        val firstCharacter = characterList[FirstCharacterId]
 
         if (firstCharacter != null) {
             _questionText.postValue(
-                "${R.string.team_question} ${firstCharacter.personal?.team?.get(0)}"
+                firstCharacter.personal?.team?.get(0)
             )
         }
-        trueAnswerId = options[FirstOptionId].optionId
-
-        if (firstCharacter != null) {
-            val imageUrl = if (!firstCharacter.images.isNullOrEmpty()) {
-                firstCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[FirstOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = firstCharacter.name,
-                    trueAnswer = true
-                )
+        implementOptions(
+            listOf(
+                firstCharacter,
+                characterList[SecondCharactedId],
+                characterList[ThirdCharacterId],
+                characterList[LastCharacterId]
             )
-        }
-        if (secondCharacter != null) {
-            val imageUrl = if (!secondCharacter.images.isNullOrEmpty()) {
-                secondCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[SecondOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = secondCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
-        if (thirdCharacter != null) {
-            val imageUrl = if (!thirdCharacter.images.isNullOrEmpty()) {
-                thirdCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[ThirdOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = thirdCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
-        if (lastCharacter != null) {
-            val imageUrl = if (!lastCharacter.images.isNullOrEmpty()) {
-                lastCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[LastOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = lastCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
+        )
     }
 
     private suspend fun getFourTeamCharacter(): Resource<List<Character?>> {
@@ -747,6 +637,26 @@ class GameViewModel @Inject constructor(
         )
     }
 
+    private suspend fun implementGroupModel(groupList: List<GroupModel?>) {
+        return Resource.success(
+            listOf(
+                groupList[FirstCharacterId]?.characters?.let {
+                    getRandom(
+                        from = 0,
+                        until = it.size
+                    )
+                }?.let { it ->
+                    groupList[FirstCharacterId]?.characters?.get(
+                        it
+                    )
+                        ?.let { repository.getCharacter(it) }?.data
+                },
+                secondCharacter,
+                thirdCharacter,
+                lastCharacter
+            )
+    }
+
     private fun tailedGame() {
         getDataCall(
             dataCall = { getFourTailCharacter() },
@@ -763,81 +673,23 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askJinckuri(characterList: List<Character?>) {
-        val options = listOf(
-            OptionModel(FirstOptionId, _firstOption),
-            OptionModel(SecondOptionId, _secondOption),
-            OptionModel(ThirdOptionId, _thirdOption),
-            OptionModel(LastOptionId, _lastOption)
-        ).shuffled()
+        _questionId.postValue(AskJinckuriId)
 
-        val firstCharacter = characterList[0]
-        val secondCharacter = characterList[1]
-        val thirdCharacter = characterList[2]
-        val lastCharacter = characterList[3]
+        val firstCharacter = characterList[FirstCharacterId]
 
         if (firstCharacter != null) {
             _questionText.postValue(
-                "Which one's jinchuriki name is ${firstCharacter.personal?.jinchuriki?.get(0)}"
+                firstCharacter.personal?.jinchuriki?.get(0)
             )
         }
-        trueAnswerId = options[FirstOptionId].optionId
-
-        if (firstCharacter != null) {
-            val imageUrl = if (!firstCharacter.images.isNullOrEmpty()) {
-                firstCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[FirstOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = firstCharacter.name,
-                    trueAnswer = true
-                )
+        implementOptions(
+            listOf(
+                firstCharacter,
+                characterList[SecondCharactedId],
+                characterList[ThirdCharacterId],
+                characterList[LastCharacterId]
             )
-        }
-        if (secondCharacter != null) {
-            val imageUrl = if (!secondCharacter.images.isNullOrEmpty()) {
-                secondCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[SecondOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = secondCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
-        if (thirdCharacter != null) {
-            val imageUrl = if (!thirdCharacter.images.isNullOrEmpty()) {
-                thirdCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[ThirdOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = thirdCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
-        if (lastCharacter != null) {
-            val imageUrl = if (!lastCharacter.images.isNullOrEmpty()) {
-                lastCharacter.images[0]
-            } else {
-                R.string.emptyImageUrl.toString()
-            }
-            options[LastOptionId].option.postValue(
-                SelectionModel(
-                    imageUrl = imageUrl,
-                    characterName = lastCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
+        )
     }
 
     private suspend fun getFourTailCharacter(): Resource<List<Character?>> {
