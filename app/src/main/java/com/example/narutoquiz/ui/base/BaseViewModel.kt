@@ -16,9 +16,10 @@ open class BaseViewModel : ViewModel() {
     ) = viewModelScope.launch {
         try {
             onLoading?.invoke()
-            when (dataCall().status) {
+            val getData = dataCall()
+            when (getData.status) {
                 Status.SUCCESS -> {
-                    onSuccess?.invoke(dataCall().data)
+                    onSuccess?.invoke(getData.data)
                 }
 
                 Status.ERROR -> {

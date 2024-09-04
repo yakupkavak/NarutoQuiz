@@ -288,9 +288,6 @@ class GameViewModel @Inject constructor(
                 )
             }
         }
-        //TODO(SET OPTIONS İÇERİSİNE FONKSİON)
-        // FIXME: fonkiyonlar yazılacak
-
         setOptions(
             listOf(
                 firstCharacter,
@@ -311,13 +308,24 @@ class GameViewModel @Inject constructor(
 
         trueAnswerId = options[FirstOptionId].optionId
 
-        setOption(characterList[FirstCharacterId], options[FirstOptionId])
-        setOption(characterList[SecondCharactedId], options[SecondOptionId])
-        setOption(characterList[ThirdCharacterId], options[ThirdOptionId])
-        setOption(characterList[LastCharacterId], options[LastOptionId])
+        setOptionTrue(characterList[FirstCharacterId], options[FirstOptionId])
+        setOptionWrong(characterList[SecondCharactedId], options[SecondOptionId])
+        setOptionWrong(characterList[ThirdCharacterId], options[ThirdOptionId])
+        setOptionWrong(characterList[LastCharacterId], options[LastOptionId])
+    }
+    private fun setOptionTrue(character: Character?, option: OptionModel) {
+        character?.let { getCharacter ->
+            option.option.postValue(
+                SelectionModel(
+                    imageUrl = getCharacter.images?.get(0),
+                    characterName = getCharacter.name,
+                    trueAnswer = true
+                )
+            )
+        }
     }
 
-    private fun setOption(character: Character?, option: OptionModel) {
+    private fun setOptionWrong(character: Character?, option: OptionModel) {
         character?.let { getCharacter ->
             option.option.postValue(
                 SelectionModel(
@@ -467,13 +475,12 @@ class GameViewModel @Inject constructor(
 
     private suspend fun getRandomCharacter(): Character? {
         val charList = getRandomCharList()
-        return charList?.get(getRandom(from = 0, includeUntil = charList.size - 1))
+        return charList?.get(getRandom(includeUntil = charList.size - 1))
     }
 
     private suspend fun getRandomCharList(): List<Character>? {
         return narutoRepository.getCharacterList(
             getRandom(
-                from = 0,
                 includeUntil = CharacterPageRange
             )
         ).data?.characters?.filter { character -> character.images?.isEmpty() == false }
