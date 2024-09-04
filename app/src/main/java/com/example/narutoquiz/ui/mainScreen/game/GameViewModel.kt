@@ -461,7 +461,6 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun getFourRandomCharacter(): Resource<List<Character?>> {
-        //TODO("BURASI İKİ DEFA DÖNÜYOR")
         var firstCharacter: Character?
         val selectedCharacters = mutableSetOf<Character?>()
         for (i in 1..5) {

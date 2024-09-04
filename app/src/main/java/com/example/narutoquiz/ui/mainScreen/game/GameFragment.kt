@@ -287,6 +287,7 @@ class GameFragment : Fragment() {
                         gameState = 1
                         btnCheck.text = getString(R.string.next)
                         falseFocusable()
+                        selectedOptionId = -1
                     }
                 } else {
                     clearSelection()
@@ -294,6 +295,7 @@ class GameFragment : Fragment() {
                     btnCheck.text = getString(R.string.check)
                     trueFocusable()
                     viewModel.nextQuestion()
+                    selectedOptionId = -1
                 }
             }
         }

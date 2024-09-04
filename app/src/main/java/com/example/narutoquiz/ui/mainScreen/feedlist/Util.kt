@@ -11,7 +11,7 @@ import com.example.narutoquiz.ui.mainScreen.game.GameConst.TeamGameId
 
 fun getRowModelList(): List<FeedRowModel> {
     return listOf(
-        FeedRowModel(description = "Challange", imageResId = R.drawable.akatsuki, gameId = ChallangeGameId),
+        FeedRowModel(description = "Challenge", imageResId = R.drawable.akatsuki, gameId = ChallangeGameId),
         FeedRowModel(description = "Classic", imageResId = R.drawable.akatsuki, gameId = ClassicGameId),
         FeedRowModel(description = "Akatsuki", imageResId = R.drawable.akatsuki, gameId = AkatsukiGameId),
         FeedRowModel(description = "Clan", imageResId = R.drawable.akatsuki, gameId = ClanGameId),

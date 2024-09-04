@@ -11,7 +11,6 @@ import com.example.narutoquiz.databinding.RankRowBinding
 
 class RankAdapter : Adapter<RankAdapter.RankViewHolder>() {
 
-
     private val diffUtil = object : DiffUtil.ItemCallback<RankRowModel>() {
         override fun areItemsTheSame(oldItem: RankRowModel, newItem: RankRowModel): Boolean {
             return oldItem == newItem
@@ -24,8 +23,9 @@ class RankAdapter : Adapter<RankAdapter.RankViewHolder>() {
 
     private val asyncListDiffer = AsyncListDiffer(this, diffUtil)
 
-    fun submit(items: List<RankRowModel>) {
+    fun submit(items: ArrayList<RankRowModel>) {
         asyncListDiffer.submitList(items)
+        println(items)
     }
 
     inner class RankViewHolder(private val binding: RankRowBinding) : ViewHolder(binding.root) {

@@ -2,14 +2,18 @@ package com.example.narutoquiz.ui.userLogIn.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.example.narutoquiz.data.repository.AuthRepository
+import com.example.narutoquiz.data.repository.FirestoreRepository
 import com.example.narutoquiz.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class SignUpViewModel @Inject constructor(
-    private val authRepository: AuthRepository
+    private val authRepository: AuthRepository,
+    private val firestoreRepository: FirestoreRepository
 ) : BaseViewModel() {
 
     private val _signUpSuccess = MutableLiveData<Boolean>()
@@ -17,6 +21,12 @@ class SignUpViewModel @Inject constructor(
 
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> get() = _loading
+
+    fun start(){
+        viewModelScope.launch {
+            firestoreRepository.getChallengeData()
+        }
+    }
 
     fun signUp(userName: String, userMail: String, userPassword: String) {
         getDataCall(
