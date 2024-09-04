@@ -20,7 +20,7 @@ object GameConst {
     const val ClanGameId = 3
     const val TailedGameId = 4
     const val TeamGameId = 5
-    const val GameRepeatCount = 9
+    const val GameRepeatCount = 10
     const val AskFamilyId = 0
     const val AskVoiceActorId = 1
     const val AskClanId = 2

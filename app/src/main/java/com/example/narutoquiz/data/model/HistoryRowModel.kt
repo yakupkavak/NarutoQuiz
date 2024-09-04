@@ -1,7 +1,7 @@
 package com.example.narutoquiz.data.model
 
 data class HistoryRowModel(
-    val gameMode: String,
+    val gameMode: Int,
     val trueCount: Int,
-    val falseCount: String,
+    val falseCount: Int,
 )

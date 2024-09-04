@@ -42,6 +42,7 @@ class SignUpFragment : Fragment() {
     }
 
     private fun setObserve() {
+        viewModel.start()
         observe(viewModel.signUpSuccess) {
             if (it) {
                 Intent(requireContext(), MainScreenActivity::class.java).also { intent ->

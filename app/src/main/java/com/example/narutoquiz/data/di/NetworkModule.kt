@@ -5,6 +5,7 @@ import com.example.narutoquiz.data.repository.AuthRepository
 import com.example.narutoquiz.data.repository.FirestoreRepository
 import com.example.narutoquiz.data.repository.NarutoRepository
 import com.example.narutoquiz.data.service.NarutoService
+import com.example.narutoquiz.data.util.AuthProvider
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.firebase.auth.FirebaseAuth
@@ -58,8 +59,18 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideFirebaseRepository(db: FirebaseFirestore, auth: FirebaseAuth): FirestoreRepository {
-        return FirestoreRepository(db, auth)
+    fun provideAuthProvider(auth: FirebaseAuth): AuthProvider {
+        return AuthProvider(auth)
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirebaseRepository(
+        db: FirebaseFirestore,
+        auth: FirebaseAuth,
+        authProvider: AuthProvider
+    ): FirestoreRepository {
+        return FirestoreRepository(db, auth, authProvider)
     }
 
     @Provides

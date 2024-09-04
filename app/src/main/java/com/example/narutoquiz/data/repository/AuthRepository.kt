@@ -27,4 +27,5 @@ class AuthRepository @Inject constructor(
 
     suspend fun recoverMail(userMail: String) =
         firebaseJob { auth.sendPasswordResetEmail(userMail) }
+
 }

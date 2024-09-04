@@ -38,7 +38,7 @@ abstract class BaseRepository {
                 suspendCancellableCoroutine<Resource<T>> { continuation ->
                     task().addOnSuccessListener { result ->
                         continuation.resume(Resource.success(result))
-                    }.addOnFailureListener {
+                    }.addOnFailureListener { //TODO("EXCEPTİON DÖNDÜRÜLECEK")
                         continuation.resume(Resource.error(null))
                     }
                 }
