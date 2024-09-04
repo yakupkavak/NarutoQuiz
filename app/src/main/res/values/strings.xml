@@ -29,6 +29,8 @@
 
     <string name="sign_in">Sign in</string>
     <string name="null_space">Boş bırakmayınız</string>
+    <string name="network_problem">There is an problem</string>
+    <string name="check_mail">Check your mail</string>
     <string name="sign_success">Kayıt olundu</string>
     <string name="email">Email</string>
     <string name="hint_email">example@gmail.com</string>

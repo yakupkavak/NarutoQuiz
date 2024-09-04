@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class FirebaseRepository @Inject constructor(
+class FirestoreRepository @Inject constructor(
     val db: FirebaseFirestore,
     val auth: FirebaseAuth
 ) : BaseRepository() {

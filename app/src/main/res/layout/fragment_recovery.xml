@@ -26,14 +26,14 @@
         app:layout_constraintTop_toBottomOf="@id/tvRecovery" />
 
     <EditText
-        android:id="@+id/editPassword"
+        android:id="@+id/editMail"
         style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
         android:autofillHints="password"
         android:hint="@string/hint_email"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/tvSignPassword" />
@@ -48,7 +48,7 @@
         android:textColor="@color/orange_500"
         app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineBtnStart"
-        app:layout_constraintTop_toBottomOf="@id/editPassword" />
+        app:layout_constraintTop_toBottomOf="@id/editMail" />
     <TextView
         android:id="@+id/tvSignIn"
         style="@style/NormalSizeMedium"

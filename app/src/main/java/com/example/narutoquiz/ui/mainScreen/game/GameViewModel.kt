@@ -9,7 +9,7 @@ import com.example.narutoquiz.data.model.Character
 import com.example.narutoquiz.data.model.GroupModel
 import com.example.narutoquiz.data.model.OptionModel
 import com.example.narutoquiz.data.model.SelectionModel
-import com.example.narutoquiz.data.repository.FirebaseRepository
+import com.example.narutoquiz.data.repository.FirestoreRepository
 import com.example.narutoquiz.data.repository.NarutoRepository
 import com.example.narutoquiz.data.util.Resource
 import com.example.narutoquiz.domain.extension.getFirstNonNullField
@@ -52,7 +52,7 @@ import kotlin.math.abs
 @HiltViewModel
 class GameViewModel @Inject constructor(
     private val narutoRepository: NarutoRepository,
-    private val firebaseRepository: FirebaseRepository
+    private val firestoreRepository: FirestoreRepository
 ) : BaseViewModel() {
 
     private val _questionText = MutableLiveData<String>()
@@ -218,7 +218,7 @@ class GameViewModel @Inject constructor(
 
     private suspend fun gameOver() {
         _finishGame.postValue(listOf(_trueAnswer.value, _falseAnswer.value))
-        firebaseRepository.postGameScore(
+        firestoreRepository.postGameScore(
             gameId = _currentGameId.value,
             trueAnswer = _trueAnswer.value,
             falseAnswer = _falseAnswer.value
@@ -313,11 +313,16 @@ class GameViewModel @Inject constructor(
         setOptionWrong(characterList[ThirdCharacterId], options[ThirdOptionId])
         setOptionWrong(characterList[LastCharacterId], options[LastOptionId])
     }
+
     private fun setOptionTrue(character: Character?, option: OptionModel) {
         character?.let { getCharacter ->
             option.option.postValue(
                 SelectionModel(
-                    imageUrl = getCharacter.images?.get(0),
+                    imageUrl = if (!getCharacter.images.isNullOrEmpty()) {
+                        getCharacter.images[0]
+                    } else {
+                        ""
+                    },
                     characterName = getCharacter.name,
                     trueAnswer = true
                 )
@@ -329,7 +334,11 @@ class GameViewModel @Inject constructor(
         character?.let { getCharacter ->
             option.option.postValue(
                 SelectionModel(
-                    imageUrl = getCharacter.images?.get(0),
+                    imageUrl = if (!getCharacter.images.isNullOrEmpty()) {
+                        getCharacter.images[0]
+                    } else {
+                        ""
+                    },
                     characterName = getCharacter.name,
                     trueAnswer = false
                 )
@@ -527,7 +536,7 @@ class GameViewModel @Inject constructor(
 
     private suspend fun getFourClanCharacter(): Resource<List<Character?>> {
         val clanList = narutoRepository.getClanList(ClanPageSize)
-        val clanIdList = getRandomNumList(4, ClanPageSize)
+        val clanIdList = getRandomNumList(4, ClanPageSize - 1)
         val firstClan = clanList.data?.clans?.get(clanIdList[0])
         val secondClan = clanList.data?.clans?.get(clanIdList[1])
         val thirdClan = clanList.data?.clans?.get(clanIdList[2])
