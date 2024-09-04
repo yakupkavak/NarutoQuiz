@@ -103,8 +103,8 @@ class GameFragment : Fragment() {
                 }
             }
         }
-        observe(viewModel.error){
-            if (it){
+        observe(viewModel.error) {
+            if (it) {
                 val newFragment = ErrorDialogFragment(
                     mainScreen = { navigate(GameFragmentDirections.actionGameFragmentToFeedFragment()) })
                 newFragment.show(parentFragmentManager, "game")

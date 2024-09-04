@@ -30,6 +30,8 @@
 
     <string name="sign_in">Sign in</string>
     <string name="null_space">Do not leave blank</string>
+    <string name="network_problem">There is an problem</string>
+    <string name="check_mail">Check your mail</string>
     <string name="sign_success">Register success</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
