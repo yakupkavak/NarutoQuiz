@@ -105,6 +105,7 @@ class GameViewModel @Inject constructor(
     fun initializeGame(gameId: Int, gameTopic: String) {
         _currentGameId.value = gameId
         _currentGameTopic.value = gameTopic
+        startGame()
     }
 
     fun checkQuestion(selectedOptionId: Int) {
@@ -226,7 +227,7 @@ class GameViewModel @Inject constructor(
     }
 
     private fun challangeGame() {
-        when (getRandom(from = 0, includeUntil = 4)) {
+        when (getRandom(includeUntil = 4)) {
             0 -> {
                 classicGame()
             }
@@ -254,7 +255,7 @@ class GameViewModel @Inject constructor(
             dataCall = { getFourRandomCharacter() },
             onSuccess = { characterList ->
                 if (characterList != null) {
-                    when (getRandom(from = 0, includeUntil = 1)) {
+                    when (getRandom(includeUntil = 1)) {
                         0 -> {
                             askFamily(characterList).also { _loading.postValue(false) }.also {
                                 _questionNumber.postValue(_questionNumber.value?.plus(1))

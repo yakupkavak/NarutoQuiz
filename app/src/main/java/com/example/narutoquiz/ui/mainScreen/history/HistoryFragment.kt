@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.narutoquiz.databinding.FragmentHistoryBinding
 import com.example.narutoquiz.ui.extension.observe
@@ -22,6 +23,7 @@ class HistoryFragment : Fragment() {
         super.onCreate(savedInstanceState)
         adapter = HistoryAdapter()
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,7 +35,6 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setObserve()
-        viewModel.getUserHistory()
     }
 
     private fun setObserve() {
@@ -41,11 +42,21 @@ class HistoryFragment : Fragment() {
             historyList?.let {
                 adapter.submit(historyList)
             }
-            binding.rvRank.adapter = adapter
+            binding.rvHistory.adapter = adapter
         }
-        observe(viewModel.loading){
-            if (it){
-                println("yükleniyor")
+        observe(viewModel.loading) { loading ->
+            if (loading) {
+                with(binding) {
+                    lottieAnimationNaruto.isVisible = true
+                    lottieAnimationNaruto.playAnimation()
+                    rvHistory.isVisible = false
+                }
+            } else {
+                with(binding) {
+                    lottieAnimationNaruto.isVisible = false
+                    lottieAnimationNaruto.cancelAnimation()
+                    rvHistory.isVisible = true
+                }
             }
         }
     }

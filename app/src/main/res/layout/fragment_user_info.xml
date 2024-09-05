@@ -1,7 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background_color">
+
+    <Button
+        android:id="@+id/btnCheckOut"
+        style="@style/ButtonStyleQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/sign_out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/gdlFinishVertical"
+        app:layout_constraintStart_toStartOf="@+id/gdlMediumVertical" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_animation_naruto"
+        android:layout_width="@dimen/margin_xxlarge"
+        android:layout_height="@dimen/margin_xxlarge"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/naruto" />
+
+    <TextView
+        android:id="@+id/tvUserInfo"
+        style="@style/XLargeSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:text="@string/user"
+        app:layout_constraintStart_toEndOf="@id/gdlStartVertical"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/viewUser"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/orange_300"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUserInfo" />
+
+    <TextView
+        android:id="@+id/tvUserName"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/game_mode"
+        app:layout_constraintStart_toEndOf="@id/gdlStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/viewUser" />
+
+    <TextView
+        android:id="@+id/tvUserMail"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/game_mode"
+        app:layout_constraintStart_toEndOf="@id/gdlStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+    <TextView
+        android:id="@+id/tvChangePassword"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/change_password"
+        android:textColor="@color/indicator_color"
+        app:layout_constraintStart_toEndOf="@id/gdlStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/tvUserMail" />
+
+    <TextView
+        android:id="@+id/tvGameInfo"
+        style="@style/XLargeSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:text="@string/game"
+        app:layout_constraintStart_toEndOf="@id/gdlStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/tvChangePassword" />
+
+    <View
+        android:id="@+id/viewGame"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/orange_300"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGameInfo" />
+
+    <TextView
+        android:id="@+id/tvRepeatInfo"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/game"
+        app:layout_constraintStart_toEndOf="@id/gdlStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/tvGameInfo" />
+
+    <TextView
+        android:id="@+id/tvGetInformation"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/get_information"
+        android:textColor="@color/indicator_color"
+        app:layout_constraintStart_toEndOf="@id/gdlStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/tvRepeatInfo" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlStartVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlMediumVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlFinishVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
