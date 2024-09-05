@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.narutoquiz.databinding.FragmentRankBinding
 import com.example.narutoquiz.ui.extension.observe
@@ -35,7 +36,6 @@ class RankFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setObserve()
-        viewModel.getRankList()
     }
 
     private fun setObserve() {
@@ -45,9 +45,19 @@ class RankFragment : Fragment() {
             }
             binding.rvRank.adapter = adapter
         }
-        observe(viewModel.loading){
-            if (it){
-                println("yükleniyor")
+        observe(viewModel.loading) { loading ->
+            if (loading) {
+                with(binding) {
+                    lottieAnimationNaruto.isVisible = true
+                    lottieAnimationNaruto.playAnimation()
+                    rvRank.isVisible = false
+                }
+            } else {
+                with(binding) {
+                    lottieAnimationNaruto.isVisible = false
+                    lottieAnimationNaruto.cancelAnimation()
+                    rvRank.isVisible = true
+                }
             }
         }
     }

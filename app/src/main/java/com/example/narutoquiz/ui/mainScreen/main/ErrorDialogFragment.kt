@@ -8,7 +8,7 @@ import com.example.narutoquiz.R
 import com.example.narutoquiz.databinding.DialogErrorBinding
 
 class ErrorDialogFragment(
-    private val mainScreen: () -> Unit,
+    private val onClick: () -> Unit,
 ) : DialogFragment() {
 
     private var _binding: DialogErrorBinding? = null
@@ -21,7 +21,7 @@ class ErrorDialogFragment(
         )
 
         binding.btnMain.setOnClickListener {
-            mainScreen.invoke()
+            onClick.invoke()
             dismiss()
         }
         val dialog =

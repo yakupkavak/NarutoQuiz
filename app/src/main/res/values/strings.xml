@@ -73,8 +73,19 @@
     <string name="clan_question">Which one\'s clan name is %1$s</string>
     <string name="team_question">Which one\'s team name is %1$s</string>
     <string name="jinckuri_question">Which one\'s jinckuri name is %1$s</string>
+
+    <string name="user_name_info">Name: %1$s</string>
+    <string name="user_mail_info">Mail: %1$s</string>
+    <string name="change_password">Change password</string>
+    <string name="max_repeat_info">Question count: %1$s</string>
+    <string name="get_information">Get information</string>
+
     <string name="naruto_icon">Naruto Icon</string>
     <string name="unexpected_error">Unexpected Error</string>
     <string name="game_mode">Game Mode</string>
+    <string name="history">History</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="user">User</string>
+    <string name="game">Game</string>
 
 </resources>

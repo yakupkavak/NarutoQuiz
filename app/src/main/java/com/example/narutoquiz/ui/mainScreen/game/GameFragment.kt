@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
@@ -21,6 +22,10 @@ import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskFamilyId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskJinckuriId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskTeamId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskVoiceActorId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.FirstOptionId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.LastOptionId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.SecondOptionId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.ThirdOptionId
 import com.example.narutoquiz.ui.mainScreen.main.ErrorDialogFragment
 import com.example.narutoquiz.ui.mainScreen.main.GameDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -59,8 +64,6 @@ class GameFragment : Fragment() {
     }
 
     private fun setObserve() {
-        viewModel.startGame()
-
         observe(viewModel.currentGameTopic) {
             binding.tvTopic.text = it
         }
@@ -92,6 +95,13 @@ class GameFragment : Fragment() {
                 }
             }
         }
+        observe(viewModel.error) {
+            if (it) {
+                val newFragment = ErrorDialogFragment(
+                    onClick = { navigate(GameFragmentDirections.actionGameFragmentToFeedFragment()) })
+                newFragment.show(parentFragmentManager, "game")
+            }
+        }
         observe(viewModel.firstOption) {
             with(binding) {
                 ivOne.getUrl(it.imageUrl ?: "")
@@ -99,15 +109,8 @@ class GameFragment : Fragment() {
                 cvOne.setOnClickListener {
                     clearSelection()
                     cvOne.setBackground(R.color.selected_answer)
-                    selectedOptionId = 0
+                    selectedOptionId = FirstOptionId
                 }
-            }
-        }
-        observe(viewModel.error) {
-            if (it) {
-                val newFragment = ErrorDialogFragment(
-                    mainScreen = { navigate(GameFragmentDirections.actionGameFragmentToFeedFragment()) })
-                newFragment.show(parentFragmentManager, "game")
             }
         }
         observe(viewModel.secondOption) {
@@ -117,7 +120,7 @@ class GameFragment : Fragment() {
                 cvTwo.setOnClickListener {
                     clearSelection()
                     cvTwo.setBackground(R.color.selected_answer)
-                    selectedOptionId = 1
+                    selectedOptionId = SecondOptionId
                 }
             }
         }
@@ -128,7 +131,7 @@ class GameFragment : Fragment() {
                 cvThree.setOnClickListener {
                     clearSelection()
                     cvThree.setBackground(R.color.selected_answer)
-                    selectedOptionId = 2
+                    selectedOptionId = ThirdOptionId
                 }
             }
         }
@@ -139,7 +142,7 @@ class GameFragment : Fragment() {
                 cvFour.setOnClickListener {
                     clearSelection()
                     cvFour.setBackground(R.color.selected_answer)
-                    selectedOptionId = 3
+                    selectedOptionId = LastOptionId
                 }
             }
         }
@@ -149,38 +152,38 @@ class GameFragment : Fragment() {
         observe(viewModel.answerSelection) {
             it.trueAnswer?.let { trueAnswerId ->
                 when (trueAnswerId) {
-                    0 -> {
+                    FirstOptionId -> {
                         binding.cvOne.setBackground(R.color.true_answer)
                     }
 
-                    1 -> {
+                    SecondOptionId -> {
                         binding.cvTwo.setBackground(R.color.true_answer)
                     }
 
-                    2 -> {
+                    ThirdOptionId -> {
                         binding.cvThree.setBackground(R.color.true_answer)
                     }
 
-                    3 -> {
+                    LastOptionId -> {
                         binding.cvFour.setBackground(R.color.true_answer)
                     }
                 }
             }
             it.falseAnswer?.let { falseAnswerId ->
                 when (falseAnswerId) {
-                    0 -> {
+                    FirstOptionId -> {
                         binding.cvOne.setBackground(R.color.false_answer)
                     }
 
-                    1 -> {
+                    SecondOptionId -> {
                         binding.cvTwo.setBackground(R.color.false_answer)
                     }
 
-                    2 -> {
+                    ThirdOptionId -> {
                         binding.cvThree.setBackground(R.color.false_answer)
                     }
 
-                    3 -> {
+                    LastOptionId -> {
                         binding.cvFour.setBackground(R.color.false_answer)
                     }
                 }
@@ -190,16 +193,16 @@ class GameFragment : Fragment() {
         observe(viewModel.falseAnswer) {}
         observe(viewModel.loading) {
             if (it) {
-                setInvisible()
                 with(binding) {
+                    group.isVisible = false
                     lottieAnimationLoading.isVisible = true
                     lottieAnimationNaruto.isVisible = true
                     lottieAnimationLoading.playAnimation()
                     lottieAnimationNaruto.playAnimation()
                 }
             } else {
-                setVisible()
                 with(binding) {
+                    group.isVisible = true
                     lottieAnimationLoading.isVisible = false
                     lottieAnimationNaruto.isVisible = false
                     lottieAnimationLoading.cancelAnimation()
@@ -243,36 +246,6 @@ class GameFragment : Fragment() {
         }
     }
 
-    private fun setInvisible() {
-        with(binding) {
-            tvQuestion.isVisible = false
-            cvOne.isVisible = false
-            cvTwo.isVisible = false
-            cvThree.isVisible = false
-            cvFour.isVisible = false
-            tvOne.isVisible = false
-            tvTwo.isVisible = false
-            tvThree.isVisible = false
-            tvFour.isVisible = false
-            btnCheck.isVisible = false
-        }
-    }
-
-    private fun setVisible() {
-        with(binding) {
-            tvQuestion.isVisible = true
-            cvOne.isVisible = true
-            cvTwo.isVisible = true
-            cvThree.isVisible = true
-            cvFour.isVisible = true
-            tvOne.isVisible = true
-            tvTwo.isVisible = true
-            tvThree.isVisible = true
-            tvFour.isVisible = true
-            btnCheck.isVisible = true
-        }
-    }
-
     private fun setOnClick() {
         with(binding) {
             fabClose.setOnClickListener {
@@ -281,7 +254,7 @@ class GameFragment : Fragment() {
             btnCheck.setOnClickListener {
                 if (gameState == 0) {
                     if (selectedOptionId == -1) {
-                        println("Allert dialog")
+                        Toast.makeText(requireContext(), "Select !", Toast.LENGTH_LONG).show()
                     } else {
                         viewModel.checkQuestion(selectedOptionId)
                         gameState = 1

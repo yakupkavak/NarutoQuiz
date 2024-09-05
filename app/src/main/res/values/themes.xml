@@ -31,7 +31,7 @@
     </style>
 
     <style name="BigSizeBold">//64sp Bold
-        <item name="android:textSize">@dimen/text_size_xlarge</item>
+        <item name="android:textSize">@dimen/text_size_xxlarge</item>
         <item name="fontFamily">@font/roboto_bold</item>
         <item name="android:textColor">@color/white</item>
     </style>
@@ -48,8 +48,14 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="DetailScreenStyle">
+    <style name="XLargeSizeMedium">
         <item name="android:textSize">@dimen/text_size_xlarge</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="DetailScreenStyle">
+        <item name="android:textSize">@dimen/text_size_xxlarge</item>
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:textColor">@color/detail_color</item>
     </style>

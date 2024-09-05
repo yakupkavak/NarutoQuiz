@@ -7,8 +7,21 @@
     android:background="@drawable/gradient_background_color"
     tools:context=".ui.mainScreen.rankList.RankFragment">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_animation_naruto"
+        android:layout_width="@dimen/margin_xxlarge"
+        android:layout_height="@dimen/margin_xxlarge"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/naruto" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvRank"
+        android:id="@+id/rvHistory"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/margin_default"
@@ -24,10 +37,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_large"
-        android:text="History"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/history"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvUserRank"
@@ -35,9 +48,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
-        android:text="Game Mode"
+        android:text="@string/game_mode"
         app:layout_constraintStart_toStartOf="@id/gdlFirstVertical"
-        app:layout_constraintTop_toBottomOf="@id/tvHistory"/>
+        app:layout_constraintTop_toBottomOf="@id/tvHistory" />
 
     <TextView
         android:id="@+id/tvUserName"
@@ -45,9 +58,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
-        android:text="True"
+        android:text="@string/trueText"
         app:layout_constraintStart_toEndOf="@id/gdlMediumVertical"
-        app:layout_constraintTop_toBottomOf="@id/tvHistory"/>
+        app:layout_constraintTop_toBottomOf="@id/tvHistory" />
 
     <TextView
         android:id="@+id/tvUserScore"
@@ -55,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
-        android:text="False"
+        android:text="@string/wrong"
         app:layout_constraintStart_toEndOf="@id/gdlFinishVertical"
         app:layout_constraintTop_toBottomOf="@id/tvHistory" />
 

@@ -5,6 +5,7 @@ import android.util.Log
 import com.example.narutoquiz.data.base.BaseRepository
 import com.example.narutoquiz.data.model.HistoryRowModel
 import com.example.narutoquiz.data.model.RankRowModel
+import com.example.narutoquiz.data.model.UserInfoModel
 import com.example.narutoquiz.data.util.AuthProvider
 import com.example.narutoquiz.data.util.Resource
 import com.example.narutoquiz.data.util.ServiceCountConst.COLLECTION_PATH
@@ -12,7 +13,7 @@ import com.example.narutoquiz.data.util.ServiceCountConst.CREATE_DATE
 import com.example.narutoquiz.data.util.ServiceCountConst.FALSE_COUNT
 import com.example.narutoquiz.data.util.ServiceCountConst.GAME_ID
 import com.example.narutoquiz.data.util.ServiceCountConst.TRUE_COUNT
-import com.example.narutoquiz.data.util.ServiceCountConst.USER
+import com.example.narutoquiz.data.util.ServiceCountConst.USER_NAME
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.ChallangeGameId
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
@@ -35,7 +36,7 @@ class FirestoreRepository @Inject constructor(
                 val user = auth.currentUser
                 user?.let { currentUser ->
                     val gameStation = hashMapOf(
-                        USER to currentUser.displayName,
+                        USER_NAME to currentUser.displayName,
                         GAME_ID to gameId,
                         TRUE_COUNT to trueAnswer,
                         FALSE_COUNT to falseAnswer,
@@ -66,7 +67,7 @@ class FirestoreRepository @Inject constructor(
                     returnList.add(
                         RankRowModel(
                             userRank = rankNumber,
-                            userName = ((document[USER]) ?: "").toString(),
+                            userName = ((document[USER_NAME]) ?: "").toString(),
                             userScore = (document[TRUE_COUNT] as Long?)?.toInt() ?: 0
                         )
                     )
@@ -80,13 +81,14 @@ class FirestoreRepository @Inject constructor(
         }
     }
 
+    //.orderBy(CREATE_DATE, Query.Direction.DESCENDING)
     suspend fun getUserHistory(): Resource<ArrayList<HistoryRowModel>> {
         val returnList = ArrayList<HistoryRowModel>()
         return withContext(Dispatchers.IO) {
-            val userMail = authProvider.getUserMail()
+            val userName = authProvider.getUserName()
             try {
                 val documents =
-                    db.collection(COLLECTION_PATH).whereEqualTo(USER, userMail)
+                    db.collection(COLLECTION_PATH).whereEqualTo(USER_NAME, userName)
                         .get().await()
                 for (document in documents) {
                     returnList.add(
@@ -98,6 +100,22 @@ class FirestoreRepository @Inject constructor(
                     )
                 }
                 return@withContext Resource.success(returnList)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                return@withContext Resource.error(null)
+            }
+        }
+    }
+
+    suspend fun getUserInformation(): Resource<UserInfoModel> {
+        return withContext(Dispatchers.IO) {
+            try {
+                return@withContext Resource.success(
+                    UserInfoModel(
+                        userName = authProvider.getUserName() ?: "",
+                        userMail = authProvider.getUserMail() ?: "",
+                    )
+                )
             } catch (e: Exception) {
                 e.printStackTrace()
                 return@withContext Resource.error(null)

@@ -22,8 +22,8 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottie_animation_naruto"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
+        android:layout_width="@dimen/margin_xxlarge"
+        android:layout_height="@dimen/margin_xxlarge"
         android:layout_margin="@dimen/margin_xlarge"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,6 +32,14 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/naruto" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="tvQuestion,cvOne,cvTwo,cvThree
+        ,cvFour,tvOne,tvTwo,tvThree,tvFour,btnCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabClose"
