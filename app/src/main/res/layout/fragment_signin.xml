@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
         android:text="@string/forgot_password"
-        android:textColor="@color/color_three"
+        android:textColor="@color/hint_color"
         app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
         app:layout_constraintTop_toBottomOf="@id/editPassword" />
 
@@ -79,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_default"
         android:text="@string/sign_up"
-        android:textColor="@color/color_three"
+        android:textColor="@color/hint_color"
         app:layout_constraintBottom_toBottomOf="@id/btnSignIn"
         app:layout_constraintEnd_toStartOf="@id/tvSlash"
         app:layout_constraintTop_toTopOf="@id/btnSignIn" />
@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_default"
         android:text="@string/slash"
-        android:textColor="@color/color_three"
+        android:textColor="@color/hint_color"
         app:layout_constraintBottom_toBottomOf="@id/btnSignIn"
         app:layout_constraintEnd_toStartOf="@id/btnSignIn"
         app:layout_constraintTop_toTopOf="@id/btnSignIn" />
@@ -104,7 +104,7 @@
         android:layout_marginTop="@dimen/margin_default"
         android:text="@string/sign_in"
         android:textAlignment="center"
-        android:textColor="@color/orange_500"
+        android:textColor="@color/hint_color"
         app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineBtnStart"
         app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
@@ -132,6 +132,7 @@
 
     <ImageView
         android:id="@+id/ivGoogle"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/google_icon"
