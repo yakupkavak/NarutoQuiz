@@ -79,13 +79,14 @@ class FirestoreRepository @Inject constructor(
             }
         }
     }
+
     suspend fun getUserHistory(): Resource<ArrayList<HistoryRowModel>> {
         val returnList = ArrayList<HistoryRowModel>()
         return withContext(Dispatchers.IO) {
+            val userMail = authProvider.getUserMail()
             try {
                 val documents =
-                    db.collection(COLLECTION_PATH).whereEqualTo(USER, authProvider.getUserMail())
-                        .orderBy(CREATE_DATE, Query.Direction.DESCENDING)
+                    db.collection(COLLECTION_PATH).whereEqualTo(USER, userMail)
                         .get().await()
                 for (document in documents) {
                     returnList.add(
