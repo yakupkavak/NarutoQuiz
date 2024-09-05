@@ -35,12 +35,14 @@ class RankFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setObserve()
+        viewModel.getRankList()
     }
 
     private fun setObserve() {
-        viewModel.getRankList()
         observe(viewModel.success) { rankList ->
-            adapter.submit(rankList)
+            rankList?.let {
+                adapter.submit(rankList)
+            }
             binding.rvRank.adapter = adapter
         }
         observe(viewModel.loading){

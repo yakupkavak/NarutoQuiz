@@ -33,12 +33,14 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setObserve()
+        viewModel.getUserHistory()
     }
 
     private fun setObserve() {
-        viewModel.getUserHistory()
         observe(viewModel.success) { historyList ->
-            adapter.submit(historyList)
+            historyList?.let {
+                adapter.submit(historyList)
+            }
             binding.rvRank.adapter = adapter
         }
         observe(viewModel.loading){

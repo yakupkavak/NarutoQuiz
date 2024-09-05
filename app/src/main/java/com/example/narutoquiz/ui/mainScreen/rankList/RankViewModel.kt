@@ -13,8 +13,8 @@ class RankViewModel @Inject constructor(
     private val firestoreRepository: FirestoreRepository
 ) : BaseViewModel() {
 
-    private val _success = MutableLiveData<ArrayList<RankRowModel>>()
-    val success: LiveData<ArrayList<RankRowModel>> get() = _success
+    private val _success = MutableLiveData<ArrayList<RankRowModel>?>()
+    val success: LiveData<ArrayList<RankRowModel>?> get() = _success
 
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> get() = _loading
