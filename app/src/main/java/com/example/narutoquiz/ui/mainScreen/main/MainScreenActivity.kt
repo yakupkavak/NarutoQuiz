@@ -25,6 +25,7 @@ class MainScreenActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         setupNavigation()
+        supportActionBar?.hide();
     }
 
     private fun setupNavigation(){

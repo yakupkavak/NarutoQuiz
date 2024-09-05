@@ -63,12 +63,18 @@ class FirestoreRepository @Inject constructor(
                     db.collection(COLLECTION_PATH).whereEqualTo(GAME_ID, ChallangeGameId)
                         .orderBy(TRUE_COUNT, Query.Direction.DESCENDING)
                         .get().await()
-                for (document in documents) {
+                val filteredDocuments = documents
+                    .groupBy { it.getString(USER_NAME) }
+                    .mapValues { entry ->
+                        entry.value.maxByOrNull { it.getLong(TRUE_COUNT) ?: 0 }
+                    }
+                    .values
+                for (document in filteredDocuments) {
                     returnList.add(
                         RankRowModel(
                             userRank = rankNumber,
-                            userName = ((document[USER_NAME]) ?: "").toString(),
-                            userScore = (document[TRUE_COUNT] as Long?)?.toInt() ?: 0
+                            userName = ((document?.get(USER_NAME)) ?: "").toString(),
+                            userScore = (document?.get(TRUE_COUNT) as Long?)?.toInt() ?: 0
                         )
                     )
                     rankNumber++

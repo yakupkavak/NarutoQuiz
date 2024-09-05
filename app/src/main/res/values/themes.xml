@@ -7,7 +7,6 @@
         <item name="colorPrimary">@color/design_color</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
-
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -96,7 +95,8 @@
 
     <style name="CardRowStyle">
         <item name="cardBackgroundColor">@color/orange_300</item>
-        <item name="cardCornerRadius">@dimen/margin_large</item>    </style>
+        <item name="cardCornerRadius">@dimen/margin_large</item>
+    </style>
 
     <style name="CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:paddingStart">@dimen/margin_small</item>
@@ -108,6 +108,7 @@
         <item name="android:padding">@dimen/padding_standart</item>
         <item name="android:ems">10</item>
         <item name="android:textColorHint">@color/hint_color</item>
+        <item name="android:textColor">@color/hint_color</item>
     </style>
 
     <style name="CardStyle">

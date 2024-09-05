@@ -21,6 +21,7 @@
         <activity
             android:name=".ui.userLogIn.SignActivity"
             android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.CustomSplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
