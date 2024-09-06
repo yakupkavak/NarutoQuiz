@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/alert_dialog"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingVertical="@dimen/margin_medium">
+
+    <ImageView
+        android:id="@+id/ivNarutoTop"
+        style="@style/LargeSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/margin_xxlarge"
+        android:layout_marginHorizontal="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:contentDescription="@string/naruto_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInfoTitle"
+        style="@style/LargeSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:text="@string/about_the_game"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="ivNarutoTop" />
+
+    <TextView
+        android:id="@+id/tvInfoText"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:text="@string/welcome_text"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="ivNarutoTop" />
+
+    <Button
+        android:id="@+id/btnClose"
+        style="@style/ButtonStyleQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xsmall"
+        android:text="@string/close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvGameOver" />
+
+</LinearLayout>
+
+

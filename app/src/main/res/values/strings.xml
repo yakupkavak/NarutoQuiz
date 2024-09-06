@@ -88,5 +88,8 @@
     <string name="user">User</string>
     <string name="game">Game</string>
     <string name="close">Close</string>
+    <string name="challenge_game">Challenge Game</string>
+    <string name="welcome_text">In the Challenge game mode you have no wrong answers and you can only participate in the ranking with this mode. \n\nClassic allows you to test yourself on all characters. \n\nDon\'t forget to participate in special Akatsuki, Clans, Monsters and Teams game modes. \n\n\n Good luck shinobi!</string>
+    <string name="about_the_game">About the game</string>
 
 </resources>
