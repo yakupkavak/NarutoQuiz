@@ -24,6 +24,7 @@ open class BaseViewModel : ViewModel() {
 
                 Status.ERROR -> {
                     onError?.invoke()
+                    println(getData.data)
                 }
 
                 Status.LOADING -> {

@@ -3,6 +3,7 @@ package com.example.narutoquiz.data.di
 import com.example.narutoquiz.BuildConfig
 import com.example.narutoquiz.data.repository.AuthRepository
 import com.example.narutoquiz.data.repository.FirestoreRepository
+import com.example.narutoquiz.data.repository.GeminiRepository
 import com.example.narutoquiz.data.repository.NarutoRepository
 import com.example.narutoquiz.data.service.NarutoService
 import com.example.narutoquiz.data.util.AuthProvider
@@ -77,5 +78,11 @@ object NetworkModule {
     @Singleton
     fun provideAuthRepository(auth: FirebaseAuth): AuthRepository {
         return AuthRepository(auth)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGeminiRepository(): GeminiRepository {
+        return GeminiRepository()
     }
 }

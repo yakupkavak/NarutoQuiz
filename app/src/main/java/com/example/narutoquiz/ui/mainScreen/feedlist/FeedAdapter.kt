@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.bumptech.glide.Glide
 import com.example.narutoquiz.data.model.FeedRowModel
 import com.example.narutoquiz.databinding.FeedRowBinding
 
@@ -33,7 +34,7 @@ class FeedAdapter : Adapter<FeedAdapter.FeedViewHolder>() {
         fun bind(data: FeedRowModel) {
             with(binding) {
                 tvRow.text = data.description
-                ivRow.setImageResource(data.imageResId)
+                Glide.with(binding.root).load(data.imageResId).into(ivRow)
                 root.setOnClickListener {
                     onItemClick?.invoke(data.gameId,data.description)
                 }

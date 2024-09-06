@@ -28,6 +28,7 @@ import com.example.narutoquiz.ui.mainScreen.game.GameConst.SecondOptionId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.ThirdOptionId
 import com.example.narutoquiz.ui.mainScreen.main.ErrorDialogFragment
 import com.example.narutoquiz.ui.mainScreen.main.GameDialogFragment
+import com.example.narutoquiz.ui.mainScreen.main.HintDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -189,11 +190,10 @@ class GameFragment : Fragment() {
                 }
             }
         }
-        observe(viewModel.trueAnswer) {}
-        observe(viewModel.falseAnswer) {}
         observe(viewModel.loading) {
             if (it) {
                 with(binding) {
+                    fabGemini.isVisible = false
                     group.isVisible = false
                     lottieAnimationLoading.isVisible = true
                     lottieAnimationNaruto.isVisible = true
@@ -202,6 +202,7 @@ class GameFragment : Fragment() {
                 }
             } else {
                 with(binding) {
+                    fabGemini.isVisible = true
                     group.isVisible = true
                     lottieAnimationLoading.isVisible = false
                     lottieAnimationNaruto.isVisible = false
@@ -214,8 +215,14 @@ class GameFragment : Fragment() {
             gameState[0]?.let { trueCount ->
                 gameState[1]?.let { wrongCount ->
                     setDialog(trueCount, wrongCount)
+                    binding.btnCheck.text = getString(R.string.game_over)
                 }
             }
+        }
+        observe(viewModel.hintText){
+            val newFragment = HintDialogFragment(
+                hintText = it)
+            newFragment.show(parentFragmentManager, "game")
         }
     }
 
@@ -250,6 +257,9 @@ class GameFragment : Fragment() {
         with(binding) {
             fabClose.setOnClickListener {
                 popBackStack()
+            }
+            fabGemini.setOnClickListener {
+                viewModel.getHint()
             }
             btnCheck.setOnClickListener {
                 if (gameState == 0) {

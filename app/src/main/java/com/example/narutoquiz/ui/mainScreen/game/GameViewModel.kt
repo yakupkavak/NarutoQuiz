@@ -10,6 +10,7 @@ import com.example.narutoquiz.data.model.GroupModel
 import com.example.narutoquiz.data.model.OptionModel
 import com.example.narutoquiz.data.model.SelectionModel
 import com.example.narutoquiz.data.repository.FirestoreRepository
+import com.example.narutoquiz.data.repository.GeminiRepository
 import com.example.narutoquiz.data.repository.NarutoRepository
 import com.example.narutoquiz.data.util.Resource
 import com.example.narutoquiz.domain.extension.getFirstNonNullField
@@ -52,7 +53,8 @@ import kotlin.math.abs
 @HiltViewModel
 class GameViewModel @Inject constructor(
     private val narutoRepository: NarutoRepository,
-    private val firestoreRepository: FirestoreRepository
+    private val firestoreRepository: FirestoreRepository,
+    private val geminiRepository: GeminiRepository
 ) : BaseViewModel() {
 
     private val _questionText = MutableLiveData<String>()
@@ -100,12 +102,34 @@ class GameViewModel @Inject constructor(
     private val _questionId = MutableLiveData<Int>()
     val questionId: LiveData<Int> get() = _questionId
 
+    private val _hintText = MutableLiveData<String>()
+    val hintText: LiveData<String> get() = _hintText
+
+    private var trueCharacter: String? = null
+
     private var trueAnswerId: Int? = null
+
+    private fun clearGame() {
+        _questionNumber.postValue(0)
+        _trueAnswer.postValue(0)
+        _falseAnswer.postValue(0)
+    }
 
     fun initializeGame(gameId: Int, gameTopic: String) {
         _currentGameId.value = gameId
         _currentGameTopic.value = gameTopic
         startGame()
+    }
+
+    fun getHint() {
+        trueCharacter?.let { character ->
+            getDataCall(
+                dataCall = { geminiRepository.getHint(character) },
+                onSuccess = { _hintText.postValue(it) },
+                onLoading = {},
+                onError = {}
+            )
+        }
     }
 
     fun checkQuestion(selectedOptionId: Int) {
@@ -145,8 +169,8 @@ class GameViewModel @Inject constructor(
     }
 
     fun startGame() {
+        clearGame()
         viewModelScope.launch {
-            _questionNumber.postValue(0)
             when (currentGameId.value) {
                 ChallangeGameId -> {
                     challangeGame()
@@ -287,6 +311,7 @@ class GameViewModel @Inject constructor(
                 _questionText.postValue(
                     "${nonNullPair.first} is ${nonNullPair.second}"
                 )
+                trueCharacter = firstCharacter.name
             }
         }
         setOptions(
@@ -448,6 +473,7 @@ class GameViewModel @Inject constructor(
                 _questionText.postValue(
                     "${nonNullPair.first} voice actor is ${nonNullPair.second}"
                 )
+                trueCharacter = firstCharacter.name
             }
         }
 
@@ -463,8 +489,8 @@ class GameViewModel @Inject constructor(
 
     private suspend fun getFourRandomCharacter(): Resource<List<Character?>> {
         var firstCharacter: Character?
-        val selectedCharacters = mutableSetOf<Character?>()
-        for (i in 1..5) {
+        for (i in 1..20) {
+            val selectedCharacters = mutableSetOf<Character?>()
             firstCharacter = getRandomCharacter()
             if (firstCharacter?.family?.getFirstNonNullField() != null) {
                 selectedCharacters.add(firstCharacter)
@@ -504,6 +530,7 @@ class GameViewModel @Inject constructor(
             _questionText.postValue(
                 firstCharacter.personal?.clan?.get(0)
             )
+            trueCharacter = firstCharacter.name
         }
 
         setOptions(
@@ -620,6 +647,7 @@ class GameViewModel @Inject constructor(
             _questionText.postValue(
                 firstCharacter.personal?.team?.get(0)
             )
+            trueCharacter = firstCharacter.name
         }
         setOptions(
             listOf(
@@ -665,6 +693,7 @@ class GameViewModel @Inject constructor(
             _questionText.postValue(
                 firstCharacter.personal?.jinchuriki?.get(0)
             )
+            trueCharacter = firstCharacter.name
         }
         setOptions(
             listOf(
