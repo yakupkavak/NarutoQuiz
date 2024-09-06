@@ -22,9 +22,11 @@ android {
 
     buildTypes {
         debug {
+            buildConfigField("String","GEMINI_API","\"AIzaSyBs-0nXCACqtG62Mts2xzB8YJ7rK0_x4Us\"")
             buildConfigField("String", "BASE_URL", "\"https://dattebayo-api.onrender.com\"")
         }
         release {
+            buildConfigField("String","GEMINI_API","\"AIzaSyBs-0nXCACqtG62Mts2xzB8YJ7rK0_x4Us\"")
             buildConfigField("String", "BASE_URL", "\"https://dattebayo-api.onrender.com\"")
             isMinifyEnabled = false
             proguardFiles(
@@ -73,6 +75,7 @@ dependencies {
     implementation(libs.retrofit2.converter.jackson)
     implementation(libs.lottie)
     kapt(libs.compiler)
+    implementation(libs.generativeai)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -22,11 +22,7 @@ class RankViewModel @Inject constructor(
     private val _error = MutableLiveData<Boolean>()
     val error: LiveData<Boolean> get() = _error
 
-    init {
-        getRankList()
-    }
-
-    private fun getRankList() {
+    fun getRankList() {
         getDataCall(
             dataCall = { firestoreRepository.getChallengeData() },
             onSuccess = { data -> _success.postValue(data).also { _loading.postValue(false) } },

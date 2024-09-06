@@ -11,11 +11,11 @@ import com.example.narutoquiz.ui.mainScreen.game.GameConst.TeamGameId
 
 fun getRowModelList(): List<FeedRowModel> {
     return listOf(
-        FeedRowModel(description = "Challenge", imageResId = R.drawable.akatsuki, gameId = ChallangeGameId),
-        FeedRowModel(description = "Classic", imageResId = R.drawable.akatsuki, gameId = ClassicGameId),
-        FeedRowModel(description = "Akatsuki", imageResId = R.drawable.akatsuki, gameId = AkatsukiGameId),
-        FeedRowModel(description = "Clan", imageResId = R.drawable.akatsuki, gameId = ClanGameId),
-        FeedRowModel(description = "Tailed Beast", imageResId = R.drawable.akatsuki, gameId = TailedGameId),
-        FeedRowModel(description = "Teams", imageResId = R.drawable.akatsuki, gameId = TeamGameId),
+        FeedRowModel(description = "Challenge", imageResId = R.drawable.challange, gameId = ChallangeGameId),
+        FeedRowModel(description = "Classic", imageResId = R.drawable.classic_game, gameId = ClassicGameId),
+        FeedRowModel(description = "Akatsuki", imageResId = R.drawable.akatsuki_photo, gameId = AkatsukiGameId),
+        FeedRowModel(description = "Clan", imageResId = R.drawable.village, gameId = ClanGameId),
+        FeedRowModel(description = "Tailed Beast", imageResId = R.drawable.tailedbeast, gameId = TailedGameId),
+        FeedRowModel(description = "Teams", imageResId = R.drawable.teams, gameId = TeamGameId),
     )
 }

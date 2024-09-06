@@ -22,11 +22,7 @@ class HistoryViewModel @Inject constructor(
     private val _error = MutableLiveData<Boolean>()
     val error: LiveData<Boolean> get() = _error
 
-    init {
-        getUserHistory()
-    }
-
-    private fun getUserHistory() {
+    fun getUserHistory() {
         getDataCall(
             dataCall = { firestoreRepository.getUserHistory() },
             onSuccess = { data -> _success.postValue(data).also { _loading.postValue(false) } },
