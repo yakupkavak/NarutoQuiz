@@ -79,6 +79,7 @@
     <string name="change_password">Change password</string>
     <string name="max_repeat_info">Question count: %1$s</string>
     <string name="get_information">Get information</string>
+    <string name="select">Select !</string>
 
     <string name="naruto_icon">Naruto Icon</string>
     <string name="unexpected_error">Unexpected Error</string>

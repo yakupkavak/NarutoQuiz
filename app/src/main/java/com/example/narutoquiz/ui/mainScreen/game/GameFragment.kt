@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
@@ -17,11 +16,13 @@ import com.example.narutoquiz.ui.extension.navigate
 import com.example.narutoquiz.ui.extension.observe
 import com.example.narutoquiz.ui.extension.popBackStack
 import com.example.narutoquiz.ui.extension.setBackground
+import com.example.narutoquiz.ui.extension.showToast
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskClanId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskFamilyId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskJinckuriId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskTeamId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.AskVoiceActorId
+import com.example.narutoquiz.ui.mainScreen.game.GameConst.ChallangeGameId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.FirstOptionId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.LastOptionId
 import com.example.narutoquiz.ui.mainScreen.game.GameConst.SecondOptionId
@@ -41,6 +42,7 @@ class GameFragment : Fragment() {
     private var selectedOptionId = -1
     private var gameState = 0
     private var questionId = 0
+    private var currentGameId = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
@@ -113,6 +115,9 @@ class GameFragment : Fragment() {
                     selectedOptionId = FirstOptionId
                 }
             }
+        }
+        observe(viewModel.currentGameId){
+            currentGameId = it
         }
         observe(viewModel.secondOption) {
             with(binding) {
@@ -202,7 +207,7 @@ class GameFragment : Fragment() {
                 }
             } else {
                 with(binding) {
-                    fabGemini.isVisible = true
+                    fabGemini.isVisible = currentGameId != ChallangeGameId
                     group.isVisible = true
                     lottieAnimationLoading.isVisible = false
                     lottieAnimationNaruto.isVisible = false
@@ -264,7 +269,7 @@ class GameFragment : Fragment() {
             btnCheck.setOnClickListener {
                 if (gameState == 0) {
                     if (selectedOptionId == -1) {
-                        Toast.makeText(requireContext(), "Select !", Toast.LENGTH_LONG).show()
+                        showToast(getString(R.string.select))
                     } else {
                         viewModel.checkQuestion(selectedOptionId)
                         gameState = 1

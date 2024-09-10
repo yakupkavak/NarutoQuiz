@@ -11,7 +11,7 @@
         android:layout_marginBottom="@dimen/margin_xsmall"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_large_plus"
         app:layout_constraintDimensionRatio="H,14:15"
         app:layout_constraintEnd_toEndOf="@id/gdlEnd"
         app:layout_constraintBottom_toBottomOf="parent"

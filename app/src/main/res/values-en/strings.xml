@@ -81,6 +81,8 @@
     <string name="get_information">Get information</string>
     <string name="naruto_icon">Naruto Icon</string>
     <string name="unexpected_error">Unexpected Error</string>
+    <string name="select">Select !</string>
+
     <string name="game_mode">Game Mode</string>
     <string name="history">History</string>
     <string name="sign_out">Sign Out</string>

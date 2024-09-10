@@ -9,8 +9,13 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.narutoquiz.R
+import com.example.narutoquiz.data.model.DialogModel
 import com.example.narutoquiz.databinding.FragmentUserInfoBinding
+import com.example.narutoquiz.ui.extension.navigate
 import com.example.narutoquiz.ui.extension.observe
+import com.example.narutoquiz.ui.mainScreen.game.GameFragmentDirections
+import com.example.narutoquiz.ui.mainScreen.main.GameDialogFragment
+import com.example.narutoquiz.ui.mainScreen.main.InformationDialogFragment
 import com.example.narutoquiz.ui.userLogIn.SignActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,9 +43,9 @@ class UserInfoFragment : Fragment() {
 
     private fun setObserve() {
         observe(viewModel.success) { userModel ->
-            with(binding){
-                tvUserName.text = getString(R.string.user_name_info,userModel?.userName)
-                tvUserMail.text = getString(R.string.user_mail_info,userModel?.userMail)
+            with(binding) {
+                tvUserName.text = getString(R.string.user_name_info, userModel?.userName)
+                tvUserMail.text = getString(R.string.user_mail_info, userModel?.userMail)
             }
         }
         observe(viewModel.loading) { loading ->
@@ -48,25 +53,26 @@ class UserInfoFragment : Fragment() {
                 with(binding) {
                     lottieAnimationNaruto.isVisible = true
                     lottieAnimationNaruto.playAnimation()
-                    //rvRank.isVisible = false
                 }
             } else {
                 with(binding) {
                     lottieAnimationNaruto.isVisible = false
                     lottieAnimationNaruto.cancelAnimation()
-                    //rvRank.isVisible = true
                 }
             }
         }
     }
 
-    private fun setOnClick(){
-        with(binding){
+    private fun setOnClick() {
+        with(binding) {
             btnCheckOut.setOnClickListener {
                 Intent(requireContext(), SignActivity::class.java).also { intent ->
                     startActivity(intent)
                 }
                 requireActivity().finish()
+            }
+            tvGetInformation.setOnClickListener {
+                InformationDialogFragment().show(parentFragmentManager, "game")
             }
         }
     }
