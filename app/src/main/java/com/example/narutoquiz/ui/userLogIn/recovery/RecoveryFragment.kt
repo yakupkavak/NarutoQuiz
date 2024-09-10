@@ -11,6 +11,7 @@ import com.example.narutoquiz.R
 import com.example.narutoquiz.databinding.FragmentRecoveryBinding
 import com.example.narutoquiz.ui.extension.navigate
 import com.example.narutoquiz.ui.extension.observe
+import com.example.narutoquiz.ui.extension.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,14 +39,10 @@ class RecoveryFragment : Fragment() {
     private fun setObserve() {
         observe(viewModel.resetSuccess) {
             if (it) {
-                Toast.makeText(requireContext(), getString(R.string.check_mail), Toast.LENGTH_LONG)
-                    .show()
+                showToast(getString(R.string.check_mail))
+
             } else {
-                Toast.makeText(
-                    requireContext(),
-                    getString(R.string.network_problem),
-                    Toast.LENGTH_LONG
-                ).show()
+                showToast(getString(R.string.network_problem))
             }
         }
     }
@@ -54,11 +51,7 @@ class RecoveryFragment : Fragment() {
         with(binding) {
             btnForgot.setOnClickListener {
                 if (editMail.text.toString().isEmpty()) {
-                    Toast.makeText(
-                        requireContext(),
-                        getString(R.string.null_space),
-                        Toast.LENGTH_LONG
-                    ).show()
+                    showToast(getString(R.string.null_space))
                 } else {
                     viewModel.resetPassword(editMail.text.toString())
                 }

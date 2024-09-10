@@ -12,6 +12,7 @@ import com.example.narutoquiz.R
 import com.example.narutoquiz.databinding.FragmentSigninBinding
 import com.example.narutoquiz.ui.extension.navigate
 import com.example.narutoquiz.ui.extension.observe
+import com.example.narutoquiz.ui.extension.showToast
 import com.example.narutoquiz.ui.mainScreen.main.MainScreenActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -45,11 +46,7 @@ class SigninFragment : Fragment() {
                 }
                 requireActivity().finish()
             } else {
-                Toast.makeText(
-                    requireContext(),
-                    getString(R.string.network_problem),
-                    Toast.LENGTH_LONG
-                ).show()
+                showToast(getString(R.string.network_problem))
             }
         }
     }
@@ -71,10 +68,7 @@ class SigninFragment : Fragment() {
                         userPassword = editPassword.text.toString()
                     )
                 } else {
-                    Toast.makeText(requireContext(),
-                        getString(R.string.null_space),
-                        Toast.LENGTH_LONG
-                    ).show()
+                    showToast(getString(R.string.null_space))
                 }
             }
             ivGoogle.setOnClickListener {

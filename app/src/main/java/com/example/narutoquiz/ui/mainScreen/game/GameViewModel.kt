@@ -87,8 +87,8 @@ class GameViewModel @Inject constructor(
     private val _error = MutableLiveData<Boolean>()
     val error: LiveData<Boolean> get() = _error
 
-    private val _currentGameId = MutableLiveData<Int>()
-    private val currentGameId: LiveData<Int> get() = _currentGameId
+    val _currentGameId = MutableLiveData<Int>()
+    val currentGameId: LiveData<Int> get() = _currentGameId
 
     private val _currentGameTopic = MutableLiveData<String>()
     val currentGameTopic: LiveData<String> get() = _currentGameTopic

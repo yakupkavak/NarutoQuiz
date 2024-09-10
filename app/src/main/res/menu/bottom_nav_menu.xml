@@ -3,7 +3,7 @@
 
     <item
         android:id="@+id/feedFragment"
-        android:icon="@drawable/quiz_page"
+        android:icon="@drawable/quizlist"
         android:title="@string/quizes" />
 
     <item

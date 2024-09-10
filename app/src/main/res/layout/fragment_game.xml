@@ -49,7 +49,8 @@
         android:layout_marginTop="@dimen/margin_large"
         android:backgroundTint="@color/transparent"
         android:contentDescription="@string/close_game"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:srcCompat="@drawable/closeicon"
+        app:tint="@null"
         app:borderWidth="0dp"
         app:elevation="0dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,11 +61,13 @@
         android:id="@+id/fabGemini"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_default"
         android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_default"
         android:backgroundTint="@color/transparent"
         android:contentDescription="@string/close_game"
-        android:src="@drawable/geminihint"
+        android:src="@drawable/lightblub"
+        app:tint="@null"
+        android:visibility="gone"
         app:borderWidth="0dp"
         app:elevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,11 +104,11 @@
         android:id="@+id/tvQuestion"
         style="@style/LargeSizeMedium"
         android:layout_width="0dp"
-        android:textAlignment="center"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_medium"
         android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginHorizontal="@dimen/margin_large"
         android:text="@string/increase_counter"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearProgress" />
@@ -274,7 +277,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.10" />
+        app:layout_constraintGuide_percent="0.08" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gdlFirstFinishVertical"
@@ -295,14 +298,14 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.90" />
+        app:layout_constraintGuide_percent="0.92" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gdlFirstStartHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.27" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gdlFirstEndHorizontal"
@@ -323,6 +326,6 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="0.73" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

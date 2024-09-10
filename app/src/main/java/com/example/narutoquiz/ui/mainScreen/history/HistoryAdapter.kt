@@ -7,10 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.narutoquiz.data.model.HistoryRowModel
-import com.example.narutoquiz.data.model.RankRowModel
 import com.example.narutoquiz.databinding.HistoryRowBinding
-import com.example.narutoquiz.databinding.RankRowBinding
-import com.example.narutoquiz.ui.extension.setString
+import com.example.narutoquiz.ui.extension.getStringByGameId
 
 class HistoryAdapter : Adapter<HistoryAdapter.HistoryViewHolder>(){
 
@@ -33,7 +31,7 @@ class HistoryAdapter : Adapter<HistoryAdapter.HistoryViewHolder>(){
     inner class HistoryViewHolder(private val binding: HistoryRowBinding) : ViewHolder(binding.root) {
         fun bind(data: HistoryRowModel) {
             with(binding) {
-                tvGameMode.text = root.context.setString(data.gameMode)
+                tvGameMode.text = root.context.getStringByGameId(data.gameMode)
                 tvTrueAnswer.text = data.trueCount.toString()
                 tvFalseAnswer.text = data.falseCount.toString()
             }
