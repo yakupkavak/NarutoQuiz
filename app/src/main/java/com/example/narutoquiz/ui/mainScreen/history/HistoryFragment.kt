@@ -9,6 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.narutoquiz.databinding.FragmentHistoryBinding
 import com.example.narutoquiz.ui.extension.observe
+import com.example.narutoquiz.ui.extension.popBackStack
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -35,6 +36,7 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setObserve()
+        setOnClick()
         viewModel.getUserHistory()
     }
 
@@ -58,6 +60,13 @@ class HistoryFragment : Fragment() {
                     lottieAnimationNaruto.cancelAnimation()
                     rvHistory.isVisible = true
                 }
+            }
+        }
+    }
+    private fun setOnClick(){
+        with(binding){
+            fabClose.setOnClickListener {
+                popBackStack()
             }
         }
     }

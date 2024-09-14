@@ -22,7 +22,3 @@ fun Fragment.popBackStack(){
 fun Fragment.showToast(text: String){
     Toast.makeText(requireContext(),text,Toast.LENGTH_LONG).show()
 }
-
-fun Fragment.showErrorToast(){
-
-}

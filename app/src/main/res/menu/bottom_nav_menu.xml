@@ -12,9 +12,9 @@
         android:title="@string/tier_list" />
 
     <item
-        android:id="@+id/historyFragment"
+        android:id="@+id/marketFragment"
         android:icon="@drawable/history_icon"
-        android:title="@string/history" />
+        android:title="@string/market" />
 
     <item
         android:id="@+id/userInfo"

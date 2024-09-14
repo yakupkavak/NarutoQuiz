@@ -9,15 +9,28 @@
         android:paddingVertical="@dimen/margin_medium">
 
         <TextView
+            android:id="@+id/tvHint"
+            style="@style/XLargeSizeMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_large"
+            android:textAlignment="center"
+            android:text="@string/hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/tvGameOver"
             style="@style/LargeSizeMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
             android:layout_marginHorizontal="@dimen/margin_large"
             android:text="@string/game"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tvHint" />
 
         <Button
             android:id="@+id/btnCloseHint"

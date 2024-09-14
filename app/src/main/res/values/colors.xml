@@ -17,7 +17,7 @@
     <color name="indicator_color">#FFFFFF</color>
     <color name="true_answer">#1D6B24</color>
     <color name="false_answer">#6F1010</color>
-    <color name="selected_answer">#064452</color>
+    <color name="selected_answer">#07576A</color>
 
     <!--Sign In General -->
     <color name="orange_300">#89D1D9</color>
