@@ -9,12 +9,9 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.narutoquiz.R
-import com.example.narutoquiz.data.model.DialogModel
 import com.example.narutoquiz.databinding.FragmentUserInfoBinding
 import com.example.narutoquiz.ui.extension.navigate
 import com.example.narutoquiz.ui.extension.observe
-import com.example.narutoquiz.ui.mainScreen.game.GameFragmentDirections
-import com.example.narutoquiz.ui.mainScreen.main.GameDialogFragment
 import com.example.narutoquiz.ui.mainScreen.main.InformationDialogFragment
 import com.example.narutoquiz.ui.userLogIn.SignActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -73,6 +70,9 @@ class UserInfoFragment : Fragment() {
             }
             tvGetInformation.setOnClickListener {
                 InformationDialogFragment().show(parentFragmentManager, "game")
+            }
+            tvGetHistory.setOnClickListener {
+                navigate(UserInfoFragmentDirections.actionUserInfoToHistoryFragment())
             }
         }
     }

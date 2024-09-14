@@ -23,8 +23,8 @@
             android:id="@+id/action_feedFragment_to_userInfo"
             app:destination="@id/userInfo" />
         <action
-            android:id="@+id/action_feedFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
+            android:id="@+id/action_feedFragment_to_marketFragment"
+            app:destination="@id/marketFragment" />
     </fragment>
 
     <fragment
@@ -57,8 +57,8 @@
             android:id="@+id/action_tierFragment_to_feedFragment"
             app:destination="@id/feedFragment" />
         <action
-            android:id="@+id/action_tierFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
+            android:id="@+id/action_tierFragment_to_marketFragment"
+            app:destination="@id/marketFragment" />
     </fragment>
 
     <fragment
@@ -75,24 +75,33 @@
             android:id="@+id/action_userInfo_to_tierFragment"
             app:destination="@id/tierFragment" />
         <action
+            android:id="@+id/action_userInfo_to_marketFragment"
+            app:destination="@id/marketFragment" />
+        <action
             android:id="@+id/action_userInfo_to_historyFragment"
             app:destination="@id/historyFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/historyFragment"
-        android:name="com.example.narutoquiz.ui.mainScreen.history.HistoryFragment"
-        android:label="HistoryFragment"
-        tools:layout="@layout/fragment_history">
+        android:id="@+id/marketFragment"
+        android:name="com.example.narutoquiz.ui.mainScreen.market.MarketFragment"
+        android:label="MarketFragment"
+        tools:layout="@layout/fragment_market">
 
         <action
-            android:id="@+id/action_historyFragment_to_feedFragment"
+            android:id="@+id/action_marketFragment_to_feedFragment"
             app:destination="@id/feedFragment" />
         <action
-            android:id="@+id/action_historyFragment_to_tierFragment"
+            android:id="@+id/action_marketFragment_to_tierFragment"
             app:destination="@id/tierFragment" />
         <action
-            android:id="@+id/action_historyFragment_to_userInfo"
+            android:id="@+id/action_marketFragment_to_userInfo"
             app:destination="@id/userInfo" />
     </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.narutoquiz.ui.mainScreen.history.HistoryFragment"
+        android:label="historyFragment"
+        tools:layout="@layout/fragment_history" />
 </navigation>

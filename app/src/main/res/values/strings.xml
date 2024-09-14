@@ -78,13 +78,13 @@
     <string name="user_mail_info">Mail: %1$s</string>
     <string name="change_password">Change password</string>
     <string name="max_repeat_info">Question count: %1$s</string>
-    <string name="get_information">Get information</string>
+    <string name="get_information">About Game</string>
     <string name="select">Select !</string>
 
     <string name="naruto_icon">Naruto Icon</string>
     <string name="unexpected_error">Unexpected Error</string>
     <string name="game_mode">Game Mode</string>
-    <string name="history">History</string>
+    <string name="history">Game History</string>
     <string name="sign_out">Sign Out</string>
     <string name="user">User</string>
     <string name="game">Game</string>
@@ -92,5 +92,7 @@
     <string name="challenge_game">Challenge Game</string>
     <string name="welcome_text">In the Challenge game mode you have no wrong answers and you can only participate in the ranking with this mode. \n\nClassic allows you to test yourself on all characters. \n\nDon\'t forget to participate in special Akatsuki, Clans, Monsters and Teams game modes. \n\n\n Good luck shinobi!</string>
     <string name="about_the_game">About the game</string>
+    <string name="market">Market</string>
+    <string name="hint">Hint</string>
 
 </resources>

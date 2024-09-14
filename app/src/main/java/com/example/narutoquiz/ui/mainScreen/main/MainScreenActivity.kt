@@ -42,6 +42,7 @@ class MainScreenActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.gameFragment -> binding.bottomNavigation.isVisible = false
+                R.id.historyFragment -> binding.bottomNavigation.isVisible = false
                 else -> binding.bottomNavigation.isVisible = true
             }
         }
