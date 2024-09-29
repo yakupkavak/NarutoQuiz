@@ -1,5 +1,6 @@
 [versions]
 agp = "8.5.0"
+billingKtx = "7.0.0"
 compiler = "1.1.1"
 converterJacksonVersion = "2.9.0"
 coreSplashscreen = "1.0.1"
@@ -24,6 +25,7 @@ activity = "1.9.1"
 constraintlayout = "2.1.4"
 navigationFragmentKtx = "2.7.7"
 netJsonKotlinVersion = "4.10"
+playServicesAds = "23.3.0"
 playServicesAuthVersion = "21.2.0"
 retrofit = "2.11.0"
 lottie = "3.4.0"
@@ -36,6 +38,7 @@ androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-view
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-safe-args-gradle-plugin = { module = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
+billing-ktx = { module = "com.android.billingclient:billing-ktx", version.ref = "billingKtx" }
 compiler = { module = "android.arch.lifecycle:compiler", version.ref = "compiler" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
@@ -60,6 +63,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 net-pwall-json-json-kotlin = { module = "net.pwall.json:json-kotlin", version.ref = "netJsonKotlinVersion" }
+play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "playServicesAds" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit2-converter-jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "converterJacksonVersion" }
 

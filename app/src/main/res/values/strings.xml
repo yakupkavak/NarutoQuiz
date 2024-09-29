@@ -68,6 +68,8 @@
     <string name="trueText">True</string>
     <string name="wrong">Wrong</string>
 
+    <string name="emptyAd">There is no avaiable add, try again in 3 minute</string>
+
     <string name="family_question">Which one\'s %1$s</string>
     <string name="voice_question">Which one\'s %1$s</string>
     <string name="clan_question">Which one\'s clan name is %1$s</string>
@@ -78,6 +80,7 @@
     <string name="user_mail_info">Mail: %1$s</string>
     <string name="change_password">Change password</string>
     <string name="max_repeat_info">Question count: %1$s</string>
+    <string name="hint_count">Hint count: %1$d</string>
     <string name="get_information">About Game</string>
     <string name="select">Select !</string>
 
@@ -94,5 +97,7 @@
     <string name="about_the_game">About the game</string>
     <string name="market">Market</string>
     <string name="hint">Hint</string>
+    <string name="purchase">Purchase</string>
+    <string name="add">Add</string>
 
 </resources>
