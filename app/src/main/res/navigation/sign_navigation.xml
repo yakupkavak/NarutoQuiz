@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.narutoquiz.ui.userLogIn.login.SignUpFragment"
+        android:name="com.naruto.narutoquiz.ui.userLogIn.login.SignUpFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_signup" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/signinFragment"
-        android:name="com.example.narutoquiz.ui.userLogIn.signin.SigninFragment"
+        android:name="com.naruto.narutoquiz.ui.userLogIn.signin.SigninFragment"
         android:label="fragment_signin"
         tools:layout="@layout/fragment_signin" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/recoveryFragment"
-        android:name="com.example.narutoquiz.ui.userLogIn.recovery.RecoveryFragment"
+        android:name="com.naruto.narutoquiz.ui.userLogIn.recovery.RecoveryFragment"
         android:label="RecoveryFragment" >
         <action
             android:id="@+id/action_recoveryFragment_to_signinFragment"

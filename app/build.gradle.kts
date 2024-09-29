@@ -8,11 +8,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.narutoquiz"
+    namespace = "com.naruto.narutoquiz"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.narutoquiz"
+        applicationId = "com.naruto.narutoquiz"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -76,6 +76,8 @@ dependencies {
     implementation(libs.lottie)
     kapt(libs.compiler)
     implementation(libs.generativeai)
+    implementation(libs.billing.ktx)
+    implementation(libs.play.services.ads)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
