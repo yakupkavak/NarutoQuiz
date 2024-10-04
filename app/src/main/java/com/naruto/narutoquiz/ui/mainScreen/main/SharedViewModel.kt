@@ -2,9 +2,9 @@ package com.naruto.narutoquiz.ui.mainScreen.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.naruto.narutoquiz.data.model.UserInfoModel
-import com.naruto.narutoquiz.data.repository.FirestoreRepository
-import com.naruto.narutoquiz.data.util.AuthProvider
+import com.naruto.narutoquiz.data.network.model.UserInfoModel
+import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
+import com.naruto.narutoquiz.data.network.util.AuthProvider
 import com.naruto.narutoquiz.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -15,8 +15,8 @@ class SharedViewModel @Inject constructor(
     val authProvider: AuthProvider
 ) : BaseViewModel() {
 
-    private val _userInfo = MutableLiveData<UserInfoModel?>()
-    val userInfo: LiveData<UserInfoModel?> get() = _userInfo
+    private val _userInfo = MutableLiveData<com.naruto.narutoquiz.data.network.model.UserInfoModel?>()
+    val userInfo: LiveData<com.naruto.narutoquiz.data.network.model.UserInfoModel?> get() = _userInfo
 
     private val _tokenCount = MutableLiveData<Int>()
     val tokenCount: LiveData<Int> get() = _tokenCount
@@ -31,15 +31,22 @@ class SharedViewModel @Inject constructor(
             onLoading = null,
             onError = null //TODO KULLANICI BİLGİLERİ ÇEKİLEMEDİ HATASI GÖSTERİLECEK
         )
+        getUserToken()
     }
 
     fun updateUserToken(){
 
     }
 
-    fun getUserToken(){
-
+    private fun getUserToken(){
+        getDataCall(
+            dataCall = { firestoreRepository.getUserToken() },
+            onSuccess = { tokenCount -> _tokenCount.postValue(tokenCount ?: 0) },
+            onLoading = null,
+            onError = null //TODO KULLANICI BİLGİLERİ ÇEKİLEMEDİ HATASI GÖSTERİLECEK
+        )
     }
+
     fun updateUserRank(){
 
     }

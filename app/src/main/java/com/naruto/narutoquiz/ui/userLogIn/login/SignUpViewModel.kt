@@ -2,13 +2,11 @@ package com.naruto.narutoquiz.ui.userLogIn.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
-import com.naruto.narutoquiz.data.repository.AuthRepository
-import com.naruto.narutoquiz.data.repository.FirestoreRepository
-import com.naruto.narutoquiz.data.util.ServiceCountConst.DEFAULT_USER_TOKEN
+import com.naruto.narutoquiz.data.network.repository.AuthRepository
+import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
+import com.naruto.narutoquiz.data.network.util.ServiceCountConst.DEFAULT_USER_TOKEN
 import com.naruto.narutoquiz.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel

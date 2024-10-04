@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.naruto.narutoquiz.data.model.HistoryRowModel
+import com.naruto.narutoquiz.data.network.model.HistoryRowModel
 import com.naruto.narutoquiz.databinding.HistoryRowBinding
 import com.naruto.narutoquiz.ui.extension.getStringByGameId
 

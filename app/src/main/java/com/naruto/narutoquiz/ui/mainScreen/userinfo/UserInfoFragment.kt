@@ -42,6 +42,7 @@ class UserInfoFragment : Fragment() {
     }
 
     private fun setObserve() {
+        /*
         observe(viewModel.success) { userModel ->
             with(binding) {
                 tvUserName.text = getString(R.string.user_name_info, userModel?.userName)
@@ -49,6 +50,8 @@ class UserInfoFragment : Fragment() {
                 tvHintCount.text = getString(R.string.hint_count, userModel?.tokenCount)
             }
         }
+
+         */
     }
 
     private fun setOnClick() {

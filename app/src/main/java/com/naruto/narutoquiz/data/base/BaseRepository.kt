@@ -1,6 +1,6 @@
 package com.naruto.narutoquiz.data.base
 
-import com.naruto.narutoquiz.data.util.Resource
+import com.naruto.narutoquiz.data.network.util.Resource
 import com.google.android.gms.tasks.Task
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine

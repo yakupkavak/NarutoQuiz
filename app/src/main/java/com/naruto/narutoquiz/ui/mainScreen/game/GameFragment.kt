@@ -9,7 +9,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.naruto.narutoquiz.R
-import com.naruto.narutoquiz.data.model.DialogModel
+import com.naruto.narutoquiz.data.network.model.DialogModel
 import com.naruto.narutoquiz.databinding.FragmentGameBinding
 import com.naruto.narutoquiz.domain.extension.getUrl
 import com.naruto.narutoquiz.ui.extension.navigate
@@ -60,7 +60,8 @@ class GameFragment : Fragment() {
     }
 
     private fun setDialog(trueCount: Int, wrongCount: Int) {
-        val newFragment = GameDialogFragment(DialogModel(trueCount, wrongCount),
+        val newFragment = GameDialogFragment(
+            DialogModel(trueCount, wrongCount),
             playAgain = { viewModel.startGame() },
             mainScreen = { navigate(GameFragmentDirections.actionGameFragmentToFeedFragment()) })
         newFragment.show(parentFragmentManager, "game")

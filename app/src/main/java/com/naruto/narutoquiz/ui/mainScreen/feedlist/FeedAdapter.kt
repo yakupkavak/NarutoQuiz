@@ -7,31 +7,31 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
-import com.naruto.narutoquiz.data.model.FeedRowModel
+import com.naruto.narutoquiz.data.network.model.FeedRowModel
 import com.naruto.narutoquiz.databinding.FeedRowBinding
 
 class FeedAdapter : Adapter<FeedAdapter.FeedViewHolder>() {
 
     var onItemClick: ((Int,String) -> Unit)? = null
 
-    private val diffUtil = object : DiffUtil.ItemCallback<FeedRowModel>() {
-        override fun areItemsTheSame(oldItem: FeedRowModel, newItem: FeedRowModel): Boolean {
+    private val diffUtil = object : DiffUtil.ItemCallback<com.naruto.narutoquiz.data.network.model.FeedRowModel>() {
+        override fun areItemsTheSame(oldItem: com.naruto.narutoquiz.data.network.model.FeedRowModel, newItem: com.naruto.narutoquiz.data.network.model.FeedRowModel): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: FeedRowModel, newItem: FeedRowModel): Boolean {
+        override fun areContentsTheSame(oldItem: com.naruto.narutoquiz.data.network.model.FeedRowModel, newItem: com.naruto.narutoquiz.data.network.model.FeedRowModel): Boolean {
             return oldItem == newItem
         }
     }
 
     private val asyncListDiffer = AsyncListDiffer(this, diffUtil)
 
-    fun submit(items: List<FeedRowModel>) {
+    fun submit(items: List<com.naruto.narutoquiz.data.network.model.FeedRowModel>) {
         asyncListDiffer.submitList(items)
     }
 
     inner class FeedViewHolder(private val binding: FeedRowBinding) : ViewHolder(binding.root) {
-        fun bind(data: FeedRowModel) {
+        fun bind(data: com.naruto.narutoquiz.data.network.model.FeedRowModel) {
             with(binding) {
                 tvRow.text = data.description
                 Glide.with(binding.root).load(data.imageResId).into(ivRow)

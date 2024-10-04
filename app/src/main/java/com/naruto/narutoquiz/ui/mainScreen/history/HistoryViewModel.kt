@@ -2,8 +2,8 @@ package com.naruto.narutoquiz.ui.mainScreen.history
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.naruto.narutoquiz.data.model.HistoryRowModel
-import com.naruto.narutoquiz.data.repository.FirestoreRepository
+import com.naruto.narutoquiz.data.network.model.HistoryRowModel
+import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
 import com.naruto.narutoquiz.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

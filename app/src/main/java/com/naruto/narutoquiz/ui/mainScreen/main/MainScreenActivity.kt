@@ -19,8 +19,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
-import com.naruto.narutoquiz.data.repository.FirestoreRepository
-import com.naruto.narutoquiz.data.util.Resource
+import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
+import com.naruto.narutoquiz.data.network.util.Resource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -90,7 +90,7 @@ class MainScreenActivity : AppCompatActivity() {
 
     suspend fun showAd(): Resource<Int> {
         return rewardedAd?.let { ad ->
-            suspendCancellableCoroutine<Resource<Int>> {continuation ->
+            suspendCancellableCoroutine<Resource<Int>> { continuation ->
                 ad.show(this) { rewardItem ->
                     val rewardAmount = rewardItem.amount
                     Log.d(TAG, "User earned the reward. $rewardAmount")

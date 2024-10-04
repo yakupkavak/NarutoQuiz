@@ -52,6 +52,11 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+
     implementation(libs.hilt.android)
     annotationProcessor(libs.hilt.compiler)
     implementation(platform(libs.firebase.bom))

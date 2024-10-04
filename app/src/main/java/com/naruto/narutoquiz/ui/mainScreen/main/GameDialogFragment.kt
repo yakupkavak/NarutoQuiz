@@ -10,7 +10,7 @@ import com.naruto.narutoquiz.data.model.DialogModel
 import com.naruto.narutoquiz.databinding.DialogGameBinding
 
 class GameDialogFragment(
-    private val dialogModel: DialogModel,
+    private val dialogModel: com.naruto.narutoquiz.data.model.DialogModel,
     private val mainScreen: () -> Unit,
     private val playAgain: () -> Unit
 ) : DialogFragment() {
