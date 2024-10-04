@@ -1,7 +1,7 @@
 package com.naruto.narutoquiz.domain.extension
 
-import com.naruto.narutoquiz.data.model.Family
-import com.naruto.narutoquiz.data.model.VoiceActors
+import com.naruto.narutoquiz.data.network.model.Family
+import com.naruto.narutoquiz.data.network.model.VoiceActors
 import kotlin.reflect.KProperty1
 
 fun Family.getFirstNonNullField(): Pair<String, String>? {

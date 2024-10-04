@@ -2,8 +2,8 @@ package com.naruto.narutoquiz.ui.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.naruto.narutoquiz.data.util.Resource
-import com.naruto.narutoquiz.data.util.Status
+import com.naruto.narutoquiz.data.network.util.Resource
+import com.naruto.narutoquiz.data.network.util.Status
 import kotlinx.coroutines.launch
 
 open class BaseViewModel : ViewModel() {

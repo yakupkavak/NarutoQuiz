@@ -1,6 +1,6 @@
 package com.naruto.narutoquiz.ui.mainScreen.market
 
-import com.naruto.narutoquiz.data.repository.FirestoreRepository
+import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
 import com.naruto.narutoquiz.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -16,9 +16,5 @@ class MarketViewModel @Inject constructor(
 
     private suspend fun addUserToken(tokenCount: Int) {
         firestoreRepository.updateUserToken(tokenCount)
-    }
-
-    private suspend fun getUserToken() {
-        println("user token is -> ${firestoreRepository.getUserToken().data} ")
     }
 }

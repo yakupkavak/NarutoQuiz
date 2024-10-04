@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.naruto.narutoquiz.data.model.RankRowModel
+import com.naruto.narutoquiz.data.network.model.RankRowModel
 import com.naruto.narutoquiz.databinding.RankRowBinding
 
 class RankAdapter : Adapter<RankAdapter.RankViewHolder>() {

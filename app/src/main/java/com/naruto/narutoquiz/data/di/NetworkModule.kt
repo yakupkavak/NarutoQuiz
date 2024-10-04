@@ -1,12 +1,12 @@
 package com.naruto.narutoquiz.data.di
 
 import com.naruto.narutoquiz.BuildConfig
-import com.naruto.narutoquiz.data.repository.AuthRepository
-import com.naruto.narutoquiz.data.repository.FirestoreRepository
-import com.naruto.narutoquiz.data.repository.GeminiRepository
-import com.naruto.narutoquiz.data.repository.NarutoRepository
-import com.naruto.narutoquiz.data.service.NarutoService
-import com.naruto.narutoquiz.data.util.AuthProvider
+import com.naruto.narutoquiz.data.network.repository.AuthRepository
+import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
+import com.naruto.narutoquiz.data.network.repository.GeminiRepository
+import com.naruto.narutoquiz.data.network.repository.NarutoRepository
+import com.naruto.narutoquiz.data.network.service.NarutoService
+import com.naruto.narutoquiz.data.network.util.AuthProvider
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.firebase.auth.FirebaseAuth

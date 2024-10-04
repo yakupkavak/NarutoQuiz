@@ -2,7 +2,7 @@ package com.naruto.narutoquiz.ui.userLogIn.signin
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.naruto.narutoquiz.data.repository.AuthRepository
+import com.naruto.narutoquiz.data.network.repository.AuthRepository
 import com.naruto.narutoquiz.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

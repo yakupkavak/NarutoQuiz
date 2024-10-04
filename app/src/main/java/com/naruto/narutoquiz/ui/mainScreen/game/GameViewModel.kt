@@ -3,16 +3,12 @@ package com.naruto.narutoquiz.ui.mainScreen.game
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.naruto.narutoquiz.data.model.Akatsuki
-import com.naruto.narutoquiz.data.model.AnswerModel
-import com.naruto.narutoquiz.data.model.Character
-import com.naruto.narutoquiz.data.model.GroupModel
-import com.naruto.narutoquiz.data.model.OptionModel
-import com.naruto.narutoquiz.data.model.SelectionModel
-import com.naruto.narutoquiz.data.repository.FirestoreRepository
-import com.naruto.narutoquiz.data.repository.GeminiRepository
-import com.naruto.narutoquiz.data.repository.NarutoRepository
-import com.naruto.narutoquiz.data.util.Resource
+import com.naruto.narutoquiz.data.network.model.OptionModel
+import com.naruto.narutoquiz.data.network.model.SelectionModel
+import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
+import com.naruto.narutoquiz.data.network.repository.GeminiRepository
+import com.naruto.narutoquiz.data.network.repository.NarutoRepository
+import com.naruto.narutoquiz.data.network.util.Resource
 import com.naruto.narutoquiz.domain.extension.getFirstNonNullField
 import com.naruto.narutoquiz.ui.base.BaseViewModel
 import com.naruto.narutoquiz.ui.extension.getRandom
@@ -93,8 +89,9 @@ class GameViewModel @Inject constructor(
     private val _currentGameTopic = MutableLiveData<String>()
     val currentGameTopic: LiveData<String> get() = _currentGameTopic
 
-    private val _answerSelection = MutableLiveData<AnswerModel>()
-    val answerSelection: LiveData<AnswerModel> get() = _answerSelection
+    private val _answerSelection =
+        MutableLiveData<com.naruto.narutoquiz.data.network.model.AnswerModel>()
+    val answerSelection: LiveData<com.naruto.narutoquiz.data.network.model.AnswerModel> get() = _answerSelection
 
     private val _finishGame = MutableLiveData<List<Int?>>()
     val finishGame: LiveData<List<Int?>> get() = _finishGame
@@ -136,34 +133,74 @@ class GameViewModel @Inject constructor(
         if (firstOption.value?.trueAnswer == true) {
             if (selectedOptionId == 0) {
                 _trueAnswer.postValue(_trueAnswer.value?.plus(1))
-                _answerSelection.postValue(AnswerModel(0, null))
+                _answerSelection.postValue(
+                    com.naruto.narutoquiz.data.network.model.AnswerModel(
+                        0,
+                        null
+                    )
+                )
             } else {
                 _falseAnswer.postValue(_falseAnswer.value?.plus(1))
-                _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
+                _answerSelection.postValue(
+                    com.naruto.narutoquiz.data.network.model.AnswerModel(
+                        trueAnswerId,
+                        selectedOptionId
+                    )
+                )
             }
         } else if (secondOption.value?.trueAnswer == true) {
             if (selectedOptionId == 1) {
                 _trueAnswer.postValue(_trueAnswer.value?.plus(1))
-                _answerSelection.postValue(AnswerModel(1, null))
+                _answerSelection.postValue(
+                    com.naruto.narutoquiz.data.network.model.AnswerModel(
+                        1,
+                        null
+                    )
+                )
             } else {
                 _falseAnswer.postValue(_falseAnswer.value?.plus(1))
-                _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
+                _answerSelection.postValue(
+                    com.naruto.narutoquiz.data.network.model.AnswerModel(
+                        trueAnswerId,
+                        selectedOptionId
+                    )
+                )
             }
         } else if (thirdOption.value?.trueAnswer == true) {
             if (selectedOptionId == 2) {
                 _trueAnswer.postValue(_trueAnswer.value?.plus(1))
-                _answerSelection.postValue(AnswerModel(2, null))
+                _answerSelection.postValue(
+                    com.naruto.narutoquiz.data.network.model.AnswerModel(
+                        2,
+                        null
+                    )
+                )
             } else {
                 _falseAnswer.postValue(_falseAnswer.value?.plus(1))
-                _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
+                _answerSelection.postValue(
+                    com.naruto.narutoquiz.data.network.model.AnswerModel(
+                        trueAnswerId,
+                        selectedOptionId
+                    )
+                )
             }
         } else if (lastOption.value?.trueAnswer == true) {
             if (selectedOptionId == 3) {
                 _trueAnswer.postValue(_trueAnswer.value?.plus(1))
-                _answerSelection.postValue(AnswerModel(3, null))
+                _answerSelection.postValue(
+                    com.naruto.narutoquiz.data.network.model.AnswerModel(
+                        3,
+                        null
+                    )
+                )
             } else {
                 _falseAnswer.postValue(_falseAnswer.value?.plus(1))
-                _answerSelection.postValue(AnswerModel(trueAnswerId, selectedOptionId))
+                _answerSelection.postValue(
+                    com.naruto.narutoquiz.data.network.model.AnswerModel(
+                        trueAnswerId,
+                        selectedOptionId
+                    )
+                )
             }
         }
     }
@@ -299,7 +336,7 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private fun askFamily(characterList: List<Character?>) {
+    private fun askFamily(characterList: List<com.naruto.narutoquiz.data.network.model.Character?>) {
         _questionId.postValue(AskFamilyId)
 
         val nonNullPair: Pair<String, String>?
@@ -324,7 +361,7 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private fun setOptions(characterList: List<Character?>) {
+    private fun setOptions(characterList: List<com.naruto.narutoquiz.data.network.model.Character?>) {
         val options = listOf(
             OptionModel(FirstOptionId, _firstOption),
             OptionModel(SecondOptionId, _secondOption),
@@ -340,7 +377,10 @@ class GameViewModel @Inject constructor(
         setOptionWrong(characterList[LastCharacterId], options[LastOptionId])
     }
 
-    private fun setOptionTrue(character: Character?, option: OptionModel) {
+    private fun setOptionTrue(
+        character: com.naruto.narutoquiz.data.network.model.Character?,
+        option: OptionModel
+    ) {
         character?.let { getCharacter ->
             option.option.postValue(
                 SelectionModel(
@@ -356,7 +396,10 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    private fun setOptionWrong(character: Character?, option: OptionModel) {
+    private fun setOptionWrong(
+        character: com.naruto.narutoquiz.data.network.model.Character?,
+        option: OptionModel
+    ) {
         character?.let { getCharacter ->
             option.option.postValue(
                 SelectionModel(
@@ -397,11 +440,11 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private suspend fun getFourAkatsukiCharacter(): Resource<List<Character>> {
-        var firstCharacter: Character
-        var secondCharacter: Character
-        var thirdCharacter: Character
-        var lastCharacter: Character
+    private suspend fun getFourAkatsukiCharacter(): Resource<List<com.naruto.narutoquiz.data.network.model.Character>> {
+        var firstCharacter: com.naruto.narutoquiz.data.network.model.Character
+        var secondCharacter: com.naruto.narutoquiz.data.network.model.Character
+        var thirdCharacter: com.naruto.narutoquiz.data.network.model.Character
+        var lastCharacter: com.naruto.narutoquiz.data.network.model.Character
         while (true) {
             val charList = narutoRepository.getAkatsukiList(AkatsukiSize)
             firstCharacter = getAkatsuki(charList)
@@ -421,7 +464,7 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    private fun getAkatsuki(charList: Resource<Akatsuki>): Character {
+    private fun getAkatsuki(charList: Resource<com.naruto.narutoquiz.data.network.model.Akatsuki>): com.naruto.narutoquiz.data.network.model.Character {
         while (true) {
             val character =
                 charList.data?.akatsuki?.get(getRandom(from = 0, includeUntil = AkatsukiSize - 1))
@@ -431,7 +474,7 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    private fun askVoiceActor(characterList: List<Character?>) {
+    private fun askVoiceActor(characterList: List<com.naruto.narutoquiz.data.network.model.Character?>) {
         _questionId.postValue(AskVoiceActorId)
 
         val nonNullPair: Pair<String, String>?
@@ -487,10 +530,11 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private suspend fun getFourRandomCharacter(): Resource<List<Character?>> {
-        var firstCharacter: Character?
+    private suspend fun getFourRandomCharacter(): Resource<List<com.naruto.narutoquiz.data.network.model.Character?>> {
+        var firstCharacter: com.naruto.narutoquiz.data.network.model.Character?
         for (i in 1..20) {
-            val selectedCharacters = mutableSetOf<Character?>()
+            val selectedCharacters =
+                mutableSetOf<com.naruto.narutoquiz.data.network.model.Character?>()
             firstCharacter = getRandomCharacter()
             if (firstCharacter?.family?.getFirstNonNullField() != null) {
                 selectedCharacters.add(firstCharacter)
@@ -508,12 +552,12 @@ class GameViewModel @Inject constructor(
         return Resource.error(null)
     }
 
-    private suspend fun getRandomCharacter(): Character? {
+    private suspend fun getRandomCharacter(): com.naruto.narutoquiz.data.network.model.Character? {
         val charList = getRandomCharList()
         return charList?.get(getRandom(includeUntil = charList.size - 1))
     }
 
-    private suspend fun getRandomCharList(): List<Character>? {
+    private suspend fun getRandomCharList(): List<com.naruto.narutoquiz.data.network.model.Character>? {
         return narutoRepository.getCharacterList(
             getRandom(
                 includeUntil = CharacterPageRange
@@ -521,7 +565,7 @@ class GameViewModel @Inject constructor(
         ).data?.characters?.filter { character -> character.images?.isEmpty() == false }
     }
 
-    private fun askClan(characterList: List<Character?>) {
+    private fun askClan(characterList: List<com.naruto.narutoquiz.data.network.model.Character?>) {
         _questionId.postValue(AskClanId)
 
         val firstCharacter = characterList[FirstCharacterId]
@@ -561,7 +605,7 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private suspend fun getFourClanCharacter(): Resource<List<Character?>> {
+    private suspend fun getFourClanCharacter(): Resource<List<com.naruto.narutoquiz.data.network.model.Character?>> {
         val clanList = narutoRepository.getClanList(ClanPageSize)
         val clanIdList = getRandomNumList(4, ClanPageSize - 1)
         val firstClan = clanList.data?.clans?.get(clanIdList[0])
@@ -572,16 +616,16 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun setGroupModel(
-        groupModelList: List<GroupModel?>,
-    ): Resource<List<Character?>> {
+        groupModelList: List<com.naruto.narutoquiz.data.network.model.GroupModel?>,
+    ): Resource<List<com.naruto.narutoquiz.data.network.model.Character?>> {
         val firstModel = groupModelList[FirstCharacterId]
         val secondModel = groupModelList[SecondCharactedId]
         val thirdModel = groupModelList[ThirdCharacterId]
         val lastModel = groupModelList[LastCharacterId]
-        var firstCharacter: Character?
-        var secondCharacter: Character?
-        var thirdCharacter: Character?
-        var lastCharacter: Character?
+        var firstCharacter: com.naruto.narutoquiz.data.network.model.Character?
+        var secondCharacter: com.naruto.narutoquiz.data.network.model.Character?
+        var thirdCharacter: com.naruto.narutoquiz.data.network.model.Character?
+        var lastCharacter: com.naruto.narutoquiz.data.network.model.Character?
 
         withContext(Dispatchers.IO) {
             val getFirstCharacter = async {
@@ -615,7 +659,7 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private suspend fun getCharacter(groupModel: GroupModel?): Character? {
+    private suspend fun getCharacter(groupModel: com.naruto.narutoquiz.data.network.model.GroupModel?): com.naruto.narutoquiz.data.network.model.Character? {
         return groupModel?.characters?.get(
             getRandom(
                 includeUntil = groupModel.characters.size - 1
@@ -638,7 +682,7 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private fun askTeam(characterList: List<Character?>) {
+    private fun askTeam(characterList: List<com.naruto.narutoquiz.data.network.model.Character?>) {
         _questionId.postValue(AskTeamId)
 
         val firstCharacter = characterList[FirstCharacterId]
@@ -659,7 +703,7 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private suspend fun getFourTeamCharacter(): Resource<List<Character?>> {
+    private suspend fun getFourTeamCharacter(): Resource<List<com.naruto.narutoquiz.data.network.model.Character?>> {
         val teamList = narutoRepository.getTeamList(TeamPageSize)
         val teamIdList = getRandomNumList(4, TeamPageSize - 1)
         val firstTeam = teamList.data?.teams?.get(teamIdList[0])
@@ -684,7 +728,7 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private fun askJinckuri(characterList: List<Character?>) {
+    private fun askJinckuri(characterList: List<com.naruto.narutoquiz.data.network.model.Character?>) {
         _questionId.postValue(AskJinckuriId)
 
         val firstCharacter = characterList[FirstCharacterId]
@@ -705,7 +749,7 @@ class GameViewModel @Inject constructor(
         )
     }
 
-    private suspend fun getFourTailCharacter(): Resource<List<Character?>> {
+    private suspend fun getFourTailCharacter(): Resource<List<com.naruto.narutoquiz.data.network.model.Character?>> {
         val tailList = narutoRepository.getTailedBeastList()
         val tailIdList = getRandomNumList(4, TailPageRange)
         val firstTail = tailList.data?.tailedBeasts?.get(tailIdList[0])
