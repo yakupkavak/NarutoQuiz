@@ -4,5 +4,5 @@ import androidx.lifecycle.MutableLiveData
 
 data class OptionModel (
     val optionId: Int,
-    val option : MutableLiveData<com.naruto.narutoquiz.data.model.SelectionModel>,
+    val option : MutableLiveData<SelectionModel>,
 )
