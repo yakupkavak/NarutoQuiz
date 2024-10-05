@@ -15,8 +15,8 @@ class SharedViewModel @Inject constructor(
     val authProvider: AuthProvider
 ) : BaseViewModel() {
 
-    private val _userInfo = MutableLiveData<com.naruto.narutoquiz.data.network.model.UserInfoModel?>()
-    val userInfo: LiveData<com.naruto.narutoquiz.data.network.model.UserInfoModel?> get() = _userInfo
+    private val _userInfo = MutableLiveData<UserInfoModel?>()
+    val userInfo: LiveData<UserInfoModel?> get() = _userInfo
 
     private val _tokenCount = MutableLiveData<Int>()
     val tokenCount: LiveData<Int> get() = _tokenCount

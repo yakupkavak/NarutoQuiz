@@ -30,7 +30,6 @@ class UserViewModel @Inject constructor(
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } }
         )
-
          */
     }
 }

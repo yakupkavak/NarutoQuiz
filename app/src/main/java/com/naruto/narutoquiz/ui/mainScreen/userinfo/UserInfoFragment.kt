@@ -8,10 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import com.naruto.narutoquiz.R
 import com.naruto.narutoquiz.databinding.FragmentUserInfoBinding
 import com.naruto.narutoquiz.ui.extension.navigate
-import com.naruto.narutoquiz.ui.extension.observe
 import com.naruto.narutoquiz.ui.mainScreen.main.InformationDialogFragment
 import com.naruto.narutoquiz.ui.mainScreen.main.SharedViewModel
 import com.naruto.narutoquiz.ui.userLogIn.SignActivity
@@ -50,7 +48,6 @@ class UserInfoFragment : Fragment() {
                 tvHintCount.text = getString(R.string.hint_count, userModel?.tokenCount)
             }
         }
-
          */
     }
 
