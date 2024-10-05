@@ -7,12 +7,12 @@ import javax.inject.Inject
 class AuthProvider @Inject constructor(
     private val auth: FirebaseAuth
 ) {
-    fun getUserInformation(): Resource<com.naruto.narutoquiz.data.network.model.UserInfoModel> {
+    fun getUserInformation(): Resource<UserInfoModel> {
         val userMail = auth.currentUser?.email
         val userName = auth.currentUser?.displayName
         return if (userMail != null && userName != null) {
             Resource.success(
-                com.naruto.narutoquiz.data.network.model.UserInfoModel(
+                UserInfoModel(
                     userName = userName,
                     userMail = userMail
                 )

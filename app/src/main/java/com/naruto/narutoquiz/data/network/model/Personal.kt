@@ -6,7 +6,7 @@ data class Personal(
     @JsonProperty("affiliation")
     val affiliation: List<String>?,
     @JsonProperty("age")
-    val age: com.naruto.narutoquiz.data.model.Age?,
+    val age: Age?,
     @JsonProperty("birthdate")
     val birthdate: String?,
     @JsonProperty("bloodType")
@@ -16,7 +16,7 @@ data class Personal(
     @JsonProperty("classification")
     val classification: List<String>?,
     @JsonProperty("height")
-    val height: com.naruto.narutoquiz.data.network.model.Height?,
+    val height: Height?,
     @JsonProperty("kekkeiGenkai")
     val kekkeiGenkai: List<String>?,
     @JsonProperty("kekkeiMōra")
@@ -38,7 +38,7 @@ data class Personal(
     @JsonProperty("titles")
     val titles: List<String>?,
     @JsonProperty("weight")
-    val weight: com.naruto.narutoquiz.data.network.model.Weight?,
+    val weight: Weight?,
     @JsonProperty("jinchūriki")
     val jinchuriki: List<String>?,
 )

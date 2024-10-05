@@ -41,12 +41,12 @@ class HistoryFragment : Fragment() {
     }
 
     private fun setObserve() {
-        observe(viewModel.success) { historyList ->
-            historyList?.let {
-                adapter.submit(historyList)
-                binding.rvHistory.adapter = adapter
-            }
+
+        observe(viewModel.data){ historyRowModels ->
+            adapter.submit(historyRowModels)
+            binding.rvHistory.adapter = adapter
         }
+        //TODO databaseden yüklenirken loading kullanmak gerekir mi ?
         observe(viewModel.loading) { loading ->
             if (loading) {
                 with(binding) {

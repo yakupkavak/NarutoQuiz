@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface GameDao {
 
-    @Query("SELECT game_mode,true_count,false_count FROM GameHistory WHERE user_mail = :userMail")
+    @Query("SELECT game_mode as gameMode,true_count as trueCount,false_count as falseCount FROM GameHistory WHERE user_mail = :userMail")
     fun getUserHistory(userMail: String): Flow<List<HistoryRowModel>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

@@ -24,7 +24,7 @@ class HistoryAdapter : Adapter<HistoryAdapter.HistoryViewHolder>(){
 
     private val asyncListDiffer = AsyncListDiffer(this, diffUtil)
 
-    fun submit(items: ArrayList<HistoryRowModel>) {
+    fun submit(items: List<HistoryRowModel>) {
         asyncListDiffer.submitList(items)
     }
 

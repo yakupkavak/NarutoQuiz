@@ -6,11 +6,11 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import com.naruto.narutoquiz.R
-import com.naruto.narutoquiz.data.model.DialogModel
+import com.naruto.narutoquiz.data.network.model.DialogModel
 import com.naruto.narutoquiz.databinding.DialogGameBinding
 
 class GameDialogFragment(
-    private val dialogModel: com.naruto.narutoquiz.data.model.DialogModel,
+    private val dialogModel: DialogModel,
     private val mainScreen: () -> Unit,
     private val playAgain: () -> Unit
 ) : DialogFragment() {

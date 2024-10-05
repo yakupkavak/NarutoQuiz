@@ -1,5 +1,7 @@
 package com.naruto.narutoquiz.data.di
 
+import android.content.Context
+import androidx.room.Room
 import com.naruto.narutoquiz.BuildConfig
 import com.naruto.narutoquiz.data.network.repository.AuthRepository
 import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
@@ -11,9 +13,14 @@ import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.naruto.narutoquiz.data.base.GameRoomDatabase
+import com.naruto.narutoquiz.data.local.repository.DaoRepository
+import com.naruto.narutoquiz.data.local.service.GameDao
+import com.naruto.narutoquiz.data.local.util.ServiceConst.DATABASE_NAME
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.jackson.JacksonConverterFactory
@@ -84,4 +91,19 @@ object NetworkModule {
     fun provideGeminiRepository(): GeminiRepository {
         return GeminiRepository()
     }
+
+    @Provides
+    @Singleton
+    fun provideAppDatabase(@ApplicationContext appContext: Context): GameRoomDatabase {
+        return Room.databaseBuilder(appContext, GameRoomDatabase::class.java, DATABASE_NAME).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideDaoService(db: GameRoomDatabase): GameDao = db.gameDao()
+
+    @Provides
+    @Singleton
+    fun provideDaoRepository(gameDao: GameDao, authProvider: AuthProvider) =
+        DaoRepository(gameDao, authProvider)
 }

@@ -3,6 +3,8 @@ package com.naruto.narutoquiz.ui.mainScreen.game
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.naruto.narutoquiz.data.local.model.GameHistory
+import com.naruto.narutoquiz.data.local.repository.DaoRepository
 import com.naruto.narutoquiz.data.network.model.OptionModel
 import com.naruto.narutoquiz.data.network.model.SelectionModel
 import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
@@ -50,7 +52,8 @@ import kotlin.math.abs
 class GameViewModel @Inject constructor(
     private val narutoRepository: NarutoRepository,
     private val firestoreRepository: FirestoreRepository,
-    private val geminiRepository: GeminiRepository
+    private val geminiRepository: GeminiRepository,
+    private val daoRepository: DaoRepository,
 ) : BaseViewModel() {
 
     private val _questionText = MutableLiveData<String>()
@@ -280,11 +283,20 @@ class GameViewModel @Inject constructor(
 
     private suspend fun gameOver() {
         _finishGame.postValue(listOf(_trueAnswer.value, _falseAnswer.value))
+        /*
         firestoreRepository.postGameScore(
             gameId = _currentGameId.value,
             trueAnswer = _trueAnswer.value,
             falseAnswer = _falseAnswer.value
         )
+         */
+        withContext(Dispatchers.IO){
+            daoRepository.insertGame(
+                gameId = _currentGameId.value ?: 0,
+                trueCount = _trueAnswer.value ?: 0,
+                falseCount = _falseAnswer.value ?: 0,
+            )
+        }
     }
 
     private fun challangeGame() {
