@@ -23,6 +23,7 @@ class AuthProvider @Inject constructor(
     }
 
     fun getUserMail(): String? {
+        println(auth.currentUser?.email)
         return auth.currentUser?.email
     }
 

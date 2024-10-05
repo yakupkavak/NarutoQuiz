@@ -37,11 +37,9 @@ class HistoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setObserve()
         setOnClick()
-        viewModel.getUserHistory()
     }
 
     private fun setObserve() {
-
         observe(viewModel.data){ historyRowModels ->
             adapter.submit(historyRowModels)
             binding.rvHistory.adapter = adapter
@@ -63,6 +61,7 @@ class HistoryFragment : Fragment() {
             }
         }
     }
+
     private fun setOnClick(){
         with(binding){
             fabClose.setOnClickListener {
