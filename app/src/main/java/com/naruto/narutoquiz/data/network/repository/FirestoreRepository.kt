@@ -5,21 +5,19 @@ import android.util.Log
 import com.naruto.narutoquiz.data.base.BaseRepository
 import com.naruto.narutoquiz.data.network.util.AuthProvider
 import com.naruto.narutoquiz.data.network.util.Resource
-import com.naruto.narutoquiz.data.network.util.ServiceCountConst.COLLECTION_PATH_HISTORY
+import com.naruto.narutoquiz.data.network.util.ServiceCountConst.COLLECTION_PATH_RANK
 import com.naruto.narutoquiz.data.network.util.ServiceCountConst.CREATE_DATE
-import com.naruto.narutoquiz.data.network.util.ServiceCountConst.FALSE_COUNT
-import com.naruto.narutoquiz.data.network.util.ServiceCountConst.GAME_ID
 import com.naruto.narutoquiz.data.network.util.ServiceCountConst.TRUE_COUNT
 import com.naruto.narutoquiz.data.network.util.ServiceCountConst.USER_NAME
-import com.naruto.narutoquiz.ui.mainScreen.game.GameConst.ChallangeGameId
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
-import com.naruto.narutoquiz.data.network.model.HistoryRowModel
+import com.naruto.narutoquiz.data.network.model.RankModel
 import com.naruto.narutoquiz.data.network.model.RankRowModel
 import com.naruto.narutoquiz.data.network.util.ServiceCountConst.COLLECTION_PATH_TOKEN
 import com.naruto.narutoquiz.data.network.util.ServiceCountConst.TOKEN_COUNT
 import com.naruto.narutoquiz.data.network.util.ServiceCountConst.USER_MAIL
+import com.naruto.narutoquiz.data.network.util.Status
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.tasks.await
@@ -32,27 +30,65 @@ class FirestoreRepository @Inject constructor(
     private val authProvider: AuthProvider
 ) : BaseRepository() {
 
-    suspend fun postGameScore(gameId: Int?, trueAnswer: Int?, falseAnswer: Int?) {
-        if (gameId != null && trueAnswer != null && falseAnswer != null) {
+    suspend fun postGameScore(trueAnswer: Int?) {
+        if (trueAnswer != null) {
             withContext(Dispatchers.IO) {
                 val user = authProvider.getUserName()
                 user?.let { currentUserName ->
                     val gameStation = hashMapOf(
                         USER_NAME to currentUserName,
-                        GAME_ID to gameId,
                         TRUE_COUNT to trueAnswer,
-                        FALSE_COUNT to falseAnswer,
                         CREATE_DATE to FieldValue.serverTimestamp()
                     )
-                    db.collection(COLLECTION_PATH_HISTORY).add(gameStation).addOnSuccessListener {
-                        Log.d(TAG, "DocumentSnapshot added with ID: ${it.id}")
-                    }.addOnFailureListener { e -> //TODO"HATAYA ÇIKAN NETWORK HATASI"
-                        Log.w(TAG, "Error adding document", e)
+                    val currentDocument = getUserRankData()
+                    if (currentDocument.status == Status.SUCCESS) {
+                        if (currentDocument.data?.trueCount == null) {
+                            db.collection(COLLECTION_PATH_RANK).add(gameStation)
+                                .addOnSuccessListener {
+                                    Log.d(TAG, "DocumentSnapshot added with ID: ${it.id}")
+                                }.addOnFailureListener { e -> //TODO"HATAYA ÇIKAN NETWORK HATASI"
+                                    Log.w(TAG, "Error adding document", e)
+                                }
+                        } else {
+                            if (trueAnswer > currentDocument.data.trueCount){
+                                currentDocument.data.documentReference?.update(gameStation)
+                            }
+                        }
                     }
                 }
             }
         } else {
-            Log.w(TAG, "Null gameId, trueAnswer or falseAnswer")
+            Log.w(TAG, "Null trueAnswer")
+        }
+    }
+
+    private suspend fun getUserRankData(): Resource<RankModel> {
+        val userName = authProvider.getUserName()
+        return withContext(Dispatchers.IO) {
+            try {
+                val documents =
+                    db.collection(COLLECTION_PATH_RANK).whereEqualTo(USER_NAME, userName)
+                        .get().await()
+                for (document in documents.documents) {
+                    val trueCount = document.getLong(TRUE_COUNT)?.toInt() ?: 0
+                    val documentReference = document.reference
+                    return@withContext Resource.success(
+                        RankModel(
+                            documentReference = documentReference,
+                            trueCount = trueCount
+                        )
+                    )
+                }
+                return@withContext Resource.success(
+                    RankModel(
+                        documentReference = null,
+                        trueCount = null
+                    )
+                )
+            } catch (e: Exception) {
+                e.printStackTrace()
+                return@withContext Resource.error(null)
+            }
         }
     }
 
@@ -62,80 +98,22 @@ class FirestoreRepository @Inject constructor(
         return withContext(Dispatchers.IO) {
             try {
                 val documents =
-                    db.collection(COLLECTION_PATH_HISTORY).whereEqualTo(GAME_ID, ChallangeGameId)
+                    db.collection(COLLECTION_PATH_RANK)
                         .orderBy(TRUE_COUNT, Query.Direction.DESCENDING)
                         .get().await()
-                val filteredDocuments = documents
-                    .groupBy { it.getString(USER_NAME) }
-                    .mapValues { entry ->
-                        entry.value.maxByOrNull { it.getLong(TRUE_COUNT) ?: 0 }
-                    }
-                    .values
-                for (document in filteredDocuments) {
+                for (document in documents.documents) {
                     returnList.add(
                         RankRowModel(
                             userRank = rankNumber,
-                            userName = ((document?.get(USER_NAME)) ?: "").toString(),
+                            userName = ((document?.get(USER_NAME)) as? String
+                                ?: "Unknown").toString(),
                             userScore = (document?.get(TRUE_COUNT) as Long?)?.toInt() ?: 0
                         )
                     )
                     rankNumber++
+                    //TODO KULLANICININ GÜNCEL RANK BİLGİSİ BURADAN ALINACAK
                 }
                 return@withContext Resource.success(returnList)
-            } catch (e: Exception) {
-                e.printStackTrace()
-                return@withContext Resource.error(null)
-            }
-        }
-    }
-
-    suspend fun getUserHistory(): Resource<ArrayList<HistoryRowModel>> {
-        val returnList = ArrayList<HistoryRowModel>()
-        return withContext(Dispatchers.IO) {
-            val userName = authProvider.getUserName()
-            try {
-                val documents =
-                    db.collection(COLLECTION_PATH_HISTORY).whereEqualTo(USER_NAME, userName)
-                        .get().await()
-                for (document in documents) {
-                    returnList.add(
-                        HistoryRowModel(
-                            gameMode = (document[GAME_ID] as Long?)?.toInt() ?: 0,
-                            trueCount = (document[TRUE_COUNT] as Long?)?.toInt() ?: 0,
-                            falseCount = (document[FALSE_COUNT] as Long?)?.toInt() ?: 0
-                        )
-                    )
-                }
-                return@withContext Resource.success(returnList)
-            } catch (e: Exception) {
-                e.printStackTrace()
-                return@withContext Resource.error(null)
-            }
-        }
-    }
-
-    suspend fun postUserToken(tokenCount: Int): Resource<Boolean?> {
-        return withContext(Dispatchers.IO) {
-            try {
-                val user = authProvider.getUserMail()
-                user?.let { currentUserMail ->
-                    val gameStation = hashMapOf(
-                        USER_MAIL to currentUserMail,
-                        TOKEN_COUNT to tokenCount,
-                        CREATE_DATE to FieldValue.serverTimestamp()
-                    )
-                    return@withContext suspendCancellableCoroutine<Resource<Boolean?>> { continuation ->
-                        db.collection(COLLECTION_PATH_TOKEN).add(gameStation)
-                            .addOnSuccessListener { data ->
-                                Log.d(TAG, "DocumentSnapshot added with ID: ${data.id}")
-                                continuation.resume(Resource.success(null))
-                            }.addOnFailureListener { e -> //TODO"HATAYA ÇIKAN NETWORK HATASI"
-                                Log.w(TAG, "Error adding document", e)
-                                continuation.resume(Resource.error(null))
-                            }
-                    }
-                }
-                return@withContext Resource.error(null)
             } catch (e: Exception) {
                 e.printStackTrace()
                 return@withContext Resource.error(null)

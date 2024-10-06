@@ -4,14 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.naruto.narutoquiz.data.local.repository.DaoRepository
 import com.naruto.narutoquiz.data.network.model.HistoryRowModel
-import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
 import com.naruto.narutoquiz.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class HistoryViewModel @Inject constructor(
-    private val firestoreRepository: FirestoreRepository,
     private val daoRepository: DaoRepository,
 ) : BaseViewModel() {
 

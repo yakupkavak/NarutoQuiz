@@ -11,7 +11,7 @@ class MarketViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     private suspend fun createUserToken(tokenCount: Int) {
-        firestoreRepository.postUserToken(tokenCount)
+        //firestoreRepository.postUserToken(tokenCount)
     }
 
     private suspend fun addUserToken(tokenCount: Int) {
