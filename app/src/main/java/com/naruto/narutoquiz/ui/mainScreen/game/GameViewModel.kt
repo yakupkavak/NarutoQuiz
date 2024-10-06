@@ -3,7 +3,6 @@ package com.naruto.narutoquiz.ui.mainScreen.game
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.naruto.narutoquiz.data.local.model.GameHistory
 import com.naruto.narutoquiz.data.local.repository.DaoRepository
 import com.naruto.narutoquiz.data.network.model.OptionModel
 import com.naruto.narutoquiz.data.network.model.SelectionModel
@@ -282,15 +281,11 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun gameOver() {
+
         _finishGame.postValue(listOf(_trueAnswer.value, _falseAnswer.value))
-        /*
-        firestoreRepository.postGameScore(
-            gameId = _currentGameId.value,
-            trueAnswer = _trueAnswer.value,
-            falseAnswer = _falseAnswer.value
-        )
-         */
-        withContext(Dispatchers.IO){
+        firestoreRepository.postGameScore(trueAnswer = _trueAnswer.value)
+
+        withContext(Dispatchers.IO) {
             daoRepository.insertGame(
                 gameId = _currentGameId.value ?: 0,
                 trueCount = _trueAnswer.value ?: 0,

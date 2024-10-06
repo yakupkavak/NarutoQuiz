@@ -43,6 +43,7 @@ class SignUpViewModel @Inject constructor(
     }
 
     private fun postUserToken() {
+        /*
         getDataCall(
             dataCall = {firestoreRepository.postUserToken(DEFAULT_USER_TOKEN)},
             onSuccess = {
@@ -58,6 +59,7 @@ class SignUpViewModel @Inject constructor(
                     .also { _loading.postValue(false) }
             }
         )
+         */
     }
 
     private fun addUserName(userName: String) {
