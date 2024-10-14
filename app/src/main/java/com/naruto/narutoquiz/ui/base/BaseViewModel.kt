@@ -11,7 +11,7 @@ open class BaseViewModel : ViewModel() {
     fun <T> getDataCall(
         dataCall: suspend () -> Resource<T>,
         onSuccess: (suspend (T?) -> Unit)? = null,
-        onError: (suspend () -> Unit)? = null,
+        onError: (suspend (Exception?) -> Unit)? = null,
         onLoading: (suspend () -> Unit)? = null
     ) = viewModelScope.launch {
         try {
@@ -23,8 +23,7 @@ open class BaseViewModel : ViewModel() {
                 }
 
                 Status.ERROR -> {
-                    onError?.invoke()
-                    println(getData.data)
+                    onError?.invoke(getData.error)
                 }
 
                 Status.LOADING -> {
@@ -33,7 +32,7 @@ open class BaseViewModel : ViewModel() {
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            onError?.invoke()
+            onError?.invoke(e)
         }
     }
 }

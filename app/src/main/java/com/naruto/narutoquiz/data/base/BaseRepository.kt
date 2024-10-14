@@ -35,16 +35,16 @@ abstract class BaseRepository {
     suspend inline fun <T> firebaseJob(crossinline task: () -> Task<T>): Resource<T> {
         return withContext(Dispatchers.IO) {
             try {
-                suspendCancellableCoroutine<Resource<T>> { continuation ->
+                suspendCancellableCoroutine { continuation ->
                     task().addOnSuccessListener { documentReference ->
-                        continuation.resume(Resource.success(documentReference))
-                    }.addOnFailureListener { //TODO("EXCEPTİON DÖNDÜRÜLECEK")
-                        continuation.resume(Resource.error(null))
+                        continuation.resume(Resource.success(data = documentReference))
+                    }.addOnFailureListener { exception ->
+                        continuation.resume(Resource.error(error = exception))
                     }
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
-                Resource.error(null)
+                Resource.error(e)
             }
         }
     }

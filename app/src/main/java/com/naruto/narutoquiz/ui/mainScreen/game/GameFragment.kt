@@ -225,10 +225,11 @@ class GameFragment : Fragment() {
                 }
             }
         }
-        observe(viewModel.hintText){
+        observe(viewModel.hintText){ text ->
             val newFragment = HintDialogFragment(
-                hintText = it)
+                hintText = text)
             newFragment.show(parentFragmentManager, "game")
+            hintLoaded()
         }
     }
 
@@ -259,6 +260,20 @@ class GameFragment : Fragment() {
         }
     }
 
+    private fun loadingHint(){
+        with(binding.fabGemini){
+            setImageResource(R.drawable.spinnerblack)
+            isClickable = false
+        }
+    }
+
+    private fun hintLoaded(){
+        with(binding.fabGemini){
+            setImageResource(R.drawable.lightblub)
+            isClickable = true
+        }
+    }
+
     private fun setOnClick() {
         with(binding) {
             fabClose.setOnClickListener {
@@ -266,6 +281,7 @@ class GameFragment : Fragment() {
             }
             fabGemini.setOnClickListener {
                 viewModel.getHint()
+                loadingHint()
             }
             btnCheck.setOnClickListener {
                 if (gameState == 0) {

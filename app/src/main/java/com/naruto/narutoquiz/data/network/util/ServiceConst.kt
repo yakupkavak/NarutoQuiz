@@ -6,8 +6,6 @@ object ServiceCountConst{
     const val USER_MAIL = "userMail"
     const val TOKEN_COUNT = "tokenCount"
     const val USER_NAME = "userName"
-    const val GAME_ID = "gameId"
     const val TRUE_COUNT = "trueCount"
     const val CREATE_DATE = "createDate"
-    const val DEFAULT_USER_TOKEN = 3
 }
