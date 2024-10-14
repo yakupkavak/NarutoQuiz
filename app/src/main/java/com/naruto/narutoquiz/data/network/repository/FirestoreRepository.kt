@@ -145,7 +145,7 @@ class FirestoreRepository @Inject constructor(
                 return@withContext Resource.error(null)
             } catch (e: Exception) {
                 e.printStackTrace()
-                return@withContext Resource.error(null)
+                return@withContext Resource.error(e)
             }
         }
     }
@@ -168,7 +168,7 @@ class FirestoreRepository @Inject constructor(
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
-                return@withContext Resource.error(0)
+                return@withContext Resource.error(e)
             }
         }
     }

@@ -24,30 +24,37 @@ class SharedViewModel @Inject constructor(
     private val _userRank = MutableLiveData<Int?>()
     val userRank: LiveData<Int?> get() = _userRank
 
+    private val _error = MutableLiveData<Boolean>()
+    val error: LiveData<Boolean> get() = _error
+
     init {
         getDataCall(
             dataCall = { authProvider.getUserInformation() },
-            onSuccess = { userModel -> _userInfo.postValue(userModel) },
+            onSuccess = { userModel ->
+                _userInfo.postValue(userModel).also { _error.postValue(false) }
+            },
             onLoading = null,
-            onError = null //TODO KULLANICI BİLGİLERİ ÇEKİLEMEDİ HATASI GÖSTERİLECEK
+            onError = { _error.postValue(true) }
         )
         getUserToken()
     }
 
-    fun updateUserToken(){
+    fun updateUserToken() {
 
     }
 
-    private fun getUserToken(){
+    private fun getUserToken() {
         getDataCall(
             dataCall = { firestoreRepository.getUserToken() },
-            onSuccess = { tokenCount -> _tokenCount.postValue(tokenCount ?: 0) },
+            onSuccess = { tokenCount ->
+                _tokenCount.postValue(tokenCount ?: 0).also { _error.postValue(false) }
+            },
             onLoading = null,
-            onError = null //TODO KULLANICI BİLGİLERİ ÇEKİLEMEDİ HATASI GÖSTERİLECEK
+            onError = { _error.postValue(true) }
         )
     }
 
-    fun updateUserRank(){
+    fun updateUserRank() {
 
     }
 }

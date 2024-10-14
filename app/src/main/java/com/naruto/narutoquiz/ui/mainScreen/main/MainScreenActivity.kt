@@ -99,7 +99,7 @@ class MainScreenActivity : AppCompatActivity() {
             }
 
         } ?: run {
-            return Resource.error(0)
+            return Resource.error(null)
         }
     }
 

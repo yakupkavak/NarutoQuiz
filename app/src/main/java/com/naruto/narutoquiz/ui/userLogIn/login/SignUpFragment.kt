@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.naruto.narutoquiz.R
@@ -13,6 +14,8 @@ import com.naruto.narutoquiz.ui.extension.navigate
 import com.naruto.narutoquiz.ui.extension.observe
 import com.naruto.narutoquiz.ui.extension.showToast
 import com.naruto.narutoquiz.ui.mainScreen.main.MainScreenActivity
+import com.naruto.narutoquiz.ui.userLogIn.util.LogInConst.MAX_USERNAME_SIZE
+import com.naruto.narutoquiz.ui.userLogIn.util.LogInConst.MIN_PASSWORD_SIZE
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,12 +48,26 @@ class SignUpFragment : Fragment() {
                         startActivity(intent)
                     }
                     requireActivity().finish()
-                } else {
-                    showToast(getString(R.string.network_problem))
                 }
-            }catch (e:Exception){
+            } catch (e: Exception) {
                 e.printStackTrace()
             }
+        }
+        observe(viewModel.loading) { loading ->
+            if (loading) {
+                with(binding) {
+                    lottieAnimationLoading.isVisible = true
+                    lottieAnimationLoading.playAnimation()
+                }
+            } else {
+                with(binding) {
+                    lottieAnimationLoading.isVisible = false
+                    lottieAnimationLoading.cancelAnimation()
+                }
+            }
+        }
+        observe(viewModel.error) { errorMessage ->
+            showToast(errorMessage ?: getString(R.string.unexpected_error))
         }
     }
 
@@ -66,11 +83,17 @@ class SignUpFragment : Fragment() {
                 if (editPassword.text.toString().isNotEmpty() && editEmail.text.toString()
                         .isNotEmpty() && editUserName.text.toString().isNotEmpty()
                 ) {
-                    viewModel.signUp(
-                        userName = editUserName.text.toString(),
-                        userMail = editEmail.text.toString(),
-                        userPassword = editPassword.text.toString()
-                    )
+                    if (editUserName.text.toString().length > MAX_USERNAME_SIZE) {
+                        showToast(getString(R.string.username_too_long))
+                    } else if (editPassword.text.toString().length < MIN_PASSWORD_SIZE) {
+                        showToast(getString(R.string.password_too_low))
+                    } else {
+                        viewModel.signUp(
+                            userName = editUserName.text.toString(),
+                            userMail = editEmail.text.toString(),
+                            userPassword = editPassword.text.toString()
+                        )
+                    }
                 } else {
                     showToast(getString(R.string.null_space))
                 }
