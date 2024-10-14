@@ -30,6 +30,7 @@ import com.naruto.narutoquiz.ui.mainScreen.game.GameConst.ThirdOptionId
 import com.naruto.narutoquiz.ui.mainScreen.main.ErrorDialogFragment
 import com.naruto.narutoquiz.ui.mainScreen.main.GameDialogFragment
 import com.naruto.narutoquiz.ui.mainScreen.main.HintDialogFragment
+import com.naruto.narutoquiz.ui.mainScreen.main.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,6 +40,7 @@ class GameFragment : Fragment() {
     private val binding get() = _binding!!
     private val args: GameFragmentArgs by navArgs()
     private val viewModel: GameViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by viewModels()
     private var selectedOptionId = -1
     private var gameState = 0
     private var questionId = 0
@@ -56,7 +58,8 @@ class GameFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.initializeGame(args.gameId, args.gameTopic)
         setOnClick()
-        setObserve()
+        setObserveViewModel()
+        setObserveSharedViewModel()
     }
 
     private fun setDialog(trueCount: Int, wrongCount: Int) {
@@ -67,7 +70,7 @@ class GameFragment : Fragment() {
         newFragment.show(parentFragmentManager, "game")
     }
 
-    private fun setObserve() {
+    private fun setObserveViewModel() {
         observe(viewModel.currentGameTopic) {
             binding.tvTopic.text = it
         }
@@ -117,7 +120,7 @@ class GameFragment : Fragment() {
                 }
             }
         }
-        observe(viewModel.currentGameId){
+        observe(viewModel.currentGameId) {
             currentGameId = it
         }
         observe(viewModel.secondOption) {
@@ -225,11 +228,22 @@ class GameFragment : Fragment() {
                 }
             }
         }
-        observe(viewModel.hintText){ text ->
+        observe(viewModel.hintText) { text ->
             val newFragment = HintDialogFragment(
-                hintText = text)
+                hintText = text
+            )
             newFragment.show(parentFragmentManager, "game")
             hintLoaded()
+        }
+    }
+
+    private fun setObserveSharedViewModel() {
+        observe(sharedViewModel.tokenCount){ tokenCount ->
+            println("current token count -> $tokenCount")
+            if (tokenCount == 0){
+                binding.fabGemini.isEnabled = false
+            }
+            binding.tvTokenCount.text = tokenCount.toString()
         }
     }
 
@@ -260,15 +274,15 @@ class GameFragment : Fragment() {
         }
     }
 
-    private fun loadingHint(){
-        with(binding.fabGemini){
+    private fun loadingHint() {
+        with(binding.fabGemini) {
             setImageResource(R.drawable.spinnerblack)
             isClickable = false
         }
     }
 
-    private fun hintLoaded(){
-        with(binding.fabGemini){
+    private fun hintLoaded() {
+        with(binding.fabGemini) {
             setImageResource(R.drawable.lightblub)
             isClickable = true
         }
@@ -282,6 +296,7 @@ class GameFragment : Fragment() {
             fabGemini.setOnClickListener {
                 viewModel.getHint()
                 loadingHint()
+                sharedViewModel.showHint()
             }
             btnCheck.setOnClickListener {
                 if (gameState == 0) {

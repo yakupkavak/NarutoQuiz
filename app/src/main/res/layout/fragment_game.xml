@@ -49,13 +49,13 @@
         android:layout_marginTop="@dimen/margin_large"
         android:backgroundTint="@color/transparent"
         android:contentDescription="@string/close_game"
-        app:srcCompat="@drawable/closeicon"
-        app:tint="@null"
         app:borderWidth="0dp"
         app:elevation="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:pressedTranslationZ="0dp" />
+        app:pressedTranslationZ="0dp"
+        app:srcCompat="@drawable/closeicon"
+        app:tint="@null" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabGemini"
@@ -66,13 +66,23 @@
         android:backgroundTint="@color/transparent"
         android:contentDescription="@string/close_game"
         android:src="@drawable/lightblub"
-        app:tint="@null"
-        android:visibility="gone"
+        android:visibility="visible"
         app:borderWidth="0dp"
         app:elevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:pressedTranslationZ="0dp" />
+        app:pressedTranslationZ="0dp"
+        app:tint="@null" />
+
+    <TextView
+        android:id="@+id/tvTokenCount"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/fabGemini"
+        app:layout_constraintEnd_toEndOf="@id/fabGemini" />
 
     <TextView
         android:id="@+id/tvTopic"
