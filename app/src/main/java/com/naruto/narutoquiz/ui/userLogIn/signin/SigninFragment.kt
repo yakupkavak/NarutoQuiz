@@ -45,7 +45,7 @@ class SigninFragment : Fragment() {
                 }
                 requireActivity().finish()
             } else {
-                showToast(getString(R.string.network_problem))
+                showToast(getString(R.string.sign_in_error))
             }
         }
     }
