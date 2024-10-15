@@ -41,7 +41,7 @@ class RecoveryFragment : Fragment() {
                 showToast(getString(R.string.check_mail))
 
             } else {
-                showToast(getString(R.string.network_problem))
+                showToast(getString(R.string.recovery_error))
             }
         }
     }

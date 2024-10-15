@@ -29,6 +29,8 @@
 
     <string name="sign_in">Sign in</string>
     <string name="null_space">Boş bırakmayınız</string>
+    <string name="sign_in_error">Email or password wrong</string>
+    <string name="recovery_error">Email wrong</string>
     <string name="username_too_long">Username can\'t be over 16 characters</string>
     <string name="password_too_low">Past can\'t be less than 8 characters</string>
     <string name="network_problem">There is an problem</string>
