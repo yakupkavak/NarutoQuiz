@@ -40,14 +40,16 @@ class SharedViewModel @Inject constructor(
     }
 
     fun showHint() {
-        getDataCall(
-            dataCall = { firestoreRepository.updateUserToken(tokenCount.value) },
-            onSuccess = { tokenCount ->
-                _tokenCount.postValue(tokenCount ?: 0).also { _error.postValue(false) }
-            },
-            onLoading = null,
-            onError = { _error.postValue(true) }
-        )
+        tokenCount.value?.let { currentToken ->
+            getDataCall(
+                dataCall = { firestoreRepository.updateUserToken(currentToken - 1) },
+                onSuccess = { tokenCount ->
+                    _tokenCount.postValue(tokenCount ?: 0).also { _error.postValue(false) }
+                },
+                onLoading = null,
+                onError = { _error.postValue(true) }
+            )
+        }
     }
 
     private fun getUserToken() {

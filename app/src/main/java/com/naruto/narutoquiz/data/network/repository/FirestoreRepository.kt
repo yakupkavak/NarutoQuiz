@@ -121,38 +121,35 @@ class FirestoreRepository @Inject constructor(
         }
     }
 
-    suspend fun updateUserToken(currentToken: Int?): Resource<Int> {
+    suspend fun updateUserToken(updateToken: Int): Resource<Int> {
         return withContext(Dispatchers.IO) {
-            currentToken?.let { token ->
-                val tokenCount = token - 1
-                try {
-                    val user = authProvider.getUserMail()
-                    user?.let { currentUserMail ->
-                        return@withContext suspendCancellableCoroutine<Resource<Int>> { continuation ->
-                            db.collection(COLLECTION_PATH_TOKEN)
-                                .whereEqualTo(USER_MAIL, currentUserMail).get()
-                                .addOnSuccessListener { document ->
-                                    val currentDocument = document.documents[0].reference
-                                    currentDocument.update(TOKEN_COUNT, tokenCount)
-                                        .addOnSuccessListener {
-                                            Log.d("Firestore", "Update document")
-                                            continuation.resume(Resource.success(tokenCount))
-                                        }.addOnFailureListener { e ->
-                                            Log.w("Firestore", "Can't update document", e)
-                                            continuation.resume(Resource.error(error = e))
-                                        }
-                                }
-                        }
+            try {
+                val user = authProvider.getUserMail()
+                user?.let { currentUserMail ->
+                    return@withContext suspendCancellableCoroutine<Resource<Int>> { continuation ->
+                        db.collection(COLLECTION_PATH_TOKEN)
+                            .whereEqualTo(USER_MAIL, currentUserMail).get()
+                            .addOnSuccessListener { document ->
+                                val currentDocument = document.documents[0].reference
+                                currentDocument.update(TOKEN_COUNT, updateToken)
+                                    .addOnSuccessListener {
+                                        Log.d("Firestore", "Update document")
+                                        continuation.resume(Resource.success(updateToken))
+                                    }.addOnFailureListener { e ->
+                                        Log.w("Firestore", "Can't update document", e)
+                                        continuation.resume(Resource.error(error = e))
+                                    }
+                            }
                     }
-                    return@withContext Resource.error(null)
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                    return@withContext Resource.error(error = e)
                 }
+                return@withContext Resource.error(null)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                return@withContext Resource.error(error = e)
             }
-            return@withContext Resource.error(error = Exception("There is empty current token"))
         }
     }
+
 
     suspend fun getUserToken(): Resource<Int> {
         return withContext(Dispatchers.IO) {

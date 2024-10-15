@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.naruto.narutoquiz.R
@@ -40,7 +41,7 @@ class GameFragment : Fragment() {
     private val binding get() = _binding!!
     private val args: GameFragmentArgs by navArgs()
     private val viewModel: GameViewModel by viewModels()
-    private val sharedViewModel: SharedViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     private var selectedOptionId = -1
     private var gameState = 0
     private var questionId = 0
@@ -239,7 +240,6 @@ class GameFragment : Fragment() {
 
     private fun setObserveSharedViewModel() {
         observe(sharedViewModel.tokenCount){ tokenCount ->
-            println("current token count -> $tokenCount")
             if (tokenCount == 0){
                 binding.fabGemini.isEnabled = false
             }
