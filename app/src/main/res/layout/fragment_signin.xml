@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     style="@style/SignStyle"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -13,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
         android:text="@string/sign_in"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -23,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_large"
         android:text="@string/email"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/tvSignIn" />
 
     <EditText
@@ -36,7 +35,7 @@
         android:hint="@string/hint_email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/tvSignEmail" />
 
     <TextView
@@ -46,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_medium"
         android:text="@string/password"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/editEmail" />
 
     <EditText
@@ -59,7 +58,7 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/tvSignPassword" />
 
     <TextView
@@ -69,7 +68,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
         android:text="@string/forgot_password"
-        android:textColor="@color/color_three"
+        android:textColor="@color/hint_color"
         app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
         app:layout_constraintTop_toBottomOf="@id/editPassword" />
 
@@ -80,7 +79,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_default"
         android:text="@string/sign_up"
-        android:textColor="@color/color_three"
+        android:textColor="@color/hint_color"
         app:layout_constraintBottom_toBottomOf="@id/btnSignIn"
         app:layout_constraintEnd_toStartOf="@id/tvSlash"
         app:layout_constraintTop_toTopOf="@id/btnSignIn" />
@@ -92,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_default"
         android:text="@string/slash"
-        android:textColor="@color/color_three"
+        android:textColor="@color/hint_color"
         app:layout_constraintBottom_toBottomOf="@id/btnSignIn"
         app:layout_constraintEnd_toStartOf="@id/btnSignIn"
         app:layout_constraintTop_toTopOf="@id/btnSignIn" />
@@ -105,13 +104,30 @@
         android:layout_marginTop="@dimen/margin_default"
         android:text="@string/sign_in"
         android:textAlignment="center"
-        android:textColor="@color/orange_500"
+        android:textColor="@color/hint_color"
         app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineBtnStart"
         app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
 
+    <ImageView
+        android:id="@+id/ivNarutoIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:contentDescription="@string/naruto_icon"
+        app:layout_constraintStart_toStartOf="@id/gdlStartHorizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvSignUp"
+        app:srcCompat="@drawable/naruto" />
+
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStart"
+        android:id="@+id/gdlStartHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlFirstStartHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -133,12 +149,13 @@
 
     <ImageView
         android:id="@+id/ivGoogle"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/google_icon"
         app:layout_constraintBottom_toBottomOf="@+id/tvSignUp"
         android:layout_marginStart="@dimen/margin_default"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@+id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toTopOf="@+id/tvSignUp"
         app:srcCompat="@drawable/googleicon" />
 

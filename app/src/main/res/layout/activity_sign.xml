@@ -1,38 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/sign_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.userLogIn.SignActivity">
-
-    <ImageView
-        android:id="@+id/ivNarutoIcon"
-        android:layout_marginBottom="@dimen/negative_large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/margin_medium"
-        app:layout_constraintStart_toStartOf="@id/guidelineImage"
-        app:srcCompat="@drawable/narutoicon" />
+    android:background="@drawable/gradient_background_color">
 
     <TextView
         android:id="@+id/tvSignIn"
         style="@style/LargeSizeMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_large"
         android:text="@string/welcome_shinobi"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/ivNarutoIcon" />
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:layout_marginTop="@dimen/margin_large"
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_large"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +30,7 @@
         app:navGraph="@navigation/sign_navigation" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStart"
+        android:id="@+id/gdlFirstStartHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="vertical"

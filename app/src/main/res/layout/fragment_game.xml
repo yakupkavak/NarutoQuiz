@@ -1,11 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_color"
     tools:context=".ui.mainScreen.game.GameFragment">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_animation_loading"
+        android:layout_width="@dimen/margin_xlarge"
+        android:layout_height="@dimen/margin_xlarge"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_animation_naruto"
+        android:layout_width="@dimen/margin_xxlarge"
+        android:layout_height="@dimen/margin_xxlarge"
+        android:layout_margin="@dimen/margin_xlarge"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gdlLastStartHorizontal"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/naruto" />
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="tvQuestion,cvOne,cvTwo,cvThree
+        ,cvFour,tvOne,tvTwo,tvThree,tvFour,btnCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_large"
+        android:backgroundTint="@color/transparent"
+        android:contentDescription="@string/close_game"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:pressedTranslationZ="0dp"
+        app:srcCompat="@drawable/closeicon"
+        app:tint="@null" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabGemini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:backgroundTint="@color/transparent"
+        android:contentDescription="@string/close_game"
+        android:src="@drawable/lightblub"
+        android:visibility="visible"
+        app:borderWidth="0dp"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:pressedTranslationZ="0dp"
+        app:tint="@null" />
+
+    <TextView
+        android:id="@+id/tvTokenCount"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@id/fabGemini"
+        app:layout_constraintEnd_toEndOf="@id/fabGemini" />
+
+    <TextView
+        android:id="@+id/tvTopic"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/increase_counter"
+        app:layout_constraintBottom_toBottomOf="@id/fabClose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fabClose" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/linearProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:max="10"
+        android:progress="0"
+        app:indicatorColor="@color/indicator_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTopic"
+        app:trackColor="@color/trach_color"
+        app:trackCornerRadius="@dimen/margin_xsmall"
+        app:trackThickness="@dimen/margin_small" />
+
+    <TextView
+        android:id="@+id/tvQuestion"
+        style="@style/LargeSizeMedium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/increase_counter"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearProgress" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvOne"
+        style="@style/CardStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/gdlFirstEndHorizontal"
+        app:layout_constraintEnd_toStartOf="@id/gdlFirstFinishVertical"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/gdlFirstStartHorizontal">
+
+        <androidx.cardview.widget.CardView
+            style="@style/CardStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/ivOne"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/first_option"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvOne"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/increase_counter"
+        app:layout_constraintEnd_toEndOf="@id/cvOne"
+        app:layout_constraintStart_toStartOf="@id/cvOne"
+        app:layout_constraintTop_toBottomOf="@id/cvOne" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvTwo"
+        style="@style/CardStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/gdlFirstEndHorizontal"
+        app:layout_constraintEnd_toStartOf="@id/gdlEndFinishVertical"
+        app:layout_constraintStart_toStartOf="@id/gdlEndStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/gdlFirstStartHorizontal">
+
+        <androidx.cardview.widget.CardView
+            style="@style/CardStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/ivTwo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/first_option"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvTwo"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/increase_counter"
+        app:layout_constraintEnd_toEndOf="@id/cvTwo"
+        app:layout_constraintStart_toStartOf="@id/cvTwo"
+        app:layout_constraintTop_toBottomOf="@id/cvTwo" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvThree"
+        style="@style/CardStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintBottom_toBottomOf="@id/gdlLastEndHorizontal"
+        app:layout_constraintEnd_toStartOf="@id/gdlFirstFinishVertical"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/gdlLastStartHorizontal">
+
+        <androidx.cardview.widget.CardView
+            style="@style/CardStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/ivThree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/first_option"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvThree"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/increase_counter"
+        app:layout_constraintEnd_toEndOf="@id/cvThree"
+        app:layout_constraintStart_toStartOf="@id/cvThree"
+        app:layout_constraintTop_toBottomOf="@id/cvThree" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvFour"
+        style="@style/CardStyle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintBottom_toBottomOf="@id/gdlLastEndHorizontal"
+        app:layout_constraintEnd_toStartOf="@id/gdlEndFinishVertical"
+        app:layout_constraintStart_toStartOf="@id/gdlEndStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/gdlLastStartHorizontal">
+
+        <androidx.cardview.widget.CardView
+            style="@style/CardStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/ivFour"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/first_option"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvFour"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/increase_counter"
+        app:layout_constraintEnd_toEndOf="@id/cvFour"
+        app:layout_constraintStart_toStartOf="@id/cvFour"
+        app:layout_constraintTop_toBottomOf="@id/cvFour" />
+
+    <Button
+        android:id="@+id/btnCheck"
+        style="@style/ButtonStyleQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:text="@string/check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/gdlEndFinishVertical"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartVertical" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlFirstStartVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlFirstFinishVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlEndStartVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.52" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlEndFinishVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlFirstStartHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlFirstEndHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlLastStartHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlLastEndHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.73" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

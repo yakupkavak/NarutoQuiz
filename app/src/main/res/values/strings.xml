@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">PokeMobil</string>
+    <string name="app_name">Naruto Quiz</string>
     <string name="day">Yükleniyor…</string>
     <string name="zero">0</string>
     <string name="use_viewmodel">ViewModel Kullan</string>
@@ -24,9 +24,17 @@
     <string name="change_image">Change Image</string>
     <string name="pokemon">pokemon</string>
     <string name="error">Hata Oluştu</string>
+    <string name="emptyImageUrl">https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png</string>
+    <string name="next">Next</string>
 
     <string name="sign_in">Sign in</string>
     <string name="null_space">Boş bırakmayınız</string>
+    <string name="sign_in_error">Email or password wrong</string>
+    <string name="recovery_error">Email wrong</string>
+    <string name="username_too_long">Username can\'t be over 16 characters</string>
+    <string name="password_too_low">Past can\'t be less than 8 characters</string>
+    <string name="network_problem">There is an problem</string>
+    <string name="check_mail">Check your mail</string>
     <string name="sign_success">Kayıt olundu</string>
     <string name="email">Email</string>
     <string name="hint_email">example@gmail.com</string>
@@ -39,7 +47,61 @@
     <string name="recovery">Recovery</string>
     <string name="naruto_image">Naruto Image</string>
     <string name="google_icon">Google Icon</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="game_content">game content</string>
+    <string name="quizes">Quizzes</string>
+    <string name="tier_list">Tier List</string>
+    <string name="user_info">User Info</string>
+    <string name="close_game">Close game</string>
+    <string name="first_option">First option</string>
+    <string name="second_option">Second Option</string>
+    <string name="check">Check</string>
+    <string name="leaders">Leaders</string>
+    <string name="classic_game">Classic Game</string>
+    <string name="challenge">Challenge</string>
+    <string name="classic">Classic</string>
+    <string name="akatsuki">Challenge</string>
+    <string name="clan">Clan</string>
+    <string name="tail">Tail</string>
+    <string name="team">Team</string>
+    <string name="rank">Rank</string>
+    <string name="player">Player</string>
+    <string name="score">Score</string>
+    <string name="game_over">Game Over</string>
+    <string name="main_screen">Main screen</string>
+    <string name="play_again">Play Again</string>
+    <string name="trueText">True</string>
+    <string name="wrong">Wrong</string>
+
+    <string name="emptyAd">There is no avaiable add, try again in 3 minute</string>
+
+    <string name="family_question">Which one\'s %1$s</string>
+    <string name="voice_question">Which one\'s %1$s</string>
+    <string name="clan_question">Which one\'s clan name is %1$s</string>
+    <string name="team_question">Which one\'s team name is %1$s</string>
+    <string name="jinckuri_question">Which one\'s jinckuri name is %1$s</string>
+
+    <string name="user_name_info">Name: %1$s</string>
+    <string name="user_mail_info">Mail: %1$s</string>
+    <string name="change_password">Change password</string>
+    <string name="max_repeat_info">Question count: %1$s</string>
+    <string name="hint_count">Hint count: %1$d</string>
+    <string name="get_information">About Game</string>
+    <string name="select">Select !</string>
+
+    <string name="naruto_icon">Naruto Icon</string>
+    <string name="unexpected_error">Unexpected Error</string>
+    <string name="game_mode">Game Mode</string>
+    <string name="history">Game History</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="user">User</string>
+    <string name="game">Game</string>
+    <string name="close">Close</string>
+    <string name="challenge_game">Challenge Game</string>
+    <string name="welcome_text">In the Challenge game mode you have no wrong answers and you can only participate in the ranking with this mode. \n\nClassic allows you to test yourself on all characters. \n\nDon\'t forget to participate in special Akatsuki, Clans, Monsters and Teams game modes. \n\n\n Good luck shinobi!</string>
+    <string name="about_the_game">About the game</string>
+    <string name="market">Market</string>
+    <string name="hint">Hint</string>
+    <string name="purchase">Purchase</string>
+    <string name="add">Add</string>
 
 </resources>

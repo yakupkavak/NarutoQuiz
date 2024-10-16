@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.android.vending.BILLING" />
+
     <application
-        android:name=".ui.main.HiltActivityClass"
+        android:name=".ui.main.NarutoQuizApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,11 +16,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.General"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+
+        <property
+            android:name="android.adservices.AD_SERVICES_CONFIG"
+            android:resource="@xml/ga_ad_services_config"
+            tools:replace="android:resource" />
+
         <activity
-            android:name=".ui.mainScreen.MainScreen"
+            android:name=".ui.mainScreen.main.MainScreenActivity"
             android:exported="false" />
         <activity
             android:name=".ui.userLogIn.SignActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.CustomSplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

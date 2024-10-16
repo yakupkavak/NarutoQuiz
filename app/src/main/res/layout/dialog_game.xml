@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="dialogModel"
+            type="com.naruto.narutoquiz.data.network.model.DialogModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/alert_dialog"
+        android:paddingVertical="@dimen/margin_medium">
+
+        <TextView
+            android:id="@+id/tvGameOver"
+            style="@style/LargeSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_over"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTrue"
+            style="@style/LargeSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/trueText"
+            app:layout_constraintEnd_toStartOf="@+id/tvWrong"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvGameOver" />
+
+        <TextView
+            android:id="@+id/tvWrong"
+            style="@style/LargeSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/wrong"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvTrue"
+            app:layout_constraintTop_toBottomOf="@+id/tvGameOver" />
+
+        <TextView
+            android:id="@+id/tvTrueCount"
+            style="@style/LargeSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{String.valueOf(dialogModel.trueCount)}"
+            app:layout_constraintEnd_toEndOf="@id/tvTrue"
+            app:layout_constraintStart_toStartOf="@id/tvTrue"
+            app:layout_constraintTop_toBottomOf="@+id/tvTrue" />
+
+        <TextView
+            android:id="@+id/tvWrongCount"
+            style="@style/LargeSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{String.valueOf(dialogModel.wrongCount)}"
+            app:layout_constraintEnd_toEndOf="@id/tvWrong"
+            app:layout_constraintStart_toStartOf="@id/tvWrong"
+            app:layout_constraintTop_toBottomOf="@+id/tvWrong" />
+
+        <Button
+            android:id="@+id/btnMain"
+            style="@style/ButtonStyleQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:text="@string/main_screen"
+            app:layout_constraintEnd_toStartOf="@+id/btnPlayAgain"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTrueCount" />
+
+        <Button
+            android:id="@+id/btnPlayAgain"
+            style="@style/ButtonStyleQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:text="@string/play_again"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnMain"
+            app:layout_constraintTop_toBottomOf="@id/tvWrongCount" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

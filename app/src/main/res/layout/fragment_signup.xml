@@ -1,156 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/SignStyle"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:isScrollContainer="true">
 
-    <TextView
-        android:id="@+id/tvSignIn"
-        style="@style/LargeSizeMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:text="@string/sign_up"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvUserName"
-        style="@style/NormalSizeMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_large"
-        android:text="@string/user_name"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/tvSignIn" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_animation_loading"
+            android:layout_width="@dimen/margin_xlarge"
+            android:layout_height="@dimen/margin_xlarge"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
 
-    <EditText
-        android:id="@+id/editUserName"
-        style="@style/EditTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:autofillHints="emailAddress"
-        android:hint="@string/user_name"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+        <View
+            android:id="@+id/dimmingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#60000000"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvSignEmail"
-        style="@style/NormalSizeMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:text="@string/email"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/editUserName" />
+        <TextView
+            android:id="@+id/tvSignIn"
+            style="@style/LargeSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/sign_up"
+            app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editEmail"
-        style="@style/EditTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:autofillHints="emailAddress"
-        android:hint="@string/hint_email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/tvSignEmail" />
+        <TextView
+            android:id="@+id/tvUserName"
+            style="@style/NormalSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/user_name"
+            app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvSignIn" />
 
-    <TextView
-        android:id="@+id/tvSignPassword"
-        style="@style/NormalSizeMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:text="@string/password"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/editEmail" />
+        <EditText
+            android:id="@+id/editUserName"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:autofillHints="emailAddress"
+            android:hint="@string/user_name"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvUserName" />
 
-    <EditText
-        android:id="@+id/editPassword"
-        style="@style/EditTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:autofillHints="password"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@id/tvSignPassword" />
+        <TextView
+            android:id="@+id/tvSignEmail"
+            style="@style/NormalSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/email"
+            app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
+            app:layout_constraintTop_toBottomOf="@id/editUserName" />
 
-    <TextView
-        android:id="@+id/tvForgotPassword"
-        style="@style/NormalSizeMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:text="@string/forgot_password"
-        android:textColor="@color/color_three"
-        app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
-        app:layout_constraintTop_toBottomOf="@id/editPassword" />
+        <EditText
+            android:id="@+id/editEmail"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:autofillHints="emailAddress"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvSignEmail" />
 
-    <TextView
-        android:id="@+id/tvSignInClick"
-        style="@style/NormalSizeMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_default"
-        android:text="@string/sign_in"
-        android:textColor="@color/color_three"
-        app:layout_constraintBottom_toBottomOf="@id/btnSignUp"
-        app:layout_constraintEnd_toStartOf="@id/tvSlash"
-        app:layout_constraintTop_toTopOf="@id/btnSignUp" />
+        <TextView
+            android:id="@+id/tvSignPassword"
+            style="@style/NormalSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/password"
+            app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
+            app:layout_constraintTop_toBottomOf="@id/editEmail" />
 
-    <TextView
-        android:id="@+id/tvSlash"
-        style="@style/NormalSizeMedium"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_default"
-        android:text="@string/slash"
-        android:textColor="@color/color_three"
-        app:layout_constraintBottom_toBottomOf="@id/btnSignUp"
-        app:layout_constraintEnd_toStartOf="@id/btnSignUp"
-        app:layout_constraintTop_toTopOf="@id/btnSignUp" />
+        <EditText
+            android:id="@+id/editPassword"
+            style="@style/EditTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:autofillHints="password"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
+            app:layout_constraintTop_toBottomOf="@id/tvSignPassword" />
 
-    <Button
-        android:id="@+id/btnSignUp"
-        style="@style/ButtonStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_default"
-        android:text="@string/sign_up"
-        android:textAlignment="center"
-        android:textColor="@color/orange_500"
-        app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineBtnStart"
-        app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            style="@style/NormalSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/forgot_password"
+            android:textColor="@color/hint_color"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintTop_toBottomOf="@id/editPassword" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStart"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15" />
+        <TextView
+            android:id="@+id/tvSignInClick"
+            style="@style/NormalSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:text="@string/sign_in"
+            android:textColor="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="@id/btnSignUp"
+            app:layout_constraintEnd_toStartOf="@id/tvSlash"
+            app:layout_constraintTop_toTopOf="@id/btnSignUp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBtnStart"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.55" />
+        <TextView
+            android:id="@+id/tvSlash"
+            style="@style/NormalSizeMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:text="@string/slash"
+            android:textColor="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="@id/btnSignUp"
+            app:layout_constraintEnd_toStartOf="@id/btnSignUp"
+            app:layout_constraintTop_toTopOf="@id/btnSignUp" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
+        <Button
+            android:id="@+id/btnSignUp"
+            style="@style/ButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/sign_up"
+            android:textAlignment="center"
+            android:textColor="@color/hint_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineBtnStart"
+            app:layout_constraintTop_toBottomOf="@id/tvForgotPassword" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gdlFirstStartHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBtnStart"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

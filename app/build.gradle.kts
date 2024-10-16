@@ -8,21 +8,26 @@ plugins {
 }
 
 android {
-    namespace = "com.example.narutoquiz"
+    namespace = "com.naruto.narutoquiz"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.narutoquiz"
+        applicationId = "com.naruto.narutoquiz"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
-
+        versionCode = 2
+        versionName = "1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "GEMINI_API", "\"AIzaSyBs-0nXCACqtG62Mts2xzB8YJ7rK0_x4Us\"")
+            buildConfigField("String", "BASE_URL", "\"https://dattebayo-api.onrender.com\"")
+        }
         release {
+            buildConfigField("String", "GEMINI_API", "\"AIzaSyBs-0nXCACqtG62Mts2xzB8YJ7rK0_x4Us\"")
+            buildConfigField("String", "BASE_URL", "\"https://dattebayo-api.onrender.com\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -31,7 +36,11 @@ android {
         }
     }
     buildFeatures {
+        buildConfig = true
         viewBinding = true
+    }
+    dataBinding {
+        enable = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -43,10 +52,17 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    kapt(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.firebase.appcheck.playintegrity)
+
     implementation(libs.hilt.android)
     annotationProcessor(libs.hilt.compiler)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.firestore)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -56,8 +72,18 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     kapt(libs.hilt.android.compiler)
+    kapt(libs.glide)
     implementation(libs.firebase.ui.auth)
     implementation(libs.gms.play.services.auth)
+    implementation(libs.material)
+    implementation(libs.jackson.module.kotlin)
+    implementation(libs.jackson.databind)
+    implementation(libs.retrofit2.converter.jackson)
+    implementation(libs.lottie)
+    kapt(libs.compiler)
+    implementation(libs.generativeai)
+    implementation(libs.billing.ktx)
+    implementation(libs.play.services.ads)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

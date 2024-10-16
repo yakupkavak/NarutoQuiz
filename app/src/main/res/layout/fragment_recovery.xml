@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
         android:text="@string/recovery"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -22,20 +22,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_large"
         android:text="@string/email"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/tvRecovery" />
 
     <EditText
-        android:id="@+id/editPassword"
+        android:id="@+id/editMail"
         style="@style/EditTextStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
         android:autofillHints="password"
         android:hint="@string/hint_email"
-        android:inputType="textPassword"
+        android:inputType="text"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:layout_constraintTop_toBottomOf="@id/tvSignPassword" />
     <Button
         android:id="@+id/btnForgot"
@@ -45,10 +45,10 @@
         android:layout_marginTop="@dimen/margin_default"
         android:text="@string/reset"
         android:textAlignment="center"
-        android:textColor="@color/orange_500"
+        android:textColor="@color/hint_color"
         app:layout_constraintEnd_toStartOf="@id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineBtnStart"
-        app:layout_constraintTop_toBottomOf="@id/editPassword" />
+        app:layout_constraintTop_toBottomOf="@id/editMail" />
     <TextView
         android:id="@+id/tvSignIn"
         style="@style/NormalSizeMedium"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_default"
         android:text="@string/sign_in"
-        android:textColor="@color/color_three"
+        android:textColor="@color/hint_color"
         app:layout_constraintBottom_toBottomOf="@id/btnForgot"
         app:layout_constraintEnd_toStartOf="@id/tvSlash"
         app:layout_constraintTop_toTopOf="@id/btnForgot" />
@@ -68,13 +68,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/margin_default"
         android:text="@string/slash"
-        android:textColor="@color/color_three"
+        android:textColor="@color/hint_color"
         app:layout_constraintBottom_toBottomOf="@id/btnForgot"
         app:layout_constraintEnd_toStartOf="@id/btnForgot"
         app:layout_constraintTop_toTopOf="@id/btnForgot" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStart"
+        android:id="@+id/gdlFirstStartHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:orientation="vertical"
@@ -101,7 +101,7 @@
         android:layout_marginTop="@dimen/margin_large"
         android:contentDescription="@string/naruto_image"
         app:layout_constraintTop_toBottomOf="@id/btnForgot"
-        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@id/gdlFirstStartHorizontal"
         app:srcCompat="@drawable/naruto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
