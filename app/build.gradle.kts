@@ -15,18 +15,18 @@ android {
         applicationId = "com.naruto.narutoquiz"
         minSdk = 24
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         debug {
-            buildConfigField("String","GEMINI_API","\"AIzaSyBs-0nXCACqtG62Mts2xzB8YJ7rK0_x4Us\"")
+            buildConfigField("String", "GEMINI_API", "\"AIzaSyBs-0nXCACqtG62Mts2xzB8YJ7rK0_x4Us\"")
             buildConfigField("String", "BASE_URL", "\"https://dattebayo-api.onrender.com\"")
         }
         release {
-            buildConfigField("String","GEMINI_API","\"AIzaSyBs-0nXCACqtG62Mts2xzB8YJ7rK0_x4Us\"")
+            buildConfigField("String", "GEMINI_API", "\"AIzaSyBs-0nXCACqtG62Mts2xzB8YJ7rK0_x4Us\"")
             buildConfigField("String", "BASE_URL", "\"https://dattebayo-api.onrender.com\"")
             isMinifyEnabled = false
             proguardFiles(
@@ -56,6 +56,7 @@ dependencies {
     annotationProcessor(libs.androidx.room.compiler)
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.firebase.appcheck.playintegrity)
 
     implementation(libs.hilt.android)
     annotationProcessor(libs.hilt.compiler)
