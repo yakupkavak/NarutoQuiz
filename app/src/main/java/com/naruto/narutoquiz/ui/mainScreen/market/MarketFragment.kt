@@ -14,10 +14,15 @@ import com.android.billingclient.api.ProductDetails
 import com.android.billingclient.api.PurchasesUpdatedListener
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.google.common.collect.ImmutableList
+import com.naruto.narutoquiz.R
 import com.naruto.narutoquiz.databinding.FragmentMarketBinding
+import com.naruto.narutoquiz.ui.extension.observe
 import com.naruto.narutoquiz.ui.extension.showToast
 import com.naruto.narutoquiz.ui.mainScreen.main.MainScreenActivity
+import com.naruto.narutoquiz.ui.mainScreen.main.SharedViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MarketFragment : Fragment() {
 
     private lateinit var purchasesUpdatedListener: PurchasesUpdatedListener
@@ -27,6 +32,7 @@ class MarketFragment : Fragment() {
     private lateinit var billingFlowParams: BillingFlowParams
     private var _binding: FragmentMarketBinding? = null
     private val viewModel: MarketViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by viewModels()
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,19 +50,34 @@ class MarketFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setOnClick()
+        establishConnection()
+        observeSharedViewModel()
     }
+
     private fun setOnClick(){
         with(binding){
             btnAdd.setOnClickListener {
-                //showRewardedAd()
+                showRewardedAd()
             }
-            btnPurchase.setOnClickListener {
-                establishConnection()
+            btnSmallPurchase.setOnClickListener {
+
+            }
+            btnMediumPurchase.setOnClickListener {
+
+            }
+            btnLargePurchase.setOnClickListener {
+
             }
         }
     }
-    private suspend fun showRewardedAd(){
-        val getToken = (activity as? MainScreenActivity)?.showAd()
+    private fun observeSharedViewModel(){
+        observe(sharedViewModel.tokenCount) { tokenCount ->
+            binding.tvTokenCount.text = getString(R.string.token_count, tokenCount)
+        }
+    }
+
+    private fun showRewardedAd(){
+        (activity as? MainScreenActivity)?.showRewardAd()
     }
 
     private fun establishConnection() {
@@ -77,20 +98,17 @@ class MarketFragment : Fragment() {
             billingClient.startConnection(object : BillingClientStateListener {
                 override fun onBillingSetupFinished(billingResult: BillingResult) {
                     if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                        println("bağlandı")
                         showProducts()
                     }
                 }
 
                 override fun onBillingServiceDisconnected() {
-                    println("bağlanamadı")
-                    // Try to restart the connection on the next request to
-                    // Google Play by calling the startConnection() method.
-                    //establishConnection()
+                    showToast(getString(R.string.connection_error))
                 }
             })
         }catch (e:Exception){
             e.printStackTrace()
+            showToast(getString(R.string.unexpected_error))
         }
     }
 

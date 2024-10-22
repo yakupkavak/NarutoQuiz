@@ -72,6 +72,8 @@
     <string name="trueText">True</string>
     <string name="wrong">Wrong</string>
 
+    <string name="ad">Watch ad</string>
+
     <string name="emptyAd">There is no avaiable add, try again in 3 minute</string>
 
     <string name="family_question">Which one\'s %1$s</string>
@@ -103,5 +105,13 @@
     <string name="hint">Hint</string>
     <string name="purchase">Purchase</string>
     <string name="add">Add</string>
+
+    <string name="student">Student</string>
+    <string name="genin">Genin</string>
+    <string name="chunin">Chūnin</string>
+    <string name="kage">Kage</string>
+
+    <string name="token_count">Token count: %1$d</string>
+    <string name="connection_error">Connection Error</string>
 
 </resources>
