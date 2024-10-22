@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.0"
+agp = "8.6.0"
 billingKtx = "7.0.0"
 compiler = "1.1.1"
 converterJacksonVersion = "2.9.0"
@@ -30,6 +30,7 @@ playServicesAuthVersion = "21.2.0"
 retrofit = "2.11.0"
 lottie = "3.4.0"
 roomVersion = "2.6.1"
+firebaseFirestoreKtx = "25.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -71,6 +72,7 @@ net-pwall-json-json-kotlin = { module = "net.pwall.json:json-kotlin", version.re
 play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "playServicesAds" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit2-converter-jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "converterJacksonVersion" }
+firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

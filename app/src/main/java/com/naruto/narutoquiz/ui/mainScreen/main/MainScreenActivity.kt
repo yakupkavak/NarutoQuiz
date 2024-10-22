@@ -17,14 +17,20 @@ import com.naruto.narutoquiz.R
 import com.naruto.narutoquiz.databinding.ActivityMainScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.RequestConfiguration
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
 import com.naruto.narutoquiz.data.network.util.Resource
+import com.naruto.narutoquiz.ui.extension.showToast
+import com.naruto.narutoquiz.ui.mainScreen.util.AdConst.AD_UNIT_ID
+import com.naruto.narutoquiz.ui.mainScreen.util.AdConst.TEST_DEVICE_HASHED_ID
+import com.naruto.narutoquiz.ui.mainScreen.util.GoogleMobileAdsConsentManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
+import java.util.concurrent.atomic.AtomicBoolean
 import javax.inject.Inject
 import kotlin.coroutines.resume
 
@@ -34,8 +40,11 @@ class MainScreenActivity : AppCompatActivity() {
     @Inject
     lateinit var firestoreRepository: FirestoreRepository
     private lateinit var binding: ActivityMainScreenBinding
+    private val isMobileAdsInitializeCalled = AtomicBoolean(false)
     private var rewardedAd: RewardedAd? = null
-    private val TAG = "MainActivity"
+    private var isLoading = false
+    private val TAG = "MainScreenActivity"
+    private lateinit var googleMobileAdsConsentManager: GoogleMobileAdsConsentManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,17 +54,43 @@ class MainScreenActivity : AppCompatActivity() {
         setContentView(view)
         setupNavigation()
         supportActionBar?.hide()
-        CoroutineScope(Dispatchers.IO).launch {
-            MobileAds.initialize(this@MainScreenActivity)
+        loadConsentManager()
+    }
+
+    private fun loadConsentManager() {
+        googleMobileAdsConsentManager = GoogleMobileAdsConsentManager.getInstance(this)
+        googleMobileAdsConsentManager.gatherConsent(this) { formError ->
+            if (formError != null) {
+                showToast(getString(R.string.unexpected_error))
+            }
+
+            if (googleMobileAdsConsentManager.canRequestAds) {
+                initializeMobileAdsSdk()
+            }
+
+            if (googleMobileAdsConsentManager.isPrivacyOptionsRequired) {
+                // Regenerate the options menu to include a privacy setting.
+                invalidateOptionsMenu()
+            }
         }
-        loadRewardAd()
+        // This sample attempts to load ads using consent obtained in the previous session.
+        if (googleMobileAdsConsentManager.canRequestAds) {
+            initializeMobileAdsSdk()
+        }
+    }
+
+    fun showRewardAd() {
+        if (rewardedAd == null && googleMobileAdsConsentManager.canRequestAds) {
+            loadRewardAd()
+        }
     }
 
     private fun loadRewardAd() {
         val adRequest = AdRequest.Builder().build()
+        isLoading = true
         RewardedAd.load(
             this,
-            "ca-app-pub-3940256099942544/5224354917",
+            AD_UNIT_ID,
             adRequest,
             object : RewardedAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
@@ -65,9 +100,14 @@ class MainScreenActivity : AppCompatActivity() {
 
                 override fun onAdLoaded(ad: RewardedAd) {
                     Log.d(TAG, "Ad was loaded.")
+                    isLoading = false
                     rewardedAd = ad
+                    loadRewardedVideo()
                 }
             })
+    }
+
+    private fun loadRewardedVideo() {
         rewardedAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
             override fun onAdClicked() {
                 Log.d(TAG, "Ad was clicked.")
@@ -86,20 +126,35 @@ class MainScreenActivity : AppCompatActivity() {
                 Log.d(TAG, "Ad showed fullscreen content.")
             }
         }
+        showAd()
     }
 
-    suspend fun showAd(): Resource<Int> {
-        return rewardedAd?.let { ad ->
-            suspendCancellableCoroutine<Resource<Int>> { continuation ->
-                ad.show(this) { rewardItem ->
-                    val rewardAmount = rewardItem.amount
-                    Log.d(TAG, "User earned the reward. $rewardAmount")
-                    continuation.resume(Resource.success(rewardAmount))
-                }
+    private fun showAd() {
+        rewardedAd?.let { ad ->
+            ad.show(this) { rewardItem ->
+                val rewardAmount = rewardItem.amount
+                Log.d(TAG, "User earned the reward. $rewardAmount")
             }
-
         } ?: run {
-            return Resource.error(null)
+            showToast(getString(R.string.unexpected_error))
+        }
+    }
+
+    private fun initializeMobileAdsSdk() {
+        if (isMobileAdsInitializeCalled.getAndSet(true)) {
+            return
+        }
+
+        // Set your test devices.
+        MobileAds.setRequestConfiguration(
+            RequestConfiguration.Builder().setTestDeviceIds(listOf(TEST_DEVICE_HASHED_ID)).build()
+        )
+
+        CoroutineScope(Dispatchers.IO).launch {
+            // Initialize the Google Mobile Ads SDK on a background thread.
+            MobileAds.initialize(this@MainScreenActivity) {
+
+            }
         }
     }
 

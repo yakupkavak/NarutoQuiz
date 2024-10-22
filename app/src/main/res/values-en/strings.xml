@@ -89,6 +89,8 @@
     <string name="naruto_icon">Naruto Icon</string>
     <string name="unexpected_error">Unexpected Error</string>
     <string name="select">Select !</string>
+    <string name="ad">Watch ad</string>
+
 
     <string name="game_mode">Game Mode</string>
     <string name="history">Game History</string>
@@ -103,5 +105,13 @@
     <string name="hint">Hint</string>
     <string name="purchase">Purchase</string>
     <string name="add">Add</string>
+
+    <string name="student">Student</string>
+    <string name="genin">Genin</string>
+    <string name="chunin">Chūnin</string>
+    <string name="kage">Kage</string>
+
+    <string name="token_count">Token count: %1$d</string>
+    <string name="connection_error">Connection Error</string>
 
 </resources>
