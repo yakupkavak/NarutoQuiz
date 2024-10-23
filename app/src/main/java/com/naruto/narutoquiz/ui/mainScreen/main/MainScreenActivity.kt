@@ -21,7 +21,6 @@ import com.google.android.gms.ads.RequestConfiguration
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
-import com.naruto.narutoquiz.data.network.util.Resource
 import com.naruto.narutoquiz.ui.extension.showToast
 import com.naruto.narutoquiz.ui.mainScreen.util.AdConst.AD_UNIT_ID
 import com.naruto.narutoquiz.ui.mainScreen.util.AdConst.TEST_DEVICE_HASHED_ID
@@ -29,10 +28,8 @@ import com.naruto.narutoquiz.ui.mainScreen.util.GoogleMobileAdsConsentManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.suspendCancellableCoroutine
 import java.util.concurrent.atomic.AtomicBoolean
 import javax.inject.Inject
-import kotlin.coroutines.resume
 
 @AndroidEntryPoint
 class MainScreenActivity : AppCompatActivity() {
@@ -153,7 +150,6 @@ class MainScreenActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             // Initialize the Google Mobile Ads SDK on a background thread.
             MobileAds.initialize(this@MainScreenActivity) {
-
             }
         }
     }

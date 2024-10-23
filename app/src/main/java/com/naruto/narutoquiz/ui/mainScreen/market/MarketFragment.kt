@@ -20,6 +20,12 @@ import com.naruto.narutoquiz.ui.extension.observe
 import com.naruto.narutoquiz.ui.extension.showToast
 import com.naruto.narutoquiz.ui.mainScreen.main.MainScreenActivity
 import com.naruto.narutoquiz.ui.mainScreen.main.SharedViewModel
+import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_PURCHASE_ID
+import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_PURCHASE_NAME
+import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_ID
+import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_NAME
+import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_ID
+import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_NAME
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -56,17 +62,17 @@ class MarketFragment : Fragment() {
 
     private fun setOnClick(){
         with(binding){
-            btnAdd.setOnClickListener {
+            btnAd.setOnClickListener {
                 showRewardedAd()
             }
             btnSmallPurchase.setOnClickListener {
-
+                showProduct(GENIN_PURCHASE_ID)
             }
             btnMediumPurchase.setOnClickListener {
-
+                showProduct(CHUININ_PURCHASE_ID)
             }
             btnLargePurchase.setOnClickListener {
-
+                showProduct(KAGE_PURCHASE_ID)
             }
         }
     }
@@ -85,7 +91,19 @@ class MarketFragment : Fragment() {
             purchasesUpdatedListener =
                 PurchasesUpdatedListener { billingResult, purchases ->
                     if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && purchases != null) {
-                        showToast("Kullanıcı satın aldı.")
+                        for (purchase in purchases) {
+                            when (purchase.products[0]) {
+                                GENIN_PURCHASE_NAME -> {
+                                    //addHintsToUser(10) // Small Hint için 10 ipucu ekle
+                                }
+                                CHUININ_PURCHASE_NAME -> {
+                                    //addHintsToUser(25) // Medium Hint için 25 ipucu ekle
+                                }
+                                KAGE_PURCHASE_NAME -> {
+                                    //addHintsToUser(50) // Large Hint için 50 ipucu ekle
+                                }
+                            }
+                        }
                     } else {
                         showToast("Kullanıcı iptal etti.")
                     }
@@ -116,7 +134,15 @@ class MarketFragment : Fragment() {
         try {
             val productList = ImmutableList.of(
                 QueryProductDetailsParams.Product.newBuilder()
-                    .setProductId("one_count")
+                    .setProductId(GENIN_PURCHASE_NAME)
+                    .setProductType(BillingClient.ProductType.INAPP)
+                    .build(),
+                QueryProductDetailsParams.Product.newBuilder()
+                    .setProductId(CHUININ_PURCHASE_NAME)
+                    .setProductType(BillingClient.ProductType.INAPP)
+                    .build(),
+                QueryProductDetailsParams.Product.newBuilder()
+                    .setProductId(KAGE_PURCHASE_NAME)
                     .setProductType(BillingClient.ProductType.INAPP)
                     .build()
             )
@@ -129,19 +155,29 @@ class MarketFragment : Fragment() {
             billingClient.queryProductDetailsAsync(queryProductDetailsParams) { billingResult,
                                                                                 productDetailsList ->
                 productDetails = productDetailsList
-                productDetailsParamsList = listOf(
-                    BillingFlowParams.ProductDetailsParams.newBuilder()
-                        .setProductDetails(productDetails[0])
-                        .build()
-                )
-                billingFlowParams = BillingFlowParams.newBuilder()
-                    .setProductDetailsParamsList(productDetailsParamsList)
-                    .build()
-                val billingResult = billingClient.launchBillingFlow(requireActivity(), billingFlowParams)
-                println("billing result -> $billingResult.responseCode")
+                setupProductDetailsParamsList()
             }
         }catch (e:Exception){
             e.printStackTrace()
+        }
+    }
+    private fun setupProductDetailsParamsList() {
+        productDetailsParamsList = productDetails.map { productDetailsItem ->
+            BillingFlowParams.ProductDetailsParams.newBuilder()
+                .setProductDetails(productDetailsItem)
+                .build()
+        }
+    }
+
+    private fun showProduct(index: Int){
+        if (::productDetails.isInitialized && index < productDetails.size) {
+            billingFlowParams = BillingFlowParams.newBuilder()
+                .setProductDetailsParamsList(listOf(productDetailsParamsList[index]))
+                .build()
+            billingClient.launchBillingFlow(requireActivity(), billingFlowParams)
+        }
+        else {
+            showToast(getString(R.string.unexpected_error))
         }
     }
 
