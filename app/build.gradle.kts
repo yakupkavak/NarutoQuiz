@@ -58,6 +58,7 @@ dependencies {
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
     implementation(libs.firebase.appcheck.playintegrity)
+    implementation(libs.firebase.config)
 
     implementation(libs.hilt.android)
     annotationProcessor(libs.hilt.compiler)

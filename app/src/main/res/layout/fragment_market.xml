@@ -75,7 +75,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnSmallPurchase"
+            android:id="@+id/btnAd"
             style="@style/ButtonStyleQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -134,7 +134,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnMediumPurchase"
+            android:id="@+id/btnSmallPurchase"
             style="@style/ButtonStyleQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -193,7 +193,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnLargePurchase"
+            android:id="@+id/btnMediumPurchase"
             style="@style/ButtonStyleQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -252,7 +252,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnAdd"
+            android:id="@+id/btnLargePurchase"
             style="@style/ButtonStyleQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

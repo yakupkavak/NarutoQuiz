@@ -17,6 +17,7 @@ import com.naruto.narutoquiz.data.base.GameRoomDatabase
 import com.naruto.narutoquiz.data.local.repository.DaoRepository
 import com.naruto.narutoquiz.data.local.service.GameDao
 import com.naruto.narutoquiz.data.local.util.ServiceConst.DATABASE_NAME
+import com.naruto.narutoquiz.data.network.repository.RemoteConfigRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -106,4 +107,10 @@ object NetworkModule {
     @Singleton
     fun provideDaoRepository(gameDao: GameDao, authProvider: AuthProvider) =
         DaoRepository(gameDao, authProvider)
+
+    @Provides
+    @Singleton
+    fun provideRemoteConfig(@ApplicationContext appContext: Context): RemoteConfigRepository {
+        return RemoteConfigRepository(appContext)
+    }
 }

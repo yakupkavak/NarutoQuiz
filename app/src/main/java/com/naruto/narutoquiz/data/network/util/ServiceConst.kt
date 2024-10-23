@@ -1,6 +1,7 @@
 package com.naruto.narutoquiz.data.network.util
 
 object ServiceCountConst{
+    const val REMOTE_TAG = "Remote Config"
     const val COLLECTION_PATH_RANK = "rankList"
     const val COLLECTION_PATH_TOKEN = "userToken"
     const val USER_MAIL = "userMail"

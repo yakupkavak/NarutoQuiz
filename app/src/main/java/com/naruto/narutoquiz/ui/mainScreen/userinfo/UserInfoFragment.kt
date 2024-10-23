@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.naruto.narutoquiz.R
+import com.naruto.narutoquiz.data.network.repository.RemoteConfigRepository
 import com.naruto.narutoquiz.databinding.FragmentUserInfoBinding
 import com.naruto.narutoquiz.ui.extension.navigate
 import com.naruto.narutoquiz.ui.extension.observe
@@ -16,6 +17,7 @@ import com.naruto.narutoquiz.ui.mainScreen.main.InformationDialogFragment
 import com.naruto.narutoquiz.ui.mainScreen.main.SharedViewModel
 import com.naruto.narutoquiz.ui.userLogIn.SignActivity
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class UserInfoFragment : Fragment() {
