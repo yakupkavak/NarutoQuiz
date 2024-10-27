@@ -54,6 +54,7 @@ android {
 dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.firebase.firestore.ktx)
+    implementation(libs.firebase.appcheck.debug)
     annotationProcessor(libs.androidx.room.compiler)
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)

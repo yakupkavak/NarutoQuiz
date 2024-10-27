@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.naruto.narutoquiz.R
 import com.naruto.narutoquiz.databinding.DialogInformationBinding
 
-class InformationDialogFragment: DialogFragment() {
+class InformationDialogFragment(val aboutGameText: String) : DialogFragment() {
 
     private var _binding: DialogInformationBinding? = null
     private val binding get() = _binding!!
@@ -18,10 +18,11 @@ class InformationDialogFragment: DialogFragment() {
         _binding = DialogInformationBinding.inflate(
             requireActivity().layoutInflater
         )
-        with(binding){
+        with(binding) {
             btnClose.setOnClickListener {
                 dismiss()
             }
+            tvInfoText.text = aboutGameText
             Glide.with(root).load(R.drawable.narutotop).into(ivNarutoTop)
         }
 
