@@ -9,4 +9,5 @@ object ServiceCountConst{
     const val USER_NAME = "userName"
     const val TRUE_COUNT = "trueCount"
     const val CREATE_DATE = "createDate"
+    const val REMOTE_ABOUT_GAME = "about_game"
 }

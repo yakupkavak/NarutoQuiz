@@ -9,15 +9,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import com.naruto.narutoquiz.R
-import com.naruto.narutoquiz.data.network.repository.RemoteConfigRepository
 import com.naruto.narutoquiz.databinding.FragmentUserInfoBinding
 import com.naruto.narutoquiz.ui.extension.navigate
 import com.naruto.narutoquiz.ui.extension.observe
+import com.naruto.narutoquiz.ui.extension.showToast
 import com.naruto.narutoquiz.ui.mainScreen.main.InformationDialogFragment
 import com.naruto.narutoquiz.ui.mainScreen.main.SharedViewModel
 import com.naruto.narutoquiz.ui.userLogIn.SignActivity
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class UserInfoFragment : Fragment() {
@@ -38,7 +37,6 @@ class UserInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getData()
         setObserve()
         setOnClick()
     }
@@ -51,13 +49,24 @@ class UserInfoFragment : Fragment() {
             }
         }
         observe(sharedViewModel.tokenCount) { tokenCount ->
-            println("gelen token count -> $tokenCount")
             binding.tvHintCount.text = getString(R.string.hint_count, tokenCount)
         }
         observe(sharedViewModel.error) { error ->
-            if (error){
+            if (error) {
                 binding.tvHintCount.text = getString(R.string.unexpected_error)
             }
+        }
+        observe(viewModel.success) { textAbout ->
+            if (textAbout != null) {
+                InformationDialogFragment(textAbout).show(parentFragmentManager, "game")
+                viewModel.resetData()
+            }
+        }
+        observe(viewModel.loading) {
+            //TODO VERY FAST LOADING
+        }
+        observe(viewModel.error) {
+            showToast(getString(R.string.network_problem))
         }
     }
 
@@ -70,7 +79,7 @@ class UserInfoFragment : Fragment() {
                 requireActivity().finish()
             }
             tvGetInformation.setOnClickListener {
-                InformationDialogFragment().show(parentFragmentManager, "game")
+                viewModel.getAboutGame()
             }
             tvGetHistory.setOnClickListener {
                 navigate(UserInfoFragmentDirections.actionUserInfoToHistoryFragment())
