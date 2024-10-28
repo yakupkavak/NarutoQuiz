@@ -112,6 +112,7 @@
     <string name="kage">Kage</string>
 
     <string name="token_count">Token count: %1$d</string>
+    <string name="gain_hint">You get %1$d hint!</string>
     <string name="connection_error">Connection Error</string>
 
 </resources>
