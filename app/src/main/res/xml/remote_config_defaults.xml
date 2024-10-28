@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <defaults>
   <entry>
+    <key>ad</key>
+    <value>4</value>
+  </entry>
+  <entry>
+    <key>large_hint</key>
+    <value>100</value>
+  </entry>
+  <entry>
     <key>about_game</key>
     <value>In the Challenge game mode you have no wrong answers and you can only participate in the ranking with this mode. \n\nClassic allows you to test yourself on all characters. \n\nDon\'t forget to participate in special Akatsuki, Clans, Monsters and Teams game modes. \n\n\n Good luck shinobi!</value>
+  </entry>
+  <entry>
+    <key>medium_hint</key>
+    <value>45</value>
+  </entry>
+  <entry>
+    <key>small_hint</key>
+    <value>20</value>
   </entry>
 </defaults>

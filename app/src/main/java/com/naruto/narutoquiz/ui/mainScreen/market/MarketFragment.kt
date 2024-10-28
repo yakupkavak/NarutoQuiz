@@ -16,8 +16,11 @@ import com.android.billingclient.api.QueryProductDetailsParams
 import com.google.common.collect.ImmutableList
 import com.naruto.narutoquiz.R
 import com.naruto.narutoquiz.databinding.FragmentMarketBinding
+import com.naruto.narutoquiz.ui.extension.navigate
 import com.naruto.narutoquiz.ui.extension.observe
 import com.naruto.narutoquiz.ui.extension.showToast
+import com.naruto.narutoquiz.ui.mainScreen.main.BuyProductDialogFragment
+import com.naruto.narutoquiz.ui.mainScreen.main.ErrorDialogFragment
 import com.naruto.narutoquiz.ui.mainScreen.main.MainScreenActivity
 import com.naruto.narutoquiz.ui.mainScreen.main.SharedViewModel
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_PURCHASE_ID
@@ -41,10 +44,6 @@ class MarketFragment : Fragment() {
     private val sharedViewModel: SharedViewModel by viewModels()
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,6 +57,7 @@ class MarketFragment : Fragment() {
         setOnClick()
         establishConnection()
         observeSharedViewModel()
+        observeViewModel()
     }
 
     private fun setOnClick() {
@@ -73,6 +73,52 @@ class MarketFragment : Fragment() {
             }
             btnLargePurchase.setOnClickListener {
                 showProduct(KAGE_PURCHASE_ID)
+            }
+        }
+    }
+
+    private fun observeViewModel() {
+        observe(viewModel.adPrice) { adPrice ->
+            println("buraya gelen de $adPrice")
+            adPrice?.let { price ->
+                binding.tvStudentPrice.text = price.toString()
+            }
+        }
+
+        observe(viewModel.geninPrice) { geninPrice ->
+            geninPrice?.let { price ->
+                binding.tvGeninPrice.text = price.toString()
+            }
+        }
+
+        observe(viewModel.chuninPrice) { chuninPrice ->
+            chuninPrice?.let { price ->
+                binding.tvChuninPrice.text = price.toString()
+            }
+        }
+
+        observe(viewModel.kagePrice) { kagePrice ->
+            kagePrice?.let { price ->
+                binding.tvKagePrice.text = price.toString()
+            }
+        }
+
+        observe(viewModel.success) { hint ->
+            hint?.let { hintCount ->
+                val newFragment = BuyProductDialogFragment(
+                    hintCount = hintCount,
+                    onClick = { navigate(MarketFragmentDirections.actionMarketFragmentToFeedFragment()) })
+                newFragment.show(parentFragmentManager, "market")
+            }
+        }
+        observe(viewModel.loading) {
+            //TODO SHOW LOADING STATION
+        }
+        observe(viewModel.error) {
+            if (it) {
+                val newFragment = ErrorDialogFragment(
+                    onClick = { navigate(MarketFragmentDirections.actionMarketFragmentToFeedFragment()) })
+                newFragment.show(parentFragmentManager, "market")
             }
         }
     }
