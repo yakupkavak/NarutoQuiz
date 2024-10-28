@@ -52,6 +52,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/tvStudentPrice"
                     style="@style/MediumSizeMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -111,6 +112,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/tvGeninPrice"
                     style="@style/MediumSizeMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -170,6 +172,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/tvChuninPrice"
                     style="@style/MediumSizeMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -229,6 +232,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/tvKagePrice"
                     style="@style/MediumSizeMedium"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

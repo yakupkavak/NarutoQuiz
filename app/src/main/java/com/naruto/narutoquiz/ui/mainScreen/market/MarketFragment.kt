@@ -15,6 +15,7 @@ import com.android.billingclient.api.PurchasesUpdatedListener
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.google.common.collect.ImmutableList
 import com.naruto.narutoquiz.R
+import com.naruto.narutoquiz.data.network.repository.RemoteConfigRepository
 import com.naruto.narutoquiz.databinding.FragmentMarketBinding
 import com.naruto.narutoquiz.ui.extension.observe
 import com.naruto.narutoquiz.ui.extension.showToast
@@ -27,6 +28,7 @@ import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_N
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_ID
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_NAME
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MarketFragment : Fragment() {
@@ -60,8 +62,8 @@ class MarketFragment : Fragment() {
         observeSharedViewModel()
     }
 
-    private fun setOnClick(){
-        with(binding){
+    private fun setOnClick() {
+        with(binding) {
             btnAd.setOnClickListener {
                 showRewardedAd()
             }
@@ -76,13 +78,14 @@ class MarketFragment : Fragment() {
             }
         }
     }
-    private fun observeSharedViewModel(){
+
+    private fun observeSharedViewModel() {
         observe(sharedViewModel.tokenCount) { tokenCount ->
             binding.tvTokenCount.text = getString(R.string.token_count, tokenCount)
         }
     }
 
-    private fun showRewardedAd(){
+    private fun showRewardedAd() {
         (activity as? MainScreenActivity)?.showRewardAd()
     }
 
@@ -92,15 +95,19 @@ class MarketFragment : Fragment() {
                 PurchasesUpdatedListener { billingResult, purchases ->
                     if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && purchases != null) {
                         for (purchase in purchases) {
-                            when (purchase.products[0]) {
-                                GENIN_PURCHASE_NAME -> {
-                                    //addHintsToUser(10) // Small Hint için 10 ipucu ekle
-                                }
-                                CHUININ_PURCHASE_NAME -> {
-                                    //addHintsToUser(25) // Medium Hint için 25 ipucu ekle
-                                }
-                                KAGE_PURCHASE_NAME -> {
-                                    //addHintsToUser(50) // Large Hint için 50 ipucu ekle
+                            purchase.products.forEach { productId ->
+                                when (productId) {
+                                    GENIN_PURCHASE_NAME -> {
+                                        viewModel.buyProduct(GENIN_PURCHASE_NAME)
+                                    }
+
+                                    CHUININ_PURCHASE_NAME -> {
+                                        viewModel.buyProduct(CHUININ_PURCHASE_NAME)
+                                    }
+
+                                    KAGE_PURCHASE_NAME -> {
+                                        viewModel.buyProduct(KAGE_PURCHASE_NAME)
+                                    }
                                 }
                             }
                         }
@@ -124,7 +131,7 @@ class MarketFragment : Fragment() {
                     showToast(getString(R.string.connection_error))
                 }
             })
-        }catch (e:Exception){
+        } catch (e: Exception) {
             e.printStackTrace()
             showToast(getString(R.string.unexpected_error))
         }
@@ -156,11 +163,39 @@ class MarketFragment : Fragment() {
                                                                                 productDetailsList ->
                 productDetails = productDetailsList
                 setupProductDetailsParamsList()
+                productDetailsList.forEach { productDetail ->
+                    when (productDetail.productId) {
+                        GENIN_PURCHASE_NAME -> {
+                            with(binding) {
+                                btnSmallPurchase.text = productDetail.title
+                                tvGeninPrice.text =
+                                    productDetail.oneTimePurchaseOfferDetails?.formattedPrice
+                            }
+                        }
+
+                        CHUININ_PURCHASE_NAME -> {
+                            with(binding) {
+                                btnMediumPurchase.text = productDetail.title
+                                tvChuninPrice.text =
+                                    productDetail.oneTimePurchaseOfferDetails?.formattedPrice
+                            }
+                        }
+
+                        KAGE_PURCHASE_NAME -> {
+                            with(binding) {
+                                btnLargePurchase.text = productDetail.title
+                                tvKagePrice.text =
+                                    productDetail.oneTimePurchaseOfferDetails?.formattedPrice
+                            }
+                        }
+                    }
+                }
             }
-        }catch (e:Exception){
+        } catch (e: Exception) {
             e.printStackTrace()
         }
     }
+
     private fun setupProductDetailsParamsList() {
         productDetailsParamsList = productDetails.map { productDetailsItem ->
             BillingFlowParams.ProductDetailsParams.newBuilder()
@@ -169,14 +204,13 @@ class MarketFragment : Fragment() {
         }
     }
 
-    private fun showProduct(index: Int){
+    private fun showProduct(index: Int) {
         if (::productDetails.isInitialized && index < productDetails.size) {
             billingFlowParams = BillingFlowParams.newBuilder()
                 .setProductDetailsParamsList(listOf(productDetailsParamsList[index]))
                 .build()
             billingClient.launchBillingFlow(requireActivity(), billingFlowParams)
-        }
-        else {
+        } else {
             showToast(getString(R.string.unexpected_error))
         }
     }
@@ -184,5 +218,6 @@ class MarketFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        billingClient.endConnection()
     }
 }
