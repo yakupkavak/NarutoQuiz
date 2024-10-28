@@ -41,6 +41,9 @@ class RemoteConfigRepository(val context: Context) {
                         } else {
                             Log.d(REMOTE_TAG, "Remote config error")
                             continuation.resume(Resource.error(null))
+                            if (continuation.isActive) {
+                                continuation.resume(Resource.error(null))
+                            }
                             //TODO GIVE ERROR
                         }
                     }
@@ -56,23 +59,25 @@ class RemoteConfigRepository(val context: Context) {
         }
         remoteConfig.setConfigSettingsAsync(configSettings)
         remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
+
         return withContext(Dispatchers.IO) {
             return@withContext suspendCancellableCoroutine<Resource<Int>> { continuation ->
                 remoteConfig.fetchAndActivate()
                     .addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             Log.d(REMOTE_TAG, "Remote config success")
+                            val data = remoteConfig.getLong(keyValue).toInt()
                             continuation.resume(
-                                Resource.success(
-                                    remoteConfig.getLong(
-                                        keyValue
-                                    ).toInt()
-                                )
+                                Resource.success(data)
                             )
                         } else {
                             Log.d(REMOTE_TAG, "Remote config error")
                             continuation.resume(Resource.error(null))
                             //TODO GIVE ERROR
+                        }
+                    }.addOnFailureListener { exception ->
+                        if (continuation.isActive) {
+                            continuation.resume(Resource.error(error = exception))
                         }
                     }
             }
