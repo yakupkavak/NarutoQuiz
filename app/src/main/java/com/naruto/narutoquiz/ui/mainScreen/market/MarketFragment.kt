@@ -15,7 +15,6 @@ import com.android.billingclient.api.PurchasesUpdatedListener
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.google.common.collect.ImmutableList
 import com.naruto.narutoquiz.R
-import com.naruto.narutoquiz.data.network.repository.RemoteConfigRepository
 import com.naruto.narutoquiz.databinding.FragmentMarketBinding
 import com.naruto.narutoquiz.ui.extension.observe
 import com.naruto.narutoquiz.ui.extension.showToast
@@ -28,7 +27,6 @@ import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_N
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_ID
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_NAME
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MarketFragment : Fragment() {
@@ -111,8 +109,6 @@ class MarketFragment : Fragment() {
                                 }
                             }
                         }
-                    } else {
-                        showToast("Kullanıcı iptal etti.")
                     }
                 }
 

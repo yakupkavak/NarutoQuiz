@@ -2,7 +2,6 @@ package com.naruto.narutoquiz.ui.mainScreen.market
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
 import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
 import com.naruto.narutoquiz.data.network.repository.RemoteConfigRepository
 import com.naruto.narutoquiz.ui.base.BaseViewModel
@@ -10,7 +9,6 @@ import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_PURCHASE
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_NAME
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_NAME
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 @HiltViewModel
