@@ -150,7 +150,6 @@ class FirestoreRepository @Inject constructor(
         }
     }
 
-
     suspend fun getUserToken(): Resource<Int> {
         return withContext(Dispatchers.IO) {
             try {

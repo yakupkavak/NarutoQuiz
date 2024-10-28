@@ -9,7 +9,6 @@ import com.google.firebase.remoteconfig.remoteConfig
 import com.google.firebase.remoteconfig.remoteConfigSettings
 import com.naruto.narutoquiz.R
 import com.naruto.narutoquiz.data.network.util.Resource
-import com.naruto.narutoquiz.data.network.util.ServiceCountConst.REMOTE_ABOUT_GAME
 import com.naruto.narutoquiz.data.network.util.ServiceCountConst.REMOTE_TAG
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.suspendCancellableCoroutine
@@ -18,7 +17,7 @@ import kotlin.coroutines.resume
 
 class RemoteConfigRepository(val context: Context) {
 
-    suspend fun observeAboutGame(): Resource<String> {
+    suspend fun observeString(keyValue: String): Resource<String> {
         FirebaseApp.initializeApp(context)
         val remoteConfig: FirebaseRemoteConfig = Firebase.remoteConfig
         val configSettings = remoteConfigSettings {
@@ -35,8 +34,39 @@ class RemoteConfigRepository(val context: Context) {
                             continuation.resume(
                                 Resource.success(
                                     remoteConfig.getString(
-                                        REMOTE_ABOUT_GAME
+                                        keyValue
                                     )
+                                )
+                            )
+                        } else {
+                            Log.d(REMOTE_TAG, "Remote config error")
+                            continuation.resume(Resource.error(null))
+                            //TODO GIVE ERROR
+                        }
+                    }
+            }
+        }
+    }
+
+    suspend fun observeInt(keyValue: String): Resource<Int> {
+        FirebaseApp.initializeApp(context)
+        val remoteConfig: FirebaseRemoteConfig = Firebase.remoteConfig
+        val configSettings = remoteConfigSettings {
+            minimumFetchIntervalInSeconds = 3600
+        }
+        remoteConfig.setConfigSettingsAsync(configSettings)
+        remoteConfig.setDefaultsAsync(R.xml.remote_config_defaults)
+        return withContext(Dispatchers.IO) {
+            return@withContext suspendCancellableCoroutine<Resource<Int>> { continuation ->
+                remoteConfig.fetchAndActivate()
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Log.d(REMOTE_TAG, "Remote config success")
+                            continuation.resume(
+                                Resource.success(
+                                    remoteConfig.getLong(
+                                        keyValue
+                                    ).toInt()
                                 )
                             )
                         } else {

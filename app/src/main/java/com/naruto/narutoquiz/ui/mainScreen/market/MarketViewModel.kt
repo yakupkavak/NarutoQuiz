@@ -1,20 +1,67 @@
 package com.naruto.narutoquiz.ui.mainScreen.market
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
+import com.naruto.narutoquiz.data.network.repository.RemoteConfigRepository
 import com.naruto.narutoquiz.ui.base.BaseViewModel
+import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_PURCHASE_NAME
+import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_NAME
+import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_NAME
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 @HiltViewModel
 class MarketViewModel @Inject constructor(
     private val firestoreRepository: FirestoreRepository,
+    private val remoteConfigRepository: RemoteConfigRepository
 ) : BaseViewModel() {
 
-    private suspend fun createUserToken(tokenCount: Int) {
-        //firestoreRepository.postUserToken(tokenCount)
+    private val _success = MutableLiveData<Int?>()
+    val success: LiveData<Int?> get() = _success
+
+    private val _loading = MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean> get() = _loading
+
+    private val _error = MutableLiveData<Boolean>()
+    val error: LiveData<Boolean> get() = _error
+
+    fun buyProduct(productName: String) {
+        when (productName) {
+            GENIN_PURCHASE_NAME -> {
+                getDataCall(dataCall = { remoteConfigRepository.observeInt(GENIN_PURCHASE_NAME) },
+                    onSuccess = { tokenCount -> addUserToken(tokenCount) },
+                    onLoading = { _loading.postValue(true) },
+                    onError = { _error.postValue(true).also { _loading.postValue(false) } })
+            }
+
+            CHUININ_PURCHASE_NAME -> {
+                getDataCall(dataCall = { remoteConfigRepository.observeInt(CHUININ_PURCHASE_NAME) },
+                    onSuccess = { tokenCount -> addUserToken(tokenCount) },
+                    onLoading = { _loading.postValue(true) },
+                    onError = { _error.postValue(true).also { _loading.postValue(false) } })
+            }
+
+            KAGE_PURCHASE_NAME -> {
+                getDataCall(dataCall = { remoteConfigRepository.observeInt(KAGE_PURCHASE_NAME) },
+                    onSuccess = { tokenCount -> addUserToken(tokenCount) },
+                    onLoading = { _loading.postValue(true) },
+                    onError = { _error.postValue(true).also { _loading.postValue(false) } })
+            }
+        }
+
     }
 
-    private suspend fun addUserToken(tokenCount: Int) {
-        firestoreRepository.updateUserToken(tokenCount)
+    private fun addUserToken(tokenCount: Int?) {
+        tokenCount?.let { token ->
+            getDataCall(dataCall = { firestoreRepository.updateUserToken(token) },
+                onSuccess = {
+                    _success.postValue(tokenCount).also { _loading.postValue(false) }
+                },
+                onLoading = { _loading.postValue(true) },
+                onError = { _error.postValue(true).also { _loading.postValue(false) } })
+        }
     }
 }
