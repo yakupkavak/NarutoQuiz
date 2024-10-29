@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -5,6 +7,14 @@ plugins {
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
     id("androidx.navigation.safeargs.kotlin")
+}
+
+val localProperties = Properties()
+val localPropertiesFile = rootProject.file("local.properties")
+if(localPropertiesFile.exists()) {
+    localPropertiesFile.inputStream().use {
+        localProperties.load(it)
+    }
 }
 
 android {
@@ -15,19 +25,18 @@ android {
         applicationId = "com.naruto.narutoquiz"
         minSdk = 24
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.1"
+        versionCode = 3
+        versionName = "1.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String","GEMINI_API", value = localProperties["GEMINI_API_KEY"].toString())
+        buildConfigField("String","BASE_URL", value = localProperties["DATABASE_API_KEY"].toString())
     }
 
     buildTypes {
         debug {
-            buildConfigField("String", "GEMINI_API", "\"AIzaSyBs-0nXCACqtG62Mts2xzB8YJ7rK0_x4Us\"")
-            buildConfigField("String", "BASE_URL", "\"https://dattebayo-api.onrender.com\"")
+
         }
         release {
-            buildConfigField("String", "GEMINI_API", "\"AIzaSyBs-0nXCACqtG62Mts2xzB8YJ7rK0_x4Us\"")
-            buildConfigField("String", "BASE_URL", "\"https://dattebayo-api.onrender.com\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
