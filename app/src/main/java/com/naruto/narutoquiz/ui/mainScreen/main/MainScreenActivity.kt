@@ -169,6 +169,7 @@ class MainScreenActivity : AppCompatActivity() {
             when (destination.id) {
                 R.id.gameFragment -> binding.bottomNavigation.isVisible = false
                 R.id.historyFragment -> binding.bottomNavigation.isVisible = false
+                R.id.passwordFragment -> binding.bottomNavigation.isVisible = false
                 else -> binding.bottomNavigation.isVisible = true
             }
         }

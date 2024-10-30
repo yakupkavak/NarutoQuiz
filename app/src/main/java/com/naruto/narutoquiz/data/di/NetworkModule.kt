@@ -83,8 +83,8 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideAuthRepository(auth: FirebaseAuth): AuthRepository {
-        return AuthRepository(auth)
+    fun provideAuthRepository(auth: FirebaseAuth,authProvider: AuthProvider): AuthRepository {
+        return AuthRepository(auth,authProvider)
     }
 
     @Provides

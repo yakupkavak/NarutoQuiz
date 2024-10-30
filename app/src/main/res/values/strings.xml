@@ -30,6 +30,8 @@
     <string name="sign_in">Sign in</string>
     <string name="null_space">Boş bırakmayınız</string>
     <string name="sign_in_error">Email or password wrong</string>
+    <string name="wrong_password">Wrong password</string>
+
     <string name="recovery_error">Email wrong</string>
     <string name="username_too_long">Username can\'t be over 16 characters</string>
     <string name="password_too_low">Past can\'t be less than 8 characters</string>
@@ -85,6 +87,7 @@
     <string name="user_name_info">Name: %1$s</string>
     <string name="user_mail_info">Mail: %1$s</string>
     <string name="change_password">Change password</string>
+    <string name="change">Change</string>
     <string name="max_repeat_info">Question count: %1$s</string>
     <string name="hint_count">Hint count: %1$d</string>
     <string name="get_information">About Game</string>
@@ -114,5 +117,12 @@
     <string name="token_count">Token count: %1$d</string>
     <string name="gain_hint">You get %1$d hint!</string>
     <string name="connection_error">Connection Error</string>
+
+    <string name="current_password">Current Password:</string>
+    <string name="new_password">New Password:</string>
+    <string name="repeat_password">Repeat Password:</string>
+
+    <string name="empty_edit_text">There is an empty place</string>
+    <string name="password_not_equal">Passwords not equal !</string>
 
 </resources>

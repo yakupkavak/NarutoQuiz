@@ -84,6 +84,9 @@ class UserInfoFragment : Fragment() {
             tvGetHistory.setOnClickListener {
                 navigate(UserInfoFragmentDirections.actionUserInfoToHistoryFragment())
             }
+            tvChangePassword.setOnClickListener {
+                navigate(UserInfoFragmentDirections.actionUserInfoToPasswordFragment())
+            }
         }
     }
 
