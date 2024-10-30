@@ -80,6 +80,9 @@
         <action
             android:id="@+id/action_userInfo_to_historyFragment"
             app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_userInfo_to_passwordFragment"
+            app:destination="@id/passwordFragment" />
     </fragment>
 
     <fragment
@@ -104,4 +107,8 @@
         android:name="com.naruto.narutoquiz.ui.mainScreen.history.HistoryFragment"
         android:label="historyFragment"
         tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="com.naruto.narutoquiz.ui.mainScreen.password.PasswordFragment"
+        android:label="PasswordFragment" />
 </navigation>
