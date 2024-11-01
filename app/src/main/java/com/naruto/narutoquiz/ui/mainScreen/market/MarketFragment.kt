@@ -23,11 +23,8 @@ import com.naruto.narutoquiz.ui.mainScreen.main.BuyProductDialogFragment
 import com.naruto.narutoquiz.ui.mainScreen.main.ErrorDialogFragment
 import com.naruto.narutoquiz.ui.mainScreen.main.MainScreenActivity
 import com.naruto.narutoquiz.ui.mainScreen.main.SharedViewModel
-import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_PURCHASE_ID
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_PURCHASE_NAME
-import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_ID
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_NAME
-import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_ID
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_NAME
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,7 +35,7 @@ class MarketFragment : Fragment() {
     private lateinit var billingClient: BillingClient
     private lateinit var productDetails: List<ProductDetails>
     private lateinit var productDetailsParamsList: List<BillingFlowParams.ProductDetailsParams>
-    private lateinit var billingFlowParams: BillingFlowParams
+    private lateinit var billingFlowParam: BillingFlowParams
     private var _binding: FragmentMarketBinding? = null
     private val viewModel: MarketViewModel by viewModels()
     private val sharedViewModel: SharedViewModel by viewModels()
@@ -66,20 +63,19 @@ class MarketFragment : Fragment() {
                 showRewardedAd()
             }
             btnSmallPurchase.setOnClickListener {
-                showProduct(GENIN_PURCHASE_ID)
+                showProduct(GENIN_PURCHASE_NAME)
             }
             btnMediumPurchase.setOnClickListener {
-                showProduct(CHUININ_PURCHASE_ID)
+                showProduct(CHUININ_PURCHASE_NAME)
             }
             btnLargePurchase.setOnClickListener {
-                showProduct(KAGE_PURCHASE_ID)
+                showProduct(KAGE_PURCHASE_NAME)
             }
         }
     }
 
     private fun observeViewModel() {
         observe(viewModel.adPrice) { adPrice ->
-            println("buraya gelen de $adPrice")
             adPrice?.let { price ->
                 binding.tvStudentPrice.text = price.toString()
             }
@@ -199,38 +195,43 @@ class MarketFragment : Fragment() {
             val queryProductDetailsParams =
                 QueryProductDetailsParams.newBuilder()
                     .setProductList(productList)
-                    .build()
+                    .build() //ürün detaylarını bu obje aracılığıyla sorgulayacağız.
 
             billingClient.queryProductDetailsAsync(queryProductDetailsParams) { billingResult,
                                                                                 productDetailsList ->
-                productDetails = productDetailsList
-                setupProductDetailsParamsList()
-                productDetailsList.forEach { productDetail ->
-                    when (productDetail.productId) {
-                        GENIN_PURCHASE_NAME -> {
-                            with(binding) {
-                                btnSmallPurchase.text = productDetail.title
-                                tvGeninPrice.text =
-                                    productDetail.oneTimePurchaseOfferDetails?.formattedPrice
-                            }
-                        }
+                if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                    productDetails =
+                        productDetailsList //google playden ürün detayları sorgulandı ve bu ürünler buraya geldi.
 
-                        CHUININ_PURCHASE_NAME -> {
-                            with(binding) {
-                                btnMediumPurchase.text = productDetail.title
-                                tvChuninPrice.text =
-                                    productDetail.oneTimePurchaseOfferDetails?.formattedPrice
+                    productDetailsList.forEach { productDetail ->
+                        when (productDetail.productId) {
+                            GENIN_PURCHASE_NAME -> {
+                                with(binding) {
+                                    btnSmallPurchase.text = productDetail.title
+                                    tvGeninPrice.text =
+                                        productDetail.oneTimePurchaseOfferDetails?.formattedPrice
+                                }
                             }
-                        }
 
-                        KAGE_PURCHASE_NAME -> {
-                            with(binding) {
-                                btnLargePurchase.text = productDetail.title
-                                tvKagePrice.text =
-                                    productDetail.oneTimePurchaseOfferDetails?.formattedPrice
+                            CHUININ_PURCHASE_NAME -> {
+                                with(binding) {
+                                    btnMediumPurchase.text = productDetail.title
+                                    tvChuninPrice.text =
+                                        productDetail.oneTimePurchaseOfferDetails?.formattedPrice
+                                }
+                            }
+
+                            KAGE_PURCHASE_NAME -> {
+                                with(binding) {
+                                    btnLargePurchase.text = productDetail.title
+                                    tvKagePrice.text =
+                                        productDetail.oneTimePurchaseOfferDetails?.formattedPrice
+                                }
                             }
                         }
                     }
+                } else {
+                    showToast(getString(R.string.unexpected_error))
                 }
             }
         } catch (e: Exception) {
@@ -238,20 +239,21 @@ class MarketFragment : Fragment() {
         }
     }
 
-    private fun setupProductDetailsParamsList() {
-        productDetailsParamsList = productDetails.map { productDetailsItem ->
-            BillingFlowParams.ProductDetailsParams.newBuilder()
-                .setProductDetails(productDetailsItem)
+    private fun showProduct(productId: String) {
+        if (::productDetails.isInitialized) {
+            val selectedProduct = productDetails.find {
+                it.productId == productId
+            }
+            val selectedFlow =
+                selectedProduct?.let { selected ->
+                    BillingFlowParams.ProductDetailsParams.newBuilder().setProductDetails(
+                        selected
+                    ).build()
+                }
+            billingFlowParam = BillingFlowParams.newBuilder()
+                .setProductDetailsParamsList(listOf(selectedFlow))
                 .build()
-        }
-    }
-
-    private fun showProduct(index: Int) {
-        if (::productDetails.isInitialized && index < productDetails.size) {
-            billingFlowParams = BillingFlowParams.newBuilder()
-                .setProductDetailsParamsList(listOf(productDetailsParamsList[index]))
-                .build()
-            billingClient.launchBillingFlow(requireActivity(), billingFlowParams)
+            billingClient.launchBillingFlow(requireActivity(), billingFlowParam)
         } else {
             showToast(getString(R.string.unexpected_error))
         }
