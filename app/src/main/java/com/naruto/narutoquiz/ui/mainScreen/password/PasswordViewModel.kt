@@ -2,7 +2,6 @@ package com.naruto.narutoquiz.ui.mainScreen.password
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.naruto.narutoquiz.data.network.model.RankRowModel
 import com.naruto.narutoquiz.data.network.repository.AuthRepository
 import com.naruto.narutoquiz.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

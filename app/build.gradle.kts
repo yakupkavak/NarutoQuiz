@@ -25,8 +25,8 @@ android {
         applicationId = "com.naruto.narutoquiz"
         minSdk = 24
         targetSdk = 34
-        versionCode = 3
-        versionName = "1.2"
+        versionCode = 6
+        versionName = "1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String","GEMINI_API", value = localProperties["GEMINI_API_KEY"].toString())
         buildConfigField("String","BASE_URL", value = localProperties["DATABASE_API_KEY"].toString())
@@ -72,7 +72,6 @@ dependencies {
     implementation(libs.hilt.android)
     annotationProcessor(libs.hilt.compiler)
     implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.analytics)
     implementation(libs.firebase.firestore)
     implementation(libs.androidx.core.splashscreen)
