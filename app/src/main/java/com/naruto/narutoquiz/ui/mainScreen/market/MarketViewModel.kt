@@ -2,6 +2,10 @@ package com.naruto.narutoquiz.ui.mainScreen.market
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.android.billingclient.api.BillingClient
+import com.android.billingclient.api.ConsumeParams
+import com.android.billingclient.api.consumePurchase
 import com.naruto.narutoquiz.data.network.repository.FirestoreRepository
 import com.naruto.narutoquiz.data.network.repository.RemoteConfigRepository
 import com.naruto.narutoquiz.ui.base.BaseViewModel
@@ -10,6 +14,9 @@ import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_PURCHASE
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_NAME
 import com.naruto.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_NAME
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -39,14 +46,24 @@ class MarketViewModel @Inject constructor(
     private val _kagePrice = MutableLiveData<Int?>()
     val kagePrice: LiveData<Int?> get() = _kagePrice
 
+    private var userTokenCount = 0
+
     init {
         getHintCount()
+    }
+
+    fun consumePurchase(billingClient: BillingClient, consumeParams: ConsumeParams) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                billingClient.consumePurchase(consumeParams)
+            }
+        }
     }
 
     private fun getHintCount() {
 
         getDataCall(dataCall = { remoteConfigRepository.observeInt(AD_NAME) },
-            onSuccess = { hintCount -> _adPrice.postValue(hintCount)},
+            onSuccess = { hintCount -> _adPrice.postValue(hintCount) },
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } })
 
@@ -68,6 +85,15 @@ class MarketViewModel @Inject constructor(
     }
 
     fun buyProduct(productName: String) {
+        getDataCall(dataCall = { firestoreRepository.getUserToken() },
+            onSuccess = { tokenCount ->
+                if (tokenCount != null) {
+                    userTokenCount = tokenCount
+                }
+            },
+            onLoading = { _loading.postValue(true) },
+            onError = { _error.postValue(true).also { _loading.postValue(false) } })
+
         when (productName) {
             GENIN_PURCHASE_NAME -> {
                 getDataCall(dataCall = { remoteConfigRepository.observeInt(GENIN_PURCHASE_NAME) },
@@ -90,12 +116,11 @@ class MarketViewModel @Inject constructor(
                     onError = { _error.postValue(true).also { _loading.postValue(false) } })
             }
         }
-
     }
 
     private fun addUserToken(tokenCount: Int?) {
         tokenCount?.let { token ->
-            getDataCall(dataCall = { firestoreRepository.updateUserToken(token) },
+            getDataCall(dataCall = { firestoreRepository.updateUserToken(updateToken = (userTokenCount + token)) },
                 onSuccess = {
                     _success.postValue(tokenCount).also { _loading.postValue(false) }
                 },

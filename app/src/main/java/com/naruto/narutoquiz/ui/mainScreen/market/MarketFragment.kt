@@ -10,7 +10,9 @@ import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingFlowParams
 import com.android.billingclient.api.BillingResult
+import com.android.billingclient.api.ConsumeParams
 import com.android.billingclient.api.ProductDetails
+import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.PurchasesUpdatedListener
 import com.android.billingclient.api.QueryProductDetailsParams
 import com.google.common.collect.ImmutableList
@@ -34,7 +36,6 @@ class MarketFragment : Fragment() {
     private lateinit var purchasesUpdatedListener: PurchasesUpdatedListener
     private lateinit var billingClient: BillingClient
     private lateinit var productDetails: List<ProductDetails>
-    private lateinit var productDetailsParamsList: List<BillingFlowParams.ProductDetailsParams>
     private lateinit var billingFlowParam: BillingFlowParams
     private var _binding: FragmentMarketBinding? = null
     private val viewModel: MarketViewModel by viewModels()
@@ -57,19 +58,24 @@ class MarketFragment : Fragment() {
         observeViewModel()
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
+
     private fun setOnClick() {
         with(binding) {
             btnAd.setOnClickListener {
                 showRewardedAd()
             }
             btnSmallPurchase.setOnClickListener {
-                showProduct(GENIN_PURCHASE_NAME)
+                //launchFlow(GENIN_PURCHASE_NAME)
+                viewModel.buyProduct(GENIN_PURCHASE_NAME)
             }
             btnMediumPurchase.setOnClickListener {
-                showProduct(CHUININ_PURCHASE_NAME)
+                launchFlow(CHUININ_PURCHASE_NAME)
             }
             btnLargePurchase.setOnClickListener {
-                showProduct(KAGE_PURCHASE_NAME)
+                launchFlow(KAGE_PURCHASE_NAME)
             }
         }
     }
@@ -135,22 +141,12 @@ class MarketFragment : Fragment() {
                 PurchasesUpdatedListener { billingResult, purchases ->
                     if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && purchases != null) {
                         for (purchase in purchases) {
-                            purchase.products.forEach { productId ->
-                                when (productId) {
-                                    GENIN_PURCHASE_NAME -> {
-                                        viewModel.buyProduct(GENIN_PURCHASE_NAME)
-                                    }
-
-                                    CHUININ_PURCHASE_NAME -> {
-                                        viewModel.buyProduct(CHUININ_PURCHASE_NAME)
-                                    }
-
-                                    KAGE_PURCHASE_NAME -> {
-                                        viewModel.buyProduct(KAGE_PURCHASE_NAME)
-                                    }
-                                }
-                            }
+                            handlePurchase(purchase)
                         }
+                    } else if (billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
+                        //user cancel
+                    } else {
+                        showToast(getString(R.string.unexpected_error))
                     }
                 }
 
@@ -173,6 +169,29 @@ class MarketFragment : Fragment() {
             e.printStackTrace()
             showToast(getString(R.string.unexpected_error))
         }
+    }
+
+    private fun handlePurchase(purchase: Purchase) {
+
+        val consumeParams =
+            ConsumeParams.newBuilder().setPurchaseToken(purchase.purchaseToken).build()
+        viewModel.consumePurchase(billingClient, consumeParams)
+        purchase.products.forEach { productId ->
+            when (productId) {
+                GENIN_PURCHASE_NAME -> {
+                    viewModel.buyProduct(GENIN_PURCHASE_NAME)
+                }
+
+                CHUININ_PURCHASE_NAME -> {
+                    viewModel.buyProduct(CHUININ_PURCHASE_NAME)
+                }
+
+                KAGE_PURCHASE_NAME -> {
+                    viewModel.buyProduct(KAGE_PURCHASE_NAME)
+                }
+            }
+        }
+
     }
 
     private fun showProducts() {
@@ -239,15 +258,15 @@ class MarketFragment : Fragment() {
         }
     }
 
-    private fun showProduct(productId: String) {
+    private fun launchFlow(productId: String) {
         if (::productDetails.isInitialized) {
             val selectedProduct = productDetails.find {
                 it.productId == productId
             }
             val selectedFlow =
-                selectedProduct?.let { selected ->
+                selectedProduct?.let { selectedFlow ->
                     BillingFlowParams.ProductDetailsParams.newBuilder().setProductDetails(
-                        selected
+                        selectedFlow
                     ).build()
                 }
             billingFlowParam = BillingFlowParams.newBuilder()

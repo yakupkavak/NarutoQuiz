@@ -5,15 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.naruto.narutoquiz.R
 import com.naruto.narutoquiz.databinding.FragmentPasswordBinding
-import com.naruto.narutoquiz.databinding.FragmentRankBinding
 import com.naruto.narutoquiz.ui.extension.observe
 import com.naruto.narutoquiz.ui.extension.popBackStack
 import com.naruto.narutoquiz.ui.extension.showToast
-import com.naruto.narutoquiz.ui.mainScreen.rankList.RankViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
