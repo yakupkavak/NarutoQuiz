@@ -1,4 +1,4 @@
-package com.naruto.narutoquiz
+package com.yakupkavak.narutoquiz
 
 import org.junit.Test
 

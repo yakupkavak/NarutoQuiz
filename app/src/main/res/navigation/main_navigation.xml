@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="com.naruto.narutoquiz.ui.mainScreen.feedlist.FeedFragment"
+        android:name="com.yakupkavak.narutoquiz.ui.mainScreen.feedlist.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed">
 
@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.naruto.narutoquiz.ui.mainScreen.game.GameFragment"
+        android:name="com.yakupkavak.narutoquiz.ui.mainScreen.game.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game">
         <action
@@ -47,7 +47,7 @@
 
     <fragment
         android:id="@+id/tierFragment"
-        android:name="com.naruto.narutoquiz.ui.mainScreen.rankList.RankFragment"
+        android:name="com.yakupkavak.narutoquiz.ui.mainScreen.rankList.RankFragment"
         android:label="fragment_tier"
         tools:layout="@layout/fragment_rank">
         <action
@@ -63,7 +63,7 @@
 
     <fragment
         android:id="@+id/userInfo"
-        android:name="com.naruto.narutoquiz.ui.mainScreen.userinfo.UserInfoFragment"
+        android:name="com.yakupkavak.narutoquiz.ui.mainScreen.userinfo.UserInfoFragment"
         android:label="fragment_user_info"
         tools:layout="@layout/fragment_user_info">
 
@@ -87,7 +87,7 @@
 
     <fragment
         android:id="@+id/marketFragment"
-        android:name="com.naruto.narutoquiz.ui.mainScreen.market.MarketFragment"
+        android:name="com.yakupkavak.narutoquiz.ui.mainScreen.market.MarketFragment"
         android:label="MarketFragment"
         tools:layout="@layout/fragment_market">
 
@@ -104,11 +104,11 @@
 
     <fragment
         android:id="@+id/historyFragment"
-        android:name="com.naruto.narutoquiz.ui.mainScreen.history.HistoryFragment"
+        android:name="com.yakupkavak.narutoquiz.ui.mainScreen.history.HistoryFragment"
         android:label="historyFragment"
         tools:layout="@layout/fragment_history" />
     <fragment
         android:id="@+id/passwordFragment"
-        android:name="com.naruto.narutoquiz.ui.mainScreen.password.PasswordFragment"
+        android:name="com.yakupkavak.narutoquiz.ui.mainScreen.password.PasswordFragment"
         android:label="PasswordFragment" />
 </navigation>

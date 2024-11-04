@@ -18,11 +18,11 @@ if(localPropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.naruto.narutoquiz"
-    compileSdk = 34
+    namespace = "com.yakupkavak.narutoquiz"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.naruto.narutoquiz"
+        applicationId = "com.yakupkavak.narutoquiz"
         minSdk = 24
         targetSdk = 34
         versionCode = 6

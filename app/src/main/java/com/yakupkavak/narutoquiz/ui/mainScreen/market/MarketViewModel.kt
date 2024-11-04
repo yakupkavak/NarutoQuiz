@@ -1,0 +1,131 @@
+package com.yakupkavak.narutoquiz.ui.mainScreen.market
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.android.billingclient.api.BillingClient
+import com.android.billingclient.api.ConsumeParams
+import com.android.billingclient.api.consumePurchase
+import com.yakupkavak.narutoquiz.data.network.repository.FirestoreRepository
+import com.yakupkavak.narutoquiz.data.network.repository.RemoteConfigRepository
+import com.yakupkavak.narutoquiz.ui.base.BaseViewModel
+import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.AD_NAME
+import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_PURCHASE_NAME
+import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_NAME
+import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_NAME
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
+
+@HiltViewModel
+class MarketViewModel @Inject constructor(
+    private val firestoreRepository: FirestoreRepository,
+    private val remoteConfigRepository: RemoteConfigRepository
+) : BaseViewModel() {
+
+    private val _success = MutableLiveData<Int?>()
+    val success: LiveData<Int?> get() = _success
+
+    private val _loading = MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean> get() = _loading
+
+    private val _error = MutableLiveData<Boolean>()
+    val error: LiveData<Boolean> get() = _error
+
+    private val _adPrice = MutableLiveData<Int?>()
+    val adPrice: LiveData<Int?> get() = _adPrice
+
+    private val _geninPrice = MutableLiveData<Int?>()
+    val geninPrice: LiveData<Int?> get() = _geninPrice
+
+    private val _chuninPrice = MutableLiveData<Int?>()
+    val chuninPrice: LiveData<Int?> get() = _chuninPrice
+
+    private val _kagePrice = MutableLiveData<Int?>()
+    val kagePrice: LiveData<Int?> get() = _kagePrice
+
+    private var userTokenCount = 0
+
+    init {
+        getHintCount()
+    }
+
+    fun consumePurchase(billingClient: BillingClient, consumeParams: ConsumeParams) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                billingClient.consumePurchase(consumeParams)
+            }
+        }
+    }
+
+    private fun getHintCount() {
+
+        getDataCall(dataCall = { remoteConfigRepository.observeInt(AD_NAME) },
+            onSuccess = { hintCount -> _adPrice.postValue(hintCount) },
+            onLoading = { _loading.postValue(true) },
+            onError = { _error.postValue(true).also { _loading.postValue(false) } })
+
+
+        getDataCall(dataCall = { remoteConfigRepository.observeInt(GENIN_PURCHASE_NAME) },
+            onSuccess = { hintCount -> _geninPrice.postValue(hintCount) },
+            onLoading = { _loading.postValue(true) },
+            onError = { _error.postValue(true).also { _loading.postValue(false) } })
+
+        getDataCall(dataCall = { remoteConfigRepository.observeInt(CHUININ_PURCHASE_NAME) },
+            onSuccess = { hintCount -> _chuninPrice.postValue(hintCount) },
+            onLoading = { _loading.postValue(true) },
+            onError = { _error.postValue(true).also { _loading.postValue(false) } })
+
+        getDataCall(dataCall = { remoteConfigRepository.observeInt(KAGE_PURCHASE_NAME) },
+            onSuccess = { hintCount -> _kagePrice.postValue(hintCount) },
+            onLoading = { _loading.postValue(true) },
+            onError = { _error.postValue(true).also { _loading.postValue(false) } })
+    }
+
+    fun buyProduct(productName: String) {
+        getDataCall(dataCall = { firestoreRepository.getUserToken() },
+            onSuccess = { tokenCount ->
+                if (tokenCount != null) {
+                    userTokenCount = tokenCount
+                }
+            },
+            onLoading = { _loading.postValue(true) },
+            onError = { _error.postValue(true).also { _loading.postValue(false) } })
+
+        when (productName) {
+            GENIN_PURCHASE_NAME -> {
+                getDataCall(dataCall = { remoteConfigRepository.observeInt(GENIN_PURCHASE_NAME) },
+                    onSuccess = { tokenCount -> addUserToken(tokenCount) },
+                    onLoading = { _loading.postValue(true) },
+                    onError = { _error.postValue(true).also { _loading.postValue(false) } })
+            }
+
+            CHUININ_PURCHASE_NAME -> {
+                getDataCall(dataCall = { remoteConfigRepository.observeInt(CHUININ_PURCHASE_NAME) },
+                    onSuccess = { tokenCount -> addUserToken(tokenCount) },
+                    onLoading = { _loading.postValue(true) },
+                    onError = { _error.postValue(true).also { _loading.postValue(false) } })
+            }
+
+            KAGE_PURCHASE_NAME -> {
+                getDataCall(dataCall = { remoteConfigRepository.observeInt(KAGE_PURCHASE_NAME) },
+                    onSuccess = { tokenCount -> addUserToken(tokenCount) },
+                    onLoading = { _loading.postValue(true) },
+                    onError = { _error.postValue(true).also { _loading.postValue(false) } })
+            }
+        }
+    }
+
+    private fun addUserToken(tokenCount: Int?) {
+        tokenCount?.let { token ->
+            getDataCall(dataCall = { firestoreRepository.updateUserToken(updateToken = (userTokenCount + token)) },
+                onSuccess = {
+                    _success.postValue(tokenCount).also { _loading.postValue(false) }
+                },
+                onLoading = { _loading.postValue(true) },
+                onError = { _error.postValue(true).also { _loading.postValue(false) } })
+        }
+    }
+}
