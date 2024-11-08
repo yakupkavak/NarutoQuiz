@@ -5,14 +5,21 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.ConsumeParams
+import com.android.billingclient.api.ProductDetails
+import com.android.billingclient.api.Purchase
+import com.android.billingclient.api.QueryProductDetailsParams
 import com.android.billingclient.api.consumePurchase
+import com.google.common.collect.ImmutableList
 import com.yakupkavak.narutoquiz.data.network.repository.FirestoreRepository
 import com.yakupkavak.narutoquiz.data.network.repository.RemoteConfigRepository
 import com.yakupkavak.narutoquiz.ui.base.BaseViewModel
-import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.AD_NAME
+import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.AD_REMOTE_COUNT
 import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_PURCHASE_NAME
+import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.CHUININ_REMOTE_COUNT
 import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_PURCHASE_NAME
+import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.GENIN_REMOTE_COUNT
 import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_PURCHASE_NAME
+import com.yakupkavak.narutoquiz.ui.mainScreen.market.PurchaseConst.KAGE_REMOTE_COUNT
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -46,13 +53,37 @@ class MarketViewModel @Inject constructor(
     private val _kagePrice = MutableLiveData<Int?>()
     val kagePrice: LiveData<Int?> get() = _kagePrice
 
+    private val _productList = MutableLiveData<List<ProductDetails>>()
+    val productList: LiveData<List<ProductDetails>> get() = _productList
+
     private var userTokenCount = 0
 
     init {
         getHintCount()
     }
 
-    fun consumePurchase(billingClient: BillingClient, consumeParams: ConsumeParams) {
+    fun handlePurchase(billingClient: BillingClient,purchase: Purchase) {
+        val consumeParams =
+            ConsumeParams.newBuilder().setPurchaseToken(purchase.purchaseToken).build()
+        consumePurchase(billingClient, consumeParams)
+        purchase.products.forEach { productId ->
+            when (productId) {
+                GENIN_PURCHASE_NAME -> {
+                    buyProduct(GENIN_PURCHASE_NAME)
+                }
+
+                CHUININ_PURCHASE_NAME -> {
+                    buyProduct(CHUININ_PURCHASE_NAME)
+                }
+
+                KAGE_PURCHASE_NAME -> {
+                    buyProduct(KAGE_PURCHASE_NAME)
+                }
+            }
+        }
+    }
+
+    private fun consumePurchase(billingClient: BillingClient, consumeParams: ConsumeParams) {
         viewModelScope.launch {
             withContext(Dispatchers.IO) {
                 billingClient.consumePurchase(consumeParams)
@@ -60,31 +91,62 @@ class MarketViewModel @Inject constructor(
         }
     }
 
-    private fun getHintCount() {
+    fun getProducts(billingClient: BillingClient) {
+        try {
+            val productList = ImmutableList.of(
+                QueryProductDetailsParams.Product.newBuilder()
+                    .setProductId(GENIN_PURCHASE_NAME)
+                    .setProductType(BillingClient.ProductType.INAPP)
+                    .build(),
+                QueryProductDetailsParams.Product.newBuilder()
+                    .setProductId(CHUININ_PURCHASE_NAME)
+                    .setProductType(BillingClient.ProductType.INAPP)
+                    .build(),
+                QueryProductDetailsParams.Product.newBuilder()
+                    .setProductId(KAGE_PURCHASE_NAME)
+                    .setProductType(BillingClient.ProductType.INAPP)
+                    .build()
+            )
 
-        getDataCall(dataCall = { remoteConfigRepository.observeInt(AD_NAME) },
+            val queryProductDetailsParams =
+                QueryProductDetailsParams.newBuilder()
+                    .setProductList(productList)
+                    .build() //ürün detaylarını bu obje aracılığıyla sorgulayacağız.
+
+            billingClient.queryProductDetailsAsync(queryProductDetailsParams) { billingResult,
+                                                                                productDetailsList ->
+                if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
+                    _productList.postValue(productDetailsList) //google playden ürün detayları sorgulandı ve bu ürünler buraya geldi.
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+    private fun getHintCount() {
+        getDataCall(dataCall = { remoteConfigRepository.observeInt(AD_REMOTE_COUNT) },
             onSuccess = { hintCount -> _adPrice.postValue(hintCount) },
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } })
 
-
-        getDataCall(dataCall = { remoteConfigRepository.observeInt(GENIN_PURCHASE_NAME) },
+        getDataCall(dataCall = { remoteConfigRepository.observeInt(GENIN_REMOTE_COUNT) },
             onSuccess = { hintCount -> _geninPrice.postValue(hintCount) },
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } })
 
-        getDataCall(dataCall = { remoteConfigRepository.observeInt(CHUININ_PURCHASE_NAME) },
+        getDataCall(dataCall = { remoteConfigRepository.observeInt(CHUININ_REMOTE_COUNT) },
             onSuccess = { hintCount -> _chuninPrice.postValue(hintCount) },
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } })
 
-        getDataCall(dataCall = { remoteConfigRepository.observeInt(KAGE_PURCHASE_NAME) },
+        getDataCall(dataCall = { remoteConfigRepository.observeInt(KAGE_REMOTE_COUNT) },
             onSuccess = { hintCount -> _kagePrice.postValue(hintCount) },
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } })
     }
 
-    fun buyProduct(productName: String) {
+    private fun buyProduct(productName: String) {
         getDataCall(dataCall = { firestoreRepository.getUserToken() },
             onSuccess = { tokenCount ->
                 if (tokenCount != null) {

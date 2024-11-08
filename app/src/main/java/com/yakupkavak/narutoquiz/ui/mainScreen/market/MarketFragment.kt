@@ -103,6 +103,7 @@ class MarketFragment : Fragment() {
 
         observe(viewModel.kagePrice) { kagePrice ->
             kagePrice?.let { price ->
+                println("kage price remote ->$kagePrice")
                 binding.tvKagePrice.text = price.toString()
             }
         }
@@ -125,6 +126,10 @@ class MarketFragment : Fragment() {
                 newFragment.show(parentFragmentManager, "market")
             }
         }
+        observe(viewModel.productList) { productList ->
+            productDetails = productList
+            showProducts(productList = productList)
+        }
     }
 
     private fun observeSharedViewModel() {
@@ -144,7 +149,10 @@ class MarketFragment : Fragment() {
                     PurchasesUpdatedListener { billingResult, purchases ->
                         if (billingResult.responseCode == BillingClient.BillingResponseCode.OK && purchases != null) {
                             for (purchase in purchases) {
-                                handlePurchase(purchase)
+                                viewModel.handlePurchase(
+                                    billingClient = billingClient,
+                                    purchase = purchase
+                                )
                             }
                         } else if (billingResult.responseCode == BillingClient.BillingResponseCode.USER_CANCELED) {
                             //user cancel
@@ -157,10 +165,11 @@ class MarketFragment : Fragment() {
                     .setListener(purchasesUpdatedListener)
                     .enablePendingPurchases()
                     .build()
+
                 billingClient.startConnection(object : BillingClientStateListener {
                     override fun onBillingSetupFinished(billingResult: BillingResult) {
                         if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                            showProducts()
+                            viewModel.getProducts(billingClient = billingClient)
                         }
                     }
 
@@ -175,87 +184,31 @@ class MarketFragment : Fragment() {
         }
     }
 
-    private fun handlePurchase(purchase: Purchase) {
-        val consumeParams =
-            ConsumeParams.newBuilder().setPurchaseToken(purchase.purchaseToken).build()
-        viewModel.consumePurchase(billingClient, consumeParams)
-        purchase.products.forEach { productId ->
-            when (productId) {
-                GENIN_PURCHASE_NAME -> {
-                    viewModel.buyProduct(GENIN_PURCHASE_NAME)
-                }
-
-                CHUININ_PURCHASE_NAME -> {
-                    viewModel.buyProduct(CHUININ_PURCHASE_NAME)
-                }
-
-                KAGE_PURCHASE_NAME -> {
-                    viewModel.buyProduct(KAGE_PURCHASE_NAME)
-                }
-            }
-        }
-
-    }
-
-    private fun showProducts() {
+    private fun showProducts(productList: List<ProductDetails>) {
         try {
-            val productList = ImmutableList.of(
-                QueryProductDetailsParams.Product.newBuilder()
-                    .setProductId(GENIN_PURCHASE_NAME)
-                    .setProductType(BillingClient.ProductType.INAPP)
-                    .build(),
-                QueryProductDetailsParams.Product.newBuilder()
-                    .setProductId(CHUININ_PURCHASE_NAME)
-                    .setProductType(BillingClient.ProductType.INAPP)
-                    .build(),
-                QueryProductDetailsParams.Product.newBuilder()
-                    .setProductId(KAGE_PURCHASE_NAME)
-                    .setProductType(BillingClient.ProductType.INAPP)
-                    .build()
-            )
-
-            val queryProductDetailsParams =
-                QueryProductDetailsParams.newBuilder()
-                    .setProductList(productList)
-                    .build() //ürün detaylarını bu obje aracılığıyla sorgulayacağız.
-
-            billingClient.queryProductDetailsAsync(queryProductDetailsParams) { billingResult,
-                                                                                productDetailsList ->
-                if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                    productDetails =
-                        productDetailsList //google playden ürün detayları sorgulandı ve bu ürünler buraya geldi.
-
-                    productDetailsList.forEach { productDetail ->
-                        println("product id bu -> ${productDetail.productId} product title bu -> ${productDetail.oneTimePurchaseOfferDetails?.formattedPrice}")
-                        when (productDetail.productId) {
-                            GENIN_PURCHASE_NAME -> {
-                                with(binding) {
-                                    btnSmallPurchase.text = productDetail.title
-                                    tvGeninPrice.text =
-                                        productDetail.oneTimePurchaseOfferDetails?.formattedPrice
-
-                                }
-                            }
-
-                            CHUININ_PURCHASE_NAME -> {
-                                with(binding) {
-                                    btnMediumPurchase.text = productDetail.title
-                                    tvChuninPrice.text =
-                                        productDetail.oneTimePurchaseOfferDetails?.formattedPrice
-                                }
-                            }
-
-                            KAGE_PURCHASE_NAME -> {
-                                with(binding) {
-                                    btnLargePurchase.text = productDetail.title
-                                    tvKagePrice.text =
-                                        productDetail.oneTimePurchaseOfferDetails?.formattedPrice
-                                }
-                            }
+            productList.forEach { productDetail ->
+                println("product id bu -> ${productDetail.productId} product title bu -> ${productDetail.oneTimePurchaseOfferDetails?.formattedPrice}")
+                when (productDetail.productId) {
+                    GENIN_PURCHASE_NAME -> {
+                        with(binding) {
+                            btnSmallPurchase.text =
+                                productDetail.oneTimePurchaseOfferDetails?.formattedPrice
                         }
                     }
-                } else {
-                    showToast(getString(R.string.unexpected_error))
+
+                    CHUININ_PURCHASE_NAME -> {
+                        with(binding) {
+                            btnMediumPurchase.text =
+                                productDetail.oneTimePurchaseOfferDetails?.formattedPrice
+                        }
+                    }
+
+                    KAGE_PURCHASE_NAME -> {
+                        with(binding) {
+                            btnLargePurchase.text =
+                                productDetail.oneTimePurchaseOfferDetails?.formattedPrice
+                        }
+                    }
                 }
             }
         } catch (e: Exception) {
