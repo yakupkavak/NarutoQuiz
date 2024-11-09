@@ -41,17 +41,17 @@ class MarketViewModel @Inject constructor(
     private val _error = MutableLiveData<Boolean>()
     val error: LiveData<Boolean> get() = _error
 
-    private val _adPrice = MutableLiveData<Int?>()
-    val adPrice: LiveData<Int?> get() = _adPrice
+    private val _adReward = MutableLiveData<Int?>()
+    val adReward: LiveData<Int?> get() = _adReward
 
-    private val _geninPrice = MutableLiveData<Int?>()
-    val geninPrice: LiveData<Int?> get() = _geninPrice
+    private val _geninReward = MutableLiveData<Int?>()
+    val geninReward: LiveData<Int?> get() = _geninReward
 
-    private val _chuninPrice = MutableLiveData<Int?>()
-    val chuninPrice: LiveData<Int?> get() = _chuninPrice
+    private val _chuninReward = MutableLiveData<Int?>()
+    val chuninReward: LiveData<Int?> get() = _chuninReward
 
-    private val _kagePrice = MutableLiveData<Int?>()
-    val kagePrice: LiveData<Int?> get() = _kagePrice
+    private val _kageReward = MutableLiveData<Int?>()
+    val kageReward: LiveData<Int?> get() = _kageReward
 
     private val _productList = MutableLiveData<List<ProductDetails>>()
     val productList: LiveData<List<ProductDetails>> get() = _productList
@@ -126,22 +126,22 @@ class MarketViewModel @Inject constructor(
 
     private fun getHintCount() {
         getDataCall(dataCall = { remoteConfigRepository.observeInt(AD_REMOTE_COUNT) },
-            onSuccess = { hintCount -> _adPrice.postValue(hintCount) },
+            onSuccess = { hintCount -> _adReward.postValue(hintCount) },
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } })
 
         getDataCall(dataCall = { remoteConfigRepository.observeInt(GENIN_REMOTE_COUNT) },
-            onSuccess = { hintCount -> _geninPrice.postValue(hintCount) },
+            onSuccess = { hintCount -> _geninReward.postValue(hintCount) },
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } })
 
         getDataCall(dataCall = { remoteConfigRepository.observeInt(CHUININ_REMOTE_COUNT) },
-            onSuccess = { hintCount -> _chuninPrice.postValue(hintCount) },
+            onSuccess = { hintCount -> _chuninReward.postValue(hintCount) },
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } })
 
         getDataCall(dataCall = { remoteConfigRepository.observeInt(KAGE_REMOTE_COUNT) },
-            onSuccess = { hintCount -> _kagePrice.postValue(hintCount) },
+            onSuccess = { hintCount -> _kageReward.postValue(hintCount) },
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } })
     }
