@@ -83,6 +83,9 @@
         <action
             android:id="@+id/action_userInfo_to_passwordFragment"
             app:destination="@id/passwordFragment" />
+        <action
+            android:id="@+id/action_userInfo_to_deleteFragment"
+            app:destination="@id/deleteFragment" />
     </fragment>
 
     <fragment
@@ -110,5 +113,11 @@
     <fragment
         android:id="@+id/passwordFragment"
         android:name="com.yakupkavak.narutoquiz.ui.mainScreen.password.PasswordFragment"
-        android:label="PasswordFragment" />
+        android:label="PasswordFragment"
+        tools:layout="@layout/fragment_password" />
+    <fragment
+        android:id="@+id/deleteFragment"
+        android:name="com.yakupkavak.narutoquiz.ui.mainScreen.delete.DeleteFragment"
+        android:label="fragment_delete"
+        tools:layout="@layout/fragment_delete" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.yakupkavak.narutoquiz.ui.mainScreen.password
+package com.yakupkavak.narutoquiz.ui.mainScreen.delete
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,9 +8,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class PasswordViewModel @Inject constructor(
-    private val authRepository: AuthRepository
-) : BaseViewModel() {
+class DeleteViewModel @Inject constructor(private val authRepository: AuthRepository) :
+    BaseViewModel() {
 
     private val _success = MutableLiveData<Int?>()
     val success: LiveData<Int?> get() = _success
@@ -21,18 +20,18 @@ class PasswordViewModel @Inject constructor(
     private val _error = MutableLiveData<Boolean>()
     val error: LiveData<Boolean> get() = _error
 
-    fun changePassword(currentPassword: String, newPassword: String) {
+    fun deleteAccount(currentPassword: String) {
         getDataCall(
             dataCall = {
-                authRepository.changePassword(
-                    currentPassword = currentPassword,
-                    newPassword = newPassword
+                authRepository.deleteAccount(
+                    currentPassword = currentPassword
                 )
             },
-            onSuccess = { data -> _success.postValue(data).also { _loading.postValue(false) } },
+            onSuccess = { stringId ->
+                _success.postValue(stringId).also { _loading.postValue(false) }
+            },
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } }
         )
     }
-
 }
