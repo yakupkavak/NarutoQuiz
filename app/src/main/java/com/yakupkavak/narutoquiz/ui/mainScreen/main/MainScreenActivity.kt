@@ -3,11 +3,13 @@ package com.yakupkavak.narutoquiz.ui.mainScreen.main
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.ads.AdRequest
@@ -42,6 +44,7 @@ class MainScreenActivity : AppCompatActivity() {
     private var isLoading = false
     private val TAG = "MainScreenActivity"
     private lateinit var googleMobileAdsConsentManager: GoogleMobileAdsConsentManager
+    private val sharedViewModel: SharedViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -128,9 +131,8 @@ class MainScreenActivity : AppCompatActivity() {
 
     private fun showAd() {
         rewardedAd?.let { ad ->
-            ad.show(this) { rewardItem ->
-                val rewardAmount = rewardItem.amount
-                Log.d(TAG, "User earned the reward. $rewardAmount")
+            ad.show(this) { _ ->
+                sharedViewModel.adRewardHint()
             }
         } ?: run {
             showToast(getString(R.string.unexpected_error))

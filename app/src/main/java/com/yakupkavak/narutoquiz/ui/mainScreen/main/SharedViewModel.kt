@@ -24,8 +24,17 @@ class SharedViewModel @Inject constructor(
     private val _userRank = MutableLiveData<Int?>()
     val userRank: LiveData<Int?> get() = _userRank
 
+    private val _adSuccess = MutableLiveData<Boolean>()
+    val adSuccess: LiveData<Boolean> get() = _adSuccess
+
+    private val _loading = MutableLiveData<Boolean>()
+    val loading: LiveData<Boolean> get() = _loading
+
     private val _error = MutableLiveData<Boolean>()
     val error: LiveData<Boolean> get() = _error
+
+    private var adRewardCount = 0
+    private var userHintCount: Int? = null
 
     init {
         getDataCall(
@@ -37,6 +46,30 @@ class SharedViewModel @Inject constructor(
             onError = { _error.postValue(true) }
         )
         getUserToken()
+    }
+
+    fun setData(adReward: Int) {
+        adRewardCount = adReward
+        userHintCount = _tokenCount.value
+    }
+
+    fun adRewardHint() {
+        if (adRewardCount == 0 || userHintCount == null) {
+            _error.postValue(true)
+        } else {
+            userHintCount?.let { userToken ->
+                val newHintCount = (adRewardCount + userToken)
+                getDataCall(
+                    dataCall = { firestoreRepository.updateUserToken(newHintCount) },
+                    onSuccess = { newHint ->
+                        _adSuccess.postValue(true).also { _error.postValue(false) }
+                            .also { _tokenCount.postValue(newHint ?: 0) }
+                    },
+                    onLoading = null,
+                    onError = { _error.postValue(true) }
+                )
+            }
+        }
     }
 
     fun showHint() {
@@ -61,9 +94,5 @@ class SharedViewModel @Inject constructor(
             onLoading = null,
             onError = { _error.postValue(true) }
         )
-    }
-
-    fun updateUserRank() {
-
     }
 }

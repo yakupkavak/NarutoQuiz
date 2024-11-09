@@ -5,18 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.android.billingclient.api.BillingClient
 import com.android.billingclient.api.BillingClientStateListener
 import com.android.billingclient.api.BillingFlowParams
 import com.android.billingclient.api.BillingResult
-import com.android.billingclient.api.ConsumeParams
 import com.android.billingclient.api.ProductDetails
-import com.android.billingclient.api.Purchase
 import com.android.billingclient.api.PurchasesUpdatedListener
-import com.android.billingclient.api.QueryProductDetailsParams
-import com.google.common.collect.ImmutableList
 import com.yakupkavak.narutoquiz.R
 import com.yakupkavak.narutoquiz.databinding.FragmentMarketBinding
 import com.yakupkavak.narutoquiz.ui.extension.navigate
@@ -42,8 +39,9 @@ class MarketFragment : Fragment() {
     private lateinit var billingFlowParam: BillingFlowParams
     private var _binding: FragmentMarketBinding? = null
     private val viewModel: MarketViewModel by viewModels()
-    private val sharedViewModel: SharedViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
     private val binding get() = _binding!!
+    private var adRewardCount = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,6 +66,7 @@ class MarketFragment : Fragment() {
     private fun setOnClick() {
         with(binding) {
             btnAd.setOnClickListener {
+                sharedViewModel.setData(adRewardCount)
                 showRewardedAd()
             }
             btnSmallPurchase.setOnClickListener {
@@ -83,28 +82,28 @@ class MarketFragment : Fragment() {
     }
 
     private fun observeViewModel() {
-        observe(viewModel.adPrice) { adPrice ->
-            adPrice?.let { price ->
-                binding.tvStudentPrice.text = price.toString()
+        observe(viewModel.adReward) { adPrice ->
+            adPrice?.let { reward ->
+                binding.tvStudentReward.text = reward.toString()
+                adRewardCount = reward
             }
         }
 
-        observe(viewModel.geninPrice) { geninPrice ->
-            geninPrice?.let { price ->
-                binding.tvGeninPrice.text = price.toString()
+        observe(viewModel.geninReward) { geninPrice ->
+            geninPrice?.let { reward ->
+                binding.tvGeninReward.text = reward.toString()
             }
         }
 
-        observe(viewModel.chuninPrice) { chuninPrice ->
-            chuninPrice?.let { price ->
-                binding.tvChuninPrice.text = price.toString()
+        observe(viewModel.chuninReward) { chuninPrice ->
+            chuninPrice?.let { reward ->
+                binding.tvChuninReward.text = reward.toString()
             }
         }
 
-        observe(viewModel.kagePrice) { kagePrice ->
-            kagePrice?.let { price ->
-                println("kage price remote ->$kagePrice")
-                binding.tvKagePrice.text = price.toString()
+        observe(viewModel.kageReward) { kagePrice ->
+            kagePrice?.let { reward ->
+                binding.tvKageReward.text = reward.toString()
             }
         }
 
@@ -135,6 +134,15 @@ class MarketFragment : Fragment() {
     private fun observeSharedViewModel() {
         observe(sharedViewModel.tokenCount) { tokenCount ->
             binding.tvTokenCount.text = getString(R.string.token_count, tokenCount)
+        }
+        observe(sharedViewModel.adSuccess) {
+            if (adRewardCount != 0) {
+                if (it) {
+                    showToast(getString(R.string.gain_hint, adRewardCount))
+                } else {
+                    showToast(getString(R.string.unexpected_error))
+                }
+            }
         }
     }
 
