@@ -87,6 +87,9 @@ class UserInfoFragment : Fragment() {
             tvChangePassword.setOnClickListener {
                 navigate(UserInfoFragmentDirections.actionUserInfoToPasswordFragment())
             }
+            tvDeleteAccount.setOnClickListener {
+                navigate(UserInfoFragmentDirections.actionUserInfoToDeleteFragment())
+            }
         }
     }
 

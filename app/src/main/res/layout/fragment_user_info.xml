@@ -77,6 +77,17 @@
         app:layout_constraintTop_toBottomOf="@id/tvChangePassword" />
 
     <TextView
+        android:id="@+id/tvDeleteAccount"
+        style="@style/MediumSizeMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/delete_account"
+        android:textColor="@color/indicator_color"
+        app:layout_constraintStart_toEndOf="@id/gdlStartVertical"
+        app:layout_constraintTop_toBottomOf="@id/tvHintCount" />
+
+    <TextView
         android:id="@+id/tvGameInfo"
         style="@style/XLargeSizeMedium"
         android:layout_width="wrap_content"
@@ -84,7 +95,7 @@
         android:layout_marginTop="@dimen/margin_large"
         android:text="@string/game"
         app:layout_constraintStart_toEndOf="@id/gdlStartVertical"
-        app:layout_constraintTop_toBottomOf="@id/tvHintCount" />
+        app:layout_constraintTop_toBottomOf="@id/tvDeleteAccount" />
 
     <View
         android:id="@+id/viewGame"

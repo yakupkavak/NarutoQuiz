@@ -57,4 +57,20 @@ class AuthRepository @Inject constructor(
         }
     }
 
+    suspend fun deleteAccount(currentPassword: String): Resource<Int> {
+        val user = auth.currentUser
+        val credential =
+            EmailAuthProvider.getCredential(authProvider.getUserMail() ?: "", currentPassword)
+        return withContext(Dispatchers.IO) {
+            try {
+                user?.reauthenticate(credential)?.await()
+                user?.delete()?.await()
+                return@withContext Resource.success(R.string.delete_success)
+            } catch (e: FirebaseAuthInvalidCredentialsException) {
+                return@withContext Resource.error(error = e)
+            } catch (e: Exception) {
+                return@withContext Resource.error(error = e)
+            }
+        }
+    }
 }

@@ -124,5 +124,8 @@
 
     <string name="empty_edit_text">There is an empty place</string>
     <string name="password_not_equal">Passwords not equal !</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="delete">Delete</string>
+    <string name="delete_success">Account deleted.</string>
 
 </resources>
