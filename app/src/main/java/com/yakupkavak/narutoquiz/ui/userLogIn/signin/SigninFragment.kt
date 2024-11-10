@@ -38,16 +38,25 @@ class SigninFragment : Fragment() {
     }
 
     private fun setObserve() {
+        observe(viewModel.userSession) {
+            if (it) {
+                intentToGame()
+            }
+        }
         observe(viewModel.signInSuccess) {
             if (it) {
-                Intent(requireContext(), MainScreenActivity::class.java).also { intent ->
-                    startActivity(intent)
-                }
-                requireActivity().finish()
+                intentToGame()
             } else {
                 showToast(getString(R.string.sign_in_error))
             }
         }
+    }
+
+    private fun intentToGame() {
+        Intent(requireContext(), MainScreenActivity::class.java).also { intent ->
+            startActivity(intent)
+        }
+        requireActivity().finish()
     }
 
     private fun setOnClick() {

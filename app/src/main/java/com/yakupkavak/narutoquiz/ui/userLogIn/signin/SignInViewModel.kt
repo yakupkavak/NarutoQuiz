@@ -18,6 +18,17 @@ class SignInViewModel @Inject constructor(
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> get() = _loading
 
+    private val _userSession = MutableLiveData<Boolean>()
+    val userSession: LiveData<Boolean> get() = _userSession
+
+    init {
+        if (authRepository.isUserSignedIn()) {
+            _userSession.postValue(true)
+        } else {
+            _userSession.postValue(false)
+        }
+    }
+
     fun signIn(userMail: String, userPassword: String) {
         getDataCall(
             dataCall = {

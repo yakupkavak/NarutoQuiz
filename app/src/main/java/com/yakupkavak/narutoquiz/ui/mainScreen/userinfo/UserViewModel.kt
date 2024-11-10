@@ -2,6 +2,7 @@ package com.yakupkavak.narutoquiz.ui.mainScreen.userinfo
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.google.firebase.auth.FirebaseAuth
 import com.yakupkavak.narutoquiz.data.network.repository.RemoteConfigRepository
 import com.yakupkavak.narutoquiz.data.network.util.ServiceCountConst.REMOTE_ABOUT_GAME
 import com.yakupkavak.narutoquiz.ui.base.BaseViewModel
@@ -10,6 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UserViewModel @Inject constructor(
+    private val auth: FirebaseAuth,
     private val remoteConfigRepository: RemoteConfigRepository
 ) : BaseViewModel() {
 
@@ -29,6 +31,10 @@ class UserViewModel @Inject constructor(
             onLoading = { _loading.postValue(true) },
             onError = { _error.postValue(true).also { _loading.postValue(false) } }
         )
+    }
+
+    fun signOut() {
+        auth.signOut()
     }
 
     fun resetData() {

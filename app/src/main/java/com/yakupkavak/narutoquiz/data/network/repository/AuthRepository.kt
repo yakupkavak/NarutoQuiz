@@ -16,7 +16,7 @@ import javax.inject.Inject
 import kotlin.coroutines.resume
 
 class AuthRepository @Inject constructor(
-    val auth: FirebaseAuth,
+    private val auth: FirebaseAuth,
     val authProvider: AuthProvider
 ) : BaseRepository() {
 
@@ -72,5 +72,9 @@ class AuthRepository @Inject constructor(
                 return@withContext Resource.error(error = e)
             }
         }
+    }
+
+    fun isUserSignedIn(): Boolean {
+        return auth.currentUser != null
     }
 }
