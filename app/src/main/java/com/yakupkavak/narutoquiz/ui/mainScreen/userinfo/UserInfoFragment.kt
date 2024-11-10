@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import com.google.firebase.auth.FirebaseAuth
 import com.yakupkavak.narutoquiz.R
 import com.yakupkavak.narutoquiz.databinding.FragmentUserInfoBinding
 import com.yakupkavak.narutoquiz.ui.extension.navigate
@@ -17,6 +18,7 @@ import com.yakupkavak.narutoquiz.ui.mainScreen.main.InformationDialogFragment
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.SharedViewModel
 import com.yakupkavak.narutoquiz.ui.userLogIn.SignActivity
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class UserInfoFragment : Fragment() {
@@ -73,6 +75,7 @@ class UserInfoFragment : Fragment() {
     private fun setOnClick() {
         with(binding) {
             btnCheckOut.setOnClickListener {
+                viewModel.signOut()
                 Intent(requireContext(), SignActivity::class.java).also { intent ->
                     startActivity(intent)
                 }

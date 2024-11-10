@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import com.yakupkavak.narutoquiz.R
 import com.yakupkavak.narutoquiz.databinding.FragmentDeleteBinding
 import com.yakupkavak.narutoquiz.ui.extension.observe
+import com.yakupkavak.narutoquiz.ui.extension.popBackStack
 import com.yakupkavak.narutoquiz.ui.extension.showToast
 import com.yakupkavak.narutoquiz.ui.userLogIn.SignActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -68,6 +69,9 @@ class DeleteFragment : Fragment() {
                 }else{
                     viewModel.deleteAccount(etCurrentPassword.text.toString())
                 }
+            }
+            fabClose.setOnClickListener{
+                popBackStack()
             }
         }
     }
