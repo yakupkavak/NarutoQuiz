@@ -31,7 +31,7 @@ class FirestoreRepository @Inject constructor(
 ) : BaseRepository() {
 
     suspend fun postGameScore(trueAnswer: Int?) {
-        if (trueAnswer != null) {
+        if (trueAnswer != null && trueAnswer != 0) {
             withContext(Dispatchers.IO) {
                 val user = authProvider.getUserName()
                 user?.let { currentUserName ->
@@ -50,7 +50,7 @@ class FirestoreRepository @Inject constructor(
                                     Log.w(TAG, "Error adding document", e)
                                 }
                         } else {
-                            if (trueAnswer > currentDocument.data.trueCount){
+                            if (trueAnswer > currentDocument.data.trueCount) {
                                 currentDocument.data.documentReference?.update(gameStation)
                             }
                         }

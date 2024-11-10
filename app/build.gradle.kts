@@ -12,7 +12,7 @@ plugins {
 val localProperties = Properties()
 val localPropertiesFile = rootProject.file("local.properties")
 
-if(localPropertiesFile.exists()) {
+if (localPropertiesFile.exists()) {
     localPropertiesFile.inputStream().use {
         localProperties.load(it)
     }
@@ -29,8 +29,21 @@ android {
         versionCode = 2
         versionName = "1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String","GEMINI_API", value = localProperties["GEMINI_API_KEY"].toString())
-        buildConfigField("String","BASE_URL", value = localProperties["DATABASE_API_KEY"].toString())
+        buildConfigField(
+            "String",
+            "GEMINI_API",
+            value = localProperties["GEMINI_API_KEY"].toString()
+        )
+        buildConfigField(
+            "String",
+            "BASE_URL",
+            value = localProperties["DATABASE_API_KEY"].toString()
+        )
+        buildConfigField(
+            "String",
+            "REWARD_AD_KEY",
+            value = localProperties["REWARD_AD_KEY"].toString()
+        )
     }
 
     buildTypes {
