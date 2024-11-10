@@ -34,11 +34,19 @@
         app:lottie_rawRes="@raw/naruto" />
 
     <androidx.constraintlayout.widget.Group
-        android:id="@+id/group"
+        android:id="@+id/classicGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="visible"
+        android:visibility="gone"
         app:constraint_referenced_ids="tvQuestion,cvOne,cvTwo,cvThree
+        ,cvFour,tvOne,tvTwo,tvThree,tvFour,btnCheck" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/challengeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tvQuestionNumber,tvQuestion,cvOne,cvTwo,cvThree
         ,cvFour,tvOne,tvTwo,tvThree,tvFour,btnCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -111,6 +119,18 @@
         app:trackThickness="@dimen/margin_small" />
 
     <TextView
+        android:id="@+id/tvQuestionNumber"
+        style="@style/LargeSizeMediumGray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="@string/increase_counter"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTopic" />
+
+    <TextView
         android:id="@+id/tvQuestion"
         style="@style/LargeSizeMedium"
         android:layout_width="0dp"
@@ -121,7 +141,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearProgress" />
+        app:layout_constraintTop_toBottomOf="@id/gdlBeginningHorizontal" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvOne"
@@ -309,6 +329,13 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gdlBeginningHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gdlFirstStartHorizontal"

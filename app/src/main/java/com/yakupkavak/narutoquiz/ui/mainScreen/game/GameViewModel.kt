@@ -276,7 +276,7 @@ class GameViewModel @Inject constructor(
         return if (_currentGameId.value != ChallangeGameId) {
             _questionNumber.value != GameRepeatCount
         } else {
-            _falseAnswer.value == 0
+            _falseAnswer.value == 0 //there is no wrong choice in the challenge mod.
         }
     }
 

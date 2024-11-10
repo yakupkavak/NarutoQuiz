@@ -127,5 +127,6 @@
     <string name="delete_account">Delete Account</string>
     <string name="delete">Delete</string>
     <string name="delete_success">Account deleted.</string>
+    <string name="question_number">Question number: %1$d</string>
 
 </resources>
