@@ -9,7 +9,6 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.ads.AdRequest
@@ -22,9 +21,9 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
+import com.yakupkavak.narutoquiz.BuildConfig
 import com.yakupkavak.narutoquiz.data.network.repository.FirestoreRepository
 import com.yakupkavak.narutoquiz.ui.extension.showToast
-import com.yakupkavak.narutoquiz.ui.mainScreen.util.AdConst.AD_UNIT_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.util.AdConst.TEST_DEVICE_HASHED_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.util.GoogleMobileAdsConsentManager
 import kotlinx.coroutines.CoroutineScope
@@ -90,7 +89,7 @@ class MainScreenActivity : AppCompatActivity() {
         isLoading = true
         RewardedAd.load(
             this,
-            AD_UNIT_ID,
+            BuildConfig.REWARD_AD_KEY,
             adRequest,
             object : RewardedAdLoadCallback() {
                 override fun onAdFailedToLoad(adError: LoadAdError) {
