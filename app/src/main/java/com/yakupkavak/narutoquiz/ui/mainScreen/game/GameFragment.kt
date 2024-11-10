@@ -72,8 +72,8 @@ class GameFragment : Fragment() {
     }
 
     private fun setObserveViewModel() {
-        observe(viewModel.currentGameTopic) {
-            binding.tvTopic.text = it
+        observe(viewModel.currentGameTopic) { gameTopic ->
+            binding.tvTopic.text = gameTopic
         }
         observe(viewModel.questionId) { getQuestionId ->
             questionId = getQuestionId
@@ -121,8 +121,14 @@ class GameFragment : Fragment() {
                 }
             }
         }
-        observe(viewModel.currentGameId) {
-            currentGameId = it
+        observe(viewModel.currentGameId) { gameId ->
+            currentGameId = gameId
+            if (gameId == ChallangeGameId) {
+                with(binding) {
+                    linearProgress.isVisible = false
+                    tvQuestionNumber.isVisible = true
+                }
+            }
         }
         observe(viewModel.secondOption) {
             with(binding) {
@@ -157,8 +163,11 @@ class GameFragment : Fragment() {
                 }
             }
         }
-        observe(viewModel.questionNumber) {
-            binding.linearProgress.progress = it
+        observe(viewModel.questionNumber) { questionNumber ->
+            with(binding) {
+                linearProgress.progress = questionNumber
+                tvQuestionNumber.text = getString(R.string.question_number, questionNumber)
+            }
         }
         observe(viewModel.answerSelection) {
             it.trueAnswer?.let { trueAnswerId ->
@@ -203,8 +212,12 @@ class GameFragment : Fragment() {
         observe(viewModel.loading) {
             if (it) {
                 with(binding) {
+                    if (currentGameId == ChallangeGameId) {
+                        challengeGroup.isVisible = false
+                    } else {
+                        classicGroup.isVisible = false
+                    }
                     fabGemini.isVisible = false
-                    group.isVisible = false
                     lottieAnimationLoading.isVisible = true
                     lottieAnimationNaruto.isVisible = true
                     lottieAnimationLoading.playAnimation()
@@ -212,8 +225,12 @@ class GameFragment : Fragment() {
                 }
             } else {
                 with(binding) {
+                    if (currentGameId == ChallangeGameId) {
+                        challengeGroup.isVisible = true
+                    } else {
+                        classicGroup.isVisible = true
+                    }
                     fabGemini.isVisible = currentGameId != ChallangeGameId
-                    group.isVisible = true
                     lottieAnimationLoading.isVisible = false
                     lottieAnimationNaruto.isVisible = false
                     lottieAnimationLoading.cancelAnimation()
@@ -239,8 +256,8 @@ class GameFragment : Fragment() {
     }
 
     private fun setObserveSharedViewModel() {
-        observe(sharedViewModel.tokenCount){ tokenCount ->
-            if (tokenCount == 0){
+        observe(sharedViewModel.tokenCount) { tokenCount ->
+            if (tokenCount == 0) {
                 binding.fabGemini.isEnabled = false
             }
             binding.tvTokenCount.text = tokenCount.toString()
