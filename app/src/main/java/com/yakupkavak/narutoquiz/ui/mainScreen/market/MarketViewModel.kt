@@ -158,21 +158,21 @@ class MarketViewModel @Inject constructor(
 
         when (productName) {
             GENIN_PURCHASE_NAME -> {
-                getDataCall(dataCall = { remoteConfigRepository.observeInt(GENIN_PURCHASE_NAME) },
+                getDataCall(dataCall = { remoteConfigRepository.observeInt(GENIN_REMOTE_COUNT) },
                     onSuccess = { tokenCount -> addUserToken(tokenCount) },
                     onLoading = { _loading.postValue(true) },
                     onError = { _error.postValue(true).also { _loading.postValue(false) } })
             }
 
             CHUININ_PURCHASE_NAME -> {
-                getDataCall(dataCall = { remoteConfigRepository.observeInt(CHUININ_PURCHASE_NAME) },
+                getDataCall(dataCall = { remoteConfigRepository.observeInt(CHUININ_REMOTE_COUNT) },
                     onSuccess = { tokenCount -> addUserToken(tokenCount) },
                     onLoading = { _loading.postValue(true) },
                     onError = { _error.postValue(true).also { _loading.postValue(false) } })
             }
 
             KAGE_PURCHASE_NAME -> {
-                getDataCall(dataCall = { remoteConfigRepository.observeInt(KAGE_PURCHASE_NAME) },
+                getDataCall(dataCall = { remoteConfigRepository.observeInt(KAGE_REMOTE_COUNT) },
                     onSuccess = { tokenCount -> addUserToken(tokenCount) },
                     onLoading = { _loading.postValue(true) },
                     onError = { _error.postValue(true).also { _loading.postValue(false) } })
