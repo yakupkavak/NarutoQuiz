@@ -18,20 +18,20 @@ import com.yakupkavak.narutoquiz.ui.extension.observe
 import com.yakupkavak.narutoquiz.ui.extension.popBackStack
 import com.yakupkavak.narutoquiz.ui.extension.setBackground
 import com.yakupkavak.narutoquiz.ui.extension.showToast
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AskClanId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AskFamilyId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AskJinckuriId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AskTeamId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AskVoiceActorId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ChallangeGameId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.FirstOptionId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LastOptionId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SecondOptionId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ThirdOptionId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.firstChallengeLevel
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.lastChallengeLevel
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.secondChallengeLevel
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.thirdChallengeLevel
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_CLAN_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_FAMILY_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_JINCURIKI_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_TEAM_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_VOICE_ACTOR_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CHALLENGE_GAME_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.FIRST_OPTION_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LAST_OPTION_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SECOND_OPTION_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.THIRD_OPTION_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.FIRST_CHALLENGE_LEVEL
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LAST_CHALLENGE_LEVEL
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SECOND_CHALLENGE_LEVEL
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.THIRD_CHALLENGE_LEVEL
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.ErrorDialogFragment
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.GameDialogFragment
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.HintDialogFragment
@@ -85,23 +85,23 @@ class GameFragment : Fragment() {
         observe(viewModel.questionText) {
             with(binding) {
                 when (questionId) {
-                    AskFamilyId -> {
+                    ASK_FAMILY_ID -> {
                         tvQuestion.text = getString(R.string.family_question, it)
                     }
 
-                    AskVoiceActorId -> {
+                    ASK_VOICE_ACTOR_ID -> {
                         tvQuestion.text = getString(R.string.voice_question, it)
                     }
 
-                    AskClanId -> {
+                    ASK_CLAN_ID -> {
                         tvQuestion.text = getString(R.string.clan_question, it)
                     }
 
-                    AskTeamId -> {
+                    ASK_TEAM_ID -> {
                         tvQuestion.text = getString(R.string.team_question, it)
                     }
 
-                    AskJinckuriId -> {
+                    ASK_JINCURIKI_ID -> {
                         tvQuestion.text = getString(R.string.jinckuri_question, it)
                     }
                 }
@@ -121,13 +121,13 @@ class GameFragment : Fragment() {
                 cvOne.setOnClickListener {
                     clearSelection()
                     cvOne.setBackground(R.color.selected_answer)
-                    selectedOptionId = FirstOptionId
+                    selectedOptionId = FIRST_OPTION_ID
                 }
             }
         }
         observe(viewModel.currentGameId) { gameId ->
             currentGameId = gameId
-            if (gameId == ChallangeGameId) {
+            if (gameId == CHALLENGE_GAME_ID) {
                 with(binding) {
                     linearProgress.isVisible = false
                     tvQuestionNumber.isVisible = true
@@ -141,7 +141,7 @@ class GameFragment : Fragment() {
                 cvTwo.setOnClickListener {
                     clearSelection()
                     cvTwo.setBackground(R.color.selected_answer)
-                    selectedOptionId = SecondOptionId
+                    selectedOptionId = SECOND_OPTION_ID
                 }
             }
         }
@@ -152,7 +152,7 @@ class GameFragment : Fragment() {
                 cvThree.setOnClickListener {
                     clearSelection()
                     cvThree.setBackground(R.color.selected_answer)
-                    selectedOptionId = ThirdOptionId
+                    selectedOptionId = THIRD_OPTION_ID
                 }
             }
         }
@@ -163,7 +163,7 @@ class GameFragment : Fragment() {
                 cvFour.setOnClickListener {
                     clearSelection()
                     cvFour.setBackground(R.color.selected_answer)
-                    selectedOptionId = LastOptionId
+                    selectedOptionId = LAST_OPTION_ID
                 }
             }
         }
@@ -171,13 +171,13 @@ class GameFragment : Fragment() {
             with(binding) {
                 linearProgress.progress = questionNumber
                 tvQuestionNumber.text = getString(R.string.question_number, questionNumber)
-                if (questionNumber > lastChallengeLevel) {
+                if (questionNumber > LAST_CHALLENGE_LEVEL) {
                     tvQuestionNumber.setTextAppearance(R.style.LastChallengeLevel)
-                } else if (questionNumber > thirdChallengeLevel) {
+                } else if (questionNumber > THIRD_CHALLENGE_LEVEL) {
                     tvQuestionNumber.setTextAppearance(R.style.ThirdChallengeLevel)
-                } else if (questionNumber > secondChallengeLevel) {
+                } else if (questionNumber > SECOND_CHALLENGE_LEVEL) {
                     tvQuestionNumber.setTextAppearance(R.style.SecondChallengeLevel)
-                } else if (questionNumber > firstChallengeLevel) {
+                } else if (questionNumber > FIRST_CHALLENGE_LEVEL) {
                     tvQuestionNumber.setTextAppearance(R.style.FirstChallengeLevel)
                 }
             }
@@ -185,38 +185,38 @@ class GameFragment : Fragment() {
         observe(viewModel.answerSelection) {
             it.trueAnswer?.let { trueAnswerId ->
                 when (trueAnswerId) {
-                    FirstOptionId -> {
+                    FIRST_OPTION_ID -> {
                         binding.cvOne.setBackground(R.color.true_answer)
                     }
 
-                    SecondOptionId -> {
+                    SECOND_OPTION_ID -> {
                         binding.cvTwo.setBackground(R.color.true_answer)
                     }
 
-                    ThirdOptionId -> {
+                    THIRD_OPTION_ID -> {
                         binding.cvThree.setBackground(R.color.true_answer)
                     }
 
-                    LastOptionId -> {
+                    LAST_OPTION_ID -> {
                         binding.cvFour.setBackground(R.color.true_answer)
                     }
                 }
             }
             it.falseAnswer?.let { falseAnswerId ->
                 when (falseAnswerId) {
-                    FirstOptionId -> {
+                    FIRST_OPTION_ID -> {
                         binding.cvOne.setBackground(R.color.false_answer)
                     }
 
-                    SecondOptionId -> {
+                    SECOND_OPTION_ID -> {
                         binding.cvTwo.setBackground(R.color.false_answer)
                     }
 
-                    ThirdOptionId -> {
+                    THIRD_OPTION_ID -> {
                         binding.cvThree.setBackground(R.color.false_answer)
                     }
 
-                    LastOptionId -> {
+                    LAST_OPTION_ID -> {
                         binding.cvFour.setBackground(R.color.false_answer)
                     }
                 }
@@ -225,7 +225,7 @@ class GameFragment : Fragment() {
         observe(viewModel.loading) {
             if (it) {
                 with(binding) {
-                    if (currentGameId == ChallangeGameId) {
+                    if (currentGameId == CHALLENGE_GAME_ID) {
                         challengeGroup.isVisible = false
                     } else {
                         classicGroup.isVisible = false
@@ -238,12 +238,12 @@ class GameFragment : Fragment() {
                 }
             } else {
                 with(binding) {
-                    if (currentGameId == ChallangeGameId) {
+                    if (currentGameId == CHALLENGE_GAME_ID) {
                         challengeGroup.isVisible = true
                     } else {
                         classicGroup.isVisible = true
                     }
-                    fabGemini.isVisible = currentGameId != ChallangeGameId
+                    fabGemini.isVisible = currentGameId != CHALLENGE_GAME_ID
                     lottieAnimationLoading.isVisible = false
                     lottieAnimationNaruto.isVisible = false
                     lottieAnimationLoading.cancelAnimation()
