@@ -2,14 +2,14 @@
 <resources>
 
     <string name="app_name">Naruto Quiz</string>
-    <string name="day">Loading…</string>
+    <string name="loading">Loading</string>
     <string name="counter_menu">Counter</string>
     <string name="zero">0</string>
     <string name="use_viewmodel">Use ViewModel</string>
     <string name="increase_counter">Increase Counter</string>
     <string name="guess_menu">Guess</string>
     <string name="username_too_long">Username can\'t be over 16 characters</string>
-    <string name="password_too_low">Past can\'t be less than 8 characters</string>
+    <string name="password_too_low">Password can\'t be less than 8 characters</string>
     <string name="refresh_describtion">refresh</string>
     <string name="one">1</string>
     <string name="two">2</string>
