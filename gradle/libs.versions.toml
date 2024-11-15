@@ -27,6 +27,7 @@ navigationFragmentKtx = "2.8.3"
 netJsonKotlinVersion = "4.10"
 playServicesAds = "23.5.0"
 playServicesAuthVersion = "21.2.0"
+playServicesGamesV2 = "20.1.2"
 retrofit = "2.11.0"
 lottie = "3.4.0"
 roomVersion = "2.6.1"
@@ -72,6 +73,7 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 net-pwall-json-json-kotlin = { module = "net.pwall.json:json-kotlin", version.ref = "netJsonKotlinVersion" }
 play-services-ads = { module = "com.google.android.gms:play-services-ads", version.ref = "playServicesAds" }
+play-services-games-v2 = { module = "com.google.android.gms:play-services-games-v2", version.ref = "playServicesGamesV2" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit2-converter-jackson = { module = "com.squareup.retrofit2:converter-jackson", version.ref = "converterJacksonVersion" }
 firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
