@@ -56,13 +56,16 @@ class MarketViewModel @Inject constructor(
     private val _productList = MutableLiveData<List<ProductDetails>>()
     val productList: LiveData<List<ProductDetails>> get() = _productList
 
+    private val _newHintCount = MutableLiveData<Int>()
+    val newHintCount: LiveData<Int> get() = _newHintCount
+
     private var userTokenCount = 0
 
     init {
-        getHintCount()
+        setData()
     }
 
-    fun handlePurchase(billingClient: BillingClient,purchase: Purchase) {
+    fun handlePurchase(billingClient: BillingClient, purchase: Purchase) {
         val consumeParams =
             ConsumeParams.newBuilder().setPurchaseToken(purchase.purchaseToken).build()
         consumePurchase(billingClient, consumeParams)
@@ -124,7 +127,16 @@ class MarketViewModel @Inject constructor(
         }
     }
 
-    private fun getHintCount() {
+    private fun setData() {
+        getDataCall(dataCall = { firestoreRepository.getUserToken() },
+            onSuccess = { tokenCount ->
+                if (tokenCount != null) {
+                    userTokenCount = tokenCount
+                }
+            },
+            onLoading = { _loading.postValue(true) },
+            onError = { _error.postValue(true).also { _loading.postValue(false) } })
+
         getDataCall(dataCall = { remoteConfigRepository.observeInt(AD_REMOTE_COUNT) },
             onSuccess = { hintCount -> _adReward.postValue(hintCount) },
             onLoading = { _loading.postValue(true) },
@@ -147,15 +159,6 @@ class MarketViewModel @Inject constructor(
     }
 
     private fun buyProduct(productName: String) {
-        getDataCall(dataCall = { firestoreRepository.getUserToken() },
-            onSuccess = { tokenCount ->
-                if (tokenCount != null) {
-                    userTokenCount = tokenCount
-                }
-            },
-            onLoading = { _loading.postValue(true) },
-            onError = { _error.postValue(true).also { _loading.postValue(false) } })
-
         when (productName) {
             GENIN_PURCHASE_NAME -> {
                 getDataCall(dataCall = { remoteConfigRepository.observeInt(GENIN_REMOTE_COUNT) },
@@ -182,9 +185,11 @@ class MarketViewModel @Inject constructor(
 
     private fun addUserToken(tokenCount: Int?) {
         tokenCount?.let { token ->
-            getDataCall(dataCall = { firestoreRepository.updateUserToken(updateToken = (userTokenCount + token)) },
+            val newTokenCount = (userTokenCount + token)
+            getDataCall(dataCall = { firestoreRepository.updateUserToken(updateToken = newTokenCount) },
                 onSuccess = {
                     _success.postValue(tokenCount).also { _loading.postValue(false) }
+                        .also { _newHintCount.postValue(newTokenCount) }
                 },
                 onLoading = { _loading.postValue(true) },
                 onError = { _error.postValue(true).also { _loading.postValue(false) } })

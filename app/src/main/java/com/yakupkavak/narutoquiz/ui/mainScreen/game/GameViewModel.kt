@@ -285,7 +285,6 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun gameOver() {
-
         _finishGame.postValue(listOf(_trueAnswer.value, _falseAnswer.value))
         firestoreRepository.postGameScore(trueAnswer = _trueAnswer.value)
 
