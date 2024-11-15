@@ -18,31 +18,31 @@ import com.yakupkavak.narutoquiz.domain.extension.getFirstNonNullField
 import com.yakupkavak.narutoquiz.ui.base.BaseViewModel
 import com.yakupkavak.narutoquiz.ui.extension.getRandom
 import com.yakupkavak.narutoquiz.ui.extension.getRandomNumList
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AkatsukiGameId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AkatsukiSize
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AskClanId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AskFamilyId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AskJinckuriId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AskTeamId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AskVoiceActorId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ChallangeGameId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CharacterPageRange
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ClanGameId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ClanPageSize
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ClassicGameId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.FirstCharacterId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.FirstOptionId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.GameRepeatCount
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LastCharacterId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LastOptionId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SecondCharactedId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SecondOptionId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TailPageRange
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TailedGameId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TeamGameId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TeamPageSize
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ThirdCharacterId
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ThirdOptionId
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AKATSUKI_GAME_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AKATSUKI_SIZE
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_CLAN_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_FAMILY_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_JINCURIKI_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_TEAM_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_VOICE_ACTOR_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CHALLENGE_GAME_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CHARACTER_PAGE_RANGE
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CLAN_GAME_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CLAN_PAGE_SIZE
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CLASSIC_GAME_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.FIRST_CHARACTER_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.FIRST_OPTION_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.GAME_REPEAT_COUNT
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LAST_CHARACTER_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LAST_OPTION_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SECOND_CHARACTER_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SECOND_OPTION_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TAIL_PAGE_RANGE
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TAILED_GAME_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TEAM_GAME_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TEAM_PAGE_SIZE
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.THIRD_CHARACTER_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.THIRD_OPTION_ID
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -215,27 +215,27 @@ class GameViewModel @Inject constructor(
         clearGame()
         viewModelScope.launch {
             when (currentGameId.value) {
-                ChallangeGameId -> {
+                CHALLENGE_GAME_ID -> {
                     challengeGame()
                 }
 
-                ClassicGameId -> {
+                CLASSIC_GAME_ID -> {
                     classicGame()
                 }
 
-                AkatsukiGameId -> {
+                AKATSUKI_GAME_ID -> {
                     akatsukiGame()
                 }
 
-                ClanGameId -> {
+                CLAN_GAME_ID -> {
                     clanGame()
                 }
 
-                TailedGameId -> {
+                TAILED_GAME_ID -> {
                     tailedGame()
                 }
 
-                TeamGameId -> {
+                TEAM_GAME_ID -> {
                     teamGame()
                 }
             }
@@ -246,27 +246,27 @@ class GameViewModel @Inject constructor(
         viewModelScope.launch {
             if (checkGameSituation()) {
                 when (currentGameId.value) {
-                    ChallangeGameId -> {
+                    CHALLENGE_GAME_ID -> {
                         challengeGame()
                     }
 
-                    ClassicGameId -> {
+                    CLASSIC_GAME_ID -> {
                         classicGame()
                     }
 
-                    AkatsukiGameId -> {
+                    AKATSUKI_GAME_ID -> {
                         akatsukiGame()
                     }
 
-                    ClanGameId -> {
+                    CLAN_GAME_ID -> {
                         clanGame()
                     }
 
-                    TailedGameId -> {
+                    TAILED_GAME_ID -> {
                         tailedGame()
                     }
 
-                    TeamGameId -> {
+                    TEAM_GAME_ID -> {
                         teamGame()
                     }
                 }
@@ -277,8 +277,8 @@ class GameViewModel @Inject constructor(
     }
 
     private fun checkGameSituation(): Boolean {
-        return if (_currentGameId.value != ChallangeGameId) {
-            _questionNumber.value != GameRepeatCount
+        return if (_currentGameId.value != CHALLENGE_GAME_ID) {
+            _questionNumber.value != GAME_REPEAT_COUNT
         } else {
             _falseAnswer.value == 0 //there is no wrong choice in the challenge mod.
         }
@@ -384,10 +384,10 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askFamily(characterList: List<Character?>) {
-        _questionId.postValue(AskFamilyId)
+        _questionId.postValue(ASK_FAMILY_ID)
 
         val nonNullPair: Pair<String, String>?
-        val firstCharacter = characterList[FirstCharacterId]
+        val firstCharacter = characterList[FIRST_CHARACTER_ID]
 
         if (firstCharacter != null) {
             nonNullPair = firstCharacter.family?.getFirstNonNullField()
@@ -401,9 +401,9 @@ class GameViewModel @Inject constructor(
         setOptions(
             listOf(
                 firstCharacter,
-                characterList[SecondCharactedId],
-                characterList[ThirdCharacterId],
-                characterList[LastCharacterId]
+                characterList[SECOND_CHARACTER_ID],
+                characterList[THIRD_CHARACTER_ID],
+                characterList[LAST_CHARACTER_ID]
             )
         )
     }
@@ -439,7 +439,7 @@ class GameViewModel @Inject constructor(
         var thirdCharacter: Character
         var lastCharacter: Character
         while (true) {
-            val charList = narutoRepository.getAkatsukiList(AkatsukiSize)
+            val charList = narutoRepository.getAkatsukiList(AKATSUKI_SIZE)
             firstCharacter = getAkatsuki(charList)
             if (firstCharacter.family?.getFirstNonNullField() != null) {
                 secondCharacter = getAkatsuki(charList)
@@ -460,7 +460,7 @@ class GameViewModel @Inject constructor(
     private fun getAkatsuki(charList: Resource<Akatsuki>): Character {
         while (true) {
             val character =
-                charList.data?.akatsuki?.get(getRandom(from = 0, includeUntil = AkatsukiSize - 1))
+                charList.data?.akatsuki?.get(getRandom(from = 0, includeUntil = AKATSUKI_SIZE - 1))
             if (character?.images?.isEmpty() == false) {
                 return character
             }
@@ -468,16 +468,16 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askVoiceActor(characterList: List<Character?>) {
-        _questionId.postValue(AskVoiceActorId)
+        _questionId.postValue(ASK_VOICE_ACTOR_ID)
 
         val nonNullPair: Pair<String, String>?
-        var firstCharacter = characterList[FirstCharacterId]
-        var secondCharacter = characterList[SecondCharactedId]
-        var thirdCharacter = characterList[ThirdCharacterId]
-        var lastCharacter = characterList[LastCharacterId]
+        var firstCharacter = characterList[FIRST_CHARACTER_ID]
+        var secondCharacter = characterList[SECOND_CHARACTER_ID]
+        var thirdCharacter = characterList[THIRD_CHARACTER_ID]
+        var lastCharacter = characterList[LAST_CHARACTER_ID]
 
-        for (i in FirstOptionId..LastOptionId) {
-            if (i == FirstOptionId || i == LastOptionId) {
+        for (i in FIRST_OPTION_ID..LAST_OPTION_ID) {
+            if (i == FIRST_OPTION_ID || i == LAST_OPTION_ID) {
                 if (characterList[i]?.voiceActors != null) {
                     firstCharacter = characterList[i]
                     secondCharacter = characterList[abs(i - 1)]
@@ -485,7 +485,7 @@ class GameViewModel @Inject constructor(
                     lastCharacter = characterList[abs(i - 3)]
                 }
             }
-            if (i == SecondOptionId) {
+            if (i == SECOND_OPTION_ID) {
                 if (characterList[i]?.voiceActors != null) {
                     firstCharacter = characterList[i]
                     secondCharacter = characterList[0]
@@ -493,7 +493,7 @@ class GameViewModel @Inject constructor(
                     lastCharacter = characterList[3]
                 }
             }
-            if (i == ThirdOptionId) {
+            if (i == THIRD_OPTION_ID) {
                 if (characterList[i]?.voiceActors != null) {
                     firstCharacter = characterList[i]
                     secondCharacter = characterList[0]
@@ -553,15 +553,15 @@ class GameViewModel @Inject constructor(
     private suspend fun getRandomCharList(): List<Character>? {
         return narutoRepository.getCharacterList(
             getRandom(
-                includeUntil = CharacterPageRange
+                includeUntil = CHARACTER_PAGE_RANGE
             )
         ).data?.characters?.filter { character -> character.images?.isEmpty() == false }
     }
 
     private fun askClan(characterList: List<Character?>) {
-        _questionId.postValue(AskClanId)
+        _questionId.postValue(ASK_CLAN_ID)
 
-        val firstCharacter = characterList[FirstCharacterId]
+        val firstCharacter = characterList[FIRST_CHARACTER_ID]
 
         if (firstCharacter != null) {
             _questionText.postValue(
@@ -573,9 +573,9 @@ class GameViewModel @Inject constructor(
         setOptions(
             listOf(
                 firstCharacter,
-                characterList[SecondCharactedId],
-                characterList[ThirdCharacterId],
-                characterList[LastCharacterId]
+                characterList[SECOND_CHARACTER_ID],
+                characterList[THIRD_CHARACTER_ID],
+                characterList[LAST_CHARACTER_ID]
             )
         )
     }
@@ -599,8 +599,8 @@ class GameViewModel @Inject constructor(
     }
 
     private suspend fun getFourClanCharacter(): Resource<List<Character?>> {
-        val clanList = narutoRepository.getClanList(ClanPageSize)
-        val clanIdList = getRandomNumList(4, ClanPageSize - 1)
+        val clanList = narutoRepository.getClanList(CLAN_PAGE_SIZE)
+        val clanIdList = getRandomNumList(4, CLAN_PAGE_SIZE - 1)
         val firstClan = clanList.data?.clans?.get(clanIdList[0])
         val secondClan = clanList.data?.clans?.get(clanIdList[1])
         val thirdClan = clanList.data?.clans?.get(clanIdList[2])
@@ -624,9 +624,9 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askTeam(characterList: List<Character?>) {
-        _questionId.postValue(AskTeamId)
+        _questionId.postValue(ASK_TEAM_ID)
 
-        val firstCharacter = characterList[FirstCharacterId]
+        val firstCharacter = characterList[FIRST_CHARACTER_ID]
 
         if (firstCharacter != null) {
             _questionText.postValue(
@@ -637,16 +637,16 @@ class GameViewModel @Inject constructor(
         setOptions(
             listOf(
                 firstCharacter,
-                characterList[SecondCharactedId],
-                characterList[ThirdCharacterId],
-                characterList[LastCharacterId]
+                characterList[SECOND_CHARACTER_ID],
+                characterList[THIRD_CHARACTER_ID],
+                characterList[LAST_CHARACTER_ID]
             )
         )
     }
 
     private suspend fun getFourTeamCharacter(): Resource<List<Character?>> {
-        val teamList = narutoRepository.getTeamList(TeamPageSize)
-        val teamIdList = getRandomNumList(4, TeamPageSize - 1)
+        val teamList = narutoRepository.getTeamList(TEAM_PAGE_SIZE)
+        val teamIdList = getRandomNumList(4, TEAM_PAGE_SIZE - 1)
         val firstTeam = teamList.data?.teams?.get(teamIdList[0])
         val secondTeam = teamList.data?.teams?.get(teamIdList[1])
         val thirdTeam = teamList.data?.teams?.get(teamIdList[2])
@@ -670,9 +670,9 @@ class GameViewModel @Inject constructor(
     }
 
     private fun askJinckuri(characterList: List<Character?>) {
-        _questionId.postValue(AskJinckuriId)
+        _questionId.postValue(ASK_JINCURIKI_ID)
 
-        val firstCharacter = characterList[FirstCharacterId]
+        val firstCharacter = characterList[FIRST_CHARACTER_ID]
 
         if (firstCharacter != null) {
             _questionText.postValue(
@@ -683,16 +683,16 @@ class GameViewModel @Inject constructor(
         setOptions(
             listOf(
                 firstCharacter,
-                characterList[SecondCharactedId],
-                characterList[ThirdCharacterId],
-                characterList[LastCharacterId]
+                characterList[SECOND_CHARACTER_ID],
+                characterList[THIRD_CHARACTER_ID],
+                characterList[LAST_CHARACTER_ID]
             )
         )
     }
 
     private suspend fun getFourTailCharacter(): Resource<List<Character?>> {
         val tailList = narutoRepository.getTailedBeastList()
-        val tailIdList = getRandomNumList(4, TailPageRange)
+        val tailIdList = getRandomNumList(4, TAIL_PAGE_RANGE)
         val firstTail = tailList.data?.tailedBeasts?.get(tailIdList[0])
         val secondTail = tailList.data?.tailedBeasts?.get(tailIdList[1])
         val thirdTail = tailList.data?.tailedBeasts?.get(tailIdList[2])
@@ -709,18 +709,18 @@ class GameViewModel @Inject constructor(
 
     private fun setOptions(characterList: List<Character?>) {
         val options = listOf(
-            OptionModel(FirstOptionId, _firstOption),
-            OptionModel(SecondOptionId, _secondOption),
-            OptionModel(ThirdOptionId, _thirdOption),
-            OptionModel(LastOptionId, _lastOption)
+            OptionModel(FIRST_OPTION_ID, _firstOption),
+            OptionModel(SECOND_OPTION_ID, _secondOption),
+            OptionModel(THIRD_OPTION_ID, _thirdOption),
+            OptionModel(LAST_OPTION_ID, _lastOption)
         ).shuffled()
 
-        trueAnswerId = options[FirstOptionId].optionId
+        trueAnswerId = options[FIRST_OPTION_ID].optionId
 
-        setOptionTrue(characterList[FirstCharacterId], options[FirstOptionId])
-        setOptionWrong(characterList[SecondCharactedId], options[SecondOptionId])
-        setOptionWrong(characterList[ThirdCharacterId], options[ThirdOptionId])
-        setOptionWrong(characterList[LastCharacterId], options[LastOptionId])
+        setOptionTrue(characterList[FIRST_CHARACTER_ID], options[FIRST_OPTION_ID])
+        setOptionWrong(characterList[SECOND_CHARACTER_ID], options[SECOND_OPTION_ID])
+        setOptionWrong(characterList[THIRD_CHARACTER_ID], options[THIRD_OPTION_ID])
+        setOptionWrong(characterList[LAST_CHARACTER_ID], options[LAST_OPTION_ID])
     }
 
     private fun setOptionTrue(
@@ -764,10 +764,10 @@ class GameViewModel @Inject constructor(
     private suspend fun setGroupModel(
         groupModelList: List<GroupModel?>,
     ): Resource<List<Character?>> {
-        val firstModel = groupModelList[FirstCharacterId]
-        val secondModel = groupModelList[SecondCharactedId]
-        val thirdModel = groupModelList[ThirdCharacterId]
-        val lastModel = groupModelList[LastCharacterId]
+        val firstModel = groupModelList[FIRST_CHARACTER_ID]
+        val secondModel = groupModelList[SECOND_CHARACTER_ID]
+        val thirdModel = groupModelList[THIRD_CHARACTER_ID]
+        val lastModel = groupModelList[LAST_CHARACTER_ID]
         var firstCharacter: Character?
         var secondCharacter: Character?
         var thirdCharacter: Character?

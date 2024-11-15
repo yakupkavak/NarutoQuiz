@@ -6,22 +6,22 @@ import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst
 
 fun Context.getStringByGameId(gameId: Int) : String{
     return when(gameId) {
-        GameConst.ChallangeGameId -> {
+        GameConst.CHALLENGE_GAME_ID -> {
             this.getString(R.string.challenge)
         }
-        GameConst.ClassicGameId -> {
+        GameConst.CLASSIC_GAME_ID -> {
             this.getString(R.string.classic)
         }
-        GameConst.AkatsukiGameId -> {
+        GameConst.AKATSUKI_GAME_ID -> {
             this.getString(R.string.akatsuki)
         }
-        GameConst.ClanGameId -> {
+        GameConst.CLAN_GAME_ID -> {
             this.getString(R.string.clan)
         }
-        GameConst.TailedGameId -> {
+        GameConst.TAILED_GAME_ID -> {
             this.getString(R.string.tail)
         }
-        GameConst.TeamGameId -> {
+        GameConst.TEAM_GAME_ID -> {
             this.getString(R.string.team)
         }
         else -> {
