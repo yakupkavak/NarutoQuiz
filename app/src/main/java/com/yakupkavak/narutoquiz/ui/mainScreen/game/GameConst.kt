@@ -26,4 +26,8 @@ object GameConst {
     const val AskClanId = 2
     const val AskTeamId = 3
     const val AskJinckuriId = 4
+    const val firstChallengeLevel = 2
+    const val secondChallengeLevel = 5
+    const val thirdChallengeLevel = 7
+    const val lastChallengeLevel = 10
 }

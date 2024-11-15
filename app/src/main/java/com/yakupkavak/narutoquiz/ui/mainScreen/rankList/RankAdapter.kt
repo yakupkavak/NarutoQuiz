@@ -23,8 +23,6 @@ class RankAdapter : Adapter<RankAdapter.RankViewHolder>() {
         }
     }
 
-    private val valuableRankRange = 3
-
     private val asyncListDiffer = AsyncListDiffer(this, diffUtil)
 
     fun submit(items: ArrayList<RankRowModel>) {

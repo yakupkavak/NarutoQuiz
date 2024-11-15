@@ -130,6 +130,30 @@
         <item name="android:padding">@dimen/margin_xsmall</item>
     </style>
 
+    <style name="FirstChallengeLevel">
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/challenge_first_color</item>
+    </style>
+
+    <style name="SecondChallengeLevel">
+        <item name="android:textSize">@dimen/text_size_large_plus</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/challenge_first_color</item>
+    </style>
+
+    <style name="ThirdChallengeLevel">
+        <item name="android:textSize">@dimen/text_size_large_x_plus</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/challenge_second_color</item>
+    </style>
+
+    <style name="LastChallengeLevel">
+        <item name="android:textSize">@dimen/text_size_xlarge</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/challenge_third_color</item>
+    </style>
+
     <style name="Theme.CustomSplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/system_background</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/splash_inset</item>

@@ -28,6 +28,10 @@ import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.FirstOptionId
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LastOptionId
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SecondOptionId
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ThirdOptionId
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.firstChallengeLevel
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.lastChallengeLevel
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.secondChallengeLevel
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.thirdChallengeLevel
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.ErrorDialogFragment
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.GameDialogFragment
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.HintDialogFragment
@@ -167,6 +171,15 @@ class GameFragment : Fragment() {
             with(binding) {
                 linearProgress.progress = questionNumber
                 tvQuestionNumber.text = getString(R.string.question_number, questionNumber)
+                if (questionNumber > lastChallengeLevel) {
+                    tvQuestionNumber.setTextAppearance(R.style.LastChallengeLevel)
+                } else if (questionNumber > thirdChallengeLevel) {
+                    tvQuestionNumber.setTextAppearance(R.style.ThirdChallengeLevel)
+                } else if (questionNumber > secondChallengeLevel) {
+                    tvQuestionNumber.setTextAppearance(R.style.SecondChallengeLevel)
+                } else if (questionNumber > firstChallengeLevel) {
+                    tvQuestionNumber.setTextAppearance(R.style.FirstChallengeLevel)
+                }
             }
         }
         observe(viewModel.answerSelection) {
