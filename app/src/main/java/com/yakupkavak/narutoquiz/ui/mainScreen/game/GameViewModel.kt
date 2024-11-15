@@ -216,7 +216,7 @@ class GameViewModel @Inject constructor(
         viewModelScope.launch {
             when (currentGameId.value) {
                 ChallangeGameId -> {
-                    challangeGame()
+                    challengeGame()
                 }
 
                 ClassicGameId -> {
@@ -247,7 +247,7 @@ class GameViewModel @Inject constructor(
             if (checkGameSituation()) {
                 when (currentGameId.value) {
                     ChallangeGameId -> {
-                        challangeGame()
+                        challengeGame()
                     }
 
                     ClassicGameId -> {
@@ -298,10 +298,10 @@ class GameViewModel @Inject constructor(
         }
     }
 
-    private fun challangeGame() {
-        when (getRandom(includeUntil = 4)) {
+    private fun challengeGame() {
+        when (getRandom(includeUntil = 6)) {
             0 -> {
-                classicGame()
+                voiceGame()
             }
 
             1 -> {
@@ -319,26 +319,63 @@ class GameViewModel @Inject constructor(
             4 -> {
                 tailedGame()
             }
+
+            5 -> {
+                familyGame()
+            }
+
+            6 -> {
+                voiceGame()
+            }
         }
     }
 
     private fun classicGame() {
+        when (getRandom(includeUntil = 5)) {
+            0 -> {
+                familyGame()
+            }
+
+            1 -> {
+                clanGame()
+            }
+
+            2 -> {
+                tailedGame()
+            }
+
+            3 -> {
+                teamGame()
+            }
+
+            4 -> {
+                familyGame()
+            }
+        }
+    }
+
+    private fun voiceGame() {
         getDataCall(
             dataCall = { getFourRandomCharacter() },
             onSuccess = { characterList ->
                 if (characterList != null) {
-                    when (getRandom(includeUntil = 1)) {
-                        0 -> {
-                            askFamily(characterList).also { _loading.postValue(false) }.also {
-                                _questionNumber.postValue(_questionNumber.value?.plus(1))
-                            }
-                        }
+                    askVoiceActor(characterList).also { _loading.postValue(false) }.also {
+                        _questionNumber.postValue(_questionNumber.value?.plus(1))
+                    }
+                }
+            },
+            onError = { _error.postValue(true) },
+            onLoading = { _loading.postValue(true) }
+        )
+    }
 
-                        1 -> {
-                            askVoiceActor(characterList).also { _loading.postValue(false) }.also {
-                                _questionNumber.postValue(_questionNumber.value?.plus(1))
-                            }
-                        }
+    private fun familyGame() {
+        getDataCall(
+            dataCall = { getFourRandomCharacter() },
+            onSuccess = { characterList ->
+                if (characterList != null) {
+                    askFamily(characterList).also { _loading.postValue(false) }.also {
+                        _questionNumber.postValue(_questionNumber.value?.plus(1))
                     }
                 }
             },
@@ -370,60 +407,6 @@ class GameViewModel @Inject constructor(
                 characterList[LastCharacterId]
             )
         )
-    }
-
-    private fun setOptions(characterList: List<Character?>) {
-        val options = listOf(
-            OptionModel(FirstOptionId, _firstOption),
-            OptionModel(SecondOptionId, _secondOption),
-            OptionModel(ThirdOptionId, _thirdOption),
-            OptionModel(LastOptionId, _lastOption)
-        ).shuffled()
-
-        trueAnswerId = options[FirstOptionId].optionId
-
-        setOptionTrue(characterList[FirstCharacterId], options[FirstOptionId])
-        setOptionWrong(characterList[SecondCharactedId], options[SecondOptionId])
-        setOptionWrong(characterList[ThirdCharacterId], options[ThirdOptionId])
-        setOptionWrong(characterList[LastCharacterId], options[LastOptionId])
-    }
-
-    private fun setOptionTrue(
-        character: Character?,
-        option: OptionModel
-    ) {
-        character?.let { getCharacter ->
-            option.option.postValue(
-                SelectionModel(
-                    imageUrl = if (!getCharacter.images.isNullOrEmpty()) {
-                        getCharacter.images[0]
-                    } else {
-                        ""
-                    },
-                    characterName = getCharacter.name,
-                    trueAnswer = true
-                )
-            )
-        }
-    }
-
-    private fun setOptionWrong(
-        character: Character?,
-        option: OptionModel
-    ) {
-        character?.let { getCharacter ->
-            option.option.postValue(
-                SelectionModel(
-                    imageUrl = if (!getCharacter.images.isNullOrEmpty()) {
-                        getCharacter.images[0]
-                    } else {
-                        ""
-                    },
-                    characterName = getCharacter.name,
-                    trueAnswer = false
-                )
-            )
-        }
     }
 
     private fun akatsukiGame() {
@@ -626,58 +609,6 @@ class GameViewModel @Inject constructor(
         return setGroupModel(listOf(firstClan, secondClan, thirdClan, lastClan))
     }
 
-    private suspend fun setGroupModel(
-        groupModelList: List<GroupModel?>,
-    ): Resource<List<Character?>> {
-        val firstModel = groupModelList[FirstCharacterId]
-        val secondModel = groupModelList[SecondCharactedId]
-        val thirdModel = groupModelList[ThirdCharacterId]
-        val lastModel = groupModelList[LastCharacterId]
-        var firstCharacter: Character?
-        var secondCharacter: Character?
-        var thirdCharacter: Character?
-        var lastCharacter: Character?
-
-        withContext(Dispatchers.IO) {
-            val getFirstCharacter = async {
-                getCharacter(firstModel)
-            }
-            firstCharacter = getFirstCharacter.await()
-
-            val getSecondCharacter = async {
-                getCharacter(secondModel)
-            }
-
-            secondCharacter = getSecondCharacter.await()
-
-            val getThirdCharacter = async {
-                getCharacter(thirdModel)
-            }
-            thirdCharacter = getThirdCharacter.await()
-
-            val getLastCharacter = async {
-                getCharacter(lastModel)
-            }
-            lastCharacter = getLastCharacter.await()
-        }
-        return Resource.success(
-            listOf(
-                firstCharacter,
-                secondCharacter,
-                thirdCharacter,
-                lastCharacter
-            )
-        )
-    }
-
-    private suspend fun getCharacter(groupModel: GroupModel?): Character? {
-        return groupModel?.characters?.get(
-            getRandom(
-                includeUntil = groupModel.characters.size - 1
-            )
-        )?.let { narutoRepository.getCharacter(it) }?.data
-    }
-
     private fun teamGame() {
         getDataCall(
             dataCall = { getFourTeamCharacter() },
@@ -775,5 +706,111 @@ class GameViewModel @Inject constructor(
                 lastTail
             )
         )
+    }
+
+    private fun setOptions(characterList: List<Character?>) {
+        val options = listOf(
+            OptionModel(FirstOptionId, _firstOption),
+            OptionModel(SecondOptionId, _secondOption),
+            OptionModel(ThirdOptionId, _thirdOption),
+            OptionModel(LastOptionId, _lastOption)
+        ).shuffled()
+
+        trueAnswerId = options[FirstOptionId].optionId
+
+        setOptionTrue(characterList[FirstCharacterId], options[FirstOptionId])
+        setOptionWrong(characterList[SecondCharactedId], options[SecondOptionId])
+        setOptionWrong(characterList[ThirdCharacterId], options[ThirdOptionId])
+        setOptionWrong(characterList[LastCharacterId], options[LastOptionId])
+    }
+
+    private fun setOptionTrue(
+        character: Character?,
+        option: OptionModel
+    ) {
+        character?.let { getCharacter ->
+            option.option.postValue(
+                SelectionModel(
+                    imageUrl = if (!getCharacter.images.isNullOrEmpty()) {
+                        getCharacter.images[0]
+                    } else {
+                        ""
+                    },
+                    characterName = getCharacter.name,
+                    trueAnswer = true
+                )
+            )
+        }
+    }
+
+    private fun setOptionWrong(
+        character: Character?,
+        option: OptionModel
+    ) {
+        character?.let { getCharacter ->
+            option.option.postValue(
+                SelectionModel(
+                    imageUrl = if (!getCharacter.images.isNullOrEmpty()) {
+                        getCharacter.images[0]
+                    } else {
+                        ""
+                    },
+                    characterName = getCharacter.name,
+                    trueAnswer = false
+                )
+            )
+        }
+    }
+
+    private suspend fun setGroupModel(
+        groupModelList: List<GroupModel?>,
+    ): Resource<List<Character?>> {
+        val firstModel = groupModelList[FirstCharacterId]
+        val secondModel = groupModelList[SecondCharactedId]
+        val thirdModel = groupModelList[ThirdCharacterId]
+        val lastModel = groupModelList[LastCharacterId]
+        var firstCharacter: Character?
+        var secondCharacter: Character?
+        var thirdCharacter: Character?
+        var lastCharacter: Character?
+
+        withContext(Dispatchers.IO) {
+            val getFirstCharacter = async {
+                getCharacter(firstModel)
+            }
+            firstCharacter = getFirstCharacter.await()
+
+            val getSecondCharacter = async {
+                getCharacter(secondModel)
+            }
+
+            secondCharacter = getSecondCharacter.await()
+
+            val getThirdCharacter = async {
+                getCharacter(thirdModel)
+            }
+            thirdCharacter = getThirdCharacter.await()
+
+            val getLastCharacter = async {
+                getCharacter(lastModel)
+            }
+            lastCharacter = getLastCharacter.await()
+        }
+        return Resource.success(
+            listOf(
+                firstCharacter,
+                secondCharacter,
+                thirdCharacter,
+                lastCharacter
+            )
+        )
+    }
+
+    private suspend fun getCharacter(groupModel: GroupModel?): Character? {
+        return groupModel?.characters?.get(
+            getRandom(
+                includeUntil = groupModel.characters.size - 1
+            )
+        )?.let { narutoRepository.getCharacter(it) }?.data
     }
 }
