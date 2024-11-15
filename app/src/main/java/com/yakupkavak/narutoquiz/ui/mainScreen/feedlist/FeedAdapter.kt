@@ -14,24 +14,24 @@ class FeedAdapter : Adapter<FeedAdapter.FeedViewHolder>() {
 
     var onItemClick: ((Int,String) -> Unit)? = null
 
-    private val diffUtil = object : DiffUtil.ItemCallback<com.yakupkavak.narutoquiz.data.network.model.FeedRowModel>() {
-        override fun areItemsTheSame(oldItem: com.yakupkavak.narutoquiz.data.network.model.FeedRowModel, newItem: com.yakupkavak.narutoquiz.data.network.model.FeedRowModel): Boolean {
+    private val diffUtil = object : DiffUtil.ItemCallback<FeedRowModel>() {
+        override fun areItemsTheSame(oldItem: FeedRowModel, newItem: FeedRowModel): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: com.yakupkavak.narutoquiz.data.network.model.FeedRowModel, newItem: com.yakupkavak.narutoquiz.data.network.model.FeedRowModel): Boolean {
+        override fun areContentsTheSame(oldItem: FeedRowModel, newItem: FeedRowModel): Boolean {
             return oldItem == newItem
         }
     }
 
     private val asyncListDiffer = AsyncListDiffer(this, diffUtil)
 
-    fun submit(items: List<com.yakupkavak.narutoquiz.data.network.model.FeedRowModel>) {
+    fun submit(items: List<FeedRowModel>) {
         asyncListDiffer.submitList(items)
     }
 
     inner class FeedViewHolder(private val binding: FeedRowBinding) : ViewHolder(binding.root) {
-        fun bind(data: com.yakupkavak.narutoquiz.data.network.model.FeedRowModel) {
+        fun bind(data: FeedRowModel) {
             with(binding) {
                 tvRow.text = data.description
                 Glide.with(binding.root).load(data.imageResId).into(ivRow)

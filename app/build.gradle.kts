@@ -26,8 +26,8 @@ android {
         applicationId = "com.yakupkavak.narutoquiz"
         minSdk = 24
         targetSdk = 34
-        versionCode = 4
-        versionName = "1.3"
+        versionCode = 5
+        versionName = "1.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField(
             "String",
@@ -83,6 +83,7 @@ dependencies {
     implementation(libs.firebase.appcheck.playintegrity)
     implementation(libs.firebase.config)
 
+    implementation(libs.play.services.games.v2)
     implementation(libs.hilt.android)
     annotationProcessor(libs.hilt.compiler)
     implementation(platform(libs.firebase.bom))
