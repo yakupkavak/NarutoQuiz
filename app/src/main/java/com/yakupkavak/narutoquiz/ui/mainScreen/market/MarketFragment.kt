@@ -61,13 +61,16 @@ class MarketFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        //TODO ADD IN APP PURCHASE TO ERROR STATION
     }
 
     private fun setOnClick() {
         with(binding) {
-            btnAd.setOnClickListener {
+            btnAd.setOnClickListener { button ->
+                button.isClickable = false // to reduce multiple ask ad while loading ad
                 sharedViewModel.setData(adRewardCount)
                 showRewardedAd()
+                showToast(getString(R.string.loading))
             }
             btnSmallPurchase.setOnClickListener {
                 launchFlow(GENIN_PURCHASE_NAME)
@@ -143,8 +146,10 @@ class MarketFragment : Fragment() {
             if (adRewardCount != 0) {
                 if (it) {
                     showToast(getString(R.string.gain_hint, adRewardCount))
+                    binding.btnAd.isClickable = true
                 } else {
                     showToast(getString(R.string.unexpected_error))
+                    binding.btnAd.isClickable = true
                 }
             }
         }

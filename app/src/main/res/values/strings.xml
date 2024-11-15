@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">Naruto Quiz</string>
-    <string name="day">Yükleniyor…</string>
+    <string name="loading">Yükleniyor…</string>
     <string name="zero">0</string>
     <string name="use_viewmodel">ViewModel Kullan</string>
     <string name="increase_counter">Sayacı Arttır</string>
@@ -34,7 +34,7 @@
 
     <string name="recovery_error">Email wrong</string>
     <string name="username_too_long">Username can\'t be over 16 characters</string>
-    <string name="password_too_low">Past can\'t be less than 8 characters</string>
+    <string name="password_too_low">Password can\'t be less than 8 characters</string>
     <string name="network_problem">There is an problem</string>
     <string name="check_mail">Check your mail</string>
     <string name="sign_success">Kayıt olundu</string>
