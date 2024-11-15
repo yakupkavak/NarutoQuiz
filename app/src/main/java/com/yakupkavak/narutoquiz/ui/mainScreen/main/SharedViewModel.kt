@@ -85,6 +85,10 @@ class SharedViewModel @Inject constructor(
         }
     }
 
+    fun updateHint(hintCount: Int) {
+        _tokenCount.postValue(hintCount)
+    }
+
     private fun getUserToken() {
         getDataCall(
             dataCall = { firestoreRepository.getUserToken() },

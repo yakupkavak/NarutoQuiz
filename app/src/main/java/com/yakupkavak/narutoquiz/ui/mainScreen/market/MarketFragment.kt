@@ -129,6 +129,10 @@ class MarketFragment : Fragment() {
             productDetails = productList
             showProducts(productList = productList)
         }
+
+        observe(viewModel.newHintCount) { newHintCount ->
+            sharedViewModel.updateHint(hintCount = newHintCount)
+        }
     }
 
     private fun observeSharedViewModel() {
