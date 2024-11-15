@@ -27,7 +27,9 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="hint_color">#EBE0DB</color>
     <color name="half_transparent_color">#26FFFFFF</color>
-
+    <color name="challenge_first_color">#D9A443</color>
+    <color name="challenge_second_color">#D2D904</color>
+    <color name="challenge_third_color">#73020C</color>
     <color name="row_color">#F29C6B</color>
     <color name="detail_color">#0A2941</color>
 
