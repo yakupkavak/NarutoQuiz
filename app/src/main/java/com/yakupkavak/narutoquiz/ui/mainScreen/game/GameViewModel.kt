@@ -24,7 +24,6 @@ import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_CLAN_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_FAMILY_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_JINCURIKI_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_TEAM_ID
-import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_VOICE_ACTOR_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CHALLENGE_GAME_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CHARACTER_PAGE_RANGE
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CLAN_GAME_ID
@@ -49,7 +48,6 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
-import kotlin.math.abs
 
 @HiltViewModel
 class GameViewModel @Inject constructor(
@@ -300,7 +298,7 @@ class GameViewModel @Inject constructor(
     private fun challengeGame() {
         when (getRandom(includeUntil = 6)) {
             0 -> {
-                voiceGame()
+                familyGame()
             }
 
             1 -> {
@@ -324,7 +322,7 @@ class GameViewModel @Inject constructor(
             }
 
             6 -> {
-                voiceGame()
+                teamGame()
             }
         }
     }
@@ -351,21 +349,6 @@ class GameViewModel @Inject constructor(
                 familyGame()
             }
         }
-    }
-
-    private fun voiceGame() {
-        getDataCall(
-            dataCall = { getFourRandomCharacter() },
-            onSuccess = { characterList ->
-                if (characterList != null) {
-                    askVoiceActor(characterList).also { _loading.postValue(false) }.also {
-                        _questionNumber.postValue(_questionNumber.value?.plus(1))
-                    }
-                }
-            },
-            onError = { _error.postValue(true) },
-            onLoading = { _loading.postValue(true) }
-        )
     }
 
     private fun familyGame() {
@@ -413,18 +396,8 @@ class GameViewModel @Inject constructor(
             dataCall = { getFourAkatsukiCharacter() },
             onSuccess = { characterList ->
                 if (characterList != null) {
-                    when (getRandom(from = 0, includeUntil = 1)) {
-                        0 -> {
-                            askFamily(characterList).also { _loading.postValue(false) }.also {
-                                _questionNumber.postValue(_questionNumber.value?.plus(1))
-                            }
-                        }
-
-                        1 -> {
-                            askVoiceActor(characterList).also { _loading.postValue(false) }.also {
-                                _questionNumber.postValue(_questionNumber.value?.plus(1))
-                            }
-                        }
+                    askFamily(characterList).also { _loading.postValue(false) }.also {
+                        _questionNumber.postValue(_questionNumber.value?.plus(1))
                     }
                 }
             },
@@ -465,62 +438,6 @@ class GameViewModel @Inject constructor(
                 return character
             }
         }
-    }
-
-    private fun askVoiceActor(characterList: List<Character?>) {
-        _questionId.postValue(ASK_VOICE_ACTOR_ID)
-
-        val nonNullPair: Pair<String, String>?
-        var firstCharacter = characterList[FIRST_CHARACTER_ID]
-        var secondCharacter = characterList[SECOND_CHARACTER_ID]
-        var thirdCharacter = characterList[THIRD_CHARACTER_ID]
-        var lastCharacter = characterList[LAST_CHARACTER_ID]
-
-        for (i in FIRST_OPTION_ID..LAST_OPTION_ID) {
-            if (i == FIRST_OPTION_ID || i == LAST_OPTION_ID) {
-                if (characterList[i]?.voiceActors != null) {
-                    firstCharacter = characterList[i]
-                    secondCharacter = characterList[abs(i - 1)]
-                    thirdCharacter = characterList[abs(i - 2)]
-                    lastCharacter = characterList[abs(i - 3)]
-                }
-            }
-            if (i == SECOND_OPTION_ID) {
-                if (characterList[i]?.voiceActors != null) {
-                    firstCharacter = characterList[i]
-                    secondCharacter = characterList[0]
-                    thirdCharacter = characterList[2]
-                    lastCharacter = characterList[3]
-                }
-            }
-            if (i == THIRD_OPTION_ID) {
-                if (characterList[i]?.voiceActors != null) {
-                    firstCharacter = characterList[i]
-                    secondCharacter = characterList[0]
-                    thirdCharacter = characterList[1]
-                    lastCharacter = characterList[3]
-                }
-            }
-        }
-
-        if (firstCharacter != null) {
-            nonNullPair = firstCharacter.voiceActors?.getFirstNonNullField()
-            if (nonNullPair != null) {
-                _questionText.postValue(
-                    "${nonNullPair.first} voice actor is ${nonNullPair.second}"
-                )
-                trueCharacter = firstCharacter.name
-            }
-        }
-
-        setOptions(
-            listOf(
-                firstCharacter,
-                secondCharacter,
-                thirdCharacter,
-                lastCharacter
-            )
-        )
     }
 
     private suspend fun getFourRandomCharacter(): Resource<List<Character?>> {
