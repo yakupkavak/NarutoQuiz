@@ -50,6 +50,7 @@ class SignUpFragment : Fragment() {
                     requireActivity().finish()
                 }
             } catch (e: Exception) {
+                binding.btnSignUp.isClickable = true
                 e.printStackTrace()
             }
         }
@@ -67,6 +68,7 @@ class SignUpFragment : Fragment() {
             }
         }
         observe(viewModel.error) { errorMessage ->
+            binding.btnSignUp.isClickable = true
             showToast(errorMessage ?: getString(R.string.unexpected_error))
         }
     }
@@ -88,6 +90,7 @@ class SignUpFragment : Fragment() {
                     } else if (editPassword.text.toString().length < MIN_PASSWORD_SIZE) {
                         showToast(getString(R.string.password_too_low))
                     } else {
+                        it.isClickable = false
                         viewModel.signUp(
                             userName = editUserName.text.toString(),
                             userMail = editEmail.text.toString(),

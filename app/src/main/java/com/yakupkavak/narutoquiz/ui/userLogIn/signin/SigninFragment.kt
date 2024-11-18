@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.yakupkavak.narutoquiz.R
@@ -47,8 +48,26 @@ class SigninFragment : Fragment() {
             if (it) {
                 intentToGame()
             } else {
+                binding.btnSignIn.isClickable = true
                 showToast(getString(R.string.sign_in_error))
             }
+        }
+        observe(viewModel.loading) { loading ->
+            if (loading) {
+                with(binding) {
+                    lottieAnimationLoading.isVisible = true
+                    lottieAnimationLoading.playAnimation()
+                }
+            } else {
+                with(binding) {
+                    lottieAnimationLoading.isVisible = false
+                    lottieAnimationLoading.cancelAnimation()
+                }
+            }
+        }
+        observe(viewModel.error) { errorMessage ->
+            binding.btnSignIn.isClickable = true
+            showToast(errorMessage ?: getString(R.string.unexpected_error))
         }
     }
 
@@ -71,6 +90,7 @@ class SigninFragment : Fragment() {
                 if (editEmail.text.toString().isNotEmpty() && editPassword.text.toString()
                         .isNotEmpty()
                 ) {
+                    it.isClickable = false
                     viewModel.signIn(
                         userMail = editEmail.text.toString(),
                         userPassword = editPassword.text.toString()
