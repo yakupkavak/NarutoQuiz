@@ -47,7 +47,7 @@ class GameFragment : Fragment() {
     private val viewModel: GameViewModel by viewModels()
     private val sharedViewModel: SharedViewModel by activityViewModels()
     private var selectedOptionId = -1
-    private var gameState = 0
+    private var canNextQuestion = false
     private var questionId = 0
     private var currentGameId = 0
 
@@ -329,19 +329,19 @@ class GameFragment : Fragment() {
                 sharedViewModel.showHint()
             }
             btnCheck.setOnClickListener {
-                if (gameState == 0) {
+                if (!canNextQuestion) {
                     if (selectedOptionId == -1) {
                         showToast(getString(R.string.select))
                     } else {
                         viewModel.checkQuestion(selectedOptionId)
-                        gameState = 1
+                        canNextQuestion = true
                         btnCheck.text = getString(R.string.next)
                         falseFocusable()
                         selectedOptionId = -1
                     }
-                } else {
+                } else { //doğru yanlış cevap gösterildikten sonra next'e geçiş
                     clearSelection()
-                    gameState = 0
+                    canNextQuestion = false
                     btnCheck.text = getString(R.string.check)
                     trueFocusable()
                     viewModel.nextQuestion()
