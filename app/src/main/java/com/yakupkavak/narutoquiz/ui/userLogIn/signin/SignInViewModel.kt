@@ -21,6 +21,9 @@ class SignInViewModel @Inject constructor(
     private val _userSession = MutableLiveData<Boolean>()
     val userSession: LiveData<Boolean> get() = _userSession
 
+    private val _error = MutableLiveData<String?>()
+    val error: LiveData<String?> get() = _error
+
     init {
         if (authRepository.isUserSignedIn()) {
             _userSession.postValue(true)
@@ -46,8 +49,8 @@ class SignInViewModel @Inject constructor(
             onLoading = {
                 _loading.postValue(true)
             },
-            onError = {
-                _signInSuccess.postValue(false)
+            onError = { exception ->
+                _error.postValue(exception?.localizedMessage)
                     .also { _loading.postValue(false) }
             }
         )

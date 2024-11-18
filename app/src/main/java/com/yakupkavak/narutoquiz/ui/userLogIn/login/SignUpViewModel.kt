@@ -36,9 +36,10 @@ class SignUpViewModel @Inject constructor(
                 _loading.postValue(true)
             },
             onError = { exception ->
-                _error.postValue(exception?.localizedMessage)
-                _signUpSuccess.postValue(false)
-                    .also { _loading.postValue(false) }
+                _error.postValue(exception?.localizedMessage).also {
+                    _signUpSuccess.postValue(false)
+                        .also { _loading.postValue(false) }
+                }
             }
         )
     }
