@@ -284,7 +284,9 @@ class GameViewModel @Inject constructor(
 
     private suspend fun gameOver() {
         _finishGame.postValue(listOf(_trueAnswer.value, _falseAnswer.value))
-        firestoreRepository.postGameScore(trueAnswer = _trueAnswer.value)
+        if (_currentGameId.value == CHALLENGE_GAME_ID) {
+            firestoreRepository.postGameScore(trueAnswer = _trueAnswer.value)
+        }
 
         withContext(Dispatchers.IO) {
             daoRepository.insertGame(
@@ -296,7 +298,7 @@ class GameViewModel @Inject constructor(
     }
 
     private fun challengeGame() {
-        when (getRandom(includeUntil = 6)) {
+        when (getRandom(includeUntil = 5)) {
             0 -> {
                 familyGame()
             }
@@ -320,15 +322,11 @@ class GameViewModel @Inject constructor(
             5 -> {
                 familyGame()
             }
-
-            6 -> {
-                teamGame()
-            }
         }
     }
 
     private fun classicGame() {
-        when (getRandom(includeUntil = 5)) {
+        when (getRandom(includeUntil = 4)) {
             0 -> {
                 familyGame()
             }
