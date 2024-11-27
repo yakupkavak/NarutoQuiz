@@ -64,6 +64,12 @@ class RankAdapter : Adapter<RankAdapter.RankViewHolder>() {
                 tvUserScore.text = data.userScore.toString()
             }
         }
+        fun clearBind(){
+            with(binding) {
+                ivUserRank.isVisible = false
+                root.setBackgroundResource(R.drawable.feed_row_design)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RankViewHolder {
@@ -81,6 +87,7 @@ class RankAdapter : Adapter<RankAdapter.RankViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RankViewHolder, position: Int) {
+        holder.clearBind()
         if (position < 3) {
             holder.valuableBind(asyncListDiffer.currentList[position], position)
         } else {

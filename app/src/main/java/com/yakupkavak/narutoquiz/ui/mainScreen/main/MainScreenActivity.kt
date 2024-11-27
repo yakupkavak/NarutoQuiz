@@ -60,7 +60,7 @@ class MainScreenActivity : AppCompatActivity() {
         googleMobileAdsConsentManager = GoogleMobileAdsConsentManager.getInstance(this)
         googleMobileAdsConsentManager.gatherConsent(this) { formError ->
             if (formError != null) {
-                showToast(getString(R.string.unexpected_error))
+                //TODO ADD FUNCTION THAT USER CAN DENIED
             }
 
             if (googleMobileAdsConsentManager.canRequestAds) {
