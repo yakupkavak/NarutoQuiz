@@ -9,10 +9,12 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.yakupkavak.narutoquiz.R
 import com.yakupkavak.narutoquiz.data.network.model.DialogModel
 import com.yakupkavak.narutoquiz.databinding.FragmentGameBinding
 import com.yakupkavak.narutoquiz.domain.extension.getUrl
+import com.yakupkavak.narutoquiz.ui.extension.loadGif
 import com.yakupkavak.narutoquiz.ui.extension.navigate
 import com.yakupkavak.narutoquiz.ui.extension.observe
 import com.yakupkavak.narutoquiz.ui.extension.popBackStack
@@ -306,7 +308,7 @@ class GameFragment : Fragment() {
 
     private fun loadingHint() {
         with(binding.fabGemini) {
-            setImageResource(R.drawable.spinnerblack)
+            loadGif(sourceId = R.drawable.spinnerblack, view = this)
             isClickable = false
         }
     }
