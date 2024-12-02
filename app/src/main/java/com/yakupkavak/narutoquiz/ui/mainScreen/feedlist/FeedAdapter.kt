@@ -34,7 +34,7 @@ class FeedAdapter : Adapter<FeedAdapter.FeedViewHolder>() {
         fun bind(data: FeedRowModel) {
             with(binding) {
                 tvRow.text = data.description
-                Glide.with(binding.root).load(data.imageResId).into(ivRow)
+                Glide.with(root).load(data.imageResId).into(ivRow)
                 root.setOnClickListener {
                     onItemClick?.invoke(data.gameId,data.description)
                 }
