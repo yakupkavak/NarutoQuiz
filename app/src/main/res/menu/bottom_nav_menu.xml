@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/feedFragment"
+        android:icon="@drawable/quizlist"
+        android:title="@string/quizes" />
+
+    <item
+        android:id="@+id/tierFragment"
+        android:icon="@drawable/rank_icon"
+        android:title="@string/tier_list" />
+
+    <item
+        android:id="@+id/marketFragment"
+        android:icon="@drawable/market_icon"
+        android:title="@string/market" />
+
+    <item
+        android:id="@+id/userInfo"
+        android:icon="@drawable/user_icon"
+        android:title="@string/user_info" />
+
+</menu>
