@@ -4,6 +4,8 @@
 
 ## Projede Kullanılan Teknolojiler
 
+- **In-App Purchases**
+- **Google Ads**
 - **Gemini AI**
 - **Firebase Authentication & Firestore**
 - **Firebase Remote Config**
