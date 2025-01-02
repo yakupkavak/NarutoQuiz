@@ -51,7 +51,7 @@
 
 ## Katkıda Bulunma
 
-Katkıda bulunmak isterseniz lütfen bir **pull request** gönderin veya proje sahibine ulaşın. Her türlü katkı ve geri bildirim için teşekkür ederiz!
+Katkıda bulunmak isterseniz lütfen bir **pull request** gönderin veya bana ulaşın. Her türlü katkı ve geri bildirim için teşekkür ederim!
 
 ---
 
