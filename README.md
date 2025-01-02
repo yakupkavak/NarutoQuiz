@@ -44,7 +44,7 @@
 
 4. **Remote Config ve Cloud Functions**:
    - Remote Config parametrelerini Firebase Console üzerinden yapılandırın.
-   - Gerekli Cloud Functions'ı oluşturup dağıtın.
+   - Kullanıcı kayıt olması ile 12 ipucu hakkı cloud functions ile sağlanmaktadır.
 
 5. **Uygulamayı Çalıştırın**:
    Android Studio ile projeyi açın ve bir emülatörde veya gerçek cihazda çalıştırın.
