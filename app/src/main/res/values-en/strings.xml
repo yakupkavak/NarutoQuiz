@@ -129,4 +129,19 @@
     <string name="delete_success">Account deleted.</string>
     <string name="question_number">Question number: %1$d</string>
 
+    <string name="game_story_title">Story</string>
+    <string name="game_story_description">Discover the Naruto story with questions prepared for you.</string>
+    <string name="game_challenge_title">Challenge</string>
+    <string name="game_challenge_description">In the shinobi world, there is no room for mistakes!</string>
+    <string name="game_classic_title">Classic</string>
+    <string name="game_classic_description">Time to test your general knowledge.</string>
+    <string name="game_akatsuki_title">Akatsuki</string>
+    <string name="game_akatsuki_description">Our mission is to destroy false peace.</string>
+    <string name="game_clan_title">Clan</string>
+    <string name="game_clan_description">Remember your origin, protect your clan.</string>
+    <string name="game_tailed_beast_title">Tailed Beast</string>
+    <string name="game_tailed_beast_description">This is the world of beasts.</string>
+    <string name="game_teams_title">Teams</string>
+    <string name="game_teams_description">In the Ninja World, those who break the rules are scum, that\\s true.but those who abandon their friends are worse than scum!</string>
+
 </resources>

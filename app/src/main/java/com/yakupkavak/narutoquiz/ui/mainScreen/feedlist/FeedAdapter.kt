@@ -12,7 +12,7 @@ import com.yakupkavak.narutoquiz.databinding.FeedRowBinding
 
 class FeedAdapter : Adapter<FeedAdapter.FeedViewHolder>() {
 
-    var onItemClick: ((Int,String) -> Unit)? = null
+    var onItemClick: ((Int,Int) -> Unit)? = null
 
     private val diffUtil = object : DiffUtil.ItemCallback<FeedRowModel>() {
         override fun areItemsTheSame(oldItem: FeedRowModel, newItem: FeedRowModel): Boolean {
@@ -33,10 +33,11 @@ class FeedAdapter : Adapter<FeedAdapter.FeedViewHolder>() {
     inner class FeedViewHolder(private val binding: FeedRowBinding) : ViewHolder(binding.root) {
         fun bind(data: FeedRowModel) {
             with(binding) {
-                tvRow.text = data.description
+                tvRow.setText(data.title)
+                tvDescription.setText(data.description)
                 Glide.with(root).load(data.imageResId).into(ivRow)
                 root.setOnClickListener {
-                    onItemClick?.invoke(data.gameId,data.description)
+                    onItemClick?.invoke(data.gameId,data.title)
                 }
             }
         }

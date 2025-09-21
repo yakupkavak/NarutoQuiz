@@ -90,8 +90,8 @@ class GameViewModel @Inject constructor(
     private val _currentGameId = MutableLiveData<Int>()
     val currentGameId: LiveData<Int> get() = _currentGameId
 
-    private val _currentGameTopic = MutableLiveData<String>()
-    val currentGameTopic: LiveData<String> get() = _currentGameTopic
+    private val _currentGameTopic = MutableLiveData<Int>()
+    val currentGameTopic: LiveData<Int> get() = _currentGameTopic
 
     private val _answerSelection =
         MutableLiveData<AnswerModel>()
@@ -116,7 +116,7 @@ class GameViewModel @Inject constructor(
         _falseAnswer.postValue(0)
     }
 
-    fun initializeGame(gameId: Int, gameTopic: String) {
+    fun initializeGame(gameId: Int, gameTopic: Int) {
         _currentGameId.value = gameId
         _currentGameTopic.value = gameTopic
         startGame()

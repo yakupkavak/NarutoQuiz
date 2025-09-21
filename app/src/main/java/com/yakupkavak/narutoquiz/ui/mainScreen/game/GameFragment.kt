@@ -79,7 +79,7 @@ class GameFragment : Fragment() {
 
     private fun setObserveViewModel() {
         observe(viewModel.currentGameTopic) { gameTopic ->
-            binding.tvTopic.text = gameTopic
+            binding.tvTopic.setText(gameTopic)
         }
         observe(viewModel.questionId) { getQuestionId ->
             questionId = getQuestionId

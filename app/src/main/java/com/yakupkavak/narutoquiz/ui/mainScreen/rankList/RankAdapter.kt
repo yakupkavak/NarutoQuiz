@@ -64,7 +64,8 @@ class RankAdapter : Adapter<RankAdapter.RankViewHolder>() {
                 tvUserScore.text = data.userScore.toString()
             }
         }
-        fun clearBind(){
+
+        fun clearBind() {
             with(binding) {
                 ivUserRank.isVisible = false
                 root.setBackgroundResource(R.drawable.feed_row_design)

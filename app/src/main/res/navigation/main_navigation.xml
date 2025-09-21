@@ -42,7 +42,7 @@
 
         <argument
             android:name="gameTopic"
-            app:argType="string" />
+            app:argType="integer" />
     </fragment>
 
     <fragment

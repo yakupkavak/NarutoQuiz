@@ -129,4 +129,19 @@
     <string name="delete_success">Account deleted.</string>
     <string name="question_number">Question number: %1$d</string>
 
+    <string name="game_story_title">Hikaye</string>
+    <string name="game_story_description">Naruto evreninin hikâyesini, senin için hazırlanan sorularla keşfet.</string>
+    <string name="game_challenge_title">Meydan Okuma</string>
+    <string name="game_challenge_description">Shinobi dünyasında hataya yer yoktur!</string>
+    <string name="game_classic_title">Klasik</string>
+    <string name="game_classic_description">Genel bilgini test etme vakti.</string>
+    <string name="game_akatsuki_title">Akatsuki</string>
+    <string name="game_akatsuki_description">Görevimiz, sahte barışı yıkmak.</string>
+    <string name="game_clan_title">Klanlar</string>
+    <string name="game_clan_description">Kökenini hatırla, klanını koru.</string>
+    <string name="game_tailed_beast_title">Kuyruklu Canavarlar</string>
+    <string name="game_tailed_beast_description">Burası canavarların dünyası.</string>
+    <string name="game_teams_title">Takımlar</string>
+    <string name="game_teams_description">Kurallara uymayanlar çöptür… Ama arkadaşlarını önemsemeyenler, çöpten de beterdir.</string>
+
 </resources>
