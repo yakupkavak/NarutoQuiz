@@ -23,6 +23,7 @@ import com.yakupkavak.narutoquiz.ui.extension.showToast
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_CLAN_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_FAMILY_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_JINCURIKI_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_STORY_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_TEAM_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_VOICE_ACTOR_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CHALLENGE_GAME_ID
@@ -33,6 +34,7 @@ import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.THIRD_OPTION_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.FIRST_CHALLENGE_LEVEL
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LAST_CHALLENGE_LEVEL
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SECOND_CHALLENGE_LEVEL
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.STORY_GAME_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.THIRD_CHALLENGE_LEVEL
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.ErrorDialogFragment
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.GameDialogFragment
@@ -105,6 +107,9 @@ class GameFragment : Fragment() {
 
                     ASK_JINCURIKI_ID -> {
                         tvQuestion.text = getString(R.string.jinckuri_question, it)
+                    }
+                    ASK_STORY_ID -> {
+                        tvQuestion.text = it
                     }
                 }
             }

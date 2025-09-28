@@ -5,9 +5,9 @@
     <string name="zero">0</string>
     <string name="use_viewmodel">ViewModel Kullan</string>
     <string name="increase_counter">Sayacı Arttır</string>
-    <string name="counter_menu">Counter</string>
-    <string name="guess_menu">Guess</string>
-    <string name="refresh_describtion">refresh</string>
+    <string name="counter_menu">Sayaç</string>
+    <string name="guess_menu">Tahmin</string>
+    <string name="refresh_describtion">yenile</string>
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
@@ -143,5 +143,135 @@
     <string name="game_tailed_beast_description">Burası canavarların dünyası.</string>
     <string name="game_teams_title">Takımlar</string>
     <string name="game_teams_description">Kurallara uymayanlar çöptür… Ama arkadaşlarını önemsemeyenler, çöpten de beterdir.</string>
+
+    <string name="naruto_q01">Mizuki gecesinde Yasak Parşömen\'den Gölge Klon Tekniği\'ni öğrenen kimdir?</string>
+    <string name="naruto_q02">Iruka\'nın kendi alın koruyucusunu hediye ettiği öğrenci kimdir?</string>
+    <string name="naruto_q03">Chunin Sınavları\'nda Neji\'yi yenerek "kader" söylemine karşı duran kimdir?</string>
+    <string name="naruto_q04">Gaara ile ilk büyük çarpışmada onu yenip değişimin kapısını aralayan kimdir?</string>
+    <string name="naruto_q05">Jiraiya\'nın ölümünden sonra Myoboku Dağı\'nda Ermiş Modu\'nu öğrenen kimdir?</string>
+    <string name="naruto_q06">Pain\'in Konoha\'ya saldırısında köyü kurtarıp Nagato\'yu ikna eden kimdir?</string>
+    <string name="naruto_q07">Might Guy sekizinci kapıyı açtığında onu ölümden çeviren kimdir?</string>
+    <string name="naruto_q08">Hagoromo\'dan Altı Yollar gücünü alan kimdir?</string>
+    <string name="naruto_q09">Ichiraku tezgâhında ilk “ikram” ramenini alan küçük çocuk kimdir?</string>
+    <string name="naruto_q10">Okulun bahçesindeki salıncakta tek başına oturan öksüz ve yetim kimdir?</string>
+    <string name="naruto_q11">Zabuza Haku görevinde “ninja ne için savaşır” sorusuyla sarsılan kimdir?</string>
+    <string name="naruto_q12">Konohamaru\'ya Rasengan\'ı öğreten kimdir?</string>
+    <string name="naruto_q13">Tsunade\'yi Hokage olmayı kabul etmeye ikna eden kimdir?</string>
+    <string name="naruto_q14">Edo Itachi ile birlikte Nagato\'yu durduran shinobi kimdir?</string>
+    <string name="naruto_q15">Asura Path\'ın çivili saldırısından sonra Hinata\'yı görünce yeniden ayağa kalkan kimdir?</string>
+    <string name="naruto_q16">Kaguya\'nın boyutunda, mühür vuruşunu Sasuke ile eş zamanlı yapan kimdir?</string>
+    <string name="naruto_q17">Jiraiya\’nın kaybından sonra ustasının “gerçek kahraman” tarifini kendine hedef koyan kimdir?</string>
+
+    <string name="sasuke_q01">Dalgaların Ülkesi köprüsünde Haku’nun iğnelerinin önüne atlayıp takım arkadaşını kurtaran kimdir?</string>
+    <string name="sasuke_q02">Ormanın Derinlikleri aşamasında Orochimaru’nun Lanet Mührü’nü yiyen kimdir?</string>
+    <string name="sasuke_q03">Chūnin Sınavı finallerinde Gaara’nın kumunu delmek için Chidori’yi sahaya ilk kez indiren kimdir?</string>
+    <string name="sasuke_q04">Deidara’nın C0 intihar patlamasından Manda’yı çağırıp bedel ödeyerek sıyrılan kimdir?</string>
+    <string name="sasuke_q05">Hebi’yi sonra Taka’yı atlatıp tek hedefli abisiyle yüzleşmek için yola çıkan kimdir?</string>
+    <string name="sasuke_q06">Gök gürültüsünü “Kirin”e çevirip Uchiha kardeşlerin düellosunun seyrini değiştiren kimdir?</string>
+    <string name="sasuke_q07">Gerçeği öğrendikten sonra Beş Kage Zirvesi’ni basıp Danzō’nun kalemini orada kıran kimdir?</string>
+    <string name="sasuke_q08">Orochimaru’yu geri döndürüp Edo Hokage’leri çağırttırarak geçmişin hesabını bizzat soran kimdir?</string>
+    <string name="sasuke_q09">Savaş bittiğinde köy koltuğunu değil, “gölgede gözcü” olmayı seçen kimdir?</string>
+    <string name="sasuke_q10">Gençliğinde yılanların yolundan gidip sonra sözleşmesini “Şahin Çağırma”ya çeviren kimdir?</string>
+    <string name="sasuke_q11">Kinshiki Momoshiki savaşında Naruto’yla omuz omuza kombine saldırılar kuran kimdir?</string>
+    <string name="sasuke_q12">Zabuza Haku Sharingan’ını uyanışa taşıyan eşiği, buz aynalarının içinde geçen kimdir?</string>
+
+    <string name="itachi_q01">Kakashi’yi Tsukuyomi ile üç günlük işkence süresine hapseden kimdir?</string>
+    <string name="itachi_q02">“Nefret döngüsünü” sırtlanıp gölgelerden Konoha’yı koruyan kimdir?</string>
+    <string name="itachi_q03">Orochimaru’nun beden çalma planını tek hamlede bozup ona Akatsuki’yi bıraktıran kimdir?</string>
+    <string name="itachi_q04">Shisui’nin gözünü emanet alıp Kotoamatsukami’yi koruyan kimdir?</string>
+    <string name="itachi_q05">Klan darbesini durdurmak için Konoha’ya karşı görünmez bir çifte ajan görevini üstlenen kimdir?</string>
+    <string name="itachi_q06">Son karşılaşmada iki parmağını kardeşinin alnına dokundurup vedasını yapan kimdir?</string>
+    <string name="itachi_q07">Kirin’in üzerine Susanoo’nun Yatay Aynası’nı indirerek saldırıyı nötrleyen kimdir?</string>
+    <string name="itachi_q08">Kardeşinin’nin içinde beliren Orochimaru’yu Totsuka Kılıcı ile anında mühürleyen kimdir?</string>
+    <string name="itachi_q09">Edo hâlindeyken Kabuto’yu Izanami döngüsüne alıp Edo Tensei’yi sonlandırttıran kimdir?</string>
+    <string name="itachi_q10">Akatsuki içinde dolaşan bilgileri gizlice Konoha’ya aktaran ANBU kökenli shinobi kimdir?</string>
+    <string name="itachi_q11">Nagato ile savaşta Totsuka Kılıcı’nı kullanarak Naruto ve Killer B’yi kurtaran kimdir?</string>
+    <string name="itachi_q12">Shisui\’nin ölümü sonrası Mangekyō Sharingan’ını uyandıran kimdir?</string>
+    <string name="itachi_q13">13 yaşında ANBU\'nun kaptanı olup "savaşı bitirecek barış" fikrinin peşine düşen kimdir?</string>
+    <string name="itachi_q14">Ölümünden sonra gözleriyle kardeşinin görme kaybını durduracak yolu açan kimdir?</string>
+    <string name="itachi_q15">Konoha liderleriyle pazarlık edip darbe gecesinde Sasuke’nin hayatını şart koşan kimdir?</string>
+    <string name="itachi_q16">Köyden ayrıldıktan sonra bile tehditleri gölgede izleyip Konoha’yı korumayı sürdüren kimdir?</string>
+    <string name="itachi_q17">Reenkarnasyon hâlindeyken kardeşine seni her zaman seveceğim diyen kimdir?</string>
+    <string name="itachi_q18">Naruto ve Sasukenin Son Vadi savaşında Sasukenin elinde beliren o tek el kime aitdir?</string>
+
+    <string name="kakashi_q01">Takım 7’nin zil testinde “kurallar mı, takım mı?” dengesini öğreten ve öğle yemeğini paylaşma dersini veren kimdir?</string>
+    <string name="kakashi_q02">“Kopya Ninja” lakabını binin üstünde jutsuyu kopyalamasıyla alan kimdir?</string>
+    <string name="kakashi_q03">Kannabi Köprüsü görevinde arkadaşının son isteğiyle sol gözüne Sharingan’ı alan kimdir?</string>
+    <string name="kakashi_q04">“Chidori / Raikiri” tekniğini geliştirip ilk kez savaşta kullanan kimdir?</string>
+    <string name="kakashi_q05">Deidara’nın kaçışını durdurmak için Kamui’yi ilk kez gerçek hedefe uygulayan kimdir?</string>
+    <string name="kakashi_q06">Pain’in saldırısında hayatını kaybedip, Narutonun ölümünü hissettiği karakter kimdir?</string>
+    <string name="kakashi_q07">Savaş sonrasında Altıncı Hokage koltuğunu devralan kimdir?</string>
+    <string name="kakashi_q08">Saha ortasında bile “Icha Icha” kitabını elinden bırakmayan usta kimdir?</string>
+    <string name="kakashi_q09">Sukea kılığında köye dönüp yüzünü bile gizleyerek soruşturma yürüten kimdir?</string>
+
+    <string name="madara_q01">Hashirama ile birlikte Konoha’nın temelini atan ve sonra kaderleri ayrılan kimdir?</string>
+    <string name="madara_q02">Tek hamlede iki meteor indirerek savaşın dengesini bozan kimdir?</string>
+    <string name="madara_q03">Beş Kage’yi tek başına dize getirerek gücünü sergileyen kimdir?</string>
+    <string name="madara_q04">Görünmez “Limbo” gölgeleriyle rakiplerini aynı anda bağlayan kimdir?</string>
+    <string name="madara_q05">Hashirama’nın hücreleriyle Rinneganı uyanıp nihai plana yürüyen kimdir?</string>
+    <string name="madara_q06">On Kuyruk’un Jinchūriki’si olup “altı yollu” güce erişen kimdir?</string>
+    <string name="madara_q07">Sonsuz Tsukuyomi’yi ay yansımasıyla tüm dünyaya yayan kimdir?</string>
+    <string name="madara_q08">Mükemmel Susanoo’sunu açıp dağları biçen kimdir?</string>
+    <string name="madara_q09">Sekizinci Kapı açıldığında “bugüne dek gördüğüm en güçlü taijutsu” diyerek rakibini onurlandıran kimdir?</string>
+
+    <!-- OBITO (10) -->
+    <string name="obito_q01">“Kahramanlar geç kalır” diyerek arkadaşını kurtarmak için gömülüşe giden ve gözünü emanet eden kimdir?</string>
+    <string name="obito_q02">Maskenin ardında Konoha’ya saldırıyı örgütleyen “Maskeli Adam” kimdir?</string>
+    <string name="obito_q03">Akatsuki’de “Tobi” rolüyle saf numarası yapan kimdir?</string>
+    <string name="obito_q04">Kamui ile bedenini madde dışına çıkarıp saldırıları içinden geçiren kimdir?</string>
+    <string name="obito_q05">Rin’in ölümünden sonra dünyayı “Kurtuluş Planı”na kilitleyen kimdir?</string>
+    <string name="obito_q06">Kakashi ile boyutlar arasında tek başına düello ederek eski bağların hesabını gören kimdir?</string>
+    <string name="obito_q07">Naruto’yu ölümcül andan çekip çıkararak kefarete ilk adımı atan kimdir?</string>
+    <string name="obito_q08">Akatsuki’nin gerçek liderliğini gölgede yürüten ve savaşı başlatan kimdir?</string>
+    <string name="obito_q09">Son anında “gerçek benliğini” hatırlayıp ninjaların geleceği için gücünü devreden kimdir?</string>
+
+    <!-- GAARA (10) -->
+    <string name="gaara_q01">Çocukken istem dışı kum kalkanıyla kendini koruyup yalnızlığa mahkûm olan kimdir?</string>
+    <string name="gaara_q02">Chūnin Sınavı’nda Rock Lee karşısında savunmasını bile deldiren ve ilk kez sarsılan kimdir?</string>
+    <string name="gaara_q03">Naruto’nun sözleriyle “yalnızlığın aynı acısı”nı görüp değişmeye karar veren kimdir?</string>
+    <string name="gaara_q04">Suna’nın en genç Kazekage’si olarak köyünü korumayı üstlenen kimdir?</string>
+    <string name="gaara_q05">Deidara’ya karşı köyünü korurken canı pahasına savaşan kimdir?</string>
+    <string name="gaara_q06">Kuyruklu Canavar’ı çekilip canı söndüğünde, Chiyo’nun fedakârlığıyla hayata dönen kimdir?</string>
+    <string name="gaara_q07">Beş Kage Zirvesi’nde Raikage’ye karşı Naruto’yu savunan ses kimdir?</string>
+    <string name="gaara_q08">Alyans ordusuna “kalpleri birleştiren” komutan konuşmasını yapan kimdir?</string>
+    <string name="gaara_q09">Savaşta babası Rasa’nın ruhuyla yüzleşip geçmişinin yarasını saran kimdir?</string>
+    <string name="gaara_q10">Dördüncü Büyük Ninja Savaşı’nda babası Rasa’dan, onu hep koruyan kumun aslında annesinin sevgisi olduğunu öğrenen kimdir?</string>
+    <string name="gaara_q11">Çocukluğunda düzenlenen suikastta kumun kendiliğinden yükselip onu siper etmesi, “annenin iradesi” sayesinde gerçekleşen shinobi kimdir?</string>
+
+    <!-- KABUTO (5) -->
+    <string name="kabuto_q01">Konoha Yetimhanesi’nden çıkarılıp Orochimaru’nun en gizli casusu hâline gelen kimdir?</string>
+    <string name="kabuto_q02">Edo Tensei’yi mükemmelleştirip savaşın taşlarını mezardan kaldıran kimdir?</string>
+    <string name="kabuto_q03">Ryūchi Mağarası’nda Bilge Modu’na ulaşıp “Beyaz Çığlık”la arenayı titreten kimdir?</string>
+    <string name="kabuto_q04">Izanami döngüsünde “kendini kabullenmeyi” öğrenip zinciri kıran kimdir?</string>
+    <string name="kabuto_q05">Savaştan sonra yetimhaneye dönüp yeni bir yola giren kimdir?</string>
+
+    <!-- OROCHIMARU (5) -->
+    <string name="orochimaru_q01">Efsanevi Üçlü’den olup ölümsüzlüğü arayışıyla yasak deneylere dalan kimdir?</string>
+    <string name="orochimaru_q02">Ormanın Derinlikleri’nde Sasuke’ye Lanet Mührü’nü bırakan kimdir?</string>
+    <string name="orochimaru_q03">Konoha İstilası’nda Edo Hokage’leri çağırıp ustasıyla hesaplaşan kimdir?</string>
+    <string name="orochimaru_q04">Yılan bedenini “kabuk değiştirir gibi” bırakarak ölümden sıyrılan kimdir?</string>
+    <string name="orochimaru_q05">Sasuke’nin isteğiyle geri dönüp Edo Hokage’leri yeniden çağırarak tarihin kapısını aralayan kimdir?</string>
+
+    <!-- ROCK LEE (5) -->
+    <string name="rocklee_q01">Chūnin Sınavı’nda ağırlıklarını çıkarıp sahayı toza bulayan hızını ilk kez gösteren kimdir?</string>
+    <string name="rocklee_q02">Gaara’ya karşı ön kapıyı açıp İlk Lotus’la herkesin yüreğini ağzına getiren kimdir?</string>
+    <string name="rocklee_q03">Ormanın Derinlikleri’nde Sakura’yı korumak için Sound üçlüsünün önüne tek başına dikilen kimdir?</string>
+    <string name="rocklee_q04">Ameliyat olursa ölme riski varken yeniden dövüşebilmek için Tsunade’nin masasına yatan kimdir?</string>
+    <string name="rocklee_q05">Kımıl kımıl “Sarhoş Yumruğu”yla Kimimaro’yu bir an için bile olsa oyuna getiren kimdir?</string>
+
+    <!-- SAKURA (5) -->
+    <string name="sakura_q01">Ormanın Derinlikleri’nde saçını kendi elleriyle kesip “artık ben de savaşacağım” diyen kimdir?</string>
+    <string name="sakura_q02">Tsunade’nin yanında tıp ninjası eğitimine girip tek yumrukla zemini çatlatacak güce ulaşan kimdir?</string>
+    <string name="sakura_q03">Chiyo ile omuz omuza savaşarak Akatsuki’den Sasori’yi alt eden kimdir?</string>
+    <string name="sakura_q04">Naruto’nun kalbi durmak üzereyken çıplak elleriyle kalbini pompalarak onu hayata döndüren kimdir?</string>
+    <string name="sakura_q05">Yüzündeki mührü açıp “Yüzün Gücü” ile cephede binlerce askeri aynı anda iyileştiren kimdir?</string>
+
+    <!-- MINATO (5) -->
+    <string name="minato_q01">“Konoha’nın Sarı Şimşeği” olarak Sıhhiye gelmeden savaşı bitiren hızın sahibi kimdir?</string>
+    <string name="minato_q02">Köy gecesinde Dokuz Kuyruk’un dev Tailed Beast Bomb’unu Işınlanma Tekniği ile Konoha’dan uzaklaştıran kimdir?</string>
+    <string name="minato_q03">Kushina’dan koparılan Kurama’yı durdurmak için kendi canını feda edip mührü oğluna emanet eden kimdir?</string>
+    <string name="minato_q04">Jiraiya’nın romanındaki kahramandan esinlenerek oğluna “Naruto” adını veren ve onu vaftiz babasına teslim eden kimdir?</string>
+    <string name="minato_q05">Raikage A’nın hamlesini bile geride bırakıp “Uçan Yıldırım Tanrısı” ile savaş alanını tek işarette tersyüz eden kimdir?</string>
+    <string name="minato_q06">Hiçbir özel kan bağı olmayıp tamamen kendi olarak 9 kuyruklu ile öğrencisini alt eden usta kimdir?</string>
 
 </resources>

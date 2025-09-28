@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.yakupkavak.narutoquiz.data.base.GameRoomDatabase
 import com.yakupkavak.narutoquiz.data.local.repository.DaoRepository
+import com.yakupkavak.narutoquiz.data.local.repository.MockRepository
 import com.yakupkavak.narutoquiz.data.local.service.GameDao
 import com.yakupkavak.narutoquiz.data.local.util.ServiceConst.DATABASE_NAME
 import com.yakupkavak.narutoquiz.data.network.repository.RemoteConfigRepository
@@ -97,6 +98,12 @@ object NetworkModule {
     @Singleton
     fun provideAppDatabase(@ApplicationContext appContext: Context): GameRoomDatabase {
         return Room.databaseBuilder(appContext, GameRoomDatabase::class.java, DATABASE_NAME).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideMockRepository(@ApplicationContext appContext: Context): MockRepository {
+        return MockRepository(context = appContext)
     }
 
     @Provides

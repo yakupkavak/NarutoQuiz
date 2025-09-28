@@ -49,6 +49,14 @@
         app:constraint_referenced_ids="tvQuestionNumber,tvQuestion,cvOne,cvTwo,cvThree
         ,cvFour,tvOne,tvTwo,tvThree,tvFour,btnCheck" />
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/storyGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tvQuestionNumber,tvQuestion,cvOne,cvTwo,cvThree
+        ,cvFour,tvOne,tvTwo,tvThree,tvFour,btnCheck" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabClose"
         android:layout_width="wrap_content"
@@ -159,12 +167,22 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_small">
 
+            <TextView
+                android:id="@+id/tvTextOne"
+                style="@style/MediumSizeMedium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/loading"
+                android:visibility="gone" />
+
             <ImageView
                 android:id="@+id/ivOne"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="@string/first_option"
-                android:scaleType="fitXY" />
+                android:scaleType="fitXY"
+                android:visibility="visible" />
         </androidx.cardview.widget.CardView>
 
     </androidx.cardview.widget.CardView>
@@ -176,6 +194,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_default"
         android:text="@string/increase_counter"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@id/cvOne"
         app:layout_constraintStart_toStartOf="@id/cvOne"
         app:layout_constraintTop_toBottomOf="@id/cvOne" />
@@ -195,6 +214,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/tvTextTwo"
+                style="@style/MediumSizeMedium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/loading"
+                android:visibility="gone" />
 
             <ImageView
                 android:id="@+id/ivTwo"
@@ -234,6 +262,15 @@
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_small">
 
+            <TextView
+                android:id="@+id/tvTextThree"
+                style="@style/MediumSizeMedium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/loading"
+                android:visibility="gone" />
+
             <ImageView
                 android:id="@+id/ivThree"
                 android:layout_width="match_parent"
@@ -270,6 +307,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/margin_small">
+
+            <TextView
+                android:id="@+id/tvTextFour"
+                style="@style/MediumSizeMedium"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/loading"
+                android:visibility="gone" />
 
             <ImageView
                 android:id="@+id/ivFour"

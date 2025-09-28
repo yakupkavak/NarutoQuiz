@@ -142,6 +142,131 @@
     <string name="game_tailed_beast_title">Tailed Beast</string>
     <string name="game_tailed_beast_description">This is the world of beasts.</string>
     <string name="game_teams_title">Teams</string>
-    <string name="game_teams_description">In the Ninja World, those who break the rules are scum, that\\s true.but those who abandon their friends are worse than scum!</string>
+    <string name="game_teams_description">
+            In the shinobi world, those who break the rules are scum, that’s true. But those who abandon their friends are worse than scum!
+    </string>
+
+    <string name="naruto_q01">Who learned the Shadow Clone Technique from the Forbidden Scroll on the night of the Mizuki incident?</string>
+    <string name="naruto_q02">Which student received Iruka’s own forehead protector as a gift?</string>
+    <string name="naruto_q03">Who defeated Neji in the Chūnin Exams and stood against the idea of “fate”?</string>
+    <string name="naruto_q04">Who opened the door to change by defeating Gaara in their first major clash?</string>
+    <string name="naruto_q05">Who learned Sage Mode at Mount Myōboku after Jiraiya’s death?</string>
+    <string name="naruto_q06">Who saved the village during Pain’s assault on Konoha and persuaded Nagato?</string>
+    <string name="naruto_q07">Who pulled Might Guy back from death after he opened the Eighth Gate?</string>
+    <string name="naruto_q08">Who received the power of the Six Paths from Hagoromo?</string>
+    <string name="naruto_q09">Which little boy got his first free bowl of ramen at the Ichiraku stand?</string>
+    <string name="naruto_q10">Who was the orphan sitting alone on the swing behind the school?</string>
+    <string name="naruto_q11">Who was shaken by the question “what does a ninja fight for?” on the Zabuza–Haku mission?</string>
+    <string name="naruto_q12">Who taught Konohamaru the Rasengan?</string>
+    <string name="naruto_q13">Who convinced Tsunade to accept becoming Hokage?</string>
+    <string name="naruto_q14">Which shinobi stopped Nagato together with Edo Itachi?</string>
+    <string name="naruto_q15">Who stood back up after seeing Hinata following the Asura Path’s spiked attack?</string>
+    <string name="naruto_q16">In Kaguya’s dimension, who struck the sealing blow in perfect sync with Sasuke?</string>
+    <string name="naruto_q17">After losing Jiraiya, who set his master’s definition of a “true hero” as his goal?</string>
+
+    <string name="sasuke_q01">On the bridge in the Land of Waves, who threw himself in front of Haku’s senbon to save a teammate?</string>
+    <string name="sasuke_q02">Who received Orochimaru’s Cursed Seal during the Forest of Death stage?</string>
+    <string name="sasuke_q03">Who brought Chidori into the arena for the first time in the Chūnin Exam finals to pierce Gaara’s sand?</string>
+    <string name="sasuke_q04">Who escaped Deidara’s C0 self-destruction by summoning Manda and paying the price?</string>
+    <string name="sasuke_q05">Who formed Hebi and later Taka, setting out to face his single target—his brother?</string>
+    <string name="sasuke_q06">Who turned thunder into “Kirin,” changing the course of the Uchiha brothers’ duel?</string>
+    <string name="sasuke_q07">After learning the truth, who crashed the Five Kage Summit and ended Danzō’s rule?</string>
+    <string name="sasuke_q08">Who revived Orochimaru and had the Edo Hokage summoned to question the past directly?</string>
+    <string name="sasuke_q09">When the war ended, who chose to be a watcher in the shadows instead of taking a seat in the village?</string>
+    <string name="sasuke_q10">Who walked the path of snakes in youth, then switched his contract to the “Hawk Summon”?</string>
+    <string name="sasuke_q11">In the battle against Kinshiki and Momoshiki, who built coordinated combos shoulder to shoulder with Naruto?</string>
+    <string name="sasuke_q12">Within the ice mirrors against Haku, who reached the threshold that awakened his Sharingan?</string>
+
+    <string name="itachi_q01">Who trapped Kakashi in a three-day torture time with Tsukuyomi?</string>
+    <string name="itachi_q02">Who bore the “cycle of hatred” and protected Konoha from the shadows?</string>
+    <string name="itachi_q03">Who ruined Orochimaru’s body-snatching plan in a single move and made him quit Akatsuki?</string>
+    <string name="itachi_q04">Who safeguarded Shisui’s eye and protected Kotoamatsukami?</string>
+    <string name="itachi_q05">Who undertook the unseen double-agent mission against his own clan to prevent a coup in Konoha?</string>
+    <string name="itachi_q06">In their final encounter, who bid farewell by touching his two fingers to his brother’s forehead?</string>
+    <string name="itachi_q07">Who neutralized Kirin by lowering Susanoo’s Yata Mirror onto it?</string>
+    <string name="itachi_q08">Who instantly sealed the Orochimaru that surfaced within his brother using the Totsuka Blade?</string>
+    <string name="itachi_q09">While reanimated, who trapped Kabuto in the Izanami loop and forced him to end Edo Tensei?</string>
+    <string name="itachi_q10">Which ANBU-born shinobi covertly fed Akatsuki intel back to Konoha?</string>
+    <string name="itachi_q11">In the fight with Nagato, who used the Totsuka Blade to save Naruto and Killer B?</string>
+    <string name="itachi_q12">Who awakened his Mangekyō Sharingan after Shisui’s death?</string>
+    <string name="itachi_q13">Who became an ANBU captain at 13 and pursued the idea of a peace that would end war?</string>
+    <string name="itachi_q14">After his death, who opened the path to stop his brother’s vision loss with his eyes?</string>
+    <string name="itachi_q15">Who negotiated with Konoha’s leaders and made Sasuke’s life a condition on the night of the coup?</string>
+    <string name="itachi_q16">Even after leaving the village, who kept watching threats from the shadows to continue protecting Konoha?</string>
+    <string name="itachi_q17">While reincarnated, who told his brother “I will always love you”?</string>
+    <string name="itachi_q18">In Naruto and Sasuke’s Final Valley battle, the single hand that appears in Sasuke’s palm—whose hand is it?</string>
+
+    <string name="kakashi_q01">During Team 7’s bell test, who taught the balance of “rules or the team” and the lesson of sharing lunch?</string>
+    <string name="kakashi_q02">Who earned the nickname “Copy Ninja” by copying over a thousand jutsu?</string>
+    <string name="kakashi_q03">On the Kannabi Bridge mission, who received the Sharingan in his left eye per his friend’s last wish?</string>
+    <string name="kakashi_q04">Who developed the Chidori/Raikiri technique and first used it in battle?</string>
+    <string name="kakashi_q05">Who first applied Kamui to a live target to stop Deidara’s escape?</string>
+    <string name="kakashi_q06">Who lost his life during Pain’s attack—the one whose death Naruto sensed?</string>
+    <string name="kakashi_q07">Who took the seat of the Sixth Hokage after the war?</string>
+    <string name="kakashi_q08">Which master keeps his “Icha Icha” book in hand even mid-battle?</string>
+    <string name="kakashi_q09">Who returned to the village in a Sukea disguise, hiding even his face while investigating?</string>
+
+    <string name="madara_q01">Who founded Konoha together with Hashirama, only for their destinies to split later?</string>
+    <string name="madara_q02">Who dropped two meteors in a single move, breaking the balance of the war?</string>
+    <string name="madara_q03">Who subdued all Five Kage alone, displaying overwhelming power?</string>
+    <string name="madara_q04">Who bound opponents simultaneously with invisible “Limbo” shadows?</string>
+    <string name="madara_q05">Who awakened the Rinnegan using Hashirama’s cells and advanced the ultimate plan?</string>
+    <string name="madara_q06">Who became the Ten-Tails’ jinchūriki and attained Six Paths power?</string>
+    <string name="madara_q07">Who cast the Infinite Tsukuyomi across the world via the moon’s reflection?</string>
+    <string name="madara_q08">Who unleashed a Perfect Susanoo that could slice mountains?</string>
+    <string name="madara_q09">When the Eighth Gate opened, who honored his foe by saying “the strongest taijutsu I’ve ever seen”?</string>
+
+    <string name="obito_q01">Who said “Heroes arrive late,” went under the rubble to save a friend, and entrusted his eye?</string>
+    <string name="obito_q02">Who, behind the mask, orchestrated the attack on Konoha as “the Masked Man”?</string>
+    <string name="obito_q03">Who played dumb in Akatsuki under the role of “Tobi”?</string>
+    <string name="obito_q04">Who used Kamui to dematerialize his body and pass through attacks?</string>
+    <string name="obito_q05">After Rin’s death, who locked the world onto his “Eye of the Moon Plan”?</string>
+    <string name="obito_q06">Who settled old bonds by dueling Kakashi alone across dimensions?</string>
+    <string name="obito_q07">Who pulled Naruto out of a fatal moment, taking his first step toward atonement?</string>
+    <string name="obito_q08">Who secretly led Akatsuki from the shadows and ignited the war?</string>
+    <string name="obito_q09">In his final moment, who remembered his true self and passed on his power for the ninjas’ future?</string>
+
+    <string name="gaara_q01">As a child, who was involuntarily protected by a sand shield and condemned to loneliness?</string>
+    <string name="gaara_q02">In the Chūnin Exams, who was shaken for the first time when even his defense was pierced by Rock Lee?</string>
+    <string name="gaara_q03">Whose heart changed after hearing Naruto’s words about sharing the same pain of loneliness?</string>
+    <string name="gaara_q04">Who became Sunagakure’s youngest Kazekage to protect his village?</string>
+    <string name="gaara_q05">Who fought at the cost of his life to protect his village against Deidara?</string>
+    <string name="gaara_q06">Whose Tailed Beast was extracted, only to be brought back to life by Chiyo’s sacrifice?</string>
+    <string name="gaara_q07">At the Five Kage Summit, whose voice defended Naruto against the Raikage?</string>
+    <string name="gaara_q08">Who delivered the unifying commander’s speech to the Allied Shinobi Forces?</string>
+    <string name="gaara_q09">Who faced his father Rasa’s spirit in the war and healed the wounds of his past?</string>
+    <string name="gaara_q10">In the Fourth Great Ninja War, who learned from Rasa that the sand protecting him was actually his mother’s love?</string>
+    <string name="gaara_q11">During a childhood assassination attempt, whose sand rose by itself to shield him—thanks to his mother’s will?</string>
+
+    <string name="kabuto_q01">Who was taken from the Konoha Orphanage and became Orochimaru’s most secret spy?</string>
+    <string name="kabuto_q02">Who perfected Edo Tensei and raised the pieces of war from their graves?</string>
+    <string name="kabuto_q03">Who reached Sage Mode in Ryūchi Cave and shook the arena with “White Rage”?</string>
+    <string name="kabuto_q04">Who learned self-acceptance within Izanami’s loop and broke the chain?</string>
+    <string name="kabuto_q05">Who returned to the orphanage after the war and set out on a new path?</string>
+
+    <string name="orochimaru_q01">Who, as one of the Legendary Sannin, pursued immortality through forbidden experiments?</string>
+    <string name="orochimaru_q02">Who left the Cursed Seal on Sasuke during the Forest of Death?</string>
+    <string name="orochimaru_q03">Who summoned the Edo Hokage during the Konoha Crush to settle things with his master?</string>
+    <string name="orochimaru_q04">Who slipped death by shedding his snake body like a cast-off skin?</string>
+    <string name="orochimaru_q05">At Sasuke’s request, who returned and once again summoned the Edo Hokage to open the gates of history?</string>
+
+    <string name="rocklee_q01">In the Chūnin Exams, who dropped his training weights and blanketed the arena in dust with his speed?</string>
+    <string name="rocklee_q02">Against Gaara, who opened the first gate and made hearts race with the Initial Lotus?</string>
+    <string name="rocklee_q03">In the Forest of Death, who stood alone in front of the Sound trio to protect Sakura?</string>
+    <string name="rocklee_q04">Who lay on Tsunade’s operating table to fight again despite the risk of dying from surgery?</string>
+    <string name="rocklee_q05">Who bamboozled Kimimaro—even if only for a moment—with the jittery “Drunken Fist”?</string>
+
+    <string name="sakura_q01">In the Forest of Death, who cut her own hair and declared, “I’ll fight too now”?</string>
+    <string name="sakura_q02">Who trained under Tsunade as a medical-ninja and gained the strength to crack the ground with a single punch?</string>
+    <string name="sakura_q03">Who defeated Akatsuki’s Sasori fighting shoulder to shoulder with Chiyo?</string>
+    <string name="sakura_q04">When Naruto’s heart was about to stop, who pumped it with her bare hands and brought him back?</string>
+    <string name="sakura_q05">Who released the seal on her forehead and healed thousands on the front lines at once with the Strength of a Hundred?</string>
+
+    <string name="minato_q01">As the “Yellow Flash of Konoha,” whose speed ended battles before the medics even arrived?</string>
+    <string name="minato_q02">On the night the village was attacked, who warped the Nine-Tails’ massive Tailed Beast Bomb away from Konoha with the Flying Thunder God Technique?</string>
+    <string name="minato_q03">Who sacrificed himself to stop Kurama torn from Kushina and entrusted the seal to his son?</string>
+    <string name="minato_q04">Who, inspired by the hero of Jiraiya’s novel, named his son “Naruto” and entrusted him to his godfather?</string>
+    <string name="minato_q05">Who outpaced even Raikage A and turned the battlefield inside out in a flash with the “Flying Thunder God”?</string>
+    <string name="minato_q06">With no special bloodline of his own, who defeated his pupil—wielding the Nine-Tails—entirely on his own?</string>
 
 </resources>

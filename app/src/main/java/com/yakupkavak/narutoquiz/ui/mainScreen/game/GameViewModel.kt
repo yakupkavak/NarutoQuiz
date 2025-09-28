@@ -3,7 +3,10 @@ package com.yakupkavak.narutoquiz.ui.mainScreen.game
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.yakupkavak.narutoquiz.R
+import com.yakupkavak.narutoquiz.data.local.model.StoryQuestionModel
 import com.yakupkavak.narutoquiz.data.local.repository.DaoRepository
+import com.yakupkavak.narutoquiz.data.local.repository.MockRepository
 import com.yakupkavak.narutoquiz.data.network.model.Akatsuki
 import com.yakupkavak.narutoquiz.data.network.model.AnswerModel
 import com.yakupkavak.narutoquiz.data.network.model.Character
@@ -23,6 +26,7 @@ import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.AKATSUKI_SIZE
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_CLAN_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_FAMILY_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_JINCURIKI_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_STORY_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.ASK_TEAM_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CHALLENGE_GAME_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.CHARACTER_PAGE_RANGE
@@ -36,12 +40,14 @@ import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LAST_CHARACTER_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LAST_OPTION_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SECOND_CHARACTER_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SECOND_OPTION_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.STORY_GAME_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TAIL_PAGE_RANGE
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TAILED_GAME_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TEAM_GAME_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TEAM_PAGE_SIZE
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.THIRD_CHARACTER_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.THIRD_OPTION_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.QuestionBank.popularCharacterList
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -55,10 +61,14 @@ class GameViewModel @Inject constructor(
     private val firestoreRepository: FirestoreRepository,
     private val geminiRepository: GeminiRepository,
     private val daoRepository: DaoRepository,
+    private val mockRepository: MockRepository,
 ) : BaseViewModel() {
 
     private val _questionText = MutableLiveData<String>()
     val questionText: LiveData<String> get() = _questionText
+
+    private val _storyText = MutableLiveData<String>()
+    val storyText: LiveData<String> get() = _storyText
 
     private val _firstOption = MutableLiveData<SelectionModel>()
     val firstOption: LiveData<SelectionModel> get() = _firstOption
@@ -76,10 +86,8 @@ class GameViewModel @Inject constructor(
     val questionNumber: LiveData<Int> get() = _questionNumber
 
     private val _trueAnswer = MutableLiveData(0)
-    val trueAnswer: LiveData<Int> get() = _trueAnswer
 
     private val _falseAnswer = MutableLiveData(0)
-    val falseAnswer: LiveData<Int> get() = _falseAnswer
 
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean> get() = _loading
@@ -107,8 +115,8 @@ class GameViewModel @Inject constructor(
     val hintText: LiveData<String> get() = _hintText
 
     private var trueCharacter: String? = null
-
     private var trueAnswerId: Int? = null
+    private val storyRepository = StoryQuestionRepository()
 
     private fun clearGame() {
         _questionNumber.postValue(0)
@@ -213,6 +221,10 @@ class GameViewModel @Inject constructor(
         clearGame()
         viewModelScope.launch {
             when (currentGameId.value) {
+                STORY_GAME_ID -> {
+                    storyGame()
+                }
+
                 CHALLENGE_GAME_ID -> {
                     challengeGame()
                 }
@@ -244,6 +256,10 @@ class GameViewModel @Inject constructor(
         viewModelScope.launch {
             if (checkGameSituation()) {
                 when (currentGameId.value) {
+                    STORY_GAME_ID -> {
+                        storyGame()
+                    }
+
                     CHALLENGE_GAME_ID -> {
                         challengeGame()
                     }
@@ -298,7 +314,7 @@ class GameViewModel @Inject constructor(
     }
 
     private fun challengeGame() {
-        when (getRandom(includeUntil = 5)) {
+        when (getRandom(includeUntil = 6)) {
             0 -> {
                 familyGame()
             }
@@ -322,11 +338,15 @@ class GameViewModel @Inject constructor(
             5 -> {
                 familyGame()
             }
+
+            6 -> {
+                storyGame()
+            }
         }
     }
 
     private fun classicGame() {
-        when (getRandom(includeUntil = 4)) {
+        when (getRandom(includeUntil = 6)) {
             0 -> {
                 familyGame()
             }
@@ -345,6 +365,14 @@ class GameViewModel @Inject constructor(
 
             4 -> {
                 familyGame()
+            }
+
+            5 -> {
+                storyGame()
+            }
+
+            6 -> {
+                storyGame()
             }
         }
     }
@@ -389,6 +417,56 @@ class GameViewModel @Inject constructor(
         )
     }
 
+    private fun storyGame() {
+        val question = storyRepository.getQuestion()
+        _questionId.postValue(ASK_STORY_ID)
+        when (question) {
+            is StoryQuestionModel.StoryCharacterModel -> {
+                _questionText.postValue(mockRepository.getStringValue(question.questionTitle))
+                askStoryClassic(question.answerCharacterId)
+            }
+            is StoryQuestionModel.StoryTextModel -> {
+                question.trueAnswerId
+                // Burada question.trueAnswerId, question.answerTwoId vs. var
+            }
+        }
+    }
+
+    private fun askStoryClassic(characterId: Int) {
+        getDataCall(
+            dataCall = { getThreeRandomCharacter(characterId = characterId) },
+            onSuccess = { characterList ->
+                if (characterList != null) {
+                    createClassicStory(characterId = characterId, characterList = characterList).also { _loading.postValue(false) }.also {
+                        _questionNumber.postValue(_questionNumber.value?.plus(1))
+                    }
+                }
+            },
+            onError = { _error.postValue(true) },
+            onLoading = { _loading.postValue(true) }
+        )
+    }
+
+    private suspend fun createClassicStory(characterId: Int, characterList: List<Character?>){
+        val firstCharacter = getCharacter(characterId)
+
+        trueCharacter = firstCharacter?.name
+
+        setOptions(
+            listOf(
+                firstCharacter,
+                characterList[FIRST_CHARACTER_ID],
+                characterList[SECOND_CHARACTER_ID],
+                characterList[THIRD_CHARACTER_ID]
+            )
+        )
+    }
+
+    private suspend fun getCharacter(id: Int): Character? {
+        val character = narutoRepository.getCharacter(charcerId = id)
+        return  character.data
+    }
+
     private fun akatsukiGame() {
         getDataCall(
             dataCall = { getFourAkatsukiCharacter() },
@@ -429,13 +507,39 @@ class GameViewModel @Inject constructor(
     }
 
     private fun getAkatsuki(charList: Resource<Akatsuki>): Character {
-        while (true) {
+        for (i in 1..6) {
             val character =
                 charList.data?.akatsuki?.get(getRandom(from = 0, includeUntil = AKATSUKI_SIZE - 1))
             if (character?.images?.isEmpty() == false) {
                 return character
             }
         }
+        val randomAkatsuki = mockRepository.getRandomCharacterFromRaw(R.raw.akatsuki)
+        return randomAkatsuki!!
+    }
+
+    private suspend fun getThreeRandomCharacter(characterId: Int): Resource<List<Character?>> {
+        var firstCharacter: Character?
+        for (i in 1..20) {
+            val selectedCharacters =
+                mutableSetOf<Character?>()
+            firstCharacter = getRandomCharacter()
+            if (firstCharacter?.id == characterId) {
+                continue
+            }
+            if (firstCharacter?.family?.getFirstNonNullField() != null) {
+                selectedCharacters.add(firstCharacter)
+                selectedCharacters.add(getRandomCharacter())
+                selectedCharacters.add(getRandomCharacter())
+                if (selectedCharacters.size == 3
+                ) {
+                    return Resource.success(
+                        selectedCharacters.toList()
+                    )
+                }
+            }
+        }
+        return Resource.error(null)
     }
 
     private suspend fun getFourRandomCharacter(): Resource<List<Character?>> {
@@ -624,12 +728,11 @@ class GameViewModel @Inject constructor(
 
     private fun setOptions(characterList: List<Character?>) {
         val options = listOf(
-            OptionModel(FIRST_OPTION_ID, _firstOption),
-            OptionModel(SECOND_OPTION_ID, _secondOption),
-            OptionModel(THIRD_OPTION_ID, _thirdOption),
-            OptionModel(LAST_OPTION_ID, _lastOption)
+            OptionModel(optionId = FIRST_OPTION_ID, option = _firstOption),
+            OptionModel(optionId = SECOND_OPTION_ID, option = _secondOption),
+            OptionModel(optionId = THIRD_OPTION_ID, option = _thirdOption),
+            OptionModel(optionId = LAST_OPTION_ID, option = _lastOption)
         ).shuffled()
-
         trueAnswerId = options[FIRST_OPTION_ID].optionId
 
         setOptionTrue(characterList[FIRST_CHARACTER_ID], options[FIRST_OPTION_ID])
