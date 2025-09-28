@@ -274,4 +274,259 @@
     <string name="minato_q05">Raikage A’nın hamlesini bile geride bırakıp “Uçan Yıldırım Tanrısı” ile savaş alanını tek işarette tersyüz eden kimdir?</string>
     <string name="minato_q06">Hiçbir özel kan bağı olmayıp tamamen kendi olarak 9 kuyruklu ile öğrencisini alt eden usta kimdir?</string>
 
+    <!-- HASHIRAMA (6) -->
+    <string name="hashirama_q01">Madara ile çocukken nehrin iki yakasında taş atışından dostluğa, dostluktan Konoha fikrine uzanan yolu başlatan kimdir?</string>
+    <string name="hashirama_q02">Barış, birlikte kurulur diyerek Hokage fikrini ilk kez dillendiren kimdir?</string>
+    <string name="hashirama_q03">Uchiha taş tabletindeki kader yazılarını aşmak için kardeşliği seçen kimdir?</string>
+    <string name="hashirama_q04">Vadinin Sonu\'ndaki ilk büyük düelloda, arkadaşını öldürmeyi reddedip köyü kuran kimdir?</string>
+    <string name="hashirama_q05">Canlı heykeller gibi yükselen dev odun Budası ile savaş meydanını susturan kimdir?</string>
+    <string name="hashirama_q06">Köy, aile demektir, sözünü nesillere bırakan ilk Hokage kimdir?</string>
+
+    <!-- TOBIRAMA (5) -->
+    <string name="tobirama_q01">ANBU\'nun temellerini atan ve köy düzenini sistemleştiren kimdir?</string>
+    <string name="tobirama_q02">Uçan Yıldırım Tanrısı Tekniği\'nin ilk nüvesini geliştiren kimdir?</string>
+    <string name="tobirama_q03">Chūnin ve Akademi düzenini kurumsallaştırıp ninja eğitiminin çerçevesini çizen kimdir?</string>
+    <string name="tobirama_q04">Savaşın ortasında kendi hayatını yem olarak kullanıp klanını ve kardeşini koruyan kimdir?</string>
+    <string name="tobirama_q05">Edo Tensei\'nin karanlık bilgisini, yanlış ellerde felaket diye damgalayan kimdir?</string>
+
+    <!-- TSUNADE (6) -->
+    <string name="tsunade_q01">Kumar masasında şansı dönmese de savaş alanında binlerin şansını döndüren kimdir?</string>
+    <string name="tsunade_q02">Tıbbi birlik olmadan ordu olmaz diyerek cephe dengesini değiştiren kimdir?</string>
+    <string name="tsunade_q03">Naruto\'nun Hokage hayaline inandım deyip koltuğu kabul eden kimdir?</string>
+    <string name="tsunade_q04">Yüzündeki mührü açıp Konoha\'yı enkazdan kaldıran kimdir?</string>
+    <string name="tsunade_q05">Jiraiya\'nın kaybıyla yıkılsa da masaya yine iyileştirmeyi koyan kimdir?</string>
+    <string name="tsunade_q06">Dördüncü Büyük Ninja Savaşı\'nda Kage\'leri birbirine hayat bağlarıyla tutan kimdir?</string>
+
+    <!-- JIRAIYA (6) -->
+    <string name="jiraiya_q01">Öğrencilerim benim mirasım diyerek üç öğrencinin kaderini dünyaya yazan kimdir?</string>
+    <string name="jiraiya_q02">Yağmur köyüne tek başına sızıp gerçeği öğrenmek için geri dönüş yolunu kapatan kimdir?</string>
+    <string name="jiraiya_q03">Kurbağa yazıtına barışın yolunu bırakıp son mesajını kodla gönderen kimdir?</string>
+    <string name="jiraiya_q04">Küçük Naruto\'ya kahramanlar pes etmez diye hedefi gösteren usta kimdir?</string>
+    <string name="jiraiya_q05">Myōboku\'nun ilahilerini savaşın ortasında neşeye çeviren kimdir?</string>
+    <string name="jiraiya_q06">Efsanevi Üçlüden olarak, yalnız bir öğretmenin en büyük zaferinin öğrencisi olduğunu kanıtlayan kimdir?</string>
+
+    <!-- MIGHT GUY (6) -->
+    <string name="might_guy_q01">Chūnin sahasında ağırlıklar yere düştüğünde zamanın yavaşladığını hissettiren kimdir?</string>
+    <string name="might_guy_q02">Gençlik alevi diye bağırıp Rock Lee\'ye umudu öğreten kimdir?</string>
+    <string name="might_guy_q03">Sekizinci Kapıyı açıp ölümü yüzüne gülerek karşılayan kimdir?</string>
+    <string name="might_guy_q04">Madara\'yı bile gördüğüm en güçlü taijutsu dedirten darbeyle sarsan kimdir?</string>
+    <string name="might_guy_q05">Kakashi\'nin sırtını savaş boyunca hiç bırakmayan dost kimdir?</string>
+    <string name="might_guy_q06">Öğrencisinin ameliyat masasına yüreğini koyan, koşmaya devam et diyen kimdir?</string>
+
+    <!-- SHIKAMARU (6) -->
+    <string name="shikamaru_q01">Güne bulutlara bakarak başlayıp savaşları stratejiyle bitiren kimdir?</string>
+    <string name="shikamaru_q02">Asuma\'nın çakmağını ateşe çevirip hocasının intikamını akılla alan kimdir?</string>
+    <string name="shikamaru_q03">Kage\'ler ve generaller arasında bağlantı merkezi olup orduyu tek zihne çeviren kimdir?</string>
+    <string name="shikamaru_q04">Naruto kararsızken yanındayım diyerek Hokage yoluna omuz veren kimdir?</string>
+    <string name="shikamaru_q05">Hidan\'ı gölgelerle tuzağa sürükleyip parçaları toprağa gömen kimdir?</string>
+    <string name="shikamaru_q06">Savaş bitince barışı planlamak için masaya geçen kimdir?</string>
+
+    <!-- HINATA (5) -->
+    <string name="hinata_q01">Pain\'in önünde sevgisini itiraf eden korkusuz tanrıça kimdir?</string>
+    <string name="hinata_q02">Neji\'nin anısını yumruklarının içine koyup Kaguya savaşında yanında yürüyen kimdir?</string>
+    <string name="hinata_q03">Byakugan\'ı sevgiye çevirip yolunu kaybedersen ben ışık olurum diyen kimdir?</string>
+    <string name="hinata_q04">Naruto Obito olan savaşında Obito\'nun tarafına geçmek üzereyken ona doğru yolu gösteren kimdir?</string>
+    <string name="hinata_q05">Hyūga klanının yükünü kendi seçtiği yolla hafifleten kimdir?</string>
+
+    <!-- KILLER B (5) -->
+    <string name="killer_b_q01">Jinchūriki olmayı rap sözlerine döküp korkuyu şarkıya çeviren kimdir?</string>
+    <string name="killer_b_q02">Sasuke\'nin takımıyla aynı anda dans eden sekiz kılıç ustası kimdir?</string>
+    <string name="killer_b_q03">Gyūki ile ortaklık kurup canavarın dilini insanın diline çeviren kimdir?</string>
+    <string name="killer_b_q04">Naruto\'ya kuyruklu ortaklık dersi verip karanlık odadaki nefret zincirini kırmasına yardım eden kimdir?</string>
+    <string name="killer_b_q05">Raikage\'ye rağmen kendi ritmini seçip savaşın ritmini değiştiren kimdir?</string>
+
+    <!-- A (DÖRDÜNCÜ RAIKAGE) (3) -->
+    <string name="a_fourth_raikage_q01">Beş Kage Zirvesi\'nde masaya yumruğunu değil sorumluluğunu vuran kimdir?</string>
+    <string name="a_fourth_raikage_q02">Kardeşini korurken ordunun komutasını bırakmayan lider kimdir?</string>
+
+    <!-- DEIDARA (4) -->
+    <string name="deidara_q01">Sanat patlamadır diye göğe imza atan kimdir?</string>
+    <string name="deidara_q02">Gaara\'nın kum kubbesini C3 ile şehrin üstünde paramparça etmeye kalkışan kimdir?</string>
+    <string name="deidara_q03">Sharingan nefretine inat C0 ile son sergiyi açan kimdir?</string>
+    <string name="deidara_q04">Kil kuşlarıyla gökyüzünü tuvale çeviren Akatsuki üyesi kimdir?</string>
+
+    <!-- KISAME (4) -->
+    <string name="kisame_q01">Samehada\'yla çakrayı yutup göl kenarını okyanusa çeviren kimdir?</string>
+    <string name="kisame_q02">Gai\'nin kapıları açtıran mavi köpekbalığı kimdir?</string>
+    <string name="kisame_q03">Sırlarını korumak için kendi bedenini su zindanına bırakan kimdir?</string>
+    <string name="kisame_q04">Canavar lakabını savaş meydanında hak eden shinobi kimdir?</string>
+
+    <!-- HIDAN (4) -->
+    <string name="hidan_q01">Ölümsüz ritüelle rakibinin kanını kendi bedenine çeviren kimdir?</string>
+    <string name="hidan_q02">Jashin çemberini çizip acıyı ayna gibi yansıtan kimdir?</string>
+    <string name="hidan_q03">Asuma\'nın dumanını rüzgâra savurup Shikamaru\'nun zekâsına yakalanan kimdir?</string>
+    <string name="hidan_q04">Parçalara ayrılsa da toprağa gömülüp susturulan kimdir?</string>
+
+    <!-- KAKUZU (4) -->
+    <string name="kakuzu_q01">Beş kalbiyle elementleri sıraya dizen kimdir?</string>
+    <string name="kakuzu_q02">Parayı inançtan üstün gören ve sözleşmeyi kutsal sayan kimdir?</string>
+    <string name="kakuzu_q03">Naruto\'nun ilk rüzgâr shurikenine yenik düşerek yeni çağın kapısını hisseden kimdir?</string>
+    <string name="kakuzu_q04">Hidan ile en uyumsuz, en tehlikeli ortaklığı kuran kimdir?</string>
+
+    <!-- KONAN (4) -->
+    <string name="konan_q01">Kâğıt çiçeklerini yağmurlu sokaklara umut diye bırakan kimdir?</string>
+    <string name="konan_q02">Tobi\'yi boğmak için on milyar kâğıdı bombaya çeviren kimdir?</string>
+    <string name="konan_q03">Yahiko\'nun idealini mavi origamilere mühürleyen kimdir?</string>
+    <string name="konan_q04">Nagato\'nun ardında barışın yoluna son çiçeği diken kimdir?</string>
+
+    <!-- NAGATO (6) -->
+    <string name="nagato_q01">Acı öğretir diyerek dünyaya, acının yasasını dayatan kimdir?</string>
+    <string name="nagato_q02">Konoha\'yı tek sözle Shinra Tensei ile yere seren kimdir?</string>
+    <string name="nagato_q03">Jiraiya\'nın öğrenciliğinden acının kendisine dönüşen yolun sahibi kimdir?</string>
+    <string name="nagato_q04">Naruto\'nun sözleriyle döngüyü kırıp hayatları geri veren kimdir?</string>
+    <string name="nagato_q05">Altı Yol\'un her birine gözünü paylaştıran lider kimdir?</string>
+    <string name="nagato_q06">Yahiko\'nun bedenine ideali giydirip yağmuru susturmaya çalışan kimdir?</string>
+
+    <!-- YAHIKO (3) -->
+    <string name="yahiko_q01">Yağmurun altındaki çocuklardan Ame\'nin umudunu kuran kimdir?</string>
+    <string name="yahiko_q02">Barış, güçle değil iradeyle gelir diyerek arkadaşlarına liderlik eden kimdir?</string>
+    <string name="yahiko_q03">Kendi hayatını köprü yapıp Nagato ve Konan\'ı ayakta tutan kimdir?</string>
+
+    <!-- ZABUZA (4) -->
+    <string name="zabuza_q01">Sis\'in içinde adı fısıltıyla korku olan İblis kimdir?</string>
+    <string name="zabuza_q02">Haku\'nun önünde gözyaşını kılıca sürüp son yürüyüşünü yapan kimdir?</string>
+    <string name="zabuza_q03">Köprü üstünde ilk büyük dersini Takım 7\'ye veren düşman kimdir?</string>
+    <string name="zabuza_q04">Kirigakure\'nin kanlı mezuniyetini tarihe yazdıran kimdir?</string>
+
+    <!-- HAKU (4) -->
+    <string name="haku_q01">Buz aynalarında ışığı çoğaltıp iğneleri yağmura çeviren kimdir?</string>
+    <string name="haku_q02">Birine yararlı olmak için hayatını veren naif savaşçı kimdir?</string>
+    <string name="haku_q03">Zabuza\'nın kalbindeki tek sıcak yer olmayı başaran kimdir?</string>
+    <string name="haku_q04">Maskesinin arkasında gözleri ilk kez Naruto\'nun sözleriyle ısınan kimdir?</string>
+
+    <!-- HIRUZEN (4) -->
+    <string name="hiruzen_q01">Üç Efsane\'yi yetiştirip köyü üç kez omuzlayan kimdir?</string>
+    <string name="hiruzen_q02">Orochimaru\'ya karşı iki Hokage\'yi mühürleyerek savaş alanını susturan kimdir?</string>
+    <string name="hiruzen_q03">Naruto\'nun dosyasına bir şans daha yazan yaşlı lider kimdir?</string>
+    <string name="hiruzen_q04">Köyün çocuklarını kendi ailesi gibi gören Bilge Hokage kimdir?</string>
+
+    <!-- TEMARI (3) -->
+    <string name="temari_q01">Rüzgâr yelpazesiyle ormanı tek hamlede budayan kimdir?</string>
+    <string name="temari_q02">Shikamaru\'nun planlarına rüzgârı verip savaşta aklı güçlendiren kimdir?</string>
+    <string name="temari_q03">Kardeşinin gölgesini değil, kendi gücünü Konoha\'ya kabul ettiren kimdir?</string>
+
+    <!-- KANKURO (3) -->
+    <string name="kankuro_q01">Kuklalarıyla sahneyi ölüm tiyatrosuna çeviren kimdir?</string>
+    <string name="kankuro_q02">Sasori\'nin zehrine karşı panzehirle zamana meydan okuyan kimdir?</string>
+    <string name="kankuro_q03">Kardeşinin arkasında duran ama savaşta ön safa kuklalarını süren kimdir?</string>
+
+    <!-- SAI (3) -->
+    <string name="sai_q01">Mürekkebi kuşa çevirip haberi göğe salan kimdir?</string>
+    <string name="sai_q02">Duygusuz eğitimin zincirini Takım 7\'de kıran kimdir?</string>
+    <string name="sai_q03">Dostluk kelimesini defterine ilk kez gerçek çizgilerle yazan kimdir?</string>
+
+    <!-- YAMATO (3) -->
+    <string name="yamato_q01">Odun salını kontrolle canavarı sakinliğe bağlayan kimdir?</string>
+    <string name="yamato_q02">Takım 7\'nin dağılmış kalbine liderlik eden sakin yüz kimdir?</string>
+    <string name="yamato_q03">Naruto\'nun içindeki fırtınayı mühür disiplinine bağlayan kimdir?</string>
+
+    <!-- SHISUI (4) -->
+    <string name="shisui_q01">Kotoamatsukami\'yi kötüye kullanılmasın diye kendi gözünden bile sakınan kimdir?</string>
+    <string name="shisui_q02">Köprünün üstünden yaprağa düşen bir gölge gibi klanını kurtarmak isteyen kimdir?</string>
+    <string name="shisui_q03">İtachi\'ye köy için diyerek en ağır emaneti bırakan kimdir?</string>
+    <string name="shisui_q04">Düşüşüyle bir neslin kaderini değiştiren Uchiha kimdir?</string>
+
+    <!-- KURAMA (5) -->
+    <string name="kurama_q01">Nefreti zincirlerinden kurtarıp Naruto\'yla omuz omuza savaşan kimdir?</string>
+    <string name="kurama_q02">Minato\'nun mühründe ikiye bölünüp yine de iradesini koruyan kimdir?</string>
+    <string name="kurama_q03">Kuyruklu Canavar Bombası ile göğü gündüze çeviren kimdir?</string>
+    <string name="kurama_q04">Ortaklık kelimesini ilk kez gururla telaffuz eden tilki kimdir?</string>
+    <string name="kurama_q05">Kaguya savaşında çakrasını tüm ittifaka pay eden güç kimdir?</string>
+
+    <!-- SHUKAKU (2) -->
+    <string name="shukaku_q01">Kum kabuğunda çılgın kahkahasıyla çölü titretan kimdir?</string>
+    <string name="shukaku_q02">Gaara\'nın kalbini korkudan korumaya dönüşen ilk kalkan olan varlık kimdir?</string>
+
+    <!-- GAMABUNTA (2) -->
+    <string name="gamabunta_q01">Üstüne oturan çocuğa saygı öğretip yine de savaşta sırtını veren kimdir?</string>
+    <string name="gamabunta_q02">Shukaku\'ya karşı çölün ortasında dev bıçağını çeken kimdir?</string>
+
+    <!-- GAMAKICHI (1) -->
+    <string name="gamakichi_q01">Babasının gölgesinden çıkıp savaşta mesaj taşıyan küçük büyük kahraman kimdir?</string>
+
+    <!-- SON GOKU (4 Kuyruklu) (1) -->
+    <string name="son_goku_q01">Taşın yüreğini ateşle yoğuran, Naruto\'ya nefretin zincirini gösteren kimdir?</string>
+
+    <!-- KARIN (2) -->
+    <string name="karin_q01">Canını dişleyip iyileştirme zincirini kuran kızıl sensör kimdir?</string>
+    <string name="karin_q02">Sasuke\'nin Danzo ile olan savaşında gözünü kırpmadan deldiği karakter kimdir?</string>
+
+    <!-- SUIGETSU (2) -->
+    <string name="suigetsu_q01">Hōzuki su tekniğiyle kafese sığmayan mizahı taşıyan kimdir?</string>
+    <string name="suigetsu_q02">Zabuza\'nın kılıcını sırtlayıp geçmişin gölgesini şakaya çeviren kimdir?</string>
+
+    <!-- JUGO (2) -->
+    <string name="jugo_q01">Doğanın öfkesini bedenine alan ama kuşlara şefkat besleyen kimdir?</string>
+    <string name="jugo_q02">Öfke nöbetini dostlarının sesiyle susturmayı öğrenen kimdir?</string>
+
+    <!-- KIBA (2) -->
+    <string name="kiba_q01">Akamaru ile sahayı kokusuyla okuyup iz sürmeyi sanata çeviren kimdir?</string>
+    <string name="kiba_q02">İkili dönüşle savaş alanını fırtınaya çeviren takım kimdir?</string>
+
+    <!-- AKAMARU (1) -->
+    <string name="akamaru_q01">Sahada bir havlayla takımının kaderini değiştiren sadık yoldaş kimdir?</string>
+
+    <!-- INO (3) -->
+    <string name="ino_q01">Zihnini köprü yapıp düşmanı takımının önüne getiren kimdir?</string>
+    <string name="ino_q02">Asuma\'nın son sözlerini yüreğinde çiçeğe çeviren kimdir?</string>
+    <string name="ino_q03">Savaşta iletişim hattını bir çiçekçinin sabrıyla yöneten kimdir?</string>
+
+    <!-- CHOJI (3) -->
+    <string name="choji_q01">Kelebek kanatlarını açıp dostları için devleşen kimdir?</string>
+    <string name="choji_q02">Şişman kelimesini gururla güçe çeviren yürek kimdir?</string>
+    <string name="choji_q03">Asuma\'nın çipsini gözyaşına değil kararlılığa bandıran kimdir?</string>
+
+    <!-- BORUTO (5) -->
+    <string name="boruto_q01">Babasıyla değil kendi gölgesiyle dövüşmeyi seçen kimdir?</string>
+    <string name="boruto_q02">Bilimsel ninja aletini sınavda kullanıp sonra sorumluluğunu üstlenen kimdir?</string>
+    <string name="boruto_q03">Momoshiki\'nin izini kader planına çevirmemek için dişini sıkan kimdir?</string>
+    <string name="boruto_q04">Takım 7\'nin yeni kuşağında liderlik sınavını sokakta veren kimdir?</string>
+    <string name="boruto_q05">Uzumaki adını farklı bir çağda yeniden tanımlayan kimdir?</string>
+
+    <!-- SARADA (3) -->
+    <string name="sarada_q01">Hokage olma hayalini annesinin yumruğu, babasının gözleriyle yoğuran kimdir?</string>
+    <string name="sarada_q02">Chidori\'yi kendi çağında ilk kez hedefe indiren genç shinobi kimdir?</string>
+    <string name="sarada_q03">Takımının dağınık kalbini tek bakışla toparlayan kimdir?</string>
+
+    <!-- MITSUKI (2) -->
+    <string name="mitsuki_q01">Ben kimim? sorusunu dostlarının yanında cevaba çeviren kimdir?</string>
+    <string name="mitsuki_q02">Yılanın esnekliğini sadakate dönüştürüp takımını kurtaran kimdir?</string>
+
+    <!-- KAWAKI (3) -->
+    <string name="kawaki_q01">Kara damgasını kader değil seçim yapmaya zorlayan kimdir?</string>
+    <string name="kawaki_q02">Naruto\'nun evini ilk kez yuva diye adlandıran kimdir?</string>
+    <string name="kawaki_q03">Isshiki\'nin gölgesinde kalan çocuğu savaşçıya çeviren irade kimdir?</string>
+
+    <!-- KOJI KASHIN (2) -->
+    <string name="koji_kashin_q01">Ateşi yazgısına değil planına yazıp gölgeyi ateşe çeviren kimdir?</string>
+    <string name="koji_kashin_q02">Gerçeği ortaya çıktığında bile görevini tamamlamak için sahada kalan kimdir?</string>
+
+    <!-- ISSHIKI OTSUTSUKI (2) -->
+    <string name="isshiki_otsutsuki_q01">Eşyayı küçültüp dünyayı avuç içine alan tehdit kimdir?</string>
+    <string name="isshiki_otsutsuki_q02">Tahtını insan bedenine kurup kaderi damgalamaya çalışan kimdir?</string>
+
+    <!-- TONERI (1) -->
+    <string name="toneri_q01">Ay\'ın yalnızlığını dünyaya indirmeye kalkışıp ışığı geri veren kimdir?</string>
+
+    <!-- HAGOROMO (3) -->
+    <string name="hagoromo_q01">Kardeşiyle birlikte Ninjutsuyu dünyada öğretiye çeviren bilge kimdir?</string>
+    <string name="hagoromo_q02">Naruto ve Sasuke\'ye güç verirken dengeyi şart koşan kimdir?</string>
+    <string name="hagoromo_q03">Oğullarının kavgasını nesiller boyu barışla çözülmesi için hikâyeye bırakan kimdir?</string>
+
+    <!-- KAGUYA (4) -->
+    <string name="kaguya_q01">Çakrayı dünyaya ilk kez meyveyle getiren kimdir?</string>
+    <string name="kaguya_q02">Boyutları avuç içi gibi değiştirip sahneyi anında tersyüz eden kimdir?</string>
+    <string name="kaguya_q03">İki torununun mührüyle sonsuzluğa geri gönderilen kimdir?</string>
+    <string name="kaguya_q04">Savaş alanını don, lav, çöl arasında gezdiren karşı konulmaz güç kimdir?</string>
+
+    <!-- HANZO (3) -->
+    <string name="hanzo_q01">Efsanevi Üçlü\'ye lakabını savaşın ortasında veren kimdir?</string>
+    <string name="hanzo_q02">Ame\'nin kaderini maskesinin arkasına saklayan savaş lordu kimdir?</string>
+    <string name="hanzo_q03">Kendi kurduğu korku düzeninde devrilen kimdir?</string>
+
+    <!-- KONOHAMARU (3) -->
+    <string name="konohamaru_q01">Çocukken Naruto\'nun peşinde koşup büyüyünce kendi takımına kalkan olan kimdir?</string>
+    <string name="konohamaru_q02">Rasenganı yeni kuşağın eline emanet eden öğretmen kimdir?</string>
+    <string name="konohamaru_q03">Dedesi Hiruzen\'in mirasını sokaklarda koruyan shinobi kimdir?</string>
+
 </resources>

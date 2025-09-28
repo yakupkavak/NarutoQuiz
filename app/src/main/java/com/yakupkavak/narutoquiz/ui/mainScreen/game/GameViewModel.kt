@@ -40,6 +40,7 @@ import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LAST_CHARACTER_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.LAST_OPTION_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SECOND_CHARACTER_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.SECOND_OPTION_ID
+import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.STORY_CHARACTER_SIZE
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.STORY_GAME_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TAIL_PAGE_RANGE
 import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.TAILED_GAME_ID
@@ -523,20 +524,17 @@ class GameViewModel @Inject constructor(
         for (i in 1..20) {
             val selectedCharacters =
                 mutableSetOf<Character?>()
-            firstCharacter = getRandomCharacter()
-            if (firstCharacter?.id == characterId) {
-                continue
-            }
-            if (firstCharacter?.family?.getFirstNonNullField() != null) {
-                selectedCharacters.add(firstCharacter)
-                selectedCharacters.add(getRandomCharacter())
-                selectedCharacters.add(getRandomCharacter())
-                if (selectedCharacters.size == 3
-                ) {
-                    return Resource.success(
-                        selectedCharacters.toList()
-                    )
-                }
+            val filteredList = popularCharacterList.filter { it != characterId }
+            val randomIds = filteredList.shuffled().take(STORY_CHARACTER_SIZE)
+            firstCharacter = getCharacter(randomIds[FIRST_CHARACTER_ID])
+            selectedCharacters.add(firstCharacter)
+            selectedCharacters.add(getCharacter(randomIds[SECOND_CHARACTER_ID]))
+            selectedCharacters.add(getCharacter(randomIds[THIRD_CHARACTER_ID]))
+            if (selectedCharacters.size == STORY_CHARACTER_SIZE
+            ) {
+                return Resource.success(
+                    selectedCharacters.toList()
+                )
             }
         }
         return Resource.error(null)

@@ -245,7 +245,7 @@
     <string name="kabuto_q05">Who returned to the orphanage after the war and set out on a new path?</string>
 
     <string name="orochimaru_q01">Who, as one of the Legendary Sannin, pursued immortality through forbidden experiments?</string>
-    <string name="orochimaru_q02">Who left the Cursed Seal on Sasuke during the Forest of Death?</string>
+    <string name="orochimaru_q02">Who gave the Cursed Seal on Sasuke during the Forest of Death?</string>
     <string name="orochimaru_q03">Who summoned the Edo Hokage during the Konoha Crush to settle things with his master?</string>
     <string name="orochimaru_q04">Who slipped death by shedding his snake body like a cast-off skin?</string>
     <string name="orochimaru_q05">At Sasuke’s request, who returned and once again summoned the Edo Hokage to open the gates of history?</string>
@@ -268,5 +268,259 @@
     <string name="minato_q04">Who, inspired by the hero of Jiraiya’s novel, named his son “Naruto” and entrusted him to his godfather?</string>
     <string name="minato_q05">Who outpaced even Raikage A and turned the battlefield inside out in a flash with the “Flying Thunder God”?</string>
     <string name="minato_q06">With no special bloodline of his own, who defeated his pupil—wielding the Nine-Tails—entirely on his own?</string>
+    <!-- HASHIRAMA (6) -->
+    <string name="hashirama_q01">Who, as a child on opposite riverbanks with Madara, began the path from throwing stones to friendship to the idea of Konoha?</string>
+    <string name="hashirama_q02">Who first voiced the idea of the Hokage by saying peace is built together?</string>
+    <string name="hashirama_q03">Who chose brotherhood to surpass the fate lines on the Uchiha Stone Tablet?</string>
+    <string name="hashirama_q04">Who, in the first great duel at the Valley of the End, refused to kill his friend and founded the village?</string>
+    <string name="hashirama_q05">Who stilled the battlefield with a giant wooden Buddha rising like living statues?</string>
+    <string name="hashirama_q06">Who left to generations the saying a village is a family as the First Hokage?</string>
+
+    <!-- TOBIRAMA (5) -->
+    <string name="tobirama_q01">Who laid the foundations of ANBU and systematized the village order?</string>
+    <string name="tobirama_q02">Who devised the first nucleus of the Flying Thunder God Technique?</string>
+    <string name="tobirama_q03">Who institutionalized the Academy and Chūnin system, framing shinobi education?</string>
+    <string name="tobirama_q04">Who used his own life as bait in war to protect his clan and brother?</string>
+    <string name="tobirama_q05">Who branded Edo Tensei as knowledge that becomes a disaster in the wrong hands?</string>
+
+    <!-- TSUNADE (6) -->
+    <string name="tsunade_q01">Who, luckless at the tables, turned the luck of thousands on the battlefield?</string>
+    <string name="tsunade_q02">Who changed the balance of war by declaring without medical corps there is no army?</string>
+    <string name="tsunade_q03">Who said I believe in Naruto\'s Hokage dream and accepted the seat?</string>
+    <string name="tsunade_q04">Who opened the seal on her forehead and lifted Konoha from the rubble?</string>
+    <string name="tsunade_q05">Who, shattered by Jiraiya\'s loss, still put healing back on the table?</string>
+    <string name="tsunade_q06">Who, in the Fourth Great Ninja War, bound the Kage together with lifelines?</string>
+
+    <!-- JIRAIYA (6) -->
+    <string name="jiraiya_q01">Who said my students are my legacy and wrote the fate of three pupils into the world?</string>
+    <string name="jiraiya_q02">Who infiltrated the Rain Village alone and closed off his way back to learn the truth?</string>
+    <string name="jiraiya_q03">Who left the path to peace on a toad inscription and sent his last message in code?</string>
+    <string name="jiraiya_q04">Who showed young Naruto that heroes don\'t give up?</string>
+    <string name="jiraiya_q05">Who turned Myoboku hymns into cheer in the middle of battle?</string>
+    <string name="jiraiya_q06">Who, as one of the Legendary Sannin, proved a lonely teacher\'s greatest victory is his student?</string>
+
+    <!-- MIGHT GUY (6) -->
+    <string name="might_guy_q01">Who made time feel slower when the training weights hit the floor during the Chūnin Exams?</string>
+    <string name="might_guy_q02">Who shouted the Flames of Youth and taught Rock Lee hope?</string>
+    <string name="might_guy_q03">Who opened the Eighth Gate and greeted death with a smile?</string>
+    <string name="might_guy_q04">Who struck so hard that even Madara said he had seen the strongest taijutsu?</string>
+    <string name="might_guy_q05">Who never left Kakashi\'s back throughout the war?</string>
+    <string name="might_guy_q06">Who put his heart on his student\'s surgery table and said keep running?</string>
+
+    <!-- SHIKAMARU (6) -->
+    <string name="shikamaru_q01">Who starts days cloud-watching and ends wars with strategy?</string>
+    <string name="shikamaru_q02">Who lit Asuma\'s lighter and took his teacher\'s vengeance with intellect?</string>
+    <string name="shikamaru_q03">Who became the central link among Kage and generals, turning the army into a single mind?</string>
+    <string name="shikamaru_q04">Who told Naruto I\'m with you and shouldered his Hokage path?</string>
+    <string name="shikamaru_q05">Who lured Hidan into a shadow trap and buried the pieces in the earth?</string>
+    <string name="shikamaru_q06">Who sat down to plan peace after the war?</string>
+
+    <!-- HINATA (5) -->
+    <string name="hinata_q01">Who fearlessly confessed her love before Pain?</string>
+    <string name="hinata_q02">Who walked beside him in the Kaguya battle with Neji\'s memory in her fists?</string>
+    <string name="hinata_q03">Who turned the Byakugan into love, saying if you lose your way I will be your light?</string>
+    <string name="hinata_q04">Who showed Naruto the right path when he was about to drift toward Obito\'s side in the war?</string>
+    <string name="hinata_q05">Who lightened the Hyūga clan\'s burden by choosing her own path?</string>
+
+    <!-- KILLER B (5) -->
+    <string name="killer_b_q01">Who turned being a jinchūriki into rap and made fear into a song?</string>
+    <string name="killer_b_q02">Who danced eight swords at once, facing Sasuke\'s squad like a performance?</string>
+    <string name="killer_b_q03">Who forged a partnership with Gyūki, translating a beast\'s tongue into a human one?</string>
+    <string name="killer_b_q04">Who taught Naruto tailed-beast partnership and helped break the dark room of hatred?</string>
+    <string name="killer_b_q05">Who kept his own rhythm despite the Raikage, changing the rhythm of war?</string>
+
+    <!-- A (FOURTH RAIKAGE) (3) -->
+    <string name="a_fourth_raikage_q01">Who, at the Five Kage Summit, slammed responsibility on the table instead of his fist?</string>
+    <string name="a_fourth_raikage_q02">Who protected his brother without dropping command of the army?</string>
+
+    <!-- DEIDARA (4) -->
+    <string name="deidara_q01">Who signed the sky with art is an explosion?</string>
+    <string name="deidara_q02">Who tried to shatter Gaara\'s sand dome over the city with C3?</string>
+    <string name="deidara_q03">Who opened the final exhibit with C0 despite his hatred for the Sharingan?</string>
+    <string name="deidara_q04">Who turned the sky into a canvas with clay birds?</string>
+
+    <!-- KISAME (4) -->
+    <string name="kisame_q01">Who fed Samehada with chakra and turned a lakeside into an ocean?</string>
+    <string name="kisame_q02">Who forced Gai to open the Gates, the blue shark of the battlefield?</string>
+    <string name="kisame_q03">Who drowned himself in a water prison to keep his secrets safe?</string>
+    <string name="kisame_q04">Who earned the title Monster in the thick of battle?</string>
+
+    <!-- HIDAN (4) -->
+    <string name="hidan_q01">Who mirrored an enemy\'s pain with an immortal ritual using their blood?</string>
+    <string name="hidan_q02">Who drew Jashin\'s circle and reflected agony like a mirror?</string>
+    <string name="hidan_q03">Who scattered Asuma\'s smoke to the wind yet fell to Shikamaru\'s mind?</string>
+    <string name="hidan_q04">Who was dismembered and buried, silenced beneath the earth?</string>
+
+    <!-- KAKUZU (4) -->
+    <string name="kakuzu_q01">Who lined up the elements with five hearts?</string>
+    <string name="kakuzu_q02">Who prized money over faith and treated contracts as sacred?</string>
+    <string name="kakuzu_q03">Who fell to Naruto\'s first Wind Release: Rasenshuriken, feeling the dawn of a new era?</string>
+    <string name="kakuzu_q04">Who formed the most mismatched yet deadliest partnership with Hidan?</string>
+
+    <!-- KONAN (4) -->
+    <string name="konan_q01">Who left paper flowers as hope in the rainy alleys?</string>
+    <string name="konan_q02">Who tried to drown Tobi with ten billion paper bombs?</string>
+    <string name="konan_q03">Who sealed Yahiko\'s ideal into blue origami?</string>
+    <string name="konan_q04">Who planted the last flower on the road to peace after Nagato?</string>
+
+    <!-- NAGATO (6) -->
+    <string name="nagato_q01">Who imposed the law of pain on the world by saying pain teaches?</string>
+    <string name="nagato_q02">Who leveled Konoha with a single command, Shinra Tensei?</string>
+    <string name="nagato_q03">Who walked the path from Jiraiya\'s student to the embodiment of pain?</string>
+    <string name="nagato_q04">Who broke the cycle with Naruto\'s words and gave the lives back?</string>
+    <string name="nagato_q05">Who divided his eyes among the Six Paths and led them?</string>
+    <string name="nagato_q06">Who dressed Yahiko\'s body in an ideal and tried to silence the rain?</string>
+
+    <!-- YAHIKO (3) -->
+    <string name="yahiko_q01">Who built Ame\'s hope from children standing under the rain?</string>
+    <string name="yahiko_q02">Who led his friends by saying peace comes through will, not power?</string>
+    <string name="yahiko_q03">Who made his own life a bridge to keep Nagato and Konan standing?</string>
+
+    <!-- ZABUZA (4) -->
+    <string name="zabuza_q01">Who was the Demon whose name in the mist was spoken in whispers?</string>
+    <string name="zabuza_q02">Who smeared tears on his blade before Haku and took his last walk?</string>
+    <string name="zabuza_q03">Who gave Team 7 their first great lesson on the bridge?</string>
+    <string name="zabuza_q04">Who etched the Bloody Mist graduation into history?</string>
+
+    <!-- HAKU (4) -->
+    <string name="haku_q01">Who multiplied light within ice mirrors and turned needles into rain?</string>
+    <string name="haku_q02">Who gave his life simply to be useful to someone?</string>
+    <string name="haku_q03">Who became the only warm place in Zabuza\'s heart?</string>
+    <string name="haku_q04">Whose eyes, behind a mask, first warmed at Naruto\'s words?</string>
+
+    <!-- HIRUZEN (4) -->
+    <string name="hiruzen_q01">Who raised the Legendary Sannin and shouldered the village three times?</string>
+    <string name="hiruzen_q02">Who sealed two Hokage while fighting Orochimaru and silenced the battlefield?</string>
+    <string name="hiruzen_q03">Who wrote one more chance into Naruto\'s file, the old leader?</string>
+    <string name="hiruzen_q04">Who was the Professor, the Wise Hokage who saw the village\'s children as his own family?</string>
+
+    <!-- TEMARI (3) -->
+    <string name="temari_q01">Who pruned a forest in one sweep with her giant fan?</string>
+    <string name="temari_q02">Who gave wind to Shikamaru\'s plans, strengthening brains on the battlefield?</string>
+    <string name="temari_q03">Who made Konoha accept her own strength, not just her brother\'s shadow?</string>
+
+    <!-- KANKURO (3) -->
+    <string name="kankuro_q01">Who turned the stage into a theater of death with puppets?</string>
+    <string name="kankuro_q02">Who defied Sasori\'s poison with antidotes and a race against time?</string>
+    <string name="kankuro_q03">Who stood behind his brother but pushed puppets to the front line?</string>
+
+    <!-- SAI (3) -->
+    <string name="sai_q01">Who turned ink into birds and sent messages to the sky?</string>
+    <string name="sai_q02">Who broke the chains of emotionless training within Team 7?</string>
+    <string name="sai_q03">Who wrote friendship into his sketchbook with real lines for the first time?</string>
+
+    <!-- YAMATO (3) -->
+    <string name="yamato_q01">Who calmed a beast with Wood Release control?</string>
+    <string name="yamato_q02">Who led Team 7\'s scattered heart with a calm face?</string>
+    <string name="yamato_q03">Who bound Naruto\'s inner storm with seal discipline?</string>
+
+    <!-- SHISUI (4) -->
+    <string name="shisui_q01">Who safeguarded Kotoamatsukami so it wouldn\'t be abused, even from his own eye?</string>
+    <string name="shisui_q02">Who, like a shadow falling from a bridge onto a leaf, tried to save his clan?</string>
+    <string name="shisui_q03">Who left the heaviest trust to Itachi, saying for the village?</string>
+    <string name="shisui_q04">Whose fall changed the fate of an entire generation of Uchiha?</string>
+
+    <!-- KURAMA (5) -->
+    <string name="kurama_q01">Who broke the chains of hatred and fought shoulder to shoulder with Naruto?</string>
+    <string name="kurama_q02">Who was split within Minato\'s seal yet kept his will?</string>
+    <string name="kurama_q03">Who lit the sky like day with a Tailed Beast Bomb?</string>
+    <string name="kurama_q04">Who first pronounced partnership with pride, the Nine-Tails?</string>
+    <string name="kurama_q05">Who shared his chakra with the entire alliance in the Kaguya war?</string>
+
+    <!-- SHUKAKU (2) -->
+    <string name="shukaku_q01">Who shook the desert with maniacal laughter from within a shell of sand?</string>
+    <string name="shukaku_q02">Who became the first shield born of fear, protecting Gaara\'s heart?</string>
+
+    <!-- GAMABUNTA (2) -->
+    <string name="gamabunta_q01">Who taught respect to the kid sitting on him yet lent his back in battle?</string>
+    <string name="gamabunta_q02">Who drew his giant blade against Shukaku in the middle of the desert?</string>
+
+    <!-- GAMAKICHI (1) -->
+    <string name="gamakichi_q01">Who stepped out of his father\'s shadow to carry messages in war?</string>
+
+    <!-- SON GOKU (Four-Tails) (1) -->
+    <string name="son_goku_q01">Who forged stone\'s heart with fire and showed Naruto the chain of hatred?</string>
+
+    <!-- KARIN (2) -->
+    <string name="karin_q01">Who formed a healing chain with her own body, the red-haired sensor?</string>
+    <string name="karin_q02">Who didn\'t blink and stabbed during Sasuke\'s fight with Danzo?</string>
+
+    <!-- SUIGETSU (2) -->
+    <string name="suigetsu_q01">Who carried humor in the Hōzuki water style that fits no cage?</string>
+    <string name="suigetsu_q02">Who shouldered Zabuza\'s blade and turned the past\'s shadow into a joke?</string>
+
+    <!-- JUGO (2) -->
+    <string name="jugo_q01">Who took nature\'s rage into his body yet kept a soft spot for birds?</string>
+    <string name="jugo_q02">Who learned to quiet his rages with the voices of his friends?</string>
+
+    <!-- KIBA (2) -->
+    <string name="kiba_q01">Who read the field by scent with Akamaru and turned tracking into art?</string>
+    <string name="kiba_q02">Which duo turned the battlefield into a storm with their dual rotation?</string>
+
+    <!-- AKAMARU (1) -->
+    <string name="akamaru_q01">Who changed his team\'s fate with a single bark, the loyal partner?</string>
+
+    <!-- INO (3) -->
+    <string name="ino_q01">Who bridged minds and dragged foes in front of her team?</string>
+    <string name="ino_q02">Who turned Asuma\'s last words into a flower in her heart?</string>
+    <string name="ino_q03">Who ran the communication lines in war with a florist\'s patience?</string>
+
+    <!-- CHOJI (3) -->
+    <string name="choji_q01">Who unfolded butterfly wings and grew giant for his friends?</string>
+    <string name="choji_q02">Who proudly turned the word fat into strength?</string>
+    <string name="choji_q03">Who dipped Asuma\'s chips not in tears but in resolve?</string>
+
+    <!-- BORUTO (5) -->
+    <string name="boruto_q01">Who chose to fight his own shadow, not his father?</string>
+    <string name="boruto_q02">Who used a Scientific Ninja Tool in the exam and then owned the consequences?</string>
+    <string name="boruto_q03">Who clenched his teeth not to let Momoshiki\'s mark become a fate plan?</string>
+    <string name="boruto_q04">Who took the leadership test of the new Team 7 out on the streets?</string>
+    <string name="boruto_q05">Who redefined the name Uzumaki for a different era?</string>
+
+    <!-- SARADA (3) -->
+    <string name="sarada_q01">Who kneaded the Hokage dream with her mother\'s punch and her father\'s eyes?</string>
+    <string name="sarada_q02">Who was the first of her era to land Chidori on target?</string>
+    <string name="sarada_q03">Who gathered her team\'s scattered hearts with a single look?</string>
+
+    <!-- MITSUKI (2) -->
+    <string name="mitsuki_q01">Who turned the question who am I? into an answer beside his friends?</string>
+    <string name="mitsuki_q02">Who turned the snake\'s flexibility into loyalty to save his team?</string>
+
+    <!-- KAWAKI (3) -->
+    <string name="kawaki_q01">Who forced Karma to be a choice, not a destiny?</string>
+    <string name="kawaki_q02">Who first called Naruto\'s house home?</string>
+    <string name="kawaki_q03">Who turned the child under Isshiki\'s shadow into a fighter\'s will?</string>
+
+    <!-- KOJI KASHIN (2) -->
+    <string name="koji_kashin_q01">Who wrote fire into his plan, not his fate, turning shadow into flame?</string>
+    <string name="koji_kashin_q02">Who stayed on the field to finish the mission even after the truth came out?</string>
+
+    <!-- ISSHIKI OTSUTSUKI (2) -->
+    <string name="isshiki_otsutsuki_q01">Who shrank objects and held the world in his palm?</string>
+    <string name="isshiki_otsutsuki_q02">Who set his throne in a human body and tried to brand destiny?</string>
+
+    <!-- TONERI (1) -->
+    <string name="toneri_q01">Who tried to bring the Moon\'s solitude down to earth and then returned the light?</string>
+
+    <!-- HAGOROMO (3) -->
+    <string name="hagoromo_q01">Who, with his brother, turned ninjutsu into a teaching for the world?</string>
+    <string name="hagoromo_q02">Who bestowed power on Naruto and Sasuke while demanding balance?</string>
+    <string name="hagoromo_q03">Who left his sons\' feud to be solved by peace across generations?</string>
+
+    <!-- KAGUYA (4) -->
+    <string name="kaguya_q01">Who brought chakra into the world with a fruit?</string>
+    <string name="kaguya_q02">Who flipped dimensions like a palm and reversed the stage in an instant?</string>
+    <string name="kaguya_q03">Who was sealed away by her two descendants?</string>
+    <string name="kaguya_q04">Who shifted the battlefield through ice, lava, and desert at will?</string>
+
+    <!-- HANZO (3) -->
+    <string name="hanzo_q01">Who gave the Legendary Sannin their title in the midst of war?</string>
+    <string name="hanzo_q02">Who hid Ame\'s fate behind a mask of fear?</string>
+    <string name="hanzo_q03">Who fell within the very regime of terror he built?</string>
+
+    <!-- KONOHAMARU (3) -->
+    <string name="konohamaru_q01">Who chased Naruto as a child and later became a shield for his own team?</string>
+    <string name="konohamaru_q02">Who entrusted Rasengan to the hands of the new generation as a teacher?</string>
+    <string name="konohamaru_q03">Who carried Hiruzen\'s legacy through the streets as a shinobi?</string>
 
 </resources>
