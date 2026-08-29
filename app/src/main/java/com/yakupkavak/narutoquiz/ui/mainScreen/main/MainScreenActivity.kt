@@ -12,6 +12,8 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.FullScreenContentCallback
 import com.google.android.gms.ads.LoadAdError
 import com.yakupkavak.narutoquiz.R
@@ -19,11 +21,14 @@ import com.yakupkavak.narutoquiz.databinding.ActivityMainScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.RequestConfiguration
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.yakupkavak.narutoquiz.BuildConfig
 import com.yakupkavak.narutoquiz.data.network.repository.FirestoreRepository
 import com.yakupkavak.narutoquiz.ui.extension.showToast
+import com.yakupkavak.narutoquiz.ui.mainScreen.util.AdConst.INTERSTITIAL_GAME_INTERVAL
 import com.yakupkavak.narutoquiz.ui.mainScreen.util.AdConst.TEST_DEVICE_HASHED_ID
 import com.yakupkavak.narutoquiz.ui.mainScreen.util.GoogleMobileAdsConsentManager
 import kotlinx.coroutines.CoroutineScope
@@ -40,6 +45,9 @@ class MainScreenActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainScreenBinding
     private val isMobileAdsInitializeCalled = AtomicBoolean(false)
     private var rewardedAd: RewardedAd? = null
+    private var adView: AdView? = null
+    private var interstitialAd: InterstitialAd? = null
+    private var finishedGameCount = 0
     private var isLoading = false
     private val TAG = "MainScreenActivity"
     private lateinit var googleMobileAdsConsentManager: GoogleMobileAdsConsentManager
@@ -76,6 +84,52 @@ class MainScreenActivity : AppCompatActivity() {
         if (googleMobileAdsConsentManager.canRequestAds) {
             initializeMobileAdsSdk()
         }
+    }
+
+    fun onGameFinished() {
+        finishedGameCount++
+        if (finishedGameCount % INTERSTITIAL_GAME_INTERVAL == 0) {
+            showInterstitialAd()
+        } else if (interstitialAd == null) {
+            loadInterstitialAd()
+        }
+    }
+
+    private fun loadInterstitialAd() {
+        if (!googleMobileAdsConsentManager.canRequestAds) return
+        InterstitialAd.load(
+            this,
+            BuildConfig.INTERSTITIAL_AD_KEY,
+            AdRequest.Builder().build(),
+            object : InterstitialAdLoadCallback() {
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    Log.d(TAG, adError.toString())
+                    interstitialAd = null
+                }
+
+                override fun onAdLoaded(ad: InterstitialAd) {
+                    interstitialAd = ad
+                }
+            })
+    }
+
+    private fun showInterstitialAd() {
+        val ad = interstitialAd ?: run {
+            loadInterstitialAd()
+            return
+        }
+        ad.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdDismissedFullScreenContent() {
+                interstitialAd = null
+                loadInterstitialAd()
+            }
+
+            override fun onAdFailedToShowFullScreenContent(adError: com.google.android.gms.ads.AdError) {
+                Log.d(TAG, adError.toString())
+                interstitialAd = null
+            }
+        }
+        ad.show(this)
     }
 
     fun showRewardAd() {
@@ -151,8 +205,51 @@ class MainScreenActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             // Initialize the Google Mobile Ads SDK on a background thread.
             MobileAds.initialize(this@MainScreenActivity) {
+                runOnUiThread {
+                    loadBanner()
+                    loadInterstitialAd()
+                }
             }
         }
+    }
+
+    private val bannerAdSize: AdSize
+        get() {
+            val displayMetrics = resources.displayMetrics
+            val adWidthPixels =
+                if (binding.adViewContainer.width > 0) {
+                    binding.adViewContainer.width
+                } else {
+                    displayMetrics.widthPixels
+                }
+            val adWidth = (adWidthPixels / displayMetrics.density).toInt()
+            return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(this, adWidth)
+        }
+
+    private fun loadBanner() {
+        if (adView != null) return
+        val bannerView = AdView(this)
+        bannerView.adUnitId = BuildConfig.BANNER_AD_KEY
+        bannerView.setAdSize(bannerAdSize)
+        adView = bannerView
+        binding.adViewContainer.removeAllViews()
+        binding.adViewContainer.addView(bannerView)
+        bannerView.loadAd(AdRequest.Builder().build())
+    }
+
+    override fun onPause() {
+        adView?.pause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        adView?.resume()
+    }
+
+    override fun onDestroy() {
+        adView?.destroy()
+        super.onDestroy()
     }
 
     private fun setupNavigation() {
@@ -167,12 +264,12 @@ class MainScreenActivity : AppCompatActivity() {
         binding.bottomNavigation.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
-            when (destination.id) {
-                R.id.gameFragment -> binding.bottomNavigation.isVisible = false
-                R.id.historyFragment -> binding.bottomNavigation.isVisible = false
-                R.id.passwordFragment -> binding.bottomNavigation.isVisible = false
-                else -> binding.bottomNavigation.isVisible = true
+            val showBars = when (destination.id) {
+                R.id.gameFragment, R.id.historyFragment, R.id.passwordFragment -> false
+                else -> true
             }
+            binding.bottomNavigation.isVisible = showBars
+            binding.adViewContainer.isVisible = destination.id == R.id.feedFragment
         }
     }
 }

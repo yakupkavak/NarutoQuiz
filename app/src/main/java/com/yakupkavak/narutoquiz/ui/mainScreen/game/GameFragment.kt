@@ -39,6 +39,7 @@ import com.yakupkavak.narutoquiz.ui.mainScreen.game.GameConst.THIRD_CHALLENGE_LE
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.ErrorDialogFragment
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.GameDialogFragment
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.HintDialogFragment
+import com.yakupkavak.narutoquiz.ui.mainScreen.main.MainScreenActivity
 import com.yakupkavak.narutoquiz.ui.mainScreen.main.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -263,6 +264,7 @@ class GameFragment : Fragment() {
                 gameState[1]?.let { wrongCount ->
                     setDialog(trueCount, wrongCount)
                     binding.btnCheck.text = getString(R.string.game_over)
+                    (activity as? MainScreenActivity)?.onGameFinished()
                 }
             }
         }

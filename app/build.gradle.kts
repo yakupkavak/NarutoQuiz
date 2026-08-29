@@ -44,6 +44,16 @@ android {
             "REWARD_AD_KEY",
             value = localProperties["REWARD_AD_KEY"].toString()
         )
+        buildConfigField(
+            "String",
+            "BANNER_AD_KEY",
+            value = localProperties["BANNER_AD_KEY"].toString()
+        )
+        buildConfigField(
+            "String",
+            "INTERSTITIAL_AD_KEY",
+            value = localProperties["INTERSTITIAL_AD_KEY"].toString()
+        )
     }
 
     buildTypes {
