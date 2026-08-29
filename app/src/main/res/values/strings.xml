@@ -78,7 +78,7 @@
 
     <string name="emptyAd">There is no avaiable add, try again in 3 minute</string>
 
-    <string name="family_question">Which one\'s %1$s</string>
+    <string name="family_question">Hangisinin %1$s</string>
     <string name="voice_question">Which one\'s %1$s</string>
     <string name="clan_question">Which one\'s clan name is %1$s</string>
     <string name="team_question">Which one\'s team name is %1$s</string>

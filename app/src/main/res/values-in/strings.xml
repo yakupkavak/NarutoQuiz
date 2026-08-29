@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Naruto Quiz</string>
+    <string name="loading">Memuat…</string>
+    <string name="zero">0</string>
+    <string name="use_viewmodel">Gunakan ViewModel</string>
+    <string name="increase_counter">Naikkan Penghitung</string>
+    <string name="counter_menu">Penghitung</string>
+    <string name="guess_menu">Tebak</string>
+    <string name="refresh_describtion">Segarkan</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="reset">Atur Ulang</string>
+    <string name="guess">Tebak</string>
+    <string name="success">Berhasil</string>
+    <string name="failure">Coba Lagi</string>
+    <string name="change_image">Ganti Gambar</string>
+    <string name="pokemon">pokemon</string>
+    <string name="error">Terjadi Kesalahan</string>
+    <string name="emptyImageUrl">https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png</string>
+    <string name="next">Berikutnya</string>
+
+    <string name="sign_in">Masuk</string>
+    <string name="null_space">Jangan dibiarkan kosong</string>
+    <string name="sign_in_error">Email atau kata sandi salah</string>
+    <string name="wrong_password">Kata sandi salah</string>
+
+    <string name="recovery_error">Email salah</string>
+    <string name="username_too_long">Nama pengguna tidak boleh lebih dari 16 karakter</string>
+    <string name="password_too_low">Kata sandi tidak boleh kurang dari 8 karakter</string>
+    <string name="network_problem">Terjadi masalah jaringan</string>
+    <string name="check_mail">Periksa email kamu</string>
+    <string name="sign_success">Pendaftaran berhasil</string>
+    <string name="email">Email</string>
+    <string name="hint_email">example@gmail.com</string>
+    <string name="password">Kata Sandi</string>
+    <string name="forgot_password">Lupa Kata Sandi?</string>
+    <string name="sign_up">Daftar</string>
+    <string name="slash">/</string>
+    <string name="user_name">Nama Pengguna</string>
+    <string name="welcome_shinobi">Selamat datang, Shinobi</string>
+    <string name="recovery">Pulihkan</string>
+    <string name="naruto_image">Gambar Naruto</string>
+    <string name="google_icon">Ikon Google</string>
+    <string name="game_content">konten permainan</string>
+    <string name="quizes">Kuis</string>
+    <string name="tier_list">Daftar Peringkat</string>
+    <string name="user_info">Info Pengguna</string>
+    <string name="close_game">Tutup permainan</string>
+    <string name="first_option">Pilihan pertama</string>
+    <string name="second_option">Pilihan kedua</string>
+    <string name="check">Periksa</string>
+    <string name="leaders">Peringkat</string>
+    <string name="classic_game">Gim Klasik</string>
+    <string name="challenge">Tantangan</string>
+    <string name="classic">Klasik</string>
+    <string name="akatsuki">Tantangan</string>
+    <string name="clan">Klan</string>
+    <string name="tail">Ekor</string>
+    <string name="team">Tim</string>
+    <string name="rank">Peringkat</string>
+    <string name="player">Pemain</string>
+    <string name="score">Skor</string>
+    <string name="game_over">Permainan Berakhir</string>
+    <string name="main_screen">Layar utama</string>
+    <string name="play_again">Main Lagi</string>
+    <string name="trueText">Benar</string>
+    <string name="wrong">Salah</string>
+
+    <string name="ad">Tonton iklan</string>
+    <string name="emptyAd">Tidak ada iklan tersedia, coba lagi dalam 3 menit</string>
+
+    <string name="family_question">Siapa %1$s</string>
+    <string name="voice_question">Siapa %1$s</string>
+    <string name="clan_question">Siapa yang nama klannya %1$s</string>
+    <string name="team_question">Siapa yang nama timnya %1$s</string>
+    <string name="jinckuri_question">Siapa yang nama Jinchūriki\’nya %1$s</string>
+
+    <string name="user_name_info">Nama: %1$s</string>
+    <string name="user_mail_info">Email: %1$s</string>
+    <string name="change_password">Ubah kata sandi</string>
+    <string name="change">Ubah</string>
+    <string name="max_repeat_info">Jumlah pertanyaan: %1$s</string>
+    <string name="hint_count">Jumlah petunjuk: %1$d</string>
+    <string name="get_information">Tentang Gim</string>
+    <string name="select">Pilih!</string>
+
+    <string name="naruto_icon">Ikon Naruto</string>
+    <string name="unexpected_error">Kesalahan tak terduga</string>
+    <string name="game_mode">Mode Gim</string>
+    <string name="history">Riwayat Gim</string>
+    <string name="sign_out">Keluar</string>
+    <string name="user">Pengguna</string>
+    <string name="game">Gim</string>
+    <string name="close">Tutup</string>
+    <string name="challenge_game">Gim Tantangan</string>
+    <string name="welcome_text">Di mode Gim Tantangan kamu tidak boleh salah dan hanya mode ini yang masuk ke papan peringkat.\n\nKlasik memungkinkanmu menguji semua karakter.\n\nJangan lupa ikut mode khusus Akatsuki, Klan, Bijū dan Tim.\n\n\nSemoga beruntung, shinobi!</string>
+    <string name="about_the_game">Tentang gim</string>
+    <string name="market">Toko</string>
+    <string name="hint">Petunjuk</string>
+    <string name="purchase">Beli</string>
+    <string name="add">Tambah</string>
+
+    <string name="student">Siswa</string>
+    <string name="genin">Genin</string>
+    <string name="chunin">Chūnin</string>
+    <string name="kage">Kage</string>
+
+    <string name="token_count">Jumlah token: %1$d</string>
+    <string name="gain_hint">Kamu mendapat %1$d petunjuk!</string>
+    <string name="connection_error">Kesalahan Koneksi</string>
+
+    <string name="current_password">Kata Sandi Saat Ini:</string>
+    <string name="new_password">Kata Sandi Baru:</string>
+    <string name="repeat_password">Ulangi Kata Sandi:</string>
+
+    <string name="empty_edit_text">Ada isian yang kosong</string>
+    <string name="password_not_equal">Kata sandi tidak sama!</string>
+    <string name="delete_account">Hapus Akun</string>
+    <string name="delete">Hapus</string>
+    <string name="delete_success">Akun dihapus.</string>
+    <string name="question_number">Nomor pertanyaan: %1$d</string>
+
+    <string name="game_story_title">Kisah</string>
+    <string name="game_story_description">Jelajahi kisah dunia Naruto dengan pertanyaan yang disiapkan untukmu.</string>
+    <string name="game_challenge_title">Tantangan</string>
+    <string name="game_challenge_description">Di dunia shinobi tidak ada ruang untuk kesalahan!</string>
+    <string name="game_classic_title">Klasik</string>
+    <string name="game_classic_description">Saatnya menguji pengetahuan umummu.</string>
+    <string name="game_akatsuki_title">Akatsuki</string>
+    <string name="game_akatsuki_description">Misi kami, menghancurkan kedamaian palsu.</string>
+    <string name="game_clan_title">Klan</string>
+    <string name="game_clan_description">Ingat asalmu, lindungi klanmu.</string>
+    <string name="game_tailed_beast_title">Bijū</string>
+    <string name="game_tailed_beast_description">Ini adalah dunia para monster berekor.</string>
+    <string name="game_teams_title">Tim</string>
+    <string name="game_teams_description">Mereka yang melanggar aturan itu sampah… tapi mereka yang tak peduli pada teman, lebih buruk dari sampah.</string>
+
+    <string name="naruto_q01">Siapa yang pada malam Mizuki mempelajari Teknik Bayangan Klon dari Gulungan Terlarang?</string>
+    <string name="naruto_q02">Murid mana yang menerima pelindung dahi Iruka sebagai hadiah?</string>
+    <string name="naruto_q03">Siapa yang mengalahkan Neji di Ujian Chūnin dan menentang omongan takdir?</string>
+    <string name="naruto_q04">Siapa yang mengalahkan Gaara dalam bentrokan besar pertama dan membuka jalan perubahan?</string>
+    <string name="naruto_q05">Siapa yang mempelajari Mode Pertapa di Gunung Myōboku setelah kematian Jiraiya?</string>
+    <string name="naruto_q06">Siapa yang menyelamatkan Konoha saat serangan Pain dan meyakinkan Nagato?</string>
+    <string name="naruto_q07">Siapa yang menariknya kembali dari kematian ketika Might Guy membuka Gerbang Kedelapan?</string>
+    <string name="naruto_q08">Siapa yang menerima kekuatan Enam Jalur dari Hagoromo?</string>
+    <string name="naruto_q09">Anak kecil siapa yang pertama kali mendapat ramen traktiran di kios Ichiraku?</string>
+    <string name="naruto_q10">Siapa yatim piatu yang duduk sendirian di ayunan halaman sekolah?</string>
+    <string name="naruto_q11">Siapa yang terguncang oleh pertanyaan untuk apa ninja bertarung pada misi Zabuza–Haku?</string>
+    <string name="naruto_q12">Siapa yang mengajarkan Rasengan kepada Konohamaru?</string>
+    <string name="naruto_q13">Siapa yang meyakinkan Tsunade untuk menerima posisi Hokage?</string>
+    <string name="naruto_q14">Siapa shinobi yang bersama Edo Itachi menghentikan Nagato?</string>
+    <string name="naruto_q15">Siapa yang bangkit lagi setelah melihat Hinata usai serangan paku Asura Path?</string>
+    <string name="naruto_q16">Siapa yang menyamakan waktu segel dengan Sasuke di dimensi Kaguya?</string>
+    <string name="naruto_q17">Siapa yang menjadikan definisi pahlawan gurunya sebagai tujuan setelah kehilangan Jiraiya?</string>
+
+    <string name="sasuke_q01">Siapa yang menyelamatkan rekannya di jembatan Negeri Ombak dengan menahan jarum Haku?</string>
+    <string name="sasuke_q02">Siapa yang menerima Tanda Kutukan Orochimaru pada tahap Hutan Kematian?</string>
+    <string name="sasuke_q03">Siapa yang pertama kali menurunkan Chidori ke arena untuk menembus pasir Gaara di final Chūnin?</string>
+    <string name="sasuke_q04">Siapa yang lolos dari ledakan bunuh diri C0 Deidara dengan memanggil Manda dan membayar harganya?</string>
+    <string name="sasuke_q05">Siapa yang membentuk Hebi lalu Taka dan berangkat menghadapi kakak satu tujuannya?</string>
+    <string name="sasuke_q06">Siapa yang mengubah guntur menjadi Kirin dan membalik duel kakak-adik Uchiha?</string>
+    <string name="sasuke_q07">Siapa yang setelah mengetahui kebenaran menyerbu KTT Lima Kage dan mengakhiri Danzō?</string>
+    <string name="sasuke_q08">Siapa yang mengembalikan Orochimaru dan memanggil Edo Hokage untuk menuntut masa lalu?</string>
+    <string name="sasuke_q09">Siapa yang memilih menjadi pengawas dalam bayangan, bukan kursi desa, saat perang usai?</string>
+    <string name="sasuke_q10">Siapa yang dulu mengikuti jalan ular lalu mengubah kontraknya menjadi Pemanggilan Elang?</string>
+    <string name="sasuke_q11">Siapa yang bertarung kombinasi bahu-membahu dengan Naruto melawan Kinshiki–Momoshiki?</string>
+    <string name="sasuke_q12">Siapa yang melewati ambang kebangkitan Sharingan di cermin es Zabuza–Haku?</string>
+
+    <string name="itachi_q01">Siapa yang mengurung Kakashi dalam siksaan tiga hari Tsukuyomi?</string>
+    <string name="itachi_q02">Siapa yang memanggul siklus kebencian dan diam-diam melindungi Konoha?</string>
+    <string name="itachi_q03">Siapa yang menggagalkan rencana pencurian tubuh Orochimaru dalam satu langkah hingga ia keluar dari Akatsuki?</string>
+    <string name="itachi_q04">Siapa yang menjaga Kotoamatsukami dengan menerima mata Shisui sebagai titipan?</string>
+    <string name="itachi_q05">Siapa agen ganda tak terlihat yang menghentikan kudeta klan demi Konoha?</string>
+    <string name="itachi_q06">Siapa yang dalam pertemuan terakhir menyentuh kening adiknya dengan dua jari sebagai perpisahan?</string>
+    <string name="itachi_q07">Siapa yang menetralisir Kirin dengan Menara Cermin Yata milik Susanoo?</string>
+    <string name="itachi_q08">Siapa yang langsung menyegel Orochimaru yang muncul di dalam adiknya dengan Pedang Totsuka?</string>
+    <string name="itachi_q09">Siapa yang dalam wujud Edo memasukkan Kabuto ke putaran Izanami dan mengakhiri Edo Tensei?</string>
+    <string name="itachi_q10">Siapa shinobi asal ANBU yang menyelundupkan informasi Akatsuki ke Konoha?</string>
+    <string name="itachi_q11">Siapa yang menggunakan Pedang Totsuka saat melawan Nagato untuk menyelamatkan Naruto dan Killer B?</string>
+    <string name="itachi_q12">Siapa yang membangkitkan Mangekyō Sharingan setelah kematian Shisui?</string>
+    <string name="itachi_q13">Siapa yang menjadi kapten ANBU di usia 13 dan mengejar damai yang mengakhiri perang?</string>
+    <string name="itachi_q14">Siapa yang setelah wafat membuka jalan agar penglihatan adiknya tak hilang?</string>
+    <string name="itachi_q15">Siapa yang bernegosiasi dengan pemimpin Konoha dan mensyaratkan nyawa Sasuke pada malam kudeta?</string>
+    <string name="itachi_q16">Siapa yang tetap mengawasi dari bayangan melindungi Konoha meski sudah meninggalkan desa?</string>
+    <string name="itachi_q17">Siapa yang saat reinkarnasi berkata pada adiknya aku akan selalu mencintaimu?</string>
+    <string name="itachi_q18">Di Pertempuran Lembah Akhir Naruto vs Sasuke, tangan tunggal yang muncul di tangan Sasuke milik siapa?</string>
+
+    <string name="kakashi_q01">Siapa yang mengajarkan keseimbangan aturan atau tim pada tes lonceng Tim 7 dan pelajaran berbagi makan siang?</string>
+    <string name="kakashi_q02">Siapa yang mendapat julukan Ninja Peniru karena menyalin lebih dari seribu jutsu?</string>
+    <string name="kakashi_q03">Siapa yang menerima Sharingan di mata kiri dari permintaan terakhir temannya pada misi Jembatan Kannabi?</string>
+    <string name="kakashi_q04">Siapa yang mengembangkan teknik Chidori atau Raikiri dan pertama kali memakainya di medan perang?</string>
+    <string name="kakashi_q05">Siapa yang pertama kali menerapkan Kamui ke target nyata untuk menghentikan pelarian Deidara?</string>
+    <string name="kakashi_q06">Siapa karakter yang tewas saat serangan Pain dan merasakan kematian Naruto?</string>
+    <string name="kakashi_q07">Siapa yang mengambil alih kursi Hokage Keenam setelah perang?</string>
+    <string name="kakashi_q08">Siapa master yang tak lepas dari buku Icha Icha bahkan di tengah lapangan?</string>
+    <string name="kakashi_q09">Siapa yang menyamar sebagai Sukea dan memimpin penyelidikan sambil menyembunyikan wajahnya?</string>
+
+    <string name="madara_q01">Siapa yang bersama Hashirama meletakkan dasar Konoha lalu dipisahkan takdir?</string>
+    <string name="madara_q02">Siapa yang menurunkan dua meteor dalam satu gerakan dan mengacaukan keseimbangan perang?</string>
+    <string name="madara_q03">Siapa yang menundukkan Lima Kage sendirian menunjukkan kekuatannya?</string>
+    <string name="madara_q04">Siapa yang mengikat lawan secara bersamaan dengan bayangan tak terlihat Limbo?</string>
+    <string name="madara_q05">Siapa yang membangkitkan Rinnegan dengan sel Hashirama dan melaju ke rencana akhir?</string>
+    <string name="madara_q06">Siapa yang menjadi Jinchūriki Sepuluh Ekor dan meraih kekuatan Enam Jalur?</string>
+    <string name="madara_q07">Siapa yang menyebarkan Tsukuyomi Abadi ke seluruh dunia melalui pantulan bulan?</string>
+    <string name="madara_q08">Siapa yang membuka Susanoo Sempurna dan membabat pegunungan?</string>
+    <string name="madara_q09">Siapa yang saat Gerbang Kedelapan dibuka berkata taijutsu terkuat yang pernah kulihat menghormati lawannya?</string>
+
+    <!-- OBITO (10) -->
+    <string name="obito_q01">Dengan berkata “Pahlawan datang terlambat”, siapa yang pergi tertimbun untuk menyelamatkan temannya dan menitipkan matanya—siapakah dia?</string>
+    <string name="obito_q02">Siapakah “Pria Bertopeng” yang di balik topengnya mengorganisir serangan ke Konoha—siapakah dia?</string>
+    <string name="obito_q03">Siapa yang pura-pura polos dengan peran “Tobi” di Akatsuki—siapakah dia?</string>
+    <string name="obito_q04">Dengan Kamui membuat tubuhnya tak berwujud hingga serangan menembusnya, siapakah dia?</string>
+    <string name="obito_q05">Setelah kematian Rin, siapa yang mengunci dunia pada “Rencana Penyelamatan”—siapakah dia?</string>
+    <string name="obito_q06">Siapa yang bertarung satu lawan satu melintasi dimensi dengan Kakashi untuk menuntaskan ikatan lama—siapakah dia?</string>
+    <string name="obito_q07">Siapa yang menarik Naruto dari saat mematikan dan mengambil langkah pertama menuju penebusan—siapakah dia?</string>
+    <string name="obito_q08">Siapa yang memimpin Akatsuki dari balik bayang-bayang dan memulai perang—siapakah dia?</string>
+    <string name="obito_q09">Di saat terakhirnya, siapa yang mengingat “jati dirinya” dan mewariskan kekuatannya demi masa depan para ninja—siapakah dia?</string>
+
+    <!-- GAARA (10) -->
+    <string name="gaara_q01">Semasa kecil, dilindungi secara refleks oleh perisai pasir hingga terhukum dalam kesendirian—siapakah dia?</string>
+    <string name="gaara_q02">Di Ujian Chūnin, siapa yang untuk pertama kalinya terguncang ketika pertahanannya ditembus Rock Lee—siapakah dia?</string>
+    <string name="gaara_q03">Siapa yang, lewat kata-kata Naruto, melihat “rasa sepi yang sama” lalu memutuskan untuk berubah—siapakah dia?</string>
+    <string name="gaara_q04">Sebagai Kazekage termuda Sunagakure, siapa yang memikul tugas melindungi desanya—siapakah dia?</string>
+    <string name="gaara_q05">Siapa yang bertarung mati-matian melawan Deidara demi melindungi desanya—siapakah dia?</string>
+    <string name="gaara_q06">Saat Bijū-nya dicabut dan nyawanya padam, siapa yang dihidupkan kembali oleh pengorbanan Chiyo—siapakah dia?</string>
+    <string name="gaara_q07">Di KTT Lima Kage, suara siapakah yang membela Naruto di hadapan Raikage—siapakah dia?</string>
+    <string name="gaara_q08">Siapa yang memberi pidato “menyatukan hati” kepada pasukan Aliansi—siapakah dia?</string>
+    <string name="gaara_q09">Dalam perang, siapa yang menghadapi jiwa ayahnya Rasa dan menyembuhkan luka masa lalunya—siapakah dia?</string>
+    <string name="gaara_q10">Di Perang Ninja Besar Keempat, dari ayahnya Rasa siapa yang mengetahui bahwa pasir pelindungnya adalah cinta sang ibu—siapakah dia?</string>
+    <string name="gaara_q11">Dalam upaya pembunuhan saat kecilnya, siapa shinobi yang diselamatkan oleh pasir yang bangkit sendiri—berkat “kehendak sang ibu”—siapakah dia?</string>
+
+    <!-- KABUTO (5) -->
+    <string name="kabuto_q01">Siapa yang dibawa dari Panti Asuhan Konoha dan menjadi mata-mata paling rahasia Orochimaru—siapakah dia?</string>
+    <string name="kabuto_q02">Siapa yang menyempurnakan Edo Tensei dan membangkitkan bidak-bidak perang dari kubur—siapakah dia?</string>
+    <string name="kabuto_q03">Siapa yang mencapai Sage Mode di Gua Ryūchi dan mengguncang arena dengan “Jeritan Putih”—siapakah dia?</string>
+    <string name="kabuto_q04">Dalam siklus Izanami, siapa yang belajar “menerima diri” dan memutus rantai—siapakah dia?</string>
+    <string name="kabuto_q05">Siapa yang kembali ke panti asuhan setelah perang dan menempuh jalan baru—siapakah dia?</string>
+
+    <!-- OROCHIMARU (5) -->
+    <string name="orochimaru_q01">Salah satu Sannin Legendaris yang mengejar keabadian dan tenggelam dalam eksperimen terlarang—siapakah dia?</string>
+    <string name="orochimaru_q02">Di Hutan Kematian, siapa yang menorehkan Segel Kutukan pada Sasuke—siapakah dia?</string>
+    <string name="orochimaru_q03">Dalam Invasi Konoha, siapa yang memanggil Edo Hokage dan berhadap-hadapan dengan gurunya—siapakah dia?</string>
+    <string name="orochimaru_q04">Siapa yang “mengganti kulit” ular untuk lolos dari kematian—siapakah dia?</string>
+    <string name="orochimaru_q05">Atas permintaan Sasuke, siapa yang kembali dan memanggil lagi para Edo Hokage untuk membuka gerbang sejarah—siapakah dia?</string>
+
+    <!-- ROCK LEE (5) -->
+    <string name="rocklee_q01">Di Ujian Chūnin, siapa yang melepas beban dan untuk pertama kalinya memperlihatkan kecepatan yang membuat arena berdebu—siapakah dia?</string>
+    <string name="rocklee_q02">Melawan Gaara, siapa yang membuka Gerbang Depan dan dengan Lotus Pertama membuat semua tercekik ngeri—siapakah dia?</string>
+    <string name="rocklee_q03">Di Hutan Kematian, siapa yang berdiri sendirian menghadang trio Sound demi melindungi Sakura—siapakah dia?</string>
+    <string name="rocklee_q04">Dengan risiko mati di meja operasi, siapa yang tetap memilih operasi demi bisa bertarung lagi—siapakah dia?</string>
+    <string name="rocklee_q05">Dengan “Tinju Mabuk” yang lincah, siapa yang sempat mempermainkan Kimimaro—siapakah dia?</string>
+
+    <!-- SAKURA (5) -->
+    <string name="sakura_q01">Di Hutan Kematian, siapa yang memotong rambutnya sendiri sambil berkata “mulai sekarang aku juga akan bertarung”—siapakah dia?</string>
+    <string name="sakura_q02">Di bawah bimbingan Tsunade sebagai ninja medis, siapa yang mencapai pukulan yang mampu membelah tanah—siapakah dia?</string>
+    <string name="sakura_q03">Bahu membahu dengan Chiyo, siapa yang menundukkan Sasori dari Akatsuki—siapakah dia?</string>
+    <string name="sakura_q04">Saat jantung Naruto hampir berhenti, siapa yang memompanya dengan tangan kosong dan mengembalikan nyawanya—siapakah dia?</string>
+    <string name="sakura_q05">Membuka segel di wajahnya, siapa yang dengan “Kekuatan Seratus” menyembuhkan ribuan prajurit sekaligus di garis depan—siapakah dia?</string>
+
+    <!-- MINATO (6) -->
+    <string name="minato_q01">Sebagai “Kilat Kuning Konoha”, siapa pemilik kecepatan yang mengakhiri perang sebelum paramedis tiba—siapakah dia?</string>
+    <string name="minato_q02">Pada malam desa, siapa yang memindahkan Tailed Beast Bomb Kurama yang raksasa jauh dari Konoha dengan Teknik Teleportasi—siapakah dia?</string>
+    <string name="minato_q03">Untuk menghentikan Kurama yang dipisahkan dari Kushina, siapa yang mengorbankan nyawanya dan menitipkan segel pada putranya—siapakah dia?</string>
+    <string name="minato_q04">Terinspirasi pahlawan dalam novel Jiraiya, siapa yang menamai putranya “Naruto” dan mempercayakannya pada ayah baptisnya—siapakah dia?</string>
+    <string name="minato_q05">Melebihi serangan Raikage A, siapa yang dengan “Teknik Dewa Kilat Terbang (Hiraishin)” membolak-balikkan medan hanya dengan satu tanda—siapakah dia?</string>
+    <string name="minato_q06">Tanpa garis keturunan khusus, siapa guru yang menundukkan 9 ekor bersama muridnya murni dengan dirinya sendiri—siapakah dia?</string>
+
+    <!-- HASHIRAMA (6) -->
+    <string name="hashirama_q01">Semasa kecil bersama Madara, siapa yang dari lempar batu di dua tepi sungai melangkah ke persahabatan lalu ke gagasan Konoha—siapakah dia?</string>
+    <string name="hashirama_q02">Siapa yang pertama kali menyuarakan gagasan Hokage dengan keyakinan bahwa damai dibangun bersama—siapakah dia?</string>
+    <string name="hashirama_q03">Untuk melampaui takdir di tablet batu Uchiha, siapa yang memilih persaudaraan—siapakah dia?</string>
+    <string name="hashirama_q04">Di Lembah Akhir, dalam duel besar pertama, siapa yang menolak membunuh sahabatnya dan mendirikan desa—siapakah dia?</string>
+    <string name="hashirama_q05">Dengan Patung Kayu raksasa bagai arca hidup, siapa yang membungkam medan perang—siapakah dia?</string>
+    <string name="hashirama_q06">Siapa Hokage pertama yang mewariskan kata “Desa adalah keluarga”—siapakah dia?</string>
+
+    <!-- TOBIRAMA (5) -->
+    <string name="tobirama_q01">Siapa yang meletakkan dasar ANBU dan mensistematisasi tatanan desa—siapakah dia?</string>
+    <string name="tobirama_q02">Siapa yang mengembangkan cikal bakal Teknik Dewa Kilat Terbang—siapakah dia?</string>
+    <string name="tobirama_q03">Siapa yang melembagakan aturan Akademi dan Chūnin, membingkai pendidikan ninja—siapakah dia?</string>
+    <string name="tobirama_q04">Di tengah perang, siapa yang mengorbankan nyawanya sebagai umpan untuk melindungi klan dan saudaranya—siapakah dia?</string>
+    <string name="tobirama_q05">Siapa yang menandai pengetahuan gelap Edo Tensei sebagai bencana bila jatuh ke tangan yang salah—siapakah dia?</string>
+
+    <!-- TSUNADE (6) -->
+    <string name="tsunade_q01">Di meja judi mungkin sial, tapi di medan perang siapa yang membalikkan keberuntungan ribuan—siapakah dia?</string>
+    <string name="tsunade_q02">Mengatakan tanpa korps medis tidak ada tentara, siapa yang mengubah keseimbangan front—siapakah dia?</string>
+    <string name="tsunade_q03">Mengatakan aku percaya pada mimpi Hokage Naruto, siapa yang menerima kursi itu—siapakah dia?</string>
+    <string name="tsunade_q04">Membuka segel di wajahnya, siapa yang mengangkat Konoha dari puing—siapakah dia?</string>
+    <string name="tsunade_q05">Meski hancur oleh kehilangan Jiraiya, siapa yang kembali menaruh penyembuhan di meja—siapakah dia?</string>
+    <string name="tsunade_q06">Di Perang Ninja Besar Keempat, siapa yang mengikat para Kage dengan ikatan kehidupan—siapakah dia?</string>
+
+    <!-- JIRAIYA (6) -->
+    <string name="jiraiya_q01">Mengatakan murid-muridku adalah warisanku, siapa yang menulis takdir tiga muridnya di dunia—siapakah dia?</string>
+    <string name="jiraiya_q02">Siapa yang menyusup sendirian ke Desa Hujan dan menutup jalan pulang demi mengetahui kebenaran—siapakah dia?</string>
+    <string name="jiraiya_q03">Siapa yang meninggalkan jalan damai di prasasti katak dan mengirim pesan terakhirnya dalam kode—siapakah dia?</string>
+    <string name="jiraiya_q04">Kepada Naruto kecil, siapa guru yang menunjukkan tujuan: pahlawan tidak menyerah—siapakah dia?</string>
+    <string name="jiraiya_q05">Siapa yang mengubah kidung Myōboku menjadi keceriaan di tengah perang—siapakah dia?</string>
+    <string name="jiraiya_q06">Sebagai Sannin Legendaris, siapa yang membuktikan kemenangan terbesar seorang guru adalah muridnya—siapakah dia?</string>
+
+    <!-- MIGHT GUY (6) -->
+    <string name="might_guy_q01">Di arena Chūnin, ketika beban jatuh, siapa yang membuat waktu seolah melambat—siapakah dia?</string>
+    <string name="might_guy_q02">Berteriak api muda, siapa yang mengajarkan harapan pada Rock Lee—siapakah dia?</string>
+    <string name="might_guy_q03">Siapa yang membuka Gerbang Kedelapan dan menyambut maut dengan senyum—siapakah dia?</string>
+    <string name="might_guy_q04">Siapa yang mengguncang Madara hingga mengaku melihat taijutsu terkuat—siapakah dia?</string>
+    <string name="might_guy_q05">Siapa sahabat yang tak pernah meninggalkan punggung Kakashi sepanjang perang—siapakah dia?</string>
+    <string name="might_guy_q06">Siapa yang menaruh hatinya di meja operasi muridnya dan berkata teruslah berlari—siapakah dia?</string>
+
+    <!-- SHIKAMARU (6) -->
+    <string name="shikamaru_q01">Memulai hari dengan menatap awan dan mengakhiri perang dengan strategi—siapakah dia?</string>
+    <string name="shikamaru_q02">Siapa yang menyalakan korek Asuma dan menuntaskan balas dendam gurunya dengan akal—siapakah dia?</string>
+    <string name="shikamaru_q03">Di antara Kage dan jenderal, siapa yang menjadi pusat komando yang menyatukan pasukan—siapakah dia?</string>
+    <string name="shikamaru_q04">Saat Naruto ragu, siapa yang berkata aku di sisimu dan menopang jalan Hokage—siapakah dia?</string>
+    <string name="shikamaru_q05">Siapa yang menjerat Hidan dengan bayangan dan mengubur pecahannya ke tanah—siapakah dia?</string>
+    <string name="shikamaru_q06">Usai perang, siapa yang duduk di meja untuk merencanakan perdamaian—siapakah dia?</string>
+
+    <!-- HINATA (5) -->
+    <string name="hinata_q01">Di hadapan Pain, siapa dewi yang tanpa takut menyatakan cintanya—siapakah dia?</string>
+    <string name="hinata_q02">Siapa yang membawa kenangan Neji dalam pukulannya dan berjalan di sampingnya dalam perang melawan Kaguya—siapakah dia?</string>
+    <string name="hinata_q03">Mengubah Byakugan menjadi kasih, siapa yang berkata jika kau tersesat aku akan menjadi cahaya—siapakah dia?</string>
+    <string name="hinata_q04">Dalam perang melawan Obito, saat Naruto hampir terseret, siapa yang menunjukkan jalan yang benar—siapakah dia?</string>
+    <string name="hinata_q05">Siapa yang meringankan beban klan Hyūga dengan jalan yang ia pilih sendiri—siapakah dia?</string>
+
+    <!-- KILLER B (5) -->
+    <string name="killer_b_q01">Siapa yang menuangkan status Jinchūriki ke dalam rap dan mengubah takut menjadi lagu—siapakah dia?</string>
+    <string name="killer_b_q02">Siapa master delapan pedang yang “menari” melawan tim Sasuke secara bersamaan—siapakah dia?</string>
+    <string name="killer_b_q03">Siapa yang bermitra dengan Gyūki dan menerjemahkan bahasa monster ke bahasa manusia—siapakah dia?</string>
+    <string name="killer_b_q04">Siapa yang mengajar Naruto kemitraan dengan Bijū dan membantunya memutus rantai kebencian di ruangan gelap—siapakah dia?</string>
+    <string name="killer_b_q05">Meski Raikage menentang, siapa yang memilih ritmenya sendiri dan mengubah ritme perang—siapakah dia?</string>
+
+    <!-- A (DÖRDÜNCÜ RAIKAGE) (2) -->
+    <string name="a_fourth_raikage_q01">Di KTT Lima Kage, siapa yang menghantam meja bukan dengan tinju tapi dengan tanggung jawab—siapakah dia?</string>
+    <string name="a_fourth_raikage_q02">Saat melindungi saudaranya, siapa pemimpin yang tetap tidak melepaskan komando pasukan—siapakah dia?</string>
+
+    <!-- DEIDARA (4) -->
+    <string name="deidara_q01">“Seni adalah ledakan” — siapa yang menandatangani langit dengan semboyan itu—siapakah dia?</string>
+    <string name="deidara_q02">Siapa yang mencoba menghancurkan kubah pasir Gaara di atas kota dengan C3—siapakah dia?</string>
+    <string name="deidara_q03">Meski membenci Sharingan, siapa yang membuka pameran terakhirnya dengan C0—siapakah dia?</string>
+    <string name="deidara_q04">Anggota Akatsuki yang mengubah langit menjadi kanvas dengan burung tanah liat—siapakah dia?</string>
+
+    <!-- KISAME (4) -->
+    <string name="kisame_q01">Dengan Samehada menelan chakra, siapa yang mengubah tepi danau menjadi samudra—siapakah dia?</string>
+    <string name="kisame_q02">Siapa “hiu biru” yang memaksa Gai membuka gerbang—siapakah dia?</string>
+    <string name="kisame_q03">Untuk menjaga rahasia, siapa yang menyerahkan tubuhnya pada penjara air—siapakah dia?</string>
+    <string name="kisame_q04">Siapa shinobi yang pantas disebut “monster” di medan perang—siapakah dia?</string>
+
+    <!-- HIDAN (4) -->
+    <string name="hidan_q01">Dengan ritual keabadian, siapa yang mengubah darah lawan menjadi luka pada tubuhnya sendiri—siapakah dia?</string>
+    <string name="hidan_q02">Siapa yang menggambar lingkaran Jashin dan memantulkan rasa sakit bak cermin—siapakah dia?</string>
+    <string name="hidan_q03">Siapa yang menebarkan asap Asuma ke angin namun akhirnya terperangkap oleh kecerdikan Shikamaru—siapakah dia?</string>
+    <string name="hidan_q04">Meski terpotong-potong, siapa yang dibungkam dengan dikubur dalam tanah—siapakah dia?</string>
+
+    <!-- KAKUZU (4) -->
+    <string name="kakuzu_q01">Dengan lima jantung, siapa yang merangkai unsur-unsur—siapakah dia?</string>
+    <string name="kakuzu_q02">Siapa yang menempatkan uang di atas keyakinan dan menguduskan kontrak—siapakah dia?</string>
+    <string name="kakuzu_q03">Siapa yang kalah oleh shuriken angin pertama Naruto dan merasakan datangnya era baru—siapakah dia?</string>
+    <string name="kakuzu_q04">Dengan Hidan, siapa yang membentuk kemitraan paling tak serasi sekaligus paling berbahaya—siapakah dia?</string>
+
+    <!-- KONAN (4) -->
+    <string name="konan_q01">Siapa yang menabur bunga kertasnya di jalanan hujan sebagai harapan—siapakah dia?</string>
+    <string name="konan_q02">Untuk menenggelamkan Tobi, siapa yang mengubah sepuluh miliar kertas menjadi bom—siapakah dia?</string>
+    <string name="konan_q03">Siapa yang memeteraikan cita Yahiko dalam origami biru—siapakah dia?</string>
+    <string name="konan_q04">Di belakang Nagato, siapa yang menanam bunga terakhir di jalan damai—siapakah dia?</string>
+
+    <!-- NAGATO (6) -->
+    <string name="nagato_q01">Dengan berkata “Rasa sakit mengajarkan”, siapa yang memaksakan hukum rasa sakit kepada dunia—siapakah dia?</string>
+    <string name="nagato_q02">Siapa yang meratakan Konoha ke tanah hanya dengan sekali Shinra Tensei—siapakah dia?</string>
+    <string name="nagato_q03">Dari murid Jiraiya menjadi personifikasi rasa sakit, siapa pemilik jalan itu—siapakah dia?</string>
+    <string name="nagato_q04">Dengan kata-kata Naruto, siapa yang memutus siklus dan mengembalikan nyawa—siapakah dia?</string>
+    <string name="nagato_q05">Siapa pemimpin yang membagi matanya kepada Enam Jalur—siapakah dia?</string>
+    <string name="nagato_q06">Siapa yang mengenakan ideologi Yahiko pada tubuhnya dan berusaha membungkam hujan—siapakah dia?</string>
+
+    <!-- YAHIKO (3) -->
+    <string name="yahiko_q01">Dari anak-anak di bawah hujan, siapa yang mendirikan harapan Ame—siapakah dia?</string>
+    <string name="yahiko_q02">Mengatakan damai datang bukan dari kekuatan tapi tekad, siapa yang memimpin teman-temannya—siapakah dia?</string>
+    <string name="yahiko_q03">Siapa yang menjadikan hidupnya jembatan untuk menopang Nagato dan Konan—siapakah dia?</string>
+
+    <!-- ZABUZA (4) -->
+    <string name="zabuza_q01">Di dalam kabut, siapa Iblis yang namanya dibisikkan dengan rasa takut—siapakah dia?</string>
+    <string name="zabuza_q02">Di hadapan Haku, siapa yang mengusapkan air mata ke pedang dan melakukan langkah terakhirnya—siapakah dia?</string>
+    <string name="zabuza_q03">Di atas jembatan, siapa musuh yang memberi pelajaran besar pertama pada Tim 7—siapakah dia?</string>
+    <string name="zabuza_q04">Siapa yang menuliskan kelulusan berdarah Kirigakure dalam sejarah—siapakah dia?</string>
+
+    <!-- HAKU (4) -->
+    <string name="haku_q01">Dalam cermin es, siapa yang melipatgandakan cahaya dan mengubah jarum menjadi hujan—siapakah dia?</string>
+    <string name="haku_q02">Siapa pejuang lembut yang menyerahkan hidupnya untuk berguna bagi seseorang—siapakah dia?</string>
+    <string name="haku_q03">Siapa yang menjadi satu-satunya tempat hangat di hati Zabuza—siapakah dia?</string>
+    <string name="haku_q04">Di balik topengnya, siapa yang matanya pertama kali menghangat oleh kata-kata Naruto—siapakah dia?</string>
+
+    <!-- HIRUZEN (4) -->
+    <string name="hiruzen_q01">Siapa yang membesarkan Tiga Legenda dan tiga kali memikul desa—siapakah dia?</string>
+    <string name="hiruzen_q02">Melawan Orochimaru, siapa yang menyegel dua Hokage dan membungkam medan perang—siapakah dia?</string>
+    <string name="hiruzen_q03">Siapa pemimpin tua yang menulis satu kesempatan lagi di berkas Naruto—siapakah dia?</string>
+    <string name="hiruzen_q04">Siapa Hokage Bijak yang melihat anak-anak desa seperti keluarganya sendiri—siapakah dia?</string>
+
+    <!-- TEMARI (3) -->
+    <string name="temari_q01">Dengan kipas anginnya, siapa yang menebas hutan dalam satu ayunan—siapakah dia?</string>
+    <string name="temari_q02">Siapa yang meniupkan angin pada rencana Shikamaru dan menguatkan akal di medan perang—siapakah dia?</string>
+    <string name="temari_q03">Siapa yang membuat Konoha menerima kekuatannya sendiri, bukan bayang-bayang saudaranya—siapakah dia?</string>
+
+    <!-- KANKURO (3) -->
+    <string name="kankuro_q01">Dengan boneka-bonekanya, siapa yang mengubah panggung menjadi teater kematian—siapakah dia?</string>
+    <string name="kankuro_q02">Melawan racun Sasori, siapa yang menantang waktu dengan penawar—siapakah dia?</string>
+    <string name="kankuro_q03">Di belakang saudaranya namun di garis depan perang, siapa yang maju dengan bonekanya—siapakah dia?</string>
+
+    <!-- SAI (3) -->
+    <string name="sai_q01">Siapa yang mengubah tinta menjadi burung dan mengirim kabar ke langit—siapakah dia?</string>
+    <string name="sai_q02">Di Tim 7, siapa yang mematahkan rantai pelatihan tanpa emosi—siapakah dia?</string>
+    <string name="sai_q03">Siapa yang untuk pertama kalinya menulis kata persahabatan dengan garis yang nyata di bukunya—siapakah dia?</string>
+
+    <!-- YAMATO (3) -->
+    <string name="yamato_q01">Dengan kontrol pelepasan kayu, siapa yang menambatkan monster pada ketenangan—siapakah dia?</string>
+    <string name="yamato_q02">Siapa wajah tenang yang memimpin hati Tim 7 yang tercerai-berai—siapakah dia?</string>
+    <string name="yamato_q03">Siapa yang menambatkan badai di dalam Naruto pada disiplin segel—siapakah dia?</string>
+
+    <!-- SHISUI (4) -->
+    <string name="shisui_q01">Agar Kotoamatsukami tidak disalahgunakan, siapa yang bahkan menyembunyikannya dari matanya sendiri—siapakah dia?</string>
+    <string name="shisui_q02">Seperti bayangan jatuh di daun dari atas jembatan, siapa yang ingin menyelamatkan klannya—siapakah dia?</string>
+    <string name="shisui_q03">Kepada Itachi, atas nama desa, siapa yang menyerahkan amanah terberat—siapakah dia?</string>
+    <string name="shisui_q04">Dengan kejatuhannya, siapa Uchiha yang mengubah takdir satu generasi—siapakah dia?</string>
+
+    <!-- KURAMA (5) -->
+    <string name="kurama_q01">Siapa yang melepaskan diri dari rantai kebencian dan bertarung bahu-membahu dengan Naruto—siapakah dia?</string>
+    <string name="kurama_q02">Di dalam segel Minato terbagi dua, siapa yang tetap mempertahankan kehendaknya—siapakah dia?</string>
+    <string name="kurama_q03">Dengan Tailed Beast Bomb, siapa yang membuat langit menjadi siang—siapakah dia?</string>
+    <string name="kurama_q04">Siapa rubah yang untuk pertama kalinya menyebut “kemitraan” dengan bangga—siapakah dia?</string>
+    <string name="kurama_q05">Dalam perang melawan Kaguya, siapa yang membagikan chakranya kepada seluruh aliansi—siapakah dia?</string>
+
+    <!-- SHUKAKU (2) -->
+    <string name="shukaku_q01">Dengan tawa gilanya di cangkang pasir, siapa yang mengguncang gurun—siapakah dia?</string>
+    <string name="shukaku_q02">Siapa entitas yang menjadi perisai pertama yang melindungi hati Gaara dari ketakutan—siapakah dia?</string>
+
+    <!-- GAMABUNTA (2) -->
+    <string name="gamabunta_q01">Siapa yang mengajarkan hormat pada bocah yang menungganginya namun tetap membelakangi bahunya di medan perang—siapakah dia?</string>
+    <string name="gamabunta_q02">Melawan Shukaku di tengah gurun, siapa yang menghunus pisau raksasanya—siapakah dia?</string>
+
+    <!-- GAMAKICHI (1) -->
+    <string name="gamakichi_q01">Keluar dari bayang-bayang ayahnya, siapa pahlawan kecil-besar yang membawa pesan di perang—siapakah dia?</string>
+
+    <!-- SON GOKU (4 Kuyruklu) (1) -->
+    <string name="son_goku_q01">Siapa yang menempa hati batu dengan api dan menunjukkan rantai kebencian kepada Naruto—siapakah dia?</string>
+
+    <!-- KARIN (2) -->
+    <string name="karin_q01">Siapa sensor berambut merah yang menggigit dirinya demi membangun rantai penyembuhan—siapakah dia?</string>
+    <string name="karin_q02">Dalam pertarungan Sasuke melawan Danzō, siapa yang ditembus tanpa berkedip—siapakah dia?</string>
+
+    <!-- SUIGETSU (2) -->
+    <string name="suigetsu_q01">Dengan teknik air Hōzuki, siapa yang membawa humor yang tak bisa dipenjara—siapakah dia?</string>
+    <string name="suigetsu_q02">Memanggul pedang Zabuza, siapa yang mengubah bayang-bayang masa lalu menjadi canda—siapakah dia?</string>
+
+    <!-- JUGO (2) -->
+    <string name="jugo_q01">Siapa yang menampung amarah alam dalam tubuhnya namun menyayangi burung—siapakah dia?</string>
+    <string name="jugo_q02">Siapa yang belajar meredakan amuknya dengan suara teman-temannya—siapakah dia?</string>
+
+    <!-- KIBA (2) -->
+    <string name="kiba_q01">Bersama Akamaru membaca medan dengan penciuman dan menjadikan pelacakan sebagai seni—siapakah dia?</string>
+    <string name="kiba_q02">Dengan transformasi ganda, siapa tim yang mengubah medan menjadi badai—siapakah dia?</string>
+
+    <!-- AKAMARU (1) -->
+    <string name="akamaru_q01">Dengan satu gonggongan di medan, siapa sahabat setia yang mengubah nasib timnya—siapakah dia?</string>
+
+    <!-- INO (3) -->
+    <string name="ino_q01">Siapa yang menjadikan pikirannya jembatan dan menarik musuh ke hadapan timnya—siapakah dia?</string>
+    <string name="ino_q02">Siapa yang mengubah kata-kata terakhir Asuma menjadi bunga di dalam hatinya—siapakah dia?</string>
+    <string name="ino_q03">Dalam perang, siapa yang mengelola jalur komunikasi dengan kesabaran seorang penjual bunga—siapakah dia?</string>
+
+    <!-- CHOJI (3) -->
+    <string name="choji_q01">Siapa yang membuka sayap kupu-kupu dan membesar demi sahabat-sahabatnya—siapakah dia?</string>
+    <string name="choji_q02">Siapa hati yang mengubah kata “gendut” menjadi kebanggaan dan kekuatan—siapakah dia?</string>
+    <string name="choji_q03">Siapa yang mencelupkan keripik Asuma bukan ke air mata, tetapi ke tekad—siapakah dia?</string>
+
+    <!-- BORUTO (5) -->
+    <string name="boruto_q01">Siapa yang memilih bertarung bukan dengan bayang-bayang ayahnya, melainkan dengan bayangannya sendiri—siapakah dia?</string>
+    <string name="boruto_q02">Siapa yang menggunakan alat ninja ilmiah saat ujian lalu menanggung tanggung jawabnya—siapakah dia?</string>
+    <string name="boruto_q03">Untuk tidak membiarkan jejak Momoshiki menjadi rencana takdir, siapa yang menggertakkan giginya—siapakah dia?</string>
+    <string name="boruto_q04">Di generasi baru Tim 7, siapa yang menjalani ujian kepemimpinan di jalanan—siapakah dia?</string>
+    <string name="boruto_q05">Siapa yang mendefinisikan kembali nama Uzumaki di era berbeda—siapakah dia?</string>
+
+    <!-- SARADA (3) -->
+    <string name="sarada_q01">Siapa yang menempa mimpi menjadi Hokage dengan tinju ibunya dan mata ayahnya—siapakah dia?</string>
+    <string name="sarada_q02">Di eranya sendiri, siapa shinobi muda yang pertama kali mendaratkan Chidori ke sasaran—siapakah dia?</string>
+    <string name="sarada_q03">Siapa yang merapikan hati timnya yang tercerai-berai hanya dengan satu tatapan—siapakah dia?</string>
+
+    <!-- MITSUKI (2) -->
+    <string name="mitsuki_q01">Pertanyaan “Siapa aku?” yang berubah menjadi jawaban di sisi sahabat—itu siapa—siapakah dia?</string>
+    <string name="mitsuki_q02">Mengubah kelenturan ular menjadi loyalitas, siapa yang menyelamatkan timnya—siapakah dia?</string>
+
+    <!-- KAWAKI (3) -->
+    <string name="kawaki_q01">Siapa yang memaksa segel Kara bukan sebagai takdir, melainkan pilihan siapakah dia?</string>
+    <string name="kawaki_q02">Siapa yang pertama kali menyebut rumah Naruto sebagai “rumahku” siapakah dia?</string>
+    <string name="kawaki_q03">Di bawah bayang-bayang Isshiki, siapa tekad yang mengubah bocah menjadi pejuang—siapakah dia?</string>
+
+    <!-- KOJI KASHIN (2) -->
+    <string name="koji_kashin_q01">Siapa yang menulis api bukan sebagai takdir, tetapi sebagai rencana, dan mengubah bayangan menjadi api—siapakah dia?</string>
+    <string name="koji_kashin_q02">Meski jati dirinya terkuak, siapa yang tetap tinggal di medan demi menuntaskan tugas—siapakah dia?</string>
+
+    <!-- ISSHIKI OTSUTSUKI (2) -->
+    <string name="isshiki_otsutsuki_q01">Siapa ancaman yang mengecilkan benda dan menggenggam dunia di telapak tangan—siapakah dia?</string>
+    <string name="isshiki_otsutsuki_q02">Siapa yang menegakkan tahtanya pada tubuh manusia dan mencoba menstempelkan takdir—siapakah dia?</string>
+
+    <!-- TONERI (1) -->
+    <string name="toneri_q01">Siapa yang mencoba menurunkan kesepian Bulan ke Bumi lalu mengembalikan cahaya—siapakah dia?</string>
+
+    <!-- HAGOROMO (3) -->
+    <string name="hagoromo_q01">Bersama saudaranya, siapa bijak yang menjadikan Ninjutsu sebagai ajaran di dunia—siapakah dia?</string>
+    <string name="hagoromo_q02">Saat memberi kekuatan kepada Naruto dan Sasuke, siapa yang mensyaratkan keseimbangan—siapakah dia?</string>
+    <string name="hagoromo_q03">Tentang pertikaian putra-putranya, siapa yang meninggalkan kisah agar diselesaikan dengan damai lintas generasi—siapakah dia?</string>
+
+    <!-- KAGUYA (4) -->
+    <string name="kaguya_q01">Siapa yang pertama kali membawa chakra ke dunia lewat buah—siapakah dia?</string>
+    <string name="kaguya_q02">Siapa yang mengganti-ganti dimensi bagai telapak tangan dan membalik panggung seketika—siapakah dia?</string>
+    <string name="kaguya_q03">Siapa yang dikirim kembali ke keabadian oleh segel kedua cucunya—siapakah dia?</string>
+    <string name="kaguya_q04">Siapa kekuatan tak tertahankan yang menggeser medan tempur antara beku, lava, dan gurun—siapakah dia?</string>
+
+    <!-- HANZO (3) -->
+    <string name="hanzo_q01">Di tengah perang, siapa yang memberi julukan Sannin Legendaris—siapakah dia?</string>
+    <string name="hanzo_q02">Siapa lord perang Ame yang menyembunyikan nasib negeri di balik topeng—siapakah dia?</string>
+    <string name="hanzo_q03">Siapa yang tumbang dalam rezim ketakutan yang ia bangun sendiri—siapakah dia?</string>
+
+    <!-- KONOHAMARU (3) -->
+    <string name="konohamaru_q01">Saat kecil mengejar Naruto, saat besar menjadi perisai timnya—siapakah dia?</string>
+    <string name="konohamaru_q02">Siapa guru yang mewariskan Rasengan kepada generasi baru—siapakah dia?</string>
+    <string name="konohamaru_q03">Siapa shinobi yang menjaga warisan kakeknya Hiruzen di jalanan—siapakah dia?</string>
+
+
+</resources>
