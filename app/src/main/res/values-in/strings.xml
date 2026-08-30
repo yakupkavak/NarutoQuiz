@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Naruto Quiz</string>
+    <string name="app_name">Shinobi Quiz</string>
     <string name="loading">Memuat…</string>
     <string name="zero">0</string>
     <string name="use_viewmodel">Gunakan ViewModel</string>

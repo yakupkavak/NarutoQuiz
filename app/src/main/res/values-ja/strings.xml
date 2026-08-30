@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shinobi Quiz</string>
+    <string name="loading">読み込み中…</string>
+    <string name="counter_menu">カウンター</string>
+    <string name="zero">0</string>
+    <string name="use_viewmodel">ViewModel を使う</string>
+    <string name="increase_counter">カウンターを増やす</string>
+    <string name="guess_menu">予想</string>
+    <string name="username_too_long">ユーザー名は16文字以内で入力してください</string>
+    <string name="password_too_low">パスワードは8文字以上で入力してください</string>
+    <string name="refresh_describtion">更新</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="reset">リセット</string>
+    <string name="guess">予想する</string>
+    <string name="success">正解</string>
+    <string name="failure">もう一度挑戦</string>
+    <string name="change_image">画像を変更</string>
+    <string name="pokemon">pokemon</string>
+    <string name="error">エラーが発生しました</string>
+    <string name="emptyImageUrl">https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png</string>
+    <string name="next">次へ</string>
+
+    <string name="sign_in">ログイン</string>
+    <string name="null_space">空欄のままにしないでください</string>
+    <string name="sign_in_error">メールアドレスまたはパスワードが違います</string>
+    <string name="recovery_error">メールアドレスが違います</string>
+    <string name="network_problem">問題が発生しました</string>
+    <string name="check_mail">メールを確認してください</string>
+    <string name="sign_success">登録が完了しました</string>
+    <string name="email">メールアドレス</string>
+    <string name="password">パスワード</string>
+    <string name="forgot_password">パスワードをお忘れですか？</string>
+    <string name="hint_email">example@gmail.com</string>
+    <string name="sign_up">新規登録</string>
+    <string name="slash">/</string>
+    <string name="user_name">ユーザー名</string>
+    <string name="welcome_shinobi">ようこそ、忍よ</string>
+    <string name="recovery">アカウント復旧</string>
+    <string name="naruto_image">ナルトの画像</string>
+    <string name="google_icon">Google アイコン</string>
+    <string name="game_content">ゲームの内容</string>
+    <string name="quizes">クイズ</string>
+    <string name="tier_list">ティアリスト</string>
+    <string name="user_info">ユーザー情報</string>
+    <string name="close_game">ゲームを終了</string>
+    <string name="first_option">1つ目の選択肢</string>
+    <string name="second_option">2つ目の選択肢</string>
+    <string name="check">確認</string>
+    <string name="leaders">ランキング</string>
+    <string name="classic_game">クラシックゲーム</string>
+    <string name="challenge">チャレンジ</string>
+    <string name="classic">クラシック</string>
+    <string name="akatsuki">チャレンジ</string>
+    <string name="clan">一族</string>
+    <string name="tail">尾</string>
+    <string name="team">班</string>
+    <string name="rank">順位</string>
+    <string name="player">プレイヤー</string>
+    <string name="score">スコア</string>
+    <string name="game_over">ゲームオーバー</string>
+    <string name="main_screen">メイン画面</string>
+    <string name="play_again">もう一度プレイ</string>
+    <string name="trueText">正解</string>
+    <string name="wrong">不正解</string>
+
+    <string name="emptyAd">現在利用できる広告がありません。3分後にもう一度お試しください</string>
+
+    <string name="family_question">%1$s — これはどのキャラクターのことでしょう？</string>
+    <string name="voice_question">%1$s — これはどのキャラクターのことでしょう？</string>
+    <string name="clan_question">%1$s 一族に属するのは誰でしょう？</string>
+    <string name="team_question">%1$s に所属しているのは誰でしょう？</string>
+    <string name="jinckuri_question">%1$s の人柱力は誰でしょう？</string>
+    <string name="user_name_info">名前: %1$s</string>
+    <string name="user_mail_info">メール: %1$s</string>
+    <string name="change_password">パスワードを変更</string>
+    <string name="wrong_password">パスワードが違います</string>
+
+    <string name="change">変更</string>
+    <string name="max_repeat_info">問題数: %1$s</string>
+    <string name="hint_count">ヒントの数: %1$d</string>
+    <string name="get_information">ゲームについて</string>
+    <string name="naruto_icon">ナルトのアイコン</string>
+    <string name="unexpected_error">予期しないエラー</string>
+    <string name="select">選べ！</string>
+    <string name="ad">広告を見る</string>
+
+
+    <string name="game_mode">ゲームモード</string>
+    <string name="history">プレイ履歴</string>
+    <string name="sign_out">ログアウト</string>
+    <string name="user">ユーザー</string>
+    <string name="game">ゲーム</string>
+    <string name="close">閉じる</string>
+    <string name="challenge_game">チャレンジゲーム</string>
+    <string name="welcome_text">チャレンジモードでは一度でも間違えると終了で、ランキングに参加できるのはこのモードだけだ。 \n\nクラシックモードでは、すべてのキャラクターで自分の実力を試せる。 \n\n特別モードの暁、一族、尾獣、班への挑戦も忘れずに。 \n\n\n 健闘を祈る、忍よ！</string>
+    <string name="about_the_game">ゲームについて</string>
+    <string name="market">ショップ</string>
+    <string name="hint">ヒント</string>
+    <string name="purchase">購入</string>
+    <string name="add">追加</string>
+
+    <string name="student">学生</string>
+    <string name="genin">下忍</string>
+    <string name="chunin">中忍</string>
+    <string name="kage">影</string>
+
+    <string name="token_count">トークンの数: %1$d</string>
+    <string name="gain_hint">ヒントを %1$d 個獲得！</string>
+    <string name="connection_error">接続エラー</string>
+
+    <string name="current_password">現在のパスワード:</string>
+    <string name="new_password">新しいパスワード:</string>
+    <string name="repeat_password">パスワードの確認:</string>
+
+    <string name="empty_edit_text">未入力の項目があります</string>
+    <string name="password_not_equal">パスワードが一致しません！</string>
+    <string name="delete_account">アカウントを削除</string>
+    <string name="delete">削除</string>
+    <string name="delete_success">アカウントを削除しました。</string>
+    <string name="question_number">問題番号: %1$d</string>
+
+    <string name="game_story_title">物語</string>
+    <string name="game_story_description">あなたのために用意された問題で、NARUTO の世界の物語をたどろう。</string>
+    <string name="game_challenge_title">チャレンジ</string>
+    <string name="game_challenge_description">忍の世界に、間違いの居場所はない！</string>
+    <string name="game_classic_title">クラシック</string>
+    <string name="game_classic_description">総合知識を試す時間だ。</string>
+    <string name="game_akatsuki_title">暁</string>
+    <string name="game_akatsuki_description">我らの使命は、偽りの平和を壊すこと。</string>
+    <string name="game_clan_title">一族</string>
+    <string name="game_clan_description">己の出自を忘れず、一族を守れ。</string>
+    <string name="game_tailed_beast_title">尾獣</string>
+    <string name="game_tailed_beast_description">ここは尾獣たちの世界だ。</string>
+    <string name="game_teams_title">班</string>
+    <string name="game_teams_description">ルールを破る者はクズだ。だが、仲間を見捨てる者はそれ以下だ。</string>
+
+    <string name="naruto_q01">ミズキの一件の夜、封印の書から影分身の術を覚えたのは誰？</string>
+    <string name="naruto_q02">イルカ先生から自分の額当てを贈られた生徒は誰？</string>
+    <string name="naruto_q03">中忍試験でネジを破り、「宿命」という言葉に立ち向かったのは誰？</string>
+    <string name="naruto_q04">最初の大きな激突で我愛羅を倒し、彼に変化のきっかけを与えたのは誰？</string>
+    <string name="naruto_q05">自来也の死後、妙木山で仙人モードを習得したのは誰？</string>
+    <string name="naruto_q06">ペインの木ノ葉襲撃で里を救い、長門を説得したのは誰？</string>
+    <string name="naruto_q07">マイト・ガイが八門を開いた後、彼を死の淵から引き戻したのは誰？</string>
+    <string name="naruto_q08">ハゴロモから六道の力を授かったのは誰？</string>
+    <string name="naruto_q09">一楽の屋台で初めて「おごり」のラーメンをもらった小さな子どもは誰？</string>
+    <string name="naruto_q10">アカデミーの裏のブランコに、ひとりぼっちで座っていた孤児は誰？</string>
+    <string name="naruto_q11">再不斬と白の任務で「忍は何のために戦うのか」という問いに揺さぶられたのは誰？</string>
+    <string name="naruto_q12">木ノ葉丸に螺旋丸を教えたのは誰？</string>
+    <string name="naruto_q13">綱手に火影を引き受けさせたのは誰？</string>
+    <string name="naruto_q14">穢土転生のイタチとともに長門を止めた忍は誰？</string>
+    <string name="naruto_q15">修羅道の攻撃を受けた後、ヒナタの姿を見て再び立ち上がったのは誰？</string>
+    <string name="naruto_q16">カグヤの空間で、サスケと同時に封印の一撃を放ったのは誰？</string>
+    <string name="naruto_q17">自来也を失った後、師の語った「本物の英雄」を自らの目標にしたのは誰？</string>
+
+    <string name="sasuke_q01">波の国の橋の上で、仲間を守るために白の千本の前に飛び出したのは誰？</string>
+    <string name="sasuke_q02">死の森の段階で大蛇丸の呪印を受けたのは誰？</string>
+    <string name="sasuke_q03">中忍試験本戦で我愛羅の砂を貫くため、初めて千鳥を放ったのは誰？</string>
+    <string name="sasuke_q04">デイダラのC0の自爆から、マンダを呼び出し代償を払って逃れたのは誰？</string>
+    <string name="sasuke_q05">蛇、そして鷹を結成し、ただ一つの標的である兄との対決に向かったのは誰？</string>
+    <string name="sasuke_q06">雷を「麒麟」に変え、うちは兄弟の決闘の流れを変えたのは誰？</string>
+    <string name="sasuke_q07">真実を知った後、五影会談に乗り込みダンゾウを討ったのは誰？</string>
+    <string name="sasuke_q08">大蛇丸を復活させ、穢土転生の歴代火影を呼び出して過去を問いただしたのは誰？</string>
+    <string name="sasuke_q09">戦争が終わったとき、里の椅子ではなく影から見張る道を選んだのは誰？</string>
+    <string name="sasuke_q10">若い頃は蛇の道を歩み、のちに契約を鷹に切り替えたのは誰？</string>
+    <string name="sasuke_q11">キンシキ・モモシキ戦で、ナルトと肩を並べて連携攻撃を組み立てたのは誰？</string>
+    <string name="sasuke_q12">白の氷の鏡の中で、写輪眼を開眼させる境地に達したのは誰？</string>
+
+    <string name="itachi_q01">月読でカカシを三日間の拷問に閉じ込めたのは誰？</string>
+    <string name="itachi_q02">「憎しみの連鎖」を背負い、影から木ノ葉を守り続けたのは誰？</string>
+    <string name="itachi_q03">大蛇丸の肉体乗っ取りの企みを一手で潰し、暁を去らせたのは誰？</string>
+    <string name="itachi_q04">シスイの瞳を託され、別天神を守り抜いたのは誰？</string>
+    <string name="itachi_q05">一族のクーデターを止めるため、木ノ葉に対する見えない二重スパイの任を負ったのは誰？</string>
+    <string name="itachi_q06">最後の対峙で、弟の額に二本の指を当てて別れを告げたのは誰？</string>
+    <string name="itachi_q07">須佐能乎の八咫鏡を降ろして麒麟を無力化したのは誰？</string>
+    <string name="itachi_q08">弟の中に現れた大蛇丸を、十拳剣で瞬時に封印したのは誰？</string>
+    <string name="itachi_q09">穢土転生の身でカブトをイザナミの輪に落とし、穢土転生を解かせたのは誰？</string>
+    <string name="itachi_q10">暁の情報をひそかに木ノ葉へ流していた、暗部出身の忍は誰？</string>
+    <string name="itachi_q11">長門との戦いで十拳剣を使い、ナルトとキラービーを救ったのは誰？</string>
+    <string name="itachi_q12">シスイの死後、万華鏡写輪眼を開眼させたのは誰？</string>
+    <string name="itachi_q13">13歳で暗部の隊長となり、「戦を終わらせる平和」を追い求めたのは誰？</string>
+    <string name="itachi_q14">死後、その瞳で弟の失明を食い止める道を開いたのは誰？</string>
+    <string name="itachi_q15">クーデターの夜、木ノ葉の上層部と交渉しサスケの命を条件にしたのは誰？</string>
+    <string name="itachi_q16">里を抜けた後も影から脅威を見張り、木ノ葉を守り続けたのは誰？</string>
+    <string name="itachi_q17">穢土転生の姿で弟に「これからも、ずっと愛してる」と告げたのは誰？</string>
+    <string name="itachi_q18">終末の谷でのナルトとサスケの戦いで、サスケの掌に現れたあの一つの手は誰のもの？</string>
+
+    <string name="kakashi_q01">第七班の鈴取り試験で「規則か、仲間か」を教え、昼飯を分け合う教訓を授けたのは誰？</string>
+    <string name="kakashi_q02">千を超える術をコピーし「コピー忍者」の異名を得たのは誰？</string>
+    <string name="kakashi_q03">神無毘橋の任務で、友の最期の願いにより左目に写輪眼を受け取ったのは誰？</string>
+    <string name="kakashi_q04">千鳥・雷切を編み出し、初めて実戦で使ったのは誰？</string>
+    <string name="kakashi_q05">デイダラの逃走を止めるため、初めて神威を実際の標的に使ったのは誰？</string>
+    <string name="kakashi_q06">ペインの襲撃で命を落とし、ナルトがその死を感じ取ったキャラクターは誰？</string>
+    <string name="kakashi_q07">戦後、六代目火影の座を引き継いだのは誰？</string>
+    <string name="kakashi_q08">任務の最中でも「イチャイチャ」の本を手放さない上忍は誰？</string>
+    <string name="kakashi_q09">スケアに変装して里に戻り、顔さえ隠して取材を行ったのは誰？</string>
+
+    <string name="madara_q01">柱間とともに木ノ葉の礎を築き、のちに運命を違えたのは誰？</string>
+    <string name="madara_q02">一手で二つの隕石を落とし、戦の均衡を崩したのは誰？</string>
+    <string name="madara_q03">五影を独りで相手取り、ひざまずかせたのは誰？</string>
+    <string name="madara_q04">見えない「リンボ」の影で、複数の相手を同時に縛ったのは誰？</string>
+    <string name="madara_q05">柱間細胞で輪廻眼を開眼し、最終計画へと進んだのは誰？</string>
+    <string name="madara_q06">十尾の人柱力となり、六道の力を手にしたのは誰？</string>
+    <string name="madara_q07">月の反射を使い、無限月読を世界中に広げたのは誰？</string>
+    <string name="madara_q08">山を斬り裂く完成体須佐能乎を展開したのは誰？</string>
+    <string name="madara_q09">八門が開かれたとき、「今まで見た中で最強の体術」と敵を讃えたのは誰？</string>
+
+    <string name="obito_q01">「英雄は遅れて来る」と言い、友を救うため瓦礫に埋もれ、自らの瞳を託したのは誰？</string>
+    <string name="obito_q02">仮面の裏で「仮面の男」として木ノ葉襲撃を仕組んだのは誰？</string>
+    <string name="obito_q03">暁の中で「トビ」を演じ、とぼけたふりをしていたのは誰？</string>
+    <string name="obito_q04">神威で体を実体から外し、攻撃をすり抜けさせていたのは誰？</string>
+    <string name="obito_q05">リンの死の後、世界を「月の眼計画」に縛りつけたのは誰？</string>
+    <string name="obito_q06">次元の狭間でカカシと一対一の決闘を行い、古い絆に決着をつけたのは誰？</string>
+    <string name="obito_q07">致命的な瞬間からナルトを引き戻し、贖罪への第一歩を踏み出したのは誰？</string>
+    <string name="obito_q08">影から暁の真の指導を担い、戦争の口火を切ったのは誰？</string>
+    <string name="obito_q09">最期の瞬間に「本当の自分」を思い出し、忍の未来のために力を託したのは誰？</string>
+
+    <string name="gaara_q01">幼い頃、意思とは関係なく砂の盾に守られ、孤独を強いられたのは誰？</string>
+    <string name="gaara_q02">中忍試験でロック・リーに守りまで貫かれ、初めて心を揺さぶられたのは誰？</string>
+    <string name="gaara_q03">ナルトの言葉に「同じ孤独の痛み」を見て、変わろうと決めたのは誰？</string>
+    <string name="gaara_q04">砂隠れ最年少の風影として、里を守る役目を担ったのは誰？</string>
+    <string name="gaara_q05">デイダラを相手に、命を懸けて里を守り抜こうとしたのは誰？</string>
+    <string name="gaara_q06">尾獣を抜かれて命が尽きた後、チヨの犠牲によって生き返ったのは誰？</string>
+    <string name="gaara_q07">五影会談で雷影に対しナルトを庇ったのは誰の声？</string>
+    <string name="gaara_q08">忍連合軍に向けて、心を一つにする総司令の演説を行ったのは誰？</string>
+    <string name="gaara_q09">戦場で父・羅砂の魂と向き合い、過去の傷を癒したのは誰？</string>
+    <string name="gaara_q10">第四次忍界大戦で、自分を守り続けた砂が実は母の愛だったと父・羅砂から知ったのは誰？</string>
+    <string name="gaara_q11">幼少期の暗殺の際、母の意志によって砂がひとりでに盾となった忍は誰？</string>
+
+    <string name="kabuto_q01">木ノ葉の孤児院から連れ出され、大蛇丸の最も秘密の間者となったのは誰？</string>
+    <string name="kabuto_q02">穢土転生を完成させ、戦の駒を墓から起こしたのは誰？</string>
+    <string name="kabuto_q03">龍地洞で仙人モードに至り、「白激の術」で戦場を震わせたのは誰？</string>
+    <string name="kabuto_q04">イザナミの輪の中で「自分を受け入れること」を学び、鎖を断ったのは誰？</string>
+    <string name="kabuto_q05">戦後、孤児院に戻り新たな道を歩み始めたのは誰？</string>
+
+    <string name="orochimaru_q01">伝説の三忍の一人でありながら、不老不死を求めて禁術の実験に手を染めたのは誰？</string>
+    <string name="orochimaru_q02">死の森でサスケに呪印を刻んだのは誰？</string>
+    <string name="orochimaru_q03">木ノ葉崩しで歴代火影を穢土転生し、師と決着をつけようとしたのは誰？</string>
+    <string name="orochimaru_q04">蛇が殻を脱ぐように体を捨て、死から逃れたのは誰？</string>
+    <string name="orochimaru_q05">サスケの願いで戻り、再び歴代火影を呼び出して歴史の扉を開いたのは誰？</string>
+
+    <string name="rocklee_q01">中忍試験で重りを外し、その速さで会場を砂煙に包んだのは誰？</string>
+    <string name="rocklee_q02">我愛羅を相手に初の門を開き、表蓮華で誰もの息を呑ませたのは誰？</string>
+    <string name="rocklee_q03">死の森でサクラを守るため、音の三人組の前に独り立ちはだかったのは誰？</string>
+    <string name="rocklee_q04">死の危険がありながら、再び戦うため綱手の手術台に上がったのは誰？</string>
+    <string name="rocklee_q05">ふらつく「酔拳」で、一瞬でも君麻呂を翻弄したのは誰？</string>
+
+    <string name="sakura_q01">死の森で自らの手で髪を切り、「これからは私も戦う」と告げたのは誰？</string>
+    <string name="sakura_q02">綱手のもとで医療忍者の修行を積み、一撃で地面を割る力を得たのは誰？</string>
+    <string name="sakura_q03">チヨと肩を並べて戦い、暁のサソリを打ち破ったのは誰？</string>
+    <string name="sakura_q04">ナルトの心臓が止まりかけたとき、素手で心臓を動かし彼を生き返らせたのは誰？</string>
+    <string name="sakura_q05">額の印を解き、「百豪の術」で前線の兵を一度に癒したのは誰？</string>
+
+    <string name="minato_q01">「木ノ葉の黄色い閃光」として、医療班が着く前に戦いを終わらせた速さの持ち主は誰？</string>
+    <string name="minato_q02">里襲撃の夜、九尾の巨大な尾獣玉を飛雷神の術で木ノ葉から遠ざけたのは誰？</string>
+    <string name="minato_q03">クシナから引き剥がされた九喇嘛を止めるため命を捧げ、封印を息子に託したのは誰？</string>
+    <string name="minato_q04">自来也の小説の主人公にちなんで息子に「ナルト」と名付け、名付け親に託したのは誰？</string>
+    <string name="minato_q05">雷影エーの一手すら置き去りにし、「飛雷神」で戦場を一瞬にして覆したのは誰？</string>
+    <string name="minato_q06">特別な血継限界を持たず、まったく己の力だけで九尾ごと弟子を退けた上忍は誰？</string>
+
+    <string name="hashirama_q01">幼い頃、川の両岸でマダラと石を投げ合い、そこから友情、そして木ノ葉という発想へ至る道を始めたのは誰？</string>
+    <string name="hashirama_q02">「平和は共に築くもの」として、火影という考えを初めて口にしたのは誰？</string>
+    <string name="hashirama_q03">うちはの石碑に刻まれた宿命の文字を越えるため、兄弟の絆を選んだのは誰？</string>
+    <string name="hashirama_q04">終末の谷での最初の大決闘で、友を殺すことを拒み里を築いたのは誰？</string>
+    <string name="hashirama_q05">生きた像のようにそびえる巨大な木遁の仏で、戦場を静まらせたのは誰？</string>
+    <string name="hashirama_q06">「里とは家族である」という言葉を後世に残した初代火影は誰？</string>
+
+    <string name="tobirama_q01">暗部の基礎を築き、里の仕組みを制度として整えたのは誰？</string>
+    <string name="tobirama_q02">飛雷神の術の原型を編み出したのは誰？</string>
+    <string name="tobirama_q03">アカデミーと中忍の制度を確立し、忍の教育の枠組みを描いたのは誰？</string>
+    <string name="tobirama_q04">戦の最中、自らの命を囮にして一族と兄を守ったのは誰？</string>
+    <string name="tobirama_q05">穢土転生の暗い知識を「誤った手に渡れば災いだ」と断じたのは誰？</string>
+
+    <string name="tsunade_q01">賭場では運に見放されながら、戦場では幾千もの運を変えたのは誰？</string>
+    <string name="tsunade_q02">「医療班なくして軍はない」と言い、前線の均衡を変えたのは誰？</string>
+    <string name="tsunade_q03">「ナルトの火影の夢を信じる」と言って、その座を引き受けたのは誰？</string>
+    <string name="tsunade_q04">額の印を解き、瓦礫の中から木ノ葉を立て直したのは誰？</string>
+    <string name="tsunade_q05">自来也を失って打ちのめされてなお、再び「癒すこと」を選び取ったのは誰？</string>
+    <string name="tsunade_q06">第四次忍界大戦で、影たちを命の絆で繋ぎ止めたのは誰？</string>
+
+    <string name="jiraiya_q01">「弟子こそ我が遺産」と言い、三人の弟子の運命を世界に刻んだのは誰？</string>
+    <string name="jiraiya_q02">真実を知るため、単身で雨隠れに潜入し帰り道を断ったのは誰？</string>
+    <string name="jiraiya_q03">蛙の背に平和への道を残し、最期の伝言を暗号で送ったのは誰？</string>
+    <string name="jiraiya_q04">幼いナルトに「英雄は諦めない」と目標を示した師は誰？</string>
+    <string name="jiraiya_q05">戦の最中でも妙木山の歌を明るさに変えたのは誰？</string>
+    <string name="jiraiya_q06">伝説の三忍の一人として、孤独な師の最大の勝利は弟子だと証明したのは誰？</string>
+
+    <string name="might_guy_q01">中忍試験の舞台で重りが地に落ちたとき、時間が遅く感じられるほどの速さを見せたのは誰？</string>
+    <string name="might_guy_q02">「青春の炎」を叫び、ロック・リーに希望を教えたのは誰？</string>
+    <string name="might_guy_q03">八門を開き、笑みを浮かべて死を迎え入れたのは誰？</string>
+    <string name="might_guy_q04">マダラにさえ「最強の体術」と言わしめる一撃を放ったのは誰？</string>
+    <string name="might_guy_q05">戦の間ずっとカカシの背を離れなかった親友は誰？</string>
+    <string name="might_guy_q06">弟子の手術台に自らの心を懸け、「走り続けろ」と言ったのは誰？</string>
+
+    <string name="shikamaru_q01">雲を眺めて一日を始め、戦いを戦略で終わらせるのは誰？</string>
+    <string name="shikamaru_q02">アスマのライターに火を灯し、師の仇を知恵で討ったのは誰？</string>
+    <string name="shikamaru_q03">影たちと将たちを繋ぐ中枢となり、軍を一つの頭脳に変えたのは誰？</string>
+    <string name="shikamaru_q04">迷うナルトに「オレがついてる」と告げ、火影への道を支えたのは誰？</string>
+    <string name="shikamaru_q05">飛段を影の罠に誘い込み、その体を土に埋めたのは誰？</string>
+    <string name="shikamaru_q06">戦が終わると、平和を設計するために机に向かったのは誰？</string>
+
+    <string name="hinata_q01">ペインの前で恐れずに想いを告げた戦士は誰？</string>
+    <string name="hinata_q02">ネジの想いを拳に込め、カグヤ戦で彼の隣を歩んだのは誰？</string>
+    <string name="hinata_q03">白眼を愛に変え、「道に迷ったら私が光になる」と告げたのは誰？</string>
+    <string name="hinata_q04">戦の中でナルトがオビト側へ傾きかけたとき、正しい道を示したのは誰？</string>
+    <string name="hinata_q05">自ら選んだ道で日向一族の重荷を軽くしたのは誰？</string>
+
+    <string name="killer_b_q01">人柱力であることをラップの詞に変え、恐れを歌に変えたのは誰？</string>
+    <string name="killer_b_q02">サスケの一団を相手に八本の剣を同時に舞わせた剣士は誰？</string>
+    <string name="killer_b_q03">牛鬼と手を組み、尾獣の言葉を人の言葉に訳したのは誰？</string>
+    <string name="killer_b_q04">ナルトに尾獣との協力を教え、暗い部屋の憎しみの鎖を断つ手助けをしたのは誰？</string>
+    <string name="killer_b_q05">雷影の反対を押し切って自分のリズムを選び、戦のリズムを変えたのは誰？</string>
+
+    <string name="a_fourth_raikage_q01">五影会談で、机に叩きつけたのは拳ではなく責任だった人物は誰？</string>
+    <string name="a_fourth_raikage_q02">軍の指揮を手放さぬまま、弟を守り抜いた指導者は誰？</string>
+
+    <string name="deidara_q01">「芸術は爆発だ」と言って空にサインを刻んだのは誰？</string>
+    <string name="deidara_q02">C3で街の上空から我愛羅の砂の防壁を砕こうとしたのは誰？</string>
+    <string name="deidara_q03">写輪眼への憎しみに逆らうように、C0で最後の作品を披露したのは誰？</string>
+    <string name="deidara_q04">粘土の鳥で空をキャンバスに変えた暁のメンバーは誰？</string>
+
+    <string name="kisame_q01">鮫肌でチャクラを喰らい、湖畔を大海に変えたのは誰？</string>
+    <string name="kisame_q02">ガイに門を開かせた青い鮫は誰？</string>
+    <string name="kisame_q03">秘密を守るため、自らの体を水牢に沈めたのは誰？</string>
+    <string name="kisame_q04">戦場で「化け物」の異名にふさわしいと認められた忍は誰？</string>
+
+    <string name="hidan_q01">不死の儀式で、相手の血を自らの体に映して痛みを返したのは誰？</string>
+    <string name="hidan_q02">ジャシンの円を描き、苦痛を鏡のように跳ね返したのは誰？</string>
+    <string name="hidan_q03">アスマの煙を風に散らしながら、シカマルの知略に捕らわれたのは誰？</string>
+    <string name="hidan_q04">バラバラにされ、土に埋められて黙らされたのは誰？</string>
+
+    <string name="kakuzu_q01">五つの心臓で属性を並べ立てたのは誰？</string>
+    <string name="kakuzu_q02">信仰よりも金を重んじ、契約を神聖なものとしたのは誰？</string>
+    <string name="kakuzu_q03">ナルト初の風遁・螺旋手裏剣に敗れ、新時代の到来を感じたのは誰？</string>
+    <string name="kakuzu_q04">飛段と最も噛み合わず、それでいて最も危険な相棒関係を築いたのは誰？</string>
+
+    <string name="konan_q01">雨の路地に、希望として紙の花を残したのは誰？</string>
+    <string name="konan_q02">トビを窒息させるため、百億の紙を爆弾に変えたのは誰？</string>
+    <string name="konan_q03">弥彦の理想を青い折り紙に封じたのは誰？</string>
+    <string name="konan_q04">長門の後、平和への道に最後の花を手向けたのは誰？</string>
+
+    <string name="nagato_q01">「痛みが人を教える」と言い、世界に痛みの掟を押しつけたのは誰？</string>
+    <string name="nagato_q02">神羅天征の一言で木ノ葉を更地に変えたのは誰？</string>
+    <string name="nagato_q03">自来也の弟子から、痛みそのものへと変わる道を歩んだのは誰？</string>
+    <string name="nagato_q04">ナルトの言葉で連鎖を断ち切り、奪った命を返したのは誰？</string>
+    <string name="nagato_q05">六道の一つひとつに自らの瞳を分け与えた指導者は誰？</string>
+    <string name="nagato_q06">弥彦の体に理想を着せ、雨を止ませようとしたのは誰？</string>
+
+    <string name="yahiko_q01">雨の下に立つ子どもたちから、雨隠れの希望を築いたのは誰？</string>
+    <string name="yahiko_q02">「平和は力ではなく意志で来る」と言って仲間を導いたのは誰？</string>
+    <string name="yahiko_q03">自らの命を橋として、長門と小南を支え続けたのは誰？</string>
+
+    <string name="zabuza_q01">霧の中でその名がささやかれ、恐れられた「鬼人」は誰？</string>
+    <string name="zabuza_q02">白の前で涙を刀に伝わせ、最後の歩みを進めたのは誰？</string>
+    <string name="zabuza_q03">橋の上で第七班に初めての大きな教訓を与えた敵は誰？</string>
+    <string name="zabuza_q04">霧隠れの血なまぐさい卒業試験を歴史に刻んだのは誰？</string>
+
+    <string name="haku_q01">氷の鏡の中で光を増やし、千本を雨に変えたのは誰？</string>
+    <string name="haku_q02">誰かの役に立つためだけに命を捧げた、優しい戦士は誰？</string>
+    <string name="haku_q03">再不斬の心の中で、唯一の温かい場所になれたのは誰？</string>
+    <string name="haku_q04">仮面の奥の瞳が、ナルトの言葉で初めて温もりを持ったのは誰？</string>
+
+    <string name="hiruzen_q01">伝説の三忍を育て、里を三度その肩に背負ったのは誰？</string>
+    <string name="hiruzen_q02">大蛇丸との戦いで二人の火影を封じ、戦場を静めたのは誰？</string>
+    <string name="hiruzen_q03">ナルトの書類に「もう一度のチャンス」を書き加えた老いた長は誰？</string>
+    <string name="hiruzen_q04">里の子どもたちを自分の家族のように見ていた賢き火影は誰？</string>
+
+    <string name="temari_q01">風の扇の一振りで森を丸ごと薙ぎ払ったのは誰？</string>
+    <string name="temari_q02">シカマルの策に風を与え、戦場で知を強めたのは誰？</string>
+    <string name="temari_q03">弟の影ではなく、自らの力を木ノ葉に認めさせたのは誰？</string>
+
+    <string name="kankuro_q01">傀儡で舞台を死の劇場に変えたのは誰？</string>
+    <string name="kankuro_q02">サソリの毒に解毒剤と時間との勝負で立ち向かったのは誰？</string>
+    <string name="kankuro_q03">弟の背後に立ちながら、戦では傀儡を最前線へ送り出したのは誰？</string>
+
+    <string name="sai_q01">墨を鳥に変え、報せを空へ放ったのは誰？</string>
+    <string name="sai_q02">第七班の中で、感情を殺す教育の鎖を断ち切ったのは誰？</string>
+    <string name="sai_q03">「友情」という言葉を、初めて本物の線で絵帳に書き記したのは誰？</string>
+
+    <string name="yamato_q01">木遁の制御で尾獣を鎮めたのは誰？</string>
+    <string name="yamato_q02">ばらばらになった第七班の心を導いた、穏やかな顔の持ち主は誰？</string>
+    <string name="yamato_q03">ナルトの内なる嵐を封印の規律で抑えたのは誰？</string>
+
+    <string name="shisui_q01">別天神が悪用されぬよう、自らの瞳からさえ遠ざけたのは誰？</string>
+    <string name="shisui_q02">橋から木の葉へ落ちる影のように、一族を救おうとしたのは誰？</string>
+    <string name="shisui_q03">「里のために」と言い、イタチに最も重い託しを残したのは誰？</string>
+    <string name="shisui_q04">その死によって一つの世代の運命を変えたうちはは誰？</string>
+
+    <string name="kurama_q01">憎しみの鎖から解き放たれ、ナルトと肩を並べて戦ったのは誰？</string>
+    <string name="kurama_q02">ミナトの封印で二つに分けられてなお、意思を保ち続けたのは誰？</string>
+    <string name="kurama_q03">尾獣玉で夜空を昼のように染めたのは誰？</string>
+    <string name="kurama_q04">「相棒」という言葉を初めて誇らしげに口にした狐は誰？</string>
+    <string name="kurama_q05">カグヤ戦で、自らのチャクラを連合軍すべてに分け与えた力は誰？</string>
+
+    <string name="shukaku_q01">砂の殻の中から狂った哄笑で砂漠を震わせたのは誰？</string>
+    <string name="shukaku_q02">恐怖から生まれ、我愛羅の心を守る最初の盾となった存在は誰？</string>
+
+    <string name="gamabunta_q01">背に乗った子どもに礼儀を教えながらも、戦ではその背を貸したのは誰？</string>
+    <string name="gamabunta_q02">砂漠の真ん中で守鶴に向けて巨大な刀を抜いたのは誰？</string>
+
+    <string name="gamakichi_q01">父の影から抜け出し、戦場で伝令を担った小さな大英雄は誰？</string>
+
+    <string name="son_goku_q01">石の心を炎で練り、ナルトに憎しみの鎖を示したのは誰？</string>
+
+    <string name="karin_q01">自らの身を噛ませて治癒の連鎖を築いた、赤髪の感知タイプは誰？</string>
+    <string name="karin_q02">ダンゾウとの戦いで、サスケが躊躇なく貫いたキャラクターは誰？</string>
+
+    <string name="suigetsu_q01">水化の術で、どんな檻にも収まらない軽口を持ち歩くのは誰？</string>
+    <string name="suigetsu_q02">再不斬の刀を背負い、過去の影を冗談に変えたのは誰？</string>
+
+    <string name="jugo_q01">自然の怒りを体に宿しながら、鳥には優しさを注いだのは誰？</string>
+    <string name="jugo_q02">激情の発作を仲間の声で鎮めることを学んだのは誰？</string>
+
+    <string name="kiba_q01">赤丸とともに匂いで戦場を読み、追跡を芸にまで高めたのは誰？</string>
+    <string name="kiba_q02">二人一組の回転で戦場を嵐に変えたコンビは誰？</string>
+
+    <string name="akamaru_q01">一声の鳴き声で仲間の運命を変えた、忠実な相棒は誰？</string>
+
+    <string name="ino_q01">心を橋にして、敵を仲間の前まで引き出したのは誰？</string>
+    <string name="ino_q02">アスマの最期の言葉を、胸の中の花に変えたのは誰？</string>
+    <string name="ino_q03">花屋の忍耐で、戦の通信網を束ねたのは誰？</string>
+
+    <string name="choji_q01">蝶の羽を広げ、仲間のために巨大になったのは誰？</string>
+    <string name="choji_q02">「太っている」という言葉を誇りとともに力へ変えた心の持ち主は誰？</string>
+    <string name="choji_q03">アスマのチップスを涙ではなく決意に浸したのは誰？</string>
+
+    <string name="boruto_q01">父ではなく、自分自身の影と戦うことを選んだのは誰？</string>
+    <string name="boruto_q02">試験で科学忍具を使い、その後その責任を引き受けたのは誰？</string>
+    <string name="boruto_q03">モモシキの刻印を宿命の筋書きにしないため、歯を食いしばったのは誰？</string>
+    <string name="boruto_q04">新世代の第七班のリーダーとしての試練を、街の中で越えたのは誰？</string>
+    <string name="boruto_q05">別の時代でうずまきの名を新たに定義し直したのは誰？</string>
+
+    <string name="sarada_q01">火影になる夢を、母の拳と父の瞳で練り上げたのは誰？</string>
+    <string name="sarada_q02">自分の世代で初めて千鳥を的に命中させた若き忍は誰？</string>
+    <string name="sarada_q03">ばらばらになった班の心を、一つの眼差しでまとめたのは誰？</string>
+
+    <string name="mitsuki_q01">「自分は何者か」という問いを、仲間の隣で答えに変えたのは誰？</string>
+    <string name="mitsuki_q02">蛇のしなやかさを忠誠に変え、仲間を救ったのは誰？</string>
+
+    <string name="kawaki_q01">カーマを宿命ではなく選択にさせたのは誰？</string>
+    <string name="kawaki_q02">ナルトの家を初めて「帰る場所」と呼んだのは誰？</string>
+    <string name="kawaki_q03">イッシキの影の下にいた子どもを戦士に変えた意志は誰のもの？</string>
+
+    <string name="koji_kashin_q01">炎を宿命ではなく自らの計画に書き込み、影を炎に変えたのは誰？</string>
+    <string name="koji_kashin_q02">真実が明らかになった後も、任務を果たすため戦場に残ったのは誰？</string>
+
+    <string name="isshiki_otsutsuki_q01">物を縮めて世界を掌に収めた脅威は誰？</string>
+    <string name="isshiki_otsutsuki_q02">人の体に玉座を築き、運命に刻印を押そうとしたのは誰？</string>
+
+    <string name="toneri_q01">月の孤独を地上へ落とそうとし、最後には光を返したのは誰？</string>
+
+    <string name="hagoromo_q01">弟とともに忍術を世界への教えへと変えた賢者は誰？</string>
+    <string name="hagoromo_q02">ナルトとサスケに力を授けながら、均衡を条件としたのは誰？</string>
+    <string name="hagoromo_q03">息子たちの争いを、世代を越えた平和で解かれる物語に託したのは誰？</string>
+
+    <string name="kaguya_q01">チャクラを初めて実として世界にもたらしたのは誰？</string>
+    <string name="kaguya_q02">掌を返すように次元を入れ替え、戦場を一瞬でひっくり返したのは誰？</string>
+    <string name="kaguya_q03">二人の子孫の封印によって、再び永遠へと送り返されたのは誰？</string>
+    <string name="kaguya_q04">氷、溶岩、砂漠へと戦場を渡り歩かせた抗い難い力は誰？</string>
+
+    <string name="hanzo_q01">戦の最中に伝説の三忍へその異名を与えたのは誰？</string>
+    <string name="hanzo_q02">雨隠れの運命を仮面の裏に隠した戦の支配者は誰？</string>
+    <string name="hanzo_q03">自ら築いた恐怖の体制の中で倒れたのは誰？</string>
+
+    <string name="konohamaru_q01">幼い頃はナルトを追いかけ、成長して自分の班の盾となったのは誰？</string>
+    <string name="konohamaru_q02">螺旋丸を新しい世代の手に託した教師は誰？</string>
+    <string name="konohamaru_q03">祖父ヒルゼンの遺志を街で守り続けた忍は誰？</string>
+
+</resources>

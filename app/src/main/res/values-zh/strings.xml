@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shinobi Quiz</string>
+    <string name="loading">加载中…</string>
+    <string name="counter_menu">计数器</string>
+    <string name="zero">0</string>
+    <string name="use_viewmodel">使用 ViewModel</string>
+    <string name="increase_counter">增加计数</string>
+    <string name="guess_menu">猜一猜</string>
+    <string name="username_too_long">用户名不能超过 16 个字符</string>
+    <string name="password_too_low">密码不能少于 8 个字符</string>
+    <string name="refresh_describtion">刷新</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="reset">重置</string>
+    <string name="guess">猜一猜</string>
+    <string name="success">回答正确</string>
+    <string name="failure">再试一次</string>
+    <string name="change_image">更换图片</string>
+    <string name="pokemon">pokemon</string>
+    <string name="error">出错了</string>
+    <string name="emptyImageUrl">https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png</string>
+    <string name="next">下一步</string>
+
+    <string name="sign_in">登录</string>
+    <string name="null_space">请不要留空</string>
+    <string name="sign_in_error">邮箱或密码不正确</string>
+    <string name="recovery_error">邮箱不正确</string>
+    <string name="network_problem">出现了问题</string>
+    <string name="check_mail">请查收邮件</string>
+    <string name="sign_success">注册成功</string>
+    <string name="email">邮箱</string>
+    <string name="password">密码</string>
+    <string name="forgot_password">忘记密码？</string>
+    <string name="hint_email">example@gmail.com</string>
+    <string name="sign_up">注册</string>
+    <string name="slash">/</string>
+    <string name="user_name">用户名</string>
+    <string name="welcome_shinobi">欢迎你，忍者</string>
+    <string name="recovery">找回账号</string>
+    <string name="naruto_image">鸣人图片</string>
+    <string name="google_icon">Google 图标</string>
+    <string name="game_content">游戏内容</string>
+    <string name="quizes">问答</string>
+    <string name="tier_list">强度榜</string>
+    <string name="user_info">用户信息</string>
+    <string name="close_game">关闭对局</string>
+    <string name="first_option">第一个选项</string>
+    <string name="second_option">第二个选项</string>
+    <string name="check">确认</string>
+    <string name="leaders">排行榜</string>
+    <string name="classic_game">经典对局</string>
+    <string name="challenge">挑战</string>
+    <string name="classic">经典</string>
+    <string name="akatsuki">挑战</string>
+    <string name="clan">家族</string>
+    <string name="tail">尾</string>
+    <string name="team">小队</string>
+    <string name="rank">排名</string>
+    <string name="player">玩家</string>
+    <string name="score">分数</string>
+    <string name="game_over">游戏结束</string>
+    <string name="main_screen">主界面</string>
+    <string name="play_again">再玩一局</string>
+    <string name="trueText">正确</string>
+    <string name="wrong">错误</string>
+
+    <string name="emptyAd">目前没有可看的广告，请 3 分钟后再试</string>
+
+    <string name="family_question">%1$s —— 这说的是哪个角色？</string>
+    <string name="voice_question">%1$s —— 这说的是哪个角色？</string>
+    <string name="clan_question">属于 %1$s 一族的是谁？</string>
+    <string name="team_question">属于 %1$s 小队的是谁？</string>
+    <string name="jinckuri_question">%1$s 的人柱力是谁？</string>
+    <string name="user_name_info">昵称：%1$s</string>
+    <string name="user_mail_info">邮箱：%1$s</string>
+    <string name="change_password">修改密码</string>
+    <string name="wrong_password">密码不正确</string>
+
+    <string name="change">修改</string>
+    <string name="max_repeat_info">题目数量：%1$s</string>
+    <string name="hint_count">提示数量：%1$d</string>
+    <string name="get_information">关于游戏</string>
+    <string name="naruto_icon">鸣人图标</string>
+    <string name="unexpected_error">意外错误</string>
+    <string name="select">快选吧！</string>
+    <string name="ad">观看广告</string>
+
+
+    <string name="game_mode">游戏模式</string>
+    <string name="history">对局记录</string>
+    <string name="sign_out">退出登录</string>
+    <string name="user">用户</string>
+    <string name="game">游戏</string>
+    <string name="close">关闭</string>
+    <string name="challenge_game">挑战对局</string>
+    <string name="welcome_text">在挑战模式中你一次都不能答错，而且只有这个模式才能进入排行榜。 \n\n经典模式则让你用所有角色来检验自己。 \n\n别忘了还有晓、家族、尾兽和小队这些特别模式。 \n\n\n 祝你好运，忍者！</string>
+    <string name="about_the_game">关于游戏</string>
+    <string name="market">商店</string>
+    <string name="hint">提示</string>
+    <string name="purchase">购买</string>
+    <string name="add">添加</string>
+
+    <string name="student">学生</string>
+    <string name="genin">下忍</string>
+    <string name="chunin">中忍</string>
+    <string name="kage">影</string>
+
+    <string name="token_count">代币数量：%1$d</string>
+    <string name="gain_hint">你获得了 %1$d 个提示！</string>
+    <string name="connection_error">连接错误</string>
+
+    <string name="current_password">当前密码：</string>
+    <string name="new_password">新密码：</string>
+    <string name="repeat_password">重复密码：</string>
+
+    <string name="empty_edit_text">还有内容没有填写</string>
+    <string name="password_not_equal">两次密码不一致！</string>
+    <string name="delete_account">注销账号</string>
+    <string name="delete">删除</string>
+    <string name="delete_success">账号已注销。</string>
+    <string name="question_number">第 %1$d 题</string>
+
+    <string name="game_story_title">剧情</string>
+    <string name="game_story_description">通过为你准备的题目，探索火影忍者世界的故事。</string>
+    <string name="game_challenge_title">挑战</string>
+    <string name="game_challenge_description">在忍者的世界里，容不下一次失误！</string>
+    <string name="game_classic_title">经典</string>
+    <string name="game_classic_description">是时候检验你的综合知识了。</string>
+    <string name="game_akatsuki_title">晓</string>
+    <string name="game_akatsuki_description">我们的任务，就是打碎这虚假的和平。</string>
+    <string name="game_clan_title">家族</string>
+    <string name="game_clan_description">记住你的出身，守护你的家族。</string>
+    <string name="game_tailed_beast_title">尾兽</string>
+    <string name="game_tailed_beast_description">这里是尾兽的世界。</string>
+    <string name="game_teams_title">小队</string>
+    <string name="game_teams_description">违反规则的人是渣滓，但抛弃同伴的人，连渣滓都不如。</string>
+
+    <string name="naruto_q01">在水木事件那晚，从封印之书里学会影分身之术的是谁？</string>
+    <string name="naruto_q02">伊鲁卡把自己的护额送给了哪位学生？</string>
+    <string name="naruto_q03">在中忍考试中击败宁次，并对抗「命运」之说的是谁？</string>
+    <string name="naruto_q04">在第一次大战中击败我爱罗，为他打开改变之门的是谁？</string>
+    <string name="naruto_q05">自来也死后，在妙木山习得仙人模式的是谁？</string>
+    <string name="naruto_q06">在佩恩袭击木叶时拯救村子并说服长门的是谁？</string>
+    <string name="naruto_q07">在迈特凯打开第八门之后，把他从死亡边缘拉回来的是谁？</string>
+    <string name="naruto_q08">从羽衣手中获得六道之力的是谁？</string>
+    <string name="naruto_q09">在一乐拉面的摊位上第一次吃到免费拉面的小男孩是谁？</string>
+    <string name="naruto_q10">独自坐在学校后院秋千上的那个孤儿是谁？</string>
+    <string name="naruto_q11">在再不斩与白的任务中，被「忍者为何而战」这个问题震撼的是谁？</string>
+    <string name="naruto_q12">教木叶丸螺旋丸的是谁？</string>
+    <string name="naruto_q13">说服纲手接任火影的是谁？</string>
+    <string name="naruto_q14">与秽土转生的鼬一起阻止长门的忍者是谁？</string>
+    <string name="naruto_q15">在修罗道的攻击之后，看到雏田而重新站起来的是谁？</string>
+    <string name="naruto_q16">在辉夜的空间里，与佐助同时打出封印一击的是谁？</string>
+    <string name="naruto_q17">失去自来也之后，把老师口中「真正的英雄」当作自己目标的是谁？</string>
+
+    <string name="sasuke_q01">在波之国的大桥上，为救同伴挡在白的千本前面的是谁？</string>
+    <string name="sasuke_q02">在死亡森林阶段被大蛇丸打上咒印的是谁？</string>
+    <string name="sasuke_q03">在中忍考试决赛中第一次使出千鸟、刺穿我爱罗沙防的是谁？</string>
+    <string name="sasuke_q04">召唤蝮蛇付出代价，从迪达拉的 C0 自爆中脱身的是谁？</string>
+    <string name="sasuke_q05">先后组建蛇与鹰，只为与兄长决一死战的是谁？</string>
+    <string name="sasuke_q06">把雷电化作「麒麟」，改变宇智波兄弟决斗走向的是谁？</string>
+    <string name="sasuke_q07">得知真相后闯入五影会谈，并在那里终结团藏的是谁？</string>
+    <string name="sasuke_q08">让大蛇丸复活并召唤历代火影，亲自向过去讨说法的是谁？</string>
+    <string name="sasuke_q09">战争结束后没有选择村里的位置，而是选择在暗处守望的是谁？</string>
+    <string name="sasuke_q10">年少时走蛇之道，后来把契约换成鹰之通灵的是谁？</string>
+    <string name="sasuke_q11">在金式与桃式之战中与鸣人并肩打出组合攻击的是谁？</string>
+    <string name="sasuke_q12">在白的冰晶魔镜中跨过门槛、觉醒写轮眼的是谁？</string>
+
+    <string name="itachi_q01">用月读把卡卡西困在三天酷刑之中的是谁？</string>
+    <string name="itachi_q02">背负「仇恨的循环」、在暗中守护木叶的是谁？</string>
+    <string name="itachi_q03">一招击碎大蛇丸夺舍计划，逼他退出晓组织的是谁？</string>
+    <string name="itachi_q04">受托保管止水的眼睛、守住别天神的是谁？</string>
+    <string name="itachi_q05">为阻止族人政变，承担起对抗自己一族的双面间谍任务的是谁？</string>
+    <string name="itachi_q06">在最后一次相见时，用两根手指点住弟弟额头道别的是谁？</string>
+    <string name="itachi_q07">放下须佐能乎的八咫镜，化解麒麟攻击的是谁？</string>
+    <string name="itachi_q08">用十拳剑瞬间封印弟弟体内浮现的大蛇丸的是谁？</string>
+    <string name="itachi_q09">在秽土转生状态下把药师兜困进伊邪那美之环、逼他解开秽土转生的是谁？</string>
+    <string name="itachi_q10">把晓组织的情报暗中传回木叶的暗部出身忍者是谁？</string>
+    <string name="itachi_q11">在与长门的战斗中用十拳剑救下鸣人和奇拉比的是谁？</string>
+    <string name="itachi_q12">在止水死后觉醒万花筒写轮眼的是谁？</string>
+    <string name="itachi_q13">13 岁成为暗部队长、追求「终结战争的和平」的是谁？</string>
+    <string name="itachi_q14">在死后用自己的眼睛为弟弟打开阻止失明之路的是谁？</string>
+    <string name="itachi_q15">政变之夜与木叶高层谈判、以佐助的性命为条件的是谁？</string>
+    <string name="itachi_q16">即使离开村子后仍在暗处盯着威胁、继续守护木叶的是谁？</string>
+    <string name="itachi_q17">在秽土转生的身躯下对弟弟说会永远爱他的是谁？</string>
+    <string name="itachi_q18">在鸣人与佐助的终结谷之战中，佐助掌心浮现的那只手是谁的？</string>
+
+    <string name="kakashi_q01">在第七班的抢铃测试中，教会「规则还是同伴」的取舍以及分享午饭的道理的是谁？</string>
+    <string name="kakashi_q02">因复制上千种忍术而获得「复制忍者」称号的是谁？</string>
+    <string name="kakashi_q03">在神无毗桥任务中，依照挚友遗愿把写轮眼移入左眼的是谁？</string>
+    <string name="kakashi_q04">开发出千鸟／雷切并首次用于实战的是谁？</string>
+    <string name="kakashi_q05">为阻止迪达拉逃跑而首次把神威用在真实目标上的是谁？</string>
+    <string name="kakashi_q06">在佩恩袭击中失去生命、并让鸣人感受到那份死亡的角色是谁？</string>
+    <string name="kakashi_q07">战后接下第六代火影之位的是谁？</string>
+    <string name="kakashi_q08">哪位上忍即使在任务当中也不肯放下《亲热天堂》？</string>
+    <string name="kakashi_q09">以「须家」的伪装回到村里、连脸都遮住进行调查的是谁？</string>
+
+    <string name="madara_q01">与柱间一同奠定木叶根基、后来却分道扬镳的是谁？</string>
+    <string name="madara_q02">一招落下两颗陨石、打破战争平衡的是谁？</string>
+    <string name="madara_q03">独自一人让五影跪地的是谁？</string>
+    <string name="madara_q04">用看不见的「林朋」之影同时束缚多名对手的是谁？</string>
+    <string name="madara_q05">借柱间细胞觉醒轮回眼、迈向最终计划的是谁？</string>
+    <string name="madara_q06">成为十尾人柱力并获得六道之力的是谁？</string>
+    <string name="madara_q07">借月亮的倒影把无限月读铺满整个世界的是谁？</string>
+    <string name="madara_q08">展开可以劈开群山的完全体须佐能乎的是谁？</string>
+    <string name="madara_q09">第八门开启时，称赞对手是「至今见过最强体术」的是谁？</string>
+
+    <string name="obito_q01">说着「英雄总是迟到」，为救好友被埋在碎石下并托付出自己眼睛的是谁？</string>
+    <string name="obito_q02">在面具之下以「面具男」身份策划袭击木叶的是谁？</string>
+    <string name="obito_q03">在晓组织中扮演「阿飞」装傻的是谁？</string>
+    <string name="obito_q04">用神威让身体虚化、让攻击穿身而过的是谁？</string>
+    <string name="obito_q05">琳死后把整个世界锁进「月之眼计划」的是谁？</string>
+    <string name="obito_q06">在异空间与卡卡西单独决斗、了结旧日羁绊的是谁？</string>
+    <string name="obito_q07">在致命一刻把鸣人拉回来、迈出赎罪第一步的是谁？</string>
+    <string name="obito_q08">在暗处真正统领晓组织并点燃战争的是谁？</string>
+    <string name="obito_q09">在最后一刻想起真正的自己、把力量交给忍者未来的是谁？</string>
+
+    <string name="gaara_q01">儿时被沙之护盾不由自主地守护、因此陷入孤独的是谁？</string>
+    <string name="gaara_q02">在中忍考试中被李洛克连防御都击穿、第一次动摇的是谁？</string>
+    <string name="gaara_q03">从鸣人的话里看到同样的孤独之痛、决定改变的是谁？</string>
+    <string name="gaara_q04">作为砂隐村最年轻的风影承担起守护村子重任的是谁？</string>
+    <string name="gaara_q05">为保护村子不惜性命与迪达拉战斗的是谁？</string>
+    <string name="gaara_q06">尾兽被抽走后气绝、又因千代的牺牲而复生的是谁？</string>
+    <string name="gaara_q07">在五影会谈上面对雷影为鸣人辩护的声音属于谁？</string>
+    <string name="gaara_q08">向联军发表那段凝聚人心的总司令演说的是谁？</string>
+    <string name="gaara_q09">在战场上面对父亲罗砂的灵魂、抚平过往创伤的是谁？</string>
+    <string name="gaara_q10">在第四次忍界大战中，从父亲罗砂口中得知一直守护自己的沙其实是母亲之爱的是谁？</string>
+    <string name="gaara_q11">童年遭遇暗杀时，因母亲的意志而让沙自行升起护住自己的忍者是谁？</string>
+
+    <string name="kabuto_q01">被带出木叶孤儿院、成为大蛇丸最隐秘间谍的是谁？</string>
+    <string name="kabuto_q02">完善秽土转生、把战争的棋子从坟墓里唤起的是谁？</string>
+    <string name="kabuto_q03">在龙地洞抵达仙人模式、以「白激之术」震撼战场的是谁？</string>
+    <string name="kabuto_q04">在伊邪那美之环中学会接纳自己、斩断锁链的是谁？</string>
+    <string name="kabuto_q05">战后回到孤儿院、走上新道路的是谁？</string>
+
+    <string name="orochimaru_q01">身为传说三忍之一，却为追求不死而沉迷禁忌实验的是谁？</string>
+    <string name="orochimaru_q02">在死亡森林里给佐助留下咒印的是谁？</string>
+    <string name="orochimaru_q03">在木叶崩溃时召唤历代火影、与自己老师算总账的是谁？</string>
+    <string name="orochimaru_q04">像蛇蜕皮一样舍弃身体、从死亡中脱身的是谁？</string>
+    <string name="orochimaru_q05">应佐助之请回归、再次召唤历代火影从而叩开历史之门的是谁？</string>
+
+    <string name="rocklee_q01">在中忍考试中卸下负重、用速度把赛场掀起一片尘土的是谁？</string>
+    <string name="rocklee_q02">面对我爱罗打开第一门、用表莲华让全场屏息的是谁？</string>
+    <string name="rocklee_q03">在死亡森林里为保护小樱独自挡在音忍三人组前面的是谁？</string>
+    <string name="rocklee_q04">明知手术有生命危险，仍为再次战斗躺上纲手手术台的是谁？</string>
+    <string name="rocklee_q05">用摇摇晃晃的「醉拳」哪怕只是一瞬间也戏耍了君麻吕的是谁？</string>
+
+    <string name="sakura_q01">在死亡森林里亲手剪断自己的头发、说出「从今往后我也要战斗」的是谁？</string>
+    <string name="sakura_q02">跟随纲手学习医疗忍术、练出一拳裂地之力的是谁？</string>
+    <string name="sakura_q03">与千代并肩作战、击败晓组织赤砂之蝎的是谁？</string>
+    <string name="sakura_q04">在鸣人心脏将要停跳时，用双手直接按压心脏把他救回来的是谁？</string>
+    <string name="sakura_q05">解开额头封印、用「百豪之术」在前线同时治愈成千上万士兵的是谁？</string>
+
+    <string name="minato_q01">身为「木叶黄色闪光」，谁的速度能在医疗班赶到之前就结束战斗？</string>
+    <string name="minato_q02">村子遇袭那晚，用飞雷神之术把九尾的巨大尾兽玉送离木叶的是谁？</string>
+    <string name="minato_q03">为阻止从玖辛奈体内被剥离的九喇嘛而献出生命、把封印托付给儿子的是谁？</string>
+    <string name="minato_q04">受自来也小说主角启发给儿子取名「鸣人」、并把他托付给教父的是谁？</string>
+    <string name="minato_q05">连雷影 A 的动作都甩在身后、以「飞雷神」一个手势就扭转战局的是谁？</string>
+    <string name="minato_q06">没有任何特殊血继、完全凭自己的力量击败带着九尾的学生的老师是谁？</string>
+
+    <string name="hashirama_q01">儿时与斑隔河扔石子，从而走上由友情通往木叶构想之路的是谁？</string>
+    <string name="hashirama_q02">最先说出火影这一构想、认为和平要一起建立的是谁？</string>
+    <string name="hashirama_q03">为跨越宇智波石碑上的宿命文字而选择兄弟情谊的是谁？</string>
+    <string name="hashirama_q04">在终结谷的第一场大决斗中拒绝杀死好友、并创建村子的是谁？</string>
+    <string name="hashirama_q05">用如活雕像般拔地而起的巨大木遁佛像让战场安静下来的是谁？</string>
+    <string name="hashirama_q06">把「村子就是家人」这句话留给后世的初代火影是谁？</string>
+
+    <string name="tobirama_q01">奠定暗部基础、把村子的秩序制度化的是谁？</string>
+    <string name="tobirama_q02">研发出飞雷神之术最初雏形的是谁？</string>
+    <string name="tobirama_q03">把忍者学校与中忍制度化、勾勒出忍者教育框架的是谁？</string>
+    <string name="tobirama_q04">在战场中央以自己的性命为饵、保护族人与兄长的是谁？</string>
+    <string name="tobirama_q05">把秽土转生的黑暗知识斥为「落入错误之手便是灾难」的是谁？</string>
+
+    <string name="tsunade_q01">赌桌上从不走运，却在战场上扭转千万人命运的是谁？</string>
+    <string name="tsunade_q02">以「没有医疗班就没有军队」这句话改变战局的是谁？</string>
+    <string name="tsunade_q03">说着「我相信鸣人想当火影的梦想」而接下这个位子的是谁？</string>
+    <string name="tsunade_q04">解开额头封印、把木叶从废墟中重新扶起的是谁？</string>
+    <string name="tsunade_q05">纵然因失去自来也而崩溃，仍把治愈重新摆上台面的是谁？</string>
+    <string name="tsunade_q06">在第四次忍界大战中用生命之绳把五影连在一起的是谁？</string>
+
+    <string name="jiraiya_q01">说着「学生就是我的遗产」，把三名弟子的命运写进世界的是谁？</string>
+    <string name="jiraiya_q02">为查明真相独自潜入雨隐村、断了自己退路的是谁？</string>
+    <string name="jiraiya_q03">把通往和平的道路留在蛤蟆背上、用密码送出最后讯息的是谁？</string>
+    <string name="jiraiya_q04">对年幼的鸣人说「英雄不会放弃」、为他指明目标的老师是谁？</string>
+    <string name="jiraiya_q05">在战斗中把妙木山的歌谣化作欢快的是谁？</string>
+    <string name="jiraiya_q06">身为传说三忍之一，证明了一位孤独老师最大的胜利就是他的学生的是谁？</string>
+
+    <string name="might_guy_q01">在中忍考试的赛场上，当负重落地时让人觉得时间都变慢了的是谁？</string>
+    <string name="might_guy_q02">高喊青春之炎、把希望教给李洛克的是谁？</string>
+    <string name="might_guy_q03">打开第八门、笑着迎向死亡的是谁？</string>
+    <string name="might_guy_q04">那一击猛烈到连斑都称之为「见过最强的体术」的是谁？</string>
+    <string name="might_guy_q05">整场战争都不曾离开卡卡西背后的挚友是谁？</string>
+    <string name="might_guy_q06">在学生的手术台前把心也押上、叫他继续奔跑的是谁？</string>
+
+    <string name="shikamaru_q01">用看云开启一天、用谋略结束战斗的是谁？</string>
+    <string name="shikamaru_q02">点燃阿斯玛的打火机、用智慧为老师报仇的是谁？</string>
+    <string name="shikamaru_q03">成为五影与将领之间的联络中枢、把军队化作一个头脑的是谁？</string>
+    <string name="shikamaru_q04">在鸣人犹豫时说「我陪着你」、为他的火影之路撑起肩膀的是谁？</string>
+    <string name="shikamaru_q05">把飞段引进影之陷阱、再把碎块埋进土里的是谁？</string>
+    <string name="shikamaru_q06">战争结束后坐到桌前、开始规划和平的是谁？</string>
+
+    <string name="hinata_q01">在佩恩面前无所畏惧地表白心意的战士是谁？</string>
+    <string name="hinata_q02">把宁次的心愿握进拳中、在辉夜之战里与他并肩前行的是谁？</string>
+    <string name="hinata_q03">把白眼化作爱、说出「你若迷路我就做你的光」的是谁？</string>
+    <string name="hinata_q04">在战场上鸣人几乎倒向带土那一边时，为他指明正确道路的是谁？</string>
+    <string name="hinata_q05">用自己选择的路减轻日向一族重担的是谁？</string>
+
+    <string name="killer_b_q01">把身为人柱力的经历写成说唱、把恐惧唱成歌的是谁？</string>
+    <string name="killer_b_q02">同时舞动八把刀迎战佐助小队的剑士是谁？</string>
+    <string name="killer_b_q03">与牛鬼结为搭档、把尾兽的语言译成人类语言的是谁？</string>
+    <string name="killer_b_q04">教鸣人与尾兽合作、帮他斩断黑暗房间里仇恨锁链的是谁？</string>
+    <string name="killer_b_q05">不顾雷影反对坚持自己的节奏、并改变战争节奏的是谁？</string>
+
+    <string name="a_fourth_raikage_q01">在五影会谈上，拍在桌上的不是拳头而是责任的是谁？</string>
+    <string name="a_fourth_raikage_q02">在保护弟弟的同时从未放下军队指挥权的领袖是谁？</string>
+
+    <string name="deidara_q01">以「艺术就是爆炸」在天空签下名字的是谁？</string>
+    <string name="deidara_q02">试图用 C3 在城市上空炸碎我爱罗沙之穹顶的是谁？</string>
+    <string name="deidara_q03">哪怕痛恨写轮眼，仍用 C0 开启最后一场展览的是谁？</string>
+    <string name="deidara_q04">用黏土之鸟把天空当作画布的晓组织成员是谁？</string>
+
+    <string name="kisame_q01">用鲛肌吞食查克拉、把湖畔变成汪洋的是谁？</string>
+    <string name="kisame_q02">逼得凯不得不开门的蓝色鲨鱼是谁？</string>
+    <string name="kisame_q03">为守住秘密把自己关进水牢的是谁？</string>
+    <string name="kisame_q04">在战场上真正配得上「怪物」称号的忍者是谁？</string>
+
+    <string name="hidan_q01">用不死仪式把对手的血引到自己身上、再把痛苦还回去的是谁？</string>
+    <string name="hidan_q02">画出邪神之阵、把痛楚像镜子一样反射回去的是谁？</string>
+    <string name="hidan_q03">把阿斯玛的烟散进风里，最后却落入鹿丸智谋陷阱的是谁？</string>
+    <string name="hidan_q04">被大卸八块、埋进土中彻底噤声的是谁？</string>
+
+    <string name="kakuzu_q01">靠五颗心脏把各种属性排成一列的是谁？</string>
+    <string name="kakuzu_q02">把金钱看得比信仰更重、把契约视为神圣的是谁？</string>
+    <string name="kakuzu_q03">败在鸣人第一次的风遁螺旋手里剑之下、感受到新时代到来的是谁？</string>
+    <string name="kakuzu_q04">与飞段组成最不合拍却也最危险搭档的是谁？</string>
+
+    <string name="konan_q01">把纸做的花当作希望留在雨中小巷里的是谁？</string>
+    <string name="konan_q02">为闷死阿飞而把百亿张纸变成炸弹的是谁？</string>
+    <string name="konan_q03">把弥彦的理想封进蓝色折纸里的是谁？</string>
+    <string name="konan_q04">在长门之后为通往和平之路种下最后一朵花的是谁？</string>
+
+    <string name="nagato_q01">以「痛苦让人成长」为名、把痛的法则强加给世界的是谁？</string>
+    <string name="nagato_q02">仅凭一句神罗天征就把木叶夷为平地的是谁？</string>
+    <string name="nagato_q03">走过从自来也弟子到痛苦本身这条路的是谁？</string>
+    <string name="nagato_q04">因鸣人的话打破循环、把生命归还的是谁？</string>
+    <string name="nagato_q05">把自己的眼睛分给六道中每一道的领袖是谁？</string>
+    <string name="nagato_q06">给弥彦的身体披上理想、试图让雨停下的是谁？</string>
+
+    <string name="yahiko_q01">从雨中孩子们身上建立起雨隐村希望的是谁？</string>
+    <string name="yahiko_q02">以「和平靠意志而非力量」带领伙伴的是谁？</string>
+    <string name="yahiko_q03">把自己的生命化作桥梁、支撑起长门与小南的是谁？</string>
+
+    <string name="zabuza_q01">在雾中名字只被低声耳语、令人闻风丧胆的「鬼人」是谁？</string>
+    <string name="zabuza_q02">在白面前把泪抹在刀上、走完最后一程的是谁？</string>
+    <string name="zabuza_q03">在桥上给第七班上了第一堂重要课程的敌人是谁？</string>
+    <string name="zabuza_q04">把雾隐村血腥的毕业考试写进历史的是谁？</string>
+
+    <string name="haku_q01">在冰晶魔镜中让光线倍增、把千本化作雨点的是谁？</string>
+    <string name="haku_q02">只为对某个人有用而献出生命的温柔战士是谁？</string>
+    <string name="haku_q03">成为再不斩心中唯一温暖之处的是谁？</string>
+    <string name="haku_q04">面具之后的双眼第一次因鸣人的话而变得温暖的是谁？</string>
+
+    <string name="hiruzen_q01">培养出传说三忍、三度把村子扛在肩上的是谁？</string>
+    <string name="hiruzen_q02">与大蛇丸交战时封印两位火影、让战场归于寂静的是谁？</string>
+    <string name="hiruzen_q03">在鸣人的档案上写下「再给一次机会」的年迈领袖是谁？</string>
+    <string name="hiruzen_q04">把村里的孩子都当作自己家人的贤明火影是谁？</string>
+
+    <string name="temari_q01">一挥风之扇就把整片森林修剪一空的是谁？</string>
+    <string name="temari_q02">为鹿丸的计谋送上风力、在战场上强化智慧的是谁？</string>
+    <string name="temari_q03">让木叶认可的不是弟弟的影子而是自己实力的是谁？</string>
+
+    <string name="kankuro_q01">用傀儡把舞台变成死亡剧场的是谁？</string>
+    <string name="kankuro_q02">以解药和与时间赛跑对抗蝎之毒的是谁？</string>
+    <string name="kankuro_q03">站在弟弟身后、却把傀儡推向战场最前列的是谁？</string>
+
+    <string name="sai_q01">把墨化作飞鸟、把消息送上天空的是谁？</string>
+    <string name="sai_q02">在第七班中挣断无情训练枷锁的是谁？</string>
+    <string name="sai_q03">第一次用真实的线条把「友情」二字写进画册的是谁？</string>
+
+    <string name="yamato_q01">以木遁的操控让尾兽平静下来的是谁？</string>
+    <string name="yamato_q02">带领第七班那颗散乱之心的沉稳面孔是谁？</string>
+    <string name="yamato_q03">用封印的纪律束住鸣人内心风暴的是谁？</string>
+
+    <string name="shisui_q01">为防止别天神被滥用、连自己的眼睛都舍得交出的是谁？</string>
+    <string name="shisui_q02">像从桥上飘落到树叶上的影子一样、想要拯救一族的是谁？</string>
+    <string name="shisui_q03">以「为了村子」把最沉重的托付留给鼬的是谁？</string>
+    <string name="shisui_q04">以自己的陨落改变整整一代人命运的宇智波是谁？</string>
+
+    <string name="kurama_q01">挣脱仇恨的锁链、与鸣人并肩作战的是谁？</string>
+    <string name="kurama_q02">在水门的封印中被一分为二、却仍守住自己意志的是谁？</string>
+    <string name="kurama_q03">用尾兽玉把夜空照成白昼的是谁？</string>
+    <string name="kurama_q04">第一次骄傲地说出「搭档」两个字的狐狸是谁？</string>
+    <string name="kurama_q05">在辉夜之战中把查克拉分给整个联军的力量是谁？</string>
+
+    <string name="shukaku_q01">在沙之外壳里用疯狂笑声震动沙漠的是谁？</string>
+    <string name="shukaku_q02">因恐惧而生、成为守护我爱罗内心第一道护盾的存在是谁？</string>
+
+    <string name="gamabunta_q01">教会坐在自己背上的孩子何为尊重、却仍在战斗中把背借给他的是谁？</string>
+    <string name="gamabunta_q02">在沙漠中央对守鹤拔出巨刃的是谁？</string>
+
+    <string name="gamakichi_q01">走出父亲阴影、在战场上传递消息的小小大英雄是谁？</string>
+
+    <string name="son_goku_q01">用火揉炼石之心、向鸣人展示仇恨锁链的是谁？</string>
+
+    <string name="karin_q01">以自己的身体织出治愈之链的红发感知型忍者是谁？</string>
+    <string name="karin_q02">在佐助与团藏之战中被他毫不犹豫刺穿的角色是谁？</string>
+
+    <string name="suigetsu_q01">凭水化之术带着一份关不进任何笼子的幽默的是谁？</string>
+    <string name="suigetsu_q02">背起再不斩的刀、把过去的阴影变成玩笑的是谁？</string>
+
+    <string name="jugo_q01">把自然的暴怒接进体内、却对鸟儿满怀温柔的是谁？</string>
+    <string name="jugo_q02">学会用同伴的声音平息暴走的是谁？</string>
+
+    <string name="kiba_q01">与赤丸一起用气味读懂战场、把追踪化为艺术的是谁？</string>
+    <string name="kiba_q02">用双人旋转把战场变成风暴的搭档是谁？</string>
+
+    <string name="akamaru_q01">一声吠叫就改变了小队命运的忠实伙伴是谁？</string>
+
+    <string name="ino_q01">把心念化作桥梁、把敌人带到自己小队面前的是谁？</string>
+    <string name="ino_q02">把阿斯玛最后的话语化作心中之花的是谁？</string>
+    <string name="ino_q03">在战场上以花店主人的耐心掌控通讯线路的是谁？</string>
+
+    <string name="choji_q01">张开蝴蝶之翼、为了朋友变得巨大的是谁？</string>
+    <string name="choji_q02">骄傲地把「胖」这个字变成力量的那颗心属于谁？</string>
+    <string name="choji_q03">把阿斯玛的薯片蘸的不是眼泪而是决心的是谁？</string>
+
+    <string name="boruto_q01">选择与自己的影子而不是父亲战斗的是谁？</string>
+    <string name="boruto_q02">在考试中使用科学忍具、事后又扛起责任的是谁？</string>
+    <string name="boruto_q03">为了不让桃式的印记变成命运剧本而咬紧牙关的是谁？</string>
+    <string name="boruto_q04">在街头通过新一代第七班领导力考验的是谁？</string>
+    <string name="boruto_q05">在另一个时代重新定义漩涡这个姓氏的是谁？</string>
+
+    <string name="sarada_q01">用母亲的拳头和父亲的眼睛揉出火影梦想的是谁？</string>
+    <string name="sarada_q02">同代人中第一个把千鸟准确命中目标的年轻忍者是谁？</string>
+    <string name="sarada_q03">用一个眼神就把小队散乱之心重新凝聚的是谁？</string>
+
+    <string name="mitsuki_q01">在朋友身边把「我是谁」这个问题变成答案的是谁？</string>
+    <string name="mitsuki_q02">把蛇的柔韧化作忠诚、从而救下小队的是谁？</string>
+
+    <string name="kawaki_q01">逼着「楔」成为选择而不是命运的是谁？</string>
+    <string name="kawaki_q02">第一次把鸣人的房子叫作家的是谁？</string>
+    <string name="kawaki_q03">把活在一式阴影下的孩子变成战士的意志属于谁？</string>
+
+    <string name="koji_kashin_q01">把火写进计划而不是命运、从而将阴影化为火焰的是谁？</string>
+    <string name="koji_kashin_q02">即使真相被揭穿，仍留在战场完成任务的是谁？</string>
+
+    <string name="isshiki_otsutsuki_q01">能把物体缩小、把世界握在掌心的威胁是谁？</string>
+    <string name="isshiki_otsutsuki_q02">把王座建在人类身体里、试图给命运烙上印记的是谁？</string>
+
+    <string name="toneri_q01">试图把月亮的孤独带到地上、最后又把光还回来的是谁？</string>
+
+    <string name="hagoromo_q01">与弟弟一起把忍术变成留给世界之教诲的贤者是谁？</string>
+    <string name="hagoromo_q02">把力量赐予鸣人与佐助、同时要求他们保持平衡的是谁？</string>
+    <string name="hagoromo_q03">把两个儿子的争斗留给一个需要世代以和平化解的故事的是谁？</string>
+
+    <string name="kaguya_q01">第一次以果实把查克拉带到世上的是谁？</string>
+    <string name="kaguya_q02">像翻掌一样切换空间、瞬间颠覆战局的是谁？</string>
+    <string name="kaguya_q03">被两名后代以封印送回永恒的是谁？</string>
+    <string name="kaguya_q04">让战场在冰、熔岩与沙漠之间不断转换的不可抗之力是谁？</string>
+
+    <string name="hanzo_q01">在战火之中给传说三忍取下称号的是谁？</string>
+    <string name="hanzo_q02">把雨隐村的命运藏在面具之后的战争领主是谁？</string>
+    <string name="hanzo_q03">最终倒在自己一手建立的恐惧秩序之中的是谁？</string>
+
+    <string name="konohamaru_q01">小时候追着鸣人跑、长大后成为自己小队护盾的是谁？</string>
+    <string name="konohamaru_q02">把螺旋丸交到新一代手中的老师是谁？</string>
+    <string name="konohamaru_q03">在街头守护着爷爷猿飞日斩遗志的忍者是谁？</string>
+
+</resources>

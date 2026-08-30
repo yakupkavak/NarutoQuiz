@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shinobi Quiz</string>
+    <string name="loading">Carregando…</string>
+    <string name="counter_menu">Contador</string>
+    <string name="zero">0</string>
+    <string name="use_viewmodel">Usar ViewModel</string>
+    <string name="increase_counter">Aumentar contador</string>
+    <string name="guess_menu">Adivinhar</string>
+    <string name="username_too_long">O nome de usuário não pode ter mais de 16 caracteres</string>
+    <string name="password_too_low">A senha não pode ter menos de 8 caracteres</string>
+    <string name="refresh_describtion">atualizar</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="reset">Reiniciar</string>
+    <string name="guess">Adivinhar</string>
+    <string name="success">Acertou</string>
+    <string name="failure">Tente de novo</string>
+    <string name="change_image">Trocar imagem</string>
+    <string name="pokemon">pokemon</string>
+    <string name="error">Ocorreu um erro</string>
+    <string name="emptyImageUrl">https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png</string>
+    <string name="next">Avançar</string>
+
+    <string name="sign_in">Entrar</string>
+    <string name="null_space">Não deixe em branco</string>
+    <string name="sign_in_error">E-mail ou senha incorretos</string>
+    <string name="recovery_error">E-mail incorreto</string>
+    <string name="network_problem">Ocorreu um problema</string>
+    <string name="check_mail">Verifique seu e-mail</string>
+    <string name="sign_success">Cadastro concluído</string>
+    <string name="email">E-mail</string>
+    <string name="password">Senha</string>
+    <string name="forgot_password">Esqueceu a senha?</string>
+    <string name="hint_email">exemplo@gmail.com</string>
+    <string name="sign_up">Cadastrar-se</string>
+    <string name="slash">/</string>
+    <string name="user_name">Nome de usuário</string>
+    <string name="welcome_shinobi">Bem-vindo, shinobi</string>
+    <string name="recovery">Recuperação</string>
+    <string name="naruto_image">Imagem do Naruto</string>
+    <string name="google_icon">Ícone do Google</string>
+    <string name="game_content">conteúdo do jogo</string>
+    <string name="quizes">Quizzes</string>
+    <string name="tier_list">Tier list</string>
+    <string name="user_info">Dados do usuário</string>
+    <string name="close_game">Fechar partida</string>
+    <string name="first_option">Primeira opção</string>
+    <string name="second_option">Segunda opção</string>
+    <string name="check">Conferir</string>
+    <string name="leaders">Ranking</string>
+    <string name="classic_game">Partida clássica</string>
+    <string name="challenge">Desafio</string>
+    <string name="classic">Clássico</string>
+    <string name="akatsuki">Desafio</string>
+    <string name="clan">Clã</string>
+    <string name="tail">Cauda</string>
+    <string name="team">Time</string>
+    <string name="rank">Posição</string>
+    <string name="player">Jogador</string>
+    <string name="score">Pontuação</string>
+    <string name="game_over">Fim de jogo</string>
+    <string name="main_screen">Tela inicial</string>
+    <string name="play_again">Jogar de novo</string>
+    <string name="trueText">Certo</string>
+    <string name="wrong">Errado</string>
+
+    <string name="emptyAd">Nenhum anúncio disponível no momento, tente novamente em 3 minutos</string>
+
+    <string name="family_question">A qual personagem isso corresponde? %1$s</string>
+    <string name="voice_question">A qual personagem isso corresponde? %1$s</string>
+    <string name="clan_question">Quem pertence ao clã %1$s?</string>
+    <string name="team_question">Quem faz parte do time %1$s?</string>
+    <string name="jinckuri_question">Quem é o jinchūriki de %1$s?</string>
+    <string name="user_name_info">Nome: %1$s</string>
+    <string name="user_mail_info">E-mail: %1$s</string>
+    <string name="change_password">Alterar senha</string>
+    <string name="wrong_password">Senha incorreta</string>
+
+    <string name="change">Alterar</string>
+    <string name="max_repeat_info">Número de perguntas: %1$s</string>
+    <string name="hint_count">Número de dicas: %1$d</string>
+    <string name="get_information">Sobre o jogo</string>
+    <string name="naruto_icon">Ícone do Naruto</string>
+    <string name="unexpected_error">Erro inesperado</string>
+    <string name="select">Escolha!</string>
+    <string name="ad">Assistir anúncio</string>
+
+
+    <string name="game_mode">Modo de jogo</string>
+    <string name="history">Histórico de partidas</string>
+    <string name="sign_out">Sair</string>
+    <string name="user">Usuário</string>
+    <string name="game">Jogo</string>
+    <string name="close">Fechar</string>
+    <string name="challenge_game">Partida Desafio</string>
+    <string name="welcome_text">No modo Desafio você não pode errar nenhuma vez, e só esse modo conta para o ranking. \n\nO modo Clássico permite testar seus conhecimentos sobre todos os personagens. \n\nNão esqueça dos modos especiais Akatsuki, Clãs, Bestas e Times. \n\n\n Boa sorte, shinobi!</string>
+    <string name="about_the_game">Sobre o jogo</string>
+    <string name="market">Loja</string>
+    <string name="hint">Dica</string>
+    <string name="purchase">Comprar</string>
+    <string name="add">Adicionar</string>
+
+    <string name="student">Estudante</string>
+    <string name="genin">Genin</string>
+    <string name="chunin">Chūnin</string>
+    <string name="kage">Kage</string>
+
+    <string name="token_count">Número de fichas: %1$d</string>
+    <string name="gain_hint">Você ganhou %1$d dica!</string>
+    <string name="connection_error">Erro de conexão</string>
+
+    <string name="current_password">Senha atual:</string>
+    <string name="new_password">Nova senha:</string>
+    <string name="repeat_password">Repita a senha:</string>
+
+    <string name="empty_edit_text">Há um campo vazio</string>
+    <string name="password_not_equal">As senhas não coincidem!</string>
+    <string name="delete_account">Excluir conta</string>
+    <string name="delete">Excluir</string>
+    <string name="delete_success">Conta excluída.</string>
+    <string name="question_number">Pergunta número: %1$d</string>
+
+    <string name="game_story_title">História</string>
+    <string name="game_story_description">Descubra a história do universo Naruto com perguntas preparadas para você.</string>
+    <string name="game_challenge_title">Desafio</string>
+    <string name="game_challenge_description">No mundo shinobi não há espaço para erros!</string>
+    <string name="game_classic_title">Clássico</string>
+    <string name="game_classic_description">Hora de testar seus conhecimentos gerais.</string>
+    <string name="game_akatsuki_title">Akatsuki</string>
+    <string name="game_akatsuki_description">Nossa missão é destruir a paz falsa.</string>
+    <string name="game_clan_title">Clãs</string>
+    <string name="game_clan_description">Lembre-se da sua origem, proteja seu clã.</string>
+    <string name="game_tailed_beast_title">Bestas com cauda</string>
+    <string name="game_tailed_beast_description">Este é o mundo das bestas.</string>
+    <string name="game_teams_title">Times</string>
+    <string name="game_teams_description">Quem quebra as regras é lixo. Mas quem abandona os amigos é pior que lixo.</string>
+
+    <string name="naruto_q01">Quem aprendeu a Técnica de Clones das Sombras no Pergaminho Proibido na noite do incidente com Mizuki?</string>
+    <string name="naruto_q02">Qual aluno ganhou de presente a bandana do próprio Iruka?</string>
+    <string name="naruto_q03">Quem venceu Neji no Exame Chūnin e se opôs ao discurso do «destino»?</string>
+    <string name="naruto_q04">Quem abriu a porta da mudança para Gaara ao derrotá-lo no primeiro grande confronto?</string>
+    <string name="naruto_q05">Quem aprendeu o Modo Sábio no Monte Myōboku após a morte de Jiraiya?</string>
+    <string name="naruto_q06">Quem salvou a vila durante o ataque de Pain a Konoha e convenceu Nagato?</string>
+    <string name="naruto_q07">Quem trouxe Might Guy de volta da morte depois que ele abriu o oitavo portão?</string>
+    <string name="naruto_q08">Quem recebeu de Hagoromo o poder dos Seis Caminhos?</string>
+    <string name="naruto_q09">Qual garotinho ganhou sua primeira tigela de lámen de cortesia no balcão do Ichiraku?</string>
+    <string name="naruto_q10">Quem era o órfão sentado sozinho no balanço atrás da academia?</string>
+    <string name="naruto_q11">Quem foi abalado pela pergunta «pelo que um ninja luta?» na missão de Zabuza e Haku?</string>
+    <string name="naruto_q12">Quem ensinou o Rasengan a Konohamaru?</string>
+    <string name="naruto_q13">Quem convenceu Tsunade a aceitar o cargo de Hokage?</string>
+    <string name="naruto_q14">Qual shinobi deteve Nagato ao lado do Itachi revivido?</string>
+    <string name="naruto_q15">Quem se levantou novamente ao ver Hinata depois do ataque com cravos do Caminho Asura?</string>
+    <string name="naruto_q16">Na dimensão de Kaguya, quem desferiu o golpe do selo em sincronia perfeita com Sasuke?</string>
+    <string name="naruto_q17">Depois de perder Jiraiya, quem transformou em meta a definição de «herói de verdade» do seu mestre?</string>
+
+    <string name="sasuke_q01">Na ponte do País das Ondas, quem se jogou na frente das agulhas de Haku para salvar o companheiro de equipe?</string>
+    <string name="sasuke_q02">Quem recebeu a Marca da Maldição de Orochimaru na Floresta da Morte?</string>
+    <string name="sasuke_q03">Quem usou o Chidori pela primeira vez na final do Exame Chūnin para furar a areia de Gaara?</string>
+    <string name="sasuke_q04">Quem escapou da explosão C0 de Deidara invocando Manda e pagando o preço?</string>
+    <string name="sasuke_q05">Quem formou a Hebi e depois a Taka, partindo para enfrentar o irmão, seu único alvo?</string>
+    <string name="sasuke_q06">Quem transformou o trovão em «Kirin» e mudou o rumo do duelo entre os irmãos Uchiha?</string>
+    <string name="sasuke_q07">Depois de saber a verdade, quem invadiu a Cúpula dos Cinco Kage e acabou ali com Danzō?</string>
+    <string name="sasuke_q08">Quem trouxe Orochimaru de volta e mandou invocar os Hokage revividos para cobrar o passado?</string>
+    <string name="sasuke_q09">Quando a guerra acabou, quem escolheu vigiar nas sombras em vez de ocupar um cargo na vila?</string>
+    <string name="sasuke_q10">Quem seguiu o caminho das serpentes na juventude e depois trocou seu contrato pela invocação dos falcões?</string>
+    <string name="sasuke_q11">Na batalha contra Kinshiki e Momoshiki, quem montou ataques combinados lado a lado com Naruto?</string>
+    <string name="sasuke_q12">Dentro dos espelhos de gelo contra Haku, quem cruzou o limiar que despertou seu Sharingan?</string>
+
+    <string name="itachi_q01">Quem prendeu Kakashi em três dias de tortura com o Tsukuyomi?</string>
+    <string name="itachi_q02">Quem carregou o «ciclo do ódio» e protegeu Konoha das sombras?</string>
+    <string name="itachi_q03">Quem destruiu o plano de roubo de corpo de Orochimaru em um único golpe e o fez deixar a Akatsuki?</string>
+    <string name="itachi_q04">Quem recebeu o olho de Shisui em guarda e protegeu o Kotoamatsukami?</string>
+    <string name="itachi_q05">Quem assumiu a missão invisível de agente duplo contra o próprio clã para impedir um golpe em Konoha?</string>
+    <string name="itachi_q06">No último encontro, quem se despediu tocando a testa do irmão com dois dedos?</string>
+    <string name="itachi_q07">Quem neutralizou o Kirin baixando sobre ele o Espelho Yata do Susanoo?</string>
+    <string name="itachi_q08">Quem selou na hora, com a Espada de Totsuka, o Orochimaru que surgiu dentro do seu irmão?</string>
+    <string name="itachi_q09">Já revivido, quem prendeu Kabuto no ciclo do Izanami e o obrigou a encerrar o Edo Tensei?</string>
+    <string name="itachi_q10">Qual shinobi vindo da ANBU repassava em segredo as informações da Akatsuki para Konoha?</string>
+    <string name="itachi_q11">Na luta contra Nagato, quem salvou Naruto e Killer B usando a Espada de Totsuka?</string>
+    <string name="itachi_q12">Quem despertou seu Mangekyō Sharingan após a morte de Shisui?</string>
+    <string name="itachi_q13">Quem virou capitão da ANBU aos 13 anos perseguindo a ideia de uma paz que acabasse com a guerra?</string>
+    <string name="itachi_q14">Depois de sua morte, quem abriu com os próprios olhos o caminho para deter a perda de visão do irmão?</string>
+    <string name="itachi_q15">Quem negociou com os líderes de Konoha e impôs a vida de Sasuke como condição na noite do golpe?</string>
+    <string name="itachi_q16">Mesmo depois de deixar a vila, quem continuou vigiando as ameaças das sombras para proteger Konoha?</string>
+    <string name="itachi_q17">Estando revivido, quem disse ao irmão que sempre o amaria?</string>
+    <string name="itachi_q18">Na batalha do Vale do Fim entre Naruto e Sasuke, de quem é aquela única mão que aparece na palma de Sasuke?</string>
+
+    <string name="kakashi_q01">No teste dos sinos do Time 7, quem ensinou o equilíbrio entre «as regras ou o time» e a lição de dividir o almoço?</string>
+    <string name="kakashi_q02">Quem ganhou o apelido de «Ninja Copiador» por copiar mais de mil jutsus?</string>
+    <string name="kakashi_q03">Na missão da Ponte Kannabi, quem recebeu o Sharingan no olho esquerdo pelo último desejo do amigo?</string>
+    <string name="kakashi_q04">Quem desenvolveu a técnica Chidori/Raikiri e a usou pela primeira vez em combate?</string>
+    <string name="kakashi_q05">Quem aplicou o Kamui pela primeira vez em um alvo real para deter a fuga de Deidara?</string>
+    <string name="kakashi_q06">Qual personagem perdeu a vida no ataque de Pain, uma morte que Naruto sentiu?</string>
+    <string name="kakashi_q07">Quem assumiu o cargo de Sexto Hokage depois da guerra?</string>
+    <string name="kakashi_q08">Qual mestre não larga o livro «Icha Icha» nem no meio de uma missão?</string>
+    <string name="kakashi_q09">Quem voltou à vila disfarçado de Sukea, investigando escondendo até o rosto?</string>
+
+    <string name="madara_q01">Quem lançou as bases de Konoha junto com Hashirama, antes de seus destinos se separarem?</string>
+    <string name="madara_q02">Quem derrubou dois meteoros em um único movimento, quebrando o equilíbrio da guerra?</string>
+    <string name="madara_q03">Quem colocou os Cinco Kage de joelhos sozinho?</string>
+    <string name="madara_q04">Quem prendeu vários adversários ao mesmo tempo com as sombras invisíveis do «Limbo»?</string>
+    <string name="madara_q05">Quem despertou o Rinnegan com as células de Hashirama e avançou rumo ao plano final?</string>
+    <string name="madara_q06">Quem se tornou jinchūriki das Dez Caudas e alcançou o poder dos Seis Caminhos?</string>
+    <string name="madara_q07">Quem espalhou o Tsukuyomi Infinito pelo mundo inteiro através do reflexo da lua?</string>
+    <string name="madara_q08">Quem liberou um Susanoo perfeito capaz de cortar montanhas?</string>
+    <string name="madara_q09">Quando o oitavo portão se abriu, quem honrou o adversário dizendo ser o taijutsu mais forte que já viu?</string>
+
+    <string name="obito_q01">Quem disse «os heróis chegam atrasados», ficou soterrado para salvar o amigo e lhe confiou o próprio olho?</string>
+    <string name="obito_q02">Quem, por trás da máscara, orquestrou o ataque a Konoha como «o Homem Mascarado»?</string>
+    <string name="obito_q03">Quem se fazia de bobo dentro da Akatsuki no papel de «Tobi»?</string>
+    <string name="obito_q04">Quem desmaterializava o corpo com o Kamui para deixar os ataques atravessarem?</string>
+    <string name="obito_q05">Depois da morte de Rin, quem prendeu o mundo em seu «Plano Olho da Lua»?</string>
+    <string name="obito_q06">Quem acertou as contas de laços antigos duelando sozinho com Kakashi entre dimensões?</string>
+    <string name="obito_q07">Quem tirou Naruto de um instante fatal, dando o primeiro passo rumo à redenção?</string>
+    <string name="obito_q08">Quem realmente liderava a Akatsuki das sombras e acendeu a guerra?</string>
+    <string name="obito_q09">No último instante, quem lembrou de quem realmente era e passou adiante seu poder pelo futuro dos ninjas?</string>
+
+    <string name="gaara_q01">Quando criança, quem era protegido sem querer por um escudo de areia e condenado à solidão?</string>
+    <string name="gaara_q02">No Exame Chūnin, quem foi abalado pela primeira vez quando Rock Lee furou até sua defesa?</string>
+    <string name="gaara_q03">Quem decidiu mudar ao reconhecer nas palavras de Naruto a mesma dor da solidão?</string>
+    <string name="gaara_q04">Quem assumiu a proteção da vila como o mais jovem Kazekage de Suna?</string>
+    <string name="gaara_q05">Quem lutou ao custo da própria vida contra Deidara para proteger sua vila?</string>
+    <string name="gaara_q06">De quem a besta com cauda foi extraída, voltando à vida graças ao sacrifício de Chiyo?</string>
+    <string name="gaara_q07">Na Cúpula dos Cinco Kage, qual voz defendeu Naruto diante do Raikage?</string>
+    <string name="gaara_q08">Quem fez para o exército da Aliança o discurso de comandante que uniu os corações?</string>
+    <string name="gaara_q09">Quem encarou na guerra o espírito de seu pai Rasa e curou a ferida do próprio passado?</string>
+    <string name="gaara_q10">Na Quarta Grande Guerra Ninja, quem soube pelo pai Rasa que a areia que sempre o protegeu era na verdade o amor de sua mãe?</string>
+    <string name="gaara_q11">Em qual shinobi a areia se ergueu sozinha como escudo durante uma tentativa de assassinato na infância, graças à vontade de sua mãe?</string>
+
+    <string name="kabuto_q01">Quem foi tirado do orfanato de Konoha e virou o espião mais secreto de Orochimaru?</string>
+    <string name="kabuto_q02">Quem aperfeiçoou o Edo Tensei e tirou das tumbas as peças da guerra?</string>
+    <string name="kabuto_q03">Quem alcançou o Modo Sábio na Caverna Ryūchi e fez a arena tremer com a «Fúria Branca»?</string>
+    <string name="kabuto_q04">Quem aprendeu a se aceitar dentro do ciclo do Izanami e quebrou a corrente?</string>
+    <string name="kabuto_q05">Quem voltou ao orfanato depois da guerra e seguiu um novo caminho?</string>
+
+    <string name="orochimaru_q01">Quem, sendo um dos Sannin lendários, mergulhou em experimentos proibidos em busca da imortalidade?</string>
+    <string name="orochimaru_q02">Quem deixou a Marca da Maldição em Sasuke na Floresta da Morte?</string>
+    <string name="orochimaru_q03">Quem invocou os Hokage revividos na invasão de Konoha para acertar as contas com seu mestre?</string>
+    <string name="orochimaru_q04">Quem escapou da morte abandonando o corpo de serpente como quem troca de pele?</string>
+    <string name="orochimaru_q05">A pedido de Sasuke, quem voltou e invocou de novo os Hokage revividos, abrindo a porta da história?</string>
+
+    <string name="rocklee_q01">No Exame Chūnin, quem tirou os pesos e cobriu a arena de poeira com sua velocidade?</string>
+    <string name="rocklee_q02">Contra Gaara, quem abriu o primeiro portão e fez todos prenderem a respiração com o Lótus Inicial?</string>
+    <string name="rocklee_q03">Na Floresta da Morte, quem se colocou sozinho diante do trio do Som para proteger Sakura?</string>
+    <string name="rocklee_q04">Quem se deitou na mesa de cirurgia de Tsunade para voltar a lutar, mesmo correndo risco de morrer?</string>
+    <string name="rocklee_q05">Quem enganou Kimimaro, nem que fosse por um instante, com o cambaleante «Punho Bêbado»?</string>
+
+    <string name="sakura_q01">Na Floresta da Morte, quem cortou o próprio cabelo e disse «agora eu também vou lutar»?</string>
+    <string name="sakura_q02">Quem treinou como ninja médica com Tsunade e ganhou força para rachar o chão com um soco?</string>
+    <string name="sakura_q03">Quem derrotou Sasori da Akatsuki lutando lado a lado com Chiyo?</string>
+    <string name="sakura_q04">Quando o coração de Naruto estava para parar, quem o bombeou com as próprias mãos e o trouxe de volta?</string>
+    <string name="sakura_q05">Quem liberou o selo da testa e curou milhares de soldados de uma vez na linha de frente com a Força de Cem?</string>
+
+    <string name="minato_q01">Como o «Relâmpago Amarelo de Konoha», de quem era a velocidade que encerrava batalhas antes mesmo dos médicos chegarem?</string>
+    <string name="minato_q02">Na noite do ataque à vila, quem afastou de Konoha a enorme Bomba Bijū da Nove Caudas com a Técnica do Deus do Trovão Voador?</string>
+    <string name="minato_q03">Quem sacrificou a própria vida para deter Kurama arrancado de Kushina e confiou o selo ao filho?</string>
+    <string name="minato_q04">Quem, inspirado pelo herói do romance de Jiraiya, deu ao filho o nome «Naruto» e o entregou ao padrinho?</string>
+    <string name="minato_q05">Quem superou até o Raikage A e virou o campo de batalha do avesso com um único sinal do «Deus do Trovão Voador»?</string>
+    <string name="minato_q06">Qual mestre, sem nenhuma linhagem sanguínea especial e só com as próprias forças, venceu seu aluno junto com a Nove Caudas?</string>
+
+    <string name="hashirama_q01">Quem começou, ainda criança nas duas margens do rio com Madara, o caminho das pedras atiradas à amizade e daí à ideia de Konoha?</string>
+    <string name="hashirama_q02">Quem falou pela primeira vez na ideia do Hokage ao dizer que a paz se constrói junto?</string>
+    <string name="hashirama_q03">Quem escolheu a irmandade para superar as linhas do destino gravadas na tábua dos Uchiha?</string>
+    <string name="hashirama_q04">Quem, no primeiro grande duelo no Vale do Fim, se recusou a matar o amigo e fundou a vila?</string>
+    <string name="hashirama_q05">Quem silenciou o campo de batalha com um Buda gigante de madeira que se erguia como uma estátua viva?</string>
+    <string name="hashirama_q06">Qual Primeiro Hokage deixou às gerações a frase de que uma vila é uma família?</string>
+
+    <string name="tobirama_q01">Quem lançou as bases da ANBU e sistematizou a ordem da vila?</string>
+    <string name="tobirama_q02">Quem desenvolveu o primeiro núcleo da Técnica do Deus do Trovão Voador?</string>
+    <string name="tobirama_q03">Quem institucionalizou a Academia e o sistema Chūnin, traçando o rumo da formação ninja?</string>
+    <string name="tobirama_q04">Quem usou a própria vida como isca em plena guerra para proteger o clã e o irmão?</string>
+    <string name="tobirama_q05">Quem rotulou o conhecimento sombrio do Edo Tensei como uma catástrofe em mãos erradas?</string>
+
+    <string name="tsunade_q01">Quem, sem sorte nas mesas de jogo, virou a sorte de milhares no campo de batalha?</string>
+    <string name="tsunade_q02">Quem mudou o equilíbrio da guerra ao afirmar que sem corpo médico não existe exército?</string>
+    <string name="tsunade_q03">Quem aceitou o cargo dizendo que acreditava no sonho de Naruto de ser Hokage?</string>
+    <string name="tsunade_q04">Quem abriu o selo da testa e ergueu Konoha dos escombros?</string>
+    <string name="tsunade_q05">Quem, arrasada pela perda de Jiraiya, colocou mesmo assim a cura de volta na mesa?</string>
+    <string name="tsunade_q06">Quem, na Quarta Grande Guerra Ninja, manteve os Kage unidos por laços de vida?</string>
+
+    <string name="jiraiya_q01">Quem escreveu no mundo o destino de três alunos ao dizer que seus alunos eram seu legado?</string>
+    <string name="jiraiya_q02">Quem se infiltrou sozinho na Vila da Chuva e fechou o caminho de volta para descobrir a verdade?</string>
+    <string name="jiraiya_q03">Quem deixou o caminho da paz numa inscrição de sapo e enviou sua última mensagem em código?</string>
+    <string name="jiraiya_q04">Qual mestre mostrou a meta ao pequeno Naruto dizendo que heróis não desistem?</string>
+    <string name="jiraiya_q05">Quem transformou os hinos de Myōboku em alegria no meio da batalha?</string>
+    <string name="jiraiya_q06">Quem, sendo um dos Sannin lendários, provou que a maior vitória de um mestre solitário é seu aluno?</string>
+
+    <string name="might_guy_q01">Quem fez o tempo parecer mais lento quando seus pesos caíram no chão no Exame Chūnin?</string>
+    <string name="might_guy_q02">Quem gritou sobre a chama da juventude e ensinou esperança a Rock Lee?</string>
+    <string name="might_guy_q03">Quem abriu o oitavo portão e encarou a morte com um sorriso?</string>
+    <string name="might_guy_q04">Quem golpeou tão forte que até Madara falou do taijutsu mais poderoso que já viu?</string>
+    <string name="might_guy_q05">Qual amigo nunca abandonou as costas de Kakashi durante toda a guerra?</string>
+    <string name="might_guy_q06">Quem colocou o coração na mesa de cirurgia do seu aluno e disse para ele continuar correndo?</string>
+
+    <string name="shikamaru_q01">Quem começa o dia olhando as nuvens e termina as batalhas com estratégia?</string>
+    <string name="shikamaru_q02">Quem acendeu o isqueiro de Asuma e vingou seu mestre com inteligência?</string>
+    <string name="shikamaru_q03">Quem virou o centro de ligação entre os Kage e os generais, transformando o exército em uma só mente?</string>
+    <string name="shikamaru_q04">Quem disse a Naruto, na dúvida, que estava do lado dele e apoiou seu caminho até Hokage?</string>
+    <string name="shikamaru_q05">Quem atraiu Hidan para uma armadilha de sombras e enterrou seus pedaços na terra?</string>
+    <string name="shikamaru_q06">Quem se sentou à mesa para planejar a paz depois da guerra?</string>
+
+    <string name="hinata_q01">Qual guerreira destemida confessou seu amor diante de Pain?</string>
+    <string name="hinata_q02">Quem levou a memória de Neji nos punhos e caminhou ao lado dele na batalha contra Kaguya?</string>
+    <string name="hinata_q03">Quem transformou o Byakugan em amor ao dizer que seria a luz dele caso perdesse o caminho?</string>
+    <string name="hinata_q04">Quem mostrou o caminho certo a Naruto quando ele estava prestes a passar para o lado de Obito?</string>
+    <string name="hinata_q05">Quem aliviou o fardo do clã Hyūga escolhendo seu próprio caminho?</string>
+
+    <string name="killer_b_q01">Quem transformou ser jinchūriki em versos de rap e o medo em canção?</string>
+    <string name="killer_b_q02">Qual mestre das oito espadas dançou ao mesmo tempo contra a equipe de Sasuke?</string>
+    <string name="killer_b_q03">Quem firmou parceria com Gyūki, traduzindo a língua da besta para a dos humanos?</string>
+    <string name="killer_b_q04">Quem ensinou a Naruto a parceria com a besta com cauda e o ajudou a quebrar a corrente de ódio no quarto escuro?</string>
+    <string name="killer_b_q05">Quem escolheu o próprio ritmo apesar do Raikage e mudou o ritmo da guerra?</string>
+
+    <string name="a_fourth_raikage_q01">Na Cúpula dos Cinco Kage, quem bateu na mesa não o punho, mas a própria responsabilidade?</string>
+    <string name="a_fourth_raikage_q02">Qual líder protegeu o irmão sem largar o comando do exército?</string>
+
+    <string name="deidara_q01">Quem assinou o céu proclamando que a arte é uma explosão?</string>
+    <string name="deidara_q02">Quem tentou despedaçar a cúpula de areia de Gaara sobre a cidade com o C3?</string>
+    <string name="deidara_q03">Quem abriu a última exposição com o C0, à revelia do seu ódio pelo Sharingan?</string>
+    <string name="deidara_q04">Qual membro da Akatsuki transformou o céu em tela com pássaros de argila?</string>
+
+    <string name="kisame_q01">Quem devorou chakra com a Samehada e transformou a beira de um lago em oceano?</string>
+    <string name="kisame_q02">Qual tubarão azul obrigou Gai a abrir os portões?</string>
+    <string name="kisame_q03">Quem prendeu o próprio corpo numa prisão de água para proteger seus segredos?</string>
+    <string name="kisame_q04">Qual shinobi mereceu o apelido de Monstro no campo de batalha?</string>
+
+    <string name="hidan_q01">Quem virou o sangue do adversário contra ele mesmo com um ritual de imortalidade?</string>
+    <string name="hidan_q02">Quem desenhou o círculo de Jashin e refletiu a dor como um espelho?</string>
+    <string name="hidan_q03">Quem espalhou a fumaça de Asuma ao vento e ainda assim caiu na armadilha da mente de Shikamaru?</string>
+    <string name="hidan_q04">Quem foi despedaçado, enterrado e silenciado sob a terra?</string>
+
+    <string name="kakuzu_q01">Quem alinhava os elementos com seus cinco corações?</string>
+    <string name="kakuzu_q02">Quem colocava o dinheiro acima da fé e tratava contratos como algo sagrado?</string>
+    <string name="kakuzu_q03">Quem caiu diante do primeiro Rasenshuriken de Naruto, sentindo o amanhecer de uma nova era?</string>
+    <string name="kakuzu_q04">Quem formou com Hidan a dupla mais incompatível e mais perigosa?</string>
+
+    <string name="konan_q01">Quem deixava flores de papel como esperança nos becos chuvosos?</string>
+    <string name="konan_q02">Quem transformou dez bilhões de papéis em bombas para sufocar Tobi?</string>
+    <string name="konan_q03">Quem selou o ideal de Yahiko em origamis azuis?</string>
+    <string name="konan_q04">Quem plantou a última flor no caminho da paz depois de Nagato?</string>
+
+    <string name="nagato_q01">Quem impôs ao mundo a lei da dor dizendo que a dor ensina?</string>
+    <string name="nagato_q02">Quem arrasou Konoha com uma única palavra, Shinra Tensei?</string>
+    <string name="nagato_q03">Quem percorreu o caminho de aluno de Jiraiya até a encarnação da própria dor?</string>
+    <string name="nagato_q04">Quem quebrou o ciclo com as palavras de Naruto e devolveu as vidas?</string>
+    <string name="nagato_q05">Qual líder dividiu seus olhos entre cada um dos Seis Caminhos?</string>
+    <string name="nagato_q06">Quem vestiu o corpo de Yahiko com um ideal e tentou silenciar a chuva?</string>
+
+    <string name="yahiko_q01">Quem construiu a esperança de Ame a partir das crianças sob a chuva?</string>
+    <string name="yahiko_q02">Quem liderou os amigos dizendo que a paz vem pela vontade e não pela força?</string>
+    <string name="yahiko_q03">Quem fez da própria vida uma ponte para manter Nagato e Konan de pé?</string>
+
+    <string name="zabuza_q01">Quem era o Demônio cujo nome na névoa só era dito em sussurros?</string>
+    <string name="zabuza_q02">Quem passou as lágrimas na lâmina diante de Haku e fez sua última caminhada?</string>
+    <string name="zabuza_q03">Qual inimigo deu ao Time 7 sua primeira grande lição na ponte?</string>
+    <string name="zabuza_q04">Quem gravou na história a formatura sangrenta de Kirigakure?</string>
+
+    <string name="haku_q01">Quem multiplicou a luz dentro de espelhos de gelo e transformou agulhas em chuva?</string>
+    <string name="haku_q02">Qual guerreiro de alma gentil deu a vida apenas para ser útil a alguém?</string>
+    <string name="haku_q03">Quem conseguiu ser o único lugar quente no coração de Zabuza?</string>
+    <string name="haku_q04">Quais olhos por trás de uma máscara se aqueceram pela primeira vez com as palavras de Naruto?</string>
+
+    <string name="hiruzen_q01">Quem formou os três Sannin lendários e carregou a vila nas costas três vezes?</string>
+    <string name="hiruzen_q02">Quem selou dois Hokage lutando contra Orochimaru e silenciou o campo de batalha?</string>
+    <string name="hiruzen_q03">Qual velho líder escreveu mais uma chance na ficha de Naruto?</string>
+    <string name="hiruzen_q04">Qual Hokage sábio via as crianças da vila como sua própria família?</string>
+
+    <string name="temari_q01">Quem podou uma floresta inteira com um golpe do seu leque de vento?</string>
+    <string name="temari_q02">Quem deu o vento aos planos de Shikamaru, fortalecendo a mente na batalha?</string>
+    <string name="temari_q03">Quem fez Konoha aceitar a própria força, e não a sombra do irmão?</string>
+
+    <string name="kankuro_q01">Quem transformou o palco em um teatro da morte com suas marionetes?</string>
+    <string name="kankuro_q02">Quem desafiou o veneno de Sasori com antídotos e uma corrida contra o tempo?</string>
+    <string name="kankuro_q03">Quem ficava atrás do irmão mas mandava suas marionetes para a linha de frente?</string>
+
+    <string name="sai_q01">Quem transformou tinta em pássaros e mandou a mensagem para o céu?</string>
+    <string name="sai_q02">Quem quebrou dentro do Time 7 as correntes de um treinamento sem emoções?</string>
+    <string name="sai_q03">Quem escreveu pela primeira vez a palavra amizade em seu caderno com traços de verdade?</string>
+
+    <string name="yamato_q01">Quem acalmou a besta com o controle do Elemento Madeira?</string>
+    <string name="yamato_q02">Qual rosto calmo liderou o coração disperso do Time 7?</string>
+    <string name="yamato_q03">Quem prendeu a tempestade interior de Naruto com a disciplina dos selos?</string>
+
+    <string name="shisui_q01">Quem guardou o Kotoamatsukami para que não fosse usado para o mal, abrindo mão até do próprio olho?</string>
+    <string name="shisui_q02">Quem quis salvar seu clã, como uma sombra que cai da ponte sobre uma folha?</string>
+    <string name="shisui_q03">Quem deixou a Itachi o mais pesado dos encargos dizendo «pela vila»?</string>
+    <string name="shisui_q04">Qual Uchiha mudou com sua queda o destino de toda uma geração?</string>
+
+    <string name="kurama_q01">Quem se libertou das correntes do ódio e lutou lado a lado com Naruto?</string>
+    <string name="kurama_q02">Quem foi dividido em dois dentro do selo de Minato e ainda assim manteve sua vontade?</string>
+    <string name="kurama_q03">Quem transformou a noite em dia com uma Bomba Bijū?</string>
+    <string name="kurama_q04">Qual raposa pronunciou pela primeira vez com orgulho a palavra parceria?</string>
+    <string name="kurama_q05">Qual poder dividiu seu chakra com toda a aliança na batalha contra Kaguya?</string>
+
+    <string name="shukaku_q01">Quem fez o deserto tremer com sua risada enlouquecida de dentro de uma casca de areia?</string>
+    <string name="shukaku_q02">Qual ser se tornou o primeiro escudo nascido do medo para proteger o coração de Gaara?</string>
+
+    <string name="gamabunta_q01">Quem ensinou respeito ao garoto sentado em cima dele e ainda assim emprestou suas costas na batalha?</string>
+    <string name="gamabunta_q02">Quem sacou sua lâmina gigante contra Shukaku no meio do deserto?</string>
+
+    <string name="gamakichi_q01">Qual pequeno grande herói saiu da sombra do pai para levar mensagens na guerra?</string>
+
+    <string name="son_goku_q01">Quem moldou o coração da pedra com fogo e mostrou a Naruto a corrente do ódio?</string>
+
+    <string name="karin_q01">Qual sensora ruiva criou uma corrente de cura oferecendo o próprio corpo?</string>
+    <string name="karin_q02">Qual personagem Sasuke atravessou sem pestanejar durante sua luta contra Danzō?</string>
+
+    <string name="suigetsu_q01">Quem carrega, com a técnica aquática dos Hōzuki, um humor que não cabe em jaula nenhuma?</string>
+    <string name="suigetsu_q02">Quem carregou a espada de Zabuza e transformou a sombra do passado em piada?</string>
+
+    <string name="jugo_q01">Quem acolheu a fúria da natureza no próprio corpo mas guardava carinho pelos pássaros?</string>
+    <string name="jugo_q02">Quem aprendeu a acalmar seus surtos de raiva com a voz dos amigos?</string>
+
+    <string name="kiba_q01">Quem lia o campo pelo cheiro junto com Akamaru e transformou o rastreamento em arte?</string>
+    <string name="kiba_q02">Qual dupla transformou o campo de batalha em tempestade com sua rotação dupla?</string>
+
+    <string name="akamaru_q01">Qual companheiro fiel mudou o destino do seu time com um único latido?</string>
+
+    <string name="ino_q01">Quem fez da própria mente uma ponte e trouxe o inimigo para diante do seu time?</string>
+    <string name="ino_q02">Quem transformou as últimas palavras de Asuma em uma flor dentro do coração?</string>
+    <string name="ino_q03">Quem comandou as linhas de comunicação na guerra com a paciência de uma florista?</string>
+
+    <string name="choji_q01">Quem abriu asas de borboleta e ficou gigante pelos amigos?</string>
+    <string name="choji_q02">Qual coração transformou com orgulho a palavra gordo em força?</string>
+    <string name="choji_q03">Quem mergulhou os salgadinhos de Asuma não em lágrimas, mas em determinação?</string>
+
+    <string name="boruto_q01">Quem escolheu lutar contra a própria sombra em vez do pai?</string>
+    <string name="boruto_q02">Quem usou uma ferramenta ninja científica na prova e depois assumiu as consequências?</string>
+    <string name="boruto_q03">Quem cerrou os dentes para que a marca de Momoshiki não virasse um plano do destino?</string>
+    <string name="boruto_q04">Quem passou na rua pelo teste de liderança do novo Time 7?</string>
+    <string name="boruto_q05">Quem redefiniu o nome Uzumaki em uma época diferente?</string>
+
+    <string name="sarada_q01">Quem moldou o sonho de ser Hokage com o soco da mãe e os olhos do pai?</string>
+    <string name="sarada_q02">Qual jovem shinobi foi a primeira da sua época a acertar um Chidori no alvo?</string>
+    <string name="sarada_q03">Quem reuniu com um único olhar os corações dispersos do seu time?</string>
+
+    <string name="mitsuki_q01">Quem transformou a pergunta «quem sou eu?» em resposta ao lado dos amigos?</string>
+    <string name="mitsuki_q02">Quem converteu a flexibilidade da serpente em lealdade e salvou seu time?</string>
+
+    <string name="kawaki_q01">Quem obrigou o Karma a ser uma escolha e não um destino?</string>
+    <string name="kawaki_q02">Quem chamou pela primeira vez a casa de Naruto de lar?</string>
+    <string name="kawaki_q03">Qual vontade transformou em guerreiro o menino criado sob a sombra de Isshiki?</string>
+
+    <string name="koji_kashin_q01">Quem escreveu o fogo em seu plano e não em seu destino, transformando a sombra em chama?</string>
+    <string name="koji_kashin_q02">Quem permaneceu em campo para concluir a missão mesmo depois que a verdade veio à tona?</string>
+
+    <string name="isshiki_otsutsuki_q01">Qual ameaça encolhia objetos e segurava o mundo na palma da mão?</string>
+    <string name="isshiki_otsutsuki_q02">Quem instalou seu trono em um corpo humano e tentou marcar o destino a ferro?</string>
+
+    <string name="toneri_q01">Quem tentou trazer a solidão da Lua para a Terra e no fim devolveu a luz?</string>
+
+    <string name="hagoromo_q01">Qual sábio transformou o ninjutsu, junto com o irmão, em um ensinamento para o mundo?</string>
+    <string name="hagoromo_q02">Quem concedeu poder a Naruto e Sasuke exigindo em troca o equilíbrio?</string>
+    <string name="hagoromo_q03">Quem deixou a briga dos filhos para uma história a ser resolvida pela paz ao longo das gerações?</string>
+
+    <string name="kaguya_q01">Quem trouxe o chakra ao mundo pela primeira vez com um fruto?</string>
+    <string name="kaguya_q02">Quem trocava de dimensão como quem vira a palma da mão, invertendo a cena num instante?</string>
+    <string name="kaguya_q03">Quem foi enviada de volta à eternidade pelo selo de seus dois descendentes?</string>
+    <string name="kaguya_q04">Qual poder irresistível levou o campo de batalha entre gelo, lava e deserto?</string>
+
+    <string name="hanzo_q01">Quem deu aos Sannin lendários o seu apelido em plena guerra?</string>
+    <string name="hanzo_q02">Qual senhor da guerra escondeu o destino de Ame por trás de sua máscara?</string>
+    <string name="hanzo_q03">Quem caiu dentro do próprio regime de medo que ele mesmo construiu?</string>
+
+    <string name="konohamaru_q01">Quem corria atrás de Naruto quando criança e depois virou escudo do próprio time?</string>
+    <string name="konohamaru_q02">Qual professor confiou o Rasengan às mãos da nova geração?</string>
+    <string name="konohamaru_q03">Qual shinobi protegeu nas ruas o legado de seu avô Hiruzen?</string>
+
+</resources>

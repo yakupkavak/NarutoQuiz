@@ -20,20 +20,15 @@ if (localPropertiesFile.exists()) {
 
 android {
     namespace = "com.yakupkavak.narutoquiz"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.yakupkavak.narutoquiz"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 9
-        versionName = "1.5.3"
+        targetSdk = 36
+        versionCode = 10
+        versionName = "1.5.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField(
-            "String",
-            "GEMINI_API",
-            value = localProperties["GEMINI_API_KEY"].toString()
-        )
         buildConfigField(
             "String",
             "BASE_URL",
@@ -58,6 +53,12 @@ android {
 
     buildTypes {
         debug {
+            // Google's official sample ad units. Never request production ads from a
+            // dev build: it is an AdMob policy violation and it also lets us tell a
+            // broken integration apart from an ad-unit/console problem.
+            buildConfigField("String", "REWARD_AD_KEY", "\"ca-app-pub-3940256099942544/5224354917\"")
+            buildConfigField("String", "BANNER_AD_KEY", "\"ca-app-pub-3940256099942544/9214589741\"")
+            buildConfigField("String", "INTERSTITIAL_AD_KEY", "\"ca-app-pub-3940256099942544/1033173712\"")
         }
         release {
             isMinifyEnabled = false
@@ -117,7 +118,7 @@ dependencies {
     implementation(libs.retrofit2.converter.jackson)
     implementation(libs.lottie)
     kapt(libs.compiler)
-    implementation(libs.generativeai)
+    implementation(libs.firebase.ai)
     implementation(libs.billing.ktx)
     implementation(libs.play.services.ads)
 

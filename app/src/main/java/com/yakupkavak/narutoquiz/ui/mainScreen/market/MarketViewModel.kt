@@ -117,9 +117,9 @@ class MarketViewModel @Inject constructor(
                     .build() //ürün detaylarını bu obje aracılığıyla sorgulayacağız.
 
             billingClient.queryProductDetailsAsync(queryProductDetailsParams) { billingResult,
-                                                                                productDetailsList ->
+                                                                                queryProductDetailsResult ->
                 if (billingResult.responseCode == BillingClient.BillingResponseCode.OK) {
-                    _productList.postValue(productDetailsList) //google playden ürün detayları sorgulandı ve bu ürünler buraya geldi.
+                    _productList.postValue(queryProductDetailsResult.productDetailsList) //google playden ürün detayları sorgulandı ve bu ürünler buraya geldi.
                 }
             }
         } catch (e: Exception) {

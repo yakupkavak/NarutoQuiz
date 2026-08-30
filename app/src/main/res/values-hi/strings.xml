@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shinobi Quiz</string>
+    <string name="loading">लोड हो रहा है…</string>
+    <string name="counter_menu">काउंटर</string>
+    <string name="zero">0</string>
+    <string name="use_viewmodel">ViewModel इस्तेमाल करें</string>
+    <string name="increase_counter">काउंटर बढ़ाएँ</string>
+    <string name="guess_menu">अंदाज़ा</string>
+    <string name="username_too_long">यूज़रनेम 16 अक्षरों से ज़्यादा नहीं हो सकता</string>
+    <string name="password_too_low">पासवर्ड 8 अक्षरों से कम नहीं हो सकता</string>
+    <string name="refresh_describtion">रिफ़्रेश</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="reset">रीसेट करें</string>
+    <string name="guess">अंदाज़ा लगाएँ</string>
+    <string name="success">सही जवाब</string>
+    <string name="failure">फिर कोशिश करें</string>
+    <string name="change_image">तस्वीर बदलें</string>
+    <string name="pokemon">pokemon</string>
+    <string name="error">कोई गड़बड़ी हुई</string>
+    <string name="emptyImageUrl">https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png</string>
+    <string name="next">आगे</string>
+
+    <string name="sign_in">साइन इन करें</string>
+    <string name="null_space">इसे खाली न छोड़ें</string>
+    <string name="sign_in_error">ईमेल या पासवर्ड ग़लत है</string>
+    <string name="recovery_error">ईमेल ग़लत है</string>
+    <string name="network_problem">कोई समस्या आ गई है</string>
+    <string name="check_mail">अपना ईमेल देखें</string>
+    <string name="sign_success">रजिस्ट्रेशन पूरा हुआ</string>
+    <string name="email">ईमेल</string>
+    <string name="password">पासवर्ड</string>
+    <string name="forgot_password">पासवर्ड भूल गए?</string>
+    <string name="hint_email">example@gmail.com</string>
+    <string name="sign_up">साइन अप करें</string>
+    <string name="slash">/</string>
+    <string name="user_name">यूज़रनेम</string>
+    <string name="welcome_shinobi">स्वागत है, शिनोबी</string>
+    <string name="recovery">रिकवरी</string>
+    <string name="naruto_image">नारुतो की तस्वीर</string>
+    <string name="google_icon">Google आइकन</string>
+    <string name="game_content">गेम सामग्री</string>
+    <string name="quizes">क्विज़</string>
+    <string name="tier_list">टियर लिस्ट</string>
+    <string name="user_info">यूज़र जानकारी</string>
+    <string name="close_game">गेम बंद करें</string>
+    <string name="first_option">पहला विकल्प</string>
+    <string name="second_option">दूसरा विकल्प</string>
+    <string name="check">जाँचें</string>
+    <string name="leaders">लीडरबोर्ड</string>
+    <string name="classic_game">क्लासिक गेम</string>
+    <string name="challenge">चैलेंज</string>
+    <string name="classic">क्लासिक</string>
+    <string name="akatsuki">चैलेंज</string>
+    <string name="clan">कुल</string>
+    <string name="tail">पूँछ</string>
+    <string name="team">टीम</string>
+    <string name="rank">रैंक</string>
+    <string name="player">खिलाड़ी</string>
+    <string name="score">स्कोर</string>
+    <string name="game_over">गेम ख़त्म</string>
+    <string name="main_screen">मुख्य स्क्रीन</string>
+    <string name="play_again">दोबारा खेलें</string>
+    <string name="trueText">सही</string>
+    <string name="wrong">ग़लत</string>
+
+    <string name="emptyAd">अभी कोई विज्ञापन उपलब्ध नहीं है, 3 मिनट बाद फिर कोशिश करें</string>
+
+    <string name="family_question">यह किस किरदार पर लागू होता है? %1$s</string>
+    <string name="voice_question">यह किस किरदार पर लागू होता है? %1$s</string>
+    <string name="clan_question">%1$s कुल से कौन है?</string>
+    <string name="team_question">%1$s टीम में कौन है?</string>
+    <string name="jinckuri_question">%1$s का जिनचूरिकी कौन है?</string>
+    <string name="user_name_info">नाम: %1$s</string>
+    <string name="user_mail_info">ईमेल: %1$s</string>
+    <string name="change_password">पासवर्ड बदलें</string>
+    <string name="wrong_password">पासवर्ड ग़लत है</string>
+
+    <string name="change">बदलें</string>
+    <string name="max_repeat_info">सवालों की संख्या: %1$s</string>
+    <string name="hint_count">संकेतों की संख्या: %1$d</string>
+    <string name="get_information">गेम के बारे में</string>
+    <string name="naruto_icon">नारुतो आइकन</string>
+    <string name="unexpected_error">अनपेक्षित गड़बड़ी</string>
+    <string name="select">चुनिए!</string>
+    <string name="ad">विज्ञापन देखें</string>
+
+
+    <string name="game_mode">गेम मोड</string>
+    <string name="history">गेम इतिहास</string>
+    <string name="sign_out">साइन आउट करें</string>
+    <string name="user">यूज़र</string>
+    <string name="game">गेम</string>
+    <string name="close">बंद करें</string>
+    <string name="challenge_game">चैलेंज गेम</string>
+    <string name="welcome_text">चैलेंज मोड में एक भी ग़लत जवाब की गुंजाइश नहीं है, और सिर्फ़ इसी मोड से आप रैंकिंग में शामिल हो सकते हैं. \n\nक्लासिक मोड में आप सभी किरदारों पर ख़ुद को परख सकते हैं. \n\nख़ास अकात्सुकी, कुल, दानव और टीम मोड खेलना न भूलें. \n\n\n शुभकामनाएँ, शिनोबी!</string>
+    <string name="about_the_game">गेम के बारे में</string>
+    <string name="market">स्टोर</string>
+    <string name="hint">संकेत</string>
+    <string name="purchase">ख़रीदें</string>
+    <string name="add">जोड़ें</string>
+
+    <string name="student">छात्र</string>
+    <string name="genin">गेनिन</string>
+    <string name="chunin">चूनिन</string>
+    <string name="kage">कागे</string>
+
+    <string name="token_count">टोकन की संख्या: %1$d</string>
+    <string name="gain_hint">आपको %1$d संकेत मिला!</string>
+    <string name="connection_error">कनेक्शन में गड़बड़ी</string>
+
+    <string name="current_password">मौजूदा पासवर्ड:</string>
+    <string name="new_password">नया पासवर्ड:</string>
+    <string name="repeat_password">पासवर्ड दोबारा लिखें:</string>
+
+    <string name="empty_edit_text">कोई जगह खाली रह गई है</string>
+    <string name="password_not_equal">पासवर्ड मेल नहीं खाते!</string>
+    <string name="delete_account">खाता हटाएँ</string>
+    <string name="delete">हटाएँ</string>
+    <string name="delete_success">खाता हटा दिया गया.</string>
+    <string name="question_number">सवाल संख्या: %1$d</string>
+
+    <string name="game_story_title">कहानी</string>
+    <string name="game_story_description">आपके लिए तैयार किए गए सवालों के ज़रिए नारुतो की दुनिया की कहानी जानिए.</string>
+    <string name="game_challenge_title">चैलेंज</string>
+    <string name="game_challenge_description">शिनोबी की दुनिया में ग़लती की कोई जगह नहीं!</string>
+    <string name="game_classic_title">क्लासिक</string>
+    <string name="game_classic_description">अपने सामान्य ज्ञान को परखने का समय आ गया है.</string>
+    <string name="game_akatsuki_title">अकात्सुकी</string>
+    <string name="game_akatsuki_description">हमारा मक़सद है इस झूठी शांति को तोड़ना.</string>
+    <string name="game_clan_title">कुल</string>
+    <string name="game_clan_description">अपनी जड़ें याद रखो, अपने कुल की रक्षा करो.</string>
+    <string name="game_tailed_beast_title">पूँछ वाले दानव</string>
+    <string name="game_tailed_beast_description">यह दानवों की दुनिया है.</string>
+    <string name="game_teams_title">टीमें</string>
+    <string name="game_teams_description">जो नियम तोड़ते हैं वे कूड़ा हैं. लेकिन जो अपने दोस्तों को छोड़ देते हैं वे कूड़े से भी बदतर हैं.</string>
+
+    <string name="naruto_q01">मिज़ुकी वाली रात निषिद्ध ग्रंथ से छाया क्लोन तकनीक किसने सीखी?</string>
+    <string name="naruto_q02">इरुका ने अपना माथे का रक्षक किस छात्र को तोहफ़े में दिया?</string>
+    <string name="naruto_q03">चूनिन परीक्षा में नेजी को हराकर «भाग्य» की बात के ख़िलाफ़ कौन खड़ा हुआ?</string>
+    <string name="naruto_q04">पहली बड़ी भिड़ंत में गारा को हराकर उसके बदलाव का दरवाज़ा किसने खोला?</string>
+    <string name="naruto_q05">जिराया की मृत्यु के बाद म्योबोकु पर्वत पर सेज मोड किसने सीखा?</string>
+    <string name="naruto_q06">कोनोहा पर पेन के हमले में गाँव को बचाकर नागातो को किसने मनाया?</string>
+    <string name="naruto_q07">आठवाँ द्वार खोलने के बाद माइट गाइ को मौत से किसने वापस खींचा?</string>
+    <string name="naruto_q08">हागोरोमो से छह पथों की शक्ति किसे मिली?</string>
+    <string name="naruto_q09">इचिराकु की दुकान पर पहली मुफ़्त रामेन किस छोटे बच्चे को मिली?</string>
+    <string name="naruto_q10">अकादमी के पीछे झूले पर अकेला बैठा अनाथ कौन था?</string>
+    <string name="naruto_q11">ज़ाबुज़ा और हाकू वाले मिशन में «निंजा किसके लिए लड़ता है» सवाल से कौन हिल गया था?</string>
+    <string name="naruto_q12">कोनोहामारु को रासेनगन किसने सिखाया?</string>
+    <string name="naruto_q13">त्सुनादे को होकागे बनने के लिए किसने मनाया?</string>
+    <string name="naruto_q14">पुनर्जीवित इताची के साथ मिलकर नागातो को किस शिनोबी ने रोका?</string>
+    <string name="naruto_q15">असुरा पथ के हमले के बाद हिनाता को देखकर दोबारा कौन खड़ा हुआ?</string>
+    <string name="naruto_q16">कागुया के आयाम में सासुके के साथ ठीक एक ही समय पर सील का वार किसने किया?</string>
+    <string name="naruto_q17">जिराया को खोने के बाद अपने गुरु की «असली नायक» वाली परिभाषा को किसने अपना लक्ष्य बनाया?</string>
+
+    <string name="sasuke_q01">लहरों के देश के पुल पर साथी को बचाने के लिए हाकू की सुइयों के आगे कौन कूद पड़ा?</string>
+    <string name="sasuke_q02">मृत्यु वन के चरण में ओरोचिमारु की शापित मुहर किसे मिली?</string>
+    <string name="sasuke_q03">चूनिन परीक्षा के फ़ाइनल में गारा की रेत भेदने के लिए चिदोरी का पहली बार इस्तेमाल किसने किया?</string>
+    <string name="sasuke_q04">देइदारा के C0 विस्फोट से मांडा को बुलाकर और क़ीमत चुकाकर कौन बच निकला?</string>
+    <string name="sasuke_q05">पहले हेबी और फिर ताका बनाकर अपने इकलौते लक्ष्य, अपने भाई से भिड़ने कौन निकला?</string>
+    <string name="sasuke_q06">बिजली को «किरिन» में बदलकर उचिहा भाइयों के द्वंद्व का रुख़ किसने बदला?</string>
+    <string name="sasuke_q07">सच जानने के बाद पाँच कागे शिखर सम्मेलन में घुसकर वहीं डान्ज़ो का अंत किसने किया?</string>
+    <string name="sasuke_q08">ओरोचिमारु को वापस लाकर पुनर्जीवित होकागे को बुलवाकर अतीत का हिसाब किसने माँगा?</string>
+    <string name="sasuke_q09">युद्ध के बाद गाँव में कुर्सी नहीं, बल्कि साये में पहरेदार बनना किसने चुना?</string>
+    <string name="sasuke_q10">जवानी में साँपों की राह चलकर बाद में अपना अनुबंध «बाज़ आह्वान» में किसने बदला?</string>
+    <string name="sasuke_q11">किनशिकी और मोमोशिकी की लड़ाई में नारुतो के साथ कंधे से कंधा मिलाकर संयुक्त हमले किसने किए?</string>
+    <string name="sasuke_q12">हाकू के बर्फ़ के आईनों के बीच वह दहलीज़ किसने पार की जिसने उसका शारिंगन जगाया?</string>
+
+    <string name="itachi_q01">काकाशी को त्सुकुयोमी से तीन दिन की यातना में किसने क़ैद किया?</string>
+    <string name="itachi_q02">«नफ़रत के चक्र» को अपने कंधों पर लेकर साये से कोनोहा की रक्षा किसने की?</string>
+    <string name="itachi_q03">ओरोचिमारु की शरीर हड़पने की योजना एक ही चाल में तोड़कर उसे अकात्सुकी छोड़ने पर किसने मजबूर किया?</string>
+    <string name="itachi_q04">शिसुई की आँख अमानत में लेकर कोतोअमात्सुकामी की रक्षा किसने की?</string>
+    <string name="itachi_q05">कोनोहा में तख़्तापलट रोकने के लिए अपने ही कुल के ख़िलाफ़ अदृश्य दोहरे एजेंट का काम किसने संभाला?</string>
+    <string name="itachi_q06">आख़िरी मुलाक़ात में अपने भाई के माथे पर दो उँगलियाँ रखकर विदा किसने ली?</string>
+    <string name="itachi_q07">सुसानू का याता दर्पण उतारकर किरिन को किसने बेअसर किया?</string>
+    <string name="itachi_q08">अपने भाई के भीतर उभरे ओरोचिमारु को तोत्सुका तलवार से तुरंत किसने सील किया?</string>
+    <string name="itachi_q09">पुनर्जीवित रूप में काबुतो को इज़ानामी के चक्र में फँसाकर एदो तेनसेइ ख़त्म करने पर किसने मजबूर किया?</string>
+    <string name="itachi_q10">अकात्सुकी की ख़बरें चुपके से कोनोहा तक पहुँचाने वाला ANBU से आया शिनोबी कौन था?</string>
+    <string name="itachi_q11">नागातो से लड़ाई में तोत्सुका तलवार से नारुतो और किलर बी को किसने बचाया?</string>
+    <string name="itachi_q12">शिसुई की मृत्यु के बाद अपना मांगेक्यो शारिंगन किसने जगाया?</string>
+    <string name="itachi_q13">13 साल की उम्र में ANBU का कप्तान बनकर «युद्ध ख़त्म करने वाली शांति» के विचार के पीछे कौन चला?</string>
+    <string name="itachi_q14">अपनी मृत्यु के बाद अपनी आँखों से भाई की दृष्टि बचाने का रास्ता किसने खोला?</string>
+    <string name="itachi_q15">तख़्तापलट की रात कोनोहा के नेताओं से मोल-भाव कर सासुके की जान की शर्त किसने रखी?</string>
+    <string name="itachi_q16">गाँव छोड़ने के बाद भी साये से ख़तरों पर नज़र रखकर कोनोहा की रक्षा कौन करता रहा?</string>
+    <string name="itachi_q17">पुनर्जीवित अवस्था में अपने भाई से «मैं तुमसे हमेशा प्यार करूँगा» किसने कहा?</string>
+    <string name="itachi_q18">नारुतो और सासुके की अंतिम घाटी की लड़ाई में सासुके की हथेली में दिखने वाला वह अकेला हाथ किसका है?</string>
+
+    <string name="kakashi_q01">टीम 7 के घंटी परीक्षण में «नियम या टीम» का संतुलन और खाना बाँटने का सबक किसने सिखाया?</string>
+    <string name="kakashi_q02">हज़ार से ज़्यादा जुत्सु नक़ल करके «कॉपी निंजा» का ख़िताब किसने पाया?</string>
+    <string name="kakashi_q03">कन्नबी पुल मिशन में दोस्त की आख़िरी इच्छा पर बाईं आँख में शारिंगन किसे मिला?</string>
+    <string name="kakashi_q04">चिदोरी/राइकिरी तकनीक विकसित करके पहली बार युद्ध में किसने इस्तेमाल की?</string>
+    <string name="kakashi_q05">देइदारा को भागने से रोकने के लिए कामुई का पहली बार असली निशाने पर इस्तेमाल किसने किया?</string>
+    <string name="kakashi_q06">पेन के हमले में किस किरदार की जान गई, जिसकी मौत नारुतो ने महसूस की?</string>
+    <string name="kakashi_q07">युद्ध के बाद छठे होकागे की कुर्सी किसने संभाली?</string>
+    <string name="kakashi_q08">कौन-सा गुरु मैदान के बीच भी «इचा इचा» किताब हाथ से नहीं छोड़ता?</string>
+    <string name="kakashi_q09">सुकेआ का भेस बनाकर गाँव लौटकर चेहरा तक छिपाए जाँच किसने की?</string>
+
+    <string name="madara_q01">हाशिरामा के साथ मिलकर कोनोहा की नींव किसने रखी, जिसके बाद उनके रास्ते अलग हो गए?</string>
+    <string name="madara_q02">एक ही चाल में दो उल्कापिंड गिराकर युद्ध का संतुलन किसने बिगाड़ा?</string>
+    <string name="madara_q03">अकेले ही पाँचों कागे को घुटनों पर किसने ला दिया?</string>
+    <string name="madara_q04">अदृश्य «लिम्बो» छायाओं से अपने विरोधियों को एक साथ किसने बाँधा?</string>
+    <string name="madara_q05">हाशिरामा की कोशिकाओं से रिनेगन जगाकर अंतिम योजना की ओर कौन बढ़ा?</string>
+    <string name="madara_q06">दस पूँछ वाले का जिनचूरिकी बनकर «छह पथों» की शक्ति किसने पाई?</string>
+    <string name="madara_q07">चाँद के प्रतिबिंब से अनंत त्सुकुयोमी पूरी दुनिया पर किसने फैलाया?</string>
+    <string name="madara_q08">पहाड़ों को चीर देने वाला संपूर्ण सुसानू किसने खोला?</string>
+    <string name="madara_q09">आठवाँ द्वार खुलने पर «आज तक देखा सबसे मज़बूत ताईजुत्सु» कहकर अपने प्रतिद्वंद्वी का सम्मान किसने किया?</string>
+
+    <string name="obito_q01">«नायक देर से आते हैं» कहकर दोस्त को बचाने के लिए मलबे में दबकर अपनी आँख किसने सौंपी?</string>
+    <string name="obito_q02">मुखौटे के पीछे से «नक़ाबपोश आदमी» बनकर कोनोहा पर हमले की साज़िश किसने रची?</string>
+    <string name="obito_q03">अकात्सुकी में «तोबी» का किरदार निभाकर भोला बनने का नाटक किसने किया?</string>
+    <string name="obito_q04">कामुई से अपने शरीर को अभौतिक बनाकर हमलों को आर-पार किसने जाने दिया?</string>
+    <string name="obito_q05">रिन की मृत्यु के बाद पूरी दुनिया को अपनी «चंद्र नेत्र योजना» में किसने जकड़ा?</string>
+    <string name="obito_q06">आयामों के बीच अकेले काकाशी से द्वंद्व कर पुराने रिश्तों का हिसाब किसने किया?</string>
+    <string name="obito_q07">नारुतो को मौत के मुँह से खींचकर प्रायश्चित की ओर पहला क़दम किसने बढ़ाया?</string>
+    <string name="obito_q08">अकात्सुकी का असली नेतृत्व साये में करते हुए युद्ध किसने भड़काया?</string>
+    <string name="obito_q09">आख़िरी पल में अपना असली रूप याद कर निंजा के भविष्य के लिए अपनी शक्ति किसने सौंपी?</string>
+
+    <string name="gaara_q01">बचपन में अपने आप उठने वाली रेत की ढाल से घिरकर अकेलेपन का शिकार कौन हुआ?</string>
+    <string name="gaara_q02">चूनिन परीक्षा में रॉक ली द्वारा उसकी सुरक्षा तक भेद दिए जाने पर पहली बार कौन हिल गया?</string>
+    <string name="gaara_q03">नारुतो के शब्दों में अकेलेपन का वही दर्द देखकर बदलने का फ़ैसला किसने किया?</string>
+    <string name="gaara_q04">सुना का सबसे युवा काज़ेकागे बनकर अपने गाँव की रक्षा का ज़िम्मा किसने लिया?</string>
+    <string name="gaara_q05">देइदारा के ख़िलाफ़ अपने गाँव को बचाते हुए जान की बाज़ी किसने लगाई?</string>
+    <string name="gaara_q06">किसके भीतर से पूँछ वाला दानव निकाल लिया गया और चियो के बलिदान से वह दोबारा जीवित हुआ?</string>
+    <string name="gaara_q07">पाँच कागे शिखर सम्मेलन में राइकागे के सामने नारुतो का बचाव किसकी आवाज़ ने किया?</string>
+    <string name="gaara_q08">गठबंधन सेना के सामने «दिलों को जोड़ने वाला» सेनापति भाषण किसने दिया?</string>
+    <string name="gaara_q09">युद्ध में अपने पिता रासा की आत्मा का सामना कर अतीत का घाव किसने भरा?</string>
+    <string name="gaara_q10">चौथे महान निंजा युद्ध में पिता रासा से किसने जाना कि उसे बचाने वाली रेत असल में उसकी माँ का प्यार थी?</string>
+    <string name="gaara_q11">बचपन में हुए हमले के समय माँ की इच्छा से रेत अपने आप उठकर किस शिनोबी की ढाल बनी?</string>
+
+    <string name="kabuto_q01">कोनोहा के अनाथालय से निकालकर ओरोचिमारु का सबसे गुप्त जासूस कौन बना?</string>
+    <string name="kabuto_q02">एदो तेनसेइ को निखारकर युद्ध के मोहरों को क़ब्र से किसने उठाया?</string>
+    <string name="kabuto_q03">रयूची गुफ़ा में सेज मोड तक पहुँचकर «श्वेत क्रोध» से मैदान किसने हिला दिया?</string>
+    <string name="kabuto_q04">इज़ानामी के चक्र में ख़ुद को स्वीकारना सीखकर ज़ंजीर किसने तोड़ी?</string>
+    <string name="kabuto_q05">युद्ध के बाद अनाथालय लौटकर नई राह पर कौन चला?</string>
+
+    <string name="orochimaru_q01">महान सानिन में से होकर अमरता की तलाश में निषिद्ध प्रयोगों में कौन डूब गया?</string>
+    <string name="orochimaru_q02">मृत्यु वन में सासुके पर शापित मुहर किसने लगाई?</string>
+    <string name="orochimaru_q03">कोनोहा पर आक्रमण के समय पुनर्जीवित होकागे को बुलाकर अपने गुरु से हिसाब किसने चुकाया?</string>
+    <string name="orochimaru_q04">साँप की तरह केंचुल छोड़कर मौत से कौन बच निकला?</string>
+    <string name="orochimaru_q05">सासुके के कहने पर लौटकर दोबारा पुनर्जीवित होकागे को बुलाकर इतिहास का दरवाज़ा किसने खोला?</string>
+
+    <string name="rocklee_q01">चूनिन परीक्षा में अपने वज़न उतारकर अपनी रफ़्तार से मैदान को धूल में किसने डुबो दिया?</string>
+    <string name="rocklee_q02">गारा के ख़िलाफ़ पहला द्वार खोलकर «प्रारंभिक कमल» से सबकी साँसें किसने रोक दीं?</string>
+    <string name="rocklee_q03">मृत्यु वन में साकुरा को बचाने के लिए साउंड तिकड़ी के आगे अकेला कौन खड़ा हुआ?</string>
+    <string name="rocklee_q04">ऑपरेशन में जान जाने के ख़तरे के बावजूद दोबारा लड़ने के लिए त्सुनादे की मेज़ पर कौन लेटा?</string>
+    <string name="rocklee_q05">लड़खड़ाते «मतवाले मुक्के» से किमिमारो को पल भर के लिए भी किसने छका दिया?</string>
+
+    <string name="sakura_q01">मृत्यु वन में अपने हाथों से बाल काटकर «अब मैं भी लड़ूँगी» किसने कहा?</string>
+    <string name="sakura_q02">त्सुनादे के पास चिकित्सा निंजा का प्रशिक्षण लेकर एक मुक्के से ज़मीन चीरने की ताक़त किसने पाई?</string>
+    <string name="sakura_q03">चियो के साथ कंधे से कंधा मिलाकर अकात्सुकी के सासोरी को किसने हराया?</string>
+    <string name="sakura_q04">नारुतो का दिल रुकने को था, तब नंगे हाथों से उसका दिल चलाकर उसे वापस किसने लाया?</string>
+    <string name="sakura_q05">माथे की मुहर खोलकर «सौ की शक्ति» से मोर्चे पर हज़ारों सैनिकों को एक साथ किसने ठीक किया?</string>
+
+    <string name="minato_q01">«कोनोहा की पीली बिजली» के रूप में किसकी रफ़्तार चिकित्सकों के पहुँचने से पहले ही लड़ाई ख़त्म कर देती थी?</string>
+    <string name="minato_q02">गाँव पर हमले की रात नौ पूँछ वाले का विशाल बीजू बम उड़न वज्र देव तकनीक से कोनोहा से दूर किसने भेजा?</string>
+    <string name="minato_q03">कुशिना से अलग किए गए कुरामा को रोकने के लिए अपनी जान देकर मुहर अपने बेटे को किसने सौंपी?</string>
+    <string name="minato_q04">जिराया के उपन्यास के नायक से प्रेरित होकर बेटे का नाम «नारुतो» रखकर उसे उसके गॉडफ़ादर को किसने सौंपा?</string>
+    <string name="minato_q05">राइकागे ए को भी पीछे छोड़कर «उड़न वज्र देव» से एक इशारे में युद्धभूमि किसने पलट दी?</string>
+    <string name="minato_q06">बिना किसी ख़ास रक्त-वंश के, पूरी तरह अपने बल पर, नौ पूँछ वाले समेत अपने शिष्य को किस गुरु ने हराया?</string>
+
+    <string name="hashirama_q01">बचपन में मदारा के साथ नदी के दो किनारों पर पत्थर फेंकने से दोस्ती और दोस्ती से कोनोहा के विचार तक का रास्ता किसने शुरू किया?</string>
+    <string name="hashirama_q02">«शांति साथ मिलकर बनती है» कहकर होकागे का विचार सबसे पहले किसने रखा?</string>
+    <string name="hashirama_q03">उचिहा शिलालेख की भाग्य की पंक्तियों को पार करने के लिए भाईचारा किसने चुना?</string>
+    <string name="hashirama_q04">अंतिम घाटी के पहले बड़े द्वंद्व में अपने दोस्त को मारने से इनकार कर गाँव किसने बसाया?</string>
+    <string name="hashirama_q05">जीवित मूर्तियों की तरह उठते विशाल काष्ठ बुद्ध से युद्धभूमि को किसने शांत कर दिया?</string>
+    <string name="hashirama_q06">«गाँव का मतलब परिवार है» यह बात पीढ़ियों के लिए छोड़ने वाला पहला होकागे कौन है?</string>
+
+    <string name="tobirama_q01">ANBU की नींव रखकर गाँव की व्यवस्था को व्यवस्थित किसने किया?</string>
+    <string name="tobirama_q02">उड़न वज्र देव तकनीक का पहला बीज किसने विकसित किया?</string>
+    <string name="tobirama_q03">अकादमी और चूनिन व्यवस्था को संस्थागत बनाकर निंजा शिक्षा का ढाँचा किसने खींचा?</string>
+    <string name="tobirama_q04">युद्ध के बीच अपनी जान को चारा बनाकर अपने कुल और भाई की रक्षा किसने की?</string>
+    <string name="tobirama_q05">एदो तेनसेइ के अंधकारमय ज्ञान को ग़लत हाथों में आपदा किसने बताया?</string>
+
+    <string name="tsunade_q01">जुए की मेज़ पर क़िस्मत साथ न देने के बावजूद युद्धभूमि पर हज़ारों की क़िस्मत किसने पलटी?</string>
+    <string name="tsunade_q02">«चिकित्सा दल के बिना सेना नहीं होती» कहकर मोर्चे का संतुलन किसने बदला?</string>
+    <string name="tsunade_q03">«मुझे नारुतो के होकागे बनने के सपने पर यक़ीन है» कहकर कुर्सी किसने स्वीकारी?</string>
+    <string name="tsunade_q04">माथे की मुहर खोलकर कोनोहा को मलबे से किसने उठाया?</string>
+    <string name="tsunade_q05">जिराया को खोकर टूट जाने के बाद भी मेज़ पर फिर से उपचार किसने रखा?</string>
+    <string name="tsunade_q06">चौथे महान निंजा युद्ध में कागे को जीवन-सूत्रों से एक-दूसरे से किसने बाँधा?</string>
+
+    <string name="jiraiya_q01">«मेरे शिष्य ही मेरी विरासत हैं» कहकर तीन शिष्यों का भाग्य दुनिया पर किसने लिख दिया?</string>
+    <string name="jiraiya_q02">सच जानने के लिए अकेले वर्षा गाँव में घुसकर अपनी वापसी का रास्ता किसने बंद कर लिया?</string>
+    <string name="jiraiya_q03">मेंढक के शिलालेख पर शांति का रास्ता छोड़कर अपना आख़िरी संदेश कूट भाषा में किसने भेजा?</string>
+    <string name="jiraiya_q04">छोटे नारुतो को «नायक हार नहीं मानते» कहकर मंज़िल किस गुरु ने दिखाई?</string>
+    <string name="jiraiya_q05">युद्ध के बीच म्योबोकु के भजनों को उल्लास में किसने बदला?</string>
+    <string name="jiraiya_q06">महान सानिन में से होकर यह किसने साबित किया कि एक अकेले शिक्षक की सबसे बड़ी जीत उसका शिष्य है?</string>
+
+    <string name="might_guy_q01">चूनिन के मैदान में जब उसके वज़न ज़मीन पर गिरे तो समय धीमा किसने महसूस कराया?</string>
+    <string name="might_guy_q02">«जवानी की लौ» का नारा लगाकर रॉक ली को उम्मीद किसने सिखाई?</string>
+    <string name="might_guy_q03">आठवाँ द्वार खोलकर मौत का सामना मुस्कुराते हुए किसने किया?</string>
+    <string name="might_guy_q04">ऐसा वार किसने किया कि मदारा तक ने «देखा हुआ सबसे मज़बूत ताईजुत्सु» कहा?</string>
+    <string name="might_guy_q05">पूरे युद्ध में काकाशी का साथ कौन-सा दोस्त कभी नहीं छोड़ा?</string>
+    <string name="might_guy_q06">अपने शिष्य के ऑपरेशन टेबल पर दिल रखकर «दौड़ते रहो» किसने कहा?</string>
+
+    <string name="shikamaru_q01">दिन की शुरुआत बादल देखकर करने और लड़ाइयाँ रणनीति से ख़त्म करने वाला कौन है?</string>
+    <string name="shikamaru_q02">असुमा का लाइटर जलाकर अपने गुरु का बदला अक्ल से किसने लिया?</string>
+    <string name="shikamaru_q03">कागे और सेनापतियों के बीच कड़ी बनकर पूरी सेना को एक दिमाग़ में किसने बदला?</string>
+    <string name="shikamaru_q04">दुविधा में पड़े नारुतो से «मैं तुम्हारे साथ हूँ» कहकर उसके होकागे बनने के रास्ते में किसने कंधा दिया?</string>
+    <string name="shikamaru_q05">हिदान को छायाओं के जाल में फँसाकर उसके टुकड़े ज़मीन में किसने गाड़े?</string>
+    <string name="shikamaru_q06">युद्ध ख़त्म होने पर शांति की योजना बनाने मेज़ पर कौन बैठा?</string>
+
+    <string name="hinata_q01">पेन के सामने अपने प्यार का इज़हार करने वाली निडर योद्धा कौन है?</string>
+    <string name="hinata_q02">नेजी की याद अपनी मुट्ठियों में लेकर कागुया की लड़ाई में उसके साथ कौन चली?</string>
+    <string name="hinata_q03">«अगर तुम राह भटक जाओ तो मैं तुम्हारी रोशनी बनूँगी» कहकर ब्याकुगन को प्रेम में किसने बदला?</string>
+    <string name="hinata_q04">युद्ध में जब नारुतो ओबितो के पक्ष में जाने वाला था, तब उसे सही रास्ता किसने दिखाया?</string>
+    <string name="hinata_q05">अपनी चुनी हुई राह से ह्यूगा कुल का बोझ किसने हल्का किया?</string>
+
+    <string name="killer_b_q01">जिनचूरिकी होने को रैप के बोल और डर को गीत में किसने बदला?</string>
+    <string name="killer_b_q02">सासुके की टीम के साथ एक ही समय पर नाचने वाला आठ तलवारों का उस्ताद कौन है?</string>
+    <string name="killer_b_q03">ग्यूकी से साझेदारी कर दानव की भाषा को इंसान की भाषा में किसने बदला?</string>
+    <string name="killer_b_q04">नारुतो को पूँछ वाले दानव से साझेदारी सिखाकर अँधेरे कमरे की नफ़रत की ज़ंजीर तोड़ने में किसने मदद की?</string>
+    <string name="killer_b_q05">राइकागे के बावजूद अपनी लय चुनकर युद्ध की लय किसने बदल दी?</string>
+
+    <string name="a_fourth_raikage_q01">पाँच कागे शिखर सम्मेलन में मेज़ पर मुक्का नहीं, ज़िम्मेदारी किसने रखी?</string>
+    <string name="a_fourth_raikage_q02">सेना की कमान छोड़े बिना अपने भाई की रक्षा करने वाला नेता कौन है?</string>
+
+    <string name="deidara_q01">«कला एक विस्फ़ोट है» कहकर आसमान पर अपने हस्ताक्षर किसने किए?</string>
+    <string name="deidara_q02">शहर के ऊपर C3 से गारा का रेत का गुंबद चूर-चूर करने की कोशिश किसने की?</string>
+    <string name="deidara_q03">शारिंगन से नफ़रत के बावजूद C0 से अपनी आख़िरी प्रदर्शनी किसने खोली?</string>
+    <string name="deidara_q04">मिट्टी के पक्षियों से आसमान को कैनवास बनाने वाला अकात्सुकी सदस्य कौन है?</string>
+
+    <string name="kisame_q01">सामेहादा से चाकरा निगलकर झील के किनारे को समुंदर किसने बना दिया?</string>
+    <string name="kisame_q02">गाइ से द्वार खुलवाने वाली नीली शार्क कौन है?</string>
+    <string name="kisame_q03">अपने राज़ बचाने के लिए अपना ही शरीर जल-कारा में किसने छोड़ दिया?</string>
+    <string name="kisame_q04">युद्धभूमि पर «दानव» का ख़िताब किस शिनोबी ने कमाया?</string>
+
+    <string name="hidan_q01">अमर अनुष्ठान से प्रतिद्वंद्वी का ख़ून अपने ही शरीर पर किसने पलट दिया?</string>
+    <string name="hidan_q02">जाशिन का घेरा बनाकर दर्द को आईने की तरह किसने लौटाया?</string>
+    <string name="hidan_q03">असुमा का धुआँ हवा में उड़ाकर भी शिकामारू की अक्ल के जाल में कौन फँसा?</string>
+    <string name="hidan_q04">टुकड़ों में बँटकर भी ज़मीन में दफ़्न होकर कौन ख़ामोश कर दिया गया?</string>
+
+    <string name="kakuzu_q01">अपने पाँच दिलों से तत्वों को क़तार में किसने लगाया?</string>
+    <string name="kakuzu_q02">पैसे को आस्था से ऊपर रखकर अनुबंध को पवित्र किसने माना?</string>
+    <string name="kakuzu_q03">नारुतो के पहले पवन रासेनशुरिकेन से हारकर नए युग का दरवाज़ा किसने महसूस किया?</string>
+    <string name="kakuzu_q04">हिदान के साथ सबसे बेमेल और सबसे ख़तरनाक साझेदारी किसने बनाई?</string>
+
+    <string name="konan_q01">बारिश वाली गलियों में काग़ज़ के फूल उम्मीद बनकर कौन छोड़ जाती थी?</string>
+    <string name="konan_q02">तोबी का दम घोंटने के लिए दस अरब काग़ज़ों को बम में किसने बदला?</string>
+    <string name="konan_q03">याहिको के आदर्श को नीली ओरिगामी में किसने सील किया?</string>
+    <string name="konan_q04">नागातो के बाद शांति की राह पर आख़िरी फूल किसने लगाया?</string>
+
+    <string name="nagato_q01">«दर्द सिखाता है» कहकर दुनिया पर दर्द का क़ानून किसने थोपा?</string>
+    <string name="nagato_q02">एक ही शब्द शिनरा तेनसेइ से कोनोहा को ज़मीन पर किसने ला दिया?</string>
+    <string name="nagato_q03">जिराया के शिष्य से लेकर ख़ुद दर्द बन जाने तक का रास्ता किसने तय किया?</string>
+    <string name="nagato_q04">नारुतो के शब्दों से चक्र तोड़कर जानें वापस किसने लौटाईं?</string>
+    <string name="nagato_q05">छह पथों में से हर एक को अपनी आँखें बाँटने वाला नेता कौन है?</string>
+    <string name="nagato_q06">याहिको के शरीर को आदर्श पहनाकर बारिश को चुप कराने की कोशिश किसने की?</string>
+
+    <string name="yahiko_q01">बारिश में खड़े बच्चों से आमे की उम्मीद किसने खड़ी की?</string>
+    <string name="yahiko_q02">«शांति ताक़त से नहीं, इच्छाशक्ति से आती है» कहकर अपने दोस्तों का नेतृत्व किसने किया?</string>
+    <string name="yahiko_q03">अपनी जान को पुल बनाकर नागातो और कोनान को किसने खड़ा रखा?</string>
+
+    <string name="zabuza_q01">कोहरे में जिसका नाम फुसफुसाहट बनकर डर बन जाता था, वह «दानव» कौन है?</string>
+    <string name="zabuza_q02">हाकू के सामने अपने आँसू तलवार पर पोंछकर आख़िरी सफ़र किसने किया?</string>
+    <string name="zabuza_q03">पुल पर टीम 7 को पहला बड़ा सबक देने वाला दुश्मन कौन है?</string>
+    <string name="zabuza_q04">किरिगाकुरे की ख़ूनी दीक्षांत परीक्षा को इतिहास में किसने दर्ज कराया?</string>
+
+    <string name="haku_q01">बर्फ़ के आईनों में रोशनी को कई गुना कर सुइयों को बारिश किसने बनाया?</string>
+    <string name="haku_q02">किसी के काम आने के लिए अपनी जान देने वाला कोमल योद्धा कौन है?</string>
+    <string name="haku_q03">ज़ाबुज़ा के दिल की इकलौती गर्म जगह कौन बन पाया?</string>
+    <string name="haku_q04">मुखौटे के पीछे जिसकी आँखें पहली बार नारुतो के शब्दों से गर्म हुईं, वह कौन है?</string>
+
+    <string name="hiruzen_q01">तीनों महान सानिन को तैयार कर गाँव का बोझ तीन बार किसने उठाया?</string>
+    <string name="hiruzen_q02">ओरोचिमारु के ख़िलाफ़ दो होकागे को सील कर युद्धभूमि को किसने शांत किया?</string>
+    <string name="hiruzen_q03">नारुतो की फ़ाइल में «एक और मौक़ा» लिखने वाला बुज़ुर्ग नेता कौन है?</string>
+    <string name="hiruzen_q04">गाँव के बच्चों को अपना परिवार समझने वाला ज्ञानी होकागे कौन है?</string>
+
+    <string name="temari_q01">हवा के पंखे से पूरे जंगल को एक ही वार में किसने काट डाला?</string>
+    <string name="temari_q02">शिकामारू की योजनाओं को हवा देकर युद्ध में बुद्धि को किसने मज़बूत किया?</string>
+    <string name="temari_q03">भाई की परछाईं नहीं, अपनी ताक़त कोनोहा से किसने मनवाई?</string>
+
+    <string name="kankuro_q01">अपनी कठपुतलियों से मंच को मौत के रंगमंच में किसने बदला?</string>
+    <string name="kankuro_q02">सासोरी के ज़हर के ख़िलाफ़ मारक दवा और समय की दौड़ से किसने चुनौती दी?</string>
+    <string name="kankuro_q03">अपने भाई के पीछे खड़ा रहकर भी युद्ध में कठपुतलियों को आगे किसने भेजा?</string>
+
+    <string name="sai_q01">स्याही को पक्षी बनाकर संदेश आसमान में किसने भेजा?</string>
+    <string name="sai_q02">टीम 7 में भावनाहीन प्रशिक्षण की ज़ंजीर किसने तोड़ी?</string>
+    <string name="sai_q03">अपनी कॉपी में «दोस्ती» शब्द पहली बार सच्ची लकीरों से किसने लिखा?</string>
+
+    <string name="yamato_q01">काष्ठ तत्व के नियंत्रण से दानव को किसने शांत किया?</string>
+    <string name="yamato_q02">टीम 7 के बिखरे दिल का नेतृत्व करने वाला शांत चेहरा कौन है?</string>
+    <string name="yamato_q03">नारुतो के भीतर के तूफ़ान को मुहर के अनुशासन से किसने बाँधा?</string>
+
+    <string name="shisui_q01">कोतोअमात्सुकामी का दुरुपयोग न हो, इसके लिए अपनी ही आँख तक से किसने परहेज़ किया?</string>
+    <string name="shisui_q02">पुल से पत्ते पर गिरती परछाईं की तरह अपने कुल को बचाना कौन चाहता था?</string>
+    <string name="shisui_q03">«गाँव के लिए» कहकर इताची को सबसे भारी अमानत किसने सौंपी?</string>
+    <string name="shisui_q04">अपने पतन से पूरी एक पीढ़ी का भाग्य बदलने वाला उचिहा कौन है?</string>
+
+    <string name="kurama_q01">नफ़रत की ज़ंजीरों से आज़ाद होकर नारुतो के साथ कंधे से कंधा मिलाकर कौन लड़ा?</string>
+    <string name="kurama_q02">मिनातो की मुहर में दो हिस्सों में बँटकर भी अपनी इच्छाशक्ति किसने बचाए रखी?</string>
+    <string name="kurama_q03">बीजू बम से रात को दिन किसने बना दिया?</string>
+    <string name="kurama_q04">«साझेदारी» शब्द पहली बार गर्व से बोलने वाला लोमड़ कौन है?</string>
+    <string name="kurama_q05">कागुया की लड़ाई में अपनी चाकरा पूरे गठबंधन में बाँटने वाली शक्ति कौन है?</string>
+
+    <string name="shukaku_q01">रेत के कवच में अपनी पागल हँसी से रेगिस्तान को किसने हिला दिया?</string>
+    <string name="shukaku_q02">डर से जन्मी पहली ढाल बनकर गारा के दिल की रक्षा करने वाला प्राणी कौन है?</string>
+
+    <string name="gamabunta_q01">अपने ऊपर बैठे बच्चे को अदब सिखाकर भी लड़ाई में अपनी पीठ किसने दी?</string>
+    <string name="gamabunta_q02">रेगिस्तान के बीच शुकाकु के ख़िलाफ़ अपनी विशाल तलवार किसने खींची?</string>
+
+    <string name="gamakichi_q01">अपने पिता की परछाईं से निकलकर युद्ध में संदेश ले जाने वाला छोटा-सा बड़ा नायक कौन है?</string>
+
+    <string name="son_goku_q01">पत्थर के दिल को आग से गूँधकर नारुतो को नफ़रत की ज़ंजीर किसने दिखाई?</string>
+
+    <string name="karin_q01">अपने ही शरीर से उपचार की कड़ी बनाने वाली लाल बालों वाली संवेदक कौन है?</string>
+    <string name="karin_q02">डान्ज़ो के साथ लड़ाई में सासुके ने बिना पलक झपकाए किस किरदार को भेद दिया?</string>
+
+    <string name="suigetsu_q01">होज़ुकी जल तकनीक के साथ ऐसा हास्य कौन लिए फिरता है जो किसी पिंजरे में नहीं समाता?</string>
+    <string name="suigetsu_q02">ज़ाबुज़ा की तलवार अपने कंधे पर उठाकर अतीत की परछाईं को मज़ाक़ में किसने बदला?</string>
+
+    <string name="jugo_q01">प्रकृति के क्रोध को अपने शरीर में लेकर भी पक्षियों के लिए कोमलता किसने रखी?</string>
+    <string name="jugo_q02">अपने ग़ुस्से के दौरों को दोस्तों की आवाज़ से शांत करना किसने सीखा?</string>
+
+    <string name="kiba_q01">अकामारू के साथ गंध से मैदान पढ़कर सुराग़ खोजने को कला किसने बनाया?</string>
+    <string name="kiba_q02">दोहरे घुमाव से युद्धभूमि को तूफ़ान में बदलने वाली जोड़ी कौन है?</string>
+
+    <string name="akamaru_q01">मैदान में एक भौंक से अपनी टीम का भाग्य बदलने वाला वफ़ादार साथी कौन है?</string>
+
+    <string name="ino_q01">अपने मन को पुल बनाकर दुश्मन को अपनी टीम के सामने कौन ले आई?</string>
+    <string name="ino_q02">असुमा के आख़िरी शब्दों को अपने दिल में फूल किसने बनाया?</string>
+    <string name="ino_q03">युद्ध में संचार की लाइनें फूल बेचने वाली के धैर्य से किसने संभालीं?</string>
+
+    <string name="choji_q01">तितली के पंख खोलकर अपने दोस्तों के लिए विशाल कौन बन गया?</string>
+    <string name="choji_q02">«मोटा» शब्द को गर्व से ताक़त में बदलने वाला दिल किसका है?</string>
+    <string name="choji_q03">असुमा के चिप्स को आँसुओं में नहीं, इरादे में किसने डुबोया?</string>
+
+    <string name="boruto_q01">अपने पिता से नहीं, अपनी ही परछाईं से लड़ना किसने चुना?</string>
+    <string name="boruto_q02">परीक्षा में वैज्ञानिक निंजा उपकरण इस्तेमाल कर बाद में उसकी ज़िम्मेदारी किसने ली?</string>
+    <string name="boruto_q03">मोमोशिकी के निशान को भाग्य की योजना न बनने देने के लिए दाँत किसने भींचे?</string>
+    <string name="boruto_q04">नई पीढ़ी की टीम 7 का नेतृत्व परीक्षण सड़क पर किसने दिया?</string>
+    <string name="boruto_q05">एक अलग युग में उज़ुमाकी नाम को नए सिरे से किसने परिभाषित किया?</string>
+
+    <string name="sarada_q01">होकागे बनने के सपने को माँ की मुट्ठी और पिता की आँखों से किसने गढ़ा?</string>
+    <string name="sarada_q02">अपने युग में सबसे पहले चिदोरी को निशाने पर उतारने वाली युवा शिनोबी कौन है?</string>
+    <string name="sarada_q03">अपनी टीम के बिखरे दिलों को एक नज़र में किसने समेट लिया?</string>
+
+    <string name="mitsuki_q01">«मैं कौन हूँ?» इस सवाल को दोस्तों के साथ मिलकर जवाब में किसने बदला?</string>
+    <string name="mitsuki_q02">साँप के लचीलेपन को वफ़ादारी में बदलकर अपनी टीम को किसने बचाया?</string>
+
+    <string name="kawaki_q01">कर्म के निशान को भाग्य नहीं, चुनाव बनने पर किसने मजबूर किया?</string>
+    <string name="kawaki_q02">नारुतो के घर को पहली बार «अपना घर» किसने कहा?</string>
+    <string name="kawaki_q03">इश्शिकी की परछाईं में पले बच्चे को योद्धा बनाने वाली इच्छाशक्ति किसकी है?</string>
+
+    <string name="koji_kashin_q01">आग को अपने भाग्य में नहीं, अपनी योजना में लिखकर परछाईं को लौ में किसने बदला?</string>
+    <string name="koji_kashin_q02">सच सामने आ जाने के बाद भी अपना मिशन पूरा करने मैदान में कौन डटा रहा?</string>
+
+    <string name="isshiki_otsutsuki_q01">चीज़ों को छोटा कर दुनिया को अपनी हथेली में लेने वाला ख़तरा कौन है?</string>
+    <string name="isshiki_otsutsuki_q02">इंसानी शरीर में अपना सिंहासन बनाकर भाग्य पर मुहर लगाने की कोशिश किसने की?</string>
+
+    <string name="toneri_q01">चाँद के अकेलेपन को धरती पर उतारने की कोशिश कर आख़िर में रोशनी किसने लौटाई?</string>
+
+    <string name="hagoromo_q01">अपने भाई के साथ मिलकर निंजुत्सु को दुनिया के लिए शिक्षा बनाने वाला ऋषि कौन है?</string>
+    <string name="hagoromo_q02">नारुतो और सासुके को शक्ति देते समय संतुलन की शर्त किसने रखी?</string>
+    <string name="hagoromo_q03">अपने बेटों के झगड़े को पीढ़ियों तक शांति से सुलझने वाली कहानी पर किसने छोड़ दिया?</string>
+
+    <string name="kaguya_q01">चाकरा को पहली बार फल के साथ दुनिया में कौन लाई?</string>
+    <string name="kaguya_q02">आयामों को हथेली की तरह बदलकर पल भर में पूरा दृश्य किसने पलट दिया?</string>
+    <string name="kaguya_q03">अपने दो वंशजों की मुहर से अनंत काल में वापस कौन भेजी गई?</string>
+    <string name="kaguya_q04">युद्धभूमि को बर्फ़, लावा और रेगिस्तान के बीच घुमाने वाली अजेय शक्ति कौन है?</string>
+
+    <string name="hanzo_q01">युद्ध के बीच महान सानिन को उनका ख़िताब किसने दिया?</string>
+    <string name="hanzo_q02">आमे के भाग्य को अपने मुखौटे के पीछे छिपाने वाला युद्ध-सामंत कौन है?</string>
+    <string name="hanzo_q03">अपने ही बनाए डर के राज में कौन गिर गया?</string>
+
+    <string name="konohamaru_q01">बचपन में नारुतो के पीछे दौड़ने वाला और बड़े होकर अपनी टीम की ढाल बनने वाला कौन है?</string>
+    <string name="konohamaru_q02">रासेनगन को नई पीढ़ी के हाथों में सौंपने वाला शिक्षक कौन है?</string>
+    <string name="konohamaru_q03">अपने दादा हिरुज़ेन की विरासत को गलियों में सँभालने वाला शिनोबी कौन है?</string>
+
+</resources>

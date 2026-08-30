@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shinobi Quiz</string>
+    <string name="loading">불러오는 중…</string>
+    <string name="counter_menu">카운터</string>
+    <string name="zero">0</string>
+    <string name="use_viewmodel">ViewModel 사용</string>
+    <string name="increase_counter">카운터 증가</string>
+    <string name="guess_menu">추측</string>
+    <string name="username_too_long">사용자 이름은 16자를 넘을 수 없습니다</string>
+    <string name="password_too_low">비밀번호는 8자 이상이어야 합니다</string>
+    <string name="refresh_describtion">새로고침</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="reset">초기화</string>
+    <string name="guess">추측하기</string>
+    <string name="success">정답</string>
+    <string name="failure">다시 도전</string>
+    <string name="change_image">이미지 변경</string>
+    <string name="pokemon">pokemon</string>
+    <string name="error">오류가 발생했습니다</string>
+    <string name="emptyImageUrl">https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png</string>
+    <string name="next">다음</string>
+
+    <string name="sign_in">로그인</string>
+    <string name="null_space">빈칸으로 두지 마세요</string>
+    <string name="sign_in_error">이메일 또는 비밀번호가 올바르지 않습니다</string>
+    <string name="recovery_error">이메일이 올바르지 않습니다</string>
+    <string name="network_problem">문제가 발생했습니다</string>
+    <string name="check_mail">메일을 확인하세요</string>
+    <string name="sign_success">가입이 완료되었습니다</string>
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="forgot_password">비밀번호를 잊으셨나요?</string>
+    <string name="hint_email">example@gmail.com</string>
+    <string name="sign_up">회원가입</string>
+    <string name="slash">/</string>
+    <string name="user_name">사용자 이름</string>
+    <string name="welcome_shinobi">어서 와, 시노비</string>
+    <string name="recovery">계정 복구</string>
+    <string name="naruto_image">나루토 이미지</string>
+    <string name="google_icon">Google 아이콘</string>
+    <string name="game_content">게임 콘텐츠</string>
+    <string name="quizes">퀴즈</string>
+    <string name="tier_list">티어 리스트</string>
+    <string name="user_info">사용자 정보</string>
+    <string name="close_game">게임 닫기</string>
+    <string name="first_option">첫 번째 선택지</string>
+    <string name="second_option">두 번째 선택지</string>
+    <string name="check">확인</string>
+    <string name="leaders">순위표</string>
+    <string name="classic_game">클래식 게임</string>
+    <string name="challenge">챌린지</string>
+    <string name="classic">클래식</string>
+    <string name="akatsuki">챌린지</string>
+    <string name="clan">일족</string>
+    <string name="tail">꼬리</string>
+    <string name="team">팀</string>
+    <string name="rank">순위</string>
+    <string name="player">플레이어</string>
+    <string name="score">점수</string>
+    <string name="game_over">게임 종료</string>
+    <string name="main_screen">메인 화면</string>
+    <string name="play_again">다시 플레이</string>
+    <string name="trueText">정답</string>
+    <string name="wrong">오답</string>
+
+    <string name="emptyAd">지금은 볼 수 있는 광고가 없습니다. 3분 후에 다시 시도하세요</string>
+
+    <string name="family_question">%1$s — 어떤 캐릭터에 해당하는 설명일까요?</string>
+    <string name="voice_question">%1$s — 어떤 캐릭터에 해당하는 설명일까요?</string>
+    <string name="clan_question">%1$s 일족에 속한 인물은 누구일까요?</string>
+    <string name="team_question">%1$s 팀에 속한 인물은 누구일까요?</string>
+    <string name="jinckuri_question">%1$s의 인주력은 누구일까요?</string>
+    <string name="user_name_info">이름: %1$s</string>
+    <string name="user_mail_info">메일: %1$s</string>
+    <string name="change_password">비밀번호 변경</string>
+    <string name="wrong_password">비밀번호가 올바르지 않습니다</string>
+
+    <string name="change">변경</string>
+    <string name="max_repeat_info">문제 수: %1$s</string>
+    <string name="hint_count">힌트 개수: %1$d</string>
+    <string name="get_information">게임 정보</string>
+    <string name="naruto_icon">나루토 아이콘</string>
+    <string name="unexpected_error">예기치 않은 오류</string>
+    <string name="select">골라 봐!</string>
+    <string name="ad">광고 보기</string>
+
+
+    <string name="game_mode">게임 모드</string>
+    <string name="history">게임 기록</string>
+    <string name="sign_out">로그아웃</string>
+    <string name="user">사용자</string>
+    <string name="game">게임</string>
+    <string name="close">닫기</string>
+    <string name="challenge_game">챌린지 게임</string>
+    <string name="welcome_text">챌린지 모드에서는 한 번도 틀릴 수 없고, 순위표에 오를 수 있는 모드는 이 모드뿐이야. \n\n클래식 모드에서는 모든 캐릭터로 실력을 시험해 볼 수 있어. \n\n특별 모드인 아카츠키, 일족, 꼬리 달린 짐승, 팀도 잊지 마. \n\n\n 행운을 빈다, 시노비!</string>
+    <string name="about_the_game">게임 정보</string>
+    <string name="market">상점</string>
+    <string name="hint">힌트</string>
+    <string name="purchase">구매</string>
+    <string name="add">추가</string>
+
+    <string name="student">학생</string>
+    <string name="genin">하급닌자</string>
+    <string name="chunin">중급닌자</string>
+    <string name="kage">카게</string>
+
+    <string name="token_count">토큰 개수: %1$d</string>
+    <string name="gain_hint">힌트를 %1$d개 얻었어!</string>
+    <string name="connection_error">연결 오류</string>
+
+    <string name="current_password">현재 비밀번호:</string>
+    <string name="new_password">새 비밀번호:</string>
+    <string name="repeat_password">비밀번호 확인:</string>
+
+    <string name="empty_edit_text">비어 있는 칸이 있습니다</string>
+    <string name="password_not_equal">비밀번호가 일치하지 않습니다!</string>
+    <string name="delete_account">계정 삭제</string>
+    <string name="delete">삭제</string>
+    <string name="delete_success">계정이 삭제되었습니다.</string>
+    <string name="question_number">문제 번호: %1$d</string>
+
+    <string name="game_story_title">스토리</string>
+    <string name="game_story_description">너를 위해 준비된 문제로 나루토 세계의 이야기를 만나 봐.</string>
+    <string name="game_challenge_title">챌린지</string>
+    <string name="game_challenge_description">시노비의 세계에 실수란 없다!</string>
+    <string name="game_classic_title">클래식</string>
+    <string name="game_classic_description">이제 네 지식을 시험할 시간이야.</string>
+    <string name="game_akatsuki_title">아카츠키</string>
+    <string name="game_akatsuki_description">우리의 임무는 거짓된 평화를 부수는 것.</string>
+    <string name="game_clan_title">일족</string>
+    <string name="game_clan_description">뿌리를 기억하고, 일족을 지켜라.</string>
+    <string name="game_tailed_beast_title">꼬리 달린 짐승</string>
+    <string name="game_tailed_beast_description">여기는 짐승들의 세계다.</string>
+    <string name="game_teams_title">팀</string>
+    <string name="game_teams_description">규칙을 어기는 자는 쓰레기다. 하지만 동료를 버리는 자는 쓰레기보다 못하다.</string>
+
+    <string name="naruto_q01">미즈키 사건이 있던 밤, 봉인의 서에서 그림자 분신술을 익힌 사람은?</string>
+    <string name="naruto_q02">이루카가 자신의 이마 보호대를 선물한 제자는 누구일까?</string>
+    <string name="naruto_q03">중급닌자 시험에서 네지를 이기고 「운명」이라는 말에 맞선 사람은?</string>
+    <string name="naruto_q04">첫 번째 큰 격돌에서 가아라를 이기고 변화의 문을 열어 준 사람은?</string>
+    <string name="naruto_q05">자라이야의 죽음 이후 묘목산에서 선인 모드를 익힌 사람은?</string>
+    <string name="naruto_q06">페인의 코노하 습격에서 마을을 구하고 나가토를 설득한 사람은?</string>
+    <string name="naruto_q07">마이트 가이가 여덟 번째 문을 연 뒤 그를 죽음에서 되돌린 사람은?</string>
+    <string name="naruto_q08">하고로모에게서 육도의 힘을 받은 사람은?</string>
+    <string name="naruto_q09">이치라쿠 가게에서 처음으로 공짜 라멘을 받은 어린 소년은?</string>
+    <string name="naruto_q10">아카데미 뒤편 그네에 홀로 앉아 있던 고아는 누구일까?</string>
+    <string name="naruto_q11">자부자와 하쿠 임무에서 「닌자는 무엇을 위해 싸우는가」라는 물음에 흔들린 사람은?</string>
+    <string name="naruto_q12">코노하마루에게 나선환을 가르친 사람은?</string>
+    <string name="naruto_q13">츠나데가 호카게를 맡도록 설득한 사람은?</string>
+    <string name="naruto_q14">예토전생한 이타치와 함께 나가토를 막아선 시노비는?</string>
+    <string name="naruto_q15">수라도의 공격을 받은 뒤 히나타를 보고 다시 일어선 사람은?</string>
+    <string name="naruto_q16">카구야의 공간에서 사스케와 동시에 봉인의 일격을 날린 사람은?</string>
+    <string name="naruto_q17">자라이야를 잃은 뒤 스승이 말한 「진짜 영웅」을 자신의 목표로 삼은 사람은?</string>
+
+    <string name="sasuke_q01">파도의 나라 다리 위에서 동료를 구하려고 하쿠의 침 앞에 뛰어든 사람은?</string>
+    <string name="sasuke_q02">죽음의 숲 단계에서 오로치마루의 저주의 인을 받은 사람은?</string>
+    <string name="sasuke_q03">중급닌자 시험 결승에서 가아라의 모래를 뚫기 위해 처음으로 치도리를 쓴 사람은?</string>
+    <string name="sasuke_q04">데이다라의 C0 자폭에서 만다를 소환하고 대가를 치르며 살아남은 사람은?</string>
+    <string name="sasuke_q05">헤비를 만들고 이어서 타카를 결성해 오직 형만을 노리고 나선 사람은?</string>
+    <string name="sasuke_q06">천둥을 「기린」으로 바꾸어 우치하 형제 대결의 흐름을 바꾼 사람은?</string>
+    <string name="sasuke_q07">진실을 안 뒤 오영 회담에 쳐들어가 그곳에서 단조를 끝낸 사람은?</string>
+    <string name="sasuke_q08">오로치마루를 되살리고 예토전생한 역대 호카게를 불러 과거를 따져 물은 사람은?</string>
+    <string name="sasuke_q09">전쟁이 끝났을 때 마을의 자리가 아니라 그림자 속 감시자의 길을 택한 사람은?</string>
+    <string name="sasuke_q10">젊은 시절 뱀의 길을 걷다가 훗날 계약을 매 소환으로 바꾼 사람은?</string>
+    <string name="sasuke_q11">킨시키와 모모시키와의 싸움에서 나루토와 어깨를 나란히 하고 합동 공격을 펼친 사람은?</string>
+    <string name="sasuke_q12">하쿠의 얼음 거울 속에서 사륜안을 각성시키는 문턱을 넘은 사람은?</string>
+
+    <string name="itachi_q01">츠쿠요미로 카카시를 사흘간의 고문에 가둔 사람은?</string>
+    <string name="itachi_q02">「증오의 고리」를 짊어지고 그림자에서 코노하를 지킨 사람은?</string>
+    <string name="itachi_q03">오로치마루의 육체 강탈 계획을 단 한 수로 무너뜨리고 아카츠키를 떠나게 만든 사람은?</string>
+    <string name="itachi_q04">시스이의 눈을 맡아 별천신을 지켜 낸 사람은?</string>
+    <string name="itachi_q05">코노하의 쿠데타를 막기 위해 자기 일족을 상대로 보이지 않는 이중 첩자 임무를 맡은 사람은?</string>
+    <string name="itachi_q06">마지막 대면에서 동생의 이마에 두 손가락을 대며 작별을 고한 사람은?</string>
+    <string name="itachi_q07">스사노오의 야타의 거울을 내려 기린을 무력화한 사람은?</string>
+    <string name="itachi_q08">동생 안에 나타난 오로치마루를 토츠카의 검으로 즉시 봉인한 사람은?</string>
+    <string name="itachi_q09">예토전생 상태에서 카부토를 이자나미의 고리에 가두고 예토전생을 끝내게 만든 사람은?</string>
+    <string name="itachi_q10">아카츠키의 정보를 몰래 코노하로 흘리던 암부 출신 시노비는?</string>
+    <string name="itachi_q11">나가토와의 싸움에서 토츠카의 검으로 나루토와 킬러비를 구한 사람은?</string>
+    <string name="itachi_q12">시스이의 죽음 이후 만화경 사륜안을 각성시킨 사람은?</string>
+    <string name="itachi_q13">13세에 암부 대장이 되어 「전쟁을 끝낼 평화」라는 생각을 좇은 사람은?</string>
+    <string name="itachi_q14">죽은 뒤 자신의 눈으로 동생의 시력 상실을 막을 길을 열어 준 사람은?</string>
+    <string name="itachi_q15">쿠데타의 밤, 코노하 수뇌부와 협상하며 사스케의 목숨을 조건으로 내건 사람은?</string>
+    <string name="itachi_q16">마을을 떠난 뒤에도 그림자에서 위협을 지켜보며 코노하를 계속 지킨 사람은?</string>
+    <string name="itachi_q17">예토전생한 몸으로 동생에게 언제까지나 사랑할 거라고 말한 사람은?</string>
+    <string name="itachi_q18">종말의 계곡에서 벌어진 나루토와 사스케의 싸움에서, 사스케의 손바닥에 나타난 그 한 손은 누구의 것일까?</string>
+
+    <string name="kakashi_q01">제7반의 방울 시험에서 「규칙이냐, 동료냐」의 균형과 도시락을 나누는 교훈을 가르친 사람은?</string>
+    <string name="kakashi_q02">천 가지가 넘는 술법을 복사해 「카피 닌자」라는 별명을 얻은 사람은?</string>
+    <string name="kakashi_q03">칸나비 다리 임무에서 친구의 마지막 소원으로 왼쪽 눈에 사륜안을 받은 사람은?</string>
+    <string name="kakashi_q04">치도리·라이키리를 개발해 실전에서 처음 사용한 사람은?</string>
+    <string name="kakashi_q05">데이다라의 도주를 막기 위해 카무이를 처음으로 실제 표적에 사용한 사람은?</string>
+    <string name="kakashi_q06">페인의 습격 때 목숨을 잃었고, 나루토가 그 죽음을 느낀 캐릭터는?</string>
+    <string name="kakashi_q07">전쟁이 끝난 뒤 6대 호카게 자리를 이어받은 사람은?</string>
+    <string name="kakashi_q08">임무 중에도 「이차이차」 책을 손에서 놓지 않는 스승은?</string>
+    <string name="kakashi_q09">스케아로 변장해 마을로 돌아와 얼굴까지 숨기고 취재한 사람은?</string>
+
+    <string name="madara_q01">하시라마와 함께 코노하의 초석을 놓았지만 훗날 길이 갈린 사람은?</string>
+    <string name="madara_q02">단 한 수로 운석 두 개를 떨어뜨려 전쟁의 균형을 무너뜨린 사람은?</string>
+    <string name="madara_q03">혼자서 오영을 무릎 꿇린 사람은?</string>
+    <string name="madara_q04">보이지 않는 「림보」의 그림자로 상대들을 동시에 묶어 둔 사람은?</string>
+    <string name="madara_q05">하시라마의 세포로 윤회안을 각성하고 최종 계획으로 나아간 사람은?</string>
+    <string name="madara_q06">십미의 인주력이 되어 육도의 힘을 손에 넣은 사람은?</string>
+    <string name="madara_q07">달의 반사를 통해 무한 츠쿠요미를 온 세상에 펼친 사람은?</string>
+    <string name="madara_q08">산을 베어 내는 완성체 스사노오를 펼친 사람은?</string>
+    <string name="madara_q09">여덟 번째 문이 열렸을 때 「여태 본 것 중 가장 강한 체술」이라며 상대를 인정한 사람은?</string>
+
+    <string name="obito_q01">「영웅은 늦게 온다」고 말하며 친구를 구하려 잔해에 깔리고 자신의 눈을 맡긴 사람은?</string>
+    <string name="obito_q02">가면 뒤에서 「가면 쓴 남자」로 코노하 습격을 꾸민 사람은?</string>
+    <string name="obito_q03">아카츠키에서 「토비」 역할로 어수룩한 척을 한 사람은?</string>
+    <string name="obito_q04">카무이로 몸을 비물질화해 공격을 통과시킨 사람은?</string>
+    <string name="obito_q05">린의 죽음 이후 세상을 「달의 눈 계획」에 묶어 둔 사람은?</string>
+    <string name="obito_q06">차원 사이에서 카카시와 홀로 결투하며 옛 인연을 정리한 사람은?</string>
+    <string name="obito_q07">치명적인 순간에서 나루토를 끌어내며 속죄의 첫걸음을 내디딘 사람은?</string>
+    <string name="obito_q08">그림자에서 아카츠키의 진짜 지휘를 맡아 전쟁에 불을 붙인 사람은?</string>
+    <string name="obito_q09">마지막 순간에 진짜 자신을 떠올리고 닌자들의 미래를 위해 힘을 넘긴 사람은?</string>
+
+    <string name="gaara_q01">어린 시절 자기 뜻과 무관하게 모래 방패의 보호를 받으며 고독에 갇힌 사람은?</string>
+    <string name="gaara_q02">중급닌자 시험에서 록 리에게 방어까지 뚫려 처음으로 흔들린 사람은?</string>
+    <string name="gaara_q03">나루토의 말에서 똑같은 고독의 아픔을 보고 변하기로 결심한 사람은?</string>
+    <string name="gaara_q04">스나의 최연소 카제카게로서 마을을 지키는 짐을 짊어진 사람은?</string>
+    <string name="gaara_q05">데이다라를 상대로 목숨을 걸고 마을을 지키려 싸운 사람은?</string>
+    <string name="gaara_q06">꼬리 달린 짐승을 빼앗겨 숨이 끊겼다가 치요의 희생으로 되살아난 사람은?</string>
+    <string name="gaara_q07">오영 회담에서 라이카게 앞에 나서서 나루토를 변호한 목소리의 주인은?</string>
+    <string name="gaara_q08">연합군 앞에서 마음을 하나로 모은 총사령관의 연설을 한 사람은?</string>
+    <string name="gaara_q09">전쟁에서 아버지 라사의 혼과 마주하고 과거의 상처를 치유한 사람은?</string>
+    <string name="gaara_q10">4차 닌자 대전에서 아버지 라사에게서, 자신을 늘 지켜 준 모래가 사실은 어머니의 사랑이었음을 알게 된 사람은?</string>
+    <string name="gaara_q11">어린 시절 암살 시도 때 어머니의 의지로 모래가 저절로 솟아올라 자신을 지켜 준 시노비는?</string>
+
+    <string name="kabuto_q01">코노하 고아원에서 나와 오로치마루의 가장 은밀한 첩자가 된 사람은?</string>
+    <string name="kabuto_q02">예토전생을 완성해 전쟁의 말들을 무덤에서 일으킨 사람은?</string>
+    <string name="kabuto_q03">류치 동굴에서 선인 모드에 이르러 「백격」으로 전장을 뒤흔든 사람은?</string>
+    <string name="kabuto_q04">이자나미의 고리 속에서 자신을 받아들이는 법을 배우고 사슬을 끊은 사람은?</string>
+    <string name="kabuto_q05">전쟁이 끝난 뒤 고아원으로 돌아가 새로운 길을 걷기 시작한 사람은?</string>
+
+    <string name="orochimaru_q01">전설의 삼닌 중 한 명이면서 불사를 좇아 금지된 실험에 빠져든 사람은?</string>
+    <string name="orochimaru_q02">죽음의 숲에서 사스케에게 저주의 인을 남긴 사람은?</string>
+    <string name="orochimaru_q03">코노하 침공 때 역대 호카게를 불러내 스승과 결판을 지으려 한 사람은?</string>
+    <string name="orochimaru_q04">뱀이 허물을 벗듯 몸을 버리고 죽음에서 빠져나온 사람은?</string>
+    <string name="orochimaru_q05">사스케의 요청으로 돌아와 역대 호카게를 다시 불러내며 역사의 문을 연 사람은?</string>
+
+    <string name="rocklee_q01">중급닌자 시험에서 무게추를 벗고 그 속도로 경기장을 먼지로 뒤덮은 사람은?</string>
+    <string name="rocklee_q02">가아라를 상대로 첫 번째 문을 열고 표연화로 모두의 심장을 조인 사람은?</string>
+    <string name="rocklee_q03">죽음의 숲에서 사쿠라를 지키려 소리 마을 삼인조 앞에 홀로 선 사람은?</string>
+    <string name="rocklee_q04">수술로 죽을 수도 있는데 다시 싸우기 위해 츠나데의 수술대에 오른 사람은?</string>
+    <string name="rocklee_q05">비틀거리는 「취권」으로 키미마로를 한순간이나마 흔든 사람은?</string>
+
+    <string name="sakura_q01">죽음의 숲에서 스스로 머리카락을 자르며 「이제 나도 싸우겠다」고 말한 사람은?</string>
+    <string name="sakura_q02">츠나데 밑에서 의료닌자 수련을 받아 주먹 한 방으로 땅을 가르는 힘을 얻은 사람은?</string>
+    <string name="sakura_q03">치요와 어깨를 나란히 하고 싸워 아카츠키의 사소리를 쓰러뜨린 사람은?</string>
+    <string name="sakura_q04">나루토의 심장이 멎으려 할 때 맨손으로 심장을 뛰게 해 그를 되살린 사람은?</string>
+    <string name="sakura_q05">이마의 봉인을 풀고 「백호의 술」로 전선의 수천 병사를 동시에 치료한 사람은?</string>
+
+    <string name="minato_q01">「코노하의 황색 섬광」으로서, 의료반이 도착하기도 전에 전투를 끝내던 속도의 주인은?</string>
+    <string name="minato_q02">마을이 습격당한 밤, 구미의 거대한 미수옥을 비뢰신의 술로 코노하에서 멀리 보낸 사람은?</string>
+    <string name="minato_q03">쿠시나에게서 떨어져 나온 쿠라마를 막기 위해 목숨을 바치고 봉인을 아들에게 맡긴 사람은?</string>
+    <string name="minato_q04">자라이야 소설의 주인공에서 영감을 받아 아들에게 「나루토」라는 이름을 지어 주고 대부에게 맡긴 사람은?</string>
+    <string name="minato_q05">라이카게 에이의 움직임마저 앞지르며 「비뢰신」으로 전장을 한 번에 뒤집은 사람은?</string>
+    <string name="minato_q06">특별한 혈계한계 하나 없이 오직 자기 힘만으로 구미와 함께한 제자를 꺾은 스승은?</string>
+
+    <string name="hashirama_q01">어린 시절 강의 양쪽 기슭에서 마다라와 돌을 던지던 사이에서 우정으로, 다시 코노하라는 생각으로 이어지는 길을 시작한 사람은?</string>
+    <string name="hashirama_q02">평화는 함께 세우는 것이라며 호카게라는 생각을 처음으로 꺼낸 사람은?</string>
+    <string name="hashirama_q03">우치하 석비에 새겨진 운명의 글을 넘어서기 위해 형제애를 택한 사람은?</string>
+    <string name="hashirama_q04">종말의 계곡에서의 첫 대결투에서 친구를 죽이기를 거부하고 마을을 세운 사람은?</string>
+    <string name="hashirama_q05">살아 있는 조각상처럼 솟아오른 거대한 목둔의 불상으로 전장을 잠재운 사람은?</string>
+    <string name="hashirama_q06">「마을은 곧 가족」이라는 말을 후대에 남긴 초대 호카게는?</string>
+
+    <string name="tobirama_q01">암부의 기초를 세우고 마을의 질서를 제도화한 사람은?</string>
+    <string name="tobirama_q02">비뢰신의 술의 첫 원형을 만들어 낸 사람은?</string>
+    <string name="tobirama_q03">아카데미와 중급닌자 제도를 정착시켜 닌자 교육의 틀을 그린 사람은?</string>
+    <string name="tobirama_q04">전쟁 한복판에서 자기 목숨을 미끼로 삼아 일족과 형을 지킨 사람은?</string>
+    <string name="tobirama_q05">예토전생의 어두운 지식을 잘못된 손에 들어가면 재앙이라고 낙인찍은 사람은?</string>
+
+    <string name="tsunade_q01">도박판에서는 운이 따르지 않았지만 전장에서는 수천 명의 운을 뒤바꾼 사람은?</string>
+    <string name="tsunade_q02">의료반 없이는 군대도 없다며 전선의 균형을 바꾼 사람은?</string>
+    <string name="tsunade_q03">나루토의 호카게 꿈을 믿는다며 그 자리를 받아들인 사람은?</string>
+    <string name="tsunade_q04">이마의 봉인을 풀고 잔해 속에서 코노하를 일으켜 세운 사람은?</string>
+    <string name="tsunade_q05">자라이야를 잃고 무너졌으면서도 다시 치유를 앞에 내놓은 사람은?</string>
+    <string name="tsunade_q06">4차 닌자 대전에서 오영을 생명의 끈으로 이어 준 사람은?</string>
+
+    <string name="jiraiya_q01">제자가 곧 자신의 유산이라며 세 제자의 운명을 세상에 새긴 사람은?</string>
+    <string name="jiraiya_q02">진실을 알기 위해 혼자 비의 마을에 잠입해 돌아갈 길을 끊은 사람은?</string>
+    <string name="jiraiya_q03">두꺼비의 등에 평화의 길을 남기고 마지막 전언을 암호로 보낸 사람은?</string>
+    <string name="jiraiya_q04">어린 나루토에게 영웅은 포기하지 않는다며 목표를 보여 준 스승은?</string>
+    <string name="jiraiya_q05">전투의 한복판에서 묘목산의 찬가를 흥으로 바꾼 사람은?</string>
+    <string name="jiraiya_q06">전설의 삼닌 중 한 명으로서, 외로운 스승의 가장 큰 승리는 제자임을 증명한 사람은?</string>
+
+    <string name="might_guy_q01">중급닌자 시험장에서 무게추가 땅에 떨어졌을 때 시간이 느려진 듯 느끼게 한 사람은?</string>
+    <string name="might_guy_q02">청춘의 불꽃을 외치며 록 리에게 희망을 가르친 사람은?</string>
+    <string name="might_guy_q03">여덟 번째 문을 열고 웃으며 죽음을 맞이한 사람은?</string>
+    <string name="might_guy_q04">마다라조차 「지금까지 본 가장 강한 체술」이라고 말하게 만든 일격을 날린 사람은?</string>
+    <string name="might_guy_q05">전쟁 내내 카카시의 등을 한 번도 떠나지 않은 친구는?</string>
+    <string name="might_guy_q06">제자의 수술대 앞에 마음을 걸고 계속 달리라고 말한 사람은?</string>
+
+    <string name="shikamaru_q01">구름을 보며 하루를 시작하고 전투는 전략으로 끝내는 사람은?</string>
+    <string name="shikamaru_q02">아스마의 라이터에 불을 붙이고 지혜로 스승의 원수를 갚은 사람은?</string>
+    <string name="shikamaru_q03">오영과 장수들 사이의 연결 중심이 되어 군대를 하나의 머리로 만든 사람은?</string>
+    <string name="shikamaru_q04">망설이는 나루토에게 내가 곁에 있다고 말하며 호카게의 길에 어깨를 내준 사람은?</string>
+    <string name="shikamaru_q05">히단을 그림자 함정으로 끌어들여 그 조각들을 땅에 묻은 사람은?</string>
+    <string name="shikamaru_q06">전쟁이 끝나자 평화를 설계하기 위해 책상 앞에 앉은 사람은?</string>
+
+    <string name="hinata_q01">페인 앞에서 두려움 없이 사랑을 고백한 전사는?</string>
+    <string name="hinata_q02">네지의 기억을 주먹에 담고 카구야와의 싸움에서 그의 곁을 함께 걸은 사람은?</string>
+    <string name="hinata_q03">백안을 사랑으로 바꾸며 길을 잃으면 내가 빛이 되겠다고 말한 사람은?</string>
+    <string name="hinata_q04">전쟁 중 나루토가 오비토 쪽으로 기울려 할 때 올바른 길을 보여 준 사람은?</string>
+    <string name="hinata_q05">스스로 택한 길로 휴우가 일족의 짐을 덜어 준 사람은?</string>
+
+    <string name="killer_b_q01">인주력으로 사는 삶을 랩 가사로 옮기고 두려움을 노래로 바꾼 사람은?</string>
+    <string name="killer_b_q02">사스케의 팀을 상대로 여덟 자루의 검을 동시에 춤추게 한 검사는?</string>
+    <string name="killer_b_q03">규키와 손을 잡고 짐승의 말을 사람의 말로 옮긴 사람은?</string>
+    <string name="killer_b_q04">나루토에게 꼬리 달린 짐승과의 협력을 가르치고 어두운 방의 증오의 사슬을 끊도록 도운 사람은?</string>
+    <string name="killer_b_q05">라이카게의 반대에도 자기 리듬을 택해 전쟁의 리듬을 바꾼 사람은?</string>
+
+    <string name="a_fourth_raikage_q01">오영 회담에서 탁자에 주먹이 아니라 책임을 내리친 사람은?</string>
+    <string name="a_fourth_raikage_q02">군의 지휘를 놓지 않으면서 동생을 지킨 지도자는?</string>
+
+    <string name="deidara_q01">예술은 폭발이라며 하늘에 서명을 남긴 사람은?</string>
+    <string name="deidara_q02">C3로 도시 위에서 가아라의 모래 방벽을 산산조각 내려 한 사람은?</string>
+    <string name="deidara_q03">사륜안에 대한 증오에 맞서듯 C0로 마지막 전시를 연 사람은?</string>
+    <string name="deidara_q04">점토 새로 하늘을 캔버스로 바꾼 아카츠키 단원은?</string>
+
+    <string name="kisame_q01">사메하다로 차크라를 삼키고 호숫가를 바다로 바꾼 사람은?</string>
+    <string name="kisame_q02">가이에게 문을 열게 만든 푸른 상어는?</string>
+    <string name="kisame_q03">비밀을 지키려고 자기 몸을 수뢰의 감옥에 가둔 사람은?</string>
+    <string name="kisame_q04">전장에서 「괴물」이라는 별명을 얻은 시노비는?</string>
+
+    <string name="hidan_q01">불사의 의식으로 상대의 피를 자기 몸에 옮겨 고통을 되돌린 사람은?</string>
+    <string name="hidan_q02">쟈신의 원을 그리고 고통을 거울처럼 되비춘 사람은?</string>
+    <string name="hidan_q03">아스마의 연기를 바람에 흩날리고도 시카마루의 지략에 걸려든 사람은?</string>
+    <string name="hidan_q04">조각조각 잘린 채 땅에 묻혀 침묵당한 사람은?</string>
+
+    <string name="kakuzu_q01">다섯 개의 심장으로 속성을 줄지어 늘어놓은 사람은?</string>
+    <string name="kakuzu_q02">신념보다 돈을 위에 두고 계약을 신성하게 여긴 사람은?</string>
+    <string name="kakuzu_q03">나루토의 첫 풍둔 나선수리검에 쓰러지며 새 시대의 문을 느낀 사람은?</string>
+    <string name="kakuzu_q04">히단과 가장 어울리지 않으면서 가장 위험한 짝을 이룬 사람은?</string>
+
+    <string name="konan_q01">비 내리는 골목에 종이꽃을 희망처럼 남겨 두던 사람은?</string>
+    <string name="konan_q02">토비를 질식시키려 백억 장의 종이를 폭탄으로 바꾼 사람은?</string>
+    <string name="konan_q03">야히코의 이상을 푸른 종이접기에 봉인한 사람은?</string>
+    <string name="konan_q04">나가토의 뒤를 이어 평화의 길에 마지막 꽃을 심은 사람은?</string>
+
+    <string name="nagato_q01">고통이 가르친다며 세상에 고통의 법칙을 강요한 사람은?</string>
+    <string name="nagato_q02">신라천정 한마디로 코노하를 무너뜨린 사람은?</string>
+    <string name="nagato_q03">자라이야의 제자에서 고통 그 자체가 되는 길을 걸은 사람은?</string>
+    <string name="nagato_q04">나루토의 말로 고리를 끊고 빼앗은 생명을 되돌려준 사람은?</string>
+    <string name="nagato_q05">육도 하나하나에 자신의 눈을 나누어 준 지도자는?</string>
+    <string name="nagato_q06">야히코의 몸에 이상을 입히고 비를 멈추게 하려 한 사람은?</string>
+
+    <string name="yahiko_q01">빗속에 서 있던 아이들로 아메의 희망을 세운 사람은?</string>
+    <string name="yahiko_q02">평화는 힘이 아니라 의지로 온다며 친구들을 이끈 사람은?</string>
+    <string name="yahiko_q03">자기 목숨을 다리로 삼아 나가토와 코난을 지탱한 사람은?</string>
+
+    <string name="zabuza_q01">안개 속에서 그 이름이 속삭임으로만 오가던 「귀인」은?</string>
+    <string name="zabuza_q02">하쿠 앞에서 눈물을 칼에 묻히고 마지막 걸음을 내디딘 사람은?</string>
+    <string name="zabuza_q03">다리 위에서 제7반에게 첫 번째 큰 가르침을 준 적은?</string>
+    <string name="zabuza_q04">키리가쿠레의 피의 졸업 시험을 역사에 새긴 사람은?</string>
+
+    <string name="haku_q01">얼음 거울 속에서 빛을 늘리고 침을 비처럼 쏟아 낸 사람은?</string>
+    <string name="haku_q02">누군가에게 쓸모 있는 존재가 되기 위해 목숨을 내준 여린 전사는?</string>
+    <string name="haku_q03">자부자의 마음속 유일하게 따뜻한 자리가 된 사람은?</string>
+    <string name="haku_q04">가면 뒤의 두 눈이 나루토의 말에 처음으로 따뜻해진 사람은?</string>
+
+    <string name="hiruzen_q01">전설의 삼닌을 길러 내고 마을을 세 번이나 어깨에 짊어진 사람은?</string>
+    <string name="hiruzen_q02">오로치마루와 싸우며 두 명의 호카게를 봉인하고 전장을 잠재운 사람은?</string>
+    <string name="hiruzen_q03">나루토의 서류에 한 번 더의 기회를 적어 넣은 늙은 지도자는?</string>
+    <string name="hiruzen_q04">마을의 아이들을 자기 가족처럼 여긴 지혜로운 호카게는?</string>
+
+    <string name="temari_q01">바람의 부채 한 번에 숲을 통째로 베어 낸 사람은?</string>
+    <string name="temari_q02">시카마루의 계획에 바람을 실어 전장에서 지혜를 강하게 만든 사람은?</string>
+    <string name="temari_q03">동생의 그림자가 아니라 자신의 힘을 코노하에 인정받은 사람은?</string>
+
+    <string name="kankuro_q01">꼭두각시로 무대를 죽음의 극장으로 바꾼 사람은?</string>
+    <string name="kankuro_q02">사소리의 독에 해독제와 시간과의 싸움으로 맞선 사람은?</string>
+    <string name="kankuro_q03">동생 뒤에 서 있으면서도 전투에서는 꼭두각시를 앞줄로 내보낸 사람은?</string>
+
+    <string name="sai_q01">먹을 새로 바꾸어 소식을 하늘로 띄운 사람은?</string>
+    <string name="sai_q02">제7반 안에서 감정 없는 훈련의 사슬을 끊은 사람은?</string>
+    <string name="sai_q03">「우정」이라는 말을 처음으로 진짜 선으로 화첩에 적은 사람은?</string>
+
+    <string name="yamato_q01">목둔의 통제로 짐승을 가라앉힌 사람은?</string>
+    <string name="yamato_q02">흩어진 제7반의 마음을 이끈 차분한 얼굴의 주인은?</string>
+    <string name="yamato_q03">나루토 안의 폭풍을 봉인의 규율로 묶어 둔 사람은?</string>
+
+    <string name="shisui_q01">별천신이 악용되지 않도록 자신의 눈에서조차 지켜 낸 사람은?</string>
+    <string name="shisui_q02">다리에서 나뭇잎 위로 떨어지는 그림자처럼 일족을 구하려 한 사람은?</string>
+    <string name="shisui_q03">「마을을 위해」라며 이타치에게 가장 무거운 부탁을 남긴 사람은?</string>
+    <string name="shisui_q04">자신의 추락으로 한 세대의 운명을 바꾼 우치하는?</string>
+
+    <string name="kurama_q01">증오의 사슬에서 풀려나 나루토와 어깨를 나란히 하고 싸운 존재는?</string>
+    <string name="kurama_q02">미나토의 봉인에서 둘로 갈라지고도 자기 의지를 지킨 존재는?</string>
+    <string name="kurama_q03">미수옥으로 밤하늘을 대낮으로 바꾼 존재는?</string>
+    <string name="kurama_q04">「동료」라는 말을 처음으로 자랑스럽게 입에 올린 여우는?</string>
+    <string name="kurama_q05">카구야와의 전투에서 자신의 차크라를 연합 전체에 나눠 준 힘은?</string>
+
+    <string name="shukaku_q01">모래 껍질 속에서 미친 웃음으로 사막을 뒤흔든 존재는?</string>
+    <string name="shukaku_q02">두려움에서 태어나 가아라의 마음을 지킨 첫 방패가 된 존재는?</string>
+
+    <string name="gamabunta_q01">등에 올라탄 아이에게 예의를 가르치면서도 전투에서는 등을 내어 준 존재는?</string>
+    <string name="gamabunta_q02">사막 한복판에서 슈카쿠를 향해 거대한 칼을 뽑은 존재는?</string>
+
+    <string name="gamakichi_q01">아버지의 그림자에서 벗어나 전쟁에서 전령을 맡은 작은 대영웅은?</string>
+
+    <string name="son_goku_q01">돌의 심장을 불로 빚어 나루토에게 증오의 사슬을 보여 준 존재는?</string>
+
+    <string name="karin_q01">자기 몸을 내주어 치유의 고리를 만든 붉은 머리의 감지 닌자는?</string>
+    <string name="karin_q02">단조와의 싸움에서 사스케가 망설임 없이 꿰뚫은 캐릭터는?</string>
+
+    <string name="suigetsu_q01">호즈키 수화의 술과 함께 어떤 우리에도 갇히지 않는 유머를 지닌 사람은?</string>
+    <string name="suigetsu_q02">자부자의 검을 등에 지고 과거의 그림자를 농담으로 바꾼 사람은?</string>
+
+    <string name="jugo_q01">자연의 분노를 몸에 담고도 새들에게는 다정함을 품은 사람은?</string>
+    <string name="jugo_q02">분노의 발작을 친구들의 목소리로 가라앉히는 법을 배운 사람은?</string>
+
+    <string name="kiba_q01">아카마루와 함께 냄새로 전장을 읽으며 추적을 예술로 만든 사람은?</string>
+    <string name="kiba_q02">이인 회전으로 전장을 폭풍으로 바꾼 콤비는?</string>
+
+    <string name="akamaru_q01">짖음 한 번으로 팀의 운명을 바꾼 충직한 동료는?</string>
+
+    <string name="ino_q01">자기 마음을 다리로 삼아 적을 팀 앞으로 끌어낸 사람은?</string>
+    <string name="ino_q02">아스마의 마지막 말을 마음속의 꽃으로 바꾼 사람은?</string>
+    <string name="ino_q03">전쟁에서 통신망을 꽃집 주인의 인내로 이끈 사람은?</string>
+
+    <string name="choji_q01">나비의 날개를 펼치고 친구들을 위해 거대해진 사람은?</string>
+    <string name="choji_q02">「뚱뚱하다」는 말을 자랑스럽게 힘으로 바꾼 마음의 주인은?</string>
+    <string name="choji_q03">아스마의 과자를 눈물이 아니라 각오에 적신 사람은?</string>
+
+    <string name="boruto_q01">아버지가 아니라 자기 그림자와 싸우기로 택한 사람은?</string>
+    <string name="boruto_q02">시험에서 과학닌구를 쓰고 그 후 책임을 스스로 진 사람은?</string>
+    <string name="boruto_q03">모모시키의 각인이 운명의 각본이 되지 않도록 이를 악문 사람은?</string>
+    <string name="boruto_q04">새로운 세대 제7반의 리더십 시험을 거리에서 치른 사람은?</string>
+    <string name="boruto_q05">다른 시대에 우즈마키라는 이름을 새롭게 정의한 사람은?</string>
+
+    <string name="sarada_q01">호카게가 되겠다는 꿈을 어머니의 주먹과 아버지의 눈으로 빚어낸 사람은?</string>
+    <string name="sarada_q02">자기 세대에서 처음으로 치도리를 표적에 명중시킨 젊은 시노비는?</string>
+    <string name="sarada_q03">흩어진 팀의 마음을 눈빛 하나로 모은 사람은?</string>
+
+    <string name="mitsuki_q01">「나는 누구인가」라는 물음을 친구들 곁에서 답으로 바꾼 사람은?</string>
+    <string name="mitsuki_q02">뱀의 유연함을 충성으로 바꾸어 팀을 구한 사람은?</string>
+
+    <string name="kawaki_q01">카르마를 운명이 아니라 선택으로 만들게 한 사람은?</string>
+    <string name="kawaki_q02">나루토의 집을 처음으로 「내 집」이라 부른 사람은?</string>
+    <string name="kawaki_q03">잇시키의 그림자 아래 있던 아이를 전사로 바꾼 의지는 누구의 것일까?</string>
+
+    <string name="koji_kashin_q01">불을 운명이 아니라 자기 계획에 새겨 그림자를 불꽃으로 바꾼 사람은?</string>
+    <string name="koji_kashin_q02">진실이 드러난 뒤에도 임무를 끝내기 위해 현장에 남은 사람은?</string>
+
+    <string name="isshiki_otsutsuki_q01">사물을 축소해 세상을 손바닥에 쥔 위협은?</string>
+    <string name="isshiki_otsutsuki_q02">인간의 몸에 왕좌를 세우고 운명에 낙인을 찍으려 한 존재는?</string>
+
+    <string name="toneri_q01">달의 고독을 지상으로 끌어내리려다 결국 빛을 되돌려준 사람은?</string>
+
+    <string name="hagoromo_q01">동생과 함께 인술을 세상을 위한 가르침으로 바꾼 현자는?</string>
+    <string name="hagoromo_q02">나루토와 사스케에게 힘을 주면서 균형을 조건으로 내건 존재는?</string>
+    <string name="hagoromo_q03">두 아들의 다툼을, 세대를 넘어 평화로 풀릴 이야기에 맡긴 존재는?</string>
+
+    <string name="kaguya_q01">차크라를 열매와 함께 세상에 처음 가져온 존재는?</string>
+    <string name="kaguya_q02">손바닥을 뒤집듯 차원을 바꾸며 전장을 순식간에 뒤집은 존재는?</string>
+    <string name="kaguya_q03">두 후손의 봉인으로 다시 영원 속으로 돌려보내진 존재는?</string>
+    <string name="kaguya_q04">얼음과 용암과 사막 사이로 전장을 옮겨 다니게 한 거스를 수 없는 힘은?</string>
+
+    <string name="hanzo_q01">전쟁 한복판에서 전설의 삼닌에게 그 별명을 준 사람은?</string>
+    <string name="hanzo_q02">아메의 운명을 가면 뒤에 감춘 전쟁의 지배자는?</string>
+    <string name="hanzo_q03">스스로 세운 공포의 체제 속에서 무너진 사람은?</string>
+
+    <string name="konohamaru_q01">어릴 때는 나루토를 쫓아다니고 자라서는 자기 팀의 방패가 된 사람은?</string>
+    <string name="konohamaru_q02">나선환을 새로운 세대의 손에 맡긴 스승은?</string>
+    <string name="konohamaru_q03">할아버지 히루젠의 유산을 거리에서 지켜 온 시노비는?</string>
+
+</resources>

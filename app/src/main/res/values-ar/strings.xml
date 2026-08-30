@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shinobi Quiz</string>
+    <string name="loading">جارٍ التحميل…</string>
+    <string name="counter_menu">العدّاد</string>
+    <string name="zero">0</string>
+    <string name="use_viewmodel">استخدام ViewModel</string>
+    <string name="increase_counter">زيادة العدّاد</string>
+    <string name="guess_menu">خمّن</string>
+    <string name="username_too_long">لا يمكن أن يتجاوز اسم المستخدم 16 حرفًا</string>
+    <string name="password_too_low">لا يمكن أن تقل كلمة المرور عن 8 أحرف</string>
+    <string name="refresh_describtion">تحديث</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="reset">إعادة تعيين</string>
+    <string name="guess">خمّن</string>
+    <string name="success">إجابة صحيحة</string>
+    <string name="failure">حاول مرة أخرى</string>
+    <string name="change_image">تغيير الصورة</string>
+    <string name="pokemon">pokemon</string>
+    <string name="error">حدث خطأ</string>
+    <string name="emptyImageUrl">https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png</string>
+    <string name="next">التالي</string>
+
+    <string name="sign_in">تسجيل الدخول</string>
+    <string name="null_space">لا تترك الحقل فارغًا</string>
+    <string name="sign_in_error">البريد الإلكتروني أو كلمة المرور غير صحيحة</string>
+    <string name="recovery_error">البريد الإلكتروني غير صحيح</string>
+    <string name="network_problem">حدثت مشكلة</string>
+    <string name="check_mail">تحقّق من بريدك الإلكتروني</string>
+    <string name="sign_success">تم إنشاء الحساب</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="forgot_password">هل نسيت كلمة المرور؟</string>
+    <string name="hint_email">example@gmail.com</string>
+    <string name="sign_up">إنشاء حساب</string>
+    <string name="slash">/</string>
+    <string name="user_name">اسم المستخدم</string>
+    <string name="welcome_shinobi">أهلًا بك أيها الشينوبي</string>
+    <string name="recovery">استعادة الحساب</string>
+    <string name="naruto_image">صورة ناروتو</string>
+    <string name="google_icon">أيقونة Google</string>
+    <string name="game_content">محتوى اللعبة</string>
+    <string name="quizes">الاختبارات</string>
+    <string name="tier_list">قائمة التصنيف</string>
+    <string name="user_info">بيانات المستخدم</string>
+    <string name="close_game">إغلاق اللعبة</string>
+    <string name="first_option">الخيار الأول</string>
+    <string name="second_option">الخيار الثاني</string>
+    <string name="check">تحقّق</string>
+    <string name="leaders">المتصدّرون</string>
+    <string name="classic_game">اللعبة الكلاسيكية</string>
+    <string name="challenge">التحدي</string>
+    <string name="classic">كلاسيكي</string>
+    <string name="akatsuki">التحدي</string>
+    <string name="clan">العشيرة</string>
+    <string name="tail">الذيل</string>
+    <string name="team">الفريق</string>
+    <string name="rank">الترتيب</string>
+    <string name="player">اللاعب</string>
+    <string name="score">النقاط</string>
+    <string name="game_over">انتهت اللعبة</string>
+    <string name="main_screen">الشاشة الرئيسية</string>
+    <string name="play_again">العب مرة أخرى</string>
+    <string name="trueText">صحيح</string>
+    <string name="wrong">خطأ</string>
+
+    <string name="emptyAd">لا يوجد إعلان متاح الآن، حاول مجددًا بعد 3 دقائق</string>
+
+    <string name="family_question">على أي شخصية ينطبق هذا؟ %1$s</string>
+    <string name="voice_question">على أي شخصية ينطبق هذا؟ %1$s</string>
+    <string name="clan_question">من ينتمي إلى عشيرة %1$s؟</string>
+    <string name="team_question">من ينتمي إلى فريق %1$s؟</string>
+    <string name="jinckuri_question">من هو الجينشوريكي الذي يحمل %1$s؟</string>
+    <string name="user_name_info">الاسم: %1$s</string>
+    <string name="user_mail_info">البريد: %1$s</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="wrong_password">كلمة المرور غير صحيحة</string>
+
+    <string name="change">تغيير</string>
+    <string name="max_repeat_info">عدد الأسئلة: %1$s</string>
+    <string name="hint_count">عدد التلميحات: %1$d</string>
+    <string name="get_information">عن اللعبة</string>
+    <string name="naruto_icon">أيقونة ناروتو</string>
+    <string name="unexpected_error">خطأ غير متوقع</string>
+    <string name="select">اختر!</string>
+    <string name="ad">مشاهدة إعلان</string>
+
+
+    <string name="game_mode">وضع اللعب</string>
+    <string name="history">سجل المباريات</string>
+    <string name="sign_out">تسجيل الخروج</string>
+    <string name="user">المستخدم</string>
+    <string name="game">اللعبة</string>
+    <string name="close">إغلاق</string>
+    <string name="challenge_game">لعبة التحدي</string>
+    <string name="welcome_text">في وضع التحدي لا مجال لأي إجابة خاطئة، وهو الوضع الوحيد الذي يؤهلك لدخول قائمة المتصدّرين. \n\nأما الوضع الكلاسيكي فيتيح لك اختبار نفسك مع جميع الشخصيات. \n\nولا تنسَ أوضاع اللعب الخاصة: أكاتسوكي والعشائر والوحوش والفرق. \n\n\n بالتوفيق أيها الشينوبي!</string>
+    <string name="about_the_game">عن اللعبة</string>
+    <string name="market">المتجر</string>
+    <string name="hint">تلميح</string>
+    <string name="purchase">شراء</string>
+    <string name="add">إضافة</string>
+
+    <string name="student">طالب</string>
+    <string name="genin">جينين</string>
+    <string name="chunin">تشونين</string>
+    <string name="kage">كاغي</string>
+
+    <string name="token_count">عدد الرموز: %1$d</string>
+    <string name="gain_hint">لقد حصلت على %1$d تلميح!</string>
+    <string name="connection_error">خطأ في الاتصال</string>
+
+    <string name="current_password">كلمة المرور الحالية:</string>
+    <string name="new_password">كلمة المرور الجديدة:</string>
+    <string name="repeat_password">أعد إدخال كلمة المرور:</string>
+
+    <string name="empty_edit_text">هناك حقل فارغ</string>
+    <string name="password_not_equal">كلمتا المرور غير متطابقتين!</string>
+    <string name="delete_account">حذف الحساب</string>
+    <string name="delete">حذف</string>
+    <string name="delete_success">تم حذف الحساب.</string>
+    <string name="question_number">رقم السؤال: %1$d</string>
+
+    <string name="game_story_title">القصة</string>
+    <string name="game_story_description">اكتشف قصة عالم ناروتو من خلال أسئلة أُعدّت خصيصًا لك.</string>
+    <string name="game_challenge_title">التحدي</string>
+    <string name="game_challenge_description">في عالم الشينوبي لا مكان للخطأ!</string>
+    <string name="game_classic_title">كلاسيكي</string>
+    <string name="game_classic_description">حان وقت اختبار معلوماتك العامة.</string>
+    <string name="game_akatsuki_title">أكاتسوكي</string>
+    <string name="game_akatsuki_description">مهمتنا هي تحطيم السلام الزائف.</string>
+    <string name="game_clan_title">العشائر</string>
+    <string name="game_clan_description">تذكّر أصلك واحمِ عشيرتك.</string>
+    <string name="game_tailed_beast_title">الوحوش ذات الأذيال</string>
+    <string name="game_tailed_beast_description">هذا هو عالم الوحوش.</string>
+    <string name="game_teams_title">الفرق</string>
+    <string name="game_teams_description">من يخالف القواعد فهو حثالة، لكن من يتخلى عن أصدقائه فهو أسوأ من الحثالة.</string>
+
+    <string name="naruto_q01">من تعلّم تقنية استنساخ الظل من المخطوطة المحرّمة ليلة حادثة ميزوكي؟</string>
+    <string name="naruto_q02">أي تلميذ حصل على عصابة جبين إيروكا هدية؟</string>
+    <string name="naruto_q03">من هزم نيجي في امتحانات التشونين ووقف في وجه فكرة «القدر»؟</string>
+    <string name="naruto_q04">من فتح أمام غارا باب التغيير بعدما هزمه في أول مواجهة كبرى بينهما؟</string>
+    <string name="naruto_q05">من تعلّم وضع الناسك في جبل ميوبوكو بعد وفاة جيرايا؟</string>
+    <string name="naruto_q06">من أنقذ القرية أثناء هجوم بين على كونوها وأقنع ناغاتو؟</string>
+    <string name="naruto_q07">من أعاد مايت غاي من الموت بعد أن فتح البوابة الثامنة؟</string>
+    <string name="naruto_q08">من نال قوة الطرق الستة من هاغورومو؟</string>
+    <string name="naruto_q09">أي طفل صغير حصل على أول طبق رامن مجاني عند مطعم إيتشيراكو؟</string>
+    <string name="naruto_q10">من كان اليتيم الذي يجلس وحده على الأرجوحة خلف الأكاديمية؟</string>
+    <string name="naruto_q11">من هزّه سؤال «لأجل ماذا يقاتل النينجا؟» في مهمة زابوزا وهاكو؟</string>
+    <string name="naruto_q12">من علّم كونوهامارو تقنية الراسينغان؟</string>
+    <string name="naruto_q13">من أقنع تسونادي بقبول منصب الهوكاغي؟</string>
+    <string name="naruto_q14">أي شينوبي أوقف ناغاتو إلى جانب إيتاشي المُحيا؟</string>
+    <string name="naruto_q15">من نهض من جديد حين رأى هيناتا بعد هجوم مسار أسورا؟</string>
+    <string name="naruto_q16">من وجّه ضربة الختم في بُعد كاغويا في اللحظة نفسها مع ساسكي؟</string>
+    <string name="naruto_q17">من جعل وصف معلّمه لـ«البطل الحقيقي» هدفًا له بعد فقدان جيرايا؟</string>
+
+    <string name="sasuke_q01">على جسر أرض الأمواج، من ألقى بنفسه أمام إبر هاكو لينقذ رفيقه في الفريق؟</string>
+    <string name="sasuke_q02">من تلقّى ختم اللعنة من أوروتشيمارو في غابة الموت؟</string>
+    <string name="sasuke_q03">من استخدم التشيدوري لأول مرة في نهائيات امتحان التشونين ليخترق رمال غارا؟</string>
+    <string name="sasuke_q04">من نجا من انفجار C0 الذي أطلقه ديدارا باستدعاء ماندا ودفع الثمن؟</string>
+    <string name="sasuke_q05">من كوّن فريق هيبي ثم تاكا وانطلق لمواجهة أخيه، هدفه الوحيد؟</string>
+    <string name="sasuke_q06">من حوّل الرعد إلى «كيرين» وغيّر مسار مبارزة أخوَي أوتشيها؟</string>
+    <string name="sasuke_q07">بعد معرفته بالحقيقة، من اقتحم قمة الكاغي الخمسة وأنهى هناك حكم دانزو؟</string>
+    <string name="sasuke_q08">من أعاد أوروتشيمارو وطلب استدعاء الهوكاغي المُحيَين لمحاسبة الماضي؟</string>
+    <string name="sasuke_q09">حين انتهت الحرب، من اختار أن يكون حارسًا في الظل بدل تولي منصب في القرية؟</string>
+    <string name="sasuke_q10">من سار في شبابه على درب الأفاعي ثم بدّل عقده إلى استدعاء الصقور؟</string>
+    <string name="sasuke_q11">في معركة كينشيكي وموموشيكي، من نفّذ هجمات مشتركة كتفًا بكتف مع ناروتو؟</string>
+    <string name="sasuke_q12">داخل المرايا الجليدية أمام هاكو، من تجاوز العتبة التي أيقظت الشارينغان لديه؟</string>
+
+    <string name="itachi_q01">من حبس كاكاشي في ثلاثة أيام من التعذيب بواسطة التسوكويومي؟</string>
+    <string name="itachi_q02">من حمل «دائرة الكراهية» على عاتقه وحمى كونوها من الظل؟</string>
+    <string name="itachi_q03">من أفشل خطة أوروتشيمارو لسرقة جسده بحركة واحدة ودفعه لترك أكاتسوكي؟</string>
+    <string name="itachi_q04">من تسلّم عين شيسوي أمانةً وحمى الكوتوأماتسوكامي؟</string>
+    <string name="itachi_q05">من تولّى مهمة عميل مزدوج خفية ضد عشيرته لمنع انقلاب في كونوها؟</string>
+    <string name="itachi_q06">في اللقاء الأخير، من ودّع أخاه بلمس جبهته بإصبعين؟</string>
+    <string name="itachi_q07">من أبطل الكيرين بإنزال مرآة ياتا الخاصة بالسوسانو عليه؟</string>
+    <string name="itachi_q08">من ختم فورًا بسيف توتسوكا أوروتشيمارو الذي ظهر داخل أخيه؟</string>
+    <string name="itachi_q09">وهو في حالة الإحياء، من أوقع كابوتو في حلقة الإيزانامي وأجبره على إنهاء الإيدو تينسي؟</string>
+    <string name="itachi_q10">أي شينوبي من أصل الأنبو كان ينقل معلومات أكاتسوكي سرًّا إلى كونوها؟</string>
+    <string name="itachi_q11">في معركته مع ناغاتو، من أنقذ ناروتو وكيلر بي مستخدمًا سيف توتسوكا؟</string>
+    <string name="itachi_q12">من أيقظ المانغيكيو شارينغان بعد وفاة شيسوي؟</string>
+    <string name="itachi_q13">من أصبح قائدًا للأنبو في سن الثالثة عشرة سعيًا وراء فكرة سلام ينهي الحرب؟</string>
+    <string name="itachi_q14">من فتح بعد موته، بعينيه، الطريق لوقف فقدان أخيه للبصر؟</string>
+    <string name="itachi_q15">من فاوض قادة كونوها واشترط حياة ساسكي ليلة الانقلاب؟</string>
+    <string name="itachi_q16">حتى بعد مغادرته القرية، من ظل يراقب التهديدات من الظل ليحمي كونوها؟</string>
+    <string name="itachi_q17">وهو في حالة الإحياء، من قال لأخيه إنه سيحبه دائمًا؟</string>
+    <string name="itachi_q18">في معركة ناروتو وساسكي في وادي النهاية، لمن تلك اليد الوحيدة التي ظهرت في كف ساسكي؟</string>
+
+    <string name="kakashi_q01">في اختبار الأجراس للفريق السابع، من علّم التوازن بين «القواعد أم الفريق» ودرس مشاركة الطعام؟</string>
+    <string name="kakashi_q02">من نال لقب «النينجا الناسخ» بعد أن نسخ أكثر من ألف تقنية؟</string>
+    <string name="kakashi_q03">في مهمة جسر كانابي، من حصل على الشارينغان في عينه اليسرى تلبيةً لأمنية صديقه الأخيرة؟</string>
+    <string name="kakashi_q04">من طوّر تقنية التشيدوري/الرايكيري واستخدمها لأول مرة في المعركة؟</string>
+    <string name="kakashi_q05">من طبّق الكامويي لأول مرة على هدف حقيقي لإيقاف هروب ديدارا؟</string>
+    <string name="kakashi_q06">أي شخصية فقدت حياتها في هجوم بين، وشعر ناروتو بموتها؟</string>
+    <string name="kakashi_q07">من تولّى منصب الهوكاغي السادس بعد الحرب؟</string>
+    <string name="kakashi_q08">أي معلّم لا يترك كتاب «إيتشا إيتشا» من يده حتى في قلب المهمة؟</string>
+    <string name="kakashi_q09">من عاد إلى القرية متنكرًا باسم سوكيا وأجرى تحقيقاته مخفيًا حتى وجهه؟</string>
+
+    <string name="madara_q01">من أرسى مع هاشيراما أسس كونوها قبل أن تفترق طريقاهما؟</string>
+    <string name="madara_q02">من أنزل نيزكين بحركة واحدة وقلب موازين الحرب؟</string>
+    <string name="madara_q03">من أركع الكاغي الخمسة بمفرده؟</string>
+    <string name="madara_q04">من قيّد خصومه في الوقت نفسه بظلال «ليمبو» غير المرئية؟</string>
+    <string name="madara_q05">من أيقظ الرينيغان بخلايا هاشيراما ومضى نحو خطته النهائية؟</string>
+    <string name="madara_q06">من أصبح جينشوريكي الوحش ذي الأذيال العشرة ونال قوة الطرق الستة؟</string>
+    <string name="madara_q07">من نشر التسوكويومي اللانهائي على العالم كله عبر انعكاس القمر؟</string>
+    <string name="madara_q08">من أطلق سوسانو المثالي الذي يشقّ الجبال؟</string>
+    <string name="madara_q09">حين فُتحت البوابة الثامنة، من كرّم خصمه قائلًا إنه أقوى تايجوتسو رآه في حياته؟</string>
+
+    <string name="obito_q01">من قال «الأبطال يتأخرون»، ودُفن تحت الصخور لينقذ صديقه، وأهداه عينه؟</string>
+    <string name="obito_q02">من دبّر الهجوم على كونوها من خلف القناع بوصفه «الرجل المقنّع»؟</string>
+    <string name="obito_q03">من تظاهر بالسذاجة داخل أكاتسوكي متقمّصًا دور «توبي»؟</string>
+    <string name="obito_q04">من كان يُخرج جسده من حالة المادة بالكامويي فتمر الهجمات من خلاله؟</string>
+    <string name="obito_q05">بعد موت رين، من أغلق العالم على «خطة عين القمر»؟</string>
+    <string name="obito_q06">من صفّى حساب الروابط القديمة بمبارزة منفردة مع كاكاشي بين الأبعاد؟</string>
+    <string name="obito_q07">من انتشل ناروتو من لحظة قاتلة فخطا أولى خطواته نحو التكفير؟</string>
+    <string name="obito_q08">من كان يقود أكاتسوكي فعليًا من الظل وأشعل الحرب؟</string>
+    <string name="obito_q09">في لحظته الأخيرة، من تذكّر حقيقته وسلّم قوته من أجل مستقبل النينجا؟</string>
+
+    <string name="gaara_q01">من كان في طفولته يحميه درع من الرمل رغمًا عنه فحُكم عليه بالوحدة؟</string>
+    <string name="gaara_q02">في امتحان التشونين، من اهتزّ للمرة الأولى حين اخترق روك لي حتى دفاعه؟</string>
+    <string name="gaara_q03">من قرّر أن يتغيّر حين رأى في كلمات ناروتو الألم نفسه من الوحدة؟</string>
+    <string name="gaara_q04">من تولّى حماية قريته بوصفه أصغر كازيكاغي في سونا؟</string>
+    <string name="gaara_q05">من قاتل ديدارا مضحّيًا بحياته دفاعًا عن قريته؟</string>
+    <string name="gaara_q06">من انتُزع منه الوحش ذو الأذيال ثم عاد إلى الحياة بتضحية تشيّو؟</string>
+    <string name="gaara_q07">في قمة الكاغي الخمسة، أي صوت دافع عن ناروتو في وجه الرايكاغي؟</string>
+    <string name="gaara_q08">من ألقى على جيش التحالف خطبة القائد التي وحّدت القلوب؟</string>
+    <string name="gaara_q09">من واجه في الحرب روح أبيه راسا وضمّد جرح ماضيه؟</string>
+    <string name="gaara_q10">في حرب النينجا العالمية الرابعة، من عرف من أبيه راسا أن الرمل الذي حماه دائمًا كان في الحقيقة حب أمه؟</string>
+    <string name="gaara_q11">أي شينوبي ارتفع الرمل من تلقاء نفسه ليحميه أثناء محاولة اغتيال في طفولته، بفضل إرادة أمه؟</string>
+
+    <string name="kabuto_q01">من أُخرج من ميتم كونوها ليصبح أكثر جواسيس أوروتشيمارو سرّية؟</string>
+    <string name="kabuto_q02">من أتقن الإيدو تينسي وأخرج أحجار الحرب من قبورها؟</string>
+    <string name="kabuto_q03">من بلغ وضع الحكيم في كهف ريوتشي وأرعد الساحة بـ«الغضب الأبيض»؟</string>
+    <string name="kabuto_q04">من تعلّم قبول ذاته داخل حلقة الإيزانامي وكسر السلسلة؟</string>
+    <string name="kabuto_q05">من عاد إلى الميتم بعد الحرب وسلك طريقًا جديدًا؟</string>
+
+    <string name="orochimaru_q01">من غاص في التجارب المحرّمة بحثًا عن الخلود وهو أحد السانين الأسطوريين؟</string>
+    <string name="orochimaru_q02">من ترك ختم اللعنة على ساسكي في غابة الموت؟</string>
+    <string name="orochimaru_q03">من استدعى الهوكاغي المُحيَين أثناء غزو كونوها ليصفّي حسابه مع معلّمه؟</string>
+    <string name="orochimaru_q04">من أفلت من الموت بترك جسده الأفعواني كما يُبدّل الجلد؟</string>
+    <string name="orochimaru_q05">بطلب من ساسكي، من عاد واستدعى الهوكاغي المُحيَين من جديد ففتح باب التاريخ؟</string>
+
+    <string name="rocklee_q01">في امتحان التشونين، من خلع أثقاله وغطّى الساحة بالغبار من فرط سرعته؟</string>
+    <string name="rocklee_q02">أمام غارا، من فتح البوابة الأولى وأوقف القلوب باللوتس الأولي؟</string>
+    <string name="rocklee_q03">في غابة الموت، من وقف وحده أمام ثلاثي الصوت لحماية ساكورا؟</string>
+    <string name="rocklee_q04">من استلقى على طاولة عمليات تسونادي ليقاتل من جديد رغم خطر الموت؟</string>
+    <string name="rocklee_q05">من خدع كيميمارو ولو للحظة واحدة بأسلوب «قبضة السكران» المترنّح؟</string>
+
+    <string name="sakura_q01">في غابة الموت، من قصّت شعرها بيديها قائلة «سأقاتل أنا أيضًا من الآن»؟</string>
+    <string name="sakura_q02">من تدرّبت على يد تسونادي كنينجا طبية حتى بلغت قوة تشقّ الأرض بلكمة واحدة؟</string>
+    <string name="sakura_q03">من هزمت ساسوري من أكاتسوكي وهي تقاتل كتفًا بكتف مع تشيّو؟</string>
+    <string name="sakura_q04">حين كاد قلب ناروتو يتوقف، من أعادته إلى الحياة بتحريك قلبه بيديها العاريتين؟</string>
+    <string name="sakura_q05">من فكّت الختم على جبينها وعالجت آلاف الجنود دفعة واحدة في الجبهة بـ«قوة المئة»؟</string>
+
+    <string name="minato_q01">بوصفه «البرق الأصفر لكونوها»، سرعة من كانت تنهي المعارك قبل وصول المسعفين؟</string>
+    <string name="minato_q02">ليلة الهجوم على القرية، من أبعد قنبلة الوحش الضخمة للثعلب ذي الذيول التسعة عن كونوها بتقنية إله الرعد الطائر؟</string>
+    <string name="minato_q03">من ضحّى بحياته لإيقاف كوراما بعد انتزاعه من كوشينا وأودع الختم في ابنه؟</string>
+    <string name="minato_q04">من سمّى ابنه «ناروتو» مستوحيًا الاسم من بطل رواية جيرايا وأودعه عند عرّابه؟</string>
+    <string name="minato_q05">من تجاوز حتى الرايكاغي إيه وقلب ساحة المعركة بإشارة واحدة بفضل «إله الرعد الطائر»؟</string>
+    <string name="minato_q06">أي معلّم هزم تلميذه ومعه الثعلب ذو الذيول التسعة بقدراته وحده دون أي سلالة دم خاصة؟</string>
+
+    <string name="hashirama_q01">من بدأ في طفولته على ضفتي النهر مع مادارا طريقًا يمتد من رمي الحجارة إلى الصداقة ثم إلى فكرة كونوها؟</string>
+    <string name="hashirama_q02">من طرح فكرة الهوكاغي لأول مرة قائلًا إن السلام يُبنى معًا؟</string>
+    <string name="hashirama_q03">من اختار الأخوّة ليتجاوز سطور القدر المنقوشة على لوح أوتشيها الحجري؟</string>
+    <string name="hashirama_q04">من رفض قتل صديقه في أول مبارزة كبرى في وادي النهاية وأسّس القرية؟</string>
+    <string name="hashirama_q05">من أسكت ساحة المعركة ببوذا خشبي عملاق ينهض كتمثال حيّ؟</string>
+    <string name="hashirama_q06">أي هوكاغي أول ترك للأجيال مقولة إن القرية تعني العائلة؟</string>
+
+    <string name="tobirama_q01">من أرسى أسس الأنبو ونظّم إدارة القرية؟</string>
+    <string name="tobirama_q02">من طوّر النواة الأولى لتقنية إله الرعد الطائر؟</string>
+    <string name="tobirama_q03">من أسّس نظام الأكاديمية والتشونين ورسم إطار تدريب النينجا؟</string>
+    <string name="tobirama_q04">من استخدم حياته طُعمًا في قلب الحرب لحماية عشيرته وأخيه؟</string>
+    <string name="tobirama_q05">من وصف معرفة الإيدو تينسي المظلمة بأنها كارثة إن وقعت في أيدٍ خاطئة؟</string>
+
+    <string name="tsunade_q01">من كان الحظ يخذلها على طاولة القمار لكنها قلبت حظ الآلاف في ساحة المعركة؟</string>
+    <string name="tsunade_q02">من غيّرت موازين الحرب بقولها إنه لا جيش بلا وحدة طبية؟</string>
+    <string name="tsunade_q03">من قبلت المنصب قائلة إنها تؤمن بحلم ناروتو في أن يصبح هوكاغي؟</string>
+    <string name="tsunade_q04">من فكّت الختم على جبينها ونهضت بكونوها من تحت الأنقاض؟</string>
+    <string name="tsunade_q05">من أعادت الشفاء إلى الطاولة رغم انهيارها بفقدان جيرايا؟</string>
+    <string name="tsunade_q06">من ربطت الكاغي ببعضهم بخيوط الحياة في حرب النينجا العالمية الرابعة؟</string>
+
+    <string name="jiraiya_q01">من كتب مصير ثلاثة تلاميذ في العالم قائلًا إن تلاميذه هم إرثه؟</string>
+    <string name="jiraiya_q02">من تسلّل وحده إلى قرية المطر وقطع طريق عودته ليعرف الحقيقة؟</string>
+    <string name="jiraiya_q03">من ترك طريق السلام على نقش الضفدع وأرسل رسالته الأخيرة مشفّرة؟</string>
+    <string name="jiraiya_q04">أي معلّم أرى ناروتو الصغير الهدف قائلًا إن الأبطال لا يستسلمون؟</string>
+    <string name="jiraiya_q05">من حوّل أناشيد ميوبوكو إلى بهجة في قلب المعركة؟</string>
+    <string name="jiraiya_q06">من أثبت وهو أحد السانين الأسطوريين أن أعظم انتصار لمعلّم وحيد هو تلميذه؟</string>
+
+    <string name="might_guy_q01">من جعل الزمن يبدو أبطأ حين سقطت أثقاله على الأرض في امتحان التشونين؟</string>
+    <string name="might_guy_q02">من صرخ بشعلة الشباب وعلّم روك لي معنى الأمل؟</string>
+    <string name="might_guy_q03">من فتح البوابة الثامنة واستقبل الموت مبتسمًا؟</string>
+    <string name="might_guy_q04">من وجّه ضربة جعلت حتى مادارا يتحدث عن أقوى تايجوتسو رآه؟</string>
+    <string name="might_guy_q05">أي صديق لم يترك ظهر كاكاشي طوال الحرب؟</string>
+    <string name="might_guy_q06">من وضع قلبه على طاولة عملية تلميذه وقال له أن يواصل الركض؟</string>
+
+    <string name="shikamaru_q01">من يبدأ يومه بمراقبة الغيوم وينهي المعارك بالاستراتيجية؟</string>
+    <string name="shikamaru_q02">من أشعل ولاعة أسوما وأخذ ثأر معلّمه بالعقل؟</string>
+    <string name="shikamaru_q03">من صار حلقة الوصل بين الكاغي والقادة فحوّل الجيش إلى عقل واحد؟</string>
+    <string name="shikamaru_q04">من قال لناروتو المتردّد إنه إلى جانبه وساند طريقه نحو منصب الهوكاغي؟</string>
+    <string name="shikamaru_q05">من استدرج هيدان إلى فخ الظلال ودفن أشلاءه في التراب؟</string>
+    <string name="shikamaru_q06">من جلس إلى الطاولة ليخطّط للسلام بعد انتهاء الحرب؟</string>
+
+    <string name="hinata_q01">أي محاربة لا تعرف الخوف اعترفت بحبها أمام بين؟</string>
+    <string name="hinata_q02">من حملت ذكرى نيجي بين قبضتيها وسارت إلى جانبه في معركة كاغويا؟</string>
+    <string name="hinata_q03">من حوّلت البياكوغان إلى حب قائلة إنها ستكون نوره إن ضلّ طريقه؟</string>
+    <string name="hinata_q04">من أرت ناروتو الطريق الصحيح حين كاد ينحاز إلى جانب أوبيتو؟</string>
+    <string name="hinata_q05">من خفّفت عبء عشيرة هيوغا باختيارها طريقها الخاص؟</string>
+
+    <string name="killer_b_q01">من حوّل كونه جينشوريكي إلى كلمات راب والخوف إلى أغنية؟</string>
+    <string name="killer_b_q02">أي سيّاف بثمانية سيوف رقص في الوقت نفسه أمام فريق ساسكي؟</string>
+    <string name="killer_b_q03">من عقد شراكة مع غيوكي وترجم لغة الوحش إلى لغة البشر؟</string>
+    <string name="killer_b_q04">من علّم ناروتو الشراكة مع الوحش ذي الأذيال وساعده على كسر سلسلة الكراهية في الغرفة المظلمة؟</string>
+    <string name="killer_b_q05">من اختار إيقاعه الخاص رغم الرايكاغي فغيّر إيقاع الحرب؟</string>
+
+    <string name="a_fourth_raikage_q01">في قمة الكاغي الخمسة، من ضرب الطاولة لا بقبضته بل بمسؤوليته؟</string>
+    <string name="a_fourth_raikage_q02">أي قائد حمى أخاه دون أن يترك قيادة الجيش؟</string>
+
+    <string name="deidara_q01">من وقّع على السماء قائلًا إن الفن انفجار؟</string>
+    <string name="deidara_q02">من حاول تفتيت قبة غارا الرملية فوق المدينة بقنبلة C3؟</string>
+    <string name="deidara_q03">من افتتح معرضه الأخير بقنبلة C0 عنادًا لكرهه للشارينغان؟</string>
+    <string name="deidara_q04">أي عضو في أكاتسوكي حوّل السماء إلى لوحة بطيور من طين؟</string>
+
+    <string name="kisame_q01">من التهم التشاكرا بساميهادا وحوّل ضفة البحيرة إلى محيط؟</string>
+    <string name="kisame_q02">أي قرش أزرق أجبر غاي على فتح البوابات؟</string>
+    <string name="kisame_q03">من حبس جسده في سجن مائي ليحافظ على أسراره؟</string>
+    <string name="kisame_q04">أي شينوبي استحق لقب الوحش في ساحة المعركة؟</string>
+
+    <string name="hidan_q01">من قلب دم خصمه عليه بطقس الخلود؟</string>
+    <string name="hidan_q02">من رسم دائرة جاشين وعكس الألم كالمرآة؟</string>
+    <string name="hidan_q03">من ذرّى دخان أسوما في الريح ومع ذلك وقع في فخ ذكاء شيكامارو؟</string>
+    <string name="hidan_q04">من قُطّع إربًا ودُفن في التراب وأُسكِت؟</string>
+
+    <string name="kakuzu_q01">من كان يصفّ العناصر بفضل قلوبه الخمسة؟</string>
+    <string name="kakuzu_q02">من قدّم المال على الإيمان واعتبر العقود مقدّسة؟</string>
+    <string name="kakuzu_q03">من سقط أمام أول راسينشوريكن لناروتو فأحسّ بفجر عصر جديد؟</string>
+    <string name="kakuzu_q04">من كوّن مع هيدان أكثر الشراكات تنافرًا وأشدّها خطرًا؟</string>
+
+    <string name="konan_q01">من كانت تترك زهور الورق أملًا في الأزقة الممطرة؟</string>
+    <string name="konan_q02">من حوّلت عشرة مليارات ورقة إلى قنابل لتخنق توبي؟</string>
+    <string name="konan_q03">من ختمت مثال ياهيكو في أوريغامي زرقاء؟</string>
+    <string name="konan_q04">من زرعت آخر زهرة على طريق السلام بعد ناغاتو؟</string>
+
+    <string name="nagato_q01">من فرض على العالم شريعة الألم قائلًا إن الألم يعلّم؟</string>
+    <string name="nagato_q02">من سوّى كونوها بالأرض بكلمة واحدة: شينرا تينسي؟</string>
+    <string name="nagato_q03">من سار الطريق من تلميذ لجيرايا إلى تجسيد للألم نفسه؟</string>
+    <string name="nagato_q04">من كسر الحلقة بكلمات ناروتو وأعاد الأرواح؟</string>
+    <string name="nagato_q05">أي قائد وزّع عينيه على كل مسار من المسارات الستة؟</string>
+    <string name="nagato_q06">من ألبس جسد ياهيكو مثالًا وحاول إسكات المطر؟</string>
+
+    <string name="yahiko_q01">من بنى أمل أمي من أطفال يقفون تحت المطر؟</string>
+    <string name="yahiko_q02">من قاد أصدقاءه قائلًا إن السلام يأتي بالإرادة لا بالقوة؟</string>
+    <string name="yahiko_q03">من جعل حياته جسرًا ليبقي ناغاتو وكونان واقفَين؟</string>
+
+    <string name="zabuza_q01">من كان الشيطان الذي يُهمس باسمه في الضباب؟</string>
+    <string name="zabuza_q02">من مسح دموعه على نصل سيفه أمام هاكو ومضى في مسيرته الأخيرة؟</string>
+    <string name="zabuza_q03">أي عدوّ لقّن الفريق السابع أول درس كبير على الجسر؟</string>
+    <string name="zabuza_q04">من سجّل في التاريخ حفل تخرّج كيريغاكوري الدموي؟</string>
+
+    <string name="haku_q01">من ضاعف الضوء داخل المرايا الجليدية وحوّل الإبر إلى مطر؟</string>
+    <string name="haku_q02">أي محارب رقيق ضحّى بحياته لمجرد أن يكون نافعًا لأحدهم؟</string>
+    <string name="haku_q03">من نجح في أن يكون المكان الدافئ الوحيد في قلب زابوزا؟</string>
+    <string name="haku_q04">أي عينين خلف قناع دفئتا لأول مرة بكلمات ناروتو؟</string>
+
+    <string name="hiruzen_q01">من ربّى السانين الثلاثة الأسطوريين وحمل القرية على كتفيه ثلاث مرات؟</string>
+    <string name="hiruzen_q02">من ختم اثنين من الهوكاغي وهو يقاتل أوروتشيمارو وأسكت ساحة المعركة؟</string>
+    <string name="hiruzen_q03">أي قائد مسنّ كتب فرصة أخرى في ملف ناروتو؟</string>
+    <string name="hiruzen_q04">أي هوكاغي حكيم كان يرى أطفال القرية كأفراد عائلته؟</string>
+
+    <string name="temari_q01">من قصّت غابة كاملة بضربة واحدة من مروحة الرياح؟</string>
+    <string name="temari_q02">من منحت خطط شيكامارو قوة الريح فعزّزت العقل في المعركة؟</string>
+    <string name="temari_q03">من جعلت كونوها تعترف بقوتها هي لا بظل أخيها؟</string>
+
+    <string name="kankuro_q01">من حوّل الساحة إلى مسرح للموت بدماه؟</string>
+    <string name="kankuro_q02">من تحدّى سم ساسوري بالترياق وسباق مع الزمن؟</string>
+    <string name="kankuro_q03">من وقف خلف أخيه لكنه دفع بدماه إلى الصف الأول في المعركة؟</string>
+
+    <string name="sai_q01">من حوّل الحبر إلى طيور وأرسل الرسالة إلى السماء؟</string>
+    <string name="sai_q02">من كسر داخل الفريق السابع قيود تربية بلا مشاعر؟</string>
+    <string name="sai_q03">من كتب كلمة الصداقة لأول مرة في دفتره بخطوط حقيقية؟</string>
+
+    <string name="yamato_q01">من هدّأ الوحش بالتحكم بعنصر الخشب؟</string>
+    <string name="yamato_q02">أي وجه هادئ قاد قلب الفريق السابع المتشتت؟</string>
+    <string name="yamato_q03">من قيّد العاصفة داخل ناروتو بانضباط الأختام؟</string>
+
+    <string name="shisui_q01">من حمى الكوتوأماتسوكامي من سوء الاستخدام حتى وإن كلّفه ذلك عينه؟</string>
+    <string name="shisui_q02">من أراد إنقاذ عشيرته كظلّ يسقط من فوق الجسر على ورقة؟</string>
+    <string name="shisui_q03">من ترك لإيتاشي أثقل أمانة قائلًا «من أجل القرية»؟</string>
+    <string name="shisui_q04">أي فرد من أوتشيها غيّر بسقوطه مصير جيل بأكمله؟</string>
+
+    <string name="kurama_q01">من تحرّر من سلاسل الكراهية وقاتل كتفًا بكتف مع ناروتو؟</string>
+    <string name="kurama_q02">من انقسم إلى نصفين داخل ختم ميناتو ومع ذلك حافظ على إرادته؟</string>
+    <string name="kurama_q03">من حوّل الليل إلى نهار بقنبلة الوحش؟</string>
+    <string name="kurama_q04">أي ثعلب نطق كلمة الشراكة بفخر لأول مرة؟</string>
+    <string name="kurama_q05">أي قوة وزّعت تشاكراها على التحالف كله في معركة كاغويا؟</string>
+
+    <string name="shukaku_q01">من أرعد الصحراء بضحكته المجنونة من داخل قوقعة من الرمل؟</string>
+    <string name="shukaku_q02">أي كائن صار أول درع وُلد من الخوف ليحمي قلب غارا؟</string>
+
+    <string name="gamabunta_q01">من علّم الاحترام للصبي الجالس فوقه ومع ذلك أعاره ظهره في المعركة؟</string>
+    <string name="gamabunta_q02">من سلّ نصله العملاق في وجه شوكاكو وسط الصحراء؟</string>
+
+    <string name="gamakichi_q01">أي بطل صغير كبير خرج من ظل أبيه ليحمل الرسائل في الحرب؟</string>
+
+    <string name="son_goku_q01">من عجن قلب الحجر بالنار وأرى ناروتو سلسلة الكراهية؟</string>
+
+    <string name="karin_q01">أي مستشعرة حمراء الشعر صنعت سلسلة شفاء من جسدها هي؟</string>
+    <string name="karin_q02">أي شخصية اخترقها ساسكي دون أن يرفّ له جفن في معركته مع دانزو؟</string>
+
+    <string name="suigetsu_q01">من يحمل بتقنية هوزوكي المائية روح دعابة لا يسعها أي قفص؟</string>
+    <string name="suigetsu_q02">من حمل سيف زابوزا على ظهره وحوّل ظل الماضي إلى مزحة؟</string>
+
+    <string name="jugo_q01">من استقبل غضب الطبيعة في جسده لكنه ظل رقيقًا مع الطيور؟</string>
+    <string name="jugo_q02">من تعلّم تهدئة نوبات غضبه بأصوات أصدقائه؟</string>
+
+    <string name="kiba_q01">من كان يقرأ الميدان بالرائحة مع أكامارو وحوّل التتبّع إلى فن؟</string>
+    <string name="kiba_q02">أي ثنائي حوّل ساحة المعركة إلى عاصفة بدورانه المزدوج؟</string>
+
+    <string name="akamaru_q01">أي رفيق وفيّ غيّر مصير فريقه بنبحة واحدة؟</string>
+
+    <string name="ino_q01">من جعلت عقلها جسرًا وجرّت العدو أمام فريقها؟</string>
+    <string name="ino_q02">من حوّلت كلمات أسوما الأخيرة إلى زهرة في قلبها؟</string>
+    <string name="ino_q03">من أدارت خطوط الاتصال في الحرب بصبر بائعة زهور؟</string>
+
+    <string name="choji_q01">من فتح جناحي فراشة وتعملق من أجل أصدقائه؟</string>
+    <string name="choji_q02">أي قلب حوّل كلمة «سمين» إلى قوة بكل فخر؟</string>
+    <string name="choji_q03">من غمس رقائق أسوما لا في الدموع بل في العزيمة؟</string>
+
+    <string name="boruto_q01">من اختار أن يقاتل ظله هو لا أباه؟</string>
+    <string name="boruto_q02">من استخدم أداة النينجا العلمية في الامتحان ثم تحمّل مسؤوليتها؟</string>
+    <string name="boruto_q03">من شدّ على أسنانه كي لا تتحوّل علامة موموشيكي إلى خطة قدر؟</string>
+    <string name="boruto_q04">من اجتاز اختبار القيادة للجيل الجديد من الفريق السابع في الشارع؟</string>
+    <string name="boruto_q05">من أعاد تعريف اسم أوزوماكي في عصر مختلف؟</string>
+
+    <string name="sarada_q01">من عجنت حلم الهوكاغي بقبضة أمها وعيني أبيها؟</string>
+    <string name="sarada_q02">أي شينوبي شابة كانت أول من أصاب الهدف بالتشيدوري في جيلها؟</string>
+    <string name="sarada_q03">من جمعت قلوب فريقها المتفرقة بنظرة واحدة؟</string>
+
+    <string name="mitsuki_q01">من حوّل سؤال «من أنا؟» إلى إجابة إلى جانب أصدقائه؟</string>
+    <string name="mitsuki_q02">من حوّل مرونة الأفعى إلى وفاء وأنقذ فريقه؟</string>
+
+    <string name="kawaki_q01">من أجبر الكارما على أن تكون اختيارًا لا قدرًا؟</string>
+    <string name="kawaki_q02">من سمّى بيت ناروتو وطنًا لأول مرة؟</string>
+    <string name="kawaki_q03">أي إرادة حوّلت الطفل الذي عاش في ظل إيشيكي إلى محارب؟</string>
+
+    <string name="koji_kashin_q01">من كتب النار في خطته لا في قدره فحوّل الظل إلى لهب؟</string>
+    <string name="koji_kashin_q02">من بقي في الميدان لإتمام مهمته حتى بعد انكشاف الحقيقة؟</string>
+
+    <string name="isshiki_otsutsuki_q01">أي تهديد كان يصغّر الأشياء ويمسك العالم في راحة يده؟</string>
+    <string name="isshiki_otsutsuki_q02">من أقام عرشه في جسد بشري وحاول أن يصم القدر بعلامته؟</string>
+
+    <string name="toneri_q01">من حاول إنزال وحدة القمر على الأرض ثم أعاد النور؟</string>
+
+    <string name="hagoromo_q01">أي حكيم حوّل النينجوتسو مع أخيه إلى تعليم للعالم؟</string>
+    <string name="hagoromo_q02">من منح ناروتو وساسكي القوة واشترط عليهما التوازن؟</string>
+    <string name="hagoromo_q03">من ترك خصام ابنيه لقصة تُحلّ بالسلام عبر الأجيال؟</string>
+
+    <string name="kaguya_q01">من جلبت التشاكرا إلى العالم لأول مرة عبر ثمرة؟</string>
+    <string name="kaguya_q02">من كانت تبدّل الأبعاد كما تُقلب راحة اليد وتقلب المشهد في لحظة؟</string>
+    <string name="kaguya_q03">من أُعيدت إلى الأبد بختم من حفيديها؟</string>
+    <string name="kaguya_q04">أي قوة لا تُقاوم نقلت ساحة المعركة بين الجليد والحمم والصحراء؟</string>
+
+    <string name="hanzo_q01">من منح السانين الأسطوريين لقبهم في قلب الحرب؟</string>
+    <string name="hanzo_q02">أي أمير حرب أخفى مصير أمي خلف قناعه؟</string>
+    <string name="hanzo_q03">من سقط داخل نظام الخوف الذي بناه بنفسه؟</string>
+
+    <string name="konohamaru_q01">من كان يركض خلف ناروتو صغيرًا ثم صار درعًا لفريقه حين كبر؟</string>
+    <string name="konohamaru_q02">أي معلّم أودع الراسينغان في أيدي الجيل الجديد؟</string>
+    <string name="konohamaru_q03">أي شينوبي حمى في الشوارع إرث جدّه هيروزن؟</string>
+
+</resources>

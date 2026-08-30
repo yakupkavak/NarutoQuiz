@@ -1,19 +1,18 @@
 [versions]
-agp = "8.6.1"
-billingKtx = "7.1.1"
+agp = "8.9.3"
+billingKtx = "8.0.0"
 compiler = "1.1.1"
 converterJacksonVersion = "2.9.0"
 coreSplashscreen = "1.0.1"
-firebaseBom = "33.5.1"
+firebaseBom = "33.16.0"
 firebaseUiAuth = "7.2.0"
-generativeai = "0.9.0"
 glide = "4.16.0"
-hiltAndroid = "2.52"
-hiltAndroidGradlePlugin = "2.52"
-hiltCompiler = "2.52"
+hiltAndroid = "2.56.2"
+hiltAndroidGradlePlugin = "2.56.2"
+hiltCompiler = "2.56.2"
 jacksonDatabind = "2.15.2"
 jacksonModuleKotlin = "2.15.2"
-kotlin = "1.9.0"
+kotlin = "2.1.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -54,7 +53,7 @@ firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "fir
 firebase-config = { module = "com.google.firebase:firebase-config" }
 firebase-firestore = { module = "com.google.firebase:firebase-firestore" }
 firebase-ui-auth = { module = "com.firebaseui:firebase-ui-auth", version.ref = "firebaseUiAuth" }
-generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
+firebase-ai = { module = "com.google.firebase:firebase-ai" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 gms-play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuthVersion" }

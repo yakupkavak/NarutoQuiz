@@ -1,15 +1,15 @@
 package com.yakupkavak.narutoquiz.data.network.repository
 
-import com.yakupkavak.narutoquiz.BuildConfig
+import com.google.firebase.Firebase
+import com.google.firebase.ai.ai
+import com.google.firebase.ai.type.GenerativeBackend
 import com.yakupkavak.narutoquiz.data.network.util.Resource
-import com.google.ai.client.generativeai.GenerativeModel
 
 class GeminiRepository {
     suspend fun getHint(character: String): Resource<String> {
         try {
-            val generativeModel = GenerativeModel(
-                modelName = "gemini-1.5-flash", apiKey = BuildConfig.GEMINI_API
-            )
+            val generativeModel = Firebase.ai(backend = GenerativeBackend.googleAI())
+                .generativeModel("gemini-3.5-flash-lite")
             val prompt =
                 "Provide information about $character to help the user in the game of guessing" +
                         " who the character is. Don't use $character's name. Write a single sentence of no more than 40 words."

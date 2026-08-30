@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdSize
 import com.google.android.gms.ads.AdView
@@ -230,10 +231,21 @@ class MainScreenActivity : AppCompatActivity() {
         if (adView != null) return
         val bannerView = AdView(this)
         bannerView.adUnitId = BuildConfig.BANNER_AD_KEY
-        bannerView.setAdSize(bannerAdSize)
+        val size = bannerAdSize
+        bannerView.setAdSize(size)
+        bannerView.adListener = object : AdListener() {
+            override fun onAdLoaded() {
+                Log.d(TAG, "Banner loaded: ${size.width}x${size.height}dp")
+            }
+
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Log.e(TAG, "Banner failed: code=${adError.code} domain=${adError.domain} msg=${adError.message}")
+            }
+        }
         adView = bannerView
         binding.adViewContainer.removeAllViews()
         binding.adViewContainer.addView(bannerView)
+        Log.d(TAG, "Banner requesting: unit=${BuildConfig.BANNER_AD_KEY} size=$size containerW=${binding.adViewContainer.width}")
         bannerView.loadAd(AdRequest.Builder().build())
     }
 

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Shinobi Quiz</string>
+    <string name="loading">Загрузка…</string>
+    <string name="counter_menu">Счётчик</string>
+    <string name="zero">0</string>
+    <string name="use_viewmodel">Использовать ViewModel</string>
+    <string name="increase_counter">Увеличить счётчик</string>
+    <string name="guess_menu">Угадай</string>
+    <string name="username_too_long">Имя пользователя не может быть длиннее 16 символов</string>
+    <string name="password_too_low">Пароль не может быть короче 8 символов</string>
+    <string name="refresh_describtion">обновить</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="reset">Сбросить</string>
+    <string name="guess">Угадай</string>
+    <string name="success">Верно</string>
+    <string name="failure">Попробуй ещё раз</string>
+    <string name="change_image">Сменить изображение</string>
+    <string name="pokemon">pokemon</string>
+    <string name="error">Произошла ошибка</string>
+    <string name="emptyImageUrl">https://static.wikia.nocookie.net/naruto/images/7/7d/Naruto_Part_II.png</string>
+    <string name="next">Далее</string>
+
+    <string name="sign_in">Войти</string>
+    <string name="null_space">Не оставляй поле пустым</string>
+    <string name="sign_in_error">Неверная почта или пароль</string>
+    <string name="recovery_error">Неверная почта</string>
+    <string name="network_problem">Возникла проблема</string>
+    <string name="check_mail">Проверь свою почту</string>
+    <string name="sign_success">Регистрация выполнена</string>
+    <string name="email">Эл. почта</string>
+    <string name="password">Пароль</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="hint_email">primer@gmail.com</string>
+    <string name="sign_up">Зарегистрироваться</string>
+    <string name="slash">/</string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="welcome_shinobi">Добро пожаловать, шиноби</string>
+    <string name="recovery">Восстановление</string>
+    <string name="naruto_image">Изображение Наруто</string>
+    <string name="google_icon">Значок Google</string>
+    <string name="game_content">содержимое игры</string>
+    <string name="quizes">Викторины</string>
+    <string name="tier_list">Тир-лист</string>
+    <string name="user_info">Данные игрока</string>
+    <string name="close_game">Закрыть игру</string>
+    <string name="first_option">Первый вариант</string>
+    <string name="second_option">Второй вариант</string>
+    <string name="check">Проверить</string>
+    <string name="leaders">Таблица лидеров</string>
+    <string name="classic_game">Классическая игра</string>
+    <string name="challenge">Испытание</string>
+    <string name="classic">Классика</string>
+    <string name="akatsuki">Испытание</string>
+    <string name="clan">Клан</string>
+    <string name="tail">Хвост</string>
+    <string name="team">Команда</string>
+    <string name="rank">Место</string>
+    <string name="player">Игрок</string>
+    <string name="score">Очки</string>
+    <string name="game_over">Игра окончена</string>
+    <string name="main_screen">Главный экран</string>
+    <string name="play_again">Сыграть ещё раз</string>
+    <string name="trueText">Верно</string>
+    <string name="wrong">Неверно</string>
+
+    <string name="emptyAd">Сейчас нет доступной рекламы, попробуй снова через 3 минуты</string>
+
+    <string name="family_question">К какому персонажу это относится? %1$s</string>
+    <string name="voice_question">К какому персонажу это относится? %1$s</string>
+    <string name="clan_question">Кто принадлежит к клану %1$s?</string>
+    <string name="team_question">Кто входит в команду %1$s?</string>
+    <string name="jinckuri_question">Кто является джинчурики по имени %1$s?</string>
+    <string name="user_name_info">Имя: %1$s</string>
+    <string name="user_mail_info">Почта: %1$s</string>
+    <string name="change_password">Сменить пароль</string>
+    <string name="wrong_password">Неверный пароль</string>
+
+    <string name="change">Изменить</string>
+    <string name="max_repeat_info">Количество вопросов: %1$s</string>
+    <string name="hint_count">Количество подсказок: %1$d</string>
+    <string name="get_information">Об игре</string>
+    <string name="naruto_icon">Значок Наруто</string>
+    <string name="unexpected_error">Непредвиденная ошибка</string>
+    <string name="select">Выбирай!</string>
+    <string name="ad">Посмотреть рекламу</string>
+
+
+    <string name="game_mode">Режим игры</string>
+    <string name="history">История игр</string>
+    <string name="sign_out">Выйти</string>
+    <string name="user">Пользователь</string>
+    <string name="game">Игра</string>
+    <string name="close">Закрыть</string>
+    <string name="challenge_game">Игра «Испытание»</string>
+    <string name="welcome_text">В режиме «Испытание» нельзя ошибиться ни разу, и только этот режим учитывается в таблице лидеров. \n\nВ классическом режиме ты можешь проверить себя на всех персонажах. \n\nНе забудь про особые режимы: Акацуки, Кланы, Хвостатые звери и Команды. \n\n\n Удачи, шиноби!</string>
+    <string name="about_the_game">Об игре</string>
+    <string name="market">Магазин</string>
+    <string name="hint">Подсказка</string>
+    <string name="purchase">Купить</string>
+    <string name="add">Добавить</string>
+
+    <string name="student">Ученик</string>
+    <string name="genin">Генин</string>
+    <string name="chunin">Чунин</string>
+    <string name="kage">Каге</string>
+
+    <string name="token_count">Количество жетонов: %1$d</string>
+    <string name="gain_hint">Ты получил подсказок: %1$d!</string>
+    <string name="connection_error">Ошибка соединения</string>
+
+    <string name="current_password">Текущий пароль:</string>
+    <string name="new_password">Новый пароль:</string>
+    <string name="repeat_password">Повтори пароль:</string>
+
+    <string name="empty_edit_text">Есть незаполненное поле</string>
+    <string name="password_not_equal">Пароли не совпадают!</string>
+    <string name="delete_account">Удалить аккаунт</string>
+    <string name="delete">Удалить</string>
+    <string name="delete_success">Аккаунт удалён.</string>
+    <string name="question_number">Номер вопроса: %1$d</string>
+
+    <string name="game_story_title">История</string>
+    <string name="game_story_description">Открой для себя историю вселенной «Наруто» с вопросами, подготовленными для тебя.</string>
+    <string name="game_challenge_title">Испытание</string>
+    <string name="game_challenge_description">В мире шиноби нет места ошибкам!</string>
+    <string name="game_classic_title">Классика</string>
+    <string name="game_classic_description">Пора проверить свои общие знания.</string>
+    <string name="game_akatsuki_title">Акацуки</string>
+    <string name="game_akatsuki_description">Наша задача — разрушить фальшивый мир.</string>
+    <string name="game_clan_title">Кланы</string>
+    <string name="game_clan_description">Помни о своих корнях, защищай свой клан.</string>
+    <string name="game_tailed_beast_title">Хвостатые звери</string>
+    <string name="game_tailed_beast_description">Это мир зверей.</string>
+    <string name="game_teams_title">Команды</string>
+    <string name="game_teams_description">Те, кто нарушает правила, — мусор. Но те, кто бросает друзей, хуже мусора.</string>
+
+    <string name="naruto_q01">Кто в ночь происшествия с Мизуки выучил технику теневого клонирования из Запретного свитка?</string>
+    <string name="naruto_q02">Какой ученик получил в подарок собственный налобный протектор Ируки?</string>
+    <string name="naruto_q03">Кто победил Неджи на экзамене на чунина и выступил против разговоров о «судьбе»?</string>
+    <string name="naruto_q04">Кто открыл Гааре дверь к переменам, победив его в первом большом сражении?</string>
+    <string name="naruto_q05">Кто после смерти Джирайи освоил Режим Отшельника на горе Мьёбоку?</string>
+    <string name="naruto_q06">Кто спас деревню во время нападения Пейна на Коноху и переубедил Нагато?</string>
+    <string name="naruto_q07">Кто вернул Майто Гая с того света после того, как тот открыл восьмые врата?</string>
+    <string name="naruto_q08">Кто получил силу Шести Путей от Хагоромо?</string>
+    <string name="naruto_q09">Какой мальчишка получил свою первую бесплатную порцию рамена у стойки «Ичираку»?</string>
+    <string name="naruto_q10">Кто был сиротой, сидевшим в одиночестве на качелях за академией?</string>
+    <string name="naruto_q11">Кого на миссии с Забузой и Хаку потряс вопрос «ради чего сражается ниндзя»?</string>
+    <string name="naruto_q12">Кто научил Конохамару Расенгану?</string>
+    <string name="naruto_q13">Кто убедил Цунаде согласиться стать Хокаге?</string>
+    <string name="naruto_q14">Какой шиноби остановил Нагато вместе с воскрешённым Итачи?</string>
+    <string name="naruto_q15">Кто вновь поднялся на ноги, увидев Хинату после атаки Пути Асуры?</string>
+    <string name="naruto_q16">Кто в измерении Кагуи нанёс запечатывающий удар одновременно с Саске?</string>
+    <string name="naruto_q17">Кто после гибели Джирайи сделал своей целью описание «настоящего героя», данное учителем?</string>
+
+    <string name="sasuke_q01">Кто на мосту в Стране Волн бросился под иглы Хаку, чтобы спасти товарища по команде?</string>
+    <string name="sasuke_q02">Кто получил Проклятую печать Орочимару на этапе в Лесу Смерти?</string>
+    <string name="sasuke_q03">Кто впервые применил Чидори в финале экзамена на чунина, чтобы пробить песок Гаары?</string>
+    <string name="sasuke_q04">Кто вырвался из взрыва C0 Дейдары, призвав Манду и заплатив за это цену?</string>
+    <string name="sasuke_q05">Кто собрал сначала «Хеби», а затем «Така» и отправился к своей единственной цели — брату?</string>
+    <string name="sasuke_q06">Кто превратил гром в «Кирин» и изменил ход дуэли братьев Учиха?</string>
+    <string name="sasuke_q07">Кто, узнав правду, ворвался на Саммит пяти Каге и покончил там с властью Данзо?</string>
+    <string name="sasuke_q08">Кто вернул Орочимару и приказал призвать воскрешённых Хокаге, чтобы спросить за прошлое?</string>
+    <string name="sasuke_q09">Кто после войны выбрал не место в деревне, а роль дозорного в тени?</string>
+    <string name="sasuke_q10">Кто в юности шёл путём змей, а затем сменил контракт на призыв ястребов?</string>
+    <string name="sasuke_q11">Кто в бою против Киншики и Момошики строил комбинированные атаки плечом к плечу с Наруто?</string>
+    <string name="sasuke_q12">Кто среди ледяных зеркал в бою с Хаку перешагнул порог, пробудивший его Шаринган?</string>
+
+    <string name="itachi_q01">Кто заточил Какаши в трое суток пыток при помощи Цукуёми?</string>
+    <string name="itachi_q02">Кто взвалил на себя «круг ненависти» и защищал Коноху из тени?</string>
+    <string name="itachi_q03">Кто одним движением разрушил план Орочимару по захвату тела и вынудил его покинуть Акацуки?</string>
+    <string name="itachi_q04">Кто принял на хранение глаз Шисуи и уберёг Котоаматсуками?</string>
+    <string name="itachi_q05">Кто взял на себя незримую роль двойного агента против собственного клана, чтобы предотвратить переворот в Конохе?</string>
+    <string name="itachi_q06">Кто при последней встрече попрощался, коснувшись двумя пальцами лба своего брата?</string>
+    <string name="itachi_q07">Кто нейтрализовал Кирин, опустив на него Зеркало Ята из Сусаноо?</string>
+    <string name="itachi_q08">Кто мгновенно запечатал Мечом Тоцуки Орочимару, проявившегося внутри его брата?</string>
+    <string name="itachi_q09">Кто в воскрешённом состоянии поймал Кабуто в петлю Изанами и заставил прекратить Эдо Тенсей?</string>
+    <string name="itachi_q10">Какой шиноби из АНБУ тайно передавал сведения Акацуки обратно в Коноху?</string>
+    <string name="itachi_q11">Кто в бою с Нагато спас Наруто и Киллера Би с помощью Меча Тоцуки?</string>
+    <string name="itachi_q12">Кто пробудил свой Мангекё Шаринган после смерти Шисуи?</string>
+    <string name="itachi_q13">Кто в 13 лет стал капитаном АНБУ и шёл к идее мира, способного закончить войну?</string>
+    <string name="itachi_q14">Кто после своей смерти открыл глазами путь остановить слепоту своего брата?</string>
+    <string name="itachi_q15">Кто торговался с руководством Конохи и поставил условием жизнь Саске в ночь переворота?</string>
+    <string name="itachi_q16">Кто даже после ухода из деревни продолжал следить за угрозами из тени и защищать Коноху?</string>
+    <string name="itachi_q17">Кто, будучи воскрешённым, сказал брату, что всегда будет его любить?</string>
+    <string name="itachi_q18">В битве Наруто и Саске в Долине Завершения — чья это единственная рука, появившаяся в ладони Саске?</string>
+
+    <string name="kakashi_q01">Кто на испытании с колокольчиками для Команды 7 научил выбирать между «правилами и командой» и преподал урок с общим обедом?</string>
+    <string name="kakashi_q02">Кто получил прозвище «Копирующий ниндзя», скопировав больше тысячи техник?</string>
+    <string name="kakashi_q03">Кто на миссии у моста Каннаби получил Шаринган в левый глаз по последней просьбе друга?</string>
+    <string name="kakashi_q04">Кто разработал технику Чидори (Райкири) и впервые применил её в бою?</string>
+    <string name="kakashi_q05">Кто впервые применил Камуй по живой цели, чтобы остановить побег Дейдары?</string>
+    <string name="kakashi_q06">Какой персонаж погиб во время нападения Пейна — смерть, которую почувствовал Наруто?</string>
+    <string name="kakashi_q07">Кто после войны занял пост Шестого Хокаге?</string>
+    <string name="kakashi_q08">Какой мастер не выпускает из рук книгу «Ича Ича» даже посреди задания?</string>
+    <string name="kakashi_q09">Кто вернулся в деревню под личиной Сукеа и вёл расследование, скрывая даже лицо?</string>
+
+    <string name="madara_q01">Кто вместе с Хаширамой заложил основы Конохи, прежде чем их пути разошлись?</string>
+    <string name="madara_q02">Кто одним движением обрушил два метеорита и нарушил равновесие войны?</string>
+    <string name="madara_q03">Кто в одиночку поставил на колени всех пятерых Каге?</string>
+    <string name="madara_q04">Кто связывал противников одновременно невидимыми тенями «Лимбо»?</string>
+    <string name="madara_q05">Кто пробудил Риннеган с помощью клеток Хаширамы и двинулся к своему финальному плану?</string>
+    <string name="madara_q06">Кто стал джинчурики Десятихвостого и обрёл силу Шести Путей?</string>
+    <string name="madara_q07">Кто распространил Бесконечное Цукуёми на весь мир через отражение луны?</string>
+    <string name="madara_q08">Кто раскрыл Совершенное Сусаноо, рассекающее горы?</string>
+    <string name="madara_q09">Кто, увидев открытые восьмые врата, почтил соперника словами о сильнейшем тайдзюцу на своей памяти?</string>
+
+    <string name="obito_q01">Кто сказал «герои приходят с опозданием», оказался под завалом ради спасения друга и отдал ему свой глаз?</string>
+    <string name="obito_q02">Кто из-под маски организовал нападение на Коноху как «Человек в маске»?</string>
+    <string name="obito_q03">Кто изображал простака в Акацуки в роли «Тоби»?</string>
+    <string name="obito_q04">Кто с помощью Камуя выводил тело из материального состояния, пропуская атаки сквозь себя?</string>
+    <string name="obito_q05">Кто после смерти Рин замкнул весь мир на своём «Плане Лунного Глаза»?</string>
+    <string name="obito_q06">Кто свёл счёты со старыми узами, сражаясь с Какаши один на один между измерениями?</string>
+    <string name="obito_q07">Кто вырвал Наруто из смертельного мгновения и сделал первый шаг к искуплению?</string>
+    <string name="obito_q08">Кто на самом деле руководил Акацуки из тени и развязал войну?</string>
+    <string name="obito_q09">Кто в последний миг вспомнил себя настоящего и передал свою силу ради будущего ниндзя?</string>
+
+    <string name="gaara_q01">Кого в детстве против воли защищал песчаный щит, обрекая на одиночество?</string>
+    <string name="gaara_q02">Кого на экзамене на чунина впервые потрясло то, что Рок Ли пробил даже его защиту?</string>
+    <string name="gaara_q03">Кто решил измениться, узнав в словах Наруто ту же боль одиночества?</string>
+    <string name="gaara_q04">Кто взял на себя защиту деревни как самый молодой Казекаге Суны?</string>
+    <string name="gaara_q05">Кто сражался ценой жизни против Дейдары, защищая свою деревню?</string>
+    <string name="gaara_q06">Из кого извлекли хвостатого зверя, и он вернулся к жизни благодаря жертве Чиё?</string>
+    <string name="gaara_q07">Чей голос на Саммите пяти Каге защитил Наруто перед Райкаге?</string>
+    <string name="gaara_q08">Кто произнёс перед войсками Альянса командирскую речь, объединившую сердца?</string>
+    <string name="gaara_q09">Кто на войне встретился с духом своего отца Расы и залечил рану прошлого?</string>
+    <string name="gaara_q10">Кто в Четвёртой мировой войне шиноби узнал от отца Расы, что защищавший его песок был на самом деле любовью матери?</string>
+    <string name="gaara_q11">У какого шиноби во время покушения в детстве песок сам поднялся щитом благодаря воле его матери?</string>
+
+    <string name="kabuto_q01">Кого забрали из приюта Конохи и превратили в самого секретного шпиона Орочимару?</string>
+    <string name="kabuto_q02">Кто довёл Эдо Тенсей до совершенства и поднял из могил фигуры войны?</string>
+    <string name="kabuto_q03">Кто достиг Режима Отшельника в пещере Рюти и сотряс арену «Белым гневом»?</string>
+    <string name="kabuto_q04">Кто в петле Изанами научился принимать себя и разорвал цепь?</string>
+    <string name="kabuto_q05">Кто после войны вернулся в приют и выбрал новый путь?</string>
+
+    <string name="orochimaru_q01">Кто из легендарной троицы саннинов погрузился в запретные опыты в поисках бессмертия?</string>
+    <string name="orochimaru_q02">Кто оставил Саске Проклятую печать в Лесу Смерти?</string>
+    <string name="orochimaru_q03">Кто во время вторжения в Коноху призвал воскрешённых Хокаге, чтобы свести счёты с учителем?</string>
+    <string name="orochimaru_q04">Кто ускользнул от смерти, сбросив змеиное тело, словно старую кожу?</string>
+    <string name="orochimaru_q05">Кто по просьбе Саске вернулся и вновь призвал воскрешённых Хокаге, приоткрыв дверь в историю?</string>
+
+    <string name="rocklee_q01">Кто на экзамене на чунина сбросил утяжелители и заволок арену пылью своей скоростью?</string>
+    <string name="rocklee_q02">Кто против Гаары открыл первые врата и заставил всех замереть от Начального Лотоса?</string>
+    <string name="rocklee_q03">Кто в Лесу Смерти в одиночку встал перед троицей из Деревни Звука, защищая Сакуру?</string>
+    <string name="rocklee_q04">Кто лёг на операционный стол Цунаде ради возможности снова сражаться, рискуя умереть?</string>
+    <string name="rocklee_q05">Кто хотя бы на миг переиграл Кимимаро шатким «Кулаком пьяницы»?</string>
+
+    <string name="sakura_q01">Кто в Лесу Смерти собственными руками отрезала волосы со словами «теперь и я буду сражаться»?</string>
+    <string name="sakura_q02">Кто обучался у Цунаде на медика-ниндзя и обрёл силу раскалывать землю одним ударом?</string>
+    <string name="sakura_q03">Кто плечом к плечу с Чиё одолел Сасори из Акацуки?</string>
+    <string name="sakura_q04">Кто вернул Наруто к жизни, запустив его останавливающееся сердце голыми руками?</string>
+    <string name="sakura_q05">Кто снял печать со лба и «Силой Сотни» одновременно исцелил тысячи бойцов на фронте?</string>
+
+    <string name="minato_q01">Чья скорость «Жёлтой молнии Конохи» заканчивала бои ещё до прихода медиков?</string>
+    <string name="minato_q02">Кто в ночь нападения на деревню отбросил от Конохи огромную бомбу биджу Девятихвостого Техникой Летающего Бога Грома?</string>
+    <string name="minato_q03">Кто пожертвовал собой, чтобы остановить Кураму, вырванного из Кушины, и доверил печать сыну?</string>
+    <string name="minato_q04">Кто, вдохновившись героем романа Джирайи, назвал сына «Наруто» и доверил его крёстному отцу?</string>
+    <string name="minato_q05">Кто обошёл даже Райкаге А и одним знаком перевернул поле боя с помощью «Летающего Бога Грома»?</string>
+    <string name="minato_q06">Какой мастер без всякой особой родовой техники, полностью своими силами, одолел ученика вместе с Девятихвостым?</string>
+
+    <string name="hashirama_q01">Кто ребёнком на двух берегах реки вместе с Мадарой начал путь от брошенных камней к дружбе, а от дружбы — к идее Конохи?</string>
+    <string name="hashirama_q02">Кто первым произнёс идею Хокаге, сказав, что мир строится сообща?</string>
+    <string name="hashirama_q03">Кто выбрал братство, чтобы преодолеть строки судьбы на каменной скрижали Учиха?</string>
+    <string name="hashirama_q04">Кто в первой великой дуэли в Долине Завершения отказался убивать друга и основал деревню?</string>
+    <string name="hashirama_q05">Кто заставил поле боя умолкнуть гигантским деревянным Буддой, вставшим будто живая статуя?</string>
+    <string name="hashirama_q06">Какой Первый Хокаге оставил поколениям слова о том, что деревня — это семья?</string>
+
+    <string name="tobirama_q01">Кто заложил основы АНБУ и придал деревенскому порядку систему?</string>
+    <string name="tobirama_q02">Кто разработал первооснову Техники Летающего Бога Грома?</string>
+    <string name="tobirama_q03">Кто закрепил Академию и систему чунинов, очертив рамки обучения ниндзя?</string>
+    <string name="tobirama_q04">Кто посреди войны использовал собственную жизнь как приманку, защищая клан и брата?</string>
+    <string name="tobirama_q05">Кто заклеймил тёмное знание Эдо Тенсея как катастрофу в чужих руках?</string>
+
+    <string name="tsunade_q01">Кто, не имея удачи за игорным столом, переворачивал удачу тысяч на поле боя?</string>
+    <string name="tsunade_q02">Кто изменил ход войны словами о том, что без медицинского отряда нет армии?</string>
+    <string name="tsunade_q03">Кто принял пост со словами, что верит в мечту Наруто стать Хокаге?</string>
+    <string name="tsunade_q04">Кто снял печать со лба и поднял Коноху из руин?</string>
+    <string name="tsunade_q05">Кто, сломленная потерей Джирайи, всё же снова поставила исцеление во главу угла?</string>
+    <string name="tsunade_q06">Кто в Четвёртой мировой войне шиноби связал Каге друг с другом нитями жизни?</string>
+
+    <string name="jiraiya_q01">Кто вписал в мир судьбу трёх учеников словами о том, что ученики — его наследие?</string>
+    <string name="jiraiya_q02">Кто в одиночку проник в Деревню Дождя и отрезал себе путь назад, чтобы узнать правду?</string>
+    <string name="jiraiya_q03">Кто оставил путь к миру на жабьей надписи и передал последнее послание шифром?</string>
+    <string name="jiraiya_q04">Какой наставник показал маленькому Наруто цель словами о том, что герои не сдаются?</string>
+    <string name="jiraiya_q05">Кто посреди боя превращал гимны Мьёбоку в радость?</string>
+    <string name="jiraiya_q06">Кто из легендарных саннинов доказал, что величайшая победа одинокого учителя — это его ученик?</string>
+
+    <string name="might_guy_q01">У кого на арене экзамена на чунина время будто замедлилось, когда его утяжелители упали на землю?</string>
+    <string name="might_guy_q02">Кто кричал о пламени юности и научил Рока Ли надежде?</string>
+    <string name="might_guy_q03">Кто открыл восьмые врата и встретил смерть с улыбкой?</string>
+    <string name="might_guy_q04">Чей удар заставил даже Мадару признать сильнейшее тайдзюцу, что он видел?</string>
+    <string name="might_guy_q05">Какой друг всю войну не оставлял спину Какаши?</string>
+    <string name="might_guy_q06">Кто вложил своё сердце в операцию ученика и сказал ему продолжать бежать?</string>
+
+    <string name="shikamaru_q01">Кто начинает день с созерцания облаков, а заканчивает сражения стратегией?</string>
+    <string name="shikamaru_q02">Кто поджёг зажигалку Асумы и отомстил за учителя разумом?</string>
+    <string name="shikamaru_q03">Кто стал связующим центром между Каге и генералами, превратив армию в единый разум?</string>
+    <string name="shikamaru_q04">Кто сказал сомневающемуся Наруто, что он рядом, и поддержал его путь к креслу Хокаге?</string>
+    <string name="shikamaru_q05">Кто заманил Хидана в теневую ловушку и закопал его части в землю?</string>
+    <string name="shikamaru_q06">Кто сел за стол планировать мир после окончания войны?</string>
+
+    <string name="hinata_q01">Какая бесстрашная воительница призналась в любви перед Пейном?</string>
+    <string name="hinata_q02">Кто нёс память о Неджи в своих кулаках и шла рядом с ним в битве против Кагуи?</string>
+    <string name="hinata_q03">Кто превратил Бьякуган в любовь, сказав, что станет его светом, если он собьётся с пути?</string>
+    <string name="hinata_q04">Кто указал Наруто верный путь, когда он был готов перейти на сторону Обито?</string>
+    <string name="hinata_q05">Кто облегчил бремя клана Хьюга, выбрав собственную дорогу?</string>
+
+    <string name="killer_b_q01">Кто превратил жизнь джинчурики в рэп-строки, а страх — в песню?</string>
+    <string name="killer_b_q02">Какой мастер восьми мечей танцевал одновременно против команды Саске?</string>
+    <string name="killer_b_q03">Кто заключил союз с Гьюки, переведя язык зверя на человеческий?</string>
+    <string name="killer_b_q04">Кто научил Наруто партнёрству с хвостатым зверем и помог разорвать цепь ненависти в тёмной комнате?</string>
+    <string name="killer_b_q05">Кто вопреки Райкаге выбрал собственный ритм и изменил ритм войны?</string>
+
+    <string name="a_fourth_raikage_q01">Кто на Саммите пяти Каге опустил на стол не кулак, а свою ответственность?</string>
+    <string name="a_fourth_raikage_q02">Какой лидер защищал брата, не выпуская командование армией?</string>
+
+    <string name="deidara_q01">Кто расписался в небе словами о том, что искусство — это взрыв?</string>
+    <string name="deidara_q02">Кто попытался разнести песчаный купол Гаары над городом при помощи C3?</string>
+    <string name="deidara_q03">Кто вопреки своей ненависти к Шарингану открыл последнюю выставку с помощью C0?</string>
+    <string name="deidara_q04">Какой член Акацуки превратил небо в холст глиняными птицами?</string>
+
+    <string name="kisame_q01">Кто поглощал чакру Самехадой и превратил берег озера в океан?</string>
+    <string name="kisame_q02">Какая синяя акула заставила Гая открыть врата?</string>
+    <string name="kisame_q03">Кто заключил собственное тело в водную темницу, чтобы сберечь свои тайны?</string>
+    <string name="kisame_q04">Какой шиноби заслужил прозвище Монстр прямо на поле боя?</string>
+
+    <string name="hidan_q01">Кто бессмертным ритуалом обращал кровь противника против него самого?</string>
+    <string name="hidan_q02">Кто чертил круг Джашина и отражал боль, словно зеркало?</string>
+    <string name="hidan_q03">Кто развеял дым Асумы по ветру и всё же попался в ловушку ума Шикамару?</string>
+    <string name="hidan_q04">Кого разрубили на части, закопали в землю и заставили умолкнуть?</string>
+
+    <string name="kakuzu_q01">Кто выстраивал стихии в ряд благодаря своим пяти сердцам?</string>
+    <string name="kakuzu_q02">Кто ставил деньги выше веры и считал контракты священными?</string>
+    <string name="kakuzu_q03">Кто пал от первого Расеншурикена Наруто, ощутив приход новой эпохи?</string>
+    <string name="kakuzu_q04">Кто составил с Хиданом самый несовместимый и самый опасный дуэт?</string>
+
+    <string name="konan_q01">Кто оставлял бумажные цветы как надежду на дождливых улицах?</string>
+    <string name="konan_q02">Кто превратил десять миллиардов листов бумаги в бомбы, чтобы задушить Тоби?</string>
+    <string name="konan_q03">Кто запечатал идеал Яхико в синих оригами?</string>
+    <string name="konan_q04">Кто после Нагато посадил последний цветок на пути к миру?</string>
+
+    <string name="nagato_q01">Кто навязал миру закон боли словами о том, что боль учит?</string>
+    <string name="nagato_q02">Кто одним словом — Шинра Тенсей — сровнял Коноху с землёй?</string>
+    <string name="nagato_q03">Кто прошёл путь от ученика Джирайи до воплощения самой боли?</string>
+    <string name="nagato_q04">Кто разорвал круг словами Наруто и вернул отнятые жизни?</string>
+    <string name="nagato_q05">Какой лидер раздал свои глаза каждому из Шести Путей?</string>
+    <string name="nagato_q06">Кто облёк тело Яхико в идеал и пытался заставить дождь умолкнуть?</string>
+
+    <string name="yahiko_q01">Кто построил надежду Аме из детей, стоявших под дождём?</string>
+    <string name="yahiko_q02">Кто вёл за собой друзей словами о том, что мир приходит через волю, а не через силу?</string>
+    <string name="yahiko_q03">Кто сделал собственную жизнь мостом, чтобы удержать на ногах Нагато и Конан?</string>
+
+    <string name="zabuza_q01">Кто был Демоном, чьё имя в тумане произносили лишь шёпотом?</string>
+    <string name="zabuza_q02">Кто перед Хаку смахнул слёзы на клинок и отправился в свой последний путь?</string>
+    <string name="zabuza_q03">Какой враг преподал Команде 7 первый большой урок на мосту?</string>
+    <string name="zabuza_q04">Кто вписал в историю кровавый выпускной экзамен Киригакуре?</string>
+
+    <string name="haku_q01">Кто умножал свет внутри ледяных зеркал и превращал иглы в дождь?</string>
+    <string name="haku_q02">Какой кроткий воин отдал жизнь лишь ради того, чтобы быть кому-то полезным?</string>
+    <string name="haku_q03">Кто сумел стать единственным тёплым местом в сердце Забузы?</string>
+    <string name="haku_q04">Чьи глаза за маской впервые потеплели от слов Наруто?</string>
+
+    <string name="hiruzen_q01">Кто вырастил легендарных саннинов и трижды взваливал деревню на свои плечи?</string>
+    <string name="hiruzen_q02">Кто в бою с Орочимару запечатал двух Хокаге и заставил поле боя умолкнуть?</string>
+    <string name="hiruzen_q03">Какой пожилой лидер вписал в дело Наруто ещё один шанс?</string>
+    <string name="hiruzen_q04">Какой мудрый Хокаге считал детей деревни своей собственной семьёй?</string>
+
+    <string name="temari_q01">Кто одним взмахом веера ветра выкосил целый лес?</string>
+    <string name="temari_q02">Кто отдал ветер планам Шикамару, усилив разум на поле боя?</string>
+    <string name="temari_q03">Кто заставил Коноху признать собственную силу, а не тень своего брата?</string>
+
+    <string name="kankuro_q01">Кто превратил сцену в театр смерти при помощи марионеток?</string>
+    <string name="kankuro_q02">Кто бросил вызов яду Сасори противоядиями и гонкой со временем?</string>
+    <string name="kankuro_q03">Кто держался за спиной брата, но в бою выдвигал марионеток в первый ряд?</string>
+
+    <string name="sai_q01">Кто превращал чернила в птиц и отправлял послание в небо?</string>
+    <string name="sai_q02">Кто в Команде 7 разорвал цепи бесчувственного воспитания?</string>
+    <string name="sai_q03">Кто впервые вписал в свой альбом слово «дружба» настоящими линиями?</string>
+
+    <string name="yamato_q01">Кто усмирил зверя контролем Стихии Дерева?</string>
+    <string name="yamato_q02">Какое спокойное лицо возглавило разбитое сердце Команды 7?</string>
+    <string name="yamato_q03">Кто удержал внутреннюю бурю Наруто дисциплиной печатей?</string>
+
+    <string name="shisui_q01">Кто уберёг Котоаматсуками от злоупотребления, не пожалев даже собственного глаза?</string>
+    <string name="shisui_q02">Кто, словно тень, падающая с моста на лист, хотел спасти свой клан?</string>
+    <string name="shisui_q03">Кто оставил Итачи тяжелейшую ношу со словами «ради деревни»?</string>
+    <string name="shisui_q04">Какой Учиха своим падением изменил судьбу целого поколения?</string>
+
+    <string name="kurama_q01">Кто сбросил цепи ненависти и сражался плечом к плечу с Наруто?</string>
+    <string name="kurama_q02">Кто был разделён надвое в печати Минато и всё же сохранил свою волю?</string>
+    <string name="kurama_q03">Кто бомбой биджу превратил ночное небо в день?</string>
+    <string name="kurama_q04">Какой лис впервые с гордостью произнёс слово «напарники»?</string>
+    <string name="kurama_q05">Какая сила в битве с Кагуей раздала свою чакру всему альянсу?</string>
+
+    <string name="shukaku_q01">Кто сотрясал пустыню безумным хохотом изнутри песчаной оболочки?</string>
+    <string name="shukaku_q02">Какое существо стало первым щитом, рождённым из страха, чтобы защитить сердце Гаары?</string>
+
+    <string name="gamabunta_q01">Кто научил уважению мальчишку, сидевшего на нём, и всё же подставил спину в бою?</string>
+    <string name="gamabunta_q02">Кто посреди пустыни обнажил свой огромный клинок против Шукаку?</string>
+
+    <string name="gamakichi_q01">Какой маленький большой герой вышел из тени отца, чтобы носить послания на войне?</string>
+
+    <string name="son_goku_q01">Кто месил сердце камня огнём и показал Наруто цепь ненависти?</string>
+
+    <string name="karin_q01">Какая рыжеволосая сенсор создала цепь исцеления, отдавая собственное тело?</string>
+    <string name="karin_q02">Какого персонажа Саске без колебаний пронзил в бою против Данзо?</string>
+
+    <string name="suigetsu_q01">Кто несёт водной техникой Хозуки юмор, который не помещается ни в одну клетку?</string>
+    <string name="suigetsu_q02">Кто взвалил на плечи меч Забузы и превратил тень прошлого в шутку?</string>
+
+    <string name="jugo_q01">Кто впустил ярость природы в своё тело, но сохранил нежность к птицам?</string>
+    <string name="jugo_q02">Кто научился гасить приступы ярости голосами друзей?</string>
+
+    <string name="kiba_q01">Кто вместе с Акамару читал поле по запаху и превратил выслеживание в искусство?</string>
+    <string name="kiba_q02">Какой дуэт превратил поле боя в бурю своим двойным вращением?</string>
+
+    <string name="akamaru_q01">Какой верный напарник одним лаем изменил судьбу своей команды?</string>
+
+    <string name="ino_q01">Кто сделал свой разум мостом и вывел врага прямо перед своей командой?</string>
+    <string name="ino_q02">Кто превратил последние слова Асумы в цветок в своём сердце?</string>
+    <string name="ino_q03">Кто вёл на войне линии связи с терпением цветочницы?</string>
+
+    <string name="choji_q01">Кто раскрыл крылья бабочки и вырос до великана ради друзей?</string>
+    <string name="choji_q02">Чьё сердце с гордостью превратило слово «толстый» в силу?</string>
+    <string name="choji_q03">Кто обмакнул чипсы Асумы не в слёзы, а в решимость?</string>
+
+    <string name="boruto_q01">Кто выбрал сражаться не с отцом, а с собственной тенью?</string>
+    <string name="boruto_q02">Кто применил научный инструмент ниндзя на экзамене, а затем взял ответственность на себя?</string>
+    <string name="boruto_q03">Кто стиснул зубы, чтобы метка Момошики не превратилась в план судьбы?</string>
+    <string name="boruto_q04">Кто прошёл испытание на лидерство новой Команды 7 прямо на улице?</string>
+    <string name="boruto_q05">Кто заново определил имя Узумаки в другую эпоху?</string>
+
+    <string name="sarada_q01">Кто вылепил мечту стать Хокаге из кулака матери и глаз отца?</string>
+    <string name="sarada_q02">Какая юная куноичи первой в своём поколении попала Чидори точно в цель?</string>
+    <string name="sarada_q03">Кто одним взглядом собрал разбредшиеся сердца своей команды?</string>
+
+    <string name="mitsuki_q01">Кто превратил вопрос «кто я?» в ответ рядом со своими друзьями?</string>
+    <string name="mitsuki_q02">Кто обратил гибкость змеи в верность и спас свою команду?</string>
+
+    <string name="kawaki_q01">Кто заставил Карму быть выбором, а не судьбой?</string>
+    <string name="kawaki_q02">Кто впервые назвал дом Наруто своим домом?</string>
+    <string name="kawaki_q03">Чья воля превратила мальчика в тени Исшики в бойца?</string>
+
+    <string name="koji_kashin_q01">Кто вписал огонь в свой план, а не в свою судьбу, превратив тень в пламя?</string>
+    <string name="koji_kashin_q02">Кто остался на поле, чтобы завершить задание, даже когда правда вышла наружу?</string>
+
+    <string name="isshiki_otsutsuki_q01">Какая угроза уменьшала предметы и держала мир на ладони?</string>
+    <string name="isshiki_otsutsuki_q02">Кто устроил свой трон в человеческом теле и пытался поставить клеймо на судьбе?</string>
+
+    <string name="toneri_q01">Кто пытался обрушить одиночество Луны на землю, а затем вернул свет?</string>
+
+    <string name="hagoromo_q01">Какой мудрец вместе с братом превратил ниндзюцу в учение для всего мира?</string>
+    <string name="hagoromo_q02">Кто наделил силой Наруто и Саске, поставив условием равновесие?</string>
+    <string name="hagoromo_q03">Кто оставил ссору своих сыновей истории, которую поколения должны решить миром?</string>
+
+    <string name="kaguya_q01">Кто впервые принёс чакру в мир вместе с плодом?</string>
+    <string name="kaguya_q02">Кто менял измерения как ладонь и мгновенно переворачивал ход боя?</string>
+    <string name="kaguya_q03">Кого печатью вернули в вечность двое её потомков?</string>
+    <string name="kaguya_q04">Какая неудержимая сила водила поле боя между льдом, лавой и пустыней?</string>
+
+    <string name="hanzo_q01">Кто дал легендарным саннинам их прозвище прямо посреди войны?</string>
+    <string name="hanzo_q02">Какой военачальник прятал судьбу Аме за своей маской?</string>
+    <string name="hanzo_q03">Кто пал внутри того самого режима страха, который сам и построил?</string>
+
+    <string name="konohamaru_q01">Кто в детстве бегал за Наруто, а повзрослев стал щитом для собственной команды?</string>
+    <string name="konohamaru_q02">Какой учитель доверил Расенган рукам нового поколения?</string>
+    <string name="konohamaru_q03">Какой шиноби хранил на улицах наследие своего деда Хирузена?</string>
+
+</resources>
