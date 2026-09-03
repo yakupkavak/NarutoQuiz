@@ -36,6 +36,9 @@
     <string name="recovery_error">Email errata</string>
     <string name="network_problem">Si è verificato un problema</string>
     <string name="check_mail">Controlla la tua email</string>
+    <string name="reset_mail_sent">Ti abbiamo inviato il link per reimpostare la password via email</string>
+    <string name="recovery_user_not_found">Nessun account trovato con questa email</string>
+    <string name="recovery_too_many_request">Troppi tentativi, riprova più tardi</string>
     <string name="sign_success">Registrazione completata</string>
     <string name="email">Email</string>
     <string name="password">Password</string>

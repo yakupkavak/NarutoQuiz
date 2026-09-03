@@ -36,6 +36,9 @@
     <string name="recovery_error">이메일이 올바르지 않습니다</string>
     <string name="network_problem">문제가 발생했습니다</string>
     <string name="check_mail">메일을 확인하세요</string>
+    <string name="reset_mail_sent">비밀번호 재설정 링크를 이메일로 보냈습니다</string>
+    <string name="recovery_user_not_found">이 이메일로 등록된 계정이 없습니다</string>
+    <string name="recovery_too_many_request">시도 횟수가 너무 많습니다. 나중에 다시 시도하세요</string>
     <string name="sign_success">가입이 완료되었습니다</string>
     <string name="email">이메일</string>
     <string name="password">비밀번호</string>

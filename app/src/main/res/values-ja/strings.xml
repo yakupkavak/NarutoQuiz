@@ -36,6 +36,9 @@
     <string name="recovery_error">メールアドレスが違います</string>
     <string name="network_problem">問題が発生しました</string>
     <string name="check_mail">メールを確認してください</string>
+    <string name="reset_mail_sent">パスワード再設定用のリンクをメールに送信しました</string>
+    <string name="recovery_user_not_found">このメールアドレスのアカウントが見つかりません</string>
+    <string name="recovery_too_many_request">試行回数が多すぎます。しばらくしてからお試しください</string>
     <string name="sign_success">登録が完了しました</string>
     <string name="email">メールアドレス</string>
     <string name="password">パスワード</string>

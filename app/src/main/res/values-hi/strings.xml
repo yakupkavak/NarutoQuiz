@@ -36,6 +36,9 @@
     <string name="recovery_error">ईमेल ग़लत है</string>
     <string name="network_problem">कोई समस्या आ गई है</string>
     <string name="check_mail">अपना ईमेल देखें</string>
+    <string name="reset_mail_sent">पासवर्ड रीसेट लिंक आपके ईमेल पर भेज दिया गया है</string>
+    <string name="recovery_user_not_found">इस ईमेल से कोई खाता नहीं मिला</string>
+    <string name="recovery_too_many_request">बहुत ज़्यादा कोशिशें, बाद में फिर से आज़माएँ</string>
     <string name="sign_success">रजिस्ट्रेशन पूरा हुआ</string>
     <string name="email">ईमेल</string>
     <string name="password">पासवर्ड</string>

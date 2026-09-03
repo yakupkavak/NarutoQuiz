@@ -37,6 +37,9 @@
     <string name="password_too_low">Password can\'t be less than 8 characters</string>
     <string name="network_problem">There is an problem</string>
     <string name="check_mail">Check your mail</string>
+    <string name="reset_mail_sent">Password reset link sent to your email</string>
+    <string name="recovery_user_not_found">No account found with this email</string>
+    <string name="recovery_too_many_request">Too many attempts, try again later</string>
     <string name="sign_success">Kayıt olundu</string>
     <string name="email">Email</string>
     <string name="hint_email">example@gmail.com</string>

@@ -36,6 +36,9 @@
     <string name="recovery_error">邮箱不正确</string>
     <string name="network_problem">出现了问题</string>
     <string name="check_mail">请查收邮件</string>
+    <string name="reset_mail_sent">重置密码链接已发送到你的邮箱</string>
+    <string name="recovery_user_not_found">未找到使用该邮箱的账号</string>
+    <string name="recovery_too_many_request">尝试次数过多，请稍后再试</string>
     <string name="sign_success">注册成功</string>
     <string name="email">邮箱</string>
     <string name="password">密码</string>

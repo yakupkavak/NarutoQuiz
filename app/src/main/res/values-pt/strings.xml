@@ -36,6 +36,9 @@
     <string name="recovery_error">E-mail incorreto</string>
     <string name="network_problem">Ocorreu um problema</string>
     <string name="check_mail">Verifique seu e-mail</string>
+    <string name="reset_mail_sent">Enviamos um link de redefinição de senha para seu e-mail</string>
+    <string name="recovery_user_not_found">Nenhuma conta encontrada com este e-mail</string>
+    <string name="recovery_too_many_request">Muitas tentativas, tente novamente mais tarde</string>
     <string name="sign_success">Cadastro concluído</string>
     <string name="email">E-mail</string>
     <string name="password">Senha</string>

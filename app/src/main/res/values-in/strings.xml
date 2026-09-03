@@ -38,6 +38,9 @@
     <string name="password_too_low">Kata sandi tidak boleh kurang dari 8 karakter</string>
     <string name="network_problem">Terjadi masalah jaringan</string>
     <string name="check_mail">Periksa email kamu</string>
+    <string name="reset_mail_sent">Tautan atur ulang kata sandi telah dikirim ke emailmu</string>
+    <string name="recovery_user_not_found">Tidak ada akun dengan email ini</string>
+    <string name="recovery_too_many_request">Terlalu banyak percobaan, coba lagi nanti</string>
     <string name="sign_success">Pendaftaran berhasil</string>
     <string name="email">Email</string>
     <string name="hint_email">example@gmail.com</string>

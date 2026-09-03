@@ -36,6 +36,9 @@
     <string name="recovery_error">Неверная почта</string>
     <string name="network_problem">Возникла проблема</string>
     <string name="check_mail">Проверь свою почту</string>
+    <string name="reset_mail_sent">Ссылка для сброса пароля отправлена на твою почту</string>
+    <string name="recovery_user_not_found">Аккаунт с такой почтой не найден</string>
+    <string name="recovery_too_many_request">Слишком много попыток, попробуй позже</string>
     <string name="sign_success">Регистрация выполнена</string>
     <string name="email">Эл. почта</string>
     <string name="password">Пароль</string>

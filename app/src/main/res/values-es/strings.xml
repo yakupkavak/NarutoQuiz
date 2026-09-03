@@ -36,6 +36,9 @@
     <string name="recovery_error">Correo incorrecto</string>
     <string name="network_problem">Ha ocurrido un problema</string>
     <string name="check_mail">Revisa tu correo</string>
+    <string name="reset_mail_sent">Enviamos un enlace para restablecer tu contraseña a tu correo</string>
+    <string name="recovery_user_not_found">No se encontró ninguna cuenta con este correo</string>
+    <string name="recovery_too_many_request">Demasiados intentos, inténtalo más tarde</string>
     <string name="sign_success">Registro completado</string>
     <string name="email">Correo electrónico</string>
     <string name="password">Contraseña</string>

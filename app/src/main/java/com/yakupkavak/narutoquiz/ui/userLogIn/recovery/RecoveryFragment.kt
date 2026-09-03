@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.yakupkavak.narutoquiz.R
 import com.yakupkavak.narutoquiz.databinding.FragmentRecoveryBinding
 import com.yakupkavak.narutoquiz.ui.extension.navigate
@@ -37,12 +39,31 @@ class RecoveryFragment : Fragment() {
 
     private fun setObserve() {
         observe(viewModel.resetSuccess) {
-            if (it) {
-                showToast(getString(R.string.check_mail))
-
-            } else {
-                showToast(getString(R.string.recovery_error))
+            showToast(getString(R.string.reset_mail_sent))
+            viewModel.onMessageShown()
+            navigateToSignIn()
+        }
+        observe(viewModel.errorMessageId) { messageId ->
+            showToast(getString(messageId ?: R.string.unexpected_error))
+            viewModel.onMessageShown()
+        }
+        observe(viewModel.loading) { loading ->
+            with(binding) {
+                btnForgot.isClickable = !loading
+                if (loading) {
+                    lottieAnimationLoading.isVisible = true
+                    lottieAnimationLoading.playAnimation()
+                } else {
+                    lottieAnimationLoading.isVisible = false
+                    lottieAnimationLoading.cancelAnimation()
+                }
             }
+        }
+    }
+
+    private fun navigateToSignIn() {
+        if (findNavController().currentDestination?.id == R.id.recoveryFragment) {
+            navigate(RecoveryFragmentDirections.actionRecoveryFragmentToSigninFragment())
         }
     }
 
@@ -56,7 +77,7 @@ class RecoveryFragment : Fragment() {
                 }
             }
             tvSignIn.setOnClickListener {
-                navigate(RecoveryFragmentDirections.actionRecoveryFragmentToSigninFragment())
+                navigateToSignIn()
             }
         }
     }

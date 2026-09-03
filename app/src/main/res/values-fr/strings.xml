@@ -36,6 +36,9 @@
     <string name="recovery_error">E-mail incorrect</string>
     <string name="network_problem">Un problème est survenu</string>
     <string name="check_mail">Vérifie ta boîte mail</string>
+    <string name="reset_mail_sent">Un lien de réinitialisation du mot de passe a été envoyé à ton e-mail</string>
+    <string name="recovery_user_not_found">Aucun compte associé à cet e-mail</string>
+    <string name="recovery_too_many_request">Trop de tentatives, réessaie plus tard</string>
     <string name="sign_success">Inscription réussie</string>
     <string name="email">E-mail</string>
     <string name="password">Mot de passe</string>

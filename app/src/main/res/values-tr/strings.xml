@@ -38,6 +38,9 @@
     <string name="password_too_low">Şifre 8 karakterden kısa olamaz</string>
     <string name="network_problem">Bir sorun oluştu</string>
     <string name="check_mail">E-postanı kontrol et</string>
+    <string name="reset_mail_sent">Şifre sıfırlama bağlantısı e-postana gönderildi</string>
+    <string name="recovery_user_not_found">Bu e-posta ile kayıtlı hesap bulunamadı</string>
+    <string name="recovery_too_many_request">Çok fazla deneme yapıldı, lütfen daha sonra tekrar dene</string>
     <string name="sign_success">Kayıt başarılı</string>
     <string name="email">E-posta</string>
     <string name="hint_email">example@gmail.com</string>

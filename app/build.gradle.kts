@@ -26,8 +26,8 @@ android {
         applicationId = "com.yakupkavak.narutoquiz"
         minSdk = 24
         targetSdk = 36
-        versionCode = 10
-        versionName = "1.5.4"
+        versionCode = 1
+        versionName = "1.5.5"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField(
             "String",

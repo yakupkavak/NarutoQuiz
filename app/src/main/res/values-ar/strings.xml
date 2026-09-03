@@ -36,6 +36,9 @@
     <string name="recovery_error">البريد الإلكتروني غير صحيح</string>
     <string name="network_problem">حدثت مشكلة</string>
     <string name="check_mail">تحقّق من بريدك الإلكتروني</string>
+    <string name="reset_mail_sent">تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني</string>
+    <string name="recovery_user_not_found">لا يوجد حساب مرتبط بهذا البريد الإلكتروني</string>
+    <string name="recovery_too_many_request">محاولات كثيرة، حاول مرة أخرى لاحقًا</string>
     <string name="sign_success">تم إنشاء الحساب</string>
     <string name="email">البريد الإلكتروني</string>
     <string name="password">كلمة المرور</string>

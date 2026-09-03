@@ -35,6 +35,8 @@
         android:label="RecoveryFragment" >
         <action
             android:id="@+id/action_recoveryFragment_to_signinFragment"
-            app:destination="@id/signinFragment" />
+            app:destination="@id/signinFragment"
+            app:popUpTo="@id/signinFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
